@@ -4685,7 +4685,7 @@ function uC({
                   {
                     className: ns(
                       "max-w-[80%] rounded-lg p-3",
-                      T.sender === "user" ? "bg-primary/90 text-white" : "bg-light text-secondary"
+                      T.sender === "user" ? "bg-primary text-white" : "bg-light text-secondary"
                     ),
                     children: [
                       o ? o(T, b) : T.sender === "user" ? /* @__PURE__ */ R("div", { className: "text-sm", children: T.text }) : /* @__PURE__ */ R("div", { className: "text-sm", children: /* @__PURE__ */ R(Ca, { remarkPlugins: [wa], children: T.text }) }),

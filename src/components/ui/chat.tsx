@@ -156,7 +156,7 @@ export function Chat({
                     className={cn(
                       "max-w-[80%] rounded-lg p-3",
                       message.sender === "user"
-                        ? "bg-primary/90 text-white"
+                        ? "bg-primary text-white"
                         : "bg-light text-secondary"
                     )}
                   >
