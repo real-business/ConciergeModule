@@ -1,0 +1,1 @@
+export declare const batchTranslateText: (texts: string[], to: string, from: string | undefined, azureTranslatorKey: string, azureTranslatorEndpoint: string, azureTranslatorRegion: string) => Promise<string[]>;
