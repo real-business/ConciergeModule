@@ -19,7 +19,7 @@ interface APIResponse {
 
 export const chatCompletionAPI = async (
   input: string,
-  userId: string = "52533633434137384342",
+  userId: string = "",
   businessId: string = "",
   intent: string = "chat",
   sessionId: string = "",
@@ -36,9 +36,10 @@ export const chatCompletionAPI = async (
     console.log("file type:", file?.type);
     myHeaders.append("Accept", "application/json");
     const prompt =  input + "Language: " + language;
+    const defaultUserId = "52533633434137384342";
     const formData = new FormData();
       formData.append("Input", prompt );
-      formData.append("UserId", userId);
+      formData.append("UserId", userId ? userId : defaultUserId);
       formData.append("BusinessId", businessId);
       formData.append("Intent", intent);
       formData.append("SessionId", sessionId);

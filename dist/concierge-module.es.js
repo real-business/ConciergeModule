@@ -22248,42 +22248,42 @@ function Lv({
     /* @__PURE__ */ R(zv, { children: /* @__PURE__ */ R("p", { children: g }) })
   ] }) }) : null;
 }
-const wh = async (e, t = "52533633434137384342", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
+const wh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
   for (let u = 0; u < o; u++) {
     const l = new Headers();
     console.log("file in api", c), console.log("file size:", c?.size), console.log("file name:", c?.name), console.log("file type:", c?.type), l.append("Accept", "application/json");
-    const p = e + "Language: " + n, d = new FormData();
-    d.append("Input", p), d.append("UserId", t), d.append("BusinessId", r), d.append("Intent", s), d.append("SessionId", i), d.append("Platform", "EF0306CD"), console.log("No file to append");
-    const h = new AbortController(), f = setTimeout(() => h.abort(), 9e4), g = {
+    const p = e + "Language: " + n, d = "52533633434137384342", h = new FormData();
+    h.append("Input", p), h.append("UserId", t || d), h.append("BusinessId", r), h.append("Intent", s), h.append("SessionId", i), h.append("Platform", "EF0306CD"), console.log("No file to append");
+    const f = new AbortController(), g = setTimeout(() => f.abort(), 9e4), m = {
       method: "POST",
       headers: l,
-      body: d,
-      signal: h.signal
+      body: h,
+      signal: f.signal
       // Add the abort signal to the request
     };
     try {
-      const v = await fetch(
+      const y = await fetch(
         "https://developmentapis.azure-api.net/sandbox/v1/api/AI/assistant",
-        g
+        m
       );
-      if (clearTimeout(f), !v.ok) {
-        const S = await v.json();
+      if (clearTimeout(g), !y.ok) {
+        const C = await y.json();
         throw new Error(
-          S?.Message || `HTTP error! Status: ${v.status}`
+          C?.Message || `HTTP error! Status: ${y.status}`
         );
       }
-      const y = await v.json();
-      if (y.Success && (y.Data?.Message === null || y.Data?.Message.toUpperCase() === "INVALID JSON" || y.Data?.Message === "local variable 'result' referenced before assignment" || y.Data?.Message === "Object reference not set to an instance of an object." || y.Data?.Message?.toLowerCase().includes("exception thrown"))) {
+      const S = await y.json();
+      if (S.Success && (S.Data?.Message === null || S.Data?.Message.toUpperCase() === "INVALID JSON" || S.Data?.Message === "local variable 'result' referenced before assignment" || S.Data?.Message === "Object reference not set to an instance of an object." || S.Data?.Message?.toLowerCase().includes("exception thrown"))) {
         console.warn(
           `Attempt ${u + 1}: Success but received null data. Retrying...`
-        ), a > 0 && await new Promise((S) => setTimeout(S, a));
+        ), a > 0 && await new Promise((C) => setTimeout(C, a));
         continue;
       }
-      return y;
-    } catch (m) {
-      if (clearTimeout(f), m instanceof Error && m.name === "AbortError")
+      return S;
+    } catch (v) {
+      if (clearTimeout(g), v instanceof Error && v.name === "AbortError")
         return console.error("Request timed out after 90 seconds"), { Success: !1, Message: "ERROR: API timed out", Data: null };
-      console.error("Error in chat API:", m);
+      console.error("Error in chat API:", v);
     }
   }
   return {
