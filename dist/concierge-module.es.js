@@ -22248,7 +22248,7 @@ function Lv({
     /* @__PURE__ */ R(zv, { children: /* @__PURE__ */ R("p", { children: g }) })
   ] }) }) : null;
 }
-const wh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
+const wh = async (e, t = "52533633434137384342", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
   for (let u = 0; u < o; u++) {
     const l = new Headers();
     console.log("file in api", c), console.log("file size:", c?.size), console.log("file name:", c?.name), console.log("file type:", c?.type), l.append("Accept", "application/json");

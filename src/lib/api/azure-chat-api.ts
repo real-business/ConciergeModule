@@ -19,7 +19,7 @@ interface APIResponse {
 
 export const chatCompletionAPI = async (
   input: string,
-  userId: string = "",
+  userId: string = "52533633434137384342",
   businessId: string = "",
   intent: string = "chat",
   sessionId: string = "",
