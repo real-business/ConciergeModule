@@ -8,14 +8,14 @@ interface APIResponse {
   Message?: string;
 }
 
-interface RequestBody {
-  Input: string;
-  UserId: string;
-  BusinessId: string;
-  Intent: string;
-  SessionId: string;
-  Platform: string;
-}
+// interface RequestBody {
+//   Input: string;
+//   UserId: string;
+//   BusinessId: string;
+//   Intent: string;
+//   SessionId: string;
+//   Platform: string;
+// }
 
 export const chatCompletionAPI = async (
   input: string,
@@ -26,28 +26,46 @@ export const chatCompletionAPI = async (
   delay: number = 0,
   retries: number = 1,
   language: string = "en",
+  file?: File
 ): Promise<APIResponse> => {
   for (let i = 0; i < retries; i++) {
     const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    console.log("file in api", file);
+    console.log("file size:", file?.size);
+    console.log("file name:", file?.name);
+    console.log("file type:", file?.type);
     myHeaders.append("Accept", "application/json");
+    const prompt =  input + "Language: " + language;
+    const formData = new FormData();
+      formData.append("Input", prompt );
+      formData.append("UserId", userId);
+      formData.append("BusinessId", businessId);
+      formData.append("Intent", intent);
+      formData.append("SessionId", sessionId);
+      formData.append("Platform", "EF0306CD");
+      if (file && file.size > 0) {
+       formData.append("Files", file);
+       console.log("File appended to FormData");
+      } else {
+       console.log("No file to append");
+      }
 
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 90000); // 90 seconds timeout
-    // Structuring the request body based on the expected API input
-    const requestBody: RequestBody = {
-      Input: input + ". Reply in " + language + ". Send the response in markdown format, but don't say markdown in the response.", // 'Input' is mandatory
-      UserId: userId, // Optional UserId
-      BusinessId: businessId, // Optional BusinessId
-      Intent: intent,
-      SessionId: sessionId,
-      Platform: "",
-    };
+    // // Structuring the request body based on the expected API input
+    // const requestBody: RequestBody = {
+    //   Input: input + ". Reply in " + language + ". Send the response in markdown format, but don't say markdown in the response.", // 'Input' is mandatory
+    //   UserId: userId, // Optional UserId
+    //   BusinessId: businessId, // Optional BusinessId
+    //   Intent: intent,
+    //   SessionId: sessionId,
+    //   Platform: "EF0306CD"
+    // };
 
     const requestOptions: RequestInit = {
       method: "POST",
       headers: myHeaders,
-      body: JSON.stringify(requestBody), // Convert the object to JSON string
+      body: formData,
       signal: controller.signal // Add the abort signal to the request
     };
 

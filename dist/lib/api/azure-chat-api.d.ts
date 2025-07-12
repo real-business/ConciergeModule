@@ -7,5 +7,5 @@ interface APIResponse {
     } | null;
     Message?: string;
 }
-export declare const chatCompletionAPI: (input: string, userId?: string, businessId?: string, intent?: string, sessionId?: string, delay?: number, retries?: number, language?: string) => Promise<APIResponse>;
+export declare const chatCompletionAPI: (input: string, userId?: string, businessId?: string, intent?: string, sessionId?: string, delay?: number, retries?: number, language?: string, file?: File) => Promise<APIResponse>;
 export {};

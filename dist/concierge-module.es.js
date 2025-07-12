@@ -22248,51 +22248,42 @@ function Lv({
     /* @__PURE__ */ R(zv, { children: /* @__PURE__ */ R("p", { children: g }) })
   ] }) }) : null;
 }
-const wh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en") => {
-  for (let c = 0; c < o; c++) {
-    const u = new Headers();
-    u.append("Content-Type", "application/json"), u.append("Accept", "application/json");
-    const l = new AbortController(), p = setTimeout(() => l.abort(), 9e4), d = {
-      Input: e + ". Reply in " + n + ". Send the response in markdown format, but don't say markdown in the response.",
-      // 'Input' is mandatory
-      UserId: t,
-      // Optional UserId
-      BusinessId: r,
-      // Optional BusinessId
-      Intent: s,
-      SessionId: i,
-      Platform: ""
-    }, h = {
+const wh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
+  for (let u = 0; u < o; u++) {
+    const l = new Headers();
+    console.log("file in api", c), console.log("file size:", c?.size), console.log("file name:", c?.name), console.log("file type:", c?.type), l.append("Accept", "application/json");
+    const p = e + "Language: " + n, d = new FormData();
+    d.append("Input", p), d.append("UserId", t), d.append("BusinessId", r), d.append("Intent", s), d.append("SessionId", i), d.append("Platform", "EF0306CD"), console.log("No file to append");
+    const h = new AbortController(), f = setTimeout(() => h.abort(), 9e4), g = {
       method: "POST",
-      headers: u,
-      body: JSON.stringify(d),
-      // Convert the object to JSON string
-      signal: l.signal
+      headers: l,
+      body: d,
+      signal: h.signal
       // Add the abort signal to the request
     };
     try {
-      const g = await fetch(
+      const v = await fetch(
         "https://developmentapis.azure-api.net/sandbox/v1/api/AI/assistant",
-        h
+        g
       );
-      if (clearTimeout(p), !g.ok) {
-        const v = await g.json();
+      if (clearTimeout(f), !v.ok) {
+        const S = await v.json();
         throw new Error(
-          v?.Message || `HTTP error! Status: ${g.status}`
+          S?.Message || `HTTP error! Status: ${v.status}`
         );
       }
-      const m = await g.json();
-      if (m.Success && (m.Data?.Message === null || m.Data?.Message.toUpperCase() === "INVALID JSON" || m.Data?.Message === "local variable 'result' referenced before assignment" || m.Data?.Message === "Object reference not set to an instance of an object." || m.Data?.Message?.toLowerCase().includes("exception thrown"))) {
+      const y = await v.json();
+      if (y.Success && (y.Data?.Message === null || y.Data?.Message.toUpperCase() === "INVALID JSON" || y.Data?.Message === "local variable 'result' referenced before assignment" || y.Data?.Message === "Object reference not set to an instance of an object." || y.Data?.Message?.toLowerCase().includes("exception thrown"))) {
         console.warn(
-          `Attempt ${c + 1}: Success but received null data. Retrying...`
-        ), a > 0 && await new Promise((v) => setTimeout(v, a));
+          `Attempt ${u + 1}: Success but received null data. Retrying...`
+        ), a > 0 && await new Promise((S) => setTimeout(S, a));
         continue;
       }
-      return m;
-    } catch (f) {
-      if (clearTimeout(p), f instanceof Error && f.name === "AbortError")
+      return y;
+    } catch (m) {
+      if (clearTimeout(f), m instanceof Error && m.name === "AbortError")
         return console.error("Request timed out after 90 seconds"), { Success: !1, Message: "ERROR: API timed out", Data: null };
-      console.error("Error in chat API:", f);
+      console.error("Error in chat API:", m);
     }
   }
   return {
