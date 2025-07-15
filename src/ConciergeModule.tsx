@@ -53,27 +53,22 @@ export interface ConciergeModuleProps {
 }
 
 const defaultPrompts: SuggestedPrompt[] = [
-  { id: 1, text: "Help me find the right course", icon: GraduationCap },
-  { id: 2, text: "Connect me with an expert advisor", icon: Users2 },
-  { id: 3, text: "Explain this topic to me like I'm new", icon: Lightbulb },
-  { id: 4, text: "Walk me through how this platform works", icon: Info },
-  { id: 5, text: "Give me personalized learning suggestions", icon: Sparkles },
+  { id: 1, text: "Explain my report", icon: GraduationCap },
+  { id: 5, text: "Analyze my medical reports.", icon: Sparkles },
   { id: 6, text: "Answer my questions like a personal coach", icon: MessageSquare },
 ];
 
 const allowedAvatarIds = [
   "r397c808f1cf",
-  "r6ae59022532",
   "rbc834dee6f2",
   "r89e4f7ec536",
-  "rbf3a19db725"
 ];
 
 const languageDefaultAvatars: Record<string, string> = {
   en: "r397c808f1cf",
-  es: "rbf3a19db725",
-  fr: "r89e4f7ec536",
-  de: "r6ae59022532",
+  es: "rbc834dee6f2",
+  fr: "rbc834dee6f2",
+  de: "r89e4f7ec536",
 };
 
 export default function ConciergeModule({
@@ -117,6 +112,8 @@ export default function ConciergeModule({
   const [conversationUrl, setConversationUrl] = useState("");
   const [conversationStarted, setConversationStarted] = useState(false);
   const translatedLangRef = useRef<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [translatedTexts, setTranslatedTexts] = useState<{
     avatar: {
       chooseAvatar: string;
@@ -413,7 +410,7 @@ export default function ConciergeModule({
     setSelectedAvatar(newAvatar);
   };
 
-  const handleSendMessage = async (userInput: string) => {
+  const handleSendMessage = async (userInput: string, additionalFiles: File[] = []) => {
     if(showRetryButton) {
       setShowRetryButton(false);
     }
@@ -427,7 +424,14 @@ export default function ConciergeModule({
     setUserInput(userInput);
     setChatMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
-    const prompt = `${userInput}`;
+    let prompt = `${userInput}`;
+
+     // Combine state files with additional files passed as parameter
+    const filesToSend = [...uploadedFiles, ...additionalFiles];
+    if (additionalFiles.length > 0) {
+      prompt += 'Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.'
+    }
+    
     try {
       // Fetch AI response
       const response = await chatCompletionAPI(
@@ -438,11 +442,12 @@ export default function ConciergeModule({
         sessionId,
         0,
         1,
-        language
+        language,
+        filesToSend.length > 0 ? filesToSend[filesToSend.length - 1] : undefined // Only send last file
       );
 
       if (response.Success && response.Data?.Message) {
-        if(response?.Data?.Message?.includes("ERROR")) {
+        if(response?.Data?.Message?.includes("ERROR") || response?.Data?.Type === "error") {
           setIsLoading(false);
           // Handle error
           const errorMessage: ChatMessage = {
@@ -551,6 +556,31 @@ export default function ConciergeModule({
       }).catch((error: Error) => {
         console.error("Error sending feedback:", error);
       });
+  };
+
+  // File upload handlers
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || []);
+    
+    if (files.length > 0) {
+      // Only take the first file
+      const file = files[0];
+      
+      // Replace any existing files with just this one
+      setUploadedFiles([file]);
+      
+      // Send message about the uploaded file
+      await handleSendMessage(`Uploaded file: ${file.name}`, [file]);
+    }
+
+    // Reset input
+    if (event.target) {
+      event.target.value = '';
+    }
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
   };
 
   return (
@@ -847,6 +877,14 @@ export default function ConciergeModule({
           <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
         </div>
       </div>
+      {/* Hidden file input */}
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileUpload}
+        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt"
+        style={{ display: 'none' }}
+      />
     </div>
   );
 }

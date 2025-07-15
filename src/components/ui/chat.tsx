@@ -62,7 +62,7 @@ export function Chat({
   const enoughCredits = true;
   const translatedLangRef = useRef<string | null>(null);
   const [labels, setLabels] = useState<{ insufficientCredits: string, insufficientCreditsDescription: string, placeholder: string, suggestedPrompts: string, thinking: string, retry: string, welcomeMessage: string }>
-  ({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. What would you like to know about your health today?" });
+  ({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload the report." });
 
   useEffect(() => {
     if (messagesEndRef.current) {
