@@ -26233,7 +26233,7 @@ function cI({
           text: te.Data.Message,
           timestamp: /* @__PURE__ */ new Date()
         };
-        R((Se) => [...Se, be]), E || T(te?.Data?.SessionId || ""), fe(te.Data.Message), (te.Data.Message.toLowerCase().includes("click continue") || te.Data.Message.toLowerCase().includes("connecting you with a") || te.Data.Message.toLowerCase().includes("thank you for choosing") || te.Data.Message.toLowerCase().includes("ready to connect")) && _(!0), await sI(
+        R((Se) => [...Se, be]), E || T(te?.Data?.SessionId || ""), fe(te.Data.Message), (te.Data.Message.toLowerCase().includes("click continue") || te.Data.Message.toLowerCase().includes("sign up") || te.Data.Message.toLowerCase().includes("thank you for choosing") || te.Data.Message.toLowerCase().includes("ready to connect")) && _(!0), await sI(
           "",
           "AIHealthNavigator",
           F,

@@ -490,7 +490,7 @@ export default function ConciergeModule({
 
         // Check if the response matches the profile completion message
         if (response.Data.Message.toLowerCase().includes("click continue") ||
-          response.Data.Message.toLowerCase().includes("connecting you with a") ||
+          response.Data.Message.toLowerCase().includes("sign up") ||
           response.Data.Message.toLowerCase().includes("thank you for choosing") ||
           response.Data.Message.toLowerCase().includes("ready to connect")) {
           setInterviewCompleted(true);
