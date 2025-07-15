@@ -77,13 +77,13 @@ export function Chat({
   useEffect(() => {
     const translate = async () => { // ✅ this will run on language change
       if (language !== "en" && translatedLangRef.current !== language) {
-        const [insufficientCredits, insufficientCreditsDescription, placeholder, suggestedPrompts, thinking, retry, welcomeMessage] = await batchTranslateText(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. What would you like to know about your health today?"], language, "en", config?.azureTranslatorKey || "", config?.azureTranslatorEndpoint || "", config?.azureTranslatorRegion || ""); 
+        const [insufficientCredits, insufficientCreditsDescription, placeholder, suggestedPrompts, thinking, retry, welcomeMessage] = await batchTranslateText(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload your report."], language, "en", config?.azureTranslatorKey || "", config?.azureTranslatorEndpoint || "", config?.azureTranslatorRegion || ""); 
         setLabels({ insufficientCredits: insufficientCredits, insufficientCreditsDescription: insufficientCreditsDescription, placeholder: placeholder, suggestedPrompts: suggestedPrompts, thinking: thinking, retry: retry, welcomeMessage: welcomeMessage });
         translatedLangRef.current = language; // ✅ remember this translation
       }
 
       if (language === "en" && translatedLangRef.current !== "en") {
-        setLabels({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. What would you like to know about your health today?" });
+        setLabels({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload your report." });
         translatedLangRef.current = "en";
       }
     };

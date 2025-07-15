@@ -15,7 +15,8 @@ import {
   Lightbulb,
   Info,
   MessageSquare,
-  Sparkles
+  Sparkles,
+  Upload
 } from "lucide-react";
 import SpeechComponent from "./components/voice/SpeechComponent";
 import { chatCompletionAPI } from "./lib/api/azure-chat-api";
@@ -93,6 +94,7 @@ export default function ConciergeModule({
   const [interactionMode, setInteractionMode] = useState<"chat" | "voice">("chat");
   const [conciergeConversationStarted, setConciergeConversationStarted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   // Add feedback state
   const [feedback, setFeedback] = useState<Record<string, "like" | "dislike">>({});
@@ -125,6 +127,8 @@ export default function ConciergeModule({
         resetChat: string;
         retry: string;
         continue: string;
+        uploading: string;
+        upload: string;
       },
       howItWorks: {
         title: string;
@@ -139,7 +143,9 @@ export default function ConciergeModule({
     buttons: {
       resetChat: `Reset Chat`,
       retry: `Retry`,
-      continue: `Continue`
+      continue: `Continue`,
+      uploading: `Uploading...`,
+      upload: `Upload report`
     },
     howItWorks: {
       title: `How It Works`,
@@ -224,6 +230,8 @@ export default function ConciergeModule({
           resetChat,
           retry,
           btnContinue,
+          uploading,
+          upload,
           title,
           step1,
           step2,
@@ -237,6 +245,8 @@ export default function ConciergeModule({
             `Reset Chat`,
             `Retry`,
             `Continue`,
+            `Uploading...`,
+            `Upload Report`,
             `How It Works`,
             `Your AI ${personaName} asks you questions to find out how ${brandName} can help you.`,
             `The ${personaName} will personalize recommendations based on your needs`,
@@ -262,7 +272,10 @@ export default function ConciergeModule({
           buttons: {
             resetChat,
             retry,
-            continue: btnContinue
+            continue: btnContinue,
+            uploading,
+            upload
+
           },
           howItWorks: {
             title,
@@ -287,7 +300,9 @@ export default function ConciergeModule({
           buttons: {
             resetChat: `Reset Chat`,
             retry: `Retry`,
-            continue: `Continue`
+            continue: `Continue`,
+            uploading: `Uploading...`,
+            upload: `Upload Report`
           },
           howItWorks: {
             title: `How It Works`,
@@ -443,7 +458,7 @@ export default function ConciergeModule({
         0,
         1,
         language,
-        filesToSend.length > 0 ? filesToSend[filesToSend.length - 1] : undefined // Only send last file
+        filesToSend.length > 0 ? filesToSend[0] : undefined // Only send last file
       );
 
       if (response.Success && response.Data?.Message) {
@@ -560,6 +575,7 @@ export default function ConciergeModule({
 
   // File upload handlers
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsUploading(true);
     const files = Array.from(event.target.files || []);
     
     if (files.length > 0) {
@@ -568,6 +584,7 @@ export default function ConciergeModule({
       
       // Replace any existing files with just this one
       setUploadedFiles([file]);
+      setIsUploading(false);
       
       // Send message about the uploaded file
       await handleSendMessage(`Uploaded file: ${file.name}`, [file]);
@@ -616,24 +633,14 @@ export default function ConciergeModule({
                   </div>
                   <div className="flex items-center gap-2">
                     <Button
-                      variant="outline"
+                       variant="outline"
                       size="sm"
                       className="text-xs text-primary border-primary/30 hover:bg-neutral"
-                      onClick={() => {
-                        const input = document.createElement('input');
-                        input.type = 'file';
-                        input.accept = '.pdf,.doc,.docx,.txt,.jpg,.jpeg,.png';
-                        input.onchange = (e) => {
-                          const file = (e.target as HTMLInputElement).files?.[0];
-                          if (file) {
-                            console.log('File uploaded:', file.name);
-                            // Handle file upload logic here
-                          }
-                        };
-                        input.click();
-                      }}
+                      onClick={handleUploadClick}
+                      disabled={isUploading}
                     >
-                      Upload File
+                      <Upload className="h-3 w-3 mr-1" />
+                      {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
                     </Button>
                     <Button
                       variant="outline"
