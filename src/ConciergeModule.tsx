@@ -24,7 +24,6 @@ import postLLMTrainingAPI from "./lib/api/llm-training-api";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { batchTranslateText } from "./lib/batchTranslateText";
-
 // Import avatar images
 import ConversationComponent, { ConversationComponentHandle } from "./components/replica/ConversationComponent";
 import { postChatHistory } from "./lib/api/post-chat-history";
@@ -42,6 +41,9 @@ export interface ConciergeModuleProps {
     suggestedPrompts?: SuggestedPrompt[];
     language?: string;
     navigateTo?: string;
+    file?: File;
+    onFileChange?: (file: File) => void;
+    onApiResponse?: (response: any) => void;
     config: {
       region: string;
       apiBaseUrl: string;
@@ -78,6 +80,9 @@ export default function ConciergeModule({
     suggestedPrompts = defaultPrompts,
     language = "en",
     navigateTo = "",
+    file,
+    onFileChange,
+    onApiResponse,
     config = {
       region: "",
       apiBaseUrl: "",
@@ -327,6 +332,15 @@ export default function ConciergeModule({
     personaName,
     brandName
   ]);
+
+  // handle file upload from the parent component
+  useEffect(() => {
+    if (file) {
+      setUploadedFiles([file]);
+      // Automatically process the file
+      handleSendMessage(`Uploaded file: ${file.name}`, [file]);
+    }
+  }, [file]);
   
   // Create welcome message function to generate consistent format
   const getWelcomeMessage = useCallback(
@@ -494,6 +508,10 @@ export default function ConciergeModule({
           response.Data.Message.toLowerCase().includes("thank you for choosing") ||
           response.Data.Message.toLowerCase().includes("ready to connect")) {
           setInterviewCompleted(true);
+           // Notify parent of API response
+          if (onApiResponse) {
+            onApiResponse(response);
+          }
         }
 
         await postChatHistory(
@@ -543,7 +561,7 @@ export default function ConciergeModule({
     if (navigateTo) {
       window.location.href = navigateTo;
     } else {
-      window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/login";
+      window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/rgister";
     }
   }
 
@@ -584,6 +602,12 @@ export default function ConciergeModule({
       
       // Replace any existing files with just this one
       setUploadedFiles([file]);
+
+      // Notify parent of file change
+      if (onFileChange) {
+        onFileChange(file);
+      }
+      
       setIsUploading(false);
       
       // Send message about the uploaded file
