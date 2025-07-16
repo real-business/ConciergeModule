@@ -4664,7 +4664,7 @@ function aC({
   return /* @__PURE__ */ M(
     "div",
     {
-      className: `flex flex-col h-full bg-transparent overflow-hidden ${r}`,
+      className: `flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden ${r}`,
       children: [
         /* @__PURE__ */ P("div", { ref: v, className: "flex-1 overflow-y-auto p-3 bg-white/80", children: /* @__PURE__ */ M("div", { className: "space-y-3", children: [
           e?.length === 0 ? /* @__PURE__ */ M("div", { className: "flex items-start", children: [
@@ -26429,7 +26429,7 @@ function cI({
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ P("div", { className: "flex flex-col h-full", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 p-0 md:p-6 pb-0", children: /* @__PURE__ */ P("div", { className: "h-full", children: /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: "flex flex-col h-full", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 p-0 md:p-6 pb-0", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 flex flex-col", children: /* @__PURE__ */ P(
                 aC,
                 {
                   language: s,

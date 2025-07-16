@@ -113,17 +113,8 @@ export function Chat({
 
   return (
     <div
-      className={`flex flex-col h-full bg-transparent overflow-hidden ${className}`}
+      className={`flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden ${className}`}
     >
-      {/* <div className="bg-[#E92A09] text-white p-2 flex items-center justify-between flex-shrink-0">
-        <div className="flex items-center">
-          <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white mr-2">
-            <Bot size={14} />
-          </div>
-          <span className="font-medium">AI Assistant</span>
-        </div>
-      </div> */}
-
       <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-3 bg-white/80">
         <div className="space-y-3">
           {messages?.length === 0 ? (

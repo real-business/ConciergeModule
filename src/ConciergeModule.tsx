@@ -790,7 +790,7 @@ export default function ConciergeModule({
                 {/* Chat Section - Fixed height to ensure input is visible */}
                 <div className="flex flex-col h-full">
                   <div className="flex-1 min-h-0 p-0 md:p-6 pb-0">
-                    <div className="h-full">
+                    <div className="flex-1 min-h-0 flex flex-col">
                     <Chat
                       language={language}
                       config={config}
