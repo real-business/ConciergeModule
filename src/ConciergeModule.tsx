@@ -627,15 +627,14 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className={`w-full flex flex-col h-[80vh] md:h-[600px] ${className ?? ''}`}>
-      <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="relative">
-          <div className="relative z-10">
+    <div className={`w-full h-full flex flex-col ${className ?? ''}`}>
+       <div className="flex-1 min-h-0 px-4 sm:px-6 lg:px-8 py-8">
+        <div className="h-full max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
+              className="h-full rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
             >
               {/* Header */}
               <div className="p-6 bg-neutral border-b border-primary/20">
@@ -681,10 +680,10 @@ export default function ConciergeModule({
               </div>
 
               {/* Main Content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 h-full">
                 {/* Avatar Section - Fixed */}
-                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 min-h-[200px]">
-                  <div className="h-full w-full">
+                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 flex flex-col">
+                  <div className="flex-1 min-h-[200px]">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
                         {selectedAvatar && (
@@ -789,8 +788,9 @@ export default function ConciergeModule({
                 </div>
 
                 {/* Chat Section - Scrollable */}
-                <div className="flex flex-col h-full p-4 md:p-6">
-                  <div className="flex-1 min-h-0 overflow-y-auto">
+                <div className="flex flex-col h-full">
+                  <div className = "flex-1 min-h-0 p-4 md:p-6">
+                    <div className="h-full overflow-y-auto">
                     <Chat
                       language={language}
                       config={config}
@@ -900,6 +900,7 @@ export default function ConciergeModule({
                       }}
                     />
                   </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -909,7 +910,6 @@ export default function ConciergeModule({
           <div className="absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
         </div>
-      </div>
       {/* Hidden file input */}
       <input
         type="file"

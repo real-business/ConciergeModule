@@ -26299,15 +26299,15 @@ function cI({
   }, se = () => {
     ye.current?.click();
   };
-  return /* @__PURE__ */ M("div", { className: `w-full flex flex-col h-[80vh] md:h-[600px] ${c ?? ""}`, children: [
-    /* @__PURE__ */ P("div", { className: "container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8", children: /* @__PURE__ */ M("div", { className: "relative", children: [
-      /* @__PURE__ */ P("div", { className: "relative z-10", children: /* @__PURE__ */ M(
+  return /* @__PURE__ */ M("div", { className: `w-full h-full flex flex-col ${c ?? ""}`, children: [
+    /* @__PURE__ */ M("div", { className: "flex-1 min-h-0 px-4 sm:px-6 lg:px-8 py-8", children: [
+      /* @__PURE__ */ P("div", { className: "h-full max-w-5xl mx-auto", children: /* @__PURE__ */ M(
         af.div,
         {
           initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
           transition: { duration: 0.5 },
-          className: "rounded-lg shadow-2xl border border-primary/20 overflow-hidden",
+          className: "h-full rounded-lg shadow-2xl border border-primary/20 overflow-hidden",
           children: [
             /* @__PURE__ */ P("div", { className: "p-6 bg-neutral border-b border-primary/20", children: /* @__PURE__ */ M("div", { className: "flex items-center justify-between", children: [
               /* @__PURE__ */ M("div", { className: "flex items-center", children: [
@@ -26339,8 +26339,8 @@ function cI({
                 }
               ) })
             ] }) }),
-            /* @__PURE__ */ M("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 h-full", children: [
-              /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 min-h-[200px]", children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: y ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: f && /* @__PURE__ */ P(
+            /* @__PURE__ */ M("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-0 h-full", children: [
+              /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 flex flex-col", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-[200px]", children: y ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: f && /* @__PURE__ */ P(
                 iI,
                 {
                   ref: ie,
@@ -26429,7 +26429,7 @@ function cI({
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ P("div", { className: "flex flex-col h-full p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: "flex flex-col h-full", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "h-full overflow-y-auto", children: /* @__PURE__ */ P(
                 aC,
                 {
                   language: s,
@@ -26531,14 +26531,14 @@ function cI({
                     );
                   }
                 }
-              ) }) })
+              ) }) }) })
             ] })
           ]
         }
       ) }),
       /* @__PURE__ */ P("div", { className: "absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" }),
       /* @__PURE__ */ P("div", { className: "absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" })
-    ] }) }),
+    ] }),
     /* @__PURE__ */ P(
       "input",
       {
