@@ -44,6 +44,7 @@ export interface ConciergeModuleProps {
     file?: File;
     onFileChange?: (file: File) => void;
     onApiResponse?: (response: any) => void;
+    className?: string;
     config: {
       region: string;
       apiBaseUrl: string;
@@ -83,6 +84,7 @@ export default function ConciergeModule({
     file,
     onFileChange,
     onApiResponse,
+    className,
     config = {
       region: "",
       apiBaseUrl: "",
@@ -625,7 +627,7 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className="w-full h-[80vh] md:h-[600px] bg-background">
+    <div className={`w-full h-[80vh] md:h-[600px] ${className ?? ''}`}>
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative">
           <div className="relative z-10">
