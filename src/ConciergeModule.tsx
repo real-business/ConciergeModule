@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { Chat, ChatMessage } from "./components/ui/chat"
-import { Button } from "./components/ui/button";
+import { Chat, ChatMessage } from "@/components/ui/chat"
+import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import {
   ChevronLeft,
@@ -18,16 +18,16 @@ import {
   Sparkles,
   Upload
 } from "lucide-react";
-import SpeechComponent from "./components/voice/SpeechComponent";
-import { chatCompletionAPI } from "./lib/api/azure-chat-api";
-import postLLMTrainingAPI from "./lib/api/llm-training-api";
+import SpeechComponent from "@/components/voice/SpeechComponent";
+import { chatCompletionAPI } from "@/lib/api/azure-chat-api";
+import postLLMTrainingAPI from "@/lib/api/llm-training-api";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { batchTranslateText } from "./lib/batchTranslateText";
+import { batchTranslateText } from "@/lib/batchTranslateText";
 // Import avatar images
-import ConversationComponent, { ConversationComponentHandle } from "./components/replica/ConversationComponent";
-import { postChatHistory } from "./lib/api/post-chat-history";
-import { getAllAvatarsAPI, AvatarProfile } from "./lib/api/get-all-avatars-api";
+import ConversationComponent, { ConversationComponentHandle } from "@/components/replica/ConversationComponent";
+import { postChatHistory } from "@/lib/api/post-chat-history";
+import { getAllAvatarsAPI, AvatarProfile } from "@/lib/api/get-all-avatars-api";
 
 export interface SuggestedPrompt {
   id: number;
@@ -634,10 +634,10 @@ export default function ConciergeModule({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="h-full rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
+              className="h-full rounded-lg shadow-2xl border border-primary/20 overflow-hidden flex flex-col"
             >
               {/* Header */}
-              <div className="p-6 bg-neutral border-b border-primary/20">
+              <div className="p-6 bg-neutral border-b border-primary/20 flex-shrink-0">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
@@ -679,10 +679,10 @@ export default function ConciergeModule({
                 </div>
               </div>
 
-              {/* Main Content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
+              {/* Main Content - Fixed height to ensure chat input is visible */}
+              <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-0">
                 {/* Avatar Section - Fixed */}
-                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 min-h-[200px]">
+                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 flex flex-col">
                   <div className="flex-1 min-h-[200px]">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
@@ -787,9 +787,10 @@ export default function ConciergeModule({
                   </div>
                 </div>
 
-                {/* Chat Section - Scrollable */}
-                <div className="flex flex-col h-full p-4 md:p-6">
-                  <div className = "flex-1 min-h-0 overflow-y-auto p-2 md:p-6">
+                {/* Chat Section - Fixed height to ensure input is visible */}
+                <div className="flex flex-col h-full">
+                  <div className="flex-1 min-h-0 p-4 md:p-6 pb-0">
+                    <div className="h-full overflow-y-auto">
                     <Chat
                       language={language}
                       config={config}
@@ -898,6 +899,7 @@ export default function ConciergeModule({
                         );
                       }}
                     />
+                  </div>
                   </div>
                 </div>
               </div>
