@@ -628,8 +628,8 @@ export default function ConciergeModule({
 
   return (
     <div className={`w-full h-full flex flex-col ${className ?? ''}`}>
-       <div className="flex-1 min-h-0 px-4 sm:px-6 lg:px-8 py-8">
-        <div className="h-full max-w-5xl mx-auto">
+       <div className="flex-1 min-h-0">
+        <div className="h-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -789,8 +789,8 @@ export default function ConciergeModule({
 
                 {/* Chat Section - Fixed height to ensure input is visible */}
                 <div className="flex flex-col h-full">
-                  <div className="flex-1 min-h-0 p-4 md:p-6 pb-0">
-                    <div className="h-full overflow-y-auto">
+                  <div className="flex-1 min-h-0 p-0 md:p-6 pb-0">
+                    <div className="h-full">
                     <Chat
                       language={language}
                       config={config}

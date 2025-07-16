@@ -4664,7 +4664,7 @@ function aC({
   return /* @__PURE__ */ M(
     "div",
     {
-      className: `flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden ${r}`,
+      className: `flex flex-col h-full bg-transparent overflow-hidden ${r}`,
       children: [
         /* @__PURE__ */ P("div", { ref: v, className: "flex-1 overflow-y-auto p-3 bg-white/80", children: /* @__PURE__ */ M("div", { className: "space-y-3", children: [
           e?.length === 0 ? /* @__PURE__ */ M("div", { className: "flex items-start", children: [
@@ -22251,7 +22251,7 @@ function Jv({
 const xh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
   for (let u = 0; u < o; u++) {
     const l = new Headers();
-    console.log("file in api", c), console.log("file size:", c?.size), console.log("file name:", c?.name), console.log("file type:", c?.type), l.append("Accept", "application/json");
+    l.append("Accept", "application/json");
     const p = e + "Language: " + n, d = "52533633434137384342", h = new FormData();
     h.append("Input", p), h.append("UserId", t || d), h.append("BusinessId", r), h.append("Intent", s), h.append("SessionId", i), h.append("Platform", "EF0306CD"), c && c.size > 0 ? (h.append("Files", c), console.log("File appended to FormData")) : console.log("No file to append");
     const f = new AbortController(), g = setTimeout(() => f.abort(), 9e4), m = {
@@ -26300,8 +26300,8 @@ function cI({
     ye.current?.click();
   };
   return /* @__PURE__ */ M("div", { className: `w-full h-full flex flex-col ${c ?? ""}`, children: [
-    /* @__PURE__ */ M("div", { className: "flex-1 min-h-0 px-4 sm:px-6 lg:px-8 py-8", children: [
-      /* @__PURE__ */ P("div", { className: "h-full max-w-5xl mx-auto", children: /* @__PURE__ */ M(
+    /* @__PURE__ */ M("div", { className: "flex-1 min-h-0", children: [
+      /* @__PURE__ */ P("div", { className: "h-full", children: /* @__PURE__ */ M(
         af.div,
         {
           initial: { opacity: 0, y: 20 },
@@ -26429,7 +26429,7 @@ function cI({
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ P("div", { className: "flex flex-col h-full", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 p-4 md:p-6 pb-0", children: /* @__PURE__ */ P("div", { className: "h-full overflow-y-auto", children: /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: "flex flex-col h-full", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 p-0 md:p-6 pb-0", children: /* @__PURE__ */ P("div", { className: "h-full", children: /* @__PURE__ */ P(
                 aC,
                 {
                   language: s,

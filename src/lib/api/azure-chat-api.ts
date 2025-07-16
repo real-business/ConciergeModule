@@ -30,10 +30,6 @@ export const chatCompletionAPI = async (
 ): Promise<APIResponse> => {
   for (let i = 0; i < retries; i++) {
     const myHeaders = new Headers();
-    console.log("file in api", file);
-    console.log("file size:", file?.size);
-    console.log("file name:", file?.name);
-    console.log("file type:", file?.type);
     myHeaders.append("Accept", "application/json");
     const prompt =  input + "Language: " + language;
     const defaultUserId = "52533633434137384342";

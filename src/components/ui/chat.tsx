@@ -113,7 +113,7 @@ export function Chat({
 
   return (
     <div
-      className={`flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden ${className}`}
+      className={`flex flex-col h-full bg-transparent overflow-hidden ${className}`}
     >
       {/* <div className="bg-[#E92A09] text-white p-2 flex items-center justify-between flex-shrink-0">
         <div className="flex items-center">
