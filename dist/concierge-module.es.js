@@ -26339,7 +26339,7 @@ function cI({
                 }
               ) })
             ] }) }),
-            /* @__PURE__ */ M("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-0 h-full", children: [
+            /* @__PURE__ */ M("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-0 max-h-[500px]", children: [
               /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 flex flex-col", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-[200px]", children: y ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: f && /* @__PURE__ */ P(
                 iI,
                 {
