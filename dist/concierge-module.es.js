@@ -26299,7 +26299,7 @@ function cI({
   }, se = () => {
     ye.current?.click();
   };
-  return /* @__PURE__ */ M("div", { className: `w-full h-[80vh] md:h-[600px] ${c ?? ""}`, children: [
+  return /* @__PURE__ */ M("div", { className: `w-full flex flex-col h-[80vh] md:h-[600px] ${c ?? ""}`, children: [
     /* @__PURE__ */ P("div", { className: "container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8", children: /* @__PURE__ */ M("div", { className: "relative", children: [
       /* @__PURE__ */ P("div", { className: "relative z-10", children: /* @__PURE__ */ M(
         af.div,
@@ -26429,7 +26429,7 @@ function cI({
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ P("div", { className: "flex flex-col h-full p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto p-2 md:p-6", children: /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: "flex flex-col h-full p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ P(
                 aC,
                 {
                   language: s,

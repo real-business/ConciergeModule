@@ -627,7 +627,7 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className={`w-full h-[80vh] md:h-[600px] ${className ?? ''}`}>
+    <div className={`w-full flex flex-col h-[80vh] md:h-[600px] ${className ?? ''}`}>
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative">
           <div className="relative z-10">
@@ -790,7 +790,7 @@ export default function ConciergeModule({
 
                 {/* Chat Section - Scrollable */}
                 <div className="flex flex-col h-full p-4 md:p-6">
-                  <div className="flex-1 min-h-0 overflow-y-auto p-2 md:p-6">
+                  <div className="flex-1 min-h-0 overflow-y-auto">
                     <Chat
                       language={language}
                       config={config}
