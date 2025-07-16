@@ -607,7 +607,7 @@ export default function ConciergeModule({
       if (onFileChange) {
         onFileChange(file);
       }
-      
+
       setIsUploading(false);
       
       // Send message about the uploaded file
@@ -625,7 +625,7 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className="w-full h-full bg-background">
+    <div className="w-full h-[80vh] md:h-[600px] bg-background">
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative">
           <div className="relative z-10">
@@ -633,7 +633,7 @@ export default function ConciergeModule({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
+              className="rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
             >
               {/* Header */}
               <div className="p-6 bg-neutral border-b border-primary/20">
@@ -666,22 +666,22 @@ export default function ConciergeModule({
                       <Upload className="h-3 w-3 mr-1" />
                       {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
                     </Button>
-                    <Button
+                    {/* <Button
                       variant="outline"
                       size="sm"
                       className="text-xs text-primary border-primary/30 hover:bg-neutral"
                       onClick={resetChat}
                     >
                       {translatedTexts.buttons.resetChat}
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </div>
 
               {/* Main Content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
                 {/* Avatar Section - Fixed */}
-                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
+                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 min-h-[200px]">
                   <div className="h-full w-full">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
@@ -787,8 +787,8 @@ export default function ConciergeModule({
                 </div>
 
                 {/* Chat Section - Scrollable */}
-                <div className="flex flex-col overflow-hidden p-4 md:p-6">
-                  <div className="flex-1 overflow-y-auto p-6">
+                <div className="flex flex-col h-full p-4 md:p-6">
+                  <div className="flex-1 min-h-0 overflow-y-auto p-2 md:p-6">
                     <Chat
                       language={language}
                       config={config}
