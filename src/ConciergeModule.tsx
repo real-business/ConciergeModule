@@ -681,7 +681,7 @@ export default function ConciergeModule({
               {/* Main Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]">
                 {/* Avatar Section - Fixed */}
-                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
+                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 h-full">
                   <div className="h-full w-full">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
@@ -788,7 +788,7 @@ export default function ConciergeModule({
 
                 {/* Chat Section - Scrollable */}
                 <div className="flex flex-col h-full overflow-hidden p-4 md:p-6">
-                  <div className="flex-1 min-h-0 overflow-y-auto p-6">
+                 <div className="flex-1 min-h-0 overflow-y-auto p-6">
                     <Chat
                       language={language}
                       config={config}

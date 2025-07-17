@@ -26353,7 +26353,7 @@ function cI({
               ] })
             ] }) }),
             /* @__PURE__ */ M("div", { className: "grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]", children: [
-              /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20", children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 h-full", children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ P(
                 iI,
                 {
                   ref: J,
