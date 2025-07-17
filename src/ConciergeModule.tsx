@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { Chat, ChatMessage } from "@/components/ui/chat"
-import { Button } from "@/components/ui/button";
+import { Chat, ChatMessage } from "./components/ui/chat"
+import { Button } from "./components/ui/button";
 import { useLocation } from "wouter";
 import {
   ChevronLeft,
@@ -18,16 +18,16 @@ import {
   Sparkles,
   Upload
 } from "lucide-react";
-import SpeechComponent from "@/components/voice/SpeechComponent";
-import { chatCompletionAPI } from "@/lib/api/azure-chat-api";
-import postLLMTrainingAPI from "@/lib/api/llm-training-api";
+import SpeechComponent from "./components/voice/SpeechComponent";
+import { chatCompletionAPI } from "./lib/api/azure-chat-api";
+import postLLMTrainingAPI from "./lib/api/llm-training-api";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { batchTranslateText } from "@/lib/batchTranslateText";
+import { batchTranslateText } from "./lib/batchTranslateText";
 // Import avatar images
-import ConversationComponent, { ConversationComponentHandle } from "@/components/replica/ConversationComponent";
-import { postChatHistory } from "@/lib/api/post-chat-history";
-import { getAllAvatarsAPI, AvatarProfile } from "@/lib/api/get-all-avatars-api";
+import ConversationComponent, { ConversationComponentHandle } from "./components/replica/ConversationComponent";
+import { postChatHistory } from "./lib/api/post-chat-history";
+import { getAllAvatarsAPI, AvatarProfile } from "./lib/api/get-all-avatars-api";
 
 export interface SuggestedPrompt {
   id: number;
@@ -44,7 +44,6 @@ export interface ConciergeModuleProps {
     file?: File;
     onFileChange?: (file: File) => void;
     onApiResponse?: (response: any) => void;
-    className?: string;
     config: {
       region: string;
       apiBaseUrl: string;
@@ -84,7 +83,6 @@ export default function ConciergeModule({
     file,
     onFileChange,
     onApiResponse,
-    className,
     config = {
       region: "",
       apiBaseUrl: "",
@@ -609,7 +607,7 @@ export default function ConciergeModule({
       if (onFileChange) {
         onFileChange(file);
       }
-
+      
       setIsUploading(false);
       
       // Send message about the uploaded file
@@ -627,17 +625,18 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className={`w-full h-full flex flex-col ${className ?? ''}`}>
-       <div className="flex-1 min-h-0">
-        <div className="h-full">
+    <div className="w-full h-full bg-background">
+      <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="relative">
+          <div className="relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="h-full rounded-lg shadow-2xl border border-primary/20 overflow-hidden flex flex-col"
+              className="bg-white rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
             >
               {/* Header */}
-              <div className="p-6 bg-neutral border-b border-primary/20 flex-shrink-0">
+              <div className="p-6 bg-neutral border-b border-primary/20">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
@@ -667,23 +666,23 @@ export default function ConciergeModule({
                       <Upload className="h-3 w-3 mr-1" />
                       {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
                     </Button>
-                    {/* <Button
+                    <Button
                       variant="outline"
                       size="sm"
                       className="text-xs text-primary border-primary/30 hover:bg-neutral"
                       onClick={resetChat}
                     >
                       {translatedTexts.buttons.resetChat}
-                    </Button> */}
+                    </Button>
                   </div>
                 </div>
               </div>
 
-              {/* Main Content - Fixed height to ensure chat input is visible */}
-              <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 gap-0">
+              {/* Main Content */}
+              <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]">
                 {/* Avatar Section - Fixed */}
-                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 flex flex-col">
-                  <div className="flex-1 min-h-[200px]">
+                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
+                  <div className="h-full w-full">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
                         {selectedAvatar && (
@@ -787,9 +786,9 @@ export default function ConciergeModule({
                   </div>
                 </div>
 
-                {/* Chat Section - Fixed height to ensure input is visible */}
-                <div className="flex flex-col h-full">
-                  <div className="flex-1 min-h-0 flex flex-col">
+                {/* Chat Section - Scrollable */}
+                <div className="flex flex-col overflow-hidden p-4 md:p-6">
+                  <div className="flex-1 overflow-y-auto p-6">
                     <Chat
                       language={language}
                       config={config}
@@ -908,6 +907,7 @@ export default function ConciergeModule({
           <div className="absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
         </div>
+      </div>
       {/* Hidden file input */}
       <input
         type="file"
