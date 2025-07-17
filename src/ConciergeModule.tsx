@@ -738,7 +738,7 @@ export default function ConciergeModule({
               {/* Main Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]">
                 {/* Avatar Section - Fixed */}
-                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 h-full">
+                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 md:h-full overflow-y-auto">
                   <div className="h-full w-full">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
@@ -844,8 +844,13 @@ export default function ConciergeModule({
                 </div>
 
                 {/* Chat Section - Scrollable */}
-                <div className="flex flex-col h-full overflow-hidden p-4 md:p-6">
-                  <div className="flex-1 min-h-0 overflow-y-auto p-6">
+                <div className="
+                  flex flex-col
+                  max-h-[70vh] overflow-y-auto
+                  md:max-h-none md:h-full md:overflow-visible
+                  p-4 md:p-6
+                ">
+                  <div className="flex-1 min-h-0 overflow-y-auto">
                     <div className="flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden">
                       <div className="flex-1 overflow-y-auto p-3 bg-white/80">
                         <div className="space-y-3">
@@ -1014,7 +1019,7 @@ export default function ConciergeModule({
                           </div>
                         )}
 
-                        <div className="flex items-end">
+                        <div className="shrink-0">
                           <textarea
                             value={userInput}
                             onChange={(e) => {

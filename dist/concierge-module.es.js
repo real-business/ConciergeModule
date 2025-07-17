@@ -26235,7 +26235,7 @@ function oI({
               ] })
             ] }) }),
             /* @__PURE__ */ D("div", { className: "grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]", children: [
-              /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 h-full", children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 md:h-full overflow-y-auto", children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ P(
                 rI,
                 {
                   ref: J,
@@ -26324,7 +26324,12 @@ function oI({
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ P("div", { className: "flex flex-col h-full overflow-hidden p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto p-6", children: /* @__PURE__ */ D("div", { className: "flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden", children: [
+              /* @__PURE__ */ P("div", { className: `\r
+                  flex flex-col\r
+                  max-h-[70vh] overflow-y-auto\r
+                  md:max-h-none md:h-full md:overflow-visible\r
+                  p-4 md:p-6\r
+                `, children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ D("div", { className: "flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden", children: [
                 /* @__PURE__ */ P("div", { className: "flex-1 overflow-y-auto p-3 bg-white/80", children: /* @__PURE__ */ D("div", { className: "space-y-3", children: [
                   I?.length === 0 ? /* @__PURE__ */ D("div", { className: "flex items-start", children: [
                     /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(Cc, { size: 14 }) }),
@@ -26452,7 +26457,7 @@ function oI({
                       O
                     )) })
                   ] }),
-                  /* @__PURE__ */ D("div", { className: "flex items-end", children: [
+                  /* @__PURE__ */ D("div", { className: "shrink-0", children: [
                     /* @__PURE__ */ P(
                       "textarea",
                       {
