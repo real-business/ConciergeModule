@@ -127,6 +127,7 @@ export default function ConciergeModule({
   const [conversationStarted, setConversationStarted] = useState(false);
   const translatedLangRef = useRef<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [arePromptsCollapsed, setArePromptsCollapsed] = useState(true);
   const [chatLabels, setChatLabels] = useState<{ 
@@ -191,6 +192,13 @@ export default function ConciergeModule({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Auto-scroll to bottom when messages change
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [chatMessages, isLoading]);
 
   // Fetch avatars from database
   useEffect(() => {
@@ -846,11 +854,10 @@ export default function ConciergeModule({
                 {/* Chat Section - Scrollable */}
                 <div className="
                   flex flex-col
-                  max-h-[70vh] overflow-y-auto
-                  md:max-h-none md:h-full md:overflow-visible
+                  h-full
                   p-4 md:p-6
                 ">
-                  <div className="flex-1 min-h-0 overflow-y-auto">
+                  <div className="flex-1 min-h-0 overflow-hidden">
                     <div className="flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden">
                       <div className="flex-1 overflow-y-auto p-3 bg-white/80">
                         <div className="space-y-3">
@@ -978,6 +985,7 @@ export default function ConciergeModule({
                               </div>
                             </div>
                           )}
+                          <div ref={messagesEndRef} />
                         </div>
                       </div>
 
