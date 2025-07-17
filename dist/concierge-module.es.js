@@ -26308,7 +26308,7 @@ function cI({
           initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
           transition: { duration: 0.5 },
-          className: "bg-white rounded-lg shadow-2xl border border-primary/20 overflow-hidden",
+          className: "rounded-lg shadow-2xl border border-primary/20 overflow-hidden",
           children: [
             /* @__PURE__ */ P("div", { className: "p-6 bg-neutral border-b border-primary/20", children: /* @__PURE__ */ M("div", { className: "flex items-center justify-between", children: [
               /* @__PURE__ */ M("div", { className: "flex items-center", children: [
@@ -26352,7 +26352,7 @@ function cI({
                 )
               ] })
             ] }) }),
-            /* @__PURE__ */ M("div", { className: "grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]", children: [
+            /* @__PURE__ */ M("div", { className: "grid grid-cols-1 md:grid-cols-2 h-[600px]", children: [
               /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20", children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ P(
                 iI,
                 {
@@ -26442,7 +26442,7 @@ function cI({
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ P("div", { className: "flex flex-col overflow-hidden p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "flex-1 overflow-y-auto p-6", children: /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: "flex flex-col h-full overflow-hidden p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto p-6", children: /* @__PURE__ */ P(
                 aC,
                 {
                   language: s,
