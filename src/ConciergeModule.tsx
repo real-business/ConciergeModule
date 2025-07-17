@@ -625,7 +625,7 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className="w-full h-full bg-background">
+    <div className="w-full h-full">
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative">
           <div className="relative z-10">

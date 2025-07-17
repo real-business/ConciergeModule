@@ -26300,7 +26300,7 @@ function cI({
   }, ie = () => {
     He.current?.click();
   };
-  return /* @__PURE__ */ M("div", { className: "w-full h-full bg-background", children: [
+  return /* @__PURE__ */ M("div", { className: "w-full h-full", children: [
     /* @__PURE__ */ P("div", { className: "container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8", children: /* @__PURE__ */ M("div", { className: "relative", children: [
       /* @__PURE__ */ P("div", { className: "relative z-10", children: /* @__PURE__ */ M(
         af.div,
