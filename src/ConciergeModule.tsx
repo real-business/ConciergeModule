@@ -16,7 +16,9 @@ import {
   Info,
   MessageSquare,
   Sparkles,
-  Upload
+  Upload,
+  Menu,
+  X
 } from "lucide-react";
 import SpeechComponent from "./components/voice/SpeechComponent";
 import { chatCompletionAPI } from "./lib/api/azure-chat-api";
@@ -101,6 +103,7 @@ export default function ConciergeModule({
   const [isLoading, setIsLoading] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
+  const [menuOpen, setMenuOpen] = useState(false);
   // Add feedback state
   const [feedback, setFeedback] = useState<Record<string, "like" | "dislike">>({});
   const [sessionId, setSessionId] = useState("");
@@ -636,10 +639,11 @@ export default function ConciergeModule({
               className="rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
             >
               {/* Header */}
-              <div className="p-6 bg-neutral border-b border-primary/20">
-                <div className="flex items-center justify-between">
+              <div className="p-4 sm:p-6 bg-neutral border-b border-primary/20">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  {/* Avatar and text */}
                   <div className="flex items-center">
-                    <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
+                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4">
                       <img
                         src={selectedAvatar?.ImageUrl}
                         alt={selectedAvatar?.Name}
@@ -647,17 +651,38 @@ export default function ConciergeModule({
                       />
                     </div>
                     <div>
-                      <h1 className="text-2xl font-bold text-primary">
+                      <h1 className="text-lg sm:text-2xl font-bold text-primary leading-tight">
                         {translatedTexts.avatar.yourAIHealthNavigator}
                       </h1>
-                      <p className="text-sm text-secondary">
+                      <p className="text-xs sm:text-sm text-secondary">
                         {translatedTexts.avatar.description}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  {/* Right buttons */}
+                  {/* <div className="flex gap-2 flex-wrap">
                     <Button
-                       variant="outline"
+                      variant="outline"
+                      size="sm"
+                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
+                      onClick={handleUploadClick}
+                      disabled={isUploading}
+                    >
+                      <Upload className="h-3 w-3 mr-1" />
+                      {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
+                      onClick={resetChat}
+                    >
+                      {translatedTexts.buttons.resetChat}
+                    </Button>
+                  </div> */}
+                  <div className="hidden md:flex gap-2 flex-wrap">
+                    <Button
+                      variant="outline"
                       size="sm"
                       className="text-xs text-primary border-primary/30 hover:bg-neutral"
                       onClick={handleUploadClick}
@@ -675,8 +700,49 @@ export default function ConciergeModule({
                       {translatedTexts.buttons.resetChat}
                     </Button>
                   </div>
+
+                  {/* Mobile hamburger */}
+                  <div className="flex md:hidden items-center">
+                    <button
+                      className="p-2 rounded-md border border-primary/20 bg-white text-primary focus:outline-none"
+                      onClick={() => setMenuOpen(!menuOpen)}
+                      aria-label="Open menu"
+                    >
+                      {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
+                  </div>
                 </div>
-              </div>
+
+                {/* Mobile Dropdown Menu */}
+                {menuOpen && (
+                  <div className="md:hidden mt-2 flex flex-col gap-2 animate-fadeIn">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
+                      onClick={() => {
+                        handleUploadClick();
+                        setMenuOpen(false);
+                      }}
+                      disabled={isUploading}
+                    >
+                      <Upload className="h-3 w-3 mr-1" />
+                      {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
+                      onClick={() => {
+                        resetChat();
+                        setMenuOpen(false);
+                      }}
+                    >
+                      {translatedTexts.buttons.resetChat}
+                    </Button>
+                  </div>
+                )}
+                </div>
 
               {/* Main Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 
