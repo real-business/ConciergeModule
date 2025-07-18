@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import { ChatMessage } from "./components/ui/chat"
+import { Chat, ChatMessage } from "./components/ui/chat"
 import { Button } from "./components/ui/button";
 import { useLocation } from "wouter";
 import {
@@ -16,13 +16,7 @@ import {
   Info,
   MessageSquare,
   Sparkles,
-  Upload,
-  Bot,
-  Send,
-  Loader2,
-  RotateCcw,
-  ChevronUp,
-  ChevronDown
+  Upload
 } from "lucide-react";
 import SpeechComponent from "./components/voice/SpeechComponent";
 import { chatCompletionAPI } from "./lib/api/azure-chat-api";
@@ -34,7 +28,6 @@ import { batchTranslateText } from "./lib/batchTranslateText";
 import ConversationComponent, { ConversationComponentHandle } from "./components/replica/ConversationComponent";
 import { postChatHistory } from "./lib/api/post-chat-history";
 import { getAllAvatarsAPI, AvatarProfile } from "./lib/api/get-all-avatars-api";
-import { cn } from "./lib/utils";
 
 export interface SuggestedPrompt {
   id: number;
@@ -127,26 +120,7 @@ export default function ConciergeModule({
   const [conversationStarted, setConversationStarted] = useState(false);
   const translatedLangRef = useRef<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
-  const [arePromptsCollapsed, setArePromptsCollapsed] = useState(true);
-  const [chatLabels, setChatLabels] = useState<{ 
-    insufficientCredits: string, 
-    insufficientCreditsDescription: string, 
-    placeholder: string, 
-    suggestedPrompts: string, 
-    thinking: string, 
-    retry: string, 
-    welcomeMessage: string 
-  }>({ 
-    insufficientCredits: "Insufficient Credits", 
-    insufficientCreditsDescription: "Please purchase more credits to continue.", 
-    placeholder: "Type your message...", 
-    suggestedPrompts: "Suggested Prompts", 
-    thinking: "Thinking...", 
-    retry: "Retry", 
-    welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload the report." 
-  });
   const [translatedTexts, setTranslatedTexts] = useState<{
     avatar: {
       chooseAvatar: string;
@@ -192,13 +166,6 @@ export default function ConciergeModule({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Auto-scroll to bottom when messages change
-  useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [chatMessages, isLoading]);
 
   // Fetch avatars from database
   useEffect(() => {
@@ -273,14 +240,7 @@ export default function ConciergeModule({
           title,
           step1,
           step2,
-          step3,
-          insufficientCredits,
-          insufficientCreditsDescription,
-          placeholder,
-          suggestedPrompts,
-          thinking,
-          retryLabel,
-          welcomeMessage
+          step3
         ] = await batchTranslateText(
           [
             `Choose Your ${personaName}`,
@@ -295,14 +255,7 @@ export default function ConciergeModule({
             `How It Works`,
             `Your AI ${personaName} asks you questions to find out how ${brandName} can help you.`,
             `The ${personaName} will personalize recommendations based on your needs`,
-            `Access tailored resources, courses, and marketplace options.`,
-            "Insufficient Credits",
-            "Please purchase more credits to continue.",
-            "Type your message...",
-            "Suggested Prompts",
-            "Thinking...",
-            "Retry",
-            "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload the report."
+            `Access tailored resources, courses, and marketplace options.`
           ],
           language,
           "en",
@@ -334,15 +287,6 @@ export default function ConciergeModule({
             steps: [step1, step2, step3]
           }
         });
-        setChatLabels({
-          insufficientCredits,
-          insufficientCreditsDescription,
-          placeholder,
-          suggestedPrompts,
-          thinking,
-          retry: retryLabel,
-          welcomeMessage
-        });
   
         translatedLangRef.current = language; // ✅ remember this translation
       }
@@ -373,15 +317,6 @@ export default function ConciergeModule({
               `Access tailored resources, courses, and marketplace options.`
             ]
           }
-        });
-        setChatLabels({
-          insufficientCredits: "Insufficient Credits",
-          insufficientCreditsDescription: "Please purchase more credits to continue.",
-          placeholder: "Type your message...",
-          suggestedPrompts: "Suggested Prompts",
-          thinking: "Thinking...",
-          retry: "Retry",
-          welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload the report."
         });
   
         translatedLangRef.current = "en";
@@ -746,7 +681,7 @@ export default function ConciergeModule({
               {/* Main Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]">
                 {/* Avatar Section - Fixed */}
-                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20 md:h-full overflow-y-auto">
+                <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
                   <div className="h-full w-full">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
@@ -852,237 +787,116 @@ export default function ConciergeModule({
                 </div>
 
                 {/* Chat Section - Scrollable */}
-                <div className="
-                  flex flex-col
-                  h-full
-                  p-4 md:p-6
-                ">
-                  <div className="flex-1 min-h-0 overflow-hidden">
-                    <div className="flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden">
-                      <div className="flex-1 overflow-y-auto p-3 bg-white/80">
-                        <div className="space-y-3">
-                          {chatMessages?.length === 0 ? (
-                            <div className="flex items-start">
-                              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0">
-                                <Bot size={14} />
-                              </div>
-                                                             <div className="ml-2 px-3 py-2 rounded-lg bg-secondary/10">
-                                 <div className="text-sm text-secondary">
-                                   {chatLabels.welcomeMessage}
-                                 </div>
-                               </div>
-                            </div>
-                          ) : (
-                            chatMessages?.map((message, index) => {
-                              const isLastMessage = index === chatMessages.length - 1;
-                              const isLastAIMessage = isLastMessage && message.sender === "ai";
-                              const shouldShowRetry = showRetryButton && isLastAIMessage && message.sender === "ai";
-                              
-                              return (
-                                <div
-                                  key={message.id}
-                                  className={cn(
-                                    "flex",
-                                    message.sender === "user" ? "justify-end" : "justify-start",
-                                    "mb-4"
-                                  )}
+                <div className="flex flex-col h-full overflow-hidden p-4 md:p-6">
+                  <div className="flex-1 min-h-0 overflow-y-auto p-6">
+                    <Chat
+                      language={language}
+                      config={config}
+                      setInterruptReplica={setInterruptReplica}
+                      messages={chatMessages}
+                      onSendMessage={handleSendMessage}
+                      className="h-full"
+                      isLoading={isLoading}
+                      rightElement={
+                        <SpeechComponent
+                          avatarName={selectedAvatar?.Name || "AI Health Navigator"}
+                          disabled={isLoading}
+                          voiceMode={voiceMode}
+                          setSpokenText={setSpokenText}
+                          setIsSpeaking={setIsSpeaking}
+                          setInterruptReplica={setInterruptReplica}
+                          region={config?.region || ""}
+                          speechKey={config?.speechKey || ""}
+                        />
+                      }
+                      suggestedPrompts={suggestedPrompts}
+                      renderMessage={(message, index) => {
+                        if (message.sender === "ai" && message.id !== "welcome-message") {
+                          const isLastMessage = index === chatMessages.length - 1;
+                          return (
+                            <div className="relative">
+                              <ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                  p: ({ children }) => <p className="text-sm mb-2">{children}</p>,
+                                  ol: ({ children }) => <ol style={{ listStyleType: 'circle' }} className="ml-6 mb-2">{children}</ol>,
+                                  ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
+                                  li: ({ children }) => <li className="mb-1">{children}</li>,
+                                  strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+                                  a: ({ href, children }) => (
+                                    <a
+                                      href={href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-blue-600 underline"
+                                    >
+                                      {children}
+                                    </a>
+                                  ),
+                                }}
+                              >
+                                {message.text}
+                              </ReactMarkdown>
+                              <div className="flex justify-end gap-2 mt-2">
+                                <button
+                                  className={`p-1 rounded-full transition-colors ${feedback[message.id] === "like"
+                                    ? "bg-green-100 text-green-600"
+                                    : "hover:bg-gray-200 text-gray-600"
+                                    }`}
+                                  onClick={() => handleFeedback(message, "like")}
                                 >
-                                  <div
-                                    className={cn(
-                                      "max-w-[80%] rounded-lg p-3",
-                                      message.sender === "user"
-                                        ? "bg-primary text-white"
-                                        : "bg-light text-secondary"
-                                    )}
+                                  <ThumbsUp className="h-4 w-4" />
+                                </button>
+                                <button
+                                  className={`p-1 rounded-full transition-colors ${feedback[message.id] === "dislike"
+                                    ? "bg-red-100 text-red-600"
+                                    : "hover:bg-gray-200 text-gray-600"
+                                    }`}
+                                  onClick={() => handleFeedback(message, "dislike")}
+                                >
+                                  <ThumbsDown className="h-4 w-4" />
+                                </button>
+                              </div>
+                               {/* Add Retry button only on the last AI message */}
+                               {showRetryButton && isLastMessage && (
+                                <div className="mt-4 flex">
+                                  <button
+                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
+                                    onClick={() => {
+                                      handleSendMessage(userInput);
+                                      setShowRetryButton(false);
+                                    }}
                                   >
-                                    {message.sender === "user" ? (
-                                      <div className="text-sm">{message.text}</div>
-                                    ) : (
-                                      <div className="text-sm">
-                                        <ReactMarkdown
-                                          remarkPlugins={[remarkGfm]}
-                                          components={{
-                                            p: ({ children }) => <p className="text-sm mb-2">{children}</p>,
-                                            ol: ({ children }) => <ol style={{ listStyleType: 'circle' }} className="ml-6 mb-2">{children}</ol>,
-                                            ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
-                                            li: ({ children }) => <li className="mb-1">{children}</li>,
-                                            strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
-                                            a: ({ href, children }) => (
-                                              <a
-                                                href={href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 underline"
-                                              >
-                                                {children}
-                                              </a>
-                                            ),
-                                          }}
-                                        >
-                                          {message.text}
-                                        </ReactMarkdown>
-                                        <div className="flex justify-end gap-2 mt-2">
-                                          <button
-                                            className={`p-1 rounded-full transition-colors ${feedback[message.id] === "like"
-                                              ? "bg-green-100 text-green-600"
-                                              : "hover:bg-gray-200 text-gray-600"
-                                              }`}
-                                            onClick={() => handleFeedback(message, "like")}
-                                          >
-                                            <ThumbsUp className="h-4 w-4" />
-                                          </button>
-                                          <button
-                                            className={`p-1 rounded-full transition-colors ${feedback[message.id] === "dislike"
-                                              ? "bg-red-100 text-red-600"
-                                              : "hover:bg-gray-200 text-gray-600"
-                                              }`}
-                                            onClick={() => handleFeedback(message, "dislike")}
-                                          >
-                                            <ThumbsDown className="h-4 w-4" />
-                                          </button>
-                                        </div>
-                                        {/* Add Retry button only on the last AI message */}
-                                        {shouldShowRetry && (
-                                          <div className="mt-4 flex">
-                                            <button
-                                              className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
-                                              onClick={() => {
-                                                handleSendMessage(userInput);
-                                                setShowRetryButton(false);
-                                              }}
-                                            >
-                                              {chatLabels.retry}
-                                            </button>
-                                          </div>
-                                        )}
-                                        {/* Add Continue button if this is the last message and interview is completed */}
-                                        {isLastMessage && interviewCompleted && (
-                                          <div className="mt-4 flex justify-center">
-                                            <button
-                                              className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
-                                              onClick={handleStartAdvisor}
-                                            >
-                                              {translatedTexts.buttons.continue}
-                                            </button>
-                                          </div>
-                                        )}
-                                      </div>
-                                    )}
-                                  </div>
+                                    {translatedTexts.buttons.retry}
+                                  </button>
                                 </div>
-                              );
-                            })
-                          )}
-
-                          {isLoading && (
-                            <div className="flex items-start">
-                              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0">
-                                <Bot size={14} />
-                              </div>
-                              <div className="ml-2 px-3 py-2 rounded-lg bg-secondary/10 flex items-center">
-                                <Loader2 className="h-4 w-4 animate-spin mr-2 text-primary" />
-                                                                 <span className="text-sm text-secondary">{chatLabels.thinking}</span>
-                              </div>
-                            </div>
-                          )}
-                          <div ref={messagesEndRef} />
-                        </div>
-                      </div>
-
-                      <div className="p-3 border-t border-light bg-white flex-shrink-0">
-                        {/* Collapsible Suggested Prompts */}
-                        {suggestedPrompts && suggestedPrompts?.length > 0 && (
-                          <div className="bg-white border-b border-light flex-shrink-0">
-                            <button
-                              onClick={() => setArePromptsCollapsed(!arePromptsCollapsed)}
-                              className="w-full p-2 flex items-center justify-center hover:bg-secondary/10 transition-colors"
-                            >
-                                                             <span className="text-sm font-medium text-secondary">
-                                 {chatLabels.suggestedPrompts}
-                               </span>
-                              {arePromptsCollapsed ? (
-                                <ChevronDown className="h-4 w-4 text-secondary" />
-                              ) : (
-                                <ChevronUp className="h-4 w-4 text-secondary" />
                               )}
-                            </button>
-                            {!arePromptsCollapsed && (
-                              <div className="p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                                {suggestedPrompts.map(({id, text, icon: Icon}) => (
-                                  <Button
-                                    key={id}
-                                    variant="outline"
-                                    className={cn(
-                                      "w-full justify-start text-left text-sm h-auto min-h-[40px] py-2 px-3",
-                                      "whitespace-normal break-words"
-                                    )}
-                                    onClick={() => setUserInput(text)}
+                              {/* Add Continue button if this is the last message and interview is completed */}
+                              {isLastMessage && interviewCompleted && (
+                                <div className="mt-4 flex justify-center">
+                                  <button
+                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
+                                    onClick={handleStartAdvisor}
                                   >
-                                    <Icon className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-                                    <span className="text-left">{text}</span>
-                                  </Button>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        )}
-
-                        <div className="shrink-0">
-                          <textarea
-                            value={userInput}
-                            onChange={(e) => {
-                              setUserInput(e.target.value);
-                              setInterruptReplica(true);
-                              // Auto-resize the textarea
-                              e.target.style.height = 'auto';
-                              e.target.style.height = Math.min(e.target.scrollHeight, 120) + 'px';
+                                    {translatedTexts.buttons.continue}
+                                  </button>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        }
+                        return (
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              p: ({ children }) => <p className="text-sm whitespace-pre-line">{children}</p>,
                             }}
-                            onKeyDown={(e) => {
-                              if (e.key === "Enter" && !e.shiftKey) {
-                                e.preventDefault();
-                                if (userInput.trim() !== "" && !isLoading) {
-                                  handleSendMessage(userInput);
-                                  setUserInput("");
-                                }
-                              }
-                            }}
-                                                         placeholder={chatLabels.placeholder}
-                            className="flex-1 rounded-l-lg rounded-r-none focus-visible:ring-0 focus-visible:ring-offset-0 border-r-0 resize-none min-h-[40px] max-h-[120px] p-3 text-sm border border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                            disabled={isLoading}
-                            rows={1}
-                          />
-                          <Button
-                            onClick={() => {
-                              if (userInput.trim() !== "" && !isLoading) {
-                                handleSendMessage(userInput);
-                                setUserInput("");
-                              }
-                            }}
-                            className="rounded-l-none bg-primary hover:bg-secondary h-[40px]"
-                            disabled={userInput.trim() === "" || isLoading}
                           >
-                            {isLoading ? (
-                              <Loader2 className="h-5 w-5 animate-spin" />
-                            ) : (
-                              <Send size={18} />
-                            )}
-                          </Button>
-
-                          <div className="ml-2">
-                            <SpeechComponent
-                              avatarName={selectedAvatar?.Name || "AI Health Navigator"}
-                              disabled={isLoading}
-                              voiceMode={voiceMode}
-                              setSpokenText={setSpokenText}
-                              setIsSpeaking={setIsSpeaking}
-                              setInterruptReplica={setInterruptReplica}
-                              region={config?.region || ""}
-                              speechKey={config?.speechKey || ""}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                            {message.text}
+                          </ReactMarkdown>
+                        );
+                      }}
+                    />
                   </div>
                 </div>
               </div>
