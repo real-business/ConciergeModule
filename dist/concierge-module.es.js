@@ -26039,7 +26039,7 @@ function lI({
   }, [l, ne, s]), H(() => {
     m(ne ? "voice" : "chat");
   }, [ne]), H(() => {
-    if (!(!!c?.azureTranslatorKey && !!c?.azureTranslatorEndpoint && !!c?.azureTranslatorRegion)) {
+    if (console.log("Language in component:", s), !(!!c?.azureTranslatorKey && !!c?.azureTranslatorEndpoint && !!c?.azureTranslatorRegion)) {
       console.warn("Azure translation config is not yet ready.");
       return;
     }
@@ -26394,7 +26394,7 @@ function lI({
               ] })
             ] }),
             /* @__PURE__ */ M("div", { className: `grid grid-cols-1 md:grid-cols-2 \r
-                h-[70vh] md:h-[600px]\r
+                h-[67vh] md:h-[600px]\r
                 max-h-[100vh]`, children: [
               /* @__PURE__ */ R("div", { className: `\r
                   flex flex-col\r
