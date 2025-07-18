@@ -730,7 +730,7 @@ export default function ConciergeModule({
 
               {/* Main Content */}
               <div className="grid grid-cols-1 md:grid-cols-2 
-                h-[67vh] md:h-[600px]
+                h-[70vh] md:h-[600px]
                 max-h-[100vh]">
                 {/* Avatar Section - Fixed */}
                 {/* <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20"> */}
