@@ -4604,8 +4604,8 @@ function La(e) {
 }
 const Hs = async (e, t, r = "en", s, i, a) => {
   try {
-    const o = await fetch(
-      `${i}/translate?api-version=3.0&from=${r}&to=${t}`,
+    const n = `${i.replace(/\/+$/, "")}/translate?api-version=3.0&from=${r}&to=${t}`, c = await fetch(
+      n,
       {
         method: "POST",
         headers: {
@@ -4613,12 +4613,12 @@ const Hs = async (e, t, r = "en", s, i, a) => {
           "Ocp-Apim-Subscription-Region": a,
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(e.map((c) => ({ Text: c })))
+        body: JSON.stringify(e.map((l) => ({ Text: l })))
       }
     );
-    if (!o.ok)
-      throw new Error(`Translation failed: ${o.statusText}`);
-    return (await o.json()).map((c) => c.translations?.[0]?.text || "");
+    if (!c.ok)
+      throw new Error(`Translation failed: ${c.statusText}`);
+    return (await c.json()).map((l) => l.translations?.[0]?.text || "");
   } catch (o) {
     return console.error("Batch translation error:", o), e;
   }

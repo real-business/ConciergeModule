@@ -12,8 +12,10 @@ export const batchTranslateText = async (
   // console.log("azureTranslatorRegion in batchTranslateText", azureTranslatorRegion);
 
   try {
+    const baseUrl = azureTranslatorEndpoint.replace(/\/+$/, '');
+    const url = `${baseUrl}/translate?api-version=3.0&from=${from}&to=${to}`;
     const response = await fetch(
-      `${azureTranslatorEndpoint}/translate?api-version=3.0&from=${from}&to=${to}`,
+      url,
       {
         method: 'POST',
         headers: {
