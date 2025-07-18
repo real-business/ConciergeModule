@@ -4605,7 +4605,7 @@ function La(e) {
 const Hs = async (e, t, r = "en", s, i, a) => {
   try {
     const o = await fetch(
-      `${i}&from=${r}&to=${t}`,
+      `${i}/translate?api-version=3.0&from=${r}&to=${t}`,
       {
         method: "POST",
         headers: {

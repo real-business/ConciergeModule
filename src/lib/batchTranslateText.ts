@@ -13,7 +13,7 @@ export const batchTranslateText = async (
 
   try {
     const response = await fetch(
-      `${azureTranslatorEndpoint}&from=${from}&to=${to}`,
+      `${azureTranslatorEndpoint}/translate?api-version=3.0&from=${from}&to=${to}`,
       {
         method: 'POST',
         headers: {
