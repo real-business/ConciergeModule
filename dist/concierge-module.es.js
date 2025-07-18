@@ -26354,8 +26354,15 @@ function cI({
             ] }) }),
             /* @__PURE__ */ M("div", { className: `grid grid-cols-1 md:grid-cols-2 \r
                 h-[70vh] md:h-[600px]\r
-                max-h-[80vh]`, children: [
-              /* @__PURE__ */ P("div", { className: "p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20", children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ P(
+                max-h-[100vh]`, children: [
+              /* @__PURE__ */ P("div", { className: `\r
+                  flex flex-col\r
+                  basis=[35%] md:basis-auto\r
+                  min-h-0\r
+                  overflow-y-auto\r
+                  p-4 md:p-6\r
+                  border-b md:border-b-0 md:border-r border-primary/20\r
+                `, children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ P(
                 iI,
                 {
                   ref: J,
@@ -26444,7 +26451,13 @@ function cI({
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ P("div", { className: "flex flex-col h-full overflow-hidden p-4 md:p-6", children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto p-6", children: /* @__PURE__ */ P(
+              /* @__PURE__ */ P("div", { className: `\r
+                 flex flex-col\r
+                  basis=[65%] md:basis-auto\r
+                  min-h-0\r
+                  overflow-y-auto\r
+                  p-4 md:p-6\r
+                `, children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ P(
                 aC,
                 {
                   language: s,
