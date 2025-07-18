@@ -26311,9 +26311,9 @@ function lI({
           className: "rounded-lg shadow-2xl border border-primary/20 overflow-hidden",
           children: [
             /* @__PURE__ */ M("div", { className: "p-4 sm:p-6 bg-neutral border-b border-primary/20", children: [
-              /* @__PURE__ */ M("div", { className: "flex flex-col md:flex-row md:items-center md:justify-between gap-4", children: [
-                /* @__PURE__ */ M("div", { className: "flex items-center", children: [
-                  /* @__PURE__ */ R("div", { className: "h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4", children: /* @__PURE__ */ R(
+              /* @__PURE__ */ M("div", { className: "flex flex-row items-center justify-between gap-4", children: [
+                /* @__PURE__ */ M("div", { className: "flex items-center flex-shrink min-w-0", children: [
+                  /* @__PURE__ */ R("div", { className: "h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0", children: /* @__PURE__ */ R(
                     "img",
                     {
                       src: h?.ImageUrl,
@@ -26321,12 +26321,12 @@ function lI({
                       className: "h-full w-full object-cover"
                     }
                   ) }),
-                  /* @__PURE__ */ M("div", { children: [
-                    /* @__PURE__ */ R("h1", { className: "text-lg sm:text-2xl font-bold text-primary leading-tight", children: te.avatar.yourAIHealthNavigator }),
-                    /* @__PURE__ */ R("p", { className: "text-xs sm:text-sm text-secondary", children: te.avatar.description })
+                  /* @__PURE__ */ M("div", { className: "min-w-0", children: [
+                    /* @__PURE__ */ R("h1", { className: "text-lg sm:text-2xl font-bold text-primary leading-tight truncate", children: te.avatar.yourAIHealthNavigator }),
+                    /* @__PURE__ */ R("p", { className: "text-xs sm:text-sm text-secondary truncate", children: te.avatar.description })
                   ] })
                 ] }),
-                /* @__PURE__ */ M("div", { className: "hidden md:flex gap-2 flex-wrap", children: [
+                /* @__PURE__ */ M("div", { className: "hidden md:flex gap-2 flex-wrap ml-4", children: [
                   /* @__PURE__ */ M(
                     Pe,
                     {
@@ -26352,7 +26352,7 @@ function lI({
                     }
                   )
                 ] }),
-                /* @__PURE__ */ R("div", { className: "flex md:hidden items-center", children: /* @__PURE__ */ R(
+                /* @__PURE__ */ R("div", { className: "flex md:hidden items-center ml-2", children: /* @__PURE__ */ R(
                   "button",
                   {
                     className: "p-2 rounded-md border border-primary/20 bg-white text-primary focus:outline-none",
