@@ -63,18 +63,7 @@ const defaultPrompts: SuggestedPrompt[] = [
   { id: 6, text: "Answer my questions like a personal coach", icon: MessageSquare },
 ];
 
-const allowedAvatarIds = [
-  "r397c808f1cf",
-  "rbc834dee6f2",
-  "r89e4f7ec536",
-];
-
-const languageDefaultAvatars: Record<string, string> = {
-  en: "r397c808f1cf",
-  es: "rbc834dee6f2",
-  fr: "rbc834dee6f2",
-  de: "r89e4f7ec536",
-};
+const AVATAR_ID = "r397c808f1cf";
 
 export default function ConciergeModule({
     brandName = "Growth Hub",
@@ -96,8 +85,8 @@ export default function ConciergeModule({
 }: ConciergeModuleProps) {
   const [, navigate] = useLocation();
   const [dbAvatars, setDbAvatars] = useState<AvatarProfile[]>([]);
-  const conciergeAvatar = dbAvatars.find(avatar => avatar.ExternalId === "r397c808f1cf");
-  const [selectedAvatar, setSelectedAvatar] = useState<AvatarProfile | null>(conciergeAvatar || null);
+  // Always use the single avatar
+  const [selectedAvatar, setSelectedAvatar] = useState<AvatarProfile | null>(null);
   const [interactionMode, setInteractionMode] = useState<"chat" | "voice">("chat");
   const [conciergeConversationStarted, setConciergeConversationStarted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -170,43 +159,28 @@ export default function ConciergeModule({
     window.scrollTo(0, 0);
   }, []);
 
-  // Fetch avatars from database
+  // Fetch only the single avatar from database
   useEffect(() => {
-    const fetchAvatars = async () => {
+    const fetchAvatar = async () => {
       try {
         const response = await getAllAvatarsAPI();
         if (response?.Success && response.Data) {
-          // Filter avatars once
-          const filteredAvatars = response.Data.filter(avatar => 
-            allowedAvatarIds.includes(avatar.ExternalId)
-          );
-          setDbAvatars(filteredAvatars);
-          
-          // Set initial selected avatar if we have filtered avatars
-          if (filteredAvatars.length > 0) {
-            setSelectedAvatar(filteredAvatars[0]);
+          // Find only the avatar with the specified ID
+          const avatar = response.Data.find((avatar: AvatarProfile) => avatar.ExternalId === AVATAR_ID);
+          if (avatar) {
+            setDbAvatars([avatar]);
+            setSelectedAvatar(avatar);
           }
         }
       } catch (error) {
-        console.error("Error fetching avatars:", error);
+        console.error("Error fetching avatar:", error);
       }
     };
-
-    fetchAvatars();
+    fetchAvatar();
   }, []);
 
-  useEffect(() => {
-    if (!conversationStarted && dbAvatars.length > 0) {
-      const preferredAvatarId = languageDefaultAvatars[language] || languageDefaultAvatars["en"];
-      const matchedAvatar = dbAvatars.find(a => a.ExternalId === preferredAvatarId);
-      if (matchedAvatar) {
-        setSelectedAvatar(matchedAvatar);
-      } else {
-        // Fallback to first if not found
-        setSelectedAvatar(dbAvatars[0]);
-      }
-    }
-  }, [dbAvatars, conversationStarted, language]);
+  // Remove avatar selection on language change
+  // Remove useEffect that sets avatar based on language
 
   useEffect(() => {
     if (conversationStarted) {
@@ -424,24 +398,7 @@ export default function ConciergeModule({
     }
   }, [conversationStarted]);
 
-  const handleAvatarChange = async (direction: "next" | "prev") => {
-    if (!selectedAvatar) return;
-
-    const currentIndex = dbAvatars.findIndex(
-      (avatar) => avatar.ExternalId === selectedAvatar.ExternalId
-    );
-    let newAvatar: AvatarProfile;
-
-    if (direction === "next") {
-      const nextIndex = (currentIndex + 1) % dbAvatars.length;
-      newAvatar = dbAvatars[nextIndex];
-    } else {
-      const prevIndex = (currentIndex - 1 + dbAvatars.length) % dbAvatars.length;
-      newAvatar = dbAvatars[prevIndex];
-    }
-
-    setSelectedAvatar(newAvatar);
-  };
+  // Remove handleAvatarChange function
 
   const handleSendMessage = async (userInput: string, additionalFiles: File[] = []) => {
     if(showRetryButton) {
@@ -733,7 +690,6 @@ export default function ConciergeModule({
                 h-[70vh] md:h-[600px]
                 max-h-[100vh]">
                 {/* Avatar Section - Fixed */}
-                {/* <div className="p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20"> */}
                 <div className="
                   flex flex-col
                   basis=[35%] md:basis-auto
@@ -783,8 +739,6 @@ export default function ConciergeModule({
                       </div>
                     ) : (
                       <div className="h-full w-full flex flex-col items-center justify-center">
-                        <h3 className="text-lg font-semibold text-center mb-4 text-primary">{translatedTexts.avatar.chooseAvatar}</h3>
-                        
                         {/* How it works */}
                         <div className="mb-6 flex items-center justify-center gap-2 text-sm text-secondary">
                           <div className="relative group">
@@ -803,38 +757,15 @@ export default function ConciergeModule({
                             </div>
                           </div>
                         </div>
-
                         {/* Avatar */}
-                        <div className="w-48 h-48 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-neutral to-white border border-primary/20">
+                        <div className="w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-neutral to-white border border-primary/20">
                           <img
                             src={selectedAvatar?.ImageUrl}
                             alt={selectedAvatar?.Name}
                             className="w-full h-full object-cover"
                           />
                         </div>
-
-                        <div className="flex items-center justify-center gap-4 mb-6">
-                          <Button
-                            variant="outline"
-                            size="icon"
-                            onClick={() => handleAvatarChange("prev")}
-                            className="rounded-full"
-                          >
-                            <ChevronLeft className="h-4 w-4" />
-                          </Button>
-                          <span className="text-primary font-medium">
-                            {selectedAvatar?.Name}
-                          </span>
-                          <Button
-                            variant="outline"
-                            size="icon"
-                            onClick={() => handleAvatarChange("next")}
-                            className="rounded-full"
-                          >
-                            <ChevronRight className="h-4 w-4" />
-                          </Button>
-                        </div>
-
+                        {/* Remove avatar navigation and selection UI */}
                         <Button
                           onClick={() => setConciergeConversationStarted(true)}
                           className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"

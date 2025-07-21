@@ -1,65 +1,65 @@
-import { jsx as R, jsxs as M, Fragment as af } from "react/jsx-runtime";
-import * as ce from "react";
-import { useState as z, useRef as $e, useEffect as H, useCallback as Ya, createContext as cf, useContext as uf, forwardRef as Cg, useImperativeHandle as Rg } from "react";
-import { motion as lf } from "framer-motion";
-import { Bot as fc, RotateCcw as Pg, Loader2 as Ma, ChevronDown as bg, ChevronUp as wg, Send as Eg, Mic as Ig, MicOff as Ag, Upload as vc, X as Tg, Menu as _g, HelpCircle as kg, ChevronLeft as Og, ChevronRight as Mg, GraduationCap as Dg, Sparkles as Ng, MessageSquare as xg, ThumbsUp as zg, ThumbsDown as Lg } from "lucide-react";
-import Da from "react-markdown";
-import { useLocation as jg } from "wouter";
-import * as vs from "@radix-ui/react-tooltip";
-import { useVideoTrack as pf, DailyVideo as qg, useLocalSessionId as df, useDaily as Bs, useDevices as Fg, useAudioTrack as Bg, useDailyEvent as Ug, useParticipantIds as $g, useAppMessage as Vg, DailyAudio as Wg, DailyProvider as Hg } from "@daily-co/daily-react";
-import Kg from "@mui/icons-material/CallEnd";
-import { initReactI18next as Jg } from "react-i18next";
-function gc(e, t) {
+import { jsx as P, jsxs as M, Fragment as nf } from "react/jsx-runtime";
+import * as oe from "react";
+import { useState as z, useRef as $e, useEffect as W, useCallback as Ga, createContext as sf, useContext as of, forwardRef as Sg, useImperativeHandle as Cg } from "react";
+import { motion as af } from "framer-motion";
+import { Bot as dc, RotateCcw as Rg, Loader2 as ka, ChevronDown as Pg, ChevronUp as bg, Send as wg, Mic as Eg, MicOff as Ig, Upload as hc, X as Ag, Menu as Tg, HelpCircle as _g, GraduationCap as kg, Sparkles as Og, MessageSquare as Mg, ThumbsUp as Dg, ThumbsDown as Ng } from "lucide-react";
+import Oa from "react-markdown";
+import { useLocation as xg } from "wouter";
+import * as ms from "@radix-ui/react-tooltip";
+import { useVideoTrack as cf, DailyVideo as zg, useLocalSessionId as uf, useDaily as Fs, useDevices as Lg, useAudioTrack as jg, useDailyEvent as qg, useParticipantIds as Fg, useAppMessage as Bg, DailyAudio as Ug, DailyProvider as $g } from "@daily-co/daily-react";
+import Vg from "@mui/icons-material/CallEnd";
+import { initReactI18next as Wg } from "react-i18next";
+function fc(e, t) {
   if (typeof e == "function")
     return e(t);
   e != null && (e.current = t);
 }
-function Gg(...e) {
+function Hg(...e) {
   return (t) => {
     let r = !1;
     const s = e.map((i) => {
-      const a = gc(i, t);
+      const a = fc(i, t);
       return !r && typeof a == "function" && (r = !0), a;
     });
     if (r)
       return () => {
         for (let i = 0; i < s.length; i++) {
           const a = s[i];
-          typeof a == "function" ? a() : gc(e[i], null);
+          typeof a == "function" ? a() : fc(e[i], null);
         }
       };
   };
 }
 // @__NO_SIDE_EFFECTS__
-function Qg(e) {
-  const t = /* @__PURE__ */ Zg(e), r = ce.forwardRef((s, i) => {
-    const { children: a, ...o } = s, n = ce.Children.toArray(a), c = n.find(em);
+function Kg(e) {
+  const t = /* @__PURE__ */ Gg(e), r = oe.forwardRef((s, i) => {
+    const { children: a, ...o } = s, n = oe.Children.toArray(a), c = n.find(Yg);
     if (c) {
-      const u = c.props.children, l = n.map((p) => p === c ? ce.Children.count(u) > 1 ? ce.Children.only(null) : ce.isValidElement(u) ? u.props.children : null : p);
-      return /* @__PURE__ */ R(t, { ...o, ref: i, children: ce.isValidElement(u) ? ce.cloneElement(u, void 0, l) : null });
+      const u = c.props.children, l = n.map((p) => p === c ? oe.Children.count(u) > 1 ? oe.Children.only(null) : oe.isValidElement(u) ? u.props.children : null : p);
+      return /* @__PURE__ */ P(t, { ...o, ref: i, children: oe.isValidElement(u) ? oe.cloneElement(u, void 0, l) : null });
     }
-    return /* @__PURE__ */ R(t, { ...o, ref: i, children: a });
+    return /* @__PURE__ */ P(t, { ...o, ref: i, children: a });
   });
   return r.displayName = `${e}.Slot`, r;
 }
-var Yg = /* @__PURE__ */ Qg("Slot");
+var Jg = /* @__PURE__ */ Kg("Slot");
 // @__NO_SIDE_EFFECTS__
-function Zg(e) {
-  const t = ce.forwardRef((r, s) => {
+function Gg(e) {
+  const t = oe.forwardRef((r, s) => {
     const { children: i, ...a } = r;
-    if (ce.isValidElement(i)) {
-      const o = rm(i), n = tm(a, i.props);
-      return i.type !== ce.Fragment && (n.ref = s ? Gg(s, o) : o), ce.cloneElement(i, n);
+    if (oe.isValidElement(i)) {
+      const o = Xg(i), n = Zg(a, i.props);
+      return i.type !== oe.Fragment && (n.ref = s ? Hg(s, o) : o), oe.cloneElement(i, n);
     }
-    return ce.Children.count(i) > 1 ? ce.Children.only(null) : null;
+    return oe.Children.count(i) > 1 ? oe.Children.only(null) : null;
   });
   return t.displayName = `${e}.SlotClone`, t;
 }
-var Xg = Symbol("radix.slottable");
-function em(e) {
-  return ce.isValidElement(e) && typeof e.type == "function" && "__radixId" in e.type && e.type.__radixId === Xg;
+var Qg = Symbol("radix.slottable");
+function Yg(e) {
+  return oe.isValidElement(e) && typeof e.type == "function" && "__radixId" in e.type && e.type.__radixId === Qg;
 }
-function tm(e, t) {
+function Zg(e, t) {
   const r = { ...t };
   for (const s in t) {
     const i = e[s], a = t[s];
@@ -70,30 +70,30 @@ function tm(e, t) {
   }
   return { ...e, ...r };
 }
-function rm(e) {
+function Xg(e) {
   let t = Object.getOwnPropertyDescriptor(e.props, "ref")?.get, r = t && "isReactWarning" in t && t.isReactWarning;
   return r ? e.ref : (t = Object.getOwnPropertyDescriptor(e, "ref")?.get, r = t && "isReactWarning" in t && t.isReactWarning, r ? e.props.ref : e.props.ref || e.ref);
 }
-function hf(e) {
+function lf(e) {
   var t, r, s = "";
   if (typeof e == "string" || typeof e == "number") s += e;
   else if (typeof e == "object") if (Array.isArray(e)) {
     var i = e.length;
-    for (t = 0; t < i; t++) e[t] && (r = hf(e[t])) && (s && (s += " "), s += r);
+    for (t = 0; t < i; t++) e[t] && (r = lf(e[t])) && (s && (s += " "), s += r);
   } else for (r in e) e[r] && (s && (s += " "), s += r);
   return s;
 }
-function ff() {
-  for (var e, t, r = 0, s = "", i = arguments.length; r < i; r++) (e = arguments[r]) && (t = hf(e)) && (s && (s += " "), s += t);
+function pf() {
+  for (var e, t, r = 0, s = "", i = arguments.length; r < i; r++) (e = arguments[r]) && (t = lf(e)) && (s && (s += " "), s += t);
   return s;
 }
-const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, nm = (e, t) => (r) => {
+const vc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, gc = pf, em = (e, t) => (r) => {
   var s;
-  if (t?.variants == null) return yc(e, r?.class, r?.className);
+  if (t?.variants == null) return gc(e, r?.class, r?.className);
   const { variants: i, defaultVariants: a } = t, o = Object.keys(i).map((u) => {
     const l = r?.[u], p = a?.[u];
     if (l === null) return null;
-    const d = mc(l) || mc(p);
+    const d = vc(l) || vc(p);
     return i[u][d];
   }), n = r && Object.entries(r).reduce((u, l) => {
     let [p, d] = l;
@@ -115,41 +115,41 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
       d
     ] : u;
   }, []);
-  return yc(e, o, c, r?.class, r?.className);
-}, Za = "-", im = (e) => {
-  const t = om(e), {
+  return gc(e, o, c, r?.class, r?.className);
+}, Qa = "-", tm = (e) => {
+  const t = nm(e), {
     conflictingClassGroups: r,
     conflictingClassGroupModifiers: s
   } = e;
   return {
     getClassGroupId: (o) => {
-      const n = o.split(Za);
-      return n[0] === "" && n.length !== 1 && n.shift(), vf(n, t) || sm(o);
+      const n = o.split(Qa);
+      return n[0] === "" && n.length !== 1 && n.shift(), df(n, t) || rm(o);
     },
     getConflictingClassGroupIds: (o, n) => {
       const c = r[o] || [];
       return n && s[o] ? [...c, ...s[o]] : c;
     }
   };
-}, vf = (e, t) => {
+}, df = (e, t) => {
   if (e.length === 0)
     return t.classGroupId;
-  const r = e[0], s = t.nextPart.get(r), i = s ? vf(e.slice(1), s) : void 0;
+  const r = e[0], s = t.nextPart.get(r), i = s ? df(e.slice(1), s) : void 0;
   if (i)
     return i;
   if (t.validators.length === 0)
     return;
-  const a = e.join(Za);
+  const a = e.join(Qa);
   return t.validators.find(({
     validator: o
   }) => o(a))?.classGroupId;
-}, Sc = /^\[(.+)\]$/, sm = (e) => {
-  if (Sc.test(e)) {
-    const t = Sc.exec(e)[1], r = t?.substring(0, t.indexOf(":"));
+}, mc = /^\[(.+)\]$/, rm = (e) => {
+  if (mc.test(e)) {
+    const t = mc.exec(e)[1], r = t?.substring(0, t.indexOf(":"));
     if (r)
       return "arbitrary.." + r;
   }
-}, om = (e) => {
+}, nm = (e) => {
   const {
     theme: t,
     prefix: r
@@ -157,19 +157,19 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
     nextPart: /* @__PURE__ */ new Map(),
     validators: []
   };
-  return cm(Object.entries(e.classGroups), r).forEach(([a, o]) => {
-    Na(o, s, a, t);
+  return sm(Object.entries(e.classGroups), r).forEach(([a, o]) => {
+    Ma(o, s, a, t);
   }), s;
-}, Na = (e, t, r, s) => {
+}, Ma = (e, t, r, s) => {
   e.forEach((i) => {
     if (typeof i == "string") {
-      const a = i === "" ? t : Cc(t, i);
+      const a = i === "" ? t : yc(t, i);
       a.classGroupId = r;
       return;
     }
     if (typeof i == "function") {
-      if (am(i)) {
-        Na(i(s), t, r, s);
+      if (im(i)) {
+        Ma(i(s), t, r, s);
         return;
       }
       t.validators.push({
@@ -179,21 +179,21 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
       return;
     }
     Object.entries(i).forEach(([a, o]) => {
-      Na(o, Cc(t, a), r, s);
+      Ma(o, yc(t, a), r, s);
     });
   });
-}, Cc = (e, t) => {
+}, yc = (e, t) => {
   let r = e;
-  return t.split(Za).forEach((s) => {
+  return t.split(Qa).forEach((s) => {
     r.nextPart.has(s) || r.nextPart.set(s, {
       nextPart: /* @__PURE__ */ new Map(),
       validators: []
     }), r = r.nextPart.get(s);
   }), r;
-}, am = (e) => e.isThemeGetter, cm = (e, t) => t ? e.map(([r, s]) => {
+}, im = (e) => e.isThemeGetter, sm = (e, t) => t ? e.map(([r, s]) => {
   const i = s.map((a) => typeof a == "string" ? t + a : typeof a == "object" ? Object.fromEntries(Object.entries(a).map(([o, n]) => [t + o, n])) : a);
   return [r, i];
-}) : e, um = (e) => {
+}) : e, om = (e) => {
   if (e < 1)
     return {
       get: () => {
@@ -217,7 +217,7 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
       r.has(a) ? r.set(a, o) : i(a, o);
     }
   };
-}, gf = "!", lm = (e) => {
+}, hf = "!", am = (e) => {
   const {
     separator: t,
     experimentalParseClassName: r
@@ -238,7 +238,7 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
       }
       v === "[" ? u++ : v === "]" && u--;
     }
-    const d = c.length === 0 ? n : n.substring(l), h = d.startsWith(gf), f = h ? d.substring(1) : d, g = p && p > l ? p - l : void 0;
+    const d = c.length === 0 ? n : n.substring(l), h = d.startsWith(hf), f = h ? d.substring(1) : d, g = p && p > l ? p - l : void 0;
     return {
       modifiers: c,
       hasImportantModifier: h,
@@ -250,7 +250,7 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
     className: n,
     parseClassName: o
   }) : o;
-}, pm = (e) => {
+}, cm = (e) => {
   if (e.length <= 1)
     return e;
   const t = [];
@@ -258,16 +258,16 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
   return e.forEach((s) => {
     s[0] === "[" ? (t.push(...r.sort(), s), r = []) : r.push(s);
   }), t.push(...r.sort()), t;
-}, dm = (e) => ({
-  cache: um(e.cacheSize),
-  parseClassName: lm(e),
-  ...im(e)
-}), hm = /\s+/, fm = (e, t) => {
+}, um = (e) => ({
+  cache: om(e.cacheSize),
+  parseClassName: am(e),
+  ...tm(e)
+}), lm = /\s+/, pm = (e, t) => {
   const {
     parseClassName: r,
     getClassGroupId: s,
     getConflictingClassGroupIds: i
-  } = t, a = [], o = e.trim().split(hm);
+  } = t, a = [], o = e.trim().split(lm);
   let n = "";
   for (let c = o.length - 1; c >= 0; c -= 1) {
     const u = o[c], {
@@ -288,90 +288,90 @@ const mc = (e) => typeof e == "boolean" ? `${e}` : e === 0 ? "0" : e, yc = ff, n
       }
       f = !1;
     }
-    const m = pm(l).join(":"), v = p ? m + gf : m, y = v + g;
+    const m = cm(l).join(":"), v = p ? m + hf : m, y = v + g;
     if (a.includes(y))
       continue;
     a.push(y);
     const S = i(g, f);
     for (let C = 0; C < S.length; ++C) {
-      const P = S[C];
-      a.push(v + P);
+      const R = S[C];
+      a.push(v + R);
     }
     n = u + (n.length > 0 ? " " + n : n);
   }
   return n;
 };
-function vm() {
+function dm() {
   let e = 0, t, r, s = "";
   for (; e < arguments.length; )
-    (t = arguments[e++]) && (r = mf(t)) && (s && (s += " "), s += r);
+    (t = arguments[e++]) && (r = ff(t)) && (s && (s += " "), s += r);
   return s;
 }
-const mf = (e) => {
+const ff = (e) => {
   if (typeof e == "string")
     return e;
   let t, r = "";
   for (let s = 0; s < e.length; s++)
-    e[s] && (t = mf(e[s])) && (r && (r += " "), r += t);
+    e[s] && (t = ff(e[s])) && (r && (r += " "), r += t);
   return r;
 };
-function gm(e, ...t) {
+function hm(e, ...t) {
   let r, s, i, a = o;
   function o(c) {
     const u = t.reduce((l, p) => p(l), e());
-    return r = dm(u), s = r.cache.get, i = r.cache.set, a = n, n(c);
+    return r = um(u), s = r.cache.get, i = r.cache.set, a = n, n(c);
   }
   function n(c) {
     const u = s(c);
     if (u)
       return u;
-    const l = fm(c, r);
+    const l = pm(c, r);
     return i(c, l), l;
   }
   return function() {
-    return a(vm.apply(null, arguments));
+    return a(dm.apply(null, arguments));
   };
 }
-const J = (e) => {
+const Q = (e) => {
   const t = (r) => r[e] || [];
   return t.isThemeGetter = !0, t;
-}, yf = /^\[(?:([a-z-]+):)?(.+)\]$/i, mm = /^\d+\/\d+$/, ym = /* @__PURE__ */ new Set(["px", "full", "screen"]), Sm = /^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/, Cm = /\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/, Rm = /^(rgba?|hsla?|hwb|(ok)?(lab|lch))\(.+\)$/, Pm = /^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/, bm = /^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/, ze = (e) => Vt(e) || ym.has(e) || mm.test(e), He = (e) => Wt(e, "length", Om), Vt = (e) => !!e && !Number.isNaN(Number(e)), ao = (e) => Wt(e, "number", Vt), Yt = (e) => !!e && Number.isInteger(Number(e)), wm = (e) => e.endsWith("%") && Vt(e.slice(0, -1)), L = (e) => yf.test(e), Ke = (e) => Sm.test(e), Em = /* @__PURE__ */ new Set(["length", "size", "percentage"]), Im = (e) => Wt(e, Em, Sf), Am = (e) => Wt(e, "position", Sf), Tm = /* @__PURE__ */ new Set(["image", "url"]), _m = (e) => Wt(e, Tm, Dm), km = (e) => Wt(e, "", Mm), Zt = () => !0, Wt = (e, t, r) => {
-  const s = yf.exec(e);
+}, vf = /^\[(?:([a-z-]+):)?(.+)\]$/i, fm = /^\d+\/\d+$/, vm = /* @__PURE__ */ new Set(["px", "full", "screen"]), gm = /^(\d+(\.\d+)?)?(xs|sm|md|lg|xl)$/, mm = /\d+(%|px|r?em|[sdl]?v([hwib]|min|max)|pt|pc|in|cm|mm|cap|ch|ex|r?lh|cq(w|h|i|b|min|max))|\b(calc|min|max|clamp)\(.+\)|^0$/, ym = /^(rgba?|hsla?|hwb|(ok)?(lab|lch))\(.+\)$/, Sm = /^(inset_)?-?((\d+)?\.?(\d+)[a-z]+|0)_-?((\d+)?\.?(\d+)[a-z]+|0)/, Cm = /^(url|image|image-set|cross-fade|element|(repeating-)?(linear|radial|conic)-gradient)\(.+\)$/, ze = (e) => Ut(e) || vm.has(e) || fm.test(e), He = (e) => $t(e, "length", Tm), Ut = (e) => !!e && !Number.isNaN(Number(e)), so = (e) => $t(e, "number", Ut), Xt = (e) => !!e && Number.isInteger(Number(e)), Rm = (e) => e.endsWith("%") && Ut(e.slice(0, -1)), L = (e) => vf.test(e), Ke = (e) => gm.test(e), Pm = /* @__PURE__ */ new Set(["length", "size", "percentage"]), bm = (e) => $t(e, Pm, gf), wm = (e) => $t(e, "position", gf), Em = /* @__PURE__ */ new Set(["image", "url"]), Im = (e) => $t(e, Em, km), Am = (e) => $t(e, "", _m), er = () => !0, $t = (e, t, r) => {
+  const s = vf.exec(e);
   return s ? s[1] ? typeof t == "string" ? s[1] === t : t.has(s[1]) : r(s[2]) : !1;
-}, Om = (e) => (
+}, Tm = (e) => (
   // `colorFunctionRegex` check is necessary because color functions can have percentages in them which which would be incorrectly classified as lengths.
   // For example, `hsl(0 0% 0%)` would be classified as a length without this check.
   // I could also use lookbehind assertion in `lengthUnitRegex` but that isn't supported widely enough.
-  Cm.test(e) && !Rm.test(e)
-), Sf = () => !1, Mm = (e) => Pm.test(e), Dm = (e) => bm.test(e), Nm = () => {
-  const e = J("colors"), t = J("spacing"), r = J("blur"), s = J("brightness"), i = J("borderColor"), a = J("borderRadius"), o = J("borderSpacing"), n = J("borderWidth"), c = J("contrast"), u = J("grayscale"), l = J("hueRotate"), p = J("invert"), d = J("gap"), h = J("gradientColorStops"), f = J("gradientColorStopPositions"), g = J("inset"), m = J("margin"), v = J("opacity"), y = J("padding"), S = J("saturate"), C = J("scale"), P = J("sepia"), w = J("skew"), I = J("space"), E = J("translate"), T = () => ["auto", "contain", "none"], b = () => ["auto", "hidden", "clip", "visible", "scroll"], _ = () => ["auto", L, t], O = () => [L, t], q = () => ["", ze, He], $ = () => ["auto", Vt, L], Q = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], G = () => ["solid", "dashed", "dotted", "double", "none"], le = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], ae = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], K = () => ["", "0", L], se = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], X = () => [Vt, L];
+  mm.test(e) && !ym.test(e)
+), gf = () => !1, _m = (e) => Sm.test(e), km = (e) => Cm.test(e), Om = () => {
+  const e = Q("colors"), t = Q("spacing"), r = Q("blur"), s = Q("brightness"), i = Q("borderColor"), a = Q("borderRadius"), o = Q("borderSpacing"), n = Q("borderWidth"), c = Q("contrast"), u = Q("grayscale"), l = Q("hueRotate"), p = Q("invert"), d = Q("gap"), h = Q("gradientColorStops"), f = Q("gradientColorStopPositions"), g = Q("inset"), m = Q("margin"), v = Q("opacity"), y = Q("padding"), S = Q("saturate"), C = Q("scale"), R = Q("sepia"), w = Q("skew"), I = Q("space"), E = Q("translate"), T = () => ["auto", "contain", "none"], b = () => ["auto", "hidden", "clip", "visible", "scroll"], _ = () => ["auto", L, t], O = () => [L, t], j = () => ["", ze, He], $ = () => ["auto", Ut, L], Y = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], J = () => ["solid", "dashed", "dotted", "double", "none"], re = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], ve = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], H = () => ["", "0", L], se = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], K = () => [Ut, L];
   return {
     cacheSize: 500,
     separator: ":",
     theme: {
-      colors: [Zt],
+      colors: [er],
       spacing: [ze, He],
       blur: ["none", "", Ke, L],
-      brightness: X(),
+      brightness: K(),
       borderColor: [e],
       borderRadius: ["none", "", "full", Ke, L],
       borderSpacing: O(),
-      borderWidth: q(),
-      contrast: X(),
-      grayscale: K(),
-      hueRotate: X(),
-      invert: K(),
+      borderWidth: j(),
+      contrast: K(),
+      grayscale: H(),
+      hueRotate: K(),
+      invert: H(),
       gap: O(),
       gradientColorStops: [e],
-      gradientColorStopPositions: [wm, He],
+      gradientColorStopPositions: [Rm, He],
       inset: _(),
       margin: _(),
-      opacity: X(),
+      opacity: K(),
       padding: O(),
-      saturate: X(),
-      scale: X(),
-      sepia: K(),
-      skew: X(),
+      saturate: K(),
+      scale: K(),
+      sepia: H(),
+      skew: K(),
       space: O(),
       translate: O()
     },
@@ -467,7 +467,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/object-position
        */
       "object-position": [{
-        object: [...Q(), L]
+        object: [...Y(), L]
       }],
       /**
        * Overflow
@@ -589,7 +589,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/z-index
        */
       z: [{
-        z: ["auto", Yt, L]
+        z: ["auto", Xt, L]
       }],
       // Flexbox and Grid
       /**
@@ -625,28 +625,28 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/flex-grow
        */
       grow: [{
-        grow: K()
+        grow: H()
       }],
       /**
        * Flex Shrink
        * @see https://tailwindcss.com/docs/flex-shrink
        */
       shrink: [{
-        shrink: K()
+        shrink: H()
       }],
       /**
        * Order
        * @see https://tailwindcss.com/docs/order
        */
       order: [{
-        order: ["first", "last", "none", Yt, L]
+        order: ["first", "last", "none", Xt, L]
       }],
       /**
        * Grid Template Columns
        * @see https://tailwindcss.com/docs/grid-template-columns
        */
       "grid-cols": [{
-        "grid-cols": [Zt]
+        "grid-cols": [er]
       }],
       /**
        * Grid Column Start / End
@@ -654,7 +654,7 @@ const J = (e) => {
        */
       "col-start-end": [{
         col: ["auto", {
-          span: ["full", Yt, L]
+          span: ["full", Xt, L]
         }, L]
       }],
       /**
@@ -676,7 +676,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/grid-template-rows
        */
       "grid-rows": [{
-        "grid-rows": [Zt]
+        "grid-rows": [er]
       }],
       /**
        * Grid Row Start / End
@@ -684,7 +684,7 @@ const J = (e) => {
        */
       "row-start-end": [{
         row: ["auto", {
-          span: [Yt, L]
+          span: [Xt, L]
         }, L]
       }],
       /**
@@ -748,7 +748,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/justify-content
        */
       "justify-content": [{
-        justify: ["normal", ...ae()]
+        justify: ["normal", ...ve()]
       }],
       /**
        * Justify Items
@@ -769,7 +769,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/align-content
        */
       "align-content": [{
-        content: ["normal", ...ae(), "baseline"]
+        content: ["normal", ...ve(), "baseline"]
       }],
       /**
        * Align Items
@@ -790,7 +790,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/place-content
        */
       "place-content": [{
-        "place-content": [...ae(), "baseline"]
+        "place-content": [...ve(), "baseline"]
       }],
       /**
        * Place Items
@@ -1032,14 +1032,14 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/font-weight
        */
       "font-weight": [{
-        font: ["thin", "extralight", "light", "normal", "medium", "semibold", "bold", "extrabold", "black", ao]
+        font: ["thin", "extralight", "light", "normal", "medium", "semibold", "bold", "extrabold", "black", so]
       }],
       /**
        * Font Family
        * @see https://tailwindcss.com/docs/font-family
        */
       "font-family": [{
-        font: [Zt]
+        font: [er]
       }],
       /**
        * Font Variant Numeric
@@ -1083,7 +1083,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/line-clamp
        */
       "line-clamp": [{
-        "line-clamp": ["none", Vt, ao]
+        "line-clamp": ["none", Ut, so]
       }],
       /**
        * Line Height
@@ -1159,7 +1159,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/text-decoration-style
        */
       "text-decoration-style": [{
-        decoration: [...G(), "wavy"]
+        decoration: [...J(), "wavy"]
       }],
       /**
        * Text Decoration Thickness
@@ -1276,7 +1276,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/background-position
        */
       "bg-position": [{
-        bg: [...Q(), Am]
+        bg: [...Y(), wm]
       }],
       /**
        * Background Repeat
@@ -1292,7 +1292,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/background-size
        */
       "bg-size": [{
-        bg: ["auto", "cover", "contain", Im]
+        bg: ["auto", "cover", "contain", bm]
       }],
       /**
        * Background Image
@@ -1301,7 +1301,7 @@ const J = (e) => {
       "bg-image": [{
         bg: ["none", {
           "gradient-to": ["t", "tr", "r", "br", "b", "bl", "l", "tl"]
-        }, _m]
+        }, Im]
       }],
       /**
        * Background Color
@@ -1533,7 +1533,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/border-style
        */
       "border-style": [{
-        border: [...G(), "hidden"]
+        border: [...J(), "hidden"]
       }],
       /**
        * Divide Width X
@@ -1571,7 +1571,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/divide-style
        */
       "divide-style": [{
-        divide: G()
+        divide: J()
       }],
       /**
        * Border Color
@@ -1648,7 +1648,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/outline-style
        */
       "outline-style": [{
-        outline: ["", ...G()]
+        outline: ["", ...J()]
       }],
       /**
        * Outline Offset
@@ -1676,7 +1676,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/ring-width
        */
       "ring-w": [{
-        ring: q()
+        ring: j()
       }],
       /**
        * Ring Width Inset
@@ -1717,14 +1717,14 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/box-shadow
        */
       shadow: [{
-        shadow: ["", "inner", "none", Ke, km]
+        shadow: ["", "inner", "none", Ke, Am]
       }],
       /**
        * Box Shadow Color
        * @see https://tailwindcss.com/docs/box-shadow-color
        */
       "shadow-color": [{
-        shadow: [Zt]
+        shadow: [er]
       }],
       /**
        * Opacity
@@ -1738,14 +1738,14 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/mix-blend-mode
        */
       "mix-blend": [{
-        "mix-blend": [...le(), "plus-lighter", "plus-darker"]
+        "mix-blend": [...re(), "plus-lighter", "plus-darker"]
       }],
       /**
        * Background Blend Mode
        * @see https://tailwindcss.com/docs/background-blend-mode
        */
       "bg-blend": [{
-        "bg-blend": le()
+        "bg-blend": re()
       }],
       // Filters
       /**
@@ -1817,7 +1817,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/sepia
        */
       sepia: [{
-        sepia: [P]
+        sepia: [R]
       }],
       /**
        * Backdrop Filter
@@ -1888,7 +1888,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/backdrop-sepia
        */
       "backdrop-sepia": [{
-        "backdrop-sepia": [P]
+        "backdrop-sepia": [R]
       }],
       // Tables
       /**
@@ -1946,7 +1946,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/transition-duration
        */
       duration: [{
-        duration: X()
+        duration: K()
       }],
       /**
        * Transition Timing Function
@@ -1960,7 +1960,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/transition-delay
        */
       delay: [{
-        delay: X()
+        delay: K()
       }],
       /**
        * Animation
@@ -2003,7 +2003,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/rotate
        */
       rotate: [{
-        rotate: [Yt, L]
+        rotate: [Xt, L]
       }],
       /**
        * Translate X
@@ -2297,7 +2297,7 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/stroke-width
        */
       "stroke-w": [{
-        stroke: [ze, He, ao]
+        stroke: [ze, He, so]
       }],
       /**
        * Stroke
@@ -2372,11 +2372,11 @@ const J = (e) => {
       "font-size": ["leading"]
     }
   };
-}, xm = /* @__PURE__ */ gm(Nm);
-function cs(...e) {
-  return xm(ff(e));
+}, Mm = /* @__PURE__ */ hm(Om);
+function ls(...e) {
+  return Mm(pf(e));
 }
-const zm = nm(
+const Dm = em(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
@@ -2400,18 +2400,18 @@ const zm = nm(
       size: "default"
     }
   }
-), Pe = ce.forwardRef(
-  ({ className: e, variant: t, size: r, asChild: s = !1, ...i }, a) => /* @__PURE__ */ R(
-    s ? Yg : "button",
+), Oe = oe.forwardRef(
+  ({ className: e, variant: t, size: r, asChild: s = !1, ...i }, a) => /* @__PURE__ */ P(
+    s ? Jg : "button",
     {
-      className: cs(zm({ variant: t, size: r, className: e })),
+      className: ls(Dm({ variant: t, size: r, className: e })),
       ref: a,
       ...i
     }
   )
 );
-Pe.displayName = "Button";
-function Rc(e, t) {
+Oe.displayName = "Button";
+function Sc(e, t) {
   const r = String(e);
   if (typeof t != "string")
     throw new TypeError("Expected character");
@@ -2420,36 +2420,36 @@ function Rc(e, t) {
     s++, i = r.indexOf(t, i + t.length);
   return s;
 }
-const ls = $s(/[A-Za-z]/), Xa = $s(/[\dA-Za-z]/);
-function Lm(e) {
+const ds = Us(/[A-Za-z]/), Ya = Us(/[\dA-Za-z]/);
+function Nm(e) {
   return (
     // Special whitespace codes (which have negative values), C0 and Control
     // character DEL
     e !== null && (e < 32 || e === 127)
   );
 }
-function $t(e) {
+function Bt(e) {
   return e !== null && e < -2;
 }
-function ve(e) {
+function pe(e) {
   return e !== null && (e < 0 || e === 32);
 }
 function Be(e) {
   return e === -2 || e === -1 || e === 32;
 }
-const Us = $s(new RegExp("\\p{P}|\\p{S}", "u")), kt = $s(/\s/);
-function $s(e) {
+const Bs = Us(new RegExp("\\p{P}|\\p{S}", "u")), kt = Us(/\s/);
+function Us(e) {
   return t;
   function t(r) {
     return r !== null && r > -1 && e.test(String.fromCharCode(r));
   }
 }
-function jm(e) {
+function xm(e) {
   if (typeof e != "string")
     throw new TypeError("Expected a string");
   return e.replace(/[|\\{}()[\]^$+*?.]/g, "\\$&").replace(/-/g, "\\x2d");
 }
-const Vs = (
+const $s = (
   // Note: overloads in JSDoc can’t yet use different `@template`s.
   /**
    * @type {(
@@ -2466,22 +2466,22 @@ const Vs = (
    */
   function(e) {
     if (e == null)
-      return Um;
+      return qm;
     if (typeof e == "function")
-      return Ws(e);
+      return Vs(e);
     if (typeof e == "object")
-      return Array.isArray(e) ? qm(e) : Fm(e);
+      return Array.isArray(e) ? zm(e) : Lm(e);
     if (typeof e == "string")
-      return Bm(e);
+      return jm(e);
     throw new Error("Expected function, string, or object as test");
   }
 );
-function qm(e) {
+function zm(e) {
   const t = [];
   let r = -1;
   for (; ++r < e.length; )
-    t[r] = Vs(e[r]);
-  return Ws(s);
+    t[r] = $s(e[r]);
+  return Vs(s);
   function s(...i) {
     let a = -1;
     for (; ++a < t.length; )
@@ -2489,12 +2489,12 @@ function qm(e) {
     return !1;
   }
 }
-function Fm(e) {
+function Lm(e) {
   const t = (
     /** @type {Record<string, unknown>} */
     e
   );
-  return Ws(r);
+  return Vs(r);
   function r(s) {
     const i = (
       /** @type {Record<string, unknown>} */
@@ -2507,16 +2507,16 @@ function Fm(e) {
     return !0;
   }
 }
-function Bm(e) {
-  return Ws(t);
+function jm(e) {
+  return Vs(t);
   function t(r) {
     return r && r.type === e;
   }
 }
-function Ws(e) {
+function Vs(e) {
   return t;
   function t(r, s, i) {
-    return !!($m(r) && e.call(
+    return !!(Fm(r) && e.call(
       this,
       r,
       typeof s == "number" ? s : void 0,
@@ -2524,17 +2524,17 @@ function Ws(e) {
     ));
   }
 }
-function Um() {
+function qm() {
   return !0;
 }
-function $m(e) {
+function Fm(e) {
   return e !== null && typeof e == "object" && "type" in e;
 }
-const Cf = [], Vm = !0, xa = !1, Wm = "skip";
-function Rf(e, t, r, s) {
+const mf = [], Bm = !0, Da = !1, Um = "skip";
+function yf(e, t, r, s) {
   let i;
   typeof t == "function" && typeof r != "function" ? (s = r, r = t) : i = t;
-  const a = Vs(i), o = s ? -1 : 1;
+  const a = $s(i), o = s ? -1 : 1;
   n(e, void 0, [])();
   function n(c, u, l) {
     const p = (
@@ -2555,18 +2555,18 @@ function Rf(e, t, r, s) {
     }
     return d;
     function d() {
-      let h = Cf, f, g, m;
-      if ((!t || a(c, u, l[l.length - 1] || void 0)) && (h = Hm(r(c, l)), h[0] === xa))
+      let h = mf, f, g, m;
+      if ((!t || a(c, u, l[l.length - 1] || void 0)) && (h = $m(r(c, l)), h[0] === Da))
         return h;
       if ("children" in c && c.children) {
         const v = (
           /** @type {UnistParent} */
           c
         );
-        if (v.children && h[0] !== Wm)
+        if (v.children && h[0] !== Um)
           for (g = (s ? v.children.length : -1) + o, m = l.concat(v); g > -1 && g < v.children.length; ) {
             const y = v.children[g];
-            if (f = n(y, g, m)(), f[0] === xa)
+            if (f = n(y, g, m)(), f[0] === Da)
               return f;
             g = typeof f[1] == "number" ? f[1] : g + o;
           }
@@ -2575,14 +2575,14 @@ function Rf(e, t, r, s) {
     }
   }
 }
-function Hm(e) {
-  return Array.isArray(e) ? e : typeof e == "number" ? [Vm, e] : e == null ? Cf : [e];
+function $m(e) {
+  return Array.isArray(e) ? e : typeof e == "number" ? [Bm, e] : e == null ? mf : [e];
 }
-function Km(e, t, r) {
-  const i = Vs((r || {}).ignore || []), a = Jm(t);
+function Vm(e, t, r) {
+  const i = $s((r || {}).ignore || []), a = Wm(t);
   let o = -1;
   for (; ++o < a.length; )
-    Rf(e, "text", n);
+    yf(e, "text", n);
   function n(u, l) {
     let p = -1, d;
     for (; ++p < l.length; ) {
@@ -2606,12 +2606,12 @@ function Km(e, t, r) {
     d.lastIndex = 0;
     let S = d.exec(u.value);
     for (; S; ) {
-      const C = S.index, P = {
+      const C = S.index, R = {
         index: S.index,
         input: S.input,
         stack: [...l, u]
       };
-      let w = h(...S, P);
+      let w = h(...S, R);
       if (typeof w == "string" && (w = w.length > 0 ? { type: "text", value: w } : void 0), w === !1 ? d.lastIndex = C + 1 : (f !== C && y.push({
         type: "text",
         value: u.value.slice(f, C)
@@ -2622,7 +2622,7 @@ function Km(e, t, r) {
     return v ? (f < u.value.length && y.push({ type: "text", value: u.value.slice(f) }), p.children.splice(m, 1, ...y)) : y = [u], m + y.length;
   }
 }
-function Jm(e) {
+function Wm(e) {
   const t = [];
   if (!Array.isArray(e))
     throw new TypeError("Expected find and replace tuple or list of tuples");
@@ -2630,98 +2630,98 @@ function Jm(e) {
   let s = -1;
   for (; ++s < r.length; ) {
     const i = r[s];
-    t.push([Gm(i[0]), Qm(i[1])]);
+    t.push([Hm(i[0]), Km(i[1])]);
   }
   return t;
 }
-function Gm(e) {
-  return typeof e == "string" ? new RegExp(jm(e), "g") : e;
+function Hm(e) {
+  return typeof e == "string" ? new RegExp(xm(e), "g") : e;
 }
-function Qm(e) {
+function Km(e) {
   return typeof e == "function" ? e : function() {
     return e;
   };
 }
-const co = "phrasing", uo = ["autolink", "link", "image", "label"];
-function Ym() {
+const oo = "phrasing", ao = ["autolink", "link", "image", "label"];
+function Jm() {
   return {
-    transforms: [iy],
+    transforms: [ty],
     enter: {
-      literalAutolink: Xm,
-      literalAutolinkEmail: lo,
-      literalAutolinkHttp: lo,
-      literalAutolinkWww: lo
+      literalAutolink: Qm,
+      literalAutolinkEmail: co,
+      literalAutolinkHttp: co,
+      literalAutolinkWww: co
     },
     exit: {
-      literalAutolink: ny,
-      literalAutolinkEmail: ry,
-      literalAutolinkHttp: ey,
-      literalAutolinkWww: ty
+      literalAutolink: ey,
+      literalAutolinkEmail: Xm,
+      literalAutolinkHttp: Ym,
+      literalAutolinkWww: Zm
     }
   };
 }
-function Zm() {
+function Gm() {
   return {
     unsafe: [
       {
         character: "@",
         before: "[+\\-.\\w]",
         after: "[\\-.\\w]",
-        inConstruct: co,
-        notInConstruct: uo
+        inConstruct: oo,
+        notInConstruct: ao
       },
       {
         character: ".",
         before: "[Ww]",
         after: "[\\-.\\w]",
-        inConstruct: co,
-        notInConstruct: uo
+        inConstruct: oo,
+        notInConstruct: ao
       },
       {
         character: ":",
         before: "[ps]",
         after: "\\/",
-        inConstruct: co,
-        notInConstruct: uo
+        inConstruct: oo,
+        notInConstruct: ao
       }
     ]
   };
 }
-function Xm(e) {
+function Qm(e) {
   this.enter({ type: "link", title: null, url: "", children: [] }, e);
 }
-function lo(e) {
+function co(e) {
   this.config.enter.autolinkProtocol.call(this, e);
 }
-function ey(e) {
+function Ym(e) {
   this.config.exit.autolinkProtocol.call(this, e);
 }
-function ty(e) {
+function Zm(e) {
   this.config.exit.data.call(this, e);
   const t = this.stack[this.stack.length - 1];
   t.type, t.url = "http://" + this.sliceSerialize(e);
 }
-function ry(e) {
+function Xm(e) {
   this.config.exit.autolinkEmail.call(this, e);
 }
-function ny(e) {
+function ey(e) {
   this.exit(e);
 }
-function iy(e) {
-  Km(
+function ty(e) {
+  Vm(
     e,
     [
-      [/(https?:\/\/|www(?=\.))([-.\w]+)([^ \t\r\n]*)/gi, sy],
-      [new RegExp("(?<=^|\\s|\\p{P}|\\p{S})([-.\\w+]+)@([-\\w]+(?:\\.[-\\w]+)+)", "gu"), oy]
+      [/(https?:\/\/|www(?=\.))([-.\w]+)([^ \t\r\n]*)/gi, ry],
+      [new RegExp("(?<=^|\\s|\\p{P}|\\p{S})([-.\\w+]+)@([-\\w]+(?:\\.[-\\w]+)+)", "gu"), ny]
     ],
     { ignore: ["link", "linkReference"] }
   );
 }
-function sy(e, t, r, s, i) {
+function ry(e, t, r, s, i) {
   let a = "";
-  if (!Pf(i) || (/^w/i.test(t) && (r = t + r, t = "", a = "http://"), !ay(r)))
+  if (!Sf(i) || (/^w/i.test(t) && (r = t + r, t = "", a = "http://"), !iy(r)))
     return !1;
-  const o = cy(r + s);
+  const o = sy(r + s);
   if (!o[0]) return !1;
   const n = {
     type: "link",
@@ -2731,10 +2731,10 @@ function sy(e, t, r, s, i) {
   };
   return o[1] ? [n, { type: "text", value: o[1] }] : n;
 }
-function oy(e, t, r, s) {
+function ny(e, t, r, s) {
   return (
     // Not an expected previous character.
-    !Pf(s, !0) || // Label ends in not allowed character.
+    !Sf(s, !0) || // Label ends in not allowed character.
     /[-\d_]$/.test(r) ? !1 : {
       type: "link",
       title: null,
@@ -2743,68 +2743,68 @@ function oy(e, t, r, s) {
     }
   );
 }
-function ay(e) {
+function iy(e) {
   const t = e.split(".");
   return !(t.length < 2 || t[t.length - 1] && (/_/.test(t[t.length - 1]) || !/[a-zA-Z\d]/.test(t[t.length - 1])) || t[t.length - 2] && (/_/.test(t[t.length - 2]) || !/[a-zA-Z\d]/.test(t[t.length - 2])));
 }
-function cy(e) {
+function sy(e) {
   const t = /[!"&'),.:;<>?\]}]+$/.exec(e);
   if (!t)
     return [e, void 0];
   e = e.slice(0, t.index);
   let r = t[0], s = r.indexOf(")");
-  const i = Rc(e, "(");
-  let a = Rc(e, ")");
+  const i = Sc(e, "(");
+  let a = Sc(e, ")");
   for (; s !== -1 && i > a; )
     e += r.slice(0, s + 1), r = r.slice(s + 1), s = r.indexOf(")"), a++;
   return [e, r];
 }
-function Pf(e, t) {
+function Sf(e, t) {
   const r = e.input.charCodeAt(e.index - 1);
-  return (e.index === 0 || kt(r) || Us(r)) && // If it’s an email, the previous character should not be a slash.
+  return (e.index === 0 || kt(r) || Bs(r)) && // If it’s an email, the previous character should not be a slash.
   (!t || r !== 47);
 }
-function gs(e) {
+function ys(e) {
   return e.replace(/[\t\n\r ]+/g, " ").replace(/^ | $/g, "").toLowerCase().toUpperCase();
 }
-bf.peek = my;
-function uy() {
+Cf.peek = fy;
+function oy() {
   this.buffer();
 }
-function ly(e) {
+function ay(e) {
   this.enter({ type: "footnoteReference", identifier: "", label: "" }, e);
 }
-function py() {
+function cy() {
   this.buffer();
 }
-function dy(e) {
+function uy(e) {
   this.enter(
     { type: "footnoteDefinition", identifier: "", label: "", children: [] },
     e
   );
 }
+function ly(e) {
+  const t = this.resume(), r = this.stack[this.stack.length - 1];
+  r.type, r.identifier = ys(
+    this.sliceSerialize(e)
+  ).toLowerCase(), r.label = t;
+}
+function py(e) {
+  this.exit(e);
+}
+function dy(e) {
+  const t = this.resume(), r = this.stack[this.stack.length - 1];
+  r.type, r.identifier = ys(
+    this.sliceSerialize(e)
+  ).toLowerCase(), r.label = t;
+}
 function hy(e) {
-  const t = this.resume(), r = this.stack[this.stack.length - 1];
-  r.type, r.identifier = gs(
-    this.sliceSerialize(e)
-  ).toLowerCase(), r.label = t;
-}
-function fy(e) {
   this.exit(e);
 }
-function vy(e) {
-  const t = this.resume(), r = this.stack[this.stack.length - 1];
-  r.type, r.identifier = gs(
-    this.sliceSerialize(e)
-  ).toLowerCase(), r.label = t;
-}
-function gy(e) {
-  this.exit(e);
-}
-function my() {
+function fy() {
   return "[";
 }
-function bf(e, t, r, s) {
+function Cf(e, t, r, s) {
   const i = r.createTracker(s);
   let a = i.move("[^");
   const o = r.enter("footnoteReference"), n = r.enter("reference");
@@ -2812,26 +2812,26 @@ function bf(e, t, r, s) {
     r.safe(r.associationId(e), { after: "]", before: a })
   ), n(), o(), a += i.move("]"), a;
 }
-function yy() {
+function vy() {
   return {
     enter: {
-      gfmFootnoteCallString: uy,
-      gfmFootnoteCall: ly,
-      gfmFootnoteDefinitionLabelString: py,
-      gfmFootnoteDefinition: dy
+      gfmFootnoteCallString: oy,
+      gfmFootnoteCall: ay,
+      gfmFootnoteDefinitionLabelString: cy,
+      gfmFootnoteDefinition: uy
     },
     exit: {
-      gfmFootnoteCallString: hy,
-      gfmFootnoteCall: fy,
-      gfmFootnoteDefinitionLabelString: vy,
-      gfmFootnoteDefinition: gy
+      gfmFootnoteCallString: ly,
+      gfmFootnoteCall: py,
+      gfmFootnoteDefinitionLabelString: dy,
+      gfmFootnoteDefinition: hy
     }
   };
 }
-function Sy(e) {
+function gy(e) {
   let t = !1;
   return e && e.firstLineBlank && (t = !0), {
-    handlers: { footnoteDefinition: r, footnoteReference: bf },
+    handlers: { footnoteDefinition: r, footnoteReference: Cf },
     // This is on by default already.
     unsafe: [{ character: "[", inConstruct: ["label", "phrasing", "reference"] }]
   };
@@ -2845,18 +2845,18 @@ function Sy(e) {
       (t ? `
 ` : " ") + a.indentLines(
         a.containerFlow(s, n.current()),
-        t ? wf : Cy
+        t ? Rf : my
       )
     )), u(), c;
   }
 }
-function Cy(e, t, r) {
-  return t === 0 ? e : wf(e, t, r);
+function my(e, t, r) {
+  return t === 0 ? e : Rf(e, t, r);
 }
-function wf(e, t, r) {
+function Rf(e, t, r) {
   return (r ? "" : "    ") + e;
 }
-const Ry = [
+const yy = [
   "autolink",
   "destinationLiteral",
   "destinationRaw",
@@ -2864,33 +2864,33 @@ const Ry = [
   "titleQuote",
   "titleApostrophe"
 ];
-Ef.peek = Iy;
-function Py() {
+Pf.peek = by;
+function Sy() {
   return {
     canContainEols: ["delete"],
-    enter: { strikethrough: wy },
-    exit: { strikethrough: Ey }
+    enter: { strikethrough: Ry },
+    exit: { strikethrough: Py }
   };
 }
-function by() {
+function Cy() {
   return {
     unsafe: [
       {
         character: "~",
         inConstruct: "phrasing",
-        notInConstruct: Ry
+        notInConstruct: yy
       }
     ],
-    handlers: { delete: Ef }
+    handlers: { delete: Pf }
   };
 }
-function wy(e) {
+function Ry(e) {
   this.enter({ type: "delete", children: [] }, e);
 }
-function Ey(e) {
+function Py(e) {
   this.exit(e);
 }
-function Ef(e, t, r, s) {
+function Pf(e, t, r, s) {
   const i = r.createTracker(s), a = r.enter("strikethrough");
   let o = i.move("~~");
   return o += r.containerPhrasing(e, {
@@ -2899,20 +2899,20 @@ function Ef(e, t, r, s) {
     after: "~"
   }), o += i.move("~~"), a(), o;
 }
-function Iy() {
+function by() {
   return "~";
 }
-function Ay(e) {
+function wy(e) {
   return e.length;
 }
-function Ty(e, t) {
-  const r = t || {}, s = (r.align || []).concat(), i = r.stringLength || Ay, a = [], o = [], n = [], c = [];
+function Ey(e, t) {
+  const r = t || {}, s = (r.align || []).concat(), i = r.stringLength || wy, a = [], o = [], n = [], c = [];
   let u = 0, l = -1;
   for (; ++l < e.length; ) {
     const g = [], m = [];
     let v = -1;
     for (e[l].length > u && (u = e[l].length); ++v < e[l].length; ) {
-      const y = _y(e[l][v]);
+      const y = Iy(e[l][v]);
       if (r.alignDelimiters !== !1) {
         const S = i(y);
         m[v] = S, (c[v] === void 0 || S > c[v]) && (c[v] = S);
@@ -2924,9 +2924,9 @@ function Ty(e, t) {
   let p = -1;
   if (typeof s == "object" && "length" in s)
     for (; ++p < u; )
-      a[p] = Pc(s[p]);
+      a[p] = Cc(s[p]);
   else {
-    const g = Pc(s);
+    const g = Cc(s);
     for (; ++p < u; )
       a[p] = g;
   }
@@ -2953,8 +2953,8 @@ function Ty(e, t) {
       const y = g[p] || "";
       let S = "", C = "";
       if (r.alignDelimiters !== !1) {
-        const P = c[p] - (m[p] || 0), w = a[p];
-        w === 114 ? S = " ".repeat(P) : w === 99 ? P % 2 ? (S = " ".repeat(P / 2 + 0.5), C = " ".repeat(P / 2 - 0.5)) : (S = " ".repeat(P / 2), C = S) : C = " ".repeat(P);
+        const R = c[p] - (m[p] || 0), w = a[p];
+        w === 114 ? S = " ".repeat(R) : w === 99 ? R % 2 ? (S = " ".repeat(R / 2 + 0.5), C = " ".repeat(R / 2 - 0.5)) : (S = " ".repeat(R / 2), C = S) : C = " ".repeat(R);
       }
       r.delimiterStart !== !1 && !p && v.push("|"), r.padding !== !1 && // Don’t add the opening space if we’re not aligning and the cell is
       // empty: there will be a closing space.
@@ -2967,29 +2967,29 @@ function Ty(e, t) {
   return f.join(`
 `);
 }
-function _y(e) {
+function Iy(e) {
   return e == null ? "" : String(e);
 }
-function Pc(e) {
+function Cc(e) {
   const t = typeof e == "string" ? e.codePointAt(0) : 0;
   return t === 67 || t === 99 ? 99 : t === 76 || t === 108 ? 108 : t === 82 || t === 114 ? 114 : 0;
 }
-function ky(e, t, r, s) {
+function Ay(e, t, r, s) {
   const i = r.enter("blockquote"), a = r.createTracker(s);
   a.move("> "), a.shift(2);
   const o = r.indentLines(
     r.containerFlow(e, a.current()),
-    Oy
+    Ty
   );
   return i(), o;
 }
-function Oy(e, t, r) {
+function Ty(e, t, r) {
   return ">" + (r ? "" : " ") + e;
 }
-function My(e, t) {
-  return bc(e, t.inConstruct, !0) && !bc(e, t.notInConstruct, !1);
+function _y(e, t) {
+  return Rc(e, t.inConstruct, !0) && !Rc(e, t.notInConstruct, !1);
 }
-function bc(e, t, r) {
+function Rc(e, t, r) {
   if (typeof t == "string" && (t = [t]), !t || t.length === 0)
     return r;
   let s = -1;
@@ -2998,16 +2998,16 @@ function bc(e, t, r) {
       return !0;
   return !1;
 }
-function wc(e, t, r, s) {
+function Pc(e, t, r, s) {
   let i = -1;
   for (; ++i < r.unsafe.length; )
     if (r.unsafe[i].character === `
-` && My(r.stack, r.unsafe[i]))
+` && _y(r.stack, r.unsafe[i]))
       return /[ \t]/.test(s.before) ? "" : " ";
   return `\\
 `;
 }
-function Dy(e, t) {
+function ky(e, t) {
   const r = String(e);
   let s = r.indexOf(t), i = s, a = 0, o = 0;
   if (typeof t != "string")
@@ -3016,13 +3016,13 @@ function Dy(e, t) {
     s === i ? ++a > o && (o = a) : a = 1, i = s + t.length, s = r.indexOf(t, i);
   return o;
 }
-function Ny(e, t) {
+function Oy(e, t) {
   return !!(t.options.fences === !1 && e.value && // If there’s no info…
   !e.lang && // And there’s a non-whitespace character…
   /[^ \r\n]/.test(e.value) && // And the value doesn’t start or end in a blank…
   !/^[\t ]*(?:[\r\n]|$)|(?:^|[\r\n])[\t ]*$/.test(e.value));
 }
-function xy(e) {
+function My(e) {
   const t = e.options.fence || "`";
   if (t !== "`" && t !== "~")
     throw new Error(
@@ -3030,13 +3030,13 @@ function xy(e) {
     );
   return t;
 }
-function zy(e, t, r, s) {
-  const i = xy(r), a = e.value || "", o = i === "`" ? "GraveAccent" : "Tilde";
-  if (Ny(e, r)) {
-    const p = r.enter("codeIndented"), d = r.indentLines(a, Ly);
+function Dy(e, t, r, s) {
+  const i = My(r), a = e.value || "", o = i === "`" ? "GraveAccent" : "Tilde";
+  if (Oy(e, r)) {
+    const p = r.enter("codeIndented"), d = r.indentLines(a, Ny);
     return p(), d;
   }
-  const n = r.createTracker(s), c = i.repeat(Math.max(Dy(a, i) + 1, 3)), u = r.enter("codeFenced");
+  const n = r.createTracker(s), c = i.repeat(Math.max(ky(a, i) + 1, 3)), u = r.enter("codeFenced");
   let l = n.move(c);
   if (e.lang) {
     const p = r.enter(`codeFencedLang${o}`);
@@ -3065,10 +3065,10 @@ function zy(e, t, r, s) {
 `), a && (l += n.move(a + `
 `)), l += n.move(c), u(), l;
 }
-function Ly(e, t, r) {
+function Ny(e, t, r) {
   return (r ? "" : "    ") + e;
 }
-function ec(e) {
+function Za(e) {
   const t = e.options.quote || '"';
   if (t !== '"' && t !== "'")
     throw new Error(
@@ -3076,8 +3076,8 @@ function ec(e) {
     );
   return t;
 }
-function jy(e, t, r, s) {
-  const i = ec(r), a = i === '"' ? "Quote" : "Apostrophe", o = r.enter("definition");
+function xy(e, t, r, s) {
+  const i = Za(r), a = i === '"' ? "Quote" : "Apostrophe", o = r.enter("definition");
   let n = r.enter("label");
   const c = r.createTracker(s);
   let u = c.move("[");
@@ -3106,7 +3106,7 @@ function jy(e, t, r, s) {
     })
   ), u += c.move(i), n()), o(), u;
 }
-function qy(e) {
+function zy(e) {
   const t = e.options.emphasis || "*";
   if (t !== "*" && t !== "_")
     throw new Error(
@@ -3114,17 +3114,17 @@ function qy(e) {
     );
   return t;
 }
-function ps(e) {
+function hs(e) {
   return "&#x" + e.toString(16).toUpperCase() + ";";
 }
-function Ds(e) {
-  if (e === null || ve(e) || kt(e))
+function Ms(e) {
+  if (e === null || pe(e) || kt(e))
     return 1;
-  if (Us(e))
+  if (Bs(e))
     return 2;
 }
-function Ns(e, t, r) {
-  const s = Ds(e), i = Ds(t);
+function Ds(e, t, r) {
+  const s = Ms(e), i = Ms(t);
   return s === void 0 ? i === void 0 ? (
     // Letter inside:
     // we have to encode *both* letters for `_` as it is looser.
@@ -3156,9 +3156,9 @@ function Ns(e, t, r) {
     { inside: !1, outside: !1 }
   );
 }
-If.peek = Fy;
-function If(e, t, r, s) {
-  const i = qy(r), a = r.enter("emphasis"), o = r.createTracker(s), n = o.move(i);
+bf.peek = Ly;
+function bf(e, t, r, s) {
+  const i = zy(r), a = r.enter("emphasis"), o = r.createTracker(s), n = o.move(i);
   let c = o.move(
     r.containerPhrasing(e, {
       after: i,
@@ -3166,67 +3166,67 @@ function If(e, t, r, s) {
       ...o.current()
     })
   );
-  const u = c.charCodeAt(0), l = Ns(
+  const u = c.charCodeAt(0), l = Ds(
     s.before.charCodeAt(s.before.length - 1),
     u,
     i
   );
-  l.inside && (c = ps(u) + c.slice(1));
-  const p = c.charCodeAt(c.length - 1), d = Ns(s.after.charCodeAt(0), p, i);
-  d.inside && (c = c.slice(0, -1) + ps(p));
+  l.inside && (c = hs(u) + c.slice(1));
+  const p = c.charCodeAt(c.length - 1), d = Ds(s.after.charCodeAt(0), p, i);
+  d.inside && (c = c.slice(0, -1) + hs(p));
   const h = o.move(i);
   return a(), r.attentionEncodeSurroundingInfo = {
     after: d.outside,
     before: l.outside
   }, n + c + h;
 }
-function Fy(e, t, r) {
+function Ly(e, t, r) {
   return r.options.emphasis || "*";
 }
-function By(e, t, r, s) {
+function jy(e, t, r, s) {
   let i, a, o;
-  typeof t == "function" && typeof r != "function" ? (a = void 0, o = t, i = r) : (a = t, o = r, i = s), Rf(e, a, n, i);
+  typeof t == "function" && typeof r != "function" ? (a = void 0, o = t, i = r) : (a = t, o = r, i = s), yf(e, a, n, i);
   function n(c, u) {
     const l = u[u.length - 1], p = l ? l.children.indexOf(c) : void 0;
     return o(c, p, l);
   }
 }
-const Uy = {};
-function Af(e, t) {
-  const r = Uy, s = typeof r.includeImageAlt == "boolean" ? r.includeImageAlt : !0, i = typeof r.includeHtml == "boolean" ? r.includeHtml : !0;
-  return Tf(e, s, i);
+const qy = {};
+function wf(e, t) {
+  const r = qy, s = typeof r.includeImageAlt == "boolean" ? r.includeImageAlt : !0, i = typeof r.includeHtml == "boolean" ? r.includeHtml : !0;
+  return Ef(e, s, i);
 }
-function Tf(e, t, r) {
-  if ($y(e)) {
+function Ef(e, t, r) {
+  if (Fy(e)) {
     if ("value" in e)
       return e.type === "html" && !r ? "" : e.value;
     if (t && "alt" in e && e.alt)
       return e.alt;
     if ("children" in e)
-      return Ec(e.children, t, r);
+      return bc(e.children, t, r);
   }
-  return Array.isArray(e) ? Ec(e, t, r) : "";
+  return Array.isArray(e) ? bc(e, t, r) : "";
 }
-function Ec(e, t, r) {
+function bc(e, t, r) {
   const s = [];
   let i = -1;
   for (; ++i < e.length; )
-    s[i] = Tf(e[i], t, r);
+    s[i] = Ef(e[i], t, r);
   return s.join("");
 }
-function $y(e) {
+function Fy(e) {
   return !!(e && typeof e == "object");
 }
-function Vy(e, t) {
+function By(e, t) {
   let r = !1;
-  return By(e, function(s) {
+  return jy(e, function(s) {
     if ("value" in s && /\r?\n|\r/.test(s.value) || s.type === "break")
-      return r = !0, xa;
-  }), !!((!e.depth || e.depth < 3) && Af(e) && (t.options.setext || r));
+      return r = !0, Da;
+  }), !!((!e.depth || e.depth < 3) && wf(e) && (t.options.setext || r));
 }
-function Wy(e, t, r, s) {
+function Uy(e, t, r, s) {
   const i = Math.max(Math.min(6, e.depth || 1), 1), a = r.createTracker(s);
-  if (Vy(e, r)) {
+  if (By(e, r)) {
     const l = r.enter("headingSetext"), p = r.enter("phrasing"), d = r.containerPhrasing(e, {
       ...a.current(),
       before: `
@@ -3251,18 +3251,18 @@ function Wy(e, t, r, s) {
 `,
     ...a.current()
   });
-  return /^[\t ]/.test(u) && (u = ps(u.charCodeAt(0)) + u.slice(1)), u = u ? o + " " + u : o, r.options.closeAtx && (u += " " + o), c(), n(), u;
+  return /^[\t ]/.test(u) && (u = hs(u.charCodeAt(0)) + u.slice(1)), u = u ? o + " " + u : o, r.options.closeAtx && (u += " " + o), c(), n(), u;
 }
-_f.peek = Hy;
-function _f(e) {
+If.peek = $y;
+function If(e) {
   return e.value || "";
 }
-function Hy() {
+function $y() {
   return "<";
 }
-kf.peek = Ky;
-function kf(e, t, r, s) {
-  const i = ec(r), a = i === '"' ? "Quote" : "Apostrophe", o = r.enter("image");
+Af.peek = Vy;
+function Af(e, t, r, s) {
+  const i = Za(r), a = i === '"' ? "Quote" : "Apostrophe", o = r.enter("image");
   let n = r.enter("label");
   const c = r.createTracker(s);
   let u = c.move("![");
@@ -3286,11 +3286,11 @@ function kf(e, t, r, s) {
     })
   ), u += c.move(i), n()), u += c.move(")"), o(), u;
 }
-function Ky() {
+function Vy() {
   return "!";
 }
-Of.peek = Jy;
-function Of(e, t, r, s) {
+Tf.peek = Wy;
+function Tf(e, t, r, s) {
   const i = e.referenceType, a = r.enter("imageReference");
   let o = r.enter("label");
   const n = r.createTracker(s);
@@ -3310,11 +3310,11 @@ function Of(e, t, r, s) {
   });
   return o(), r.stack = l, a(), i === "full" || !u || u !== p ? c += n.move(p + "]") : i === "shortcut" ? c = c.slice(0, -1) : c += n.move("]"), c;
 }
-function Jy() {
+function Wy() {
   return "!";
 }
-Mf.peek = Gy;
-function Mf(e, t, r) {
+_f.peek = Hy;
+function _f(e, t, r) {
   let s = e.value || "", i = "`", a = -1;
   for (; new RegExp("(^|[^`])" + i + "([^`]|$)").test(s); )
     i += "`";
@@ -3329,11 +3329,11 @@ function Mf(e, t, r) {
   }
   return i + s + i;
 }
-function Gy() {
+function Hy() {
   return "`";
 }
-function Df(e, t) {
-  const r = Af(e);
+function kf(e, t) {
+  const r = wf(e);
   return !!(!t.options.resourceLink && // If there’s a url…
   e.url && // And there’s a no title…
   !e.title && // And the content of `node` is a single text node…
@@ -3343,11 +3343,11 @@ function Df(e, t) {
   // references don’t work), space, or angle brackets…
   !/[\0- <>\u007F]/.test(e.url));
 }
-Nf.peek = Qy;
-function Nf(e, t, r, s) {
-  const i = ec(r), a = i === '"' ? "Quote" : "Apostrophe", o = r.createTracker(s);
+Of.peek = Ky;
+function Of(e, t, r, s) {
+  const i = Za(r), a = i === '"' ? "Quote" : "Apostrophe", o = r.createTracker(s);
   let n, c;
-  if (Df(e, r)) {
+  if (kf(e, r)) {
     const l = r.stack;
     r.stack = [], n = r.enter("autolink");
     let p = o.move("<");
@@ -3385,11 +3385,11 @@ function Nf(e, t, r, s) {
     })
   ), u += o.move(i), c()), u += o.move(")"), n(), u;
 }
-function Qy(e, t, r) {
-  return Df(e, r) ? "<" : "[";
+function Ky(e, t, r) {
+  return kf(e, r) ? "<" : "[";
 }
-xf.peek = Yy;
-function xf(e, t, r, s) {
+Mf.peek = Jy;
+function Mf(e, t, r, s) {
   const i = e.referenceType, a = r.enter("linkReference");
   let o = r.enter("label");
   const n = r.createTracker(s);
@@ -3409,10 +3409,10 @@ function xf(e, t, r, s) {
   });
   return o(), r.stack = l, a(), i === "full" || !u || u !== p ? c += n.move(p + "]") : i === "shortcut" ? c = c.slice(0, -1) : c += n.move("]"), c;
 }
-function Yy() {
+function Jy() {
   return "[";
 }
-function tc(e) {
+function Xa(e) {
   const t = e.options.bullet || "*";
   if (t !== "*" && t !== "+" && t !== "-")
     throw new Error(
@@ -3420,8 +3420,8 @@ function tc(e) {
     );
   return t;
 }
-function Zy(e) {
-  const t = tc(e), r = e.options.bulletOther;
+function Gy(e) {
+  const t = Xa(e), r = e.options.bulletOther;
   if (!r)
     return t === "*" ? "-" : "*";
   if (r !== "*" && r !== "+" && r !== "-")
@@ -3434,7 +3434,7 @@ function Zy(e) {
     );
   return r;
 }
-function Xy(e) {
+function Qy(e) {
   const t = e.options.bulletOrdered || ".";
   if (t !== "." && t !== ")")
     throw new Error(
@@ -3442,7 +3442,7 @@ function Xy(e) {
     );
   return t;
 }
-function zf(e) {
+function Df(e) {
   const t = e.options.rule || "*";
   if (t !== "*" && t !== "-" && t !== "_")
     throw new Error(
@@ -3450,10 +3450,10 @@ function zf(e) {
     );
   return t;
 }
-function eS(e, t, r, s) {
+function Yy(e, t, r, s) {
   const i = r.enter("list"), a = r.bulletCurrent;
-  let o = e.ordered ? Xy(r) : tc(r);
-  const n = e.ordered ? o === "." ? ")" : "." : Zy(r);
+  let o = e.ordered ? Qy(r) : Xa(r);
+  const n = e.ordered ? o === "." ? ")" : "." : Gy(r);
   let c = t && r.bulletLastUsed ? o === r.bulletLastUsed : !1;
   if (!e.ordered) {
     const l = e.children ? e.children[0] : void 0;
@@ -3462,7 +3462,7 @@ function eS(e, t, r, s) {
       (o === "*" || o === "-") && // Empty first list item:
       l && (!l.children || !l.children[0]) && // Directly in two other list items:
       r.stack[r.stack.length - 1] === "list" && r.stack[r.stack.length - 2] === "listItem" && r.stack[r.stack.length - 3] === "list" && r.stack[r.stack.length - 4] === "listItem" && // That are each the first child.
-      r.indexStack[r.indexStack.length - 1] === 0 && r.indexStack[r.indexStack.length - 2] === 0 && r.indexStack[r.indexStack.length - 3] === 0 && (c = !0), zf(r) === o && l
+      r.indexStack[r.indexStack.length - 1] === 0 && r.indexStack[r.indexStack.length - 2] === 0 && r.indexStack[r.indexStack.length - 3] === 0 && (c = !0), Df(r) === o && l
     ) {
       let p = -1;
       for (; ++p < e.children.length; ) {
@@ -3478,7 +3478,7 @@ function eS(e, t, r, s) {
   const u = r.containerFlow(e, s);
   return r.bulletLastUsed = o, r.bulletCurrent = a, i(), u;
 }
-function tS(e) {
+function Zy(e) {
   const t = e.options.listItemIndent || "one";
   if (t !== "tab" && t !== "one" && t !== "mixed")
     throw new Error(
@@ -3486,9 +3486,9 @@ function tS(e) {
     );
   return t;
 }
-function rS(e, t, r, s) {
-  const i = tS(r);
-  let a = r.bulletCurrent || tc(r);
+function Xy(e, t, r, s) {
+  const i = Zy(r);
+  let a = r.bulletCurrent || Xa(r);
   t && t.type === "list" && t.ordered && (a = (typeof t.start == "number" && t.start > -1 ? t.start : 1) + (r.options.incrementListMarker === !1 ? 0 : t.children.indexOf(e)) + a);
   let o = a.length + 1;
   (i === "tab" || i === "mixed" && (t && t.type === "list" && t.spread || e.spread)) && (o = Math.ceil(o / 4) * 4);
@@ -3503,13 +3503,13 @@ function rS(e, t, r, s) {
     return d ? (h ? "" : " ".repeat(o)) + p : (h ? a : a + " ".repeat(o - a.length)) + p;
   }
 }
-function nS(e, t, r, s) {
+function eS(e, t, r, s) {
   const i = r.enter("paragraph"), a = r.enter("phrasing"), o = r.containerPhrasing(e, s);
   return a(), i(), o;
 }
-const iS = (
+const tS = (
   /** @type {(node?: unknown) => node is Exclude<PhrasingContent, Html>} */
-  Vs([
+  $s([
     "break",
     "delete",
     "emphasis",
@@ -3533,12 +3533,12 @@ const iS = (
     "textDirective"
   ])
 );
-function sS(e, t, r, s) {
+function rS(e, t, r, s) {
   return (e.children.some(function(o) {
-    return iS(o);
+    return tS(o);
   }) ? r.containerPhrasing : r.containerFlow).call(r, e, s);
 }
-function oS(e) {
+function nS(e) {
   const t = e.options.strong || "*";
   if (t !== "*" && t !== "_")
     throw new Error(
@@ -3546,9 +3546,9 @@ function oS(e) {
     );
   return t;
 }
-Lf.peek = aS;
-function Lf(e, t, r, s) {
-  const i = oS(r), a = r.enter("strong"), o = r.createTracker(s), n = o.move(i + i);
+Nf.peek = iS;
+function Nf(e, t, r, s) {
+  const i = nS(r), a = r.enter("strong"), o = r.createTracker(s), n = o.move(i + i);
   let c = o.move(
     r.containerPhrasing(e, {
       after: i,
@@ -3556,27 +3556,27 @@ function Lf(e, t, r, s) {
       ...o.current()
     })
   );
-  const u = c.charCodeAt(0), l = Ns(
+  const u = c.charCodeAt(0), l = Ds(
     s.before.charCodeAt(s.before.length - 1),
     u,
     i
   );
-  l.inside && (c = ps(u) + c.slice(1));
-  const p = c.charCodeAt(c.length - 1), d = Ns(s.after.charCodeAt(0), p, i);
-  d.inside && (c = c.slice(0, -1) + ps(p));
+  l.inside && (c = hs(u) + c.slice(1));
+  const p = c.charCodeAt(c.length - 1), d = Ds(s.after.charCodeAt(0), p, i);
+  d.inside && (c = c.slice(0, -1) + hs(p));
   const h = o.move(i + i);
   return a(), r.attentionEncodeSurroundingInfo = {
     after: d.outside,
     before: l.outside
   }, n + c + h;
 }
-function aS(e, t, r) {
+function iS(e, t, r) {
   return r.options.strong || "*";
 }
-function cS(e, t, r, s) {
+function sS(e, t, r, s) {
   return r.safe(e.value, s);
 }
-function uS(e) {
+function oS(e) {
   const t = e.options.ruleRepetition || 3;
   if (t < 3)
     throw new Error(
@@ -3584,50 +3584,50 @@ function uS(e) {
     );
   return t;
 }
-function lS(e, t, r) {
-  const s = (zf(r) + (r.options.ruleSpaces ? " " : "")).repeat(uS(r));
+function aS(e, t, r) {
+  const s = (Df(r) + (r.options.ruleSpaces ? " " : "")).repeat(oS(r));
   return r.options.ruleSpaces ? s.slice(0, -1) : s;
 }
-const jf = {
-  blockquote: ky,
-  break: wc,
-  code: zy,
-  definition: jy,
-  emphasis: If,
-  hardBreak: wc,
-  heading: Wy,
-  html: _f,
-  image: kf,
-  imageReference: Of,
-  inlineCode: Mf,
-  link: Nf,
-  linkReference: xf,
-  list: eS,
-  listItem: rS,
-  paragraph: nS,
-  root: sS,
-  strong: Lf,
-  text: cS,
-  thematicBreak: lS
+const xf = {
+  blockquote: Ay,
+  break: Pc,
+  code: Dy,
+  definition: xy,
+  emphasis: bf,
+  hardBreak: Pc,
+  heading: Uy,
+  html: If,
+  image: Af,
+  imageReference: Tf,
+  inlineCode: _f,
+  link: Of,
+  linkReference: Mf,
+  list: Yy,
+  listItem: Xy,
+  paragraph: eS,
+  root: rS,
+  strong: Nf,
+  text: sS,
+  thematicBreak: aS
 };
-function pS() {
+function cS() {
   return {
     enter: {
-      table: dS,
-      tableData: Ic,
-      tableHeader: Ic,
-      tableRow: fS
+      table: uS,
+      tableData: wc,
+      tableHeader: wc,
+      tableRow: pS
     },
     exit: {
-      codeText: vS,
-      table: hS,
-      tableData: po,
-      tableHeader: po,
-      tableRow: po
+      codeText: dS,
+      table: lS,
+      tableData: uo,
+      tableHeader: uo,
+      tableRow: uo
     }
   };
 }
-function dS(e) {
+function uS(e) {
   const t = e._align;
   this.enter(
     {
@@ -3640,28 +3640,28 @@ function dS(e) {
     e
   ), this.data.inTable = !0;
 }
-function hS(e) {
+function lS(e) {
   this.exit(e), this.data.inTable = void 0;
 }
-function fS(e) {
+function pS(e) {
   this.enter({ type: "tableRow", children: [] }, e);
 }
-function po(e) {
+function uo(e) {
   this.exit(e);
 }
-function Ic(e) {
+function wc(e) {
   this.enter({ type: "tableCell", children: [] }, e);
 }
-function vS(e) {
+function dS(e) {
   let t = this.resume();
-  this.data.inTable && (t = t.replace(/\\([\\|])/g, gS));
+  this.data.inTable && (t = t.replace(/\\([\\|])/g, hS));
   const r = this.stack[this.stack.length - 1];
   r.type, r.value = t, this.exit(e);
 }
-function gS(e, t) {
+function hS(e, t) {
   return t === "|" ? t : e;
 }
-function mS(e) {
+function fS(e) {
   const t = e || {}, r = t.tableCellPadding, s = t.tablePipeAlign, i = t.stringLength, a = r ? " " : "|";
   return {
     unsafe: [
@@ -3707,7 +3707,7 @@ function mS(e) {
     return y(), v(), S;
   }
   function u(h, f) {
-    return Ty(h, {
+    return Ey(h, {
       align: f,
       // @ts-expect-error: `markdown-table` types should support `null`.
       alignDelimiters: s,
@@ -3734,30 +3734,30 @@ function mS(e) {
     return S(), y;
   }
   function d(h, f, g) {
-    let m = jf.inlineCode(h, f, g);
+    let m = xf.inlineCode(h, f, g);
     return g.stack.includes("tableCell") && (m = m.replace(/\|/g, "\\$&")), m;
   }
 }
-function yS() {
+function vS() {
   return {
     exit: {
-      taskListCheckValueChecked: Ac,
-      taskListCheckValueUnchecked: Ac,
-      paragraph: CS
+      taskListCheckValueChecked: Ec,
+      taskListCheckValueUnchecked: Ec,
+      paragraph: mS
     }
   };
 }
-function SS() {
+function gS() {
   return {
     unsafe: [{ atBreak: !0, character: "-", after: "[:|-]" }],
-    handlers: { listItem: RS }
+    handlers: { listItem: yS }
   };
 }
-function Ac(e) {
+function Ec(e) {
   const t = this.stack[this.stack.length - 2];
   t.type, t.checked = e.type === "taskListCheckValueChecked";
 }
-function CS(e) {
+function mS(e) {
   const t = this.stack[this.stack.length - 2];
   if (t && t.type === "listItem" && typeof t.checked == "boolean") {
     const r = this.stack[this.stack.length - 1];
@@ -3778,10 +3778,10 @@ function CS(e) {
   }
   this.exit(e);
 }
-function RS(e, t, r, s) {
+function yS(e, t, r, s) {
   const i = e.children[0], a = typeof e.checked == "boolean" && i && i.type === "paragraph", o = "[" + (e.checked ? "x" : " ") + "] ", n = r.createTracker(s);
   a && n.move(o);
-  let c = jf.listItem(e, t, r, {
+  let c = xf.listItem(e, t, r, {
     ...s,
     ...n.current()
   });
@@ -3790,27 +3790,27 @@ function RS(e, t, r, s) {
     return l + o;
   }
 }
-function PS() {
+function SS() {
   return [
-    Ym(),
-    yy(),
-    Py(),
-    pS(),
-    yS()
+    Jm(),
+    vy(),
+    Sy(),
+    cS(),
+    vS()
   ];
 }
-function bS(e) {
+function CS(e) {
   return {
     extensions: [
-      Zm(),
-      Sy(e),
-      by(),
-      mS(e),
-      SS()
+      Gm(),
+      gy(e),
+      Cy(),
+      fS(e),
+      gS()
     ]
   };
 }
-function ks(e, t, r, s) {
+function _s(e, t, r, s) {
   const i = e.length;
   let a = 0, o;
   if (t < 0 ? t = -t > i ? 0 : i + t : t = t > i ? i : t, r = r > 0 ? r : 0, s.length < 1e4)
@@ -3819,24 +3819,24 @@ function ks(e, t, r, s) {
     for (r && e.splice(t, r); a < s.length; )
       o = s.slice(a, a + 1e4), o.unshift(t, 0), e.splice(...o), a += 1e4, t += 1e4;
 }
-const Tc = {}.hasOwnProperty;
-function wS(e) {
+const Ic = {}.hasOwnProperty;
+function RS(e) {
   const t = {};
   let r = -1;
   for (; ++r < e.length; )
-    ES(t, e[r]);
+    PS(t, e[r]);
   return t;
 }
-function ES(e, t) {
+function PS(e, t) {
   let r;
   for (r in t) {
-    const i = (Tc.call(e, r) ? e[r] : void 0) || (e[r] = {}), a = t[r];
+    const i = (Ic.call(e, r) ? e[r] : void 0) || (e[r] = {}), a = t[r];
     let o;
     if (a)
       for (o in a) {
-        Tc.call(i, o) || (i[o] = []);
+        Ic.call(i, o) || (i[o] = []);
         const n = a[o];
-        IS(
+        bS(
           // @ts-expect-error Looks like a list.
           i[o],
           Array.isArray(n) ? n : n ? [n] : []
@@ -3844,96 +3844,96 @@ function ES(e, t) {
       }
   }
 }
-function IS(e, t) {
+function bS(e, t) {
   let r = -1;
   const s = [];
   for (; ++r < t.length; )
     (t[r].add === "after" ? e : s).push(t[r]);
-  ks(e, 0, 0, s);
+  _s(e, 0, 0, s);
 }
-const AS = {
+const wS = {
+  tokenize: kS,
+  partial: !0
+}, zf = {
+  tokenize: OS,
+  partial: !0
+}, Lf = {
+  tokenize: MS,
+  partial: !0
+}, jf = {
   tokenize: DS,
   partial: !0
-}, qf = {
+}, ES = {
   tokenize: NS,
   partial: !0
-}, Ff = {
-  tokenize: xS,
-  partial: !0
-}, Bf = {
-  tokenize: zS,
-  partial: !0
-}, TS = {
-  tokenize: LS,
-  partial: !0
-}, Uf = {
+}, qf = {
   name: "wwwAutolink",
-  tokenize: OS,
-  previous: Vf
-}, $f = {
+  tokenize: TS,
+  previous: Bf
+}, Ff = {
   name: "protocolAutolink",
-  tokenize: MS,
-  previous: Wf
+  tokenize: _S,
+  previous: Uf
 }, Ve = {
   name: "emailAutolink",
-  tokenize: kS,
-  previous: Hf
-}, Me = {};
-function _S() {
+  tokenize: AS,
+  previous: $f
+}, De = {};
+function IS() {
   return {
-    text: Me
+    text: De
   };
 }
 let nt = 48;
 for (; nt < 123; )
-  Me[nt] = Ve, nt++, nt === 58 ? nt = 65 : nt === 91 && (nt = 97);
-Me[43] = Ve;
-Me[45] = Ve;
-Me[46] = Ve;
-Me[95] = Ve;
-Me[72] = [Ve, $f];
-Me[104] = [Ve, $f];
-Me[87] = [Ve, Uf];
-Me[119] = [Ve, Uf];
-function kS(e, t, r) {
+  De[nt] = Ve, nt++, nt === 58 ? nt = 65 : nt === 91 && (nt = 97);
+De[43] = Ve;
+De[45] = Ve;
+De[46] = Ve;
+De[95] = Ve;
+De[72] = [Ve, Ff];
+De[104] = [Ve, Ff];
+De[87] = [Ve, qf];
+De[119] = [Ve, qf];
+function AS(e, t, r) {
   const s = this;
   let i, a;
   return o;
   function o(p) {
-    return !za(p) || !Hf.call(s, s.previous) || rc(s.events) ? r(p) : (e.enter("literalAutolink"), e.enter("literalAutolinkEmail"), n(p));
+    return !Na(p) || !$f.call(s, s.previous) || ec(s.events) ? r(p) : (e.enter("literalAutolink"), e.enter("literalAutolinkEmail"), n(p));
   }
   function n(p) {
-    return za(p) ? (e.consume(p), n) : p === 64 ? (e.consume(p), c) : r(p);
+    return Na(p) ? (e.consume(p), n) : p === 64 ? (e.consume(p), c) : r(p);
   }
   function c(p) {
-    return p === 46 ? e.check(TS, l, u)(p) : p === 45 || p === 95 || Xa(p) ? (a = !0, e.consume(p), c) : l(p);
+    return p === 46 ? e.check(ES, l, u)(p) : p === 45 || p === 95 || Ya(p) ? (a = !0, e.consume(p), c) : l(p);
   }
   function u(p) {
     return e.consume(p), i = !0, c;
   }
   function l(p) {
-    return a && i && ls(s.previous) ? (e.exit("literalAutolinkEmail"), e.exit("literalAutolink"), t(p)) : r(p);
+    return a && i && ds(s.previous) ? (e.exit("literalAutolinkEmail"), e.exit("literalAutolink"), t(p)) : r(p);
   }
 }
-function OS(e, t, r) {
+function TS(e, t, r) {
   const s = this;
   return i;
   function i(o) {
-    return o !== 87 && o !== 119 || !Vf.call(s, s.previous) || rc(s.events) ? r(o) : (e.enter("literalAutolink"), e.enter("literalAutolinkWww"), e.check(AS, e.attempt(qf, e.attempt(Ff, a), r), r)(o));
+    return o !== 87 && o !== 119 || !Bf.call(s, s.previous) || ec(s.events) ? r(o) : (e.enter("literalAutolink"), e.enter("literalAutolinkWww"), e.check(wS, e.attempt(zf, e.attempt(Lf, a), r), r)(o));
   }
   function a(o) {
     return e.exit("literalAutolinkWww"), e.exit("literalAutolink"), t(o);
   }
 }
-function MS(e, t, r) {
+function _S(e, t, r) {
   const s = this;
   let i = "", a = !1;
   return o;
   function o(p) {
-    return (p === 72 || p === 104) && Wf.call(s, s.previous) && !rc(s.events) ? (e.enter("literalAutolink"), e.enter("literalAutolinkHttp"), i += String.fromCodePoint(p), e.consume(p), n) : r(p);
+    return (p === 72 || p === 104) && Uf.call(s, s.previous) && !ec(s.events) ? (e.enter("literalAutolink"), e.enter("literalAutolinkHttp"), i += String.fromCodePoint(p), e.consume(p), n) : r(p);
   }
   function n(p) {
-    if (ls(p) && i.length < 5)
+    if (ds(p) && i.length < 5)
       return i += String.fromCodePoint(p), e.consume(p), n;
     if (p === 58) {
       const d = i.toLowerCase();
@@ -3946,13 +3946,13 @@ function MS(e, t, r) {
     return p === 47 ? (e.consume(p), a ? u : (a = !0, c)) : r(p);
   }
   function u(p) {
-    return p === null || Lm(p) || ve(p) || kt(p) || Us(p) ? r(p) : e.attempt(qf, e.attempt(Ff, l), r)(p);
+    return p === null || Nm(p) || pe(p) || kt(p) || Bs(p) ? r(p) : e.attempt(zf, e.attempt(Lf, l), r)(p);
   }
   function l(p) {
     return e.exit("literalAutolinkHttp"), e.exit("literalAutolink"), t(p);
   }
 }
-function DS(e, t, r) {
+function kS(e, t, r) {
   let s = 0;
   return i;
   function i(o) {
@@ -3962,11 +3962,11 @@ function DS(e, t, r) {
     return o === null ? r(o) : t(o);
   }
 }
-function NS(e, t, r) {
+function OS(e, t, r) {
   let s, i, a;
   return o;
   function o(u) {
-    return u === 46 || u === 95 ? e.check(Bf, c, n)(u) : u === null || ve(u) || kt(u) || u !== 45 && Us(u) ? c(u) : (a = !0, e.consume(u), o);
+    return u === 46 || u === 95 ? e.check(jf, c, n)(u) : u === null || pe(u) || kt(u) || u !== 45 && Bs(u) ? c(u) : (a = !0, e.consume(u), o);
   }
   function n(u) {
     return u === 95 ? s = !0 : (i = s, s = void 0), e.consume(u), o;
@@ -3975,57 +3975,57 @@ function NS(e, t, r) {
     return i || s || !a ? r(u) : t(u);
   }
 }
-function xS(e, t) {
+function MS(e, t) {
   let r = 0, s = 0;
   return i;
   function i(o) {
-    return o === 40 ? (r++, e.consume(o), i) : o === 41 && s < r ? a(o) : o === 33 || o === 34 || o === 38 || o === 39 || o === 41 || o === 42 || o === 44 || o === 46 || o === 58 || o === 59 || o === 60 || o === 63 || o === 93 || o === 95 || o === 126 ? e.check(Bf, t, a)(o) : o === null || ve(o) || kt(o) ? t(o) : (e.consume(o), i);
+    return o === 40 ? (r++, e.consume(o), i) : o === 41 && s < r ? a(o) : o === 33 || o === 34 || o === 38 || o === 39 || o === 41 || o === 42 || o === 44 || o === 46 || o === 58 || o === 59 || o === 60 || o === 63 || o === 93 || o === 95 || o === 126 ? e.check(jf, t, a)(o) : o === null || pe(o) || kt(o) ? t(o) : (e.consume(o), i);
   }
   function a(o) {
     return o === 41 && s++, e.consume(o), i;
   }
 }
-function zS(e, t, r) {
+function DS(e, t, r) {
   return s;
   function s(n) {
     return n === 33 || n === 34 || n === 39 || n === 41 || n === 42 || n === 44 || n === 46 || n === 58 || n === 59 || n === 63 || n === 95 || n === 126 ? (e.consume(n), s) : n === 38 ? (e.consume(n), a) : n === 93 ? (e.consume(n), i) : (
       // `<` is an end.
       n === 60 || // So is whitespace.
-      n === null || ve(n) || kt(n) ? t(n) : r(n)
+      n === null || pe(n) || kt(n) ? t(n) : r(n)
     );
   }
   function i(n) {
-    return n === null || n === 40 || n === 91 || ve(n) || kt(n) ? t(n) : s(n);
+    return n === null || n === 40 || n === 91 || pe(n) || kt(n) ? t(n) : s(n);
   }
   function a(n) {
-    return ls(n) ? o(n) : r(n);
+    return ds(n) ? o(n) : r(n);
   }
   function o(n) {
-    return n === 59 ? (e.consume(n), s) : ls(n) ? (e.consume(n), o) : r(n);
+    return n === 59 ? (e.consume(n), s) : ds(n) ? (e.consume(n), o) : r(n);
   }
 }
-function LS(e, t, r) {
+function NS(e, t, r) {
   return s;
   function s(a) {
     return e.consume(a), i;
   }
   function i(a) {
-    return Xa(a) ? r(a) : t(a);
+    return Ya(a) ? r(a) : t(a);
   }
 }
-function Vf(e) {
-  return e === null || e === 40 || e === 42 || e === 95 || e === 91 || e === 93 || e === 126 || ve(e);
+function Bf(e) {
+  return e === null || e === 40 || e === 42 || e === 95 || e === 91 || e === 93 || e === 126 || pe(e);
 }
-function Wf(e) {
-  return !ls(e);
+function Uf(e) {
+  return !ds(e);
 }
-function Hf(e) {
-  return !(e === 47 || za(e));
+function $f(e) {
+  return !(e === 47 || Na(e));
 }
-function za(e) {
-  return e === 43 || e === 45 || e === 46 || e === 95 || Xa(e);
+function Na(e) {
+  return e === 43 || e === 45 || e === 46 || e === 95 || Ya(e);
 }
-function rc(e) {
+function ec(e) {
   let t = e.length, r = !1;
   for (; t--; ) {
     const s = e[t][1];
@@ -4040,7 +4040,7 @@ function rc(e) {
   }
   return e.length > 0 && !r && (e[e.length - 1][1]._gfmAutolinkLiteralWalkedInto = !0), r;
 }
-function jS(e, t, r) {
+function xS(e, t, r) {
   const s = [];
   let i = -1;
   for (; ++i < e.length; ) {
@@ -4060,50 +4060,50 @@ function Ue(e, t, r, s) {
     return Be(c) && a++ < i ? (e.consume(c), n) : (e.exit(r), t(c));
   }
 }
-const qS = {
+const zS = {
   partial: !0,
-  tokenize: FS
+  tokenize: LS
 };
-function FS(e, t, r) {
+function LS(e, t, r) {
   return s;
   function s(a) {
     return Be(a) ? Ue(e, i, "linePrefix")(a) : i(a);
   }
   function i(a) {
-    return a === null || $t(a) ? t(a) : r(a);
+    return a === null || Bt(a) ? t(a) : r(a);
   }
 }
-const BS = {
-  tokenize: GS,
+const jS = {
+  tokenize: HS,
   partial: !0
 };
-function US() {
+function qS() {
   return {
     document: {
       91: {
         name: "gfmFootnoteDefinition",
-        tokenize: HS,
+        tokenize: $S,
         continuation: {
-          tokenize: KS
+          tokenize: VS
         },
-        exit: JS
+        exit: WS
       }
     },
     text: {
       91: {
         name: "gfmFootnoteCall",
-        tokenize: WS
+        tokenize: US
       },
       93: {
         name: "gfmPotentialFootnoteCall",
         add: "after",
-        tokenize: $S,
-        resolveTo: VS
+        tokenize: FS,
+        resolveTo: BS
       }
     }
   };
 }
-function $S(e, t, r) {
+function FS(e, t, r) {
   const s = this;
   let i = s.events.length;
   const a = s.parser.gfmFootnotes || (s.parser.gfmFootnotes = []);
@@ -4121,14 +4121,14 @@ function $S(e, t, r) {
   function n(c) {
     if (!o || !o._balanced)
       return r(c);
-    const u = gs(s.sliceSerialize({
+    const u = ys(s.sliceSerialize({
       start: o.end,
       end: s.now()
     }));
     return u.codePointAt(0) !== 94 || !a.includes(u.slice(1)) ? r(c) : (e.enter("gfmFootnoteCallLabelMarker"), e.consume(c), e.exit("gfmFootnoteCallLabelMarker"), t(c));
   }
 }
-function VS(e, t) {
+function BS(e, t) {
   let r = e.length;
   for (; r--; )
     if (e[r][1].type === "labelImage" && e[r][0] === "enter") {
@@ -4178,7 +4178,7 @@ function VS(e, t) {
   ];
   return e.splice(r, e.length - r + 1, ...n), e;
 }
-function WS(e, t, r) {
+function US(e, t, r) {
   const s = this, i = s.parser.gfmFootnotes || (s.parser.gfmFootnotes = []);
   let a = 0, o;
   return n;
@@ -4194,21 +4194,21 @@ function WS(e, t, r) {
       a > 999 || // Closing brace with nothing.
       p === 93 && !o || // Space or tab is not supported by GFM for some reason.
       // `\n` and `[` not being supported makes sense.
-      p === null || p === 91 || ve(p)
+      p === null || p === 91 || pe(p)
     )
       return r(p);
     if (p === 93) {
       e.exit("chunkString");
       const d = e.exit("gfmFootnoteCallString");
-      return i.includes(gs(s.sliceSerialize(d))) ? (e.enter("gfmFootnoteCallLabelMarker"), e.consume(p), e.exit("gfmFootnoteCallLabelMarker"), e.exit("gfmFootnoteCall"), t) : r(p);
+      return i.includes(ys(s.sliceSerialize(d))) ? (e.enter("gfmFootnoteCallLabelMarker"), e.consume(p), e.exit("gfmFootnoteCallLabelMarker"), e.exit("gfmFootnoteCall"), t) : r(p);
     }
-    return ve(p) || (o = !0), a++, e.consume(p), p === 92 ? l : u;
+    return pe(p) || (o = !0), a++, e.consume(p), p === 92 ? l : u;
   }
   function l(p) {
     return p === 91 || p === 92 || p === 93 ? (e.consume(p), a++, u) : u(p);
   }
 }
-function HS(e, t, r) {
+function $S(e, t, r) {
   const s = this, i = s.parser.gfmFootnotes || (s.parser.gfmFootnotes = []);
   let a, o = 0, n;
   return c;
@@ -4224,15 +4224,15 @@ function HS(e, t, r) {
       o > 999 || // Closing brace with nothing.
       f === 93 && !n || // Space or tab is not supported by GFM for some reason.
       // `\n` and `[` not being supported makes sense.
-      f === null || f === 91 || ve(f)
+      f === null || f === 91 || pe(f)
     )
       return r(f);
     if (f === 93) {
       e.exit("chunkString");
       const g = e.exit("gfmFootnoteDefinitionLabelString");
-      return a = gs(s.sliceSerialize(g)), e.enter("gfmFootnoteDefinitionLabelMarker"), e.consume(f), e.exit("gfmFootnoteDefinitionLabelMarker"), e.exit("gfmFootnoteDefinitionLabel"), d;
+      return a = ys(s.sliceSerialize(g)), e.enter("gfmFootnoteDefinitionLabelMarker"), e.consume(f), e.exit("gfmFootnoteDefinitionLabelMarker"), e.exit("gfmFootnoteDefinitionLabel"), d;
     }
-    return ve(f) || (n = !0), o++, e.consume(f), f === 92 ? p : l;
+    return pe(f) || (n = !0), o++, e.consume(f), f === 92 ? p : l;
   }
   function p(f) {
     return f === 91 || f === 92 || f === 93 ? (e.consume(f), o++, l) : l(f);
@@ -4244,13 +4244,13 @@ function HS(e, t, r) {
     return t(f);
   }
 }
-function KS(e, t, r) {
-  return e.check(qS, t, e.attempt(BS, t, r));
+function VS(e, t, r) {
+  return e.check(zS, t, e.attempt(jS, t, r));
 }
-function JS(e) {
+function WS(e) {
   e.exit("gfmFootnoteDefinition");
 }
-function GS(e, t, r) {
+function HS(e, t, r) {
   const s = this;
   return Ue(e, i, "gfmFootnoteDefinitionIndent", 5);
   function i(a) {
@@ -4258,7 +4258,7 @@ function GS(e, t, r) {
     return o && o[1].type === "gfmFootnoteDefinitionIndent" && o[2].sliceSerialize(o[1], !0).length === 4 ? t(a) : r(a);
   }
 }
-function QS(e) {
+function KS(e) {
   let r = (e || {}).singleTilde;
   const s = {
     name: "strikethrough",
@@ -4294,7 +4294,7 @@ function QS(e) {
               start: Object.assign({}, o[u][1].end),
               end: Object.assign({}, o[c][1].start)
             }, d = [["enter", l, n], ["enter", o[u][1], n], ["exit", o[u][1], n], ["enter", p, n]], h = n.parser.constructs.insideSpan.null;
-            h && ks(d, d.length, 0, jS(h, o.slice(u + 1, c), n)), ks(d, d.length, 0, [["exit", p, n], ["enter", o[c][1], n], ["exit", o[c][1], n], ["exit", l, n]]), ks(o, u - 1, c - u + 3, d), c = u + d.length - 2;
+            h && _s(d, d.length, 0, xS(h, o.slice(u + 1, c), n)), _s(d, d.length, 0, [["exit", p, n], ["enter", o[c][1], n], ["exit", o[c][1], n], ["exit", l, n]]), _s(o, u - 1, c - u + 3, d), c = u + d.length - 2;
             break;
           }
       }
@@ -4310,16 +4310,16 @@ function QS(e) {
       return u === 126 && l[l.length - 1][1].type !== "characterEscape" ? c(f) : (o.enter("strikethroughSequenceTemporary"), h(f));
     }
     function h(f) {
-      const g = Ds(u);
+      const g = Ms(u);
       if (f === 126)
         return p > 1 ? c(f) : (o.consume(f), p++, h);
       if (p < 2 && !r) return c(f);
-      const m = o.exit("strikethroughSequenceTemporary"), v = Ds(f);
+      const m = o.exit("strikethroughSequenceTemporary"), v = Ms(f);
       return m._open = !v || v === 2 && !!g, m._close = !g || g === 2 && !!v, n(f);
     }
   }
 }
-class YS {
+class JS {
   /**
    * Create a new edit map.
    */
@@ -4335,7 +4335,7 @@ class YS {
    * @returns {undefined}
    */
   add(t, r, s) {
-    ZS(this, t, r, s);
+    GS(this, t, r, s);
   }
   // To do: add this when moving to `micromark`.
   // /**
@@ -4374,7 +4374,7 @@ class YS {
     this.map.length = 0;
   }
 }
-function ZS(e, t, r, s) {
+function GS(e, t, r, s) {
   let i = 0;
   if (!(r === 0 && s.length === 0)) {
     for (; i < e.map.length; ) {
@@ -4387,7 +4387,7 @@ function ZS(e, t, r, s) {
     e.map.push([t, r, s]);
   }
 }
-function XS(e, t) {
+function QS(e, t) {
   let r = !1;
   const s = [];
   for (; t < e.length; ) {
@@ -4407,18 +4407,18 @@ function XS(e, t) {
   }
   return s;
 }
-function eC() {
+function YS() {
   return {
     flow: {
       null: {
         name: "table",
-        tokenize: tC,
-        resolveAll: rC
+        tokenize: ZS,
+        resolveAll: XS
       }
     }
   };
 }
-function tC(e, t, r) {
+function ZS(e, t, r) {
   const s = this;
   let i = 0, a = 0, o;
   return n;
@@ -4430,8 +4430,8 @@ function tC(e, t, r) {
       $ === "linePrefix") _--;
       else break;
     }
-    const O = _ > -1 ? s.events[_][1].type : null, q = O === "tableHead" || O === "tableRow" ? w : c;
-    return q === w && s.parser.lazy[s.now().line] ? r(b) : q(b);
+    const O = _ > -1 ? s.events[_][1].type : null, j = O === "tableHead" || O === "tableRow" ? w : c;
+    return j === w && s.parser.lazy[s.now().line] ? r(b) : j(b);
   }
   function c(b) {
     return e.enter("tableHead"), e.enter("tableRow"), u(b);
@@ -4440,10 +4440,10 @@ function tC(e, t, r) {
     return b === 124 || (o = !0, a += 1), l(b);
   }
   function l(b) {
-    return b === null ? r(b) : $t(b) ? a > 1 ? (a = 0, s.interrupt = !0, e.exit("tableRow"), e.enter("lineEnding"), e.consume(b), e.exit("lineEnding"), h) : r(b) : Be(b) ? Ue(e, l, "whitespace")(b) : (a += 1, o && (o = !1, i += 1), b === 124 ? (e.enter("tableCellDivider"), e.consume(b), e.exit("tableCellDivider"), o = !0, l) : (e.enter("data"), p(b)));
+    return b === null ? r(b) : Bt(b) ? a > 1 ? (a = 0, s.interrupt = !0, e.exit("tableRow"), e.enter("lineEnding"), e.consume(b), e.exit("lineEnding"), h) : r(b) : Be(b) ? Ue(e, l, "whitespace")(b) : (a += 1, o && (o = !1, i += 1), b === 124 ? (e.enter("tableCellDivider"), e.consume(b), e.exit("tableCellDivider"), o = !0, l) : (e.enter("data"), p(b)));
   }
   function p(b) {
-    return b === null || b === 124 || ve(b) ? (e.exit("data"), l(b)) : (e.consume(b), b === 92 ? d : p);
+    return b === null || b === 124 || pe(b) ? (e.exit("data"), l(b)) : (e.consume(b), b === 92 ? d : p);
   }
   function d(b) {
     return b === 92 || b === 124 ? (e.consume(b), p) : p(b);
@@ -4452,16 +4452,16 @@ function tC(e, t, r) {
     return s.interrupt = !1, s.parser.lazy[s.now().line] ? r(b) : (e.enter("tableDelimiterRow"), o = !1, Be(b) ? Ue(e, f, "linePrefix", s.parser.constructs.disable.null.includes("codeIndented") ? void 0 : 4)(b) : f(b));
   }
   function f(b) {
-    return b === 45 || b === 58 ? m(b) : b === 124 ? (o = !0, e.enter("tableCellDivider"), e.consume(b), e.exit("tableCellDivider"), g) : P(b);
+    return b === 45 || b === 58 ? m(b) : b === 124 ? (o = !0, e.enter("tableCellDivider"), e.consume(b), e.exit("tableCellDivider"), g) : R(b);
   }
   function g(b) {
     return Be(b) ? Ue(e, m, "whitespace")(b) : m(b);
   }
   function m(b) {
-    return b === 58 ? (a += 1, o = !0, e.enter("tableDelimiterMarker"), e.consume(b), e.exit("tableDelimiterMarker"), v) : b === 45 ? (a += 1, v(b)) : b === null || $t(b) ? C(b) : P(b);
+    return b === 58 ? (a += 1, o = !0, e.enter("tableDelimiterMarker"), e.consume(b), e.exit("tableDelimiterMarker"), v) : b === 45 ? (a += 1, v(b)) : b === null || Bt(b) ? C(b) : R(b);
   }
   function v(b) {
-    return b === 45 ? (e.enter("tableDelimiterFiller"), y(b)) : P(b);
+    return b === 45 ? (e.enter("tableDelimiterFiller"), y(b)) : R(b);
   }
   function y(b) {
     return b === 45 ? (e.consume(b), y) : b === 58 ? (o = !0, e.exit("tableDelimiterFiller"), e.enter("tableDelimiterMarker"), e.consume(b), e.exit("tableDelimiterMarker"), S) : (e.exit("tableDelimiterFiller"), S(b));
@@ -4470,30 +4470,30 @@ function tC(e, t, r) {
     return Be(b) ? Ue(e, C, "whitespace")(b) : C(b);
   }
   function C(b) {
-    return b === 124 ? f(b) : b === null || $t(b) ? !o || i !== a ? P(b) : (e.exit("tableDelimiterRow"), e.exit("tableHead"), t(b)) : P(b);
+    return b === 124 ? f(b) : b === null || Bt(b) ? !o || i !== a ? R(b) : (e.exit("tableDelimiterRow"), e.exit("tableHead"), t(b)) : R(b);
   }
-  function P(b) {
+  function R(b) {
     return r(b);
   }
   function w(b) {
     return e.enter("tableRow"), I(b);
   }
   function I(b) {
-    return b === 124 ? (e.enter("tableCellDivider"), e.consume(b), e.exit("tableCellDivider"), I) : b === null || $t(b) ? (e.exit("tableRow"), t(b)) : Be(b) ? Ue(e, I, "whitespace")(b) : (e.enter("data"), E(b));
+    return b === 124 ? (e.enter("tableCellDivider"), e.consume(b), e.exit("tableCellDivider"), I) : b === null || Bt(b) ? (e.exit("tableRow"), t(b)) : Be(b) ? Ue(e, I, "whitespace")(b) : (e.enter("data"), E(b));
   }
   function E(b) {
-    return b === null || b === 124 || ve(b) ? (e.exit("data"), I(b)) : (e.consume(b), b === 92 ? T : E);
+    return b === null || b === 124 || pe(b) ? (e.exit("data"), I(b)) : (e.consume(b), b === 92 ? T : E);
   }
   function T(b) {
     return b === 92 || b === 124 ? (e.consume(b), E) : E(b);
   }
 }
-function rC(e, t) {
+function XS(e, t) {
   let r = -1, s = !0, i = 0, a = [0, 0, 0, 0], o = [0, 0, 0, 0], n = !1, c = 0, u, l, p;
-  const d = new YS();
+  const d = new JS();
   for (; ++r < e.length; ) {
     const h = e[r], f = h[1];
-    h[0] === "enter" ? f.type === "tableHead" ? (n = !1, c !== 0 && (_c(d, t, c, u, l), l = void 0, c = 0), u = {
+    h[0] === "enter" ? f.type === "tableHead" ? (n = !1, c !== 0 && (Ac(d, t, c, u, l), l = void 0, c = 0), u = {
       type: "table",
       start: Object.assign({}, f.start),
       // Note: correct end is set later.
@@ -4503,25 +4503,25 @@ function rC(e, t) {
       start: Object.assign({}, f.start),
       // Note: correct end is set later.
       end: Object.assign({}, f.end)
-    }, d.add(r, 0, [["enter", l, t]])), i = f.type === "tableDelimiterRow" ? 2 : l ? 3 : 1) : i && (f.type === "data" || f.type === "tableDelimiterMarker" || f.type === "tableDelimiterFiller") ? (s = !1, o[2] === 0 && (a[1] !== 0 && (o[0] = o[1], p = Is(d, t, a, i, void 0, p), a = [0, 0, 0, 0]), o[2] = r)) : f.type === "tableCellDivider" && (s ? s = !1 : (a[1] !== 0 && (o[0] = o[1], p = Is(d, t, a, i, void 0, p)), a = o, o = [a[1], r, 0, 0])) : f.type === "tableHead" ? (n = !0, c = r) : f.type === "tableRow" || f.type === "tableDelimiterRow" ? (c = r, a[1] !== 0 ? (o[0] = o[1], p = Is(d, t, a, i, r, p)) : o[1] !== 0 && (p = Is(d, t, o, i, r, p)), i = 0) : i && (f.type === "data" || f.type === "tableDelimiterMarker" || f.type === "tableDelimiterFiller") && (o[3] = r);
+    }, d.add(r, 0, [["enter", l, t]])), i = f.type === "tableDelimiterRow" ? 2 : l ? 3 : 1) : i && (f.type === "data" || f.type === "tableDelimiterMarker" || f.type === "tableDelimiterFiller") ? (s = !1, o[2] === 0 && (a[1] !== 0 && (o[0] = o[1], p = Es(d, t, a, i, void 0, p), a = [0, 0, 0, 0]), o[2] = r)) : f.type === "tableCellDivider" && (s ? s = !1 : (a[1] !== 0 && (o[0] = o[1], p = Es(d, t, a, i, void 0, p)), a = o, o = [a[1], r, 0, 0])) : f.type === "tableHead" ? (n = !0, c = r) : f.type === "tableRow" || f.type === "tableDelimiterRow" ? (c = r, a[1] !== 0 ? (o[0] = o[1], p = Es(d, t, a, i, r, p)) : o[1] !== 0 && (p = Es(d, t, o, i, r, p)), i = 0) : i && (f.type === "data" || f.type === "tableDelimiterMarker" || f.type === "tableDelimiterFiller") && (o[3] = r);
   }
-  for (c !== 0 && _c(d, t, c, u, l), d.consume(t.events), r = -1; ++r < t.events.length; ) {
+  for (c !== 0 && Ac(d, t, c, u, l), d.consume(t.events), r = -1; ++r < t.events.length; ) {
     const h = t.events[r];
-    h[0] === "enter" && h[1].type === "table" && (h[1]._align = XS(t.events, r));
+    h[0] === "enter" && h[1].type === "table" && (h[1]._align = QS(t.events, r));
   }
   return e;
 }
-function Is(e, t, r, s, i, a) {
+function Es(e, t, r, s, i, a) {
   const o = s === 1 ? "tableHeader" : s === 2 ? "tableDelimiter" : "tableData", n = "tableContent";
-  r[0] !== 0 && (a.end = Object.assign({}, Ut(t.events, r[0])), e.add(r[0], 0, [["exit", a, t]]));
-  const c = Ut(t.events, r[1]);
+  r[0] !== 0 && (a.end = Object.assign({}, Ft(t.events, r[0])), e.add(r[0], 0, [["exit", a, t]]));
+  const c = Ft(t.events, r[1]);
   if (a = {
     type: o,
     start: Object.assign({}, c),
     // Note: correct end is set later.
     end: Object.assign({}, c)
   }, e.add(r[1], 0, [["enter", a, t]]), r[2] !== 0) {
-    const u = Ut(t.events, r[2]), l = Ut(t.events, r[3]), p = {
+    const u = Ft(t.events, r[2]), l = Ft(t.events, r[3]), p = {
       type: n,
       start: Object.assign({}, u),
       end: Object.assign({}, l)
@@ -4535,28 +4535,28 @@ function Is(e, t, r, s, i, a) {
     }
     e.add(r[3] + 1, 0, [["exit", p, t]]);
   }
-  return i !== void 0 && (a.end = Object.assign({}, Ut(t.events, i)), e.add(i, 0, [["exit", a, t]]), a = void 0), a;
+  return i !== void 0 && (a.end = Object.assign({}, Ft(t.events, i)), e.add(i, 0, [["exit", a, t]]), a = void 0), a;
 }
-function _c(e, t, r, s, i) {
-  const a = [], o = Ut(t.events, r);
+function Ac(e, t, r, s, i) {
+  const a = [], o = Ft(t.events, r);
   i && (i.end = Object.assign({}, o), a.push(["exit", i, t])), s.end = Object.assign({}, o), a.push(["exit", s, t]), e.add(r + 1, 0, a);
 }
-function Ut(e, t) {
+function Ft(e, t) {
   const r = e[t], s = r[0] === "enter" ? "start" : "end";
   return r[1][s];
 }
-const nC = {
+const eC = {
   name: "tasklistCheck",
-  tokenize: sC
+  tokenize: rC
 };
-function iC() {
+function tC() {
   return {
     text: {
-      91: nC
+      91: eC
     }
   };
 }
-function sC(e, t, r) {
+function rC(e, t, r) {
   const s = this;
   return i;
   function i(c) {
@@ -4568,41 +4568,41 @@ function sC(e, t, r) {
     );
   }
   function a(c) {
-    return ve(c) ? (e.enter("taskListCheckValueUnchecked"), e.consume(c), e.exit("taskListCheckValueUnchecked"), o) : c === 88 || c === 120 ? (e.enter("taskListCheckValueChecked"), e.consume(c), e.exit("taskListCheckValueChecked"), o) : r(c);
+    return pe(c) ? (e.enter("taskListCheckValueUnchecked"), e.consume(c), e.exit("taskListCheckValueUnchecked"), o) : c === 88 || c === 120 ? (e.enter("taskListCheckValueChecked"), e.consume(c), e.exit("taskListCheckValueChecked"), o) : r(c);
   }
   function o(c) {
     return c === 93 ? (e.enter("taskListCheckMarker"), e.consume(c), e.exit("taskListCheckMarker"), e.exit("taskListCheck"), n) : r(c);
   }
   function n(c) {
-    return $t(c) ? t(c) : Be(c) ? e.check({
-      tokenize: oC
+    return Bt(c) ? t(c) : Be(c) ? e.check({
+      tokenize: nC
     }, t, r)(c) : r(c);
   }
 }
-function oC(e, t, r) {
+function nC(e, t, r) {
   return Ue(e, s, "whitespace");
   function s(i) {
     return i === null ? r(i) : t(i);
   }
 }
-function aC(e) {
-  return wS([
-    _S(),
-    US(),
-    QS(e),
-    eC(),
-    iC()
+function iC(e) {
+  return RS([
+    IS(),
+    qS(),
+    KS(e),
+    YS(),
+    tC()
   ]);
 }
-const cC = {};
-function La(e) {
+const sC = {};
+function xa(e) {
   const t = (
     /** @type {Processor<Root>} */
     this
-  ), r = e || cC, s = t.data(), i = s.micromarkExtensions || (s.micromarkExtensions = []), a = s.fromMarkdownExtensions || (s.fromMarkdownExtensions = []), o = s.toMarkdownExtensions || (s.toMarkdownExtensions = []);
-  i.push(aC(r)), a.push(PS()), o.push(bS(r));
+  ), r = e || sC, s = t.data(), i = s.micromarkExtensions || (s.micromarkExtensions = []), a = s.fromMarkdownExtensions || (s.fromMarkdownExtensions = []), o = s.toMarkdownExtensions || (s.toMarkdownExtensions = []);
+  i.push(iC(r)), a.push(SS()), o.push(CS(r));
 }
-const Hs = async (e, t, r = "en", s, i, a) => {
+const Ws = async (e, t, r = "en", s, i, a) => {
   try {
     const n = `${i.replace(/\/+$/, "")}/translate?api-version=3.0&from=${r}&to=${t}`, c = await fetch(
       n,
@@ -4623,7 +4623,7 @@ const Hs = async (e, t, r = "en", s, i, a) => {
     return console.error("Batch translation error:", o), e;
   }
 };
-function uC({
+function oC({
   messages: e,
   onSendMessage: t,
   className: r = "",
@@ -4638,24 +4638,24 @@ function uC({
   config: p
 }) {
   const [d, h] = z(""), f = $e(null), [g, m] = z(!0), v = $e(null), y = $e(null), [S, C] = z({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload the report." });
-  H(() => {
+  W(() => {
     if (f.current) {
       const T = f.current.closest("[data-radix-scroll-area-viewport]") || v.current;
       T && (T.scrollTop = T.scrollHeight);
     }
-  }, [e, s]), H(() => {
+  }, [e, s]), W(() => {
     (async () => {
       if (l !== "en" && y.current !== l) {
-        const [b, _, O, q, $, Q, G] = await Hs(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload your report."], l, "en", p?.azureTranslatorKey || "", p?.azureTranslatorEndpoint || "", p?.azureTranslatorRegion || "");
-        C({ insufficientCredits: b, insufficientCreditsDescription: _, placeholder: O, suggestedPrompts: q, thinking: $, retry: Q, welcomeMessage: G }), y.current = l;
+        const [b, _, O, j, $, Y, J] = await Ws(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload your report."], l, "en", p?.azureTranslatorKey || "", p?.azureTranslatorEndpoint || "", p?.azureTranslatorRegion || "");
+        C({ insufficientCredits: b, insufficientCreditsDescription: _, placeholder: O, suggestedPrompts: j, thinking: $, retry: Y, welcomeMessage: J }), y.current = l;
       }
       l === "en" && y.current !== "en" && (C({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload your report." }), y.current = "en");
     })();
   }, [l, p]);
-  const P = () => {
+  const R = () => {
     d.trim() === "" || s || (t(d), h(""));
   }, w = (T) => {
-    T.key === "Enter" && !T.shiftKey && (T.preventDefault(), P());
+    T.key === "Enter" && !T.shiftKey && (T.preventDefault(), R());
   }, I = (T) => {
     h(T);
   }, E = () => {
@@ -4666,16 +4666,16 @@ function uC({
     {
       className: `flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden ${r}`,
       children: [
-        /* @__PURE__ */ R("div", { ref: v, className: "flex-1 overflow-y-auto p-3 bg-white/80", children: /* @__PURE__ */ M("div", { className: "space-y-3", children: [
+        /* @__PURE__ */ P("div", { ref: v, className: "flex-1 overflow-y-auto p-3 bg-white/80", children: /* @__PURE__ */ M("div", { className: "space-y-3", children: [
           e?.length === 0 ? /* @__PURE__ */ M("div", { className: "flex items-start", children: [
-            /* @__PURE__ */ R("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ R(fc, { size: 14 }) }),
-            /* @__PURE__ */ R("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10", children: /* @__PURE__ */ R("div", { className: "text-sm text-secondary", children: S.welcomeMessage }) })
+            /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(dc, { size: 14 }) }),
+            /* @__PURE__ */ P("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10", children: /* @__PURE__ */ P("div", { className: "text-sm text-secondary", children: S.welcomeMessage }) })
           ] }) : e?.map((T, b) => {
-            const O = b === e.length - 1 && T.sender === "ai", q = n && O && c && T.sender === "ai";
-            return /* @__PURE__ */ R(
+            const O = b === e.length - 1 && T.sender === "ai", j = n && O && c && T.sender === "ai";
+            return /* @__PURE__ */ P(
               "div",
               {
-                className: cs(
+                className: ls(
                   "flex",
                   T.sender === "user" ? "justify-end" : "justify-start",
                   "mb-4"
@@ -4683,21 +4683,21 @@ function uC({
                 children: /* @__PURE__ */ M(
                   "div",
                   {
-                    className: cs(
+                    className: ls(
                       "max-w-[80%] rounded-lg p-3",
                       T.sender === "user" ? "bg-primary text-white" : "bg-light text-secondary"
                     ),
                     children: [
-                      o ? o(T, b) : T.sender === "user" ? /* @__PURE__ */ R("div", { className: "text-sm", children: T.text }) : /* @__PURE__ */ R("div", { className: "text-sm", children: /* @__PURE__ */ R(Da, { remarkPlugins: [La], children: T.text }) }),
-                      q && /* @__PURE__ */ R("div", { className: "mt-2 flex justify-end", children: /* @__PURE__ */ M(
-                        Pe,
+                      o ? o(T, b) : T.sender === "user" ? /* @__PURE__ */ P("div", { className: "text-sm", children: T.text }) : /* @__PURE__ */ P("div", { className: "text-sm", children: /* @__PURE__ */ P(Oa, { remarkPlugins: [xa], children: T.text }) }),
+                      j && /* @__PURE__ */ P("div", { className: "mt-2 flex justify-end", children: /* @__PURE__ */ M(
+                        Oe,
                         {
                           variant: "ghost",
                           size: "sm",
                           onClick: c,
                           className: "h-6 px-2 text-xs hover:bg-secondary/20",
                           children: [
-                            /* @__PURE__ */ R(Pg, { className: "h-3 w-3 mr-1" }),
+                            /* @__PURE__ */ P(Rg, { className: "h-3 w-3 mr-1" }),
                             S.retry
                           ]
                         }
@@ -4710,13 +4710,13 @@ function uC({
             );
           }),
           s && /* @__PURE__ */ M("div", { className: "flex items-start", children: [
-            /* @__PURE__ */ R("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ R(fc, { size: 14 }) }),
+            /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(dc, { size: 14 }) }),
             /* @__PURE__ */ M("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10 flex items-center", children: [
-              /* @__PURE__ */ R(Ma, { className: "h-4 w-4 animate-spin mr-2 text-primary" }),
-              /* @__PURE__ */ R("span", { className: "text-sm text-secondary", children: S.thinking })
+              /* @__PURE__ */ P(ka, { className: "h-4 w-4 animate-spin mr-2 text-primary" }),
+              /* @__PURE__ */ P("span", { className: "text-sm text-secondary", children: S.thinking })
             ] })
           ] }),
-          /* @__PURE__ */ R("div", { ref: f })
+          /* @__PURE__ */ P("div", { ref: f })
         ] }) }),
         /* @__PURE__ */ M("div", { className: "p-3 border-t border-light bg-white flex-shrink-0", children: [
           a && a?.length > 0 && /* @__PURE__ */ M("div", { className: "bg-white border-b border-light flex-shrink-0", children: [
@@ -4726,30 +4726,30 @@ function uC({
                 onClick: E,
                 className: "w-full p-2 flex items-center justify-center hover:bg-secondary/10 transition-colors",
                 children: [
-                  /* @__PURE__ */ R("span", { className: "text-sm font-medium text-secondary", children: S.suggestedPrompts }),
-                  g ? /* @__PURE__ */ R(bg, { className: "h-4 w-4 text-secondary" }) : /* @__PURE__ */ R(wg, { className: "h-4 w-4 text-secondary" })
+                  /* @__PURE__ */ P("span", { className: "text-sm font-medium text-secondary", children: S.suggestedPrompts }),
+                  g ? /* @__PURE__ */ P(Pg, { className: "h-4 w-4 text-secondary" }) : /* @__PURE__ */ P(bg, { className: "h-4 w-4 text-secondary" })
                 ]
               }
             ),
-            !g && /* @__PURE__ */ R("div", { className: "p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2", children: a.map(({ id: T, text: b, icon: _ }) => /* @__PURE__ */ M(
-              Pe,
+            !g && /* @__PURE__ */ P("div", { className: "p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2", children: a.map(({ id: T, text: b, icon: _ }) => /* @__PURE__ */ M(
+              Oe,
               {
                 variant: "outline",
-                className: cs(
+                className: ls(
                   "w-full justify-start text-left text-sm h-auto min-h-[40px] py-2 px-3",
                   "whitespace-normal break-words"
                 ),
                 onClick: () => I(b),
                 children: [
-                  /* @__PURE__ */ R(_, { className: "h-4 w-4 mr-2 text-primary flex-shrink-0" }),
-                  /* @__PURE__ */ R("span", { className: "text-left", children: b })
+                  /* @__PURE__ */ P(_, { className: "h-4 w-4 mr-2 text-primary flex-shrink-0" }),
+                  /* @__PURE__ */ P("span", { className: "text-left", children: b })
                 ]
               },
               T
             )) })
           ] }),
           /* @__PURE__ */ M("div", { className: "flex items-end", children: [
-            /* @__PURE__ */ R(
+            /* @__PURE__ */ P(
               "textarea",
               {
                 value: d,
@@ -4763,23 +4763,23 @@ function uC({
                 rows: 1
               }
             ),
-            /* @__PURE__ */ R(
-              Pe,
+            /* @__PURE__ */ P(
+              Oe,
               {
-                onClick: P,
+                onClick: R,
                 className: "rounded-l-none bg-primary hover:bg-secondary h-[40px]",
                 disabled: d.trim() === "" || s,
-                children: s ? /* @__PURE__ */ R(Ma, { className: "h-5 w-5 animate-spin" }) : /* @__PURE__ */ R(Eg, { size: 18 })
+                children: s ? /* @__PURE__ */ P(ka, { className: "h-5 w-5 animate-spin" }) : /* @__PURE__ */ P(wg, { size: 18 })
               }
             ),
-            i && /* @__PURE__ */ R("div", { className: "ml-2", children: i })
+            i && /* @__PURE__ */ P("div", { className: "ml-2", children: i })
           ] })
         ] })
       ]
     }
   );
 }
-function lC(e) {
+function aC(e) {
   if (Object.prototype.hasOwnProperty.call(e, "__esModule")) return e;
   var t = e.default;
   if (typeof t == "function") {
@@ -4803,12 +4803,12 @@ function lC(e) {
     });
   }), r;
 }
-var it = {}, st = {}, Xt = {}, ot = {}, Y = {}, ho = {}, at = {}, fo = {}, er = {}, As = {}, kc;
-function Kf() {
-  if (kc) return As;
-  kc = 1, Object.defineProperty(As, "__esModule", {
+var it = {}, st = {}, tr = {}, ot = {}, X = {}, lo = {}, at = {}, po = {}, rr = {}, Is = {}, Tc;
+function Vf() {
+  if (Tc) return Is;
+  Tc = 1, Object.defineProperty(Is, "__esModule", {
     value: !0
-  }), As.default = r;
+  }), Is.default = r;
   let e;
   const t = new Uint8Array(16);
   function r() {
@@ -4816,24 +4816,24 @@ function Kf() {
       throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");
     return e(t);
   }
-  return As;
+  return Is;
 }
-var qt = {}, tr = {}, rr = {}, Oc;
-function pC() {
-  if (Oc) return rr;
-  Oc = 1, Object.defineProperty(rr, "__esModule", {
+var Lt = {}, nr = {}, ir = {}, _c;
+function cC() {
+  if (_c) return ir;
+  _c = 1, Object.defineProperty(ir, "__esModule", {
     value: !0
-  }), rr.default = void 0;
+  }), ir.default = void 0;
   var e = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
-  return rr.default = e, rr;
+  return ir.default = e, ir;
 }
-var Mc;
-function Ks() {
-  if (Mc) return tr;
-  Mc = 1, Object.defineProperty(tr, "__esModule", {
+var kc;
+function Hs() {
+  if (kc) return nr;
+  kc = 1, Object.defineProperty(nr, "__esModule", {
     value: !0
-  }), tr.default = void 0;
-  var e = t(/* @__PURE__ */ pC());
+  }), nr.default = void 0;
+  var e = t(/* @__PURE__ */ cC());
   function t(i) {
     return i && i.__esModule ? i : { default: i };
   }
@@ -4841,15 +4841,15 @@ function Ks() {
     return typeof i == "string" && e.default.test(i);
   }
   var s = r;
-  return tr.default = s, tr;
+  return nr.default = s, nr;
 }
-var Dc;
-function Js() {
-  if (Dc) return qt;
-  Dc = 1, Object.defineProperty(qt, "__esModule", {
+var Oc;
+function Ks() {
+  if (Oc) return Lt;
+  Oc = 1, Object.defineProperty(Lt, "__esModule", {
     value: !0
-  }), qt.default = void 0, qt.unsafeStringify = s;
-  var e = t(/* @__PURE__ */ Ks());
+  }), Lt.default = void 0, Lt.unsafeStringify = s;
+  var e = t(/* @__PURE__ */ Hs());
   function t(o) {
     return o && o.__esModule ? o : { default: o };
   }
@@ -4866,15 +4866,15 @@ function Js() {
     return c;
   }
   var a = i;
-  return qt.default = a, qt;
+  return Lt.default = a, Lt;
 }
-var Nc;
-function dC() {
-  if (Nc) return er;
-  Nc = 1, Object.defineProperty(er, "__esModule", {
+var Mc;
+function uC() {
+  if (Mc) return rr;
+  Mc = 1, Object.defineProperty(rr, "__esModule", {
     value: !0
-  }), er.default = void 0;
-  var e = r(/* @__PURE__ */ Kf()), t = /* @__PURE__ */ Js();
+  }), rr.default = void 0;
+  var e = r(/* @__PURE__ */ Vf()), t = /* @__PURE__ */ Ks();
   function r(u) {
     return u && u.__esModule ? u : { default: u };
   }
@@ -4885,8 +4885,8 @@ function dC() {
     u = u || {};
     let f = u.node || s, g = u.clockseq !== void 0 ? u.clockseq : i;
     if (f == null || g == null) {
-      const P = u.random || (u.rng || e.default)();
-      f == null && (f = s = [P[0] | 1, P[1], P[2], P[3], P[4], P[5]]), g == null && (g = i = (P[6] << 8 | P[7]) & 16383);
+      const R = u.random || (u.rng || e.default)();
+      f == null && (f = s = [R[0] | 1, R[1], R[2], R[3], R[4], R[5]]), g == null && (g = i = (R[6] << 8 | R[7]) & 16383);
     }
     let m = u.msecs !== void 0 ? u.msecs : Date.now(), v = u.nsecs !== void 0 ? u.nsecs : o + 1;
     const y = m - a + (v - o) / 1e4;
@@ -4897,20 +4897,20 @@ function dC() {
     h[d++] = S >>> 24 & 255, h[d++] = S >>> 16 & 255, h[d++] = S >>> 8 & 255, h[d++] = S & 255;
     const C = m / 4294967296 * 1e4 & 268435455;
     h[d++] = C >>> 8 & 255, h[d++] = C & 255, h[d++] = C >>> 24 & 15 | 16, h[d++] = C >>> 16 & 255, h[d++] = g >>> 8 | 128, h[d++] = g & 255;
-    for (let P = 0; P < 6; ++P)
-      h[d + P] = f[P];
+    for (let R = 0; R < 6; ++R)
+      h[d + R] = f[R];
     return l || (0, t.unsafeStringify)(h);
   }
   var c = n;
-  return er.default = c, er;
+  return rr.default = c, rr;
 }
-var nr = {}, Je = {}, ir = {}, xc;
-function Jf() {
-  if (xc) return ir;
-  xc = 1, Object.defineProperty(ir, "__esModule", {
+var sr = {}, Je = {}, or = {}, Dc;
+function Wf() {
+  if (Dc) return or;
+  Dc = 1, Object.defineProperty(or, "__esModule", {
     value: !0
-  }), ir.default = void 0;
-  var e = t(/* @__PURE__ */ Ks());
+  }), or.default = void 0;
+  var e = t(/* @__PURE__ */ Hs());
   function t(i) {
     return i && i.__esModule ? i : { default: i };
   }
@@ -4922,15 +4922,15 @@ function Jf() {
     return o[0] = (a = parseInt(i.slice(0, 8), 16)) >>> 24, o[1] = a >>> 16 & 255, o[2] = a >>> 8 & 255, o[3] = a & 255, o[4] = (a = parseInt(i.slice(9, 13), 16)) >>> 8, o[5] = a & 255, o[6] = (a = parseInt(i.slice(14, 18), 16)) >>> 8, o[7] = a & 255, o[8] = (a = parseInt(i.slice(19, 23), 16)) >>> 8, o[9] = a & 255, o[10] = (a = parseInt(i.slice(24, 36), 16)) / 1099511627776 & 255, o[11] = a / 4294967296 & 255, o[12] = a >>> 24 & 255, o[13] = a >>> 16 & 255, o[14] = a >>> 8 & 255, o[15] = a & 255, o;
   }
   var s = r;
-  return ir.default = s, ir;
+  return or.default = s, or;
 }
-var zc;
-function Gf() {
-  if (zc) return Je;
-  zc = 1, Object.defineProperty(Je, "__esModule", {
+var Nc;
+function Hf() {
+  if (Nc) return Je;
+  Nc = 1, Object.defineProperty(Je, "__esModule", {
     value: !0
   }), Je.URL = Je.DNS = void 0, Je.default = o;
-  var e = /* @__PURE__ */ Js(), t = r(/* @__PURE__ */ Jf());
+  var e = /* @__PURE__ */ Ks(), t = r(/* @__PURE__ */ Wf());
   function r(n) {
     return n && n.__esModule ? n : { default: n };
   }
@@ -4967,12 +4967,12 @@ function Gf() {
   }
   return Je;
 }
-var sr = {}, Lc;
-function hC() {
-  if (Lc) return sr;
-  Lc = 1, Object.defineProperty(sr, "__esModule", {
+var ar = {}, xc;
+function lC() {
+  if (xc) return ar;
+  xc = 1, Object.defineProperty(ar, "__esModule", {
     value: !0
-  }), sr.default = void 0;
+  }), ar.default = void 0;
   function e(h) {
     if (typeof h == "string") {
       const f = unescape(encodeURIComponent(h));
@@ -4997,8 +4997,8 @@ function hC() {
     h[f >> 5] |= 128 << f % 32, h[r(f) - 1] = f;
     let g = 1732584193, m = -271733879, v = -1732584194, y = 271733878;
     for (let S = 0; S < h.length; S += 16) {
-      const C = g, P = m, w = v, I = y;
-      g = c(g, m, v, y, h[S], 7, -680876936), y = c(y, g, m, v, h[S + 1], 12, -389564586), v = c(v, y, g, m, h[S + 2], 17, 606105819), m = c(m, v, y, g, h[S + 3], 22, -1044525330), g = c(g, m, v, y, h[S + 4], 7, -176418897), y = c(y, g, m, v, h[S + 5], 12, 1200080426), v = c(v, y, g, m, h[S + 6], 17, -1473231341), m = c(m, v, y, g, h[S + 7], 22, -45705983), g = c(g, m, v, y, h[S + 8], 7, 1770035416), y = c(y, g, m, v, h[S + 9], 12, -1958414417), v = c(v, y, g, m, h[S + 10], 17, -42063), m = c(m, v, y, g, h[S + 11], 22, -1990404162), g = c(g, m, v, y, h[S + 12], 7, 1804603682), y = c(y, g, m, v, h[S + 13], 12, -40341101), v = c(v, y, g, m, h[S + 14], 17, -1502002290), m = c(m, v, y, g, h[S + 15], 22, 1236535329), g = u(g, m, v, y, h[S + 1], 5, -165796510), y = u(y, g, m, v, h[S + 6], 9, -1069501632), v = u(v, y, g, m, h[S + 11], 14, 643717713), m = u(m, v, y, g, h[S], 20, -373897302), g = u(g, m, v, y, h[S + 5], 5, -701558691), y = u(y, g, m, v, h[S + 10], 9, 38016083), v = u(v, y, g, m, h[S + 15], 14, -660478335), m = u(m, v, y, g, h[S + 4], 20, -405537848), g = u(g, m, v, y, h[S + 9], 5, 568446438), y = u(y, g, m, v, h[S + 14], 9, -1019803690), v = u(v, y, g, m, h[S + 3], 14, -187363961), m = u(m, v, y, g, h[S + 8], 20, 1163531501), g = u(g, m, v, y, h[S + 13], 5, -1444681467), y = u(y, g, m, v, h[S + 2], 9, -51403784), v = u(v, y, g, m, h[S + 7], 14, 1735328473), m = u(m, v, y, g, h[S + 12], 20, -1926607734), g = l(g, m, v, y, h[S + 5], 4, -378558), y = l(y, g, m, v, h[S + 8], 11, -2022574463), v = l(v, y, g, m, h[S + 11], 16, 1839030562), m = l(m, v, y, g, h[S + 14], 23, -35309556), g = l(g, m, v, y, h[S + 1], 4, -1530992060), y = l(y, g, m, v, h[S + 4], 11, 1272893353), v = l(v, y, g, m, h[S + 7], 16, -155497632), m = l(m, v, y, g, h[S + 10], 23, -1094730640), g = l(g, m, v, y, h[S + 13], 4, 681279174), y = l(y, g, m, v, h[S], 11, -358537222), v = l(v, y, g, m, h[S + 3], 16, -722521979), m = l(m, v, y, g, h[S + 6], 23, 76029189), g = l(g, m, v, y, h[S + 9], 4, -640364487), y = l(y, g, m, v, h[S + 12], 11, -421815835), v = l(v, y, g, m, h[S + 15], 16, 530742520), m = l(m, v, y, g, h[S + 2], 23, -995338651), g = p(g, m, v, y, h[S], 6, -198630844), y = p(y, g, m, v, h[S + 7], 10, 1126891415), v = p(v, y, g, m, h[S + 14], 15, -1416354905), m = p(m, v, y, g, h[S + 5], 21, -57434055), g = p(g, m, v, y, h[S + 12], 6, 1700485571), y = p(y, g, m, v, h[S + 3], 10, -1894986606), v = p(v, y, g, m, h[S + 10], 15, -1051523), m = p(m, v, y, g, h[S + 1], 21, -2054922799), g = p(g, m, v, y, h[S + 8], 6, 1873313359), y = p(y, g, m, v, h[S + 15], 10, -30611744), v = p(v, y, g, m, h[S + 6], 15, -1560198380), m = p(m, v, y, g, h[S + 13], 21, 1309151649), g = p(g, m, v, y, h[S + 4], 6, -145523070), y = p(y, g, m, v, h[S + 11], 10, -1120210379), v = p(v, y, g, m, h[S + 2], 15, 718787259), m = p(m, v, y, g, h[S + 9], 21, -343485551), g = a(g, C), m = a(m, P), v = a(v, w), y = a(y, I);
+      const C = g, R = m, w = v, I = y;
+      g = c(g, m, v, y, h[S], 7, -680876936), y = c(y, g, m, v, h[S + 1], 12, -389564586), v = c(v, y, g, m, h[S + 2], 17, 606105819), m = c(m, v, y, g, h[S + 3], 22, -1044525330), g = c(g, m, v, y, h[S + 4], 7, -176418897), y = c(y, g, m, v, h[S + 5], 12, 1200080426), v = c(v, y, g, m, h[S + 6], 17, -1473231341), m = c(m, v, y, g, h[S + 7], 22, -45705983), g = c(g, m, v, y, h[S + 8], 7, 1770035416), y = c(y, g, m, v, h[S + 9], 12, -1958414417), v = c(v, y, g, m, h[S + 10], 17, -42063), m = c(m, v, y, g, h[S + 11], 22, -1990404162), g = c(g, m, v, y, h[S + 12], 7, 1804603682), y = c(y, g, m, v, h[S + 13], 12, -40341101), v = c(v, y, g, m, h[S + 14], 17, -1502002290), m = c(m, v, y, g, h[S + 15], 22, 1236535329), g = u(g, m, v, y, h[S + 1], 5, -165796510), y = u(y, g, m, v, h[S + 6], 9, -1069501632), v = u(v, y, g, m, h[S + 11], 14, 643717713), m = u(m, v, y, g, h[S], 20, -373897302), g = u(g, m, v, y, h[S + 5], 5, -701558691), y = u(y, g, m, v, h[S + 10], 9, 38016083), v = u(v, y, g, m, h[S + 15], 14, -660478335), m = u(m, v, y, g, h[S + 4], 20, -405537848), g = u(g, m, v, y, h[S + 9], 5, 568446438), y = u(y, g, m, v, h[S + 14], 9, -1019803690), v = u(v, y, g, m, h[S + 3], 14, -187363961), m = u(m, v, y, g, h[S + 8], 20, 1163531501), g = u(g, m, v, y, h[S + 13], 5, -1444681467), y = u(y, g, m, v, h[S + 2], 9, -51403784), v = u(v, y, g, m, h[S + 7], 14, 1735328473), m = u(m, v, y, g, h[S + 12], 20, -1926607734), g = l(g, m, v, y, h[S + 5], 4, -378558), y = l(y, g, m, v, h[S + 8], 11, -2022574463), v = l(v, y, g, m, h[S + 11], 16, 1839030562), m = l(m, v, y, g, h[S + 14], 23, -35309556), g = l(g, m, v, y, h[S + 1], 4, -1530992060), y = l(y, g, m, v, h[S + 4], 11, 1272893353), v = l(v, y, g, m, h[S + 7], 16, -155497632), m = l(m, v, y, g, h[S + 10], 23, -1094730640), g = l(g, m, v, y, h[S + 13], 4, 681279174), y = l(y, g, m, v, h[S], 11, -358537222), v = l(v, y, g, m, h[S + 3], 16, -722521979), m = l(m, v, y, g, h[S + 6], 23, 76029189), g = l(g, m, v, y, h[S + 9], 4, -640364487), y = l(y, g, m, v, h[S + 12], 11, -421815835), v = l(v, y, g, m, h[S + 15], 16, 530742520), m = l(m, v, y, g, h[S + 2], 23, -995338651), g = p(g, m, v, y, h[S], 6, -198630844), y = p(y, g, m, v, h[S + 7], 10, 1126891415), v = p(v, y, g, m, h[S + 14], 15, -1416354905), m = p(m, v, y, g, h[S + 5], 21, -57434055), g = p(g, m, v, y, h[S + 12], 6, 1700485571), y = p(y, g, m, v, h[S + 3], 10, -1894986606), v = p(v, y, g, m, h[S + 10], 15, -1051523), m = p(m, v, y, g, h[S + 1], 21, -2054922799), g = p(g, m, v, y, h[S + 8], 6, 1873313359), y = p(y, g, m, v, h[S + 15], 10, -30611744), v = p(v, y, g, m, h[S + 6], 15, -1560198380), m = p(m, v, y, g, h[S + 13], 21, 1309151649), g = p(g, m, v, y, h[S + 4], 6, -145523070), y = p(y, g, m, v, h[S + 11], 10, -1120210379), v = p(v, y, g, m, h[S + 2], 15, 718787259), m = p(m, v, y, g, h[S + 9], 21, -343485551), g = a(g, C), m = a(m, R), v = a(v, w), y = a(y, I);
     }
     return [g, m, v, y];
   }
@@ -5033,39 +5033,39 @@ function hC() {
     return n(g ^ (f | ~m), h, f, v, y, S);
   }
   var d = e;
-  return sr.default = d, sr;
+  return ar.default = d, ar;
 }
-var jc;
-function fC() {
-  if (jc) return nr;
-  jc = 1, Object.defineProperty(nr, "__esModule", {
+var zc;
+function pC() {
+  if (zc) return sr;
+  zc = 1, Object.defineProperty(sr, "__esModule", {
     value: !0
-  }), nr.default = void 0;
-  var e = r(/* @__PURE__ */ Gf()), t = r(/* @__PURE__ */ hC());
+  }), sr.default = void 0;
+  var e = r(/* @__PURE__ */ Hf()), t = r(/* @__PURE__ */ lC());
   function r(a) {
     return a && a.__esModule ? a : { default: a };
   }
   var i = (0, e.default)("v3", 48, t.default);
-  return nr.default = i, nr;
+  return sr.default = i, sr;
 }
-var or = {}, ar = {}, qc;
-function vC() {
-  if (qc) return ar;
-  qc = 1, Object.defineProperty(ar, "__esModule", {
+var cr = {}, ur = {}, Lc;
+function dC() {
+  if (Lc) return ur;
+  Lc = 1, Object.defineProperty(ur, "__esModule", {
     value: !0
-  }), ar.default = void 0;
+  }), ur.default = void 0;
   var t = {
     randomUUID: typeof crypto < "u" && crypto.randomUUID && crypto.randomUUID.bind(crypto)
   };
-  return ar.default = t, ar;
+  return ur.default = t, ur;
 }
-var Fc;
-function gC() {
-  if (Fc) return or;
-  Fc = 1, Object.defineProperty(or, "__esModule", {
+var jc;
+function hC() {
+  if (jc) return cr;
+  jc = 1, Object.defineProperty(cr, "__esModule", {
     value: !0
-  }), or.default = void 0;
-  var e = s(/* @__PURE__ */ vC()), t = s(/* @__PURE__ */ Kf()), r = /* @__PURE__ */ Js();
+  }), cr.default = void 0;
+  var e = s(/* @__PURE__ */ dC()), t = s(/* @__PURE__ */ Vf()), r = /* @__PURE__ */ Ks();
   function s(o) {
     return o && o.__esModule ? o : { default: o };
   }
@@ -5083,14 +5083,14 @@ function gC() {
     return (0, r.unsafeStringify)(u);
   }
   var a = i;
-  return or.default = a, or;
+  return cr.default = a, cr;
 }
-var cr = {}, ur = {}, Bc;
-function mC() {
-  if (Bc) return ur;
-  Bc = 1, Object.defineProperty(ur, "__esModule", {
+var lr = {}, pr = {}, qc;
+function fC() {
+  if (qc) return pr;
+  qc = 1, Object.defineProperty(pr, "__esModule", {
     value: !0
-  }), ur.default = void 0;
+  }), pr.default = void 0;
   function e(i, a, o, n) {
     switch (i) {
       case 0:
@@ -5139,37 +5139,37 @@ function mC() {
     return [o[0] >> 24 & 255, o[0] >> 16 & 255, o[0] >> 8 & 255, o[0] & 255, o[1] >> 24 & 255, o[1] >> 16 & 255, o[1] >> 8 & 255, o[1] & 255, o[2] >> 24 & 255, o[2] >> 16 & 255, o[2] >> 8 & 255, o[2] & 255, o[3] >> 24 & 255, o[3] >> 16 & 255, o[3] >> 8 & 255, o[3] & 255, o[4] >> 24 & 255, o[4] >> 16 & 255, o[4] >> 8 & 255, o[4] & 255];
   }
   var s = r;
-  return ur.default = s, ur;
+  return pr.default = s, pr;
 }
-var Uc;
-function yC() {
-  if (Uc) return cr;
-  Uc = 1, Object.defineProperty(cr, "__esModule", {
+var Fc;
+function vC() {
+  if (Fc) return lr;
+  Fc = 1, Object.defineProperty(lr, "__esModule", {
     value: !0
-  }), cr.default = void 0;
-  var e = r(/* @__PURE__ */ Gf()), t = r(/* @__PURE__ */ mC());
+  }), lr.default = void 0;
+  var e = r(/* @__PURE__ */ Hf()), t = r(/* @__PURE__ */ fC());
   function r(a) {
     return a && a.__esModule ? a : { default: a };
   }
   var i = (0, e.default)("v5", 80, t.default);
-  return cr.default = i, cr;
+  return lr.default = i, lr;
 }
-var lr = {}, $c;
-function SC() {
-  if ($c) return lr;
-  $c = 1, Object.defineProperty(lr, "__esModule", {
+var dr = {}, Bc;
+function gC() {
+  if (Bc) return dr;
+  Bc = 1, Object.defineProperty(dr, "__esModule", {
     value: !0
-  }), lr.default = void 0;
+  }), dr.default = void 0;
   var e = "00000000-0000-0000-0000-000000000000";
-  return lr.default = e, lr;
+  return dr.default = e, dr;
 }
-var pr = {}, Vc;
-function CC() {
-  if (Vc) return pr;
-  Vc = 1, Object.defineProperty(pr, "__esModule", {
+var hr = {}, Uc;
+function mC() {
+  if (Uc) return hr;
+  Uc = 1, Object.defineProperty(hr, "__esModule", {
     value: !0
-  }), pr.default = void 0;
-  var e = t(/* @__PURE__ */ Ks());
+  }), hr.default = void 0;
+  var e = t(/* @__PURE__ */ Hs());
   function t(i) {
     return i && i.__esModule ? i : { default: i };
   }
@@ -5179,11 +5179,11 @@ function CC() {
     return parseInt(i.slice(14, 15), 16);
   }
   var s = r;
-  return pr.default = s, pr;
+  return hr.default = s, hr;
 }
-var Wc;
-function RC() {
-  return Wc || (Wc = 1, function(e) {
+var $c;
+function yC() {
+  return $c || ($c = 1, function(e) {
     Object.defineProperty(e, "__esModule", {
       value: !0
     }), Object.defineProperty(e, "NIL", {
@@ -5232,24 +5232,24 @@ function RC() {
         return o.default;
       }
     });
-    var t = l(/* @__PURE__ */ dC()), r = l(/* @__PURE__ */ fC()), s = l(/* @__PURE__ */ gC()), i = l(/* @__PURE__ */ yC()), a = l(/* @__PURE__ */ SC()), o = l(/* @__PURE__ */ CC()), n = l(/* @__PURE__ */ Ks()), c = l(/* @__PURE__ */ Js()), u = l(/* @__PURE__ */ Jf());
+    var t = l(/* @__PURE__ */ uC()), r = l(/* @__PURE__ */ pC()), s = l(/* @__PURE__ */ hC()), i = l(/* @__PURE__ */ vC()), a = l(/* @__PURE__ */ gC()), o = l(/* @__PURE__ */ mC()), n = l(/* @__PURE__ */ Hs()), c = l(/* @__PURE__ */ Ks()), u = l(/* @__PURE__ */ Wf());
     function l(p) {
       return p && p.__esModule ? p : { default: p };
     }
-  }(fo)), fo;
+  }(po)), po;
 }
-var Hc;
+var Vc;
 function Ot() {
-  if (Hc) return at;
-  Hc = 1, Object.defineProperty(at, "__esModule", { value: !0 }), at.createNoDashGuid = at.createGuid = void 0;
-  const e = /* @__PURE__ */ RC(), t = () => (0, e.v4)();
+  if (Vc) return at;
+  Vc = 1, Object.defineProperty(at, "__esModule", { value: !0 }), at.createNoDashGuid = at.createGuid = void 0;
+  const e = /* @__PURE__ */ yC(), t = () => (0, e.v4)();
   at.createGuid = t;
   const r = () => t().replace(new RegExp("-", "g"), "").toUpperCase();
   return at.createNoDashGuid = r, at;
 }
-var Kc;
-function ms() {
-  return Kc || (Kc = 1, function(e) {
+var Wc;
+function Ss() {
+  return Wc || (Wc = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.PlatformEvent = e.EventType = void 0;
     const t = /* @__PURE__ */ Ot();
     (function(s) {
@@ -5276,13 +5276,13 @@ function ms() {
       }
     }
     e.PlatformEvent = r;
-  }(ho)), ho;
+  }(lo)), lo;
 }
-var Jc;
-function PC() {
-  if (Jc) return Y;
-  Jc = 1, Object.defineProperty(Y, "__esModule", { value: !0 }), Y.AudioStreamNodeErrorEvent = Y.AudioStreamNodeDetachedEvent = Y.AudioStreamNodeAttachedEvent = Y.AudioStreamNodeAttachingEvent = Y.AudioStreamNodeEvent = Y.AudioSourceErrorEvent = Y.AudioSourceOffEvent = Y.AudioSourceReadyEvent = Y.AudioSourceInitializingEvent = Y.AudioSourceEvent = void 0;
-  const e = /* @__PURE__ */ ms();
+var Hc;
+function SC() {
+  if (Hc) return X;
+  Hc = 1, Object.defineProperty(X, "__esModule", { value: !0 }), X.AudioStreamNodeErrorEvent = X.AudioStreamNodeDetachedEvent = X.AudioStreamNodeAttachedEvent = X.AudioStreamNodeAttachingEvent = X.AudioStreamNodeEvent = X.AudioSourceErrorEvent = X.AudioSourceOffEvent = X.AudioSourceReadyEvent = X.AudioSourceInitializingEvent = X.AudioSourceEvent = void 0;
+  const e = /* @__PURE__ */ Ss();
   class t extends e.PlatformEvent {
     constructor(d, h, f = e.EventType.Info) {
       super(d, f), this.privAudioSourceId = h;
@@ -5291,25 +5291,25 @@ function PC() {
       return this.privAudioSourceId;
     }
   }
-  Y.AudioSourceEvent = t;
+  X.AudioSourceEvent = t;
   class r extends t {
     constructor(d) {
       super("AudioSourceInitializingEvent", d);
     }
   }
-  Y.AudioSourceInitializingEvent = r;
+  X.AudioSourceInitializingEvent = r;
   class s extends t {
     constructor(d) {
       super("AudioSourceReadyEvent", d);
     }
   }
-  Y.AudioSourceReadyEvent = s;
+  X.AudioSourceReadyEvent = s;
   class i extends t {
     constructor(d) {
       super("AudioSourceOffEvent", d);
     }
   }
-  Y.AudioSourceOffEvent = i;
+  X.AudioSourceOffEvent = i;
   class a extends t {
     constructor(d, h) {
       super("AudioSourceErrorEvent", d, e.EventType.Error), this.privError = h;
@@ -5318,7 +5318,7 @@ function PC() {
       return this.privError;
     }
   }
-  Y.AudioSourceErrorEvent = a;
+  X.AudioSourceErrorEvent = a;
   class o extends t {
     constructor(d, h, f) {
       super(d, h), this.privAudioNodeId = f;
@@ -5327,25 +5327,25 @@ function PC() {
       return this.privAudioNodeId;
     }
   }
-  Y.AudioStreamNodeEvent = o;
+  X.AudioStreamNodeEvent = o;
   class n extends o {
     constructor(d, h) {
       super("AudioStreamNodeAttachingEvent", d, h);
     }
   }
-  Y.AudioStreamNodeAttachingEvent = n;
+  X.AudioStreamNodeAttachingEvent = n;
   class c extends o {
     constructor(d, h) {
       super("AudioStreamNodeAttachedEvent", d, h);
     }
   }
-  Y.AudioStreamNodeAttachedEvent = c;
+  X.AudioStreamNodeAttachedEvent = c;
   class u extends o {
     constructor(d, h) {
       super("AudioStreamNodeDetachedEvent", d, h);
     }
   }
-  Y.AudioStreamNodeDetachedEvent = u;
+  X.AudioStreamNodeDetachedEvent = u;
   class l extends o {
     constructor(d, h, f) {
       super("AudioStreamNodeErrorEvent", d, h), this.privError = f;
@@ -5354,13 +5354,13 @@ function PC() {
       return this.privError;
     }
   }
-  return Y.AudioStreamNodeErrorEvent = l, Y;
+  return X.AudioStreamNodeErrorEvent = l, X;
 }
-var Z = {}, Gc;
-function bC() {
-  if (Gc) return Z;
-  Gc = 1, Object.defineProperty(Z, "__esModule", { value: !0 }), Z.ConnectionRedirectEvent = Z.ConnectionMessageSentEvent = Z.ConnectionMessageReceivedEvent = Z.ConnectionEstablishErrorEvent = Z.ConnectionErrorEvent = Z.ConnectionClosedEvent = Z.ConnectionEstablishedEvent = Z.ConnectionStartEvent = Z.ConnectionEvent = Z.ServiceEvent = void 0;
-  const e = /* @__PURE__ */ ms();
+var ee = {}, Kc;
+function CC() {
+  if (Kc) return ee;
+  Kc = 1, Object.defineProperty(ee, "__esModule", { value: !0 }), ee.ConnectionRedirectEvent = ee.ConnectionMessageSentEvent = ee.ConnectionMessageReceivedEvent = ee.ConnectionEstablishErrorEvent = ee.ConnectionErrorEvent = ee.ConnectionClosedEvent = ee.ConnectionEstablishedEvent = ee.ConnectionStartEvent = ee.ConnectionEvent = ee.ServiceEvent = void 0;
+  const e = /* @__PURE__ */ Ss();
   class t extends e.PlatformEvent {
     constructor(d, h, f = e.EventType.Info) {
       super(d, f), this.privJsonResult = h;
@@ -5369,7 +5369,7 @@ function bC() {
       return this.privJsonResult;
     }
   }
-  Z.ServiceEvent = t;
+  ee.ServiceEvent = t;
   class r extends e.PlatformEvent {
     constructor(d, h, f = e.EventType.Info) {
       super(d, f), this.privConnectionId = h;
@@ -5378,7 +5378,7 @@ function bC() {
       return this.privConnectionId;
     }
   }
-  Z.ConnectionEvent = r;
+  ee.ConnectionEvent = r;
   class s extends r {
     constructor(d, h, f) {
       super("ConnectionStartEvent", d), this.privUri = h, this.privHeaders = f;
@@ -5390,13 +5390,13 @@ function bC() {
       return this.privHeaders;
     }
   }
-  Z.ConnectionStartEvent = s;
+  ee.ConnectionStartEvent = s;
   class i extends r {
     constructor(d) {
       super("ConnectionEstablishedEvent", d);
     }
   }
-  Z.ConnectionEstablishedEvent = i;
+  ee.ConnectionEstablishedEvent = i;
   class a extends r {
     constructor(d, h, f) {
       super("ConnectionClosedEvent", d, e.EventType.Debug), this.privReason = f, this.privStatusCode = h;
@@ -5408,7 +5408,7 @@ function bC() {
       return this.privStatusCode;
     }
   }
-  Z.ConnectionClosedEvent = a;
+  ee.ConnectionClosedEvent = a;
   class o extends r {
     constructor(d, h, f) {
       super("ConnectionErrorEvent", d, e.EventType.Debug), this.privMessage = h, this.privType = f;
@@ -5420,7 +5420,7 @@ function bC() {
       return this.privType;
     }
   }
-  Z.ConnectionErrorEvent = o;
+  ee.ConnectionErrorEvent = o;
   class n extends r {
     constructor(d, h, f) {
       super("ConnectionEstablishErrorEvent", d, e.EventType.Error), this.privStatusCode = h, this.privReason = f;
@@ -5432,7 +5432,7 @@ function bC() {
       return this.privStatusCode;
     }
   }
-  Z.ConnectionEstablishErrorEvent = n;
+  ee.ConnectionEstablishErrorEvent = n;
   class c extends r {
     constructor(d, h, f) {
       super("ConnectionMessageReceivedEvent", d), this.privNetworkReceivedTime = h, this.privMessage = f;
@@ -5444,7 +5444,7 @@ function bC() {
       return this.privMessage;
     }
   }
-  Z.ConnectionMessageReceivedEvent = c;
+  ee.ConnectionMessageReceivedEvent = c;
   class u extends r {
     constructor(d, h, f) {
       super("ConnectionMessageSentEvent", d), this.privNetworkSentTime = h, this.privMessage = f;
@@ -5456,7 +5456,7 @@ function bC() {
       return this.privMessage;
     }
   }
-  Z.ConnectionMessageSentEvent = u;
+  ee.ConnectionMessageSentEvent = u;
   class l extends r {
     constructor(d, h, f, g) {
       super("ConnectionRedirectEvent", d, e.EventType.Info), this.privRedirectUrl = h, this.privOriginalUrl = f, this.privContext = g;
@@ -5471,12 +5471,12 @@ function bC() {
       return this.privContext;
     }
   }
-  return Z.ConnectionRedirectEvent = l, Z;
+  return ee.ConnectionRedirectEvent = l, ee;
 }
-var vo = {}, Le = {}, Qc;
-function De() {
-  if (Qc) return Le;
-  Qc = 1, Object.defineProperty(Le, "__esModule", { value: !0 }), Le.ObjectDisposedError = Le.InvalidOperationError = Le.ArgumentNullError = void 0;
+var ho = {}, Le = {}, Jc;
+function Ne() {
+  if (Jc) return Le;
+  Jc = 1, Object.defineProperty(Le, "__esModule", { value: !0 }), Le.ObjectDisposedError = Le.InvalidOperationError = Le.ArgumentNullError = void 0;
   class e extends Error {
     /**
      * Creates an instance of ArgumentNullError.
@@ -5518,11 +5518,11 @@ function De() {
   }
   return Le.ObjectDisposedError = r, Le;
 }
-var Yc;
-function Qf() {
-  return Yc || (Yc = 1, function(e) {
+var Gc;
+function Kf() {
+  return Gc || (Gc = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ConnectionMessage = e.MessageType = void 0;
-    const t = /* @__PURE__ */ De(), r = /* @__PURE__ */ Ot();
+    const t = /* @__PURE__ */ Ne(), r = /* @__PURE__ */ Ot();
     var s;
     (function(a) {
       a[a.Text = 0] = "Text", a[a.Binary = 1] = "Binary";
@@ -5565,12 +5565,12 @@ function Qf() {
       }
     }
     e.ConnectionMessage = i;
-  }(vo)), vo;
+  }(ho)), ho;
 }
-var dr = {}, Zc;
-function wC() {
-  if (Zc) return dr;
-  Zc = 1, Object.defineProperty(dr, "__esModule", { value: !0 }), dr.ConnectionOpenResponse = void 0;
+var fr = {}, Qc;
+function RC() {
+  if (Qc) return fr;
+  Qc = 1, Object.defineProperty(fr, "__esModule", { value: !0 }), fr.ConnectionOpenResponse = void 0;
   let e = class {
     constructor(r, s) {
       this.privStatusCode = r, this.privReason = s;
@@ -5582,12 +5582,12 @@ function wC() {
       return this.privReason;
     }
   };
-  return dr.ConnectionOpenResponse = e, dr;
+  return fr.ConnectionOpenResponse = e, fr;
 }
-var hr = {}, Xc;
-function EC() {
-  if (Xc) return hr;
-  Xc = 1, Object.defineProperty(hr, "__esModule", { value: !0 }), hr.DeferralMap = void 0;
+var vr = {}, Yc;
+function PC() {
+  if (Yc) return vr;
+  Yc = 1, Object.defineProperty(vr, "__esModule", { value: !0 }), vr.DeferralMap = void 0;
   let e = class {
     constructor() {
       this.privMap = {};
@@ -5608,13 +5608,13 @@ function EC() {
       }
     }
   };
-  return hr.DeferralMap = e, hr;
+  return vr.DeferralMap = e, vr;
 }
-var ct = {}, eu;
-function Yf() {
-  if (eu) return ct;
-  eu = 1, Object.defineProperty(ct, "__esModule", { value: !0 }), ct.SendingAgentContextMessageEvent = ct.DialogEvent = void 0;
-  const e = /* @__PURE__ */ ms();
+var ct = {}, Zc;
+function Jf() {
+  if (Zc) return ct;
+  Zc = 1, Object.defineProperty(ct, "__esModule", { value: !0 }), ct.SendingAgentContextMessageEvent = ct.DialogEvent = void 0;
+  const e = /* @__PURE__ */ Ss();
   class t extends e.PlatformEvent {
     constructor(i, a = e.EventType.Info) {
       super(i, a);
@@ -5631,11 +5631,11 @@ function Yf() {
   }
   return ct.SendingAgentContextMessageEvent = r, ct;
 }
-var fr = {}, vr = {}, tu;
-function Zf() {
-  if (tu) return vr;
-  tu = 1, Object.defineProperty(vr, "__esModule", { value: !0 }), vr.EventSource = void 0;
-  const e = /* @__PURE__ */ De(), t = /* @__PURE__ */ Ot();
+var gr = {}, mr = {}, Xc;
+function Gf() {
+  if (Xc) return mr;
+  Xc = 1, Object.defineProperty(mr, "__esModule", { value: !0 }), mr.EventSource = void 0;
+  const e = /* @__PURE__ */ Ne(), t = /* @__PURE__ */ Ot();
   let r = class {
     constructor(i) {
       this.privEventListeners = {}, this.privIsDisposed = !1, this.privConsoleListener = void 0, this.privMetadata = i;
@@ -5671,74 +5671,74 @@ function Zf() {
       return this.privMetadata;
     }
   };
-  return vr.EventSource = r, vr;
+  return mr.EventSource = r, mr;
 }
-var ru;
-function IC() {
-  if (ru) return fr;
-  ru = 1, Object.defineProperty(fr, "__esModule", { value: !0 }), fr.Events = void 0;
-  const e = /* @__PURE__ */ De(), t = /* @__PURE__ */ Zf();
-  let r = class ja {
+var eu;
+function bC() {
+  if (eu) return gr;
+  eu = 1, Object.defineProperty(gr, "__esModule", { value: !0 }), gr.Events = void 0;
+  const e = /* @__PURE__ */ Ne(), t = /* @__PURE__ */ Gf();
+  let r = class za {
     static setEventSource(i) {
       if (!i)
         throw new e.ArgumentNullError("eventSource");
-      ja.privInstance = i;
+      za.privInstance = i;
     }
     static get instance() {
-      return ja.privInstance;
+      return za.privInstance;
     }
   };
-  return fr.Events = r, r.privInstance = new t.EventSource(), fr;
+  return gr.Events = r, r.privInstance = new t.EventSource(), gr;
 }
-var go = {}, nu;
-function AC() {
-  return nu || (nu = 1, Object.defineProperty(go, "__esModule", { value: !0 })), go;
+var fo = {}, tu;
+function wC() {
+  return tu || (tu = 1, Object.defineProperty(fo, "__esModule", { value: !0 })), fo;
 }
-var mo = {}, iu;
-function TC() {
-  return iu || (iu = 1, function(e) {
+var vo = {}, ru;
+function EC() {
+  return ru || (ru = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ConnectionState = void 0, function(t) {
       t[t.None = 0] = "None", t[t.Connected = 1] = "Connected", t[t.Connecting = 2] = "Connecting", t[t.Disconnected = 3] = "Disconnected";
     }(e.ConnectionState || (e.ConnectionState = {}));
-  }(mo)), mo;
+  }(vo)), vo;
+}
+var go = {}, nu;
+function IC() {
+  return nu || (nu = 1, Object.defineProperty(go, "__esModule", { value: !0 })), go;
+}
+var mo = {}, iu;
+function AC() {
+  return iu || (iu = 1, Object.defineProperty(mo, "__esModule", { value: !0 })), mo;
 }
 var yo = {}, su;
-function _C() {
+function TC() {
   return su || (su = 1, Object.defineProperty(yo, "__esModule", { value: !0 })), yo;
 }
 var So = {}, ou;
-function kC() {
+function _C() {
   return ou || (ou = 1, Object.defineProperty(So, "__esModule", { value: !0 })), So;
 }
 var Co = {}, au;
-function OC() {
+function kC() {
   return au || (au = 1, Object.defineProperty(Co, "__esModule", { value: !0 })), Co;
 }
 var Ro = {}, cu;
-function MC() {
+function OC() {
   return cu || (cu = 1, Object.defineProperty(Ro, "__esModule", { value: !0 })), Ro;
 }
 var Po = {}, uu;
-function DC() {
+function MC() {
   return uu || (uu = 1, Object.defineProperty(Po, "__esModule", { value: !0 })), Po;
 }
 var bo = {}, lu;
-function NC() {
+function DC() {
   return lu || (lu = 1, Object.defineProperty(bo, "__esModule", { value: !0 })), bo;
 }
-var wo = {}, pu;
-function xC() {
-  return pu || (pu = 1, Object.defineProperty(wo, "__esModule", { value: !0 })), wo;
-}
-var Eo = {}, du;
-function zC() {
-  return du || (du = 1, Object.defineProperty(Eo, "__esModule", { value: !0 })), Eo;
-}
-var gr = {}, hu;
-function Xf() {
-  if (hu) return gr;
-  hu = 1, Object.defineProperty(gr, "__esModule", { value: !0 }), gr.List = void 0;
-  const e = /* @__PURE__ */ De();
+var yr = {}, pu;
+function Qf() {
+  if (pu) return yr;
+  pu = 1, Object.defineProperty(yr, "__esModule", { value: !0 }), yr.List = void 0;
+  const e = /* @__PURE__ */ Ne();
   let t = class At {
     constructor(s) {
       if (this.privSubscriptionIdCounter = 0, this.privAddSubscriptions = {}, this.privRemoveSubscriptions = {}, this.privDisposedSubscriptions = {}, this.privDisposeReason = null, this.privList = [], s)
@@ -5868,11 +5868,11 @@ function Xf() {
           i && s[i]();
     }
   };
-  return gr.List = t, gr;
+  return yr.List = t, yr;
 }
-var Io = {}, fu;
-function ev() {
-  return fu || (fu = 1, function(e) {
+var wo = {}, du;
+function Yf() {
+  return du || (du = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.marshalPromiseToCallbacks = e.Sink = e.Deferred = e.PromiseResultEventSource = e.PromiseResult = e.PromiseState = void 0;
     var t;
     (function(n) {
@@ -6006,13 +6006,13 @@ function ev() {
       });
     }
     e.marshalPromiseToCallbacks = o;
-  }(Io)), Io;
+  }(wo)), wo;
 }
-var mr = {}, vu;
-function tv() {
-  if (vu) return mr;
-  vu = 1, Object.defineProperty(mr, "__esModule", { value: !0 }), mr.Queue = void 0;
-  const e = /* @__PURE__ */ De(), t = /* @__PURE__ */ Xf(), r = /* @__PURE__ */ ev();
+var Sr = {}, hu;
+function Zf() {
+  if (hu) return Sr;
+  hu = 1, Object.defineProperty(Sr, "__esModule", { value: !0 }), Sr.Queue = void 0;
+  const e = /* @__PURE__ */ Ne(), t = /* @__PURE__ */ Qf(), r = /* @__PURE__ */ Yf();
   var s;
   (function(a) {
     a[a.Dequeue = 0] = "Dequeue", a[a.Peek = 1] = "Peek";
@@ -6099,13 +6099,13 @@ function tv() {
         throw new e.InvalidOperationError("Queue disposing");
     }
   };
-  return mr.Queue = i, mr;
+  return Sr.Queue = i, Sr;
 }
-var yr = {}, gu;
-function LC() {
-  if (gu) return yr;
-  gu = 1, Object.defineProperty(yr, "__esModule", { value: !0 }), yr.RawWebsocketMessage = void 0;
-  const e = /* @__PURE__ */ Qf(), t = /* @__PURE__ */ De(), r = /* @__PURE__ */ Ot();
+var Cr = {}, fu;
+function NC() {
+  if (fu) return Cr;
+  fu = 1, Object.defineProperty(Cr, "__esModule", { value: !0 }), Cr.RawWebsocketMessage = void 0;
+  const e = /* @__PURE__ */ Kf(), t = /* @__PURE__ */ Ne(), r = /* @__PURE__ */ Ot();
   let s = class {
     constructor(a, o, n) {
       if (this.privPayload = null, !o)
@@ -6136,12 +6136,12 @@ function LC() {
       return this.privId;
     }
   };
-  return yr.RawWebsocketMessage = s, yr;
+  return Cr.RawWebsocketMessage = s, Cr;
 }
-var Sr = {}, mu;
-function jC() {
-  if (mu) return Sr;
-  mu = 1, Object.defineProperty(Sr, "__esModule", { value: !0 }), Sr.RiffPcmEncoder = void 0;
+var Rr = {}, vu;
+function xC() {
+  if (vu) return Rr;
+  vu = 1, Object.defineProperty(Rr, "__esModule", { value: !0 }), Rr.RiffPcmEncoder = void 0;
   let e = class {
     constructor(r, s) {
       this.privActualSampleRate = r, this.privDesiredSampleRate = s;
@@ -6180,13 +6180,13 @@ function jC() {
       return n;
     }
   };
-  return Sr.RiffPcmEncoder = e, Sr;
+  return Rr.RiffPcmEncoder = e, Rr;
 }
-var Cr = {}, yu;
-function qC() {
-  if (yu) return Cr;
-  yu = 1, Object.defineProperty(Cr, "__esModule", { value: !0 }), Cr.Stream = void 0;
-  const e = /* @__PURE__ */ De(), t = /* @__PURE__ */ Ot(), r = /* @__PURE__ */ tv();
+var Pr = {}, gu;
+function zC() {
+  if (gu) return Pr;
+  gu = 1, Object.defineProperty(Pr, "__esModule", { value: !0 }), Pr.Stream = void 0;
+  const e = /* @__PURE__ */ Ne(), t = /* @__PURE__ */ Ot(), r = /* @__PURE__ */ Zf();
   let s = class {
     constructor(a) {
       this.privIsWriteEnded = !1, this.privIsReadEnded = !1, this.privId = a || (0, t.createNoDashGuid)(), this.privReaderQueue = new r.Queue();
@@ -6227,20 +6227,20 @@ function qC() {
         throw new e.InvalidOperationError("Stream closed");
     }
   };
-  return Cr.Stream = s, Cr;
+  return Pr.Stream = s, Pr;
 }
-var Ao = {}, Su;
-function nc() {
-  return Su || (Su = 1, function(e) {
+var Eo = {}, mu;
+function tc() {
+  return mu || (mu = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.TranslationStatus = void 0, function(t) {
       t[t.Success = 0] = "Success", t[t.Error = 1] = "Error";
     }(e.TranslationStatus || (e.TranslationStatus = {}));
-  }(Ao)), Ao;
+  }(Eo)), Eo;
 }
-var Rr = {}, Cu;
-function FC() {
-  if (Cu) return Rr;
-  Cu = 1, Object.defineProperty(Rr, "__esModule", { value: !0 }), Rr.ChunkedArrayBufferStream = void 0;
+var br = {}, yu;
+function LC() {
+  if (yu) return br;
+  yu = 1, Object.defineProperty(br, "__esModule", { value: !0 }), br.ChunkedArrayBufferStream = void 0;
   const e = /* @__PURE__ */ D();
   let t = class extends e.Stream {
     constructor(s, i) {
@@ -6270,16 +6270,16 @@ function FC() {
       }), super.close();
     }
   };
-  return Rr.ChunkedArrayBufferStream = t, Rr;
+  return br.ChunkedArrayBufferStream = t, br;
 }
-var To = {}, Ru;
-function BC() {
-  return Ru || (Ru = 1, Object.defineProperty(To, "__esModule", { value: !0 })), To;
+var Io = {}, Su;
+function jC() {
+  return Su || (Su = 1, Object.defineProperty(Io, "__esModule", { value: !0 })), Io;
 }
-var Pr = {}, Pu;
-function UC() {
-  if (Pu) return Pr;
-  Pu = 1, Object.defineProperty(Pr, "__esModule", { value: !0 }), Pr.Timeout = void 0;
+var wr = {}, Cu;
+function qC() {
+  if (Cu) return wr;
+  Cu = 1, Object.defineProperty(wr, "__esModule", { value: !0 }), wr.Timeout = void 0;
   let e = class Ge {
     static load() {
       const r = /* @__PURE__ */ new Map([[0, () => {
@@ -6337,120 +6337,120 @@ function UC() {
       return r.error === null && typeof r.id == "number";
     }
   };
-  return Pr.Timeout = e, e.workerTimers = null, e.clearTimeout = (t) => e.timers().clearTimeout(t), e.setTimeout = (t, r) => e.timers().setTimeout(t, r), e.timers = e.loadWorkerTimers(), Pr;
+  return wr.Timeout = e, e.workerTimers = null, e.clearTimeout = (t) => e.timers().clearTimeout(t), e.setTimeout = (t, r) => e.timers().setTimeout(t, r), e.timers = e.loadWorkerTimers(), wr;
 }
-var F = {}, bu;
-function $C() {
-  if (bu) return F;
-  bu = 1, Object.defineProperty(F, "__esModule", { value: !0 }), F.OCSPCacheUpdateErrorEvent = F.OCSPResponseRetrievedEvent = F.OCSPCacheFetchErrorEvent = F.OCSPVerificationFailedEvent = F.OCSPCacheHitEvent = F.OCSPCacheEntryNeedsRefreshEvent = F.OCSPCacheEntryExpiredEvent = F.OCSPWSUpgradeStartedEvent = F.OCSPStapleReceivedEvent = F.OCSPCacheUpdateCompleteEvent = F.OCSPDiskCacheStoreEvent = F.OCSPMemoryCacheStoreEvent = F.OCSPCacheUpdateNeededEvent = F.OCSPDiskCacheHitEvent = F.OCSPCacheMissEvent = F.OCSPMemoryCacheHitEvent = F.OCSPEvent = void 0;
-  const e = /* @__PURE__ */ ms();
+var q = {}, Ru;
+function FC() {
+  if (Ru) return q;
+  Ru = 1, Object.defineProperty(q, "__esModule", { value: !0 }), q.OCSPCacheUpdateErrorEvent = q.OCSPResponseRetrievedEvent = q.OCSPCacheFetchErrorEvent = q.OCSPVerificationFailedEvent = q.OCSPCacheHitEvent = q.OCSPCacheEntryNeedsRefreshEvent = q.OCSPCacheEntryExpiredEvent = q.OCSPWSUpgradeStartedEvent = q.OCSPStapleReceivedEvent = q.OCSPCacheUpdateCompleteEvent = q.OCSPDiskCacheStoreEvent = q.OCSPMemoryCacheStoreEvent = q.OCSPCacheUpdateNeededEvent = q.OCSPDiskCacheHitEvent = q.OCSPCacheMissEvent = q.OCSPMemoryCacheHitEvent = q.OCSPEvent = void 0;
+  const e = /* @__PURE__ */ Ss();
   class t extends e.PlatformEvent {
-    constructor(S, C, P) {
-      super(S, C), this.privSignature = P;
+    constructor(S, C, R) {
+      super(S, C), this.privSignature = R;
     }
   }
-  F.OCSPEvent = t;
+  q.OCSPEvent = t;
   class r extends t {
     constructor(S) {
       super("OCSPMemoryCacheHitEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPMemoryCacheHitEvent = r;
+  q.OCSPMemoryCacheHitEvent = r;
   class s extends t {
     constructor(S) {
       super("OCSPCacheMissEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPCacheMissEvent = s;
+  q.OCSPCacheMissEvent = s;
   class i extends t {
     constructor(S) {
       super("OCSPDiskCacheHitEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPDiskCacheHitEvent = i;
+  q.OCSPDiskCacheHitEvent = i;
   class a extends t {
     constructor(S) {
       super("OCSPCacheUpdateNeededEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPCacheUpdateNeededEvent = a;
+  q.OCSPCacheUpdateNeededEvent = a;
   class o extends t {
     constructor(S) {
       super("OCSPMemoryCacheStoreEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPMemoryCacheStoreEvent = o;
+  q.OCSPMemoryCacheStoreEvent = o;
   class n extends t {
     constructor(S) {
       super("OCSPDiskCacheStoreEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPDiskCacheStoreEvent = n;
+  q.OCSPDiskCacheStoreEvent = n;
   class c extends t {
     constructor(S) {
       super("OCSPCacheUpdateCompleteEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPCacheUpdateCompleteEvent = c;
+  q.OCSPCacheUpdateCompleteEvent = c;
   class u extends t {
     constructor() {
       super("OCSPStapleReceivedEvent", e.EventType.Debug, "");
     }
   }
-  F.OCSPStapleReceivedEvent = u;
+  q.OCSPStapleReceivedEvent = u;
   class l extends t {
     constructor(S) {
       super("OCSPWSUpgradeStartedEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPWSUpgradeStartedEvent = l;
+  q.OCSPWSUpgradeStartedEvent = l;
   class p extends t {
     constructor(S, C) {
       super("OCSPCacheEntryExpiredEvent", e.EventType.Debug, S), this.privExpireTime = C;
     }
   }
-  F.OCSPCacheEntryExpiredEvent = p;
+  q.OCSPCacheEntryExpiredEvent = p;
   class d extends t {
-    constructor(S, C, P) {
-      super("OCSPCacheEntryNeedsRefreshEvent", e.EventType.Debug, S), this.privExpireTime = P, this.privStartTime = C;
+    constructor(S, C, R) {
+      super("OCSPCacheEntryNeedsRefreshEvent", e.EventType.Debug, S), this.privExpireTime = R, this.privStartTime = C;
     }
   }
-  F.OCSPCacheEntryNeedsRefreshEvent = d;
+  q.OCSPCacheEntryNeedsRefreshEvent = d;
   class h extends t {
-    constructor(S, C, P) {
-      super("OCSPCacheHitEvent", e.EventType.Debug, S), this.privExpireTime = P, this.privExpireTimeString = new Date(P).toLocaleDateString(), this.privStartTime = C, this.privStartTimeString = new Date(C).toLocaleTimeString();
+    constructor(S, C, R) {
+      super("OCSPCacheHitEvent", e.EventType.Debug, S), this.privExpireTime = R, this.privExpireTimeString = new Date(R).toLocaleDateString(), this.privStartTime = C, this.privStartTimeString = new Date(C).toLocaleTimeString();
     }
   }
-  F.OCSPCacheHitEvent = h;
+  q.OCSPCacheHitEvent = h;
   class f extends t {
     constructor(S, C) {
       super("OCSPVerificationFailedEvent", e.EventType.Debug, S), this.privError = C;
     }
   }
-  F.OCSPVerificationFailedEvent = f;
+  q.OCSPVerificationFailedEvent = f;
   class g extends t {
     constructor(S, C) {
       super("OCSPCacheFetchErrorEvent", e.EventType.Debug, S), this.privError = C;
     }
   }
-  F.OCSPCacheFetchErrorEvent = g;
+  q.OCSPCacheFetchErrorEvent = g;
   class m extends t {
     constructor(S) {
       super("OCSPResponseRetrievedEvent", e.EventType.Debug, S);
     }
   }
-  F.OCSPResponseRetrievedEvent = m;
+  q.OCSPResponseRetrievedEvent = m;
   class v extends t {
     constructor(S, C) {
       super("OCSPCacheUpdateErrorEvent", e.EventType.Debug, S), this.privError = C;
     }
   }
-  return F.OCSPCacheUpdateErrorEvent = v, F;
+  return q.OCSPCacheUpdateErrorEvent = v, q;
 }
-var br = {}, wu;
-function VC() {
-  if (wu) return br;
-  wu = 1, Object.defineProperty(br, "__esModule", { value: !0 }), br.BackgroundEvent = void 0;
+var Er = {}, Pu;
+function BC() {
+  if (Pu) return Er;
+  Pu = 1, Object.defineProperty(Er, "__esModule", { value: !0 }), Er.BackgroundEvent = void 0;
   const e = /* @__PURE__ */ D();
   class t extends e.PlatformEvent {
     constructor(s) {
@@ -6460,11 +6460,11 @@ function VC() {
       return this.privError;
     }
   }
-  return br.BackgroundEvent = t, br;
+  return Er.BackgroundEvent = t, Er;
 }
-var Eu;
+var bu;
 function D() {
-  return Eu || (Eu = 1, function(e) {
+  return bu || (bu = 1, function(e) {
     var t = ot && ot.__createBinding || (Object.create ? function(i, a, o, n) {
       n === void 0 && (n = o), Object.defineProperty(i, n, { enumerable: !0, get: function() {
         return a[o];
@@ -6474,25 +6474,25 @@ function D() {
     }), r = ot && ot.__exportStar || function(i, a) {
       for (var o in i) o !== "default" && !Object.prototype.hasOwnProperty.call(a, o) && t(a, i, o);
     };
-    Object.defineProperty(e, "__esModule", { value: !0 }), e.TranslationStatus = void 0, r(/* @__PURE__ */ PC(), e), r(/* @__PURE__ */ bC(), e), r(/* @__PURE__ */ Qf(), e), r(/* @__PURE__ */ wC(), e), r(/* @__PURE__ */ EC(), e), r(/* @__PURE__ */ Yf(), e), r(/* @__PURE__ */ De(), e), r(/* @__PURE__ */ IC(), e), r(/* @__PURE__ */ Zf(), e), r(/* @__PURE__ */ Ot(), e), r(/* @__PURE__ */ AC(), e), r(/* @__PURE__ */ TC(), e), r(/* @__PURE__ */ _C(), e), r(/* @__PURE__ */ kC(), e), r(/* @__PURE__ */ OC(), e), r(/* @__PURE__ */ MC(), e), r(/* @__PURE__ */ DC(), e), r(/* @__PURE__ */ NC(), e), r(/* @__PURE__ */ xC(), e), r(/* @__PURE__ */ zC(), e), r(/* @__PURE__ */ Xf(), e), r(/* @__PURE__ */ ms(), e), r(/* @__PURE__ */ ev(), e), r(/* @__PURE__ */ tv(), e), r(/* @__PURE__ */ LC(), e), r(/* @__PURE__ */ jC(), e), r(/* @__PURE__ */ qC(), e);
-    var s = /* @__PURE__ */ nc();
+    Object.defineProperty(e, "__esModule", { value: !0 }), e.TranslationStatus = void 0, r(/* @__PURE__ */ SC(), e), r(/* @__PURE__ */ CC(), e), r(/* @__PURE__ */ Kf(), e), r(/* @__PURE__ */ RC(), e), r(/* @__PURE__ */ PC(), e), r(/* @__PURE__ */ Jf(), e), r(/* @__PURE__ */ Ne(), e), r(/* @__PURE__ */ bC(), e), r(/* @__PURE__ */ Gf(), e), r(/* @__PURE__ */ Ot(), e), r(/* @__PURE__ */ wC(), e), r(/* @__PURE__ */ EC(), e), r(/* @__PURE__ */ IC(), e), r(/* @__PURE__ */ AC(), e), r(/* @__PURE__ */ TC(), e), r(/* @__PURE__ */ _C(), e), r(/* @__PURE__ */ kC(), e), r(/* @__PURE__ */ OC(), e), r(/* @__PURE__ */ MC(), e), r(/* @__PURE__ */ DC(), e), r(/* @__PURE__ */ Qf(), e), r(/* @__PURE__ */ Ss(), e), r(/* @__PURE__ */ Yf(), e), r(/* @__PURE__ */ Zf(), e), r(/* @__PURE__ */ NC(), e), r(/* @__PURE__ */ xC(), e), r(/* @__PURE__ */ zC(), e);
+    var s = /* @__PURE__ */ tc();
     Object.defineProperty(e, "TranslationStatus", { enumerable: !0, get: function() {
       return s.TranslationStatus;
-    } }), r(/* @__PURE__ */ FC(), e), r(/* @__PURE__ */ BC(), e), r(/* @__PURE__ */ UC(), e), r(/* @__PURE__ */ $C(), e), r(/* @__PURE__ */ VC(), e);
+    } }), r(/* @__PURE__ */ LC(), e), r(/* @__PURE__ */ jC(), e), r(/* @__PURE__ */ qC(), e), r(/* @__PURE__ */ FC(), e), r(/* @__PURE__ */ BC(), e);
   }(ot)), ot;
 }
-var wr = {}, Iu;
-function he() {
-  if (Iu) return wr;
-  Iu = 1, Object.defineProperty(wr, "__esModule", { value: !0 }), wr.HeaderNames = void 0;
+var Ir = {}, wu;
+function le() {
+  if (wu) return Ir;
+  wu = 1, Object.defineProperty(Ir, "__esModule", { value: !0 }), Ir.HeaderNames = void 0;
   let e = class {
   };
-  return wr.HeaderNames = e, e.AuthKey = "Ocp-Apim-Subscription-Key", e.Authorization = "Authorization", e.SpIDAuthKey = "Apim-Subscription-Id", e.ConnectionId = "X-ConnectionId", e.ContentType = "Content-Type", e.CustomCommandsAppId = "X-CommandsAppId", e.Path = "Path", e.RequestId = "X-RequestId", e.RequestStreamId = "X-StreamId", e.RequestTimestamp = "X-Timestamp", wr;
+  return Ir.HeaderNames = e, e.AuthKey = "Ocp-Apim-Subscription-Key", e.Authorization = "Authorization", e.SpIDAuthKey = "Apim-Subscription-Id", e.ConnectionId = "X-ConnectionId", e.ContentType = "Content-Type", e.CustomCommandsAppId = "X-CommandsAppId", e.Path = "Path", e.RequestId = "X-RequestId", e.RequestStreamId = "X-StreamId", e.RequestTimestamp = "X-Timestamp", Ir;
 }
-var Er = {}, Au;
-function ic() {
-  if (Au) return Er;
-  Au = 1, Object.defineProperty(Er, "__esModule", { value: !0 }), Er.AuthInfo = void 0;
+var Ar = {}, Eu;
+function rc() {
+  if (Eu) return Ar;
+  Eu = 1, Object.defineProperty(Ar, "__esModule", { value: !0 }), Ar.AuthInfo = void 0;
   class e {
     constructor(r, s) {
       this.privHeaderName = r, this.privToken = s;
@@ -6504,13 +6504,13 @@ function ic() {
       return this.privToken;
     }
   }
-  return Er.AuthInfo = e, Er;
+  return Ar.AuthInfo = e, Ar;
 }
-var Tu;
-function WC() {
-  if (Tu) return Xt;
-  Tu = 1, Object.defineProperty(Xt, "__esModule", { value: !0 }), Xt.CognitiveSubscriptionKeyAuthentication = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ he(), r = /* @__PURE__ */ ic();
+var Iu;
+function UC() {
+  if (Iu) return tr;
+  Iu = 1, Object.defineProperty(tr, "__esModule", { value: !0 }), tr.CognitiveSubscriptionKeyAuthentication = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ le(), r = /* @__PURE__ */ rc();
   let s = class {
     /**
      * Creates and initializes an instance of the CognitiveSubscriptionKeyAuthentication class.
@@ -6545,14 +6545,14 @@ function WC() {
       return Promise.resolve(this.privAuthInfo);
     }
   };
-  return Xt.CognitiveSubscriptionKeyAuthentication = s, Xt;
+  return tr.CognitiveSubscriptionKeyAuthentication = s, tr;
 }
-var Ir = {}, _u;
-function HC() {
-  if (_u) return Ir;
-  _u = 1, Object.defineProperty(Ir, "__esModule", { value: !0 }), Ir.CognitiveTokenAuthentication = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ ic(), r = /* @__PURE__ */ he();
-  let s = class qa {
+var Tr = {}, Au;
+function $C() {
+  if (Au) return Tr;
+  Au = 1, Object.defineProperty(Tr, "__esModule", { value: !0 }), Tr.CognitiveTokenAuthentication = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ rc(), r = /* @__PURE__ */ le();
+  let s = class La {
     constructor(a, o) {
       if (!a)
         throw new e.ArgumentNullError("fetchCallback");
@@ -6561,41 +6561,41 @@ function HC() {
       this.privFetchCallback = a, this.privFetchOnExpiryCallback = o;
     }
     fetch(a) {
-      return this.privFetchCallback(a).then((o) => new t.AuthInfo(r.HeaderNames.Authorization, o === void 0 ? void 0 : qa.privTokenPrefix + o));
+      return this.privFetchCallback(a).then((o) => new t.AuthInfo(r.HeaderNames.Authorization, o === void 0 ? void 0 : La.privTokenPrefix + o));
     }
     fetchOnExpiry(a) {
-      return this.privFetchOnExpiryCallback(a).then((o) => new t.AuthInfo(r.HeaderNames.Authorization, o === void 0 ? void 0 : qa.privTokenPrefix + o));
+      return this.privFetchOnExpiryCallback(a).then((o) => new t.AuthInfo(r.HeaderNames.Authorization, o === void 0 ? void 0 : La.privTokenPrefix + o));
     }
   };
-  return Ir.CognitiveTokenAuthentication = s, s.privTokenPrefix = "Bearer ", Ir;
+  return Tr.CognitiveTokenAuthentication = s, s.privTokenPrefix = "Bearer ", Tr;
 }
-var _o = {}, ku;
-function KC() {
-  return ku || (ku = 1, Object.defineProperty(_o, "__esModule", { value: !0 })), _o;
+var Ao = {}, Tu;
+function VC() {
+  return Tu || (Tu = 1, Object.defineProperty(Ao, "__esModule", { value: !0 })), Ao;
 }
-var ko = {}, Ou;
-function JC() {
-  return Ou || (Ou = 1, Object.defineProperty(ko, "__esModule", { value: !0 })), ko;
+var To = {}, _u;
+function WC() {
+  return _u || (_u = 1, Object.defineProperty(To, "__esModule", { value: !0 })), To;
 }
-var Ar = {}, ut = {}, Ee = {};
-const GC = {}, QC = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+var _r = {}, ut = {}, we = {};
+const HC = {}, KC = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: GC
-}, Symbol.toStringTag, { value: "Module" })), _t = /* @__PURE__ */ lC(QC);
-var Oo = {}, Mu;
-function rv() {
-  return Mu || (Mu = 1, function(e) {
+  default: HC
+}, Symbol.toStringTag, { value: "Module" })), _t = /* @__PURE__ */ aC(KC);
+var _o = {}, ku;
+function Xf() {
+  return ku || (ku = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.LogLevel = void 0;
     const t = /* @__PURE__ */ D();
     Object.defineProperty(e, "LogLevel", { enumerable: !0, get: function() {
       return t.EventType;
     } });
-  }(Oo)), Oo;
+  }(_o)), _o;
 }
-var Tr = {}, Du;
+var kr = {}, Ou;
 function x() {
-  if (Du) return Tr;
-  Du = 1, Object.defineProperty(Tr, "__esModule", { value: !0 }), Tr.Contracts = void 0;
+  if (Ou) return kr;
+  Ou = 1, Object.defineProperty(kr, "__esModule", { value: !0 }), kr.Contracts = void 0;
   let e = class Tt {
     static throwIfNullOrUndefined(r, s) {
       if (r == null)
@@ -6635,30 +6635,30 @@ function x() {
         throw new Error("throwIfNotUndefined:" + s);
     }
   };
-  return Tr.Contracts = e, Tr;
+  return kr.Contracts = e, kr;
 }
-var Nu;
-function YC() {
-  if (Nu) return Ee;
-  Nu = 1;
-  var e = Ee && Ee.__createBinding || (Object.create ? function(n, c, u, l) {
+var Mu;
+function JC() {
+  if (Mu) return we;
+  Mu = 1;
+  var e = we && we.__createBinding || (Object.create ? function(n, c, u, l) {
     l === void 0 && (l = u), Object.defineProperty(n, l, { enumerable: !0, get: function() {
       return c[u];
     } });
   } : function(n, c, u, l) {
     l === void 0 && (l = u), n[l] = c[u];
-  }), t = Ee && Ee.__setModuleDefault || (Object.create ? function(n, c) {
+  }), t = we && we.__setModuleDefault || (Object.create ? function(n, c) {
     Object.defineProperty(n, "default", { enumerable: !0, value: c });
   } : function(n, c) {
     n.default = c;
-  }), r = Ee && Ee.__importStar || function(n) {
+  }), r = we && we.__importStar || function(n) {
     if (n && n.__esModule) return n;
     var c = {};
     if (n != null) for (var u in n) u !== "default" && Object.prototype.hasOwnProperty.call(n, u) && e(c, n, u);
     return t(c, n), c;
   };
-  Object.defineProperty(Ee, "__esModule", { value: !0 }), Ee.ConsoleLoggingListener = void 0;
-  const s = r(_t), i = /* @__PURE__ */ rv(), a = /* @__PURE__ */ x();
+  Object.defineProperty(we, "__esModule", { value: !0 }), we.ConsoleLoggingListener = void 0;
+  const s = r(_t), i = /* @__PURE__ */ Xf(), a = /* @__PURE__ */ x();
   let o = class {
     constructor(c = i.LogLevel.None) {
       this.privLogPath = void 0, this.privEnableConsoleOutput = !0, this.privLogLevelFilter = c;
@@ -6708,15 +6708,15 @@ File System access not available`), this.privLogPath = c;
       return u.join(" | ");
     }
   };
-  return Ee.ConsoleLoggingListener = o, Ee;
+  return we.ConsoleLoggingListener = o, we;
 }
-var Mo = {}, xu;
-function ZC() {
-  return xu || (xu = 1, Object.defineProperty(Mo, "__esModule", { value: !0 })), Mo;
+var ko = {}, Du;
+function GC() {
+  return Du || (Du = 1, Object.defineProperty(ko, "__esModule", { value: !0 })), ko;
 }
-var Do = {}, No = {}, zu;
+var Oo = {}, Mo = {}, Nu;
 function Mt() {
-  return zu || (zu = 1, function(e) {
+  return Nu || (Nu = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.AudioStreamFormatImpl = e.AudioStreamFormat = e.AudioFormatTag = void 0;
     var t;
     (function(i) {
@@ -6838,11 +6838,11 @@ function Mt() {
       }
     }
     e.AudioStreamFormatImpl = s;
-  }(No)), No;
+  }(Mo)), Mo;
 }
-var Lu;
-function XC() {
-  return Lu || (Lu = 1, function(e) {
+var xu;
+function QC() {
+  return xu || (xu = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.MicAudioSource = e.AudioWorkletSourceURLPropertyName = void 0;
     const t = /* @__PURE__ */ k(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ Mt();
     e.AudioWorkletSourceURLPropertyName = "MICROPHONE-WorkletSourceUrl";
@@ -6979,12 +6979,12 @@ function XC() {
       }
     }
     e.MicAudioSource = i, i.AUDIOFORMAT = s.AudioStreamFormat.getDefaultInputFormat();
-  }(Do)), Do;
+  }(Oo)), Oo;
 }
-var _r = {}, ju;
-function eR() {
-  if (ju) return _r;
-  ju = 1, Object.defineProperty(_r, "__esModule", { value: !0 }), _r.FileAudioSource = void 0;
+var Or = {}, zu;
+function YC() {
+  if (zu) return Or;
+  zu = 1, Object.defineProperty(Or, "__esModule", { value: !0 }), Or.FileAudioSource = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ Mt();
   let s = class {
     constructor(a, o, n) {
@@ -7106,12 +7106,12 @@ function eR() {
       this.privEvents.onEvent(a), t.Events.instance.onEvent(a);
     }
   };
-  return _r.FileAudioSource = s, _r;
+  return Or.FileAudioSource = s, Or;
 }
-var kr = {}, qu;
-function tR() {
-  if (qu) return kr;
-  qu = 1, Object.defineProperty(kr, "__esModule", { value: !0 }), kr.PcmRecorder = void 0;
+var Mr = {}, Lu;
+function ZC() {
+  if (Lu) return Mr;
+  Lu = 1, Object.defineProperty(Mr, "__esModule", { value: !0 }), Mr.PcmRecorder = void 0;
   const e = /* @__PURE__ */ D();
   class t {
     constructor(s) {
@@ -7200,33 +7200,33 @@ function tR() {
       this.privSpeechProcessorScript = s;
     }
   }
-  return kr.PcmRecorder = t, kr;
+  return Mr.PcmRecorder = t, Mr;
 }
-var Or = {}, ye = {}, Fu;
-function nv() {
-  if (Fu) return ye;
-  Fu = 1;
-  var e = ye && ye.__createBinding || (Object.create ? function(d, h, f, g) {
+var Dr = {}, de = {}, ju;
+function ev() {
+  if (ju) return de;
+  ju = 1;
+  var e = de && de.__createBinding || (Object.create ? function(d, h, f, g) {
     g === void 0 && (g = f), Object.defineProperty(d, g, { enumerable: !0, get: function() {
       return h[f];
     } });
   } : function(d, h, f, g) {
     g === void 0 && (g = f), d[g] = h[f];
-  }), t = ye && ye.__setModuleDefault || (Object.create ? function(d, h) {
+  }), t = de && de.__setModuleDefault || (Object.create ? function(d, h) {
     Object.defineProperty(d, "default", { enumerable: !0, value: h });
   } : function(d, h) {
     d.default = h;
-  }), r = ye && ye.__importStar || function(d) {
+  }), r = de && de.__importStar || function(d) {
     if (d && d.__esModule) return d;
     var h = {};
     if (d != null) for (var f in d) f !== "default" && Object.prototype.hasOwnProperty.call(d, f) && e(h, d, f);
     return t(h, d), h;
-  }, s = ye && ye.__importDefault || function(d) {
+  }, s = de && de.__importDefault || function(d) {
     return d && d.__esModule ? d : { default: d };
   };
-  Object.defineProperty(ye, "__esModule", { value: !0 }), ye.WebsocketMessageAdapter = void 0;
-  const i = r(_t), a = r(_t), o = s(_t), n = s(_t), c = s(_t), u = /* @__PURE__ */ he(), l = /* @__PURE__ */ D();
-  let p = class Fa {
+  Object.defineProperty(de, "__esModule", { value: !0 }), de.WebsocketMessageAdapter = void 0;
+  const i = r(_t), a = r(_t), o = s(_t), n = s(_t), c = s(_t), u = /* @__PURE__ */ le(), l = /* @__PURE__ */ D();
+  let p = class ja {
     constructor(h, f, g, m, v, y) {
       if (!h)
         throw new l.ArgumentNullError("uri");
@@ -7244,7 +7244,7 @@ function nv() {
         return this.privConnectionEstablishDeferral.promise;
       this.privConnectionEstablishDeferral = new l.Deferred(), this.privCertificateValidatedDeferral = new l.Deferred(), this.privConnectionState = l.ConnectionState.Connecting;
       try {
-        if (typeof WebSocket < "u" && !Fa.forceNpmWebSocket)
+        if (typeof WebSocket < "u" && !ja.forceNpmWebSocket)
           this.privCertificateValidatedDeferral.resolve(), this.privWebsocketClient = new WebSocket(this.privUri);
         else {
           let f = new URL(this.privUri).protocol;
@@ -7378,10 +7378,10 @@ function nv() {
         requestOCSP: !0,
         servername: f.host
       }, this.proxyInfo) {
-        const v = Fa.GetProxyAgent(this.proxyInfo);
+        const v = ja.GetProxyAgent(this.proxyInfo);
         g = new Promise((y, S) => {
-          v.callback(h, f, (C, P) => {
-            C ? S(C) : y(P);
+          v.callback(h, f, (C, R) => {
+            C ? S(C) : y(R);
           });
         });
       } else
@@ -7392,13 +7392,13 @@ function nv() {
       return this.privWebsocketClient && this.privWebsocketClient.readyState === this.privWebsocketClient.OPEN;
     }
   };
-  return ye.WebsocketMessageAdapter = p, p.forceNpmWebSocket = !1, ye;
+  return de.WebsocketMessageAdapter = p, p.forceNpmWebSocket = !1, de;
 }
-var Bu;
-function rR() {
-  if (Bu) return Or;
-  Bu = 1, Object.defineProperty(Or, "__esModule", { value: !0 }), Or.WebsocketConnection = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ nv();
+var qu;
+function XC() {
+  if (qu) return Dr;
+  qu = 1, Object.defineProperty(Dr, "__esModule", { value: !0 }), Dr.WebsocketConnection = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ ev();
   let r = class {
     constructor(i, a, o, n, c, u = !1, l) {
       if (this.privIsDisposed = !1, !i)
@@ -7455,12 +7455,12 @@ function rR() {
       return this.privConnectionMessageAdapter.events;
     }
   };
-  return Or.WebsocketConnection = r, Or;
+  return Dr.WebsocketConnection = r, Dr;
 }
-var Mr = {}, Uu;
-function nR() {
-  if (Uu) return Mr;
-  Uu = 1, Object.defineProperty(Mr, "__esModule", { value: !0 }), Mr.ReplayableAudioNode = void 0;
+var Nr = {}, Fu;
+function eR() {
+  if (Fu) return Nr;
+  Fu = 1, Object.defineProperty(Nr, "__esModule", { value: !0 }), Nr.ReplayableAudioNode = void 0;
   let e = class {
     constructor(s, i) {
       this.privBuffers = [], this.privReplayOffset = 0, this.privLastShrinkOffset = 0, this.privBufferStartOffset = 0, this.privBufferSerial = 0, this.privBufferedBytes = 0, this.privReplay = !1, this.privLastChunkAcquiredTime = 0, this.privAudioNode = s, this.privBytesPerSecond = i;
@@ -7522,35 +7522,35 @@ function nR() {
       return 0;
     }
   };
-  Mr.ReplayableAudioNode = e;
+  Nr.ReplayableAudioNode = e;
   class t {
     constructor(s, i, a) {
       this.chunk = s, this.serial = i, this.byteOffset = a;
     }
   }
-  return Mr;
+  return Nr;
 }
-var Dr = {}, xo = {}, je = {}, Ie = {}, $u;
-function iv() {
-  if ($u) return Ie;
-  $u = 1;
-  var e = Ie && Ie.__createBinding || (Object.create ? function(o, n, c, u) {
+var xr = {}, Do = {}, je = {}, Ee = {}, Bu;
+function tv() {
+  if (Bu) return Ee;
+  Bu = 1;
+  var e = Ee && Ee.__createBinding || (Object.create ? function(o, n, c, u) {
     u === void 0 && (u = c), Object.defineProperty(o, u, { enumerable: !0, get: function() {
       return n[c];
     } });
   } : function(o, n, c, u) {
     u === void 0 && (u = c), o[u] = n[c];
-  }), t = Ie && Ie.__setModuleDefault || (Object.create ? function(o, n) {
+  }), t = Ee && Ee.__setModuleDefault || (Object.create ? function(o, n) {
     Object.defineProperty(o, "default", { enumerable: !0, value: n });
   } : function(o, n) {
     o.default = n;
-  }), r = Ie && Ie.__importStar || function(o) {
+  }), r = Ee && Ee.__importStar || function(o) {
     if (o && o.__esModule) return o;
     var n = {};
     if (o != null) for (var c in o) c !== "default" && Object.prototype.hasOwnProperty.call(o, c) && e(n, o, c);
     return t(n, o), n;
   };
-  Object.defineProperty(Ie, "__esModule", { value: !0 }), Ie.AudioFileWriter = void 0;
+  Object.defineProperty(Ee, "__esModule", { value: !0 }), Ee.AudioFileWriter = void 0;
   const s = r(_t), i = /* @__PURE__ */ x();
   let a = class {
     constructor(n) {
@@ -7574,12 +7574,12 @@ File System access not available, please use Push or PullAudioOutputStream`), th
       return this.privId;
     }
   };
-  return Ie.AudioFileWriter = a, Ie;
+  return Ee.AudioFileWriter = a, Ee;
 }
-var Se = {}, Vu;
-function sv() {
-  if (Vu) return Se;
-  Vu = 1, Object.defineProperty(Se, "__esModule", { value: !0 }), Se.PullAudioInputStreamImpl = Se.PullAudioInputStream = Se.PushAudioInputStreamImpl = Se.PushAudioInputStream = Se.AudioInputStream = void 0;
+var he = {}, Uu;
+function rv() {
+  if (Uu) return he;
+  Uu = 1, Object.defineProperty(he, "__esModule", { value: !0 }), he.PullAudioInputStreamImpl = he.PullAudioInputStream = he.PushAudioInputStreamImpl = he.PushAudioInputStream = he.AudioInputStream = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ Ot(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ Mt();
   let a = class {
     /**
@@ -7616,7 +7616,7 @@ function sv() {
       return c.create(p, d);
     }
   };
-  Se.AudioInputStream = a;
+  he.AudioInputStream = a;
   class o extends a {
     /**
      * Creates a memory backed PushAudioInputStream with the specified audio format.
@@ -7631,7 +7631,7 @@ function sv() {
       return new n(p);
     }
   }
-  Se.PushAudioInputStream = o;
+  he.PushAudioInputStream = o;
   class n extends o {
     /**
      * Creates and initalizes an instance with the given values.
@@ -7714,7 +7714,7 @@ function sv() {
       return d;
     }
   }
-  Se.PushAudioInputStreamImpl = n;
+  he.PushAudioInputStreamImpl = n;
   class c extends a {
     /**
      * Creates and initializes and instance.
@@ -7739,7 +7739,7 @@ function sv() {
       return new u(p, d);
     }
   }
-  Se.PullAudioInputStream = c;
+  he.PullAudioInputStream = c;
   class u extends c {
     /**
      * Creates a PullAudioInputStream that delegates to the specified callback interface for
@@ -7817,21 +7817,21 @@ function sv() {
       this.privEvents.onEvent(p), t.Events.instance.onEvent(p);
     }
   }
-  return Se.PullAudioInputStreamImpl = u, Se;
+  return he.PullAudioInputStreamImpl = u, he;
 }
-var Ce = {}, Nr = {}, zo = {}, Wu;
-function ov() {
-  return Wu || (Wu = 1, function(e) {
+var fe = {}, zr = {}, No = {}, $u;
+function nv() {
+  return $u || ($u = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.SpeechSynthesisOutputFormat = void 0, function(t) {
       t[t.Raw8Khz8BitMonoMULaw = 0] = "Raw8Khz8BitMonoMULaw", t[t.Riff16Khz16KbpsMonoSiren = 1] = "Riff16Khz16KbpsMonoSiren", t[t.Audio16Khz16KbpsMonoSiren = 2] = "Audio16Khz16KbpsMonoSiren", t[t.Audio16Khz32KBitRateMonoMp3 = 3] = "Audio16Khz32KBitRateMonoMp3", t[t.Audio16Khz128KBitRateMonoMp3 = 4] = "Audio16Khz128KBitRateMonoMp3", t[t.Audio16Khz64KBitRateMonoMp3 = 5] = "Audio16Khz64KBitRateMonoMp3", t[t.Audio24Khz48KBitRateMonoMp3 = 6] = "Audio24Khz48KBitRateMonoMp3", t[t.Audio24Khz96KBitRateMonoMp3 = 7] = "Audio24Khz96KBitRateMonoMp3", t[t.Audio24Khz160KBitRateMonoMp3 = 8] = "Audio24Khz160KBitRateMonoMp3", t[t.Raw16Khz16BitMonoTrueSilk = 9] = "Raw16Khz16BitMonoTrueSilk", t[t.Riff16Khz16BitMonoPcm = 10] = "Riff16Khz16BitMonoPcm", t[t.Riff8Khz16BitMonoPcm = 11] = "Riff8Khz16BitMonoPcm", t[t.Riff24Khz16BitMonoPcm = 12] = "Riff24Khz16BitMonoPcm", t[t.Riff8Khz8BitMonoMULaw = 13] = "Riff8Khz8BitMonoMULaw", t[t.Raw16Khz16BitMonoPcm = 14] = "Raw16Khz16BitMonoPcm", t[t.Raw24Khz16BitMonoPcm = 15] = "Raw24Khz16BitMonoPcm", t[t.Raw8Khz16BitMonoPcm = 16] = "Raw8Khz16BitMonoPcm", t[t.Ogg16Khz16BitMonoOpus = 17] = "Ogg16Khz16BitMonoOpus", t[t.Ogg24Khz16BitMonoOpus = 18] = "Ogg24Khz16BitMonoOpus", t[t.Raw48Khz16BitMonoPcm = 19] = "Raw48Khz16BitMonoPcm", t[t.Riff48Khz16BitMonoPcm = 20] = "Riff48Khz16BitMonoPcm", t[t.Audio48Khz96KBitRateMonoMp3 = 21] = "Audio48Khz96KBitRateMonoMp3", t[t.Audio48Khz192KBitRateMonoMp3 = 22] = "Audio48Khz192KBitRateMonoMp3", t[t.Ogg48Khz16BitMonoOpus = 23] = "Ogg48Khz16BitMonoOpus", t[t.Webm16Khz16BitMonoOpus = 24] = "Webm16Khz16BitMonoOpus", t[t.Webm24Khz16BitMonoOpus = 25] = "Webm24Khz16BitMonoOpus", t[t.Raw24Khz16BitMonoTrueSilk = 26] = "Raw24Khz16BitMonoTrueSilk", t[t.Raw8Khz8BitMonoALaw = 27] = "Raw8Khz8BitMonoALaw", t[t.Riff8Khz8BitMonoALaw = 28] = "Riff8Khz8BitMonoALaw", t[t.Webm24Khz16Bit24KbpsMonoOpus = 29] = "Webm24Khz16Bit24KbpsMonoOpus", t[t.Audio16Khz16Bit32KbpsMonoOpus = 30] = "Audio16Khz16Bit32KbpsMonoOpus", t[t.Audio24Khz16Bit48KbpsMonoOpus = 31] = "Audio24Khz16Bit48KbpsMonoOpus", t[t.Audio24Khz16Bit24KbpsMonoOpus = 32] = "Audio24Khz16Bit24KbpsMonoOpus", t[t.Raw22050Hz16BitMonoPcm = 33] = "Raw22050Hz16BitMonoPcm", t[t.Riff22050Hz16BitMonoPcm = 34] = "Riff22050Hz16BitMonoPcm", t[t.Raw44100Hz16BitMonoPcm = 35] = "Raw44100Hz16BitMonoPcm", t[t.Riff44100Hz16BitMonoPcm = 36] = "Riff44100Hz16BitMonoPcm", t[t.AmrWb16000Hz = 37] = "AmrWb16000Hz", t[t.G72216Khz64Kbps = 38] = "G72216Khz64Kbps";
     }(e.SpeechSynthesisOutputFormat || (e.SpeechSynthesisOutputFormat = {}));
-  }(zo)), zo;
+  }(No)), No;
 }
-var Hu;
-function ys() {
-  if (Hu) return Nr;
-  Hu = 1, Object.defineProperty(Nr, "__esModule", { value: !0 }), Nr.AudioOutputFormatImpl = void 0;
-  const e = /* @__PURE__ */ ov(), t = /* @__PURE__ */ Mt();
+var Vu;
+function Cs() {
+  if (Vu) return zr;
+  Vu = 1, Object.defineProperty(zr, "__esModule", { value: !0 }), zr.AudioOutputFormatImpl = void 0;
+  const e = /* @__PURE__ */ nv(), t = /* @__PURE__ */ Mt();
   class r extends t.AudioStreamFormatImpl {
     /**
      * Creates an instance with the given values.
@@ -7996,7 +7996,7 @@ function ys() {
       return a.set(new Uint8Array(this.header), 0), a.set(new Uint8Array(i), this.header.byteLength), a.buffer;
     }
   }
-  return Nr.AudioOutputFormatImpl = r, r.SpeechSynthesisOutputFormatToString = {
+  return zr.AudioOutputFormatImpl = r, r.SpeechSynthesisOutputFormatToString = {
     [e.SpeechSynthesisOutputFormat.Raw8Khz8BitMonoMULaw]: "raw-8khz-8bit-mono-mulaw",
     [e.SpeechSynthesisOutputFormat.Riff16Khz16KbpsMonoSiren]: "riff-16khz-16kbps-mono-siren",
     [e.SpeechSynthesisOutputFormat.Audio16Khz16KbpsMonoSiren]: "audio-16khz-16kbps-mono-siren",
@@ -8036,13 +8036,13 @@ function ys() {
     [e.SpeechSynthesisOutputFormat.Riff44100Hz16BitMonoPcm]: "riff-44100hz-16bit-mono-pcm",
     [e.SpeechSynthesisOutputFormat.AmrWb16000Hz]: "amr-wb-16000hz",
     [e.SpeechSynthesisOutputFormat.G72216Khz64Kbps]: "g722-16khz-64kbps"
-  }, Nr;
+  }, zr;
 }
-var Ku;
-function Ht() {
-  if (Ku) return Ce;
-  Ku = 1, Object.defineProperty(Ce, "__esModule", { value: !0 }), Ce.PushAudioOutputStreamImpl = Ce.PushAudioOutputStream = Ce.PullAudioOutputStreamImpl = Ce.PullAudioOutputStream = Ce.AudioOutputStream = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ ys();
+var Wu;
+function Vt() {
+  if (Wu) return fe;
+  Wu = 1, Object.defineProperty(fe, "__esModule", { value: !0 }), fe.PushAudioOutputStreamImpl = fe.PushAudioOutputStream = fe.PullAudioOutputStreamImpl = fe.PullAudioOutputStream = fe.AudioOutputStream = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ Cs();
   let s = class {
     /**
      * Creates and initializes an instance.
@@ -8061,7 +8061,7 @@ function Ht() {
       return i.create();
     }
   };
-  Ce.AudioOutputStream = s;
+  fe.AudioOutputStream = s;
   class i extends s {
     /**
      * Creates a memory backed PullAudioOutputStream with the specified audio format.
@@ -8074,7 +8074,7 @@ function Ht() {
       return new a();
     }
   }
-  Ce.PullAudioOutputStream = i;
+  fe.PullAudioOutputStream = i;
   class a extends i {
     /**
      * Creates and initializes an instance with the given values.
@@ -8164,7 +8164,7 @@ function Ht() {
       this.privStream.close();
     }
   }
-  Ce.PullAudioOutputStreamImpl = a;
+  fe.PullAudioOutputStreamImpl = a;
   class o extends s {
     /**
      * Creates and initializes and instance.
@@ -8187,7 +8187,7 @@ function Ht() {
       return new n(u);
     }
   }
-  Ce.PushAudioOutputStream = o;
+  fe.PushAudioOutputStream = o;
   class n extends o {
     /**
      * Creates a PushAudioOutputStream that delegates to the specified callback interface for
@@ -8212,14 +8212,14 @@ function Ht() {
       return this.privId;
     }
   }
-  return Ce.PushAudioOutputStreamImpl = n, Ce;
+  return fe.PushAudioOutputStreamImpl = n, fe;
 }
-var Ju;
-function cv() {
-  if (Ju) return je;
-  Ju = 1, Object.defineProperty(je, "__esModule", { value: !0 }), je.AudioOutputConfigImpl = je.AudioConfigImpl = je.AudioConfig = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ iv(), i = /* @__PURE__ */ sv(), a = /* @__PURE__ */ Ht();
-  let o = class av {
+var Hu;
+function sv() {
+  if (Hu) return je;
+  Hu = 1, Object.defineProperty(je, "__esModule", { value: !0 }), je.AudioOutputConfigImpl = je.AudioConfigImpl = je.AudioConfig = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ tv(), i = /* @__PURE__ */ rv(), a = /* @__PURE__ */ Vt();
+  let o = class iv {
     /**
      * Creates an AudioConfig object representing the default microphone on the system.
      * @member AudioConfig.fromDefaultMicrophoneInput
@@ -8298,7 +8298,7 @@ function cv() {
      */
     static fromSpeakerOutput(l) {
       if (l === void 0)
-        return av.fromDefaultSpeakerOutput();
+        return iv.fromDefaultSpeakerOutput();
       if (l instanceof r.SpeakerAudioDestination)
         return new c(l);
       throw new Error("Not Supported Type");
@@ -8463,34 +8463,34 @@ function cv() {
   }
   return je.AudioOutputConfigImpl = c, je;
 }
-var Lo = {}, Gu;
-function iR() {
-  return Gu || (Gu = 1, function(e) {
+var xo = {}, Ku;
+function tR() {
+  return Ku || (Ku = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.CancellationReason = void 0, function(t) {
       t[t.Error = 0] = "Error", t[t.EndOfStream = 1] = "EndOfStream";
     }(e.CancellationReason || (e.CancellationReason = {}));
-  }(Lo)), Lo;
+  }(xo)), xo;
 }
-var xr = {}, Qu;
-function sR() {
-  if (Qu) return xr;
-  Qu = 1, Object.defineProperty(xr, "__esModule", { value: !0 }), xr.PullAudioInputStreamCallback = void 0;
+var Lr = {}, Ju;
+function rR() {
+  if (Ju) return Lr;
+  Ju = 1, Object.defineProperty(Lr, "__esModule", { value: !0 }), Lr.PullAudioInputStreamCallback = void 0;
   let e = class {
   };
-  return xr.PullAudioInputStreamCallback = e, xr;
+  return Lr.PullAudioInputStreamCallback = e, Lr;
 }
-var zr = {}, Yu;
-function oR() {
-  if (Yu) return zr;
-  Yu = 1, Object.defineProperty(zr, "__esModule", { value: !0 }), zr.PushAudioOutputStreamCallback = void 0;
+var jr = {}, Gu;
+function nR() {
+  if (Gu) return jr;
+  Gu = 1, Object.defineProperty(jr, "__esModule", { value: !0 }), jr.PushAudioOutputStreamCallback = void 0;
   let e = class {
   };
-  return zr.PushAudioOutputStreamCallback = e, zr;
+  return jr.PushAudioOutputStreamCallback = e, jr;
 }
-var Lr = {}, Zu;
-function aR() {
-  if (Zu) return Lr;
-  Zu = 1, Object.defineProperty(Lr, "__esModule", { value: !0 }), Lr.KeywordRecognitionModel = void 0;
+var qr = {}, Qu;
+function iR() {
+  if (Qu) return qr;
+  Qu = 1, Object.defineProperty(qr, "__esModule", { value: !0 }), qr.KeywordRecognitionModel = void 0;
   const e = /* @__PURE__ */ x();
   let t = class {
     /**
@@ -8535,12 +8535,12 @@ function aR() {
       this.privDisposed || (this.privDisposed = !0);
     }
   };
-  return Lr.KeywordRecognitionModel = t, Lr;
+  return qr.KeywordRecognitionModel = t, qr;
 }
-var jr = {}, Xu;
-function cR() {
-  if (Xu) return jr;
-  Xu = 1, Object.defineProperty(jr, "__esModule", { value: !0 }), jr.SessionEventArgs = void 0;
+var Fr = {}, Yu;
+function sR() {
+  if (Yu) return Fr;
+  Yu = 1, Object.defineProperty(Fr, "__esModule", { value: !0 }), Fr.SessionEventArgs = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -8561,12 +8561,12 @@ function cR() {
       return this.privSessionId;
     }
   };
-  return jr.SessionEventArgs = e, jr;
+  return Fr.SessionEventArgs = e, Fr;
 }
-var qr = {}, el;
-function uR() {
-  if (el) return qr;
-  el = 1, Object.defineProperty(qr, "__esModule", { value: !0 }), qr.RecognitionEventArgs = void 0;
+var Br = {}, Zu;
+function oR() {
+  if (Zu) return Br;
+  Zu = 1, Object.defineProperty(Br, "__esModule", { value: !0 }), Br.RecognitionEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SessionEventArgs {
     /**
@@ -8588,20 +8588,20 @@ function uR() {
       return this.privOffset;
     }
   };
-  return qr.RecognitionEventArgs = t, qr;
+  return Br.RecognitionEventArgs = t, Br;
 }
-var jo = {}, tl;
-function lR() {
-  return tl || (tl = 1, function(e) {
+var zo = {}, Xu;
+function aR() {
+  return Xu || (Xu = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.OutputFormat = void 0, function(t) {
       t[t.Simple = 0] = "Simple", t[t.Detailed = 1] = "Detailed";
     }(e.OutputFormat || (e.OutputFormat = {}));
-  }(jo)), jo;
+  }(zo)), zo;
 }
-var Fr = {}, rl;
-function pR() {
-  if (rl) return Fr;
-  rl = 1, Object.defineProperty(Fr, "__esModule", { value: !0 }), Fr.IntentRecognitionEventArgs = void 0;
+var Ur = {}, el;
+function cR() {
+  if (el) return Ur;
+  el = 1, Object.defineProperty(Ur, "__esModule", { value: !0 }), Ur.IntentRecognitionEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.RecognitionEventArgs {
     /**
@@ -8625,12 +8625,12 @@ function pR() {
       return this.privResult;
     }
   };
-  return Fr.IntentRecognitionEventArgs = t, Fr;
+  return Ur.IntentRecognitionEventArgs = t, Ur;
 }
-var Br = {}, nl;
-function dR() {
-  if (nl) return Br;
-  nl = 1, Object.defineProperty(Br, "__esModule", { value: !0 }), Br.RecognitionResult = void 0;
+var $r = {}, tl;
+function uR() {
+  if (tl) return $r;
+  tl = 1, Object.defineProperty($r, "__esModule", { value: !0 }), $r.RecognitionResult = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -8750,12 +8750,12 @@ function dR() {
       return this.privProperties;
     }
   };
-  return Br.RecognitionResult = e, Br;
+  return $r.RecognitionResult = e, $r;
 }
-var Ur = {}, il;
-function hR() {
-  if (il) return Ur;
-  il = 1, Object.defineProperty(Ur, "__esModule", { value: !0 }), Ur.SpeechRecognitionResult = void 0;
+var Vr = {}, rl;
+function lR() {
+  if (rl) return Vr;
+  rl = 1, Object.defineProperty(Vr, "__esModule", { value: !0 }), Vr.SpeechRecognitionResult = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.RecognitionResult {
     /**
@@ -8788,12 +8788,12 @@ function hR() {
       return this.privSpeakerId;
     }
   };
-  return Ur.SpeechRecognitionResult = t, Ur;
+  return Vr.SpeechRecognitionResult = t, Vr;
 }
-var $r = {}, sl;
-function fR() {
-  if (sl) return $r;
-  sl = 1, Object.defineProperty($r, "__esModule", { value: !0 }), $r.IntentRecognitionResult = void 0;
+var Wr = {}, nl;
+function pR() {
+  if (nl) return Wr;
+  nl = 1, Object.defineProperty(Wr, "__esModule", { value: !0 }), Wr.IntentRecognitionResult = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SpeechRecognitionResult {
     /**
@@ -8825,12 +8825,12 @@ function fR() {
       return this.privIntentId;
     }
   };
-  return $r.IntentRecognitionResult = t, $r;
+  return Wr.IntentRecognitionResult = t, Wr;
 }
-var lt = {}, ol;
-function vR() {
-  if (ol) return lt;
-  ol = 1, Object.defineProperty(lt, "__esModule", { value: !0 }), lt.LanguageUnderstandingModelImpl = lt.LanguageUnderstandingModel = void 0;
+var lt = {}, il;
+function dR() {
+  if (il) return lt;
+  il = 1, Object.defineProperty(lt, "__esModule", { value: !0 }), lt.LanguageUnderstandingModelImpl = lt.LanguageUnderstandingModel = void 0;
   const e = /* @__PURE__ */ x();
   let t = class {
     /**
@@ -8898,10 +8898,10 @@ function vR() {
   }
   return lt.LanguageUnderstandingModelImpl = r, lt;
 }
-var qe = {}, al;
-function gR() {
-  if (al) return qe;
-  al = 1, Object.defineProperty(qe, "__esModule", { value: !0 }), qe.MeetingTranscriptionEventArgs = qe.ConversationTranscriptionEventArgs = qe.SpeechRecognitionEventArgs = void 0;
+var qe = {}, sl;
+function hR() {
+  if (sl) return qe;
+  sl = 1, Object.defineProperty(qe, "__esModule", { value: !0 }), qe.MeetingTranscriptionEventArgs = qe.ConversationTranscriptionEventArgs = qe.SpeechRecognitionEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.RecognitionEventArgs {
     /**
@@ -8953,10 +8953,10 @@ function gR() {
   }
   return qe.MeetingTranscriptionEventArgs = s, qe;
 }
-var Vr = {}, Wr = {}, cl;
-function Ss() {
-  if (cl) return Wr;
-  cl = 1, Object.defineProperty(Wr, "__esModule", { value: !0 }), Wr.CancellationEventArgsBase = void 0;
+var Hr = {}, Kr = {}, ol;
+function Rs() {
+  if (ol) return Kr;
+  ol = 1, Object.defineProperty(Kr, "__esModule", { value: !0 }), Kr.CancellationEventArgsBase = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.RecognitionEventArgs {
     /**
@@ -8998,21 +8998,21 @@ function Ss() {
       return this.privErrorDetails;
     }
   };
-  return Wr.CancellationEventArgsBase = t, Wr;
+  return Kr.CancellationEventArgsBase = t, Kr;
 }
-var ul;
-function mR() {
-  if (ul) return Vr;
-  ul = 1, Object.defineProperty(Vr, "__esModule", { value: !0 }), Vr.SpeechRecognitionCanceledEventArgs = void 0;
-  const e = /* @__PURE__ */ Ss();
+var al;
+function fR() {
+  if (al) return Hr;
+  al = 1, Object.defineProperty(Hr, "__esModule", { value: !0 }), Hr.SpeechRecognitionCanceledEventArgs = void 0;
+  const e = /* @__PURE__ */ Rs();
   let t = class extends e.CancellationEventArgsBase {
   };
-  return Vr.SpeechRecognitionCanceledEventArgs = t, Vr;
+  return Hr.SpeechRecognitionCanceledEventArgs = t, Hr;
 }
-var Hr = {}, ll;
-function yR() {
-  if (ll) return Hr;
-  ll = 1, Object.defineProperty(Hr, "__esModule", { value: !0 }), Hr.TranslationRecognitionEventArgs = void 0;
+var Jr = {}, cl;
+function vR() {
+  if (cl) return Jr;
+  cl = 1, Object.defineProperty(Jr, "__esModule", { value: !0 }), Jr.TranslationRecognitionEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.RecognitionEventArgs {
     /**
@@ -9036,12 +9036,12 @@ function yR() {
       return this.privResult;
     }
   };
-  return Hr.TranslationRecognitionEventArgs = t, Hr;
+  return Jr.TranslationRecognitionEventArgs = t, Jr;
 }
-var Kr = {}, pl;
-function SR() {
-  if (pl) return Kr;
-  pl = 1, Object.defineProperty(Kr, "__esModule", { value: !0 }), Kr.TranslationSynthesisEventArgs = void 0;
+var Gr = {}, ul;
+function gR() {
+  if (ul) return Gr;
+  ul = 1, Object.defineProperty(Gr, "__esModule", { value: !0 }), Gr.TranslationSynthesisEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SessionEventArgs {
     /**
@@ -9064,14 +9064,14 @@ function SR() {
       return this.privResult;
     }
   };
-  return Kr.TranslationSynthesisEventArgs = t, Kr;
+  return Gr.TranslationSynthesisEventArgs = t, Gr;
 }
-var Jr = {}, dl;
-function lv() {
-  if (dl) return Jr;
-  dl = 1, Object.defineProperty(Jr, "__esModule", { value: !0 }), Jr.TranslationRecognitionResult = void 0;
+var Qr = {}, ll;
+function av() {
+  if (ll) return Qr;
+  ll = 1, Object.defineProperty(Qr, "__esModule", { value: !0 }), Qr.TranslationRecognitionResult = void 0;
   const e = /* @__PURE__ */ A();
-  let t = class uv extends e.SpeechRecognitionResult {
+  let t = class ov extends e.SpeechRecognitionResult {
     /**
      * Creates and initializes an instance of this class.
      * @constructor
@@ -9091,7 +9091,7 @@ function lv() {
       super(i, a, o, n, c, u, l, void 0, p, d, h), this.privTranslations = s;
     }
     static fromSpeechRecognitionResult(s) {
-      return new uv(void 0, s.resultId, s.reason, s.text, s.duration, s.offset, s.language, s.languageDetectionConfidence, s.errorDetails, s.json, s.properties);
+      return new ov(void 0, s.resultId, s.reason, s.text, s.duration, s.offset, s.language, s.languageDetectionConfidence, s.errorDetails, s.json, s.properties);
     }
     /**
      * Presents the translation results. Each item in the dictionary represents
@@ -9107,12 +9107,12 @@ function lv() {
       return this.privTranslations;
     }
   };
-  return Jr.TranslationRecognitionResult = t, Jr;
+  return Qr.TranslationRecognitionResult = t, Qr;
 }
-var Gr = {}, hl;
-function CR() {
-  if (hl) return Gr;
-  hl = 1, Object.defineProperty(Gr, "__esModule", { value: !0 }), Gr.TranslationSynthesisResult = void 0;
+var Yr = {}, pl;
+function mR() {
+  if (pl) return Yr;
+  pl = 1, Object.defineProperty(Yr, "__esModule", { value: !0 }), Yr.TranslationSynthesisResult = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -9144,20 +9144,20 @@ function CR() {
       return this.privReason;
     }
   };
-  return Gr.TranslationSynthesisResult = e, Gr;
+  return Yr.TranslationSynthesisResult = e, Yr;
 }
-var qo = {}, fl;
-function RR() {
-  return fl || (fl = 1, function(e) {
+var Lo = {}, dl;
+function yR() {
+  return dl || (dl = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ResultReason = void 0, function(t) {
       t[t.NoMatch = 0] = "NoMatch", t[t.Canceled = 1] = "Canceled", t[t.RecognizingSpeech = 2] = "RecognizingSpeech", t[t.RecognizedSpeech = 3] = "RecognizedSpeech", t[t.RecognizedKeyword = 4] = "RecognizedKeyword", t[t.RecognizingIntent = 5] = "RecognizingIntent", t[t.RecognizedIntent = 6] = "RecognizedIntent", t[t.TranslatingSpeech = 7] = "TranslatingSpeech", t[t.TranslatedSpeech = 8] = "TranslatedSpeech", t[t.SynthesizingAudio = 9] = "SynthesizingAudio", t[t.SynthesizingAudioCompleted = 10] = "SynthesizingAudioCompleted", t[t.SynthesizingAudioStarted = 11] = "SynthesizingAudioStarted", t[t.EnrollingVoiceProfile = 12] = "EnrollingVoiceProfile", t[t.EnrolledVoiceProfile = 13] = "EnrolledVoiceProfile", t[t.RecognizedSpeakers = 14] = "RecognizedSpeakers", t[t.RecognizedSpeaker = 15] = "RecognizedSpeaker", t[t.ResetVoiceProfile = 16] = "ResetVoiceProfile", t[t.DeletedVoiceProfile = 17] = "DeletedVoiceProfile", t[t.VoicesListRetrieved = 18] = "VoicesListRetrieved", t[t.TranslatingParticipantSpeech = 19] = "TranslatingParticipantSpeech", t[t.TranslatedParticipantSpeech = 20] = "TranslatedParticipantSpeech", t[t.TranslatedInstantMessage = 21] = "TranslatedInstantMessage", t[t.TranslatedParticipantInstantMessage = 22] = "TranslatedParticipantInstantMessage";
     }(e.ResultReason || (e.ResultReason = {}));
-  }(qo)), qo;
+  }(Lo)), Lo;
 }
-var pt = {}, vl;
-function PR() {
-  if (vl) return pt;
-  vl = 1, Object.defineProperty(pt, "__esModule", { value: !0 }), pt.SpeechConfigImpl = pt.SpeechConfig = void 0;
+var pt = {}, hl;
+function SR() {
+  if (hl) return pt;
+  hl = 1, Object.defineProperty(pt, "__esModule", { value: !0 }), pt.SpeechConfigImpl = pt.SpeechConfig = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A();
   let s = class {
     /**
@@ -9344,10 +9344,10 @@ function PR() {
   }
   return pt.SpeechConfigImpl = i, pt;
 }
-var dt = {}, gl;
-function bR() {
-  if (gl) return dt;
-  gl = 1, Object.defineProperty(dt, "__esModule", { value: !0 }), dt.SpeechTranslationConfigImpl = dt.SpeechTranslationConfig = void 0;
+var dt = {}, fl;
+function CR() {
+  if (fl) return dt;
+  fl = 1, Object.defineProperty(dt, "__esModule", { value: !0 }), dt.SpeechTranslationConfigImpl = dt.SpeechTranslationConfig = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A();
   let s = class extends r.SpeechConfig {
     /**
@@ -9641,12 +9641,12 @@ function bR() {
   }
   return dt.SpeechTranslationConfigImpl = i, dt;
 }
-var Qr = {}, ml;
-function dv() {
-  if (ml) return Qr;
-  ml = 1, Object.defineProperty(Qr, "__esModule", { value: !0 }), Qr.PropertyCollection = void 0;
+var Zr = {}, vl;
+function uv() {
+  if (vl) return Zr;
+  vl = 1, Object.defineProperty(Zr, "__esModule", { value: !0 }), Zr.PropertyCollection = void 0;
   const e = /* @__PURE__ */ A();
-  let t = class pv {
+  let t = class cv {
     constructor() {
       this.privKeys = [], this.privValues = [];
     }
@@ -9697,7 +9697,7 @@ function dv() {
      * @returns {PropertyCollection} A copy of the collection.
      */
     clone() {
-      const s = new pv();
+      const s = new cv();
       for (let i = 0; i < this.privKeys.length; i++)
         s.privKeys.push(this.privKeys[i]), s.privValues.push(this.privValues[i]);
       return s;
@@ -9728,22 +9728,22 @@ function dv() {
       return this.privKeys;
     }
   };
-  return Qr.PropertyCollection = t, Qr;
+  return Zr.PropertyCollection = t, Zr;
 }
-var Fo = {}, yl;
-function sc() {
-  return yl || (yl = 1, function(e) {
+var jo = {}, gl;
+function nc() {
+  return gl || (gl = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.PropertyId = void 0, function(t) {
       t[t.SpeechServiceConnection_Key = 0] = "SpeechServiceConnection_Key", t[t.SpeechServiceConnection_Endpoint = 1] = "SpeechServiceConnection_Endpoint", t[t.SpeechServiceConnection_Region = 2] = "SpeechServiceConnection_Region", t[t.SpeechServiceAuthorization_Token = 3] = "SpeechServiceAuthorization_Token", t[t.SpeechServiceAuthorization_Type = 4] = "SpeechServiceAuthorization_Type", t[t.SpeechServiceConnection_EndpointId = 5] = "SpeechServiceConnection_EndpointId", t[t.SpeechServiceConnection_TranslationToLanguages = 6] = "SpeechServiceConnection_TranslationToLanguages", t[t.SpeechServiceConnection_TranslationVoice = 7] = "SpeechServiceConnection_TranslationVoice", t[t.SpeechServiceConnection_TranslationFeatures = 8] = "SpeechServiceConnection_TranslationFeatures", t[t.SpeechServiceConnection_TranslationCategoryId = 9] = "SpeechServiceConnection_TranslationCategoryId", t[t.SpeechServiceConnection_IntentRegion = 10] = "SpeechServiceConnection_IntentRegion", t[t.SpeechServiceConnection_ProxyHostName = 11] = "SpeechServiceConnection_ProxyHostName", t[t.SpeechServiceConnection_ProxyPort = 12] = "SpeechServiceConnection_ProxyPort", t[t.SpeechServiceConnection_ProxyUserName = 13] = "SpeechServiceConnection_ProxyUserName", t[t.SpeechServiceConnection_ProxyPassword = 14] = "SpeechServiceConnection_ProxyPassword", t[t.SpeechServiceConnection_RecoMode = 15] = "SpeechServiceConnection_RecoMode", t[t.SpeechServiceConnection_RecoLanguage = 16] = "SpeechServiceConnection_RecoLanguage", t[t.Speech_SessionId = 17] = "Speech_SessionId", t[t.SpeechServiceConnection_SynthLanguage = 18] = "SpeechServiceConnection_SynthLanguage", t[t.SpeechServiceConnection_SynthVoice = 19] = "SpeechServiceConnection_SynthVoice", t[t.SpeechServiceConnection_SynthOutputFormat = 20] = "SpeechServiceConnection_SynthOutputFormat", t[t.SpeechServiceConnection_AutoDetectSourceLanguages = 21] = "SpeechServiceConnection_AutoDetectSourceLanguages", t[t.SpeechServiceResponse_RequestDetailedResultTrueFalse = 22] = "SpeechServiceResponse_RequestDetailedResultTrueFalse", t[t.SpeechServiceResponse_RequestProfanityFilterTrueFalse = 23] = "SpeechServiceResponse_RequestProfanityFilterTrueFalse", t[t.SpeechServiceResponse_JsonResult = 24] = "SpeechServiceResponse_JsonResult", t[t.SpeechServiceResponse_JsonErrorDetails = 25] = "SpeechServiceResponse_JsonErrorDetails", t[t.CancellationDetails_Reason = 26] = "CancellationDetails_Reason", t[t.CancellationDetails_ReasonText = 27] = "CancellationDetails_ReasonText", t[t.CancellationDetails_ReasonDetailedText = 28] = "CancellationDetails_ReasonDetailedText", t[t.LanguageUnderstandingServiceResponse_JsonResult = 29] = "LanguageUnderstandingServiceResponse_JsonResult", t[t.SpeechServiceConnection_Url = 30] = "SpeechServiceConnection_Url", t[t.SpeechServiceConnection_InitialSilenceTimeoutMs = 31] = "SpeechServiceConnection_InitialSilenceTimeoutMs", t[t.SpeechServiceConnection_EndSilenceTimeoutMs = 32] = "SpeechServiceConnection_EndSilenceTimeoutMs", t[t.Speech_SegmentationSilenceTimeoutMs = 33] = "Speech_SegmentationSilenceTimeoutMs", t[t.Speech_SegmentationMaximumTimeMs = 34] = "Speech_SegmentationMaximumTimeMs", t[t.Speech_SegmentationStrategy = 35] = "Speech_SegmentationStrategy", t[t.SpeechServiceConnection_EnableAudioLogging = 36] = "SpeechServiceConnection_EnableAudioLogging", t[t.SpeechServiceConnection_LanguageIdMode = 37] = "SpeechServiceConnection_LanguageIdMode", t[t.SpeechServiceConnection_RecognitionEndpointVersion = 38] = "SpeechServiceConnection_RecognitionEndpointVersion", t[t.SpeechServiceConnection_SpeakerIdMode = 39] = "SpeechServiceConnection_SpeakerIdMode", t[t.SpeechServiceResponse_ProfanityOption = 40] = "SpeechServiceResponse_ProfanityOption", t[t.SpeechServiceResponse_PostProcessingOption = 41] = "SpeechServiceResponse_PostProcessingOption", t[t.SpeechServiceResponse_RequestWordLevelTimestamps = 42] = "SpeechServiceResponse_RequestWordLevelTimestamps", t[t.SpeechServiceResponse_StablePartialResultThreshold = 43] = "SpeechServiceResponse_StablePartialResultThreshold", t[t.SpeechServiceResponse_OutputFormatOption = 44] = "SpeechServiceResponse_OutputFormatOption", t[t.SpeechServiceResponse_TranslationRequestStablePartialResult = 45] = "SpeechServiceResponse_TranslationRequestStablePartialResult", t[t.SpeechServiceResponse_RequestWordBoundary = 46] = "SpeechServiceResponse_RequestWordBoundary", t[t.SpeechServiceResponse_RequestPunctuationBoundary = 47] = "SpeechServiceResponse_RequestPunctuationBoundary", t[t.SpeechServiceResponse_RequestSentenceBoundary = 48] = "SpeechServiceResponse_RequestSentenceBoundary", t[t.SpeechServiceResponse_DiarizeIntermediateResults = 49] = "SpeechServiceResponse_DiarizeIntermediateResults", t[t.Conversation_ApplicationId = 50] = "Conversation_ApplicationId", t[t.Conversation_DialogType = 51] = "Conversation_DialogType", t[t.Conversation_Initial_Silence_Timeout = 52] = "Conversation_Initial_Silence_Timeout", t[t.Conversation_From_Id = 53] = "Conversation_From_Id", t[t.Conversation_Conversation_Id = 54] = "Conversation_Conversation_Id", t[t.Conversation_Custom_Voice_Deployment_Ids = 55] = "Conversation_Custom_Voice_Deployment_Ids", t[t.Conversation_Speech_Activity_Template = 56] = "Conversation_Speech_Activity_Template", t[t.Conversation_Request_Bot_Status_Messages = 57] = "Conversation_Request_Bot_Status_Messages", t[t.Conversation_Agent_Connection_Id = 58] = "Conversation_Agent_Connection_Id", t[t.SpeechServiceConnection_Host = 59] = "SpeechServiceConnection_Host", t[t.ConversationTranslator_Host = 60] = "ConversationTranslator_Host", t[t.ConversationTranslator_Name = 61] = "ConversationTranslator_Name", t[t.ConversationTranslator_CorrelationId = 62] = "ConversationTranslator_CorrelationId", t[t.ConversationTranslator_Token = 63] = "ConversationTranslator_Token", t[t.PronunciationAssessment_ReferenceText = 64] = "PronunciationAssessment_ReferenceText", t[t.PronunciationAssessment_GradingSystem = 65] = "PronunciationAssessment_GradingSystem", t[t.PronunciationAssessment_Granularity = 66] = "PronunciationAssessment_Granularity", t[t.PronunciationAssessment_EnableMiscue = 67] = "PronunciationAssessment_EnableMiscue", t[t.PronunciationAssessment_Json = 68] = "PronunciationAssessment_Json", t[t.PronunciationAssessment_Params = 69] = "PronunciationAssessment_Params", t[t.SpeakerRecognition_Api_Version = 70] = "SpeakerRecognition_Api_Version", t[t.WebWorkerLoadType = 71] = "WebWorkerLoadType", t[t.TalkingAvatarService_WebRTC_SDP = 72] = "TalkingAvatarService_WebRTC_SDP";
     }(e.PropertyId || (e.PropertyId = {}));
-  }(Fo)), Fo;
+  }(jo)), jo;
 }
-var Yr = {}, Sl;
-function wR() {
-  if (Sl) return Yr;
-  Sl = 1, Object.defineProperty(Yr, "__esModule", { value: !0 }), Yr.Recognizer = void 0;
+var Xr = {}, ml;
+function RR() {
+  if (ml) return Xr;
+  ml = 1, Object.defineProperty(Xr, "__esModule", { value: !0 }), Xr.Recognizer = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A();
-  let i = class hv {
+  let i = class lv {
     /**
      * Creates and initializes an instance of a Recognizer
      * @constructor
@@ -9812,7 +9812,7 @@ function wR() {
       let o = typeof window < "u" ? "Browser" : "Node", n = "unknown", c = "unknown";
       typeof navigator < "u" && (o = o + "/" + navigator.platform, n = navigator.userAgent, c = navigator.appVersion);
       const u = this.createRecognizerConfig(new e.SpeechServiceConfig(new e.Context(new e.OS(o, n, c))));
-      this.privReco = this.createServiceRecognizer(hv.getAuth(this.privProperties, this.tokenCredential), this.privConnectionFactory, this.audioConfig, u);
+      this.privReco = this.createServiceRecognizer(lv.getAuth(this.privProperties, this.tokenCredential), this.privConnectionFactory, this.audioConfig, u);
     }
     async recognizeOnceAsyncImpl(o) {
       r.Contracts.throwIfDisposed(this.privDisposed);
@@ -9853,22 +9853,22 @@ function wR() {
       });
     }
   };
-  return Yr.Recognizer = i, Yr;
+  return Xr.Recognizer = i, Xr;
 }
-var Zr = {}, Bo = {}, Cl;
-function be() {
-  return Cl || (Cl = 1, function(e) {
+var en = {}, qo = {}, yl;
+function Se() {
+  return yl || (yl = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.RecognitionMode = void 0, function(t) {
       t.Interactive = "Interactive", t.Dictation = "Dictation", t.Conversation = "Conversation", t.None = "None";
     }(e.RecognitionMode || (e.RecognitionMode = {}));
-  }(Bo)), Bo;
+  }(qo)), qo;
 }
-var Rl;
-function ER() {
-  if (Rl) return Zr;
-  Rl = 1, Object.defineProperty(Zr, "__esModule", { value: !0 }), Zr.SpeechRecognizer = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ be(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
-  let a = class fv extends i.Recognizer {
+var Sl;
+function PR() {
+  if (Sl) return en;
+  Sl = 1, Object.defineProperty(en, "__esModule", { value: !0 }), en.SpeechRecognizer = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ Se(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
+  let a = class pv extends i.Recognizer {
     /**
      * SpeechRecognizer constructor.
      * @constructor
@@ -9888,7 +9888,7 @@ function ER() {
      */
     static FromConfig(n, c, u) {
       const l = n;
-      return c.properties.mergeTo(l.properties), new fv(n, u);
+      return c.properties.mergeTo(l.properties), new pv(n, u);
     }
     /**
      * Gets the endpoint id of a customized speech model that is used for speech recognition.
@@ -10045,13 +10045,13 @@ function ER() {
       return new e.SpeechServiceRecognizer(n, c, p, l, this);
     }
   };
-  return Zr.SpeechRecognizer = a, Zr;
+  return en.SpeechRecognizer = a, en;
 }
-var Xr = {}, Pl;
-function IR() {
-  if (Pl) return Xr;
-  Pl = 1, Object.defineProperty(Xr, "__esModule", { value: !0 }), Xr.IntentRecognizer = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ be(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
+var tn = {}, Cl;
+function bR() {
+  if (Cl) return tn;
+  Cl = 1, Object.defineProperty(tn, "__esModule", { value: !0 }), tn.IntentRecognizer = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ Se(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
   let a = class extends i.Recognizer {
     /**
      * Initializes an instance of the IntentRecognizer.
@@ -10277,21 +10277,21 @@ function IR() {
       };
     }
   };
-  return Xr.IntentRecognizer = a, Xr;
+  return tn.IntentRecognizer = a, tn;
 }
-var Uo = {}, bl;
-function AR() {
-  return bl || (bl = 1, function(e) {
+var Fo = {}, Rl;
+function wR() {
+  return Rl || (Rl = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.VoiceProfileType = void 0, function(t) {
       t[t.TextIndependentIdentification = 0] = "TextIndependentIdentification", t[t.TextDependentVerification = 1] = "TextDependentVerification", t[t.TextIndependentVerification = 2] = "TextIndependentVerification";
     }(e.VoiceProfileType || (e.VoiceProfileType = {}));
-  }(Uo)), Uo;
+  }(Fo)), Fo;
 }
-var en = {}, tn = {}, ht = {}, wl;
-function vv() {
-  if (wl) return ht;
-  wl = 1, Object.defineProperty(ht, "__esModule", { value: !0 }), ht.ConnectionMessageImpl = ht.ConnectionMessage = void 0;
-  const e = /* @__PURE__ */ he(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ dv(), s = /* @__PURE__ */ sc();
+var rn = {}, nn = {}, ht = {}, Pl;
+function dv() {
+  if (Pl) return ht;
+  Pl = 1, Object.defineProperty(ht, "__esModule", { value: !0 }), ht.ConnectionMessageImpl = ht.ConnectionMessage = void 0;
+  const e = /* @__PURE__ */ le(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ uv(), s = /* @__PURE__ */ nc();
   let i = class {
   };
   ht.ConnectionMessage = i;
@@ -10351,19 +10351,19 @@ function vv() {
   }
   return ht.ConnectionMessageImpl = a, ht;
 }
-var El;
-function gv() {
-  if (El) return tn;
-  El = 1, Object.defineProperty(tn, "__esModule", { value: !0 }), tn.Connection = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ vv(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
-  let a = class Ba {
+var bl;
+function hv() {
+  if (bl) return nn;
+  bl = 1, Object.defineProperty(nn, "__esModule", { value: !0 }), nn.Connection = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ dv(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
+  let a = class qa {
     /**
      * Gets the Connection instance from the specified recognizer.
      * @param recognizer The recognizer associated with the connection.
      * @return The Connection instance of the recognizer.
      */
     static fromRecognizer(n) {
-      const c = n.internalData, u = new Ba();
+      const c = n.internalData, u = new qa();
       return u.privInternalData = c, u.setupEvents(), u;
     }
     /**
@@ -10372,7 +10372,7 @@ function gv() {
      * @return The Connection instance of the synthesizer.
      */
     static fromSynthesizer(n) {
-      const c = n.internalData, u = new Ba();
+      const c = n.internalData, u = new qa();
       return u.privInternalData = c, u.setupEvents(), u;
     }
     /**
@@ -10442,14 +10442,14 @@ function gv() {
       });
     }
   };
-  return tn.Connection = a, tn;
+  return nn.Connection = a, nn;
 }
-var Il;
-function TR() {
-  if (Il) return en;
-  Il = 1, Object.defineProperty(en, "__esModule", { value: !0 }), en.TranslationRecognizer = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ be(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ gv(), i = /* @__PURE__ */ x(), a = /* @__PURE__ */ A();
-  let o = class mv extends a.Recognizer {
+var wl;
+function ER() {
+  if (wl) return rn;
+  wl = 1, Object.defineProperty(rn, "__esModule", { value: !0 }), rn.TranslationRecognizer = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ Se(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ hv(), i = /* @__PURE__ */ x(), a = /* @__PURE__ */ A();
+  let o = class fv extends a.Recognizer {
     /**
      * Initializes an instance of the TranslationRecognizer.
      * @constructor
@@ -10470,7 +10470,7 @@ function TR() {
      */
     static FromConfig(c, u, l) {
       const p = c;
-      return u.properties.mergeTo(p.properties), u.properties.getProperty(a.PropertyId.SpeechServiceConnection_AutoDetectSourceLanguages, void 0) === e.AutoDetectSourceLanguagesOpenRangeOptionName && p.properties.setProperty(a.PropertyId.SpeechServiceConnection_RecoLanguage, "en-US"), new mv(c, l);
+      return u.properties.mergeTo(p.properties), u.properties.getProperty(a.PropertyId.SpeechServiceConnection_AutoDetectSourceLanguages, void 0) === e.AutoDetectSourceLanguagesOpenRangeOptionName && p.properties.setProperty(a.PropertyId.SpeechServiceConnection_RecoLanguage, "en-US"), new fv(c, l);
     }
     /**
      * Gets the language name that was set when the recognizer was created.
@@ -10635,12 +10635,12 @@ function TR() {
       })));
     }
   };
-  return en.TranslationRecognizer = o, en;
+  return rn.TranslationRecognizer = o, rn;
 }
-var rn = {}, Al;
-function _R() {
-  if (Al) return rn;
-  Al = 1, Object.defineProperty(rn, "__esModule", { value: !0 }), rn.Translations = void 0;
+var sn = {}, El;
+function IR() {
+  if (El) return sn;
+  El = 1, Object.defineProperty(sn, "__esModule", { value: !0 }), sn.Translations = void 0;
   const e = /* @__PURE__ */ A();
   let t = class {
     constructor() {
@@ -10682,22 +10682,22 @@ function _R() {
       this.privMap.setProperty(s, i);
     }
   };
-  return rn.Translations = t, rn;
+  return sn.Translations = t, sn;
 }
-var $o = {}, Tl;
-function kR() {
-  return Tl || (Tl = 1, function(e) {
+var Bo = {}, Il;
+function AR() {
+  return Il || (Il = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.NoMatchReason = void 0, function(t) {
       t[t.NotRecognized = 0] = "NotRecognized", t[t.InitialSilenceTimeout = 1] = "InitialSilenceTimeout", t[t.InitialBabbleTimeout = 2] = "InitialBabbleTimeout";
     }(e.NoMatchReason || (e.NoMatchReason = {}));
-  }($o)), $o;
+  }(Bo)), Bo;
 }
-var nn = {}, _l;
-function OR() {
-  if (_l) return nn;
-  _l = 1, Object.defineProperty(nn, "__esModule", { value: !0 }), nn.NoMatchDetails = void 0;
+var on = {}, Al;
+function TR() {
+  if (Al) return on;
+  Al = 1, Object.defineProperty(on, "__esModule", { value: !0 }), on.NoMatchDetails = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ A();
-  let r = class yv {
+  let r = class vv {
     /**
      * Creates and initializes an instance of this class.
      * @constructor
@@ -10729,7 +10729,7 @@ function OR() {
           o = t.NoMatchReason.NotRecognized;
           break;
       }
-      return new yv(o);
+      return new vv(o);
     }
     /**
      * The reason the recognition was canceled.
@@ -10742,12 +10742,12 @@ function OR() {
       return this.privReason;
     }
   };
-  return nn.NoMatchDetails = r, nn;
+  return on.NoMatchDetails = r, on;
 }
-var sn = {}, kl;
-function MR() {
-  if (kl) return sn;
-  kl = 1, Object.defineProperty(sn, "__esModule", { value: !0 }), sn.TranslationRecognitionCanceledEventArgs = void 0;
+var an = {}, Tl;
+function _R() {
+  if (Tl) return an;
+  Tl = 1, Object.defineProperty(an, "__esModule", { value: !0 }), an.TranslationRecognitionCanceledEventArgs = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -10809,12 +10809,12 @@ function MR() {
       return this.privErrorDetails;
     }
   };
-  return sn.TranslationRecognitionCanceledEventArgs = e, sn;
+  return an.TranslationRecognitionCanceledEventArgs = e, an;
 }
-var on = {}, Ol;
-function DR() {
-  if (Ol) return on;
-  Ol = 1, Object.defineProperty(on, "__esModule", { value: !0 }), on.IntentRecognitionCanceledEventArgs = void 0;
+var cn = {}, _l;
+function kR() {
+  if (_l) return cn;
+  _l = 1, Object.defineProperty(cn, "__esModule", { value: !0 }), cn.IntentRecognitionCanceledEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.IntentRecognitionEventArgs {
     /**
@@ -10856,12 +10856,12 @@ function DR() {
       return this.privErrorDetails;
     }
   };
-  return on.IntentRecognitionCanceledEventArgs = t, on;
+  return cn.IntentRecognitionCanceledEventArgs = t, cn;
 }
-var an = {}, Ml;
-function Sv() {
-  if (Ml) return an;
-  Ml = 1, Object.defineProperty(an, "__esModule", { value: !0 }), an.CancellationDetailsBase = void 0;
+var un = {}, kl;
+function gv() {
+  if (kl) return un;
+  kl = 1, Object.defineProperty(un, "__esModule", { value: !0 }), un.CancellationDetailsBase = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -10901,14 +10901,14 @@ function Sv() {
       return this.privErrorCode;
     }
   };
-  return an.CancellationDetailsBase = e, an;
+  return un.CancellationDetailsBase = e, un;
 }
-var cn = {}, Dl;
-function NR() {
-  if (Dl) return cn;
-  Dl = 1, Object.defineProperty(cn, "__esModule", { value: !0 }), cn.CancellationDetails = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ Sv(), r = /* @__PURE__ */ A();
-  let s = class Cv extends t.CancellationDetailsBase {
+var ln = {}, Ol;
+function OR() {
+  if (Ol) return ln;
+  Ol = 1, Object.defineProperty(ln, "__esModule", { value: !0 }), ln.CancellationDetails = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ gv(), r = /* @__PURE__ */ A();
+  let s = class mv extends t.CancellationDetailsBase {
     constructor(a, o, n) {
       super(a, o, n);
     }
@@ -10926,32 +10926,32 @@ function NR() {
         const c = e.SimpleSpeechPhrase.fromJSON(a.json, 0);
         o = e.EnumTranslation.implTranslateCancelResult(c.RecognitionStatus);
       }
-      return a.properties && (n = r.CancellationErrorCode[a.properties.getProperty(e.CancellationErrorCodePropertyName, r.CancellationErrorCode[r.CancellationErrorCode.NoError])]), new Cv(o, a.errorDetails || e.EnumTranslation.implTranslateErrorDetails(n), n);
+      return a.properties && (n = r.CancellationErrorCode[a.properties.getProperty(e.CancellationErrorCodePropertyName, r.CancellationErrorCode[r.CancellationErrorCode.NoError])]), new mv(o, a.errorDetails || e.EnumTranslation.implTranslateErrorDetails(n), n);
     }
   };
-  return cn.CancellationDetails = s, cn;
+  return ln.CancellationDetails = s, ln;
 }
-var Vo = {}, Nl;
-function xR() {
-  return Nl || (Nl = 1, function(e) {
+var Uo = {}, Ml;
+function MR() {
+  return Ml || (Ml = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.CancellationErrorCode = void 0, function(t) {
       t[t.NoError = 0] = "NoError", t[t.AuthenticationFailure = 1] = "AuthenticationFailure", t[t.BadRequestParameters = 2] = "BadRequestParameters", t[t.TooManyRequests = 3] = "TooManyRequests", t[t.ConnectionFailure = 4] = "ConnectionFailure", t[t.ServiceTimeout = 5] = "ServiceTimeout", t[t.ServiceError = 6] = "ServiceError", t[t.RuntimeError = 7] = "RuntimeError", t[t.Forbidden = 8] = "Forbidden";
     }(e.CancellationErrorCode || (e.CancellationErrorCode = {}));
-  }(Vo)), Vo;
+  }(Uo)), Uo;
 }
-var un = {}, xl;
-function zR() {
-  if (xl) return un;
-  xl = 1, Object.defineProperty(un, "__esModule", { value: !0 }), un.ConnectionEventArgs = void 0;
+var pn = {}, Dl;
+function DR() {
+  if (Dl) return pn;
+  Dl = 1, Object.defineProperty(pn, "__esModule", { value: !0 }), pn.ConnectionEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SessionEventArgs {
   };
-  return un.ConnectionEventArgs = t, un;
+  return pn.ConnectionEventArgs = t, pn;
 }
-var ln = {}, zl;
-function LR() {
-  if (zl) return ln;
-  zl = 1, Object.defineProperty(ln, "__esModule", { value: !0 }), ln.ServiceEventArgs = void 0;
+var dn = {}, Nl;
+function NR() {
+  if (Nl) return dn;
+  Nl = 1, Object.defineProperty(dn, "__esModule", { value: !0 }), dn.ServiceEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SessionEventArgs {
     /**
@@ -10969,13 +10969,13 @@ function LR() {
       return this.privEventName;
     }
   };
-  return ln.ServiceEventArgs = t, ln;
+  return dn.ServiceEventArgs = t, dn;
 }
-var pn = {}, Ll;
-function jR() {
-  if (Ll) return pn;
-  Ll = 1, Object.defineProperty(pn, "__esModule", { value: !0 }), pn.PhraseListGrammar = void 0;
-  let e = class Rv {
+var hn = {}, xl;
+function xR() {
+  if (xl) return hn;
+  xl = 1, Object.defineProperty(hn, "__esModule", { value: !0 }), hn.PhraseListGrammar = void 0;
+  let e = class yv {
     constructor(r) {
       this.privGrammerBuilder = r.dynamicGrammar;
     }
@@ -10985,7 +10985,7 @@ function jR() {
      */
     static fromRecognizer(r) {
       const s = r.internalData;
-      return new Rv(s);
+      return new yv(s);
     }
     /**
      * Adds a single phrase to the current recognizer.
@@ -11008,12 +11008,12 @@ function jR() {
       this.privGrammerBuilder.clearPhrases();
     }
   };
-  return pn.PhraseListGrammar = e, pn;
+  return hn.PhraseListGrammar = e, hn;
 }
-var ft = {}, jl;
-function oc() {
-  if (jl) return ft;
-  jl = 1, Object.defineProperty(ft, "__esModule", { value: !0 }), ft.DialogServiceConfigImpl = ft.DialogServiceConfig = void 0;
+var ft = {}, zl;
+function ic() {
+  if (zl) return ft;
+  zl = 1, Object.defineProperty(ft, "__esModule", { value: !0 }), ft.DialogServiceConfigImpl = ft.DialogServiceConfig = void 0;
   const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ A();
   let r = class {
     /**
@@ -11131,11 +11131,11 @@ function oc() {
   }
   return ft.DialogServiceConfigImpl = s, ft;
 }
-var dn = {}, ql;
-function qR() {
-  if (ql) return dn;
-  ql = 1, Object.defineProperty(dn, "__esModule", { value: !0 }), dn.BotFrameworkConfig = void 0;
-  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ oc(), r = /* @__PURE__ */ A();
+var fn = {}, Ll;
+function zR() {
+  if (Ll) return fn;
+  Ll = 1, Object.defineProperty(fn, "__esModule", { value: !0 }), fn.BotFrameworkConfig = void 0;
+  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ ic(), r = /* @__PURE__ */ A();
   let s = class extends t.DialogServiceConfigImpl {
     /**
      * Creates an instance of BotFrameworkConfig.
@@ -11231,13 +11231,13 @@ function qR() {
       return n.setProperty(r.PropertyId.Conversation_DialogType, t.DialogServiceConfig.DialogTypes.BotFramework), n.setProperty(r.PropertyId.SpeechServiceConnection_Endpoint, a.toString()), o !== void 0 && n.setProperty(r.PropertyId.SpeechServiceConnection_Key, o), n;
     }
   };
-  return dn.BotFrameworkConfig = s, dn;
+  return fn.BotFrameworkConfig = s, fn;
 }
-var hn = {}, Fl;
-function FR() {
-  if (Fl) return hn;
-  Fl = 1, Object.defineProperty(hn, "__esModule", { value: !0 }), hn.CustomCommandsConfig = void 0;
-  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ oc(), r = /* @__PURE__ */ A();
+var vn = {}, jl;
+function LR() {
+  if (jl) return vn;
+  jl = 1, Object.defineProperty(vn, "__esModule", { value: !0 }), vn.CustomCommandsConfig = void 0;
+  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ ic(), r = /* @__PURE__ */ A();
   let s = class extends t.DialogServiceConfigImpl {
     /**
      * Creates an instance of CustomCommandsConfig.
@@ -11301,20 +11301,20 @@ function FR() {
       return this.getProperty(r.PropertyId.Conversation_ApplicationId);
     }
   };
-  return hn.CustomCommandsConfig = s, hn;
+  return vn.CustomCommandsConfig = s, vn;
 }
-var fn = {}, vn = {}, gn = {}, mn = {}, Bl;
+var gn = {}, mn = {}, yn = {}, Sn = {}, ql;
 function Ye() {
-  if (Bl) return mn;
-  Bl = 1, Object.defineProperty(mn, "__esModule", { value: !0 }), mn.QueryParameterNames = void 0;
+  if (ql) return Sn;
+  ql = 1, Object.defineProperty(Sn, "__esModule", { value: !0 }), Sn.QueryParameterNames = void 0;
   let e = class {
   };
-  return mn.QueryParameterNames = e, e.BotId = "botid", e.CustomSpeechDeploymentId = "cid", e.CustomVoiceDeploymentId = "deploymentId", e.EnableAudioLogging = "storeAudio", e.EnableLanguageId = "lidEnabled", e.EnableWordLevelTimestamps = "wordLevelTimestamps", e.EndSilenceTimeoutMs = "endSilenceTimeoutMs", e.SegmentationSilenceTimeoutMs = "segmentationSilenceTimeoutMs", e.SegmentationMaximumTimeMs = "segmentationMaximumTimeMs", e.SegmentationStrategy = "segmentationStrategy", e.Format = "format", e.InitialSilenceTimeoutMs = "initialSilenceTimeoutMs", e.Language = "language", e.Profanity = "profanity", e.RequestBotStatusMessages = "enableBotMessageStatus", e.StableIntermediateThreshold = "stableIntermediateThreshold", e.StableTranslation = "stableTranslation", e.TestHooks = "testhooks", e.Postprocessing = "postprocessing", e.CtsMeetingId = "meetingId", e.CtsDeviceId = "deviceId", e.CtsIsParticipant = "isParticipant", e.EnableAvatar = "enableTalkingAvatar", mn;
+  return Sn.QueryParameterNames = e, e.BotId = "botid", e.CustomSpeechDeploymentId = "cid", e.CustomVoiceDeploymentId = "deploymentId", e.EnableAudioLogging = "storeAudio", e.EnableLanguageId = "lidEnabled", e.EnableWordLevelTimestamps = "wordLevelTimestamps", e.EndSilenceTimeoutMs = "endSilenceTimeoutMs", e.SegmentationSilenceTimeoutMs = "segmentationSilenceTimeoutMs", e.SegmentationMaximumTimeMs = "segmentationMaximumTimeMs", e.SegmentationStrategy = "segmentationStrategy", e.Format = "format", e.InitialSilenceTimeoutMs = "initialSilenceTimeoutMs", e.Language = "language", e.Profanity = "profanity", e.RequestBotStatusMessages = "enableBotMessageStatus", e.StableIntermediateThreshold = "stableIntermediateThreshold", e.StableTranslation = "stableTranslation", e.TestHooks = "testhooks", e.Postprocessing = "postprocessing", e.CtsMeetingId = "meetingId", e.CtsDeviceId = "deviceId", e.CtsIsParticipant = "isParticipant", e.EnableAvatar = "enableTalkingAvatar", Sn;
 }
-var Ul;
-function _e() {
-  if (Ul) return gn;
-  Ul = 1, Object.defineProperty(gn, "__esModule", { value: !0 }), gn.ConnectionFactoryBase = void 0;
+var Fl;
+function Te() {
+  if (Fl) return yn;
+  Fl = 1, Object.defineProperty(yn, "__esModule", { value: !0 }), yn.ConnectionFactoryBase = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ Ye();
   let i = class {
     static getHostSuffix(o) {
@@ -11369,36 +11369,36 @@ function _e() {
       }
     }
   };
-  return gn.ConnectionFactoryBase = i, gn;
+  return yn.ConnectionFactoryBase = i, yn;
 }
-var $l;
-function BR() {
-  if ($l) return vn;
-  $l = 1, Object.defineProperty(vn, "__esModule", { value: !0 }), vn.DialogConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ _e(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ he(), o = /* @__PURE__ */ Ye();
+var Bl;
+function jR() {
+  if (Bl) return mn;
+  Bl = 1, Object.defineProperty(mn, "__esModule", { value: !0 }), mn.DialogConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ Te(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ le(), o = /* @__PURE__ */ Ye();
   class n extends s.ConnectionFactoryBase {
     create(u, l, p) {
       const d = u.parameters.getProperty(r.PropertyId.Conversation_ApplicationId, ""), h = u.parameters.getProperty(r.PropertyId.Conversation_DialogType), f = u.parameters.getProperty(r.PropertyId.SpeechServiceConnection_Region), g = u.parameters.getProperty(r.PropertyId.SpeechServiceConnection_RecoLanguage, "en-US"), m = u.parameters.getProperty(r.PropertyId.Conversation_Request_Bot_Status_Messages, "true"), v = {};
       v[a.HeaderNames.ConnectionId] = p, v[o.QueryParameterNames.Format] = u.parameters.getProperty(t.OutputFormatPropertyName, r.OutputFormat[r.OutputFormat.Simple]).toLowerCase(), v[o.QueryParameterNames.Language] = g, v[o.QueryParameterNames.RequestBotStatusMessages] = m, d && (v[o.QueryParameterNames.BotId] = d, h === r.DialogServiceConfig.DialogTypes.CustomCommands && (v[a.HeaderNames.CustomCommandsAppId] = d));
       const y = h === r.DialogServiceConfig.DialogTypes.CustomCommands ? "commands/" : "", S = h === r.DialogServiceConfig.DialogTypes.CustomCommands ? "v1" : h === r.DialogServiceConfig.DialogTypes.BotFramework ? "v3" : "v0", C = {};
       l.token != null && l.token !== "" && (C[l.headerName] = l.token);
-      let P = u.parameters.getProperty(r.PropertyId.SpeechServiceConnection_Endpoint, "");
-      if (!P) {
+      let R = u.parameters.getProperty(r.PropertyId.SpeechServiceConnection_Endpoint, "");
+      if (!R) {
         const I = s.ConnectionFactoryBase.getHostSuffix(f), E = u.parameters.getProperty(r.PropertyId.SpeechServiceConnection_Host, `wss://${f}.${n.BaseUrl}${I}`);
-        P = `${E.endsWith("/") ? E : E + "/"}${y}${n.ApiKey}/${S}`;
+        R = `${E.endsWith("/") ? E : E + "/"}${y}${n.ApiKey}/${S}`;
       }
-      this.setCommonUrlParams(u, v, P);
+      this.setCommonUrlParams(u, v, R);
       const w = u.parameters.getProperty("SPEECH-EnableWebsocketCompression", "false") === "true";
-      return Promise.resolve(new e.WebsocketConnection(P, v, C, new i.WebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(u), w, p));
+      return Promise.resolve(new e.WebsocketConnection(R, v, C, new i.WebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(u), w, p));
     }
   }
-  return vn.DialogConnectionFactory = n, n.ApiKey = "api", n.BaseUrl = "convai.speech", vn;
+  return mn.DialogConnectionFactory = n, n.ApiKey = "api", n.BaseUrl = "convai.speech", mn;
 }
-var Vl;
-function UR() {
-  if (Vl) return fn;
-  Vl = 1, Object.defineProperty(fn, "__esModule", { value: !0 }), fn.DialogServiceConnector = void 0;
-  const e = /* @__PURE__ */ BR(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ be(), s = /* @__PURE__ */ D(), i = /* @__PURE__ */ x(), a = /* @__PURE__ */ A(), o = /* @__PURE__ */ sc();
+var Ul;
+function qR() {
+  if (Ul) return gn;
+  Ul = 1, Object.defineProperty(gn, "__esModule", { value: !0 }), gn.DialogServiceConnector = void 0;
+  const e = /* @__PURE__ */ jR(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ Se(), s = /* @__PURE__ */ D(), i = /* @__PURE__ */ x(), a = /* @__PURE__ */ A(), o = /* @__PURE__ */ nc();
   let n = class extends a.Recognizer {
     /**
      * Initializes an instance of the DialogServiceConnector.
@@ -11541,12 +11541,12 @@ function UR() {
       };
     }
   };
-  return fn.DialogServiceConnector = n, fn;
+  return gn.DialogServiceConnector = n, gn;
 }
-var yn = {}, Wl;
-function $R() {
-  if (Wl) return yn;
-  Wl = 1, Object.defineProperty(yn, "__esModule", { value: !0 }), yn.ActivityReceivedEventArgs = void 0;
+var Cn = {}, $l;
+function FR() {
+  if ($l) return Cn;
+  $l = 1, Object.defineProperty(Cn, "__esModule", { value: !0 }), Cn.ActivityReceivedEventArgs = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -11570,12 +11570,12 @@ function $R() {
       return this.privAudioStream;
     }
   };
-  return yn.ActivityReceivedEventArgs = e, yn;
+  return Cn.ActivityReceivedEventArgs = e, Cn;
 }
-var Sn = {}, Cn = {}, Hl;
-function VR() {
-  if (Hl) return Cn;
-  Hl = 1, Object.defineProperty(Cn, "__esModule", { value: !0 }), Cn.TurnStatusResponsePayload = void 0;
+var Rn = {}, Pn = {}, Vl;
+function BR() {
+  if (Vl) return Pn;
+  Vl = 1, Object.defineProperty(Pn, "__esModule", { value: !0 }), Pn.TurnStatusResponsePayload = void 0;
   class e {
     constructor(r) {
       this.privMessageStatusResponse = JSON.parse(r);
@@ -11602,13 +11602,13 @@ function VR() {
       }
     }
   }
-  return Cn.TurnStatusResponsePayload = e, Cn;
+  return Pn.TurnStatusResponsePayload = e, Pn;
 }
-var Kl;
-function WR() {
-  if (Kl) return Sn;
-  Kl = 1, Object.defineProperty(Sn, "__esModule", { value: !0 }), Sn.TurnStatusReceivedEventArgs = void 0;
-  const e = /* @__PURE__ */ VR();
+var Wl;
+function UR() {
+  if (Wl) return Rn;
+  Wl = 1, Object.defineProperty(Rn, "__esModule", { value: !0 }), Rn.TurnStatusReceivedEventArgs = void 0;
+  const e = /* @__PURE__ */ BR();
   let t = class {
     /**
      * Creates and initializes an instance of this class.
@@ -11649,29 +11649,29 @@ function WR() {
       return this.privTurnStatus.statusCode;
     }
   };
-  return Sn.TurnStatusReceivedEventArgs = t, Sn;
+  return Rn.TurnStatusReceivedEventArgs = t, Rn;
 }
-var Wo = {}, Jl;
-function HR() {
-  return Jl || (Jl = 1, function(e) {
+var $o = {}, Hl;
+function $R() {
+  return Hl || (Hl = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ServicePropertyChannel = void 0, function(t) {
       t[t.UriQueryParameter = 0] = "UriQueryParameter";
     }(e.ServicePropertyChannel || (e.ServicePropertyChannel = {}));
-  }(Wo)), Wo;
+  }($o)), $o;
 }
-var Ho = {}, Gl;
-function KR() {
-  return Gl || (Gl = 1, function(e) {
+var Vo = {}, Kl;
+function VR() {
+  return Kl || (Kl = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ProfanityOption = void 0, function(t) {
       t[t.Masked = 0] = "Masked", t[t.Removed = 1] = "Removed", t[t.Raw = 2] = "Raw";
     }(e.ProfanityOption || (e.ProfanityOption = {}));
-  }(Ho)), Ho;
+  }(Vo)), Vo;
 }
-var Rn = {}, Ql;
-function JR() {
-  if (Ql) return Rn;
-  Ql = 1, Object.defineProperty(Rn, "__esModule", { value: !0 }), Rn.BaseAudioPlayer = void 0;
-  const e = /* @__PURE__ */ De(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ Mt();
+var bn = {}, Jl;
+function WR() {
+  if (Jl) return bn;
+  Jl = 1, Object.defineProperty(bn, "__esModule", { value: !0 }), bn.BaseAudioPlayer = void 0;
+  const e = /* @__PURE__ */ Ne(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ Mt();
   let s = class {
     /**
      * Creates and initializes an instance of this class.
@@ -11757,12 +11757,12 @@ function JR() {
       });
     }
   };
-  return Rn.BaseAudioPlayer = s, Rn;
+  return bn.BaseAudioPlayer = s, bn;
 }
-var Pn = {}, Yl;
-function GR() {
-  if (Yl) return Pn;
-  Yl = 1, Object.defineProperty(Pn, "__esModule", { value: !0 }), Pn.ConnectionMessageEventArgs = void 0;
+var wn = {}, Gl;
+function HR() {
+  if (Gl) return wn;
+  Gl = 1, Object.defineProperty(wn, "__esModule", { value: !0 }), wn.ConnectionMessageEventArgs = void 0;
   let e = class {
     constructor(r) {
       this.privConnectionMessage = r;
@@ -11780,12 +11780,12 @@ function GR() {
       return "Message: " + this.privConnectionMessage.toString();
     }
   };
-  return Pn.ConnectionMessageEventArgs = e, Pn;
+  return wn.ConnectionMessageEventArgs = e, wn;
 }
-var bn = {}, Zl;
-function QR() {
-  if (Zl) return bn;
-  Zl = 1, Object.defineProperty(bn, "__esModule", { value: !0 }), bn.VoiceProfile = void 0;
+var En = {}, Ql;
+function KR() {
+  if (Ql) return En;
+  Ql = 1, Object.defineProperty(En, "__esModule", { value: !0 }), En.VoiceProfile = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -11817,14 +11817,14 @@ function QR() {
       return this.privProfileType;
     }
   };
-  return bn.VoiceProfile = e, bn;
+  return En.VoiceProfile = e, En;
 }
-var vt = {}, Xl;
-function YR() {
-  if (Xl) return vt;
-  Xl = 1, Object.defineProperty(vt, "__esModule", { value: !0 }), vt.VoiceProfileEnrollmentCancellationDetails = vt.VoiceProfileEnrollmentResult = void 0;
+var vt = {}, Yl;
+function JR() {
+  if (Yl) return vt;
+  Yl = 1, Object.defineProperty(vt, "__esModule", { value: !0 }), vt.VoiceProfileEnrollmentCancellationDetails = vt.VoiceProfileEnrollmentResult = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ A();
-  let r = class Ua {
+  let r = class Fa {
     constructor(a, o, n) {
       this.privReason = a, this.privProperties = new t.PropertyCollection(), this.privReason !== t.ResultReason.Canceled ? o && (this.privDetails = JSON.parse(o), this.privDetails.enrollmentStatus.toLowerCase() === "enrolling" && (this.privReason = t.ResultReason.EnrollingVoiceProfile)) : (this.privErrorDetails = n, this.privProperties.setProperty(e.CancellationErrorCodePropertyName, t.CancellationErrorCode[t.CancellationErrorCode.ServiceError]));
     }
@@ -11849,7 +11849,7 @@ function YR() {
     static FromIdentificationProfileList(a) {
       const o = [];
       for (const n of a.value) {
-        const c = n.enrollmentStatus.toLowerCase() === "enrolling" ? t.ResultReason.EnrollingVoiceProfile : n.enrollmentStatus.toLowerCase() === "enrolled" ? t.ResultReason.EnrolledVoiceProfile : t.ResultReason.Canceled, u = new Ua(c, null, null);
+        const c = n.enrollmentStatus.toLowerCase() === "enrolling" ? t.ResultReason.EnrollingVoiceProfile : n.enrollmentStatus.toLowerCase() === "enrolled" ? t.ResultReason.EnrolledVoiceProfile : t.ResultReason.Canceled, u = new Fa(c, null, null);
         u.privDetails = this.getIdentificationDetails(n), o.push(u);
       }
       return o;
@@ -11857,7 +11857,7 @@ function YR() {
     static FromVerificationProfileList(a) {
       const o = [];
       for (const n of a.value) {
-        const c = n.enrollmentStatus.toLowerCase() === "enrolling" ? t.ResultReason.EnrollingVoiceProfile : n.enrollmentStatus.toLowerCase() === "enrolled" ? t.ResultReason.EnrolledVoiceProfile : t.ResultReason.Canceled, u = new Ua(c, null, null);
+        const c = n.enrollmentStatus.toLowerCase() === "enrolling" ? t.ResultReason.EnrollingVoiceProfile : n.enrollmentStatus.toLowerCase() === "enrolled" ? t.ResultReason.EnrolledVoiceProfile : t.ResultReason.Canceled, u = new Fa(c, null, null);
         u.privDetails = this.getVerificationDetails(n), o.push(u);
       }
       return o;
@@ -11909,10 +11909,10 @@ function YR() {
   }
   return vt.VoiceProfileEnrollmentCancellationDetails = s, vt;
 }
-var gt = {}, ep;
-function ZR() {
-  if (ep) return gt;
-  ep = 1, Object.defineProperty(gt, "__esModule", { value: !0 }), gt.VoiceProfileCancellationDetails = gt.VoiceProfileResult = void 0;
+var gt = {}, Zl;
+function GR() {
+  if (Zl) return gt;
+  Zl = 1, Object.defineProperty(gt, "__esModule", { value: !0 }), gt.VoiceProfileCancellationDetails = gt.VoiceProfileResult = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A();
   let s = class {
     constructor(o, n) {
@@ -11949,10 +11949,10 @@ function ZR() {
   }
   return gt.VoiceProfileCancellationDetails = i, gt;
 }
-var wn = {}, tp;
-function XR() {
-  if (tp) return wn;
-  tp = 1, Object.defineProperty(wn, "__esModule", { value: !0 }), wn.VoiceProfilePhraseResult = void 0;
+var In = {}, Xl;
+function QR() {
+  if (Xl) return In;
+  Xl = 1, Object.defineProperty(In, "__esModule", { value: !0 }), In.VoiceProfilePhraseResult = void 0;
   const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ A();
   let r = class extends t.VoiceProfileResult {
     constructor(i, a, o, n) {
@@ -11965,13 +11965,13 @@ function XR() {
       return this.privType;
     }
   };
-  return wn.VoiceProfilePhraseResult = r, wn;
+  return In.VoiceProfilePhraseResult = r, In;
 }
-var En = {}, rp;
-function eP() {
-  if (rp) return En;
-  rp = 1, Object.defineProperty(En, "__esModule", { value: !0 }), En.VoiceProfileClient = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ cv(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A();
+var An = {}, ep;
+function YR() {
+  if (ep) return An;
+  ep = 1, Object.defineProperty(An, "__esModule", { value: !0 }), An.VoiceProfileClient = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ sv(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A();
   let i = class extends s.Recognizer {
     /**
      * VoiceProfileClient constructor.
@@ -12125,12 +12125,12 @@ function eP() {
       return new s.VoiceProfileResult(o.ok ? n : s.ResultReason.Canceled, o.statusText);
     }
   };
-  return En.VoiceProfileClient = i, En;
+  return An.VoiceProfileClient = i, An;
 }
-var In = {}, np;
-function tP() {
-  if (np) return In;
-  np = 1, Object.defineProperty(In, "__esModule", { value: !0 }), In.SpeakerRecognizer = void 0;
+var Tn = {}, tp;
+function ZR() {
+  if (tp) return Tn;
+  tp = 1, Object.defineProperty(Tn, "__esModule", { value: !0 }), Tn.SpeakerRecognizer = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A();
   let s = class extends r.Recognizer {
     /**
@@ -12216,14 +12216,14 @@ function tP() {
       this.privDisposedSpeakerRecognizer || a && (this.privDisposedSpeakerRecognizer = !0, await super.dispose(a));
     }
   };
-  return In.SpeakerRecognizer = s, In;
+  return Tn.SpeakerRecognizer = s, Tn;
 }
-var An = {}, ip;
-function rP() {
-  if (ip) return An;
-  ip = 1, Object.defineProperty(An, "__esModule", { value: !0 }), An.SpeakerIdentificationModel = void 0;
+var _n = {}, rp;
+function XR() {
+  if (rp) return _n;
+  rp = 1, Object.defineProperty(_n, "__esModule", { value: !0 }), _n.SpeakerIdentificationModel = void 0;
   const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ A();
-  let r = class Pv {
+  let r = class Sv {
     constructor(i) {
       if (this.privVoiceProfiles = [], this.privProfileIds = [], e.Contracts.throwIfNullOrUndefined(i, "VoiceProfiles"), i.length === 0)
         throw new Error("Empty Voice Profiles array");
@@ -12234,7 +12234,7 @@ function rP() {
       }
     }
     static fromProfiles(i) {
-      return new Pv(i);
+      return new Sv(i);
     }
     get voiceProfileIds() {
       return this.privProfileIds.join(",");
@@ -12246,21 +12246,21 @@ function rP() {
       return "TextIndependentIdentification";
     }
   };
-  return An.SpeakerIdentificationModel = r, An;
+  return _n.SpeakerIdentificationModel = r, _n;
 }
-var Tn = {}, sp;
-function nP() {
-  if (sp) return Tn;
-  sp = 1, Object.defineProperty(Tn, "__esModule", { value: !0 }), Tn.SpeakerVerificationModel = void 0;
+var kn = {}, np;
+function eP() {
+  if (np) return kn;
+  np = 1, Object.defineProperty(kn, "__esModule", { value: !0 }), kn.SpeakerVerificationModel = void 0;
   const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ A();
-  let r = class bv {
+  let r = class Cv {
     constructor(i) {
       if (e.Contracts.throwIfNullOrUndefined(i, "VoiceProfile"), i.profileType === t.VoiceProfileType.TextIndependentIdentification)
         throw new Error("Verification model cannot be created from Identification profile");
       this.privVoiceProfile = i;
     }
     static fromProfile(i) {
-      return new bv(i);
+      return new Cv(i);
     }
     get voiceProfile() {
       return this.privVoiceProfile;
@@ -12272,22 +12272,22 @@ function nP() {
       return this.voiceProfile.profileType === t.VoiceProfileType.TextDependentVerification ? "TextDependentVerification" : "TextIndependentVerification";
     }
   };
-  return Tn.SpeakerVerificationModel = r, Tn;
+  return kn.SpeakerVerificationModel = r, kn;
 }
-var _n = {}, Ko = {}, op;
-function wv() {
-  return op || (op = 1, function(e) {
+var On = {}, Wo = {}, ip;
+function Rv() {
+  return ip || (ip = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.LanguageIdMode = void 0, function(t) {
       t[t.AtStart = 0] = "AtStart", t[t.Continuous = 1] = "Continuous";
     }(e.LanguageIdMode || (e.LanguageIdMode = {}));
-  }(Ko)), Ko;
+  }(Wo)), Wo;
 }
-var ap;
-function iP() {
-  if (ap) return _n;
-  ap = 1, Object.defineProperty(_n, "__esModule", { value: !0 }), _n.AutoDetectSourceLanguageConfig = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ wv();
-  let i = class Os {
+var sp;
+function tP() {
+  if (sp) return On;
+  sp = 1, Object.defineProperty(On, "__esModule", { value: !0 }), On.AutoDetectSourceLanguageConfig = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ Rv();
+  let i = class ks {
     constructor() {
       this.privProperties = new r.PropertyCollection(), this.privProperties.setProperty(r.PropertyId.SpeechServiceConnection_LanguageIdMode, "AtStart"), this.privLanguageIdMode = s.LanguageIdMode.AtStart;
     }
@@ -12301,7 +12301,7 @@ function iP() {
      * @summary Creates an instance of the AutoDetectSourceLanguageConfig with open range.
      */
     static fromOpenRange() {
-      const o = new Os();
+      const o = new ks();
       return o.properties.setProperty(r.PropertyId.SpeechServiceConnection_AutoDetectSourceLanguages, e.AutoDetectSourceLanguagesOpenRangeOptionName), o.properties.setProperty(r.PropertyId.SpeechServiceConnection_RecoLanguage, "en-US"), o;
     }
     /**
@@ -12314,7 +12314,7 @@ function iP() {
      */
     static fromLanguages(o) {
       t.Contracts.throwIfArrayEmptyOrWhitespace(o, "languages");
-      const n = new Os();
+      const n = new ks();
       return n.properties.setProperty(r.PropertyId.SpeechServiceConnection_AutoDetectSourceLanguages, o.join()), n;
     }
     /**
@@ -12328,7 +12328,7 @@ function iP() {
     static fromSourceLanguageConfigs(o) {
       if (o.length < 1)
         throw new Error("Expected non-empty SourceLanguageConfig array.");
-      const n = new Os(), c = [];
+      const n = new ks(), c = [];
       return o.forEach((u) => {
         if (c.push(u.language), u.endpointId !== void 0 && u.endpointId !== "") {
           const l = u.language + r.PropertyId.SpeechServiceConnection_EndpointId.toString();
@@ -12357,14 +12357,14 @@ function iP() {
       o === s.LanguageIdMode.Continuous ? (this.privProperties.setProperty(r.PropertyId.SpeechServiceConnection_RecognitionEndpointVersion, "2"), this.privProperties.setProperty(r.PropertyId.SpeechServiceConnection_LanguageIdMode, "Continuous")) : (this.privProperties.setProperty(r.PropertyId.SpeechServiceConnection_RecognitionEndpointVersion, "1"), this.privProperties.setProperty(r.PropertyId.SpeechServiceConnection_LanguageIdMode, "AtStart")), this.privLanguageIdMode = o;
     }
   };
-  return _n.AutoDetectSourceLanguageConfig = i, _n;
+  return On.AutoDetectSourceLanguageConfig = i, On;
 }
-var kn = {}, cp;
-function sP() {
-  if (cp) return kn;
-  cp = 1, Object.defineProperty(kn, "__esModule", { value: !0 }), kn.AutoDetectSourceLanguageResult = void 0;
+var Mn = {}, op;
+function rP() {
+  if (op) return Mn;
+  op = 1, Object.defineProperty(Mn, "__esModule", { value: !0 }), Mn.AutoDetectSourceLanguageResult = void 0;
   const e = /* @__PURE__ */ x();
-  let t = class $a {
+  let t = class Ba {
     constructor(s, i) {
       e.Contracts.throwIfNullOrUndefined(s, "language"), e.Contracts.throwIfNullOrUndefined(i, "languageDetectionConfidence"), this.privLanguage = s, this.privLanguageDetectionConfidence = i;
     }
@@ -12377,7 +12377,7 @@ function sP() {
      * @returns {AutoDetectSourceLanguageResult} AutoDetectSourceLanguageResult object being created.
      */
     static fromResult(s) {
-      return new $a(s.language, s.languageDetectionConfidence);
+      return new Ba(s.language, s.languageDetectionConfidence);
     }
     /**
      * Creates an instance of AutoDetectSourceLanguageResult object from a ConversationTranscriptionResult instance.
@@ -12388,7 +12388,7 @@ function sP() {
      * @returns {AutoDetectSourceLanguageResult} AutoDetectSourceLanguageResult object being created.
      */
     static fromConversationTranscriptionResult(s) {
-      return new $a(s.language, s.languageDetectionConfidence);
+      return new Ba(s.language, s.languageDetectionConfidence);
     }
     get language() {
       return this.privLanguage;
@@ -12397,14 +12397,14 @@ function sP() {
       return this.privLanguageDetectionConfidence;
     }
   };
-  return kn.AutoDetectSourceLanguageResult = t, kn;
+  return Mn.AutoDetectSourceLanguageResult = t, Mn;
 }
-var On = {}, up;
-function oP() {
-  if (up) return On;
-  up = 1, Object.defineProperty(On, "__esModule", { value: !0 }), On.SourceLanguageConfig = void 0;
+var Dn = {}, ap;
+function nP() {
+  if (ap) return Dn;
+  ap = 1, Object.defineProperty(Dn, "__esModule", { value: !0 }), Dn.SourceLanguageConfig = void 0;
   const e = /* @__PURE__ */ x();
-  let t = class Ev {
+  let t = class Pv {
     constructor(s, i) {
       e.Contracts.throwIfNullOrUndefined(s, "language"), this.privLanguage = s, this.privEndpointId = i;
     }
@@ -12419,7 +12419,7 @@ function oP() {
      * Added in version 1.13.0.
      */
     static fromLanguage(s, i) {
-      return new Ev(s, i);
+      return new Pv(s, i);
     }
     get language() {
       return this.privLanguage;
@@ -12428,11 +12428,11 @@ function oP() {
       return this.privEndpointId;
     }
   };
-  return On.SourceLanguageConfig = t, On;
+  return Dn.SourceLanguageConfig = t, Dn;
 }
-var Jo = {}, lp;
-function aP() {
-  return lp || (lp = 1, function(e) {
+var Ho = {}, cp;
+function iP() {
+  return cp || (cp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.SpeakerRecognitionCancellationDetails = e.SpeakerRecognitionResult = e.SpeakerRecognitionResultType = void 0;
     const t = /* @__PURE__ */ k(), r = /* @__PURE__ */ A();
     var s;
@@ -12481,12 +12481,12 @@ function aP() {
       }
     }
     e.SpeakerRecognitionCancellationDetails = a;
-  }(Jo)), Jo;
+  }(Ho)), Ho;
 }
-var Go = {}, mt = {}, pp;
-function Iv() {
-  if (pp) return mt;
-  pp = 1, Object.defineProperty(mt, "__esModule", { value: !0 }), mt.ConversationImpl = mt.Conversation = void 0;
+var Ko = {}, mt = {}, up;
+function bv() {
+  if (up) return mt;
+  up = 1, Object.defineProperty(mt, "__esModule", { value: !0 }), mt.ConversationImpl = mt.Conversation = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A();
   let i = class {
     constructor() {
@@ -13077,10 +13077,10 @@ function Iv() {
   }
   return mt.ConversationImpl = a, mt;
 }
-var Mn = {}, dp;
-function cP() {
-  if (dp) return Mn;
-  dp = 1, Object.defineProperty(Mn, "__esModule", { value: !0 }), Mn.ConversationCommon = void 0;
+var Nn = {}, lp;
+function sP() {
+  if (lp) return Nn;
+  lp = 1, Object.defineProperty(Nn, "__esModule", { value: !0 }), Nn.ConversationCommon = void 0;
   let e = class {
     constructor(r) {
       this.privAudioConfig = r;
@@ -13104,12 +13104,12 @@ function cP() {
           s(r);
     }
   };
-  return Mn.ConversationCommon = e, Mn;
+  return Nn.ConversationCommon = e, Nn;
 }
-var Dn = {}, hp;
-function uP() {
-  if (hp) return Dn;
-  hp = 1, Object.defineProperty(Dn, "__esModule", { value: !0 }), Dn.ConversationExpirationEventArgs = void 0;
+var xn = {}, pp;
+function oP() {
+  if (pp) return xn;
+  pp = 1, Object.defineProperty(xn, "__esModule", { value: !0 }), xn.ConversationExpirationEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SessionEventArgs {
     constructor(s, i) {
@@ -13120,12 +13120,12 @@ function uP() {
       return this.privExpirationTime;
     }
   };
-  return Dn.ConversationExpirationEventArgs = t, Dn;
+  return xn.ConversationExpirationEventArgs = t, xn;
 }
-var Nn = {}, fp;
-function lP() {
-  if (fp) return Nn;
-  fp = 1, Object.defineProperty(Nn, "__esModule", { value: !0 }), Nn.ConversationParticipantsChangedEventArgs = void 0;
+var zn = {}, dp;
+function aP() {
+  if (dp) return zn;
+  dp = 1, Object.defineProperty(zn, "__esModule", { value: !0 }), zn.ConversationParticipantsChangedEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SessionEventArgs {
     constructor(s, i, a) {
@@ -13138,21 +13138,21 @@ function lP() {
       return this.privParticipant;
     }
   };
-  return Nn.ConversationParticipantsChangedEventArgs = t, Nn;
+  return zn.ConversationParticipantsChangedEventArgs = t, zn;
 }
-var xn = {}, vp;
-function pP() {
-  if (vp) return xn;
-  vp = 1, Object.defineProperty(xn, "__esModule", { value: !0 }), xn.ConversationTranslationCanceledEventArgs = void 0;
-  const e = /* @__PURE__ */ Ss();
+var Ln = {}, hp;
+function cP() {
+  if (hp) return Ln;
+  hp = 1, Object.defineProperty(Ln, "__esModule", { value: !0 }), Ln.ConversationTranslationCanceledEventArgs = void 0;
+  const e = /* @__PURE__ */ Rs();
   let t = class extends e.CancellationEventArgsBase {
   };
-  return xn.ConversationTranslationCanceledEventArgs = t, xn;
+  return Ln.ConversationTranslationCanceledEventArgs = t, Ln;
 }
-var zn = {}, gp;
-function dP() {
-  if (gp) return zn;
-  gp = 1, Object.defineProperty(zn, "__esModule", { value: !0 }), zn.ConversationTranslationEventArgs = void 0;
+var jn = {}, fp;
+function uP() {
+  if (fp) return jn;
+  fp = 1, Object.defineProperty(jn, "__esModule", { value: !0 }), jn.ConversationTranslationEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.RecognitionEventArgs {
     /**
@@ -13173,13 +13173,13 @@ function dP() {
       return this.privResult;
     }
   };
-  return zn.ConversationTranslationEventArgs = t, zn;
+  return jn.ConversationTranslationEventArgs = t, jn;
 }
-var Ln = {}, mp;
-function hP() {
-  if (mp) return Ln;
-  mp = 1, Object.defineProperty(Ln, "__esModule", { value: !0 }), Ln.ConversationTranslationResult = void 0;
-  const e = /* @__PURE__ */ lv();
+var qn = {}, vp;
+function lP() {
+  if (vp) return qn;
+  vp = 1, Object.defineProperty(qn, "__esModule", { value: !0 }), qn.ConversationTranslationResult = void 0;
+  const e = /* @__PURE__ */ av();
   let t = class extends e.TranslationRecognitionResult {
     constructor(s, i, a, o, n, c, u, l, p, d, h) {
       super(i, o, n, c, u, l, void 0, void 0, p, d, h), this.privId = s, this.privOrigLang = a;
@@ -13197,12 +13197,12 @@ function hP() {
       return this.privOrigLang;
     }
   };
-  return Ln.ConversationTranslationResult = t, Ln;
+  return qn.ConversationTranslationResult = t, qn;
 }
-var Qo = {}, jn = {}, qn = {}, yp;
-function Av() {
-  if (yp) return qn;
-  yp = 1, Object.defineProperty(qn, "__esModule", { value: !0 }), qn.StringUtils = void 0;
+var Jo = {}, Fn = {}, Bn = {}, gp;
+function wv() {
+  if (gp) return Bn;
+  gp = 1, Object.defineProperty(Bn, "__esModule", { value: !0 }), Bn.StringUtils = void 0;
   let e = class {
     /**
      * Formats a string by replacing the named {keys} in the string with the values contained in the replacement dictionary.
@@ -13240,21 +13240,21 @@ function Av() {
       return i;
     }
   };
-  return qn.StringUtils = e, qn;
+  return Bn.StringUtils = e, Bn;
 }
-var Sp;
-function fP() {
-  if (Sp) return jn;
-  Sp = 1, Object.defineProperty(jn, "__esModule", { value: !0 }), jn.ConversationTranslatorConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ Av(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ he(), a = /* @__PURE__ */ Ye(), o = /* @__PURE__ */ _e(), n = /* @__PURE__ */ k();
-  let c = class Tv extends o.ConnectionFactoryBase {
+var mp;
+function pP() {
+  if (mp) return Fn;
+  mp = 1, Object.defineProperty(Fn, "__esModule", { value: !0 }), Fn.ConversationTranslatorConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ wv(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ le(), a = /* @__PURE__ */ Ye(), o = /* @__PURE__ */ Te(), n = /* @__PURE__ */ k();
+  let c = class Ev extends o.ConnectionFactoryBase {
     constructor(l) {
       super(), r.Contracts.throwIfNullOrUndefined(l, "convGetter"), this.privConvGetter = l;
     }
     create(l, p, d) {
       const h = l.parameters.getProperty("ConversationTranslator_MultiChannelAudio", "").toUpperCase() === "TRUE", f = this.privConvGetter().room, g = f.cognitiveSpeechRegion || l.parameters.getProperty(s.PropertyId.SpeechServiceConnection_Region, ""), m = {
         hostSuffix: o.ConnectionFactoryBase.getHostSuffix(g),
-        path: Tv.CTS_VIRT_MIC_PATH,
+        path: Ev.CTS_VIRT_MIC_PATH,
         region: encodeURIComponent(g)
       };
       m[a.QueryParameterNames.Language] = encodeURIComponent(l.parameters.getProperty(s.PropertyId.SpeechServiceConnection_RecoLanguage, "")), m[a.QueryParameterNames.CtsMeetingId] = encodeURIComponent(f.roomId), m[a.QueryParameterNames.CtsDeviceId] = encodeURIComponent(f.participantId), m[a.QueryParameterNames.CtsIsParticipant] = f.isHost ? "" : "&" + a.QueryParameterNames.CtsIsParticipant;
@@ -13262,28 +13262,28 @@ function fP() {
       const y = {}, S = {};
       if (h) {
         v = l.parameters.getProperty(s.PropertyId.SpeechServiceConnection_Endpoint), v || (v = "wss://" + l.parameters.getProperty(s.PropertyId.SpeechServiceConnection_Host, "transcribe.{region}.cts.speech{hostSuffix}") + "{path}"), v = t.StringUtils.formatString(v, m);
-        const P = new URL(v);
-        P.searchParams.forEach((I, E) => {
+        const R = new URL(v);
+        R.searchParams.forEach((I, E) => {
           y[E] = I;
-        }), new n.TranscriberConnectionFactory().setQueryParams(y, l, v), y[a.QueryParameterNames.CtsMeetingId] = m[a.QueryParameterNames.CtsMeetingId], y[a.QueryParameterNames.CtsDeviceId] = m[a.QueryParameterNames.CtsDeviceId], f.isHost || (y[a.QueryParameterNames.CtsIsParticipant] = ""), a.QueryParameterNames.Format in y || (y[a.QueryParameterNames.Format] = "simple"), P.searchParams.forEach((I, E) => {
-          P.searchParams.set(E, y[E]), delete y[E];
-        }), v = P.toString();
+        }), new n.TranscriberConnectionFactory().setQueryParams(y, l, v), y[a.QueryParameterNames.CtsMeetingId] = m[a.QueryParameterNames.CtsMeetingId], y[a.QueryParameterNames.CtsDeviceId] = m[a.QueryParameterNames.CtsDeviceId], f.isHost || (y[a.QueryParameterNames.CtsIsParticipant] = ""), a.QueryParameterNames.Format in y || (y[a.QueryParameterNames.Format] = "simple"), R.searchParams.forEach((I, E) => {
+          R.searchParams.set(E, y[E]), delete y[E];
+        }), v = R.toString();
       } else {
-        const P = new n.TranslationConnectionFactory();
-        v = P.getEndpointUrl(l, !0), v = t.StringUtils.formatString(v, m), P.setQueryParams(y, l, v);
+        const R = new n.TranslationConnectionFactory();
+        v = R.getEndpointUrl(l, !0), v = t.StringUtils.formatString(v, m), R.setQueryParams(y, l, v);
       }
       S[i.HeaderNames.ConnectionId] = d, S[e.RestConfigBase.configParams.token] = f.token, p.token && (S[p.headerName] = p.token);
       const C = l.parameters.getProperty("SPEECH-EnableWebsocketCompression", "").toUpperCase() === "TRUE";
       return Promise.resolve(new e.WebsocketConnection(v, y, S, new n.WebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(l), C, d));
     }
   };
-  return jn.ConversationTranslatorConnectionFactory = c, c.CTS_VIRT_MIC_PATH = "/speech/recognition/dynamicaudio", jn;
+  return Fn.ConversationTranslatorConnectionFactory = c, c.CTS_VIRT_MIC_PATH = "/speech/recognition/dynamicaudio", Fn;
 }
-var Cp;
-function vP() {
-  return Cp || (Cp = 1, function(e) {
+var yp;
+function dP() {
+  return yp || (yp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ConversationTranslator = e.SpeechState = void 0;
-    const t = /* @__PURE__ */ k(), r = /* @__PURE__ */ fP(), s = /* @__PURE__ */ D(), i = /* @__PURE__ */ x(), a = /* @__PURE__ */ A(), o = /* @__PURE__ */ Iv(), n = /* @__PURE__ */ ac();
+    const t = /* @__PURE__ */ k(), r = /* @__PURE__ */ pP(), s = /* @__PURE__ */ D(), i = /* @__PURE__ */ x(), a = /* @__PURE__ */ A(), o = /* @__PURE__ */ bv(), n = /* @__PURE__ */ sc();
     var c;
     (function(p) {
       p[p.Inactive = 0] = "Inactive", p[p.Connecting = 1] = "Connecting", p[p.Connected = 2] = "Connected";
@@ -13383,10 +13383,10 @@ function vP() {
               "ConversationTranslator_Region"
             ];
             for (const C of y) {
-              const P = this.privProperties.getProperty(C);
-              if (P) {
+              const R = this.privProperties.getProperty(C);
+              if (R) {
                 const w = typeof C == "string" ? C : a.PropertyId[C];
-                this.privSpeechTranslationConfig.setProperty(w, P);
+                this.privSpeechTranslationConfig.setProperty(w, R);
               }
             }
             const S = JSON.parse(this.privProperties.getProperty(t.ServicePropertiesPropertyName, "{}"));
@@ -13395,8 +13395,8 @@ function vP() {
             this.privConversation = new o.ConversationImpl(this.privSpeechTranslationConfig), this.privConversation.conversationTranslator = this, this.privConversation.joinConversationAsync(d, h, v, (C) => {
               C || this.handleError(new Error(this.privErrors.permissionDeniedConnect), m), this.privSpeechTranslationConfig.authorizationToken = C, this.privConversation.room.isHost = !1, this.privConversation.startConversationAsync(() => {
                 this.handleCallback(g, m);
-              }, (P) => {
-                this.handleError(P, m);
+              }, (R) => {
+                this.handleError(R, m);
               });
             }, (C) => {
               this.handleError(C, m);
@@ -13505,14 +13505,14 @@ function vP() {
       }
     }
     e.ConversationTranslator = l;
-  }(Qo)), Qo;
+  }(Jo)), Jo;
 }
-var Fn = {}, Rp;
-function gP() {
-  if (Rp) return Fn;
-  Rp = 1, Object.defineProperty(Fn, "__esModule", { value: !0 }), Fn.ConversationTranscriber = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ be(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
-  let a = class _v extends i.Recognizer {
+var Un = {}, Sp;
+function hP() {
+  if (Sp) return Un;
+  Sp = 1, Object.defineProperty(Un, "__esModule", { value: !0 }), Un.ConversationTranscriber = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ Se(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ x(), i = /* @__PURE__ */ A();
+  let a = class Iv extends i.Recognizer {
     /**
      * ConversationTranscriber constructor.
      * @constructor
@@ -13532,7 +13532,7 @@ function gP() {
      */
     static FromConfig(n, c, u) {
       const l = n;
-      return c.properties.mergeTo(l.properties), new _v(n, u);
+      return c.properties.mergeTo(l.properties), new Iv(n, u);
     }
     /**
      * Gets the endpoint id of a customized speech model that is used for transcription.
@@ -13644,12 +13644,12 @@ function gP() {
       return l.isSpeakerDiarizationEnabled = !0, new e.ConversationTranscriptionServiceRecognizer(n, c, p, l, this);
     }
   };
-  return Fn.ConversationTranscriber = a, Fn;
+  return Un.ConversationTranscriber = a, Un;
 }
-var yt = {}, Pp;
-function mP() {
-  if (Pp) return yt;
-  Pp = 1, Object.defineProperty(yt, "__esModule", { value: !0 }), yt.Participant = yt.User = void 0;
+var yt = {}, Cp;
+function fP() {
+  if (Cp) return yt;
+  Cp = 1, Object.defineProperty(yt, "__esModule", { value: !0 }), yt.Participant = yt.User = void 0;
   const e = /* @__PURE__ */ A();
   class t {
     constructor(i) {
@@ -13697,18 +13697,18 @@ function mP() {
   }
   return yt.Participant = r, yt;
 }
-var Yo = {}, bp;
-function yP() {
-  return bp || (bp = 1, function(e) {
+var Go = {}, Rp;
+function vP() {
+  return Rp || (Rp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ParticipantChangedReason = void 0, function(t) {
       t[t.JoinedConversation = 0] = "JoinedConversation", t[t.LeftConversation = 1] = "LeftConversation", t[t.Updated = 2] = "Updated";
     }(e.ParticipantChangedReason || (e.ParticipantChangedReason = {}));
-  }(Yo)), Yo;
+  }(Go)), Go;
 }
-var St = {}, wp;
-function SP() {
-  if (wp) return St;
-  wp = 1, Object.defineProperty(St, "__esModule", { value: !0 }), St.MeetingImpl = St.Meeting = void 0;
+var St = {}, Pp;
+function gP() {
+  if (Pp) return St;
+  Pp = 1, Object.defineProperty(St, "__esModule", { value: !0 }), St.MeetingImpl = St.Meeting = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A();
   let i = class {
     constructor() {
@@ -14285,20 +14285,20 @@ function SP() {
   }
   return St.MeetingImpl = a, St;
 }
-var Bn = {}, Ep;
-function CP() {
-  if (Ep) return Bn;
-  Ep = 1, Object.defineProperty(Bn, "__esModule", { value: !0 }), Bn.MeetingTranscriptionCanceledEventArgs = void 0;
-  const e = /* @__PURE__ */ Ss();
+var $n = {}, bp;
+function mP() {
+  if (bp) return $n;
+  bp = 1, Object.defineProperty($n, "__esModule", { value: !0 }), $n.MeetingTranscriptionCanceledEventArgs = void 0;
+  const e = /* @__PURE__ */ Rs();
   class t extends e.CancellationEventArgsBase {
   }
-  return Bn.MeetingTranscriptionCanceledEventArgs = t, Bn;
+  return $n.MeetingTranscriptionCanceledEventArgs = t, $n;
 }
-var Un = {}, Ip;
-function RP() {
-  if (Ip) return Un;
-  Ip = 1, Object.defineProperty(Un, "__esModule", { value: !0 }), Un.MeetingTranscriber = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ ac();
+var Vn = {}, wp;
+function yP() {
+  if (wp) return Vn;
+  wp = 1, Object.defineProperty(Vn, "__esModule", { value: !0 }), Vn.MeetingTranscriber = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ sc();
   let a = class {
     /**
      * MeetingTranscriber constructor.
@@ -14422,12 +14422,12 @@ function RP() {
       this.privDisposedRecognizer || (this.privRecognizer && (await this.privRecognizer.close(), this.privRecognizer = void 0), n && (this.privDisposedRecognizer = !0));
     }
   };
-  return Un.MeetingTranscriber = a, Un;
+  return Vn.MeetingTranscriber = a, Vn;
 }
-var $n = {}, Ap;
-function PP() {
-  if (Ap) return $n;
-  Ap = 1, Object.defineProperty($n, "__esModule", { value: !0 }), $n.ConversationTranscriptionResult = void 0;
+var Wn = {}, Ep;
+function SP() {
+  if (Ep) return Wn;
+  Ep = 1, Object.defineProperty(Wn, "__esModule", { value: !0 }), Wn.ConversationTranscriptionResult = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.RecognitionResult {
     /**
@@ -14460,86 +14460,86 @@ function PP() {
       return this.privSpeakerId;
     }
   };
-  return $n.ConversationTranscriptionResult = t, $n;
+  return Wn.ConversationTranscriptionResult = t, Wn;
 }
-var Tp;
-function ac() {
-  return Tp || (Tp = 1, function(e) {
+var Ip;
+function sc() {
+  return Ip || (Ip = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ConversationTranscriptionResult = e.MeetingTranscriber = e.MeetingTranscriptionCanceledEventArgs = e.MeetingImpl = e.Meeting = e.ParticipantChangedReason = e.User = e.Participant = e.ConversationTranscriber = e.ConversationTranslator = e.ConversationTranslationResult = e.ConversationTranslationEventArgs = e.ConversationTranslationCanceledEventArgs = e.ConversationParticipantsChangedEventArgs = e.ConversationExpirationEventArgs = e.ConversationCommon = e.ConversationImpl = e.Conversation = void 0;
-    var t = /* @__PURE__ */ Iv();
+    var t = /* @__PURE__ */ bv();
     Object.defineProperty(e, "Conversation", { enumerable: !0, get: function() {
       return t.Conversation;
     } }), Object.defineProperty(e, "ConversationImpl", { enumerable: !0, get: function() {
       return t.ConversationImpl;
     } });
-    var r = /* @__PURE__ */ cP();
+    var r = /* @__PURE__ */ sP();
     Object.defineProperty(e, "ConversationCommon", { enumerable: !0, get: function() {
       return r.ConversationCommon;
     } });
-    var s = /* @__PURE__ */ uP();
+    var s = /* @__PURE__ */ oP();
     Object.defineProperty(e, "ConversationExpirationEventArgs", { enumerable: !0, get: function() {
       return s.ConversationExpirationEventArgs;
     } });
-    var i = /* @__PURE__ */ lP();
+    var i = /* @__PURE__ */ aP();
     Object.defineProperty(e, "ConversationParticipantsChangedEventArgs", { enumerable: !0, get: function() {
       return i.ConversationParticipantsChangedEventArgs;
     } });
-    var a = /* @__PURE__ */ pP();
+    var a = /* @__PURE__ */ cP();
     Object.defineProperty(e, "ConversationTranslationCanceledEventArgs", { enumerable: !0, get: function() {
       return a.ConversationTranslationCanceledEventArgs;
     } });
-    var o = /* @__PURE__ */ dP();
+    var o = /* @__PURE__ */ uP();
     Object.defineProperty(e, "ConversationTranslationEventArgs", { enumerable: !0, get: function() {
       return o.ConversationTranslationEventArgs;
     } });
-    var n = /* @__PURE__ */ hP();
+    var n = /* @__PURE__ */ lP();
     Object.defineProperty(e, "ConversationTranslationResult", { enumerable: !0, get: function() {
       return n.ConversationTranslationResult;
     } });
-    var c = /* @__PURE__ */ vP();
+    var c = /* @__PURE__ */ dP();
     Object.defineProperty(e, "ConversationTranslator", { enumerable: !0, get: function() {
       return c.ConversationTranslator;
     } });
-    var u = /* @__PURE__ */ gP();
+    var u = /* @__PURE__ */ hP();
     Object.defineProperty(e, "ConversationTranscriber", { enumerable: !0, get: function() {
       return u.ConversationTranscriber;
     } });
-    var l = /* @__PURE__ */ mP();
+    var l = /* @__PURE__ */ fP();
     Object.defineProperty(e, "Participant", { enumerable: !0, get: function() {
       return l.Participant;
     } }), Object.defineProperty(e, "User", { enumerable: !0, get: function() {
       return l.User;
     } });
-    var p = /* @__PURE__ */ yP();
+    var p = /* @__PURE__ */ vP();
     Object.defineProperty(e, "ParticipantChangedReason", { enumerable: !0, get: function() {
       return p.ParticipantChangedReason;
     } });
-    var d = /* @__PURE__ */ SP();
+    var d = /* @__PURE__ */ gP();
     Object.defineProperty(e, "Meeting", { enumerable: !0, get: function() {
       return d.Meeting;
     } }), Object.defineProperty(e, "MeetingImpl", { enumerable: !0, get: function() {
       return d.MeetingImpl;
     } });
-    var h = /* @__PURE__ */ CP();
+    var h = /* @__PURE__ */ mP();
     Object.defineProperty(e, "MeetingTranscriptionCanceledEventArgs", { enumerable: !0, get: function() {
       return h.MeetingTranscriptionCanceledEventArgs;
     } });
-    var f = /* @__PURE__ */ RP();
+    var f = /* @__PURE__ */ yP();
     Object.defineProperty(e, "MeetingTranscriber", { enumerable: !0, get: function() {
       return f.MeetingTranscriber;
     } });
-    var g = /* @__PURE__ */ PP();
+    var g = /* @__PURE__ */ SP();
     Object.defineProperty(e, "ConversationTranscriptionResult", { enumerable: !0, get: function() {
       return g.ConversationTranscriptionResult;
     } });
-  }(Go)), Go;
+  }(Ko)), Ko;
 }
-var Ct = {}, _p;
-function cc() {
-  if (_p) return Ct;
-  _p = 1, Object.defineProperty(Ct, "__esModule", { value: !0 }), Ct.SynthesisRequest = Ct.Synthesizer = void 0;
+var Ct = {}, Ap;
+function oc() {
+  if (Ap) return Ct;
+  Ap = 1, Object.defineProperty(Ct, "__esModule", { value: !0 }), Ct.SynthesisRequest = Ct.Synthesizer = void 0;
   const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A();
-  let i = class kv {
+  let i = class Av {
     /**
      * Creates and initializes an instance of a Recognizer
      * @constructor
@@ -14721,7 +14721,7 @@ function cc() {
         "zh-TW": "zh-TW-HsiaoChenNeural",
         "zu-ZA": "zu-ZA-ThandoNeural"
       };
-      let u = this.properties.getProperty(s.PropertyId.SpeechServiceConnection_SynthLanguage, "en-US"), l = this.properties.getProperty(s.PropertyId.SpeechServiceConnection_SynthVoice, ""), p = kv.XMLEncode(n);
+      let u = this.properties.getProperty(s.PropertyId.SpeechServiceConnection_SynthLanguage, "en-US"), l = this.properties.getProperty(s.PropertyId.SpeechServiceConnection_SynthVoice, ""), p = Av.XMLEncode(n);
       return this.autoDetectSourceLanguage ? u = "en-US" : l = l || c[u], l && (p = `<voice name='${l}'>${p}</voice>`), p = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xmlns:mstts='http://www.w3.org/2001/mstts' xmlns:emo='http://www.w3.org/2009/10/emotionml' xml:lang='${u}'>${p}</speak>`, p;
     }
     /**
@@ -14784,12 +14784,12 @@ function cc() {
   }
   return Ct.SynthesisRequest = a, Ct;
 }
-var Vn = {}, kp;
-function bP() {
-  if (kp) return Vn;
-  kp = 1, Object.defineProperty(Vn, "__esModule", { value: !0 }), Vn.SpeechSynthesizer = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ iv(), s = /* @__PURE__ */ ys(), i = /* @__PURE__ */ Ht(), a = /* @__PURE__ */ x(), o = /* @__PURE__ */ A(), n = /* @__PURE__ */ cc();
-  let c = class Ov extends o.Synthesizer {
+var Hn = {}, Tp;
+function CP() {
+  if (Tp) return Hn;
+  Tp = 1, Object.defineProperty(Hn, "__esModule", { value: !0 }), Hn.SpeechSynthesizer = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ tv(), s = /* @__PURE__ */ Cs(), i = /* @__PURE__ */ Vt(), a = /* @__PURE__ */ x(), o = /* @__PURE__ */ A(), n = /* @__PURE__ */ oc();
+  let c = class Tv extends o.Synthesizer {
     /**
      * SpeechSynthesizer constructor.
      * @constructor
@@ -14808,7 +14808,7 @@ function bP() {
      */
     static FromConfig(l, p, d) {
       const h = l;
-      return p.properties.mergeTo(h.properties), new Ov(l, d);
+      return p.properties.mergeTo(h.properties), new Tv(l, d);
     }
     /**
      * Executes speech synthesis on plain text.
@@ -14920,12 +14920,12 @@ function bP() {
         return new o.SynthesisVoicesResult(p, void 0, `Error: ${d.status}: ${d.statusText}`);
     }
   };
-  return Vn.SpeechSynthesizer = c, Vn;
+  return Hn.SpeechSynthesizer = c, Hn;
 }
-var Wn = {}, Op;
-function wP() {
-  if (Op) return Wn;
-  Op = 1, Object.defineProperty(Wn, "__esModule", { value: !0 }), Wn.SynthesisResult = void 0;
+var Kn = {}, _p;
+function RP() {
+  if (_p) return Kn;
+  _p = 1, Object.defineProperty(Kn, "__esModule", { value: !0 }), Kn.SynthesisResult = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -14979,12 +14979,12 @@ function wP() {
       return this.privProperties;
     }
   };
-  return Wn.SynthesisResult = e, Wn;
+  return Kn.SynthesisResult = e, Kn;
 }
-var Hn = {}, Mp;
-function EP() {
-  if (Mp) return Hn;
-  Mp = 1, Object.defineProperty(Hn, "__esModule", { value: !0 }), Hn.SpeechSynthesisResult = void 0;
+var Jn = {}, kp;
+function PP() {
+  if (kp) return Jn;
+  kp = 1, Object.defineProperty(Jn, "__esModule", { value: !0 }), Jn.SpeechSynthesisResult = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SynthesisResult {
     /**
@@ -15021,12 +15021,12 @@ function EP() {
       return this.privAudioDuration;
     }
   };
-  return Hn.SpeechSynthesisResult = t, Hn;
+  return Jn.SpeechSynthesisResult = t, Jn;
 }
-var Kn = {}, Dp;
-function IP() {
-  if (Dp) return Kn;
-  Dp = 1, Object.defineProperty(Kn, "__esModule", { value: !0 }), Kn.SpeechSynthesisEventArgs = void 0;
+var Gn = {}, Op;
+function bP() {
+  if (Op) return Gn;
+  Op = 1, Object.defineProperty(Gn, "__esModule", { value: !0 }), Gn.SpeechSynthesisEventArgs = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -15047,12 +15047,12 @@ function IP() {
       return this.privResult;
     }
   };
-  return Kn.SpeechSynthesisEventArgs = e, Kn;
+  return Gn.SpeechSynthesisEventArgs = e, Gn;
 }
-var Jn = {}, Np;
-function AP() {
-  if (Np) return Jn;
-  Np = 1, Object.defineProperty(Jn, "__esModule", { value: !0 }), Jn.SpeechSynthesisWordBoundaryEventArgs = void 0;
+var Qn = {}, Mp;
+function wP() {
+  if (Mp) return Qn;
+  Mp = 1, Object.defineProperty(Qn, "__esModule", { value: !0 }), Qn.SpeechSynthesisWordBoundaryEventArgs = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -15128,12 +15128,12 @@ function AP() {
       return this.privBoundaryType;
     }
   };
-  return Jn.SpeechSynthesisWordBoundaryEventArgs = e, Jn;
+  return Qn.SpeechSynthesisWordBoundaryEventArgs = e, Qn;
 }
-var Gn = {}, xp;
-function TP() {
-  if (xp) return Gn;
-  xp = 1, Object.defineProperty(Gn, "__esModule", { value: !0 }), Gn.SpeechSynthesisBookmarkEventArgs = void 0;
+var Yn = {}, Dp;
+function EP() {
+  if (Dp) return Yn;
+  Dp = 1, Object.defineProperty(Yn, "__esModule", { value: !0 }), Yn.SpeechSynthesisBookmarkEventArgs = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -15165,12 +15165,12 @@ function TP() {
       return this.privText;
     }
   };
-  return Gn.SpeechSynthesisBookmarkEventArgs = e, Gn;
+  return Yn.SpeechSynthesisBookmarkEventArgs = e, Yn;
 }
-var Qn = {}, zp;
-function _P() {
-  if (zp) return Qn;
-  zp = 1, Object.defineProperty(Qn, "__esModule", { value: !0 }), Qn.SpeechSynthesisVisemeEventArgs = void 0;
+var Zn = {}, Np;
+function IP() {
+  if (Np) return Zn;
+  Np = 1, Object.defineProperty(Zn, "__esModule", { value: !0 }), Zn.SpeechSynthesisVisemeEventArgs = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -15213,20 +15213,20 @@ function _P() {
       return this.privAnimation;
     }
   };
-  return Qn.SpeechSynthesisVisemeEventArgs = e, Qn;
+  return Zn.SpeechSynthesisVisemeEventArgs = e, Zn;
 }
-var Zo = {}, Lp;
-function kP() {
-  return Lp || (Lp = 1, function(e) {
+var Qo = {}, xp;
+function AP() {
+  return xp || (xp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.SpeechSynthesisBoundaryType = void 0, function(t) {
       t.Word = "WordBoundary", t.Punctuation = "PunctuationBoundary", t.Sentence = "SentenceBoundary";
     }(e.SpeechSynthesisBoundaryType || (e.SpeechSynthesisBoundaryType = {}));
-  }(Zo)), Zo;
+  }(Qo)), Qo;
 }
-var Yn = {}, jp;
-function OP() {
-  if (jp) return Yn;
-  jp = 1, Object.defineProperty(Yn, "__esModule", { value: !0 }), Yn.SynthesisVoicesResult = void 0;
+var Xn = {}, zp;
+function TP() {
+  if (zp) return Xn;
+  zp = 1, Object.defineProperty(Xn, "__esModule", { value: !0 }), Xn.SynthesisVoicesResult = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SynthesisResult {
     /**
@@ -15254,11 +15254,11 @@ function OP() {
       return this.privVoices;
     }
   };
-  return Yn.SynthesisVoicesResult = t, Yn;
+  return Xn.SynthesisVoicesResult = t, Xn;
 }
-var Xo = {}, qp;
-function MP() {
-  return qp || (qp = 1, function(e) {
+var Yo = {}, Lp;
+function _P() {
+  return Lp || (Lp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.VoiceInfo = e.SynthesisVoiceType = e.SynthesisVoiceGender = void 0;
     var t;
     (function(o) {
@@ -15335,13 +15335,13 @@ function MP() {
       }
     }
     e.VoiceInfo = a;
-  }(Xo)), Xo;
+  }(Yo)), Yo;
 }
-var Zn = {}, Fp;
-function DP() {
-  if (Fp) return Zn;
-  Fp = 1, Object.defineProperty(Zn, "__esModule", { value: !0 }), Zn.SpeakerAudioDestination = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ Ht(), r = /* @__PURE__ */ Mt(), s = 60 * 30, i = {
+var ei = {}, jp;
+function kP() {
+  if (jp) return ei;
+  jp = 1, Object.defineProperty(ei, "__esModule", { value: !0 }), ei.SpeakerAudioDestination = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ Vt(), r = /* @__PURE__ */ Mt(), s = 60 * 30, i = {
     [r.AudioFormatTag.PCM]: "audio/wav",
     [r.AudioFormatTag.MuLaw]: "audio/x-wav",
     [r.AudioFormatTag.MP3]: "audio/mpeg",
@@ -15473,48 +15473,48 @@ function DP() {
       return this.privSourceBuffer !== void 0 && !this.privSourceBuffer.updating;
     }
   };
-  return Zn.SpeakerAudioDestination = a, Zn;
+  return ei.SpeakerAudioDestination = a, ei;
 }
-var Xn = {}, Bp;
-function NP() {
-  if (Bp) return Xn;
-  Bp = 1, Object.defineProperty(Xn, "__esModule", { value: !0 }), Xn.ConversationTranscriptionCanceledEventArgs = void 0;
-  const e = /* @__PURE__ */ Ss();
+var ti = {}, qp;
+function OP() {
+  if (qp) return ti;
+  qp = 1, Object.defineProperty(ti, "__esModule", { value: !0 }), ti.ConversationTranscriptionCanceledEventArgs = void 0;
+  const e = /* @__PURE__ */ Rs();
   let t = class extends e.CancellationEventArgsBase {
   };
-  return Xn.ConversationTranscriptionCanceledEventArgs = t, Xn;
+  return ti.ConversationTranscriptionCanceledEventArgs = t, ti;
 }
-var ei = {}, Up;
-function xP() {
-  if (Up) return ei;
-  Up = 1, Object.defineProperty(ei, "__esModule", { value: !0 }), ei.MeetingTranscriptionCanceledEventArgs = void 0;
-  const e = /* @__PURE__ */ Ss();
+var ri = {}, Fp;
+function MP() {
+  if (Fp) return ri;
+  Fp = 1, Object.defineProperty(ri, "__esModule", { value: !0 }), ri.MeetingTranscriptionCanceledEventArgs = void 0;
+  const e = /* @__PURE__ */ Rs();
   let t = class extends e.CancellationEventArgsBase {
   };
-  return ei.MeetingTranscriptionCanceledEventArgs = t, ei;
+  return ri.MeetingTranscriptionCanceledEventArgs = t, ri;
 }
-var ea = {}, $p;
-function zP() {
-  return $p || ($p = 1, function(e) {
+var Zo = {}, Bp;
+function DP() {
+  return Bp || (Bp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.PronunciationAssessmentGradingSystem = void 0, function(t) {
       t[t.FivePoint = 1] = "FivePoint", t[t.HundredMark = 2] = "HundredMark";
     }(e.PronunciationAssessmentGradingSystem || (e.PronunciationAssessmentGradingSystem = {}));
-  }(ea)), ea;
+  }(Zo)), Zo;
 }
-var ta = {}, Vp;
-function LP() {
-  return Vp || (Vp = 1, function(e) {
+var Xo = {}, Up;
+function NP() {
+  return Up || (Up = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.PronunciationAssessmentGranularity = void 0, function(t) {
       t[t.Phoneme = 1] = "Phoneme", t[t.Word = 2] = "Word", t[t.FullText = 3] = "FullText";
     }(e.PronunciationAssessmentGranularity || (e.PronunciationAssessmentGranularity = {}));
-  }(ta)), ta;
+  }(Xo)), Xo;
 }
-var ti = {}, Wp;
-function jP() {
-  if (Wp) return ti;
-  Wp = 1, Object.defineProperty(ti, "__esModule", { value: !0 }), ti.PronunciationAssessmentConfig = void 0;
+var ni = {}, $p;
+function xP() {
+  if ($p) return ni;
+  $p = 1, Object.defineProperty(ni, "__esModule", { value: !0 }), ni.PronunciationAssessmentConfig = void 0;
   const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ A();
-  let r = class Mv {
+  let r = class _v {
     /**
      * PronunciationAssessmentConfig constructor.
      * @constructor
@@ -15538,7 +15538,7 @@ function jP() {
      */
     static fromJSON(i) {
       e.Contracts.throwIfNullOrUndefined(i, "json");
-      const a = new Mv("");
+      const a = new _v("");
       return a.privProperties = new t.PropertyCollection(), a.properties.setProperty(t.PropertyId.PronunciationAssessment_Json, i), a;
     }
     toJSON() {
@@ -15656,12 +15656,12 @@ function jP() {
       c && (a.granularity = c), this.privPhonemeAlphabet && (a.phonemeAlphabet = this.privPhonemeAlphabet), this.privNBestPhonemeCount && (a.nbestPhonemeCount = this.privNBestPhonemeCount), a.enableProsodyAssessment = this.privEnableProsodyAssessment, a.dimension = "Comprehensive", this.privProperties.getProperty(t.PropertyId.PronunciationAssessment_EnableMiscue) && (a.enableMiscue = this.enableMiscue), this.privProperties.setProperty(t.PropertyId.PronunciationAssessment_Params, JSON.stringify(a));
     }
   };
-  return ti.PronunciationAssessmentConfig = r, ti;
+  return ni.PronunciationAssessmentConfig = r, ni;
 }
-var Rt = {}, Hp;
-function qP() {
-  if (Hp) return Rt;
-  Hp = 1, Object.defineProperty(Rt, "__esModule", { value: !0 }), Rt.PronunciationAssessmentResult = Rt.ContentAssessmentResult = void 0;
+var Rt = {}, Vp;
+function zP() {
+  if (Vp) return Rt;
+  Vp = 1, Object.defineProperty(Rt, "__esModule", { value: !0 }), Rt.PronunciationAssessmentResult = Rt.ContentAssessmentResult = void 0;
   const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ A();
   class r {
     /**
@@ -15709,7 +15709,7 @@ function qP() {
     }
   }
   Rt.ContentAssessmentResult = r;
-  let s = class Dv {
+  let s = class kv {
     constructor(a) {
       const o = JSON.parse(a);
       e.Contracts.throwIfNullOrUndefined(o.NBest[0], "NBest"), this.privPronJson = o.NBest[0];
@@ -15725,7 +15725,7 @@ function qP() {
     static fromResult(a) {
       e.Contracts.throwIfNullOrUndefined(a, "result");
       const o = a.properties.getProperty(t.PropertyId.SpeechServiceResponse_JsonResult);
-      return e.Contracts.throwIfNullOrUndefined(o, "json"), new Dv(o);
+      return e.Contracts.throwIfNullOrUndefined(o, "json"), new kv(o);
     }
     /**
      * Gets the detail result of pronunciation assessment.
@@ -15804,10 +15804,10 @@ function qP() {
   };
   return Rt.PronunciationAssessmentResult = s, Rt;
 }
-var ri = {}, Kp;
-function FP() {
-  if (Kp) return ri;
-  Kp = 1, Object.defineProperty(ri, "__esModule", { value: !0 }), ri.AvatarConfig = void 0;
+var ii = {}, Wp;
+function LP() {
+  if (Wp) return ii;
+  Wp = 1, Object.defineProperty(ii, "__esModule", { value: !0 }), ii.AvatarConfig = void 0;
   const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ A();
   let r = class {
     /**
@@ -15888,11 +15888,11 @@ function FP() {
       this.privRemoteIceServers = i;
     }
   };
-  return ri.AvatarConfig = r, ri;
+  return ii.AvatarConfig = r, ii;
 }
-var ra = {}, Jp;
-function BP() {
-  return Jp || (Jp = 1, function(e) {
+var ea = {}, Hp;
+function jP() {
+  return Hp || (Hp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.AvatarEventArgs = e.AvatarEventTypes = void 0, function(r) {
       r.SwitchedToSpeaking = "SwitchedToSpeaking", r.SwitchedToIdle = "SwitchedToIdle", r.SessionClosed = "SessionClosed";
     }(e.AvatarEventTypes || (e.AvatarEventTypes = {}));
@@ -15932,13 +15932,13 @@ function BP() {
       }
     }
     e.AvatarEventArgs = t;
-  }(ra)), ra;
+  }(ea)), ea;
 }
-var ni = {}, ii = {}, Gp;
-function Nv() {
-  if (Gp) return ii;
-  Gp = 1, Object.defineProperty(ii, "__esModule", { value: !0 }), ii.SpeechSynthesisConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ _e(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ he(), a = /* @__PURE__ */ Ye();
+var si = {}, oi = {}, Kp;
+function Ov() {
+  if (Kp) return oi;
+  Kp = 1, Object.defineProperty(oi, "__esModule", { value: !0 }), oi.SpeechSynthesisConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ Te(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ le(), a = /* @__PURE__ */ Ye();
   let o = class {
     constructor() {
       this.synthesisUri = "/tts/cognitiveservices/websocket/v1";
@@ -15947,21 +15947,21 @@ function Nv() {
       let p = c.parameters.getProperty(t.PropertyId.SpeechServiceConnection_Endpoint, void 0);
       const d = c.parameters.getProperty(t.PropertyId.SpeechServiceConnection_Region, void 0), h = r.ConnectionFactoryBase.getHostSuffix(d), f = c.parameters.getProperty(t.PropertyId.SpeechServiceConnection_EndpointId, void 0), g = f === void 0 ? "tts" : "voice", m = c.parameters.getProperty(t.PropertyId.SpeechServiceConnection_Host, "wss://" + d + "." + g + ".speech" + h), v = {}, y = {};
       if (u.token !== void 0 && u.token !== "" && (y[u.headerName] = u.token), y[i.HeaderNames.ConnectionId] = l, f !== void 0 && f !== "" && (!p || p.search(a.QueryParameterNames.CustomVoiceDeploymentId) === -1) && (v[a.QueryParameterNames.CustomVoiceDeploymentId] = f), c.avatarEnabled && (!p || p.search(a.QueryParameterNames.EnableAvatar) === -1) && (v[a.QueryParameterNames.EnableAvatar] = "true"), p) {
-        const C = new URL(p), P = C.pathname;
-        (P === "" || P === "/") && (C.pathname = this.synthesisUri, p = await r.ConnectionFactoryBase.getRedirectUrlFromEndpoint(C.toString()));
+        const C = new URL(p), R = C.pathname;
+        (R === "" || R === "/") && (C.pathname = this.synthesisUri, p = await r.ConnectionFactoryBase.getRedirectUrlFromEndpoint(C.toString()));
       }
       p || (p = m + this.synthesisUri), c.parameters.setProperty(t.PropertyId.SpeechServiceConnection_Url, p);
       const S = c.parameters.getProperty("SPEECH-EnableWebsocketCompression", "false") === "true";
       return new e.WebsocketConnection(p, v, y, new s.WebsocketMessageFormatter(), e.ProxyInfo.fromParameters(c.parameters), S, l);
     }
   };
-  return ii.SpeechSynthesisConnectionFactory = o, ii;
+  return oi.SpeechSynthesisConnectionFactory = o, oi;
 }
-var Qp;
-function UP() {
-  if (Qp) return ni;
-  Qp = 1, Object.defineProperty(ni, "__esModule", { value: !0 }), ni.AvatarSynthesizer = void 0;
-  const e = /* @__PURE__ */ Nv(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ ys(), i = /* @__PURE__ */ A(), a = /* @__PURE__ */ x(), o = /* @__PURE__ */ cc();
+var Jp;
+function qP() {
+  if (Jp) return si;
+  Jp = 1, Object.defineProperty(si, "__esModule", { value: !0 }), si.AvatarSynthesizer = void 0;
+  const e = /* @__PURE__ */ Ov(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ Cs(), i = /* @__PURE__ */ A(), a = /* @__PURE__ */ x(), o = /* @__PURE__ */ oc();
   let n = class extends i.Synthesizer {
     /**
      * Creates and initializes an instance of this class.
@@ -16084,12 +16084,12 @@ function UP() {
       })), this.adapterSpeak(), d.promise;
     }
   };
-  return ni.AvatarSynthesizer = n, ni;
+  return si.AvatarSynthesizer = n, si;
 }
-var Pt = {}, Yp;
-function $P() {
-  if (Yp) return Pt;
-  Yp = 1, Object.defineProperty(Pt, "__esModule", { value: !0 }), Pt.AvatarVideoFormat = Pt.Coordinate = void 0;
+var Pt = {}, Gp;
+function FP() {
+  if (Gp) return Pt;
+  Gp = 1, Object.defineProperty(Pt, "__esModule", { value: !0 }), Pt.AvatarVideoFormat = Pt.Coordinate = void 0;
   class e {
     constructor(s, i) {
       this.x = s, this.y = i;
@@ -16120,10 +16120,10 @@ function $P() {
   };
   return Pt.AvatarVideoFormat = t, Pt;
 }
-var si = {}, Zp;
-function VP() {
-  if (Zp) return si;
-  Zp = 1, Object.defineProperty(si, "__esModule", { value: !0 }), si.AvatarWebRTCConnectionResult = void 0;
+var ai = {}, Qp;
+function BP() {
+  if (Qp) return ai;
+  Qp = 1, Object.defineProperty(ai, "__esModule", { value: !0 }), ai.AvatarWebRTCConnectionResult = void 0;
   const e = /* @__PURE__ */ A();
   let t = class extends e.SynthesisResult {
     /**
@@ -16149,13 +16149,13 @@ function VP() {
       return this.privSDPAnswer;
     }
   };
-  return si.AvatarWebRTCConnectionResult = t, si;
+  return ai.AvatarWebRTCConnectionResult = t, ai;
 }
-var oi = {}, Xp;
-function WP() {
-  if (Xp) return oi;
-  Xp = 1, Object.defineProperty(oi, "__esModule", { value: !0 }), oi.Diagnostics = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ D();
+var ci = {}, Yp;
+function UP() {
+  if (Yp) return ci;
+  Yp = 1, Object.defineProperty(ci, "__esModule", { value: !0 }), ci.Diagnostics = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ D();
   let r = class {
     static SetLoggingLevel(i) {
       this.privListener = new e.ConsoleLoggingListener(i), t.Events.instance.attachConsoleListener(this.privListener);
@@ -16176,13 +16176,13 @@ function WP() {
       this.privListener && (this.privListener.logCallback = i);
     }
   };
-  return oi.Diagnostics = r, r.privListener = void 0, oi;
+  return ci.Diagnostics = r, r.privListener = void 0, ci;
 }
-var ed;
+var Zp;
 function A() {
-  return ed || (ed = 1, function(e) {
+  return Zp || (Zp = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ConnectionEventArgs = e.CancellationErrorCode = e.CancellationDetails = e.CancellationDetailsBase = e.IntentRecognitionCanceledEventArgs = e.TranslationRecognitionCanceledEventArgs = e.NoMatchDetails = e.NoMatchReason = e.Translations = e.TranslationRecognizer = e.VoiceProfileType = e.IntentRecognizer = e.SpeechRecognizer = e.Recognizer = e.PropertyId = e.PropertyCollection = e.SpeechTranslationConfigImpl = e.SpeechTranslationConfig = e.SpeechConfigImpl = e.SpeechConfig = e.ResultReason = e.TranslationSynthesisResult = e.TranslationRecognitionResult = e.TranslationSynthesisEventArgs = e.TranslationRecognitionEventArgs = e.SpeechRecognitionCanceledEventArgs = e.MeetingTranscriptionEventArgs = e.ConversationTranscriptionEventArgs = e.SpeechRecognitionEventArgs = e.LanguageUnderstandingModel = e.IntentRecognitionResult = e.SpeechRecognitionResult = e.RecognitionResult = e.IntentRecognitionEventArgs = e.OutputFormat = e.RecognitionEventArgs = e.SessionEventArgs = e.KeywordRecognitionModel = e.PushAudioOutputStreamCallback = e.PullAudioInputStreamCallback = e.CancellationReason = e.PushAudioOutputStream = e.PullAudioOutputStream = e.AudioOutputStream = e.PushAudioInputStream = e.PullAudioInputStream = e.AudioInputStream = e.AudioFormatTag = e.AudioStreamFormat = e.AudioConfig = void 0, e.SpeechSynthesisEventArgs = e.SpeechSynthesisResult = e.SynthesisResult = e.SpeechSynthesizer = e.SpeechSynthesisOutputFormat = e.Synthesizer = e.User = e.ParticipantChangedReason = e.Participant = e.MeetingTranscriber = e.Meeting = e.ConversationTranscriptionResult = e.ConversationTranscriber = e.ConversationTranslator = e.ConversationTranslationResult = e.ConversationTranslationEventArgs = e.ConversationTranslationCanceledEventArgs = e.ConversationParticipantsChangedEventArgs = e.ConversationExpirationEventArgs = e.Conversation = e.SpeakerRecognitionCancellationDetails = e.SpeakerRecognitionResultType = e.SpeakerRecognitionResult = e.SourceLanguageConfig = e.AutoDetectSourceLanguageResult = e.AutoDetectSourceLanguageConfig = e.SpeakerVerificationModel = e.SpeakerIdentificationModel = e.SpeakerRecognizer = e.VoiceProfileClient = e.VoiceProfilePhraseResult = e.VoiceProfileCancellationDetails = e.VoiceProfileResult = e.VoiceProfileEnrollmentCancellationDetails = e.VoiceProfileEnrollmentResult = e.VoiceProfile = e.ConnectionMessage = e.ConnectionMessageEventArgs = e.BaseAudioPlayer = e.ProfanityOption = e.ServicePropertyChannel = e.TurnStatusReceivedEventArgs = e.ActivityReceivedEventArgs = e.DialogServiceConnector = e.CustomCommandsConfig = e.BotFrameworkConfig = e.DialogServiceConfig = e.PhraseListGrammar = e.Connection = e.ServiceEventArgs = void 0, e.LogLevel = e.Diagnostics = e.AvatarWebRTCConnectionResult = e.Coordinate = e.AvatarVideoFormat = e.AvatarSynthesizer = e.AvatarEventArgs = e.AvatarConfig = e.LanguageIdMode = e.PronunciationAssessmentResult = e.PronunciationAssessmentConfig = e.PronunciationAssessmentGranularity = e.PronunciationAssessmentGradingSystem = e.MeetingTranscriptionCanceledEventArgs = e.ConversationTranscriptionCanceledEventArgs = e.SpeakerAudioDestination = e.VoiceInfo = e.SynthesisVoiceType = e.SynthesisVoiceGender = e.SynthesisVoicesResult = e.SpeechSynthesisBoundaryType = e.SpeechSynthesisVisemeEventArgs = e.SpeechSynthesisBookmarkEventArgs = e.SpeechSynthesisWordBoundaryEventArgs = void 0;
-    var t = /* @__PURE__ */ cv();
+    var t = /* @__PURE__ */ sv();
     Object.defineProperty(e, "AudioConfig", { enumerable: !0, get: function() {
       return t.AudioConfig;
     } });
@@ -16192,7 +16192,7 @@ function A() {
     } }), Object.defineProperty(e, "AudioFormatTag", { enumerable: !0, get: function() {
       return r.AudioFormatTag;
     } });
-    var s = /* @__PURE__ */ sv();
+    var s = /* @__PURE__ */ rv();
     Object.defineProperty(e, "AudioInputStream", { enumerable: !0, get: function() {
       return s.AudioInputStream;
     } }), Object.defineProperty(e, "PullAudioInputStream", { enumerable: !0, get: function() {
@@ -16200,7 +16200,7 @@ function A() {
     } }), Object.defineProperty(e, "PushAudioInputStream", { enumerable: !0, get: function() {
       return s.PushAudioInputStream;
     } });
-    var i = /* @__PURE__ */ Ht();
+    var i = /* @__PURE__ */ Vt();
     Object.defineProperty(e, "AudioOutputStream", { enumerable: !0, get: function() {
       return i.AudioOutputStream;
     } }), Object.defineProperty(e, "PullAudioOutputStream", { enumerable: !0, get: function() {
@@ -16208,55 +16208,55 @@ function A() {
     } }), Object.defineProperty(e, "PushAudioOutputStream", { enumerable: !0, get: function() {
       return i.PushAudioOutputStream;
     } });
-    var a = /* @__PURE__ */ iR();
+    var a = /* @__PURE__ */ tR();
     Object.defineProperty(e, "CancellationReason", { enumerable: !0, get: function() {
       return a.CancellationReason;
     } });
-    var o = /* @__PURE__ */ sR();
+    var o = /* @__PURE__ */ rR();
     Object.defineProperty(e, "PullAudioInputStreamCallback", { enumerable: !0, get: function() {
       return o.PullAudioInputStreamCallback;
     } });
-    var n = /* @__PURE__ */ oR();
+    var n = /* @__PURE__ */ nR();
     Object.defineProperty(e, "PushAudioOutputStreamCallback", { enumerable: !0, get: function() {
       return n.PushAudioOutputStreamCallback;
     } });
-    var c = /* @__PURE__ */ aR();
+    var c = /* @__PURE__ */ iR();
     Object.defineProperty(e, "KeywordRecognitionModel", { enumerable: !0, get: function() {
       return c.KeywordRecognitionModel;
     } });
-    var u = /* @__PURE__ */ cR();
+    var u = /* @__PURE__ */ sR();
     Object.defineProperty(e, "SessionEventArgs", { enumerable: !0, get: function() {
       return u.SessionEventArgs;
     } });
-    var l = /* @__PURE__ */ uR();
+    var l = /* @__PURE__ */ oR();
     Object.defineProperty(e, "RecognitionEventArgs", { enumerable: !0, get: function() {
       return l.RecognitionEventArgs;
     } });
-    var p = /* @__PURE__ */ lR();
+    var p = /* @__PURE__ */ aR();
     Object.defineProperty(e, "OutputFormat", { enumerable: !0, get: function() {
       return p.OutputFormat;
     } });
-    var d = /* @__PURE__ */ pR();
+    var d = /* @__PURE__ */ cR();
     Object.defineProperty(e, "IntentRecognitionEventArgs", { enumerable: !0, get: function() {
       return d.IntentRecognitionEventArgs;
     } });
-    var h = /* @__PURE__ */ dR();
+    var h = /* @__PURE__ */ uR();
     Object.defineProperty(e, "RecognitionResult", { enumerable: !0, get: function() {
       return h.RecognitionResult;
     } });
-    var f = /* @__PURE__ */ hR();
+    var f = /* @__PURE__ */ lR();
     Object.defineProperty(e, "SpeechRecognitionResult", { enumerable: !0, get: function() {
       return f.SpeechRecognitionResult;
     } });
-    var g = /* @__PURE__ */ fR();
+    var g = /* @__PURE__ */ pR();
     Object.defineProperty(e, "IntentRecognitionResult", { enumerable: !0, get: function() {
       return g.IntentRecognitionResult;
     } });
-    var m = /* @__PURE__ */ vR();
+    var m = /* @__PURE__ */ dR();
     Object.defineProperty(e, "LanguageUnderstandingModel", { enumerable: !0, get: function() {
       return m.LanguageUnderstandingModel;
     } });
-    var v = /* @__PURE__ */ gR();
+    var v = /* @__PURE__ */ hR();
     Object.defineProperty(e, "SpeechRecognitionEventArgs", { enumerable: !0, get: function() {
       return v.SpeechRecognitionEventArgs;
     } }), Object.defineProperty(e, "ConversationTranscriptionEventArgs", { enumerable: !0, get: function() {
@@ -16264,375 +16264,375 @@ function A() {
     } }), Object.defineProperty(e, "MeetingTranscriptionEventArgs", { enumerable: !0, get: function() {
       return v.MeetingTranscriptionEventArgs;
     } });
-    var y = /* @__PURE__ */ mR();
+    var y = /* @__PURE__ */ fR();
     Object.defineProperty(e, "SpeechRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
       return y.SpeechRecognitionCanceledEventArgs;
     } });
-    var S = /* @__PURE__ */ yR();
+    var S = /* @__PURE__ */ vR();
     Object.defineProperty(e, "TranslationRecognitionEventArgs", { enumerable: !0, get: function() {
       return S.TranslationRecognitionEventArgs;
     } });
-    var C = /* @__PURE__ */ SR();
+    var C = /* @__PURE__ */ gR();
     Object.defineProperty(e, "TranslationSynthesisEventArgs", { enumerable: !0, get: function() {
       return C.TranslationSynthesisEventArgs;
     } });
-    var P = /* @__PURE__ */ lv();
+    var R = /* @__PURE__ */ av();
     Object.defineProperty(e, "TranslationRecognitionResult", { enumerable: !0, get: function() {
-      return P.TranslationRecognitionResult;
+      return R.TranslationRecognitionResult;
     } });
-    var w = /* @__PURE__ */ CR();
+    var w = /* @__PURE__ */ mR();
     Object.defineProperty(e, "TranslationSynthesisResult", { enumerable: !0, get: function() {
       return w.TranslationSynthesisResult;
     } });
-    var I = /* @__PURE__ */ RR();
+    var I = /* @__PURE__ */ yR();
     Object.defineProperty(e, "ResultReason", { enumerable: !0, get: function() {
       return I.ResultReason;
     } });
-    var E = /* @__PURE__ */ PR();
+    var E = /* @__PURE__ */ SR();
     Object.defineProperty(e, "SpeechConfig", { enumerable: !0, get: function() {
       return E.SpeechConfig;
     } }), Object.defineProperty(e, "SpeechConfigImpl", { enumerable: !0, get: function() {
       return E.SpeechConfigImpl;
     } });
-    var T = /* @__PURE__ */ bR();
+    var T = /* @__PURE__ */ CR();
     Object.defineProperty(e, "SpeechTranslationConfig", { enumerable: !0, get: function() {
       return T.SpeechTranslationConfig;
     } }), Object.defineProperty(e, "SpeechTranslationConfigImpl", { enumerable: !0, get: function() {
       return T.SpeechTranslationConfigImpl;
     } });
-    var b = /* @__PURE__ */ dv();
+    var b = /* @__PURE__ */ uv();
     Object.defineProperty(e, "PropertyCollection", { enumerable: !0, get: function() {
       return b.PropertyCollection;
     } });
-    var _ = /* @__PURE__ */ sc();
+    var _ = /* @__PURE__ */ nc();
     Object.defineProperty(e, "PropertyId", { enumerable: !0, get: function() {
       return _.PropertyId;
     } });
-    var O = /* @__PURE__ */ wR();
+    var O = /* @__PURE__ */ RR();
     Object.defineProperty(e, "Recognizer", { enumerable: !0, get: function() {
       return O.Recognizer;
     } });
-    var q = /* @__PURE__ */ ER();
+    var j = /* @__PURE__ */ PR();
     Object.defineProperty(e, "SpeechRecognizer", { enumerable: !0, get: function() {
-      return q.SpeechRecognizer;
+      return j.SpeechRecognizer;
     } });
-    var $ = /* @__PURE__ */ IR();
+    var $ = /* @__PURE__ */ bR();
     Object.defineProperty(e, "IntentRecognizer", { enumerable: !0, get: function() {
       return $.IntentRecognizer;
     } });
-    var Q = /* @__PURE__ */ AR();
+    var Y = /* @__PURE__ */ wR();
     Object.defineProperty(e, "VoiceProfileType", { enumerable: !0, get: function() {
-      return Q.VoiceProfileType;
+      return Y.VoiceProfileType;
     } });
-    var G = /* @__PURE__ */ TR();
+    var J = /* @__PURE__ */ ER();
     Object.defineProperty(e, "TranslationRecognizer", { enumerable: !0, get: function() {
-      return G.TranslationRecognizer;
+      return J.TranslationRecognizer;
     } });
-    var le = /* @__PURE__ */ _R();
+    var re = /* @__PURE__ */ IR();
     Object.defineProperty(e, "Translations", { enumerable: !0, get: function() {
-      return le.Translations;
+      return re.Translations;
     } });
-    var ae = /* @__PURE__ */ kR();
+    var ve = /* @__PURE__ */ AR();
     Object.defineProperty(e, "NoMatchReason", { enumerable: !0, get: function() {
-      return ae.NoMatchReason;
+      return ve.NoMatchReason;
     } });
-    var K = /* @__PURE__ */ OR();
+    var H = /* @__PURE__ */ TR();
     Object.defineProperty(e, "NoMatchDetails", { enumerable: !0, get: function() {
-      return K.NoMatchDetails;
+      return H.NoMatchDetails;
     } });
-    var se = /* @__PURE__ */ MR();
+    var se = /* @__PURE__ */ _R();
     Object.defineProperty(e, "TranslationRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
       return se.TranslationRecognitionCanceledEventArgs;
     } });
-    var X = /* @__PURE__ */ DR();
+    var K = /* @__PURE__ */ kR();
     Object.defineProperty(e, "IntentRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
-      return X.IntentRecognitionCanceledEventArgs;
+      return K.IntentRecognitionCanceledEventArgs;
     } });
-    var ge = /* @__PURE__ */ Sv();
+    var Ce = /* @__PURE__ */ gv();
     Object.defineProperty(e, "CancellationDetailsBase", { enumerable: !0, get: function() {
-      return ge.CancellationDetailsBase;
+      return Ce.CancellationDetailsBase;
     } });
-    var ke = /* @__PURE__ */ NR();
+    var Ze = /* @__PURE__ */ OR();
     Object.defineProperty(e, "CancellationDetails", { enumerable: !0, get: function() {
-      return ke.CancellationDetails;
+      return Ze.CancellationDetails;
     } });
-    var Cs = /* @__PURE__ */ xR();
+    var Dt = /* @__PURE__ */ MR();
     Object.defineProperty(e, "CancellationErrorCode", { enumerable: !0, get: function() {
-      return Cs.CancellationErrorCode;
+      return Dt.CancellationErrorCode;
     } });
-    var Dt = /* @__PURE__ */ zR();
+    var Ht = /* @__PURE__ */ DR();
     Object.defineProperty(e, "ConnectionEventArgs", { enumerable: !0, get: function() {
-      return Dt.ConnectionEventArgs;
+      return Ht.ConnectionEventArgs;
     } });
-    var Ze = /* @__PURE__ */ LR();
+    var xe = /* @__PURE__ */ NR();
     Object.defineProperty(e, "ServiceEventArgs", { enumerable: !0, get: function() {
-      return Ze.ServiceEventArgs;
+      return xe.ServiceEventArgs;
     } });
-    var Ne = /* @__PURE__ */ gv();
+    var Xe = /* @__PURE__ */ hv();
     Object.defineProperty(e, "Connection", { enumerable: !0, get: function() {
-      return Ne.Connection;
+      return Xe.Connection;
     } });
-    var xe = /* @__PURE__ */ jR();
+    var _e = /* @__PURE__ */ xR();
     Object.defineProperty(e, "PhraseListGrammar", { enumerable: !0, get: function() {
-      return xe.PhraseListGrammar;
+      return _e.PhraseListGrammar;
     } });
-    var Nt = /* @__PURE__ */ oc();
+    var Kt = /* @__PURE__ */ ic();
     Object.defineProperty(e, "DialogServiceConfig", { enumerable: !0, get: function() {
-      return Nt.DialogServiceConfig;
+      return Kt.DialogServiceConfig;
+    } });
+    var ge = /* @__PURE__ */ zR();
+    Object.defineProperty(e, "BotFrameworkConfig", { enumerable: !0, get: function() {
+      return ge.BotFrameworkConfig;
+    } });
+    var Nt = /* @__PURE__ */ LR();
+    Object.defineProperty(e, "CustomCommandsConfig", { enumerable: !0, get: function() {
+      return Nt.CustomCommandsConfig;
     } });
     var xt = /* @__PURE__ */ qR();
-    Object.defineProperty(e, "BotFrameworkConfig", { enumerable: !0, get: function() {
-      return xt.BotFrameworkConfig;
-    } });
-    var me = /* @__PURE__ */ FR();
-    Object.defineProperty(e, "CustomCommandsConfig", { enumerable: !0, get: function() {
-      return me.CustomCommandsConfig;
-    } });
-    var zt = /* @__PURE__ */ UR();
     Object.defineProperty(e, "DialogServiceConnector", { enumerable: !0, get: function() {
-      return zt.DialogServiceConnector;
+      return xt.DialogServiceConnector;
     } });
-    var Xe = /* @__PURE__ */ $R();
+    var et = /* @__PURE__ */ FR();
     Object.defineProperty(e, "ActivityReceivedEventArgs", { enumerable: !0, get: function() {
-      return Xe.ActivityReceivedEventArgs;
+      return et.ActivityReceivedEventArgs;
     } });
-    var Rs = /* @__PURE__ */ WR();
+    var Jt = /* @__PURE__ */ UR();
     Object.defineProperty(e, "TurnStatusReceivedEventArgs", { enumerable: !0, get: function() {
-      return Rs.TurnStatusReceivedEventArgs;
+      return Jt.TurnStatusReceivedEventArgs;
     } });
-    var Jt = /* @__PURE__ */ HR();
+    var Ps = /* @__PURE__ */ $R();
     Object.defineProperty(e, "ServicePropertyChannel", { enumerable: !0, get: function() {
-      return Jt.ServicePropertyChannel;
+      return Ps.ServicePropertyChannel;
     } });
-    var Ps = /* @__PURE__ */ KR();
+    var Gt = /* @__PURE__ */ VR();
     Object.defineProperty(e, "ProfanityOption", { enumerable: !0, get: function() {
-      return Ps.ProfanityOption;
+      return Gt.ProfanityOption;
     } });
-    var Lt = /* @__PURE__ */ JR();
+    var Re = /* @__PURE__ */ WR();
     Object.defineProperty(e, "BaseAudioPlayer", { enumerable: !0, get: function() {
-      return Lt.BaseAudioPlayer;
+      return Re.BaseAudioPlayer;
     } });
-    var ne = /* @__PURE__ */ GR();
+    var Pe = /* @__PURE__ */ HR();
     Object.defineProperty(e, "ConnectionMessageEventArgs", { enumerable: !0, get: function() {
-      return ne.ConnectionMessageEventArgs;
+      return Pe.ConnectionMessageEventArgs;
     } });
-    var et = /* @__PURE__ */ vv();
+    var ke = /* @__PURE__ */ dv();
     Object.defineProperty(e, "ConnectionMessage", { enumerable: !0, get: function() {
-      return et.ConnectionMessage;
+      return ke.ConnectionMessage;
     } });
-    var fe = /* @__PURE__ */ QR();
+    var me = /* @__PURE__ */ KR();
     Object.defineProperty(e, "VoiceProfile", { enumerable: !0, get: function() {
-      return fe.VoiceProfile;
+      return me.VoiceProfile;
+    } });
+    var zt = /* @__PURE__ */ JR();
+    Object.defineProperty(e, "VoiceProfileEnrollmentResult", { enumerable: !0, get: function() {
+      return zt.VoiceProfileEnrollmentResult;
+    } }), Object.defineProperty(e, "VoiceProfileEnrollmentCancellationDetails", { enumerable: !0, get: function() {
+      return zt.VoiceProfileEnrollmentCancellationDetails;
+    } });
+    var F = /* @__PURE__ */ GR();
+    Object.defineProperty(e, "VoiceProfileResult", { enumerable: !0, get: function() {
+      return F.VoiceProfileResult;
+    } }), Object.defineProperty(e, "VoiceProfileCancellationDetails", { enumerable: !0, get: function() {
+      return F.VoiceProfileCancellationDetails;
+    } });
+    var B = /* @__PURE__ */ QR();
+    Object.defineProperty(e, "VoiceProfilePhraseResult", { enumerable: !0, get: function() {
+      return B.VoiceProfilePhraseResult;
     } });
     var tt = /* @__PURE__ */ YR();
-    Object.defineProperty(e, "VoiceProfileEnrollmentResult", { enumerable: !0, get: function() {
-      return tt.VoiceProfileEnrollmentResult;
-    } }), Object.defineProperty(e, "VoiceProfileEnrollmentCancellationDetails", { enumerable: !0, get: function() {
-      return tt.VoiceProfileEnrollmentCancellationDetails;
-    } });
-    var B = /* @__PURE__ */ ZR();
-    Object.defineProperty(e, "VoiceProfileResult", { enumerable: !0, get: function() {
-      return B.VoiceProfileResult;
-    } }), Object.defineProperty(e, "VoiceProfileCancellationDetails", { enumerable: !0, get: function() {
-      return B.VoiceProfileCancellationDetails;
-    } });
-    var ee = /* @__PURE__ */ XR();
-    Object.defineProperty(e, "VoiceProfilePhraseResult", { enumerable: !0, get: function() {
-      return ee.VoiceProfilePhraseResult;
-    } });
-    var te = /* @__PURE__ */ eP();
     Object.defineProperty(e, "VoiceProfileClient", { enumerable: !0, get: function() {
-      return te.VoiceProfileClient;
+      return tt.VoiceProfileClient;
     } });
-    var bs = /* @__PURE__ */ tP();
+    var Ys = /* @__PURE__ */ ZR();
     Object.defineProperty(e, "SpeakerRecognizer", { enumerable: !0, get: function() {
-      return bs.SpeakerRecognizer;
+      return Ys.SpeakerRecognizer;
     } });
-    var Zs = /* @__PURE__ */ rP();
+    var rt = /* @__PURE__ */ XR();
     Object.defineProperty(e, "SpeakerIdentificationModel", { enumerable: !0, get: function() {
-      return Zs.SpeakerIdentificationModel;
+      return rt.SpeakerIdentificationModel;
+    } });
+    var Zs = /* @__PURE__ */ eP();
+    Object.defineProperty(e, "SpeakerVerificationModel", { enumerable: !0, get: function() {
+      return Zs.SpeakerVerificationModel;
+    } });
+    var Xs = /* @__PURE__ */ tP();
+    Object.defineProperty(e, "AutoDetectSourceLanguageConfig", { enumerable: !0, get: function() {
+      return Xs.AutoDetectSourceLanguageConfig;
+    } });
+    var bs = /* @__PURE__ */ rP();
+    Object.defineProperty(e, "AutoDetectSourceLanguageResult", { enumerable: !0, get: function() {
+      return bs.AutoDetectSourceLanguageResult;
     } });
     var ws = /* @__PURE__ */ nP();
-    Object.defineProperty(e, "SpeakerVerificationModel", { enumerable: !0, get: function() {
-      return ws.SpeakerVerificationModel;
-    } });
-    var rt = /* @__PURE__ */ iP();
-    Object.defineProperty(e, "AutoDetectSourceLanguageConfig", { enumerable: !0, get: function() {
-      return rt.AutoDetectSourceLanguageConfig;
-    } });
-    var Xs = /* @__PURE__ */ sP();
-    Object.defineProperty(e, "AutoDetectSourceLanguageResult", { enumerable: !0, get: function() {
-      return Xs.AutoDetectSourceLanguageResult;
-    } });
-    var eo = /* @__PURE__ */ oP();
     Object.defineProperty(e, "SourceLanguageConfig", { enumerable: !0, get: function() {
-      return eo.SourceLanguageConfig;
+      return ws.SourceLanguageConfig;
     } });
-    var jt = /* @__PURE__ */ aP();
+    var Qt = /* @__PURE__ */ iP();
     Object.defineProperty(e, "SpeakerRecognitionResult", { enumerable: !0, get: function() {
-      return jt.SpeakerRecognitionResult;
+      return Qt.SpeakerRecognitionResult;
     } }), Object.defineProperty(e, "SpeakerRecognitionResultType", { enumerable: !0, get: function() {
-      return jt.SpeakerRecognitionResultType;
+      return Qt.SpeakerRecognitionResultType;
     } }), Object.defineProperty(e, "SpeakerRecognitionCancellationDetails", { enumerable: !0, get: function() {
-      return jt.SpeakerRecognitionCancellationDetails;
+      return Qt.SpeakerRecognitionCancellationDetails;
     } });
-    var oe = /* @__PURE__ */ ac();
+    var ie = /* @__PURE__ */ sc();
     Object.defineProperty(e, "Conversation", { enumerable: !0, get: function() {
-      return oe.Conversation;
+      return ie.Conversation;
     } }), Object.defineProperty(e, "ConversationExpirationEventArgs", { enumerable: !0, get: function() {
-      return oe.ConversationExpirationEventArgs;
+      return ie.ConversationExpirationEventArgs;
     } }), Object.defineProperty(e, "ConversationParticipantsChangedEventArgs", { enumerable: !0, get: function() {
-      return oe.ConversationParticipantsChangedEventArgs;
+      return ie.ConversationParticipantsChangedEventArgs;
     } }), Object.defineProperty(e, "ConversationTranslationCanceledEventArgs", { enumerable: !0, get: function() {
-      return oe.ConversationTranslationCanceledEventArgs;
+      return ie.ConversationTranslationCanceledEventArgs;
     } }), Object.defineProperty(e, "ConversationTranslationEventArgs", { enumerable: !0, get: function() {
-      return oe.ConversationTranslationEventArgs;
+      return ie.ConversationTranslationEventArgs;
     } }), Object.defineProperty(e, "ConversationTranslationResult", { enumerable: !0, get: function() {
-      return oe.ConversationTranslationResult;
+      return ie.ConversationTranslationResult;
     } }), Object.defineProperty(e, "ConversationTranslator", { enumerable: !0, get: function() {
-      return oe.ConversationTranslator;
+      return ie.ConversationTranslator;
     } }), Object.defineProperty(e, "ConversationTranscriber", { enumerable: !0, get: function() {
-      return oe.ConversationTranscriber;
+      return ie.ConversationTranscriber;
     } }), Object.defineProperty(e, "ConversationTranscriptionResult", { enumerable: !0, get: function() {
-      return oe.ConversationTranscriptionResult;
+      return ie.ConversationTranscriptionResult;
     } }), Object.defineProperty(e, "Meeting", { enumerable: !0, get: function() {
-      return oe.Meeting;
+      return ie.Meeting;
     } }), Object.defineProperty(e, "MeetingTranscriber", { enumerable: !0, get: function() {
-      return oe.MeetingTranscriber;
+      return ie.MeetingTranscriber;
     } }), Object.defineProperty(e, "Participant", { enumerable: !0, get: function() {
-      return oe.Participant;
+      return ie.Participant;
     } }), Object.defineProperty(e, "ParticipantChangedReason", { enumerable: !0, get: function() {
-      return oe.ParticipantChangedReason;
+      return ie.ParticipantChangedReason;
     } }), Object.defineProperty(e, "User", { enumerable: !0, get: function() {
-      return oe.User;
+      return ie.User;
     } });
-    var to = /* @__PURE__ */ cc();
+    var U = /* @__PURE__ */ oc();
     Object.defineProperty(e, "Synthesizer", { enumerable: !0, get: function() {
-      return to.Synthesizer;
+      return U.Synthesizer;
     } });
-    var Es = /* @__PURE__ */ ov();
+    var Z = /* @__PURE__ */ nv();
     Object.defineProperty(e, "SpeechSynthesisOutputFormat", { enumerable: !0, get: function() {
-      return Es.SpeechSynthesisOutputFormat;
+      return Z.SpeechSynthesisOutputFormat;
     } });
-    var j = /* @__PURE__ */ bP();
+    var V = /* @__PURE__ */ CP();
     Object.defineProperty(e, "SpeechSynthesizer", { enumerable: !0, get: function() {
-      return j.SpeechSynthesizer;
+      return V.SpeechSynthesizer;
     } });
-    var W = /* @__PURE__ */ wP();
+    var G = /* @__PURE__ */ RP();
     Object.defineProperty(e, "SynthesisResult", { enumerable: !0, get: function() {
-      return W.SynthesisResult;
+      return G.SynthesisResult;
     } });
-    var U = /* @__PURE__ */ EP();
+    var We = /* @__PURE__ */ PP();
     Object.defineProperty(e, "SpeechSynthesisResult", { enumerable: !0, get: function() {
-      return U.SpeechSynthesisResult;
+      return We.SpeechSynthesisResult;
     } });
-    var V = /* @__PURE__ */ IP();
+    var te = /* @__PURE__ */ bP();
     Object.defineProperty(e, "SpeechSynthesisEventArgs", { enumerable: !0, get: function() {
-      return V.SpeechSynthesisEventArgs;
+      return te.SpeechSynthesisEventArgs;
     } });
-    var We = /* @__PURE__ */ AP();
+    var be = /* @__PURE__ */ wP();
     Object.defineProperty(e, "SpeechSynthesisWordBoundaryEventArgs", { enumerable: !0, get: function() {
-      return We.SpeechSynthesisWordBoundaryEventArgs;
+      return be.SpeechSynthesisWordBoundaryEventArgs;
     } });
-    var re = /* @__PURE__ */ TP();
+    var ye = /* @__PURE__ */ EP();
     Object.defineProperty(e, "SpeechSynthesisBookmarkEventArgs", { enumerable: !0, get: function() {
-      return re.SpeechSynthesisBookmarkEventArgs;
+      return ye.SpeechSynthesisBookmarkEventArgs;
     } });
-    var we = /* @__PURE__ */ _P();
+    var Yt = /* @__PURE__ */ IP();
     Object.defineProperty(e, "SpeechSynthesisVisemeEventArgs", { enumerable: !0, get: function() {
-      return we.SpeechSynthesisVisemeEventArgs;
+      return Yt.SpeechSynthesisVisemeEventArgs;
     } });
-    var Re = /* @__PURE__ */ kP();
+    var eo = /* @__PURE__ */ AP();
     Object.defineProperty(e, "SpeechSynthesisBoundaryType", { enumerable: !0, get: function() {
-      return Re.SpeechSynthesisBoundaryType;
+      return eo.SpeechSynthesisBoundaryType;
     } });
-    var Gt = /* @__PURE__ */ OP();
+    var to = /* @__PURE__ */ TP();
     Object.defineProperty(e, "SynthesisVoicesResult", { enumerable: !0, get: function() {
-      return Gt.SynthesisVoicesResult;
+      return to.SynthesisVoicesResult;
     } });
-    var Qt = /* @__PURE__ */ MP();
+    var Zt = /* @__PURE__ */ _P();
     Object.defineProperty(e, "SynthesisVoiceGender", { enumerable: !0, get: function() {
-      return Qt.SynthesisVoiceGender;
+      return Zt.SynthesisVoiceGender;
     } }), Object.defineProperty(e, "SynthesisVoiceType", { enumerable: !0, get: function() {
-      return Qt.SynthesisVoiceType;
+      return Zt.SynthesisVoiceType;
     } }), Object.defineProperty(e, "VoiceInfo", { enumerable: !0, get: function() {
-      return Qt.VoiceInfo;
+      return Zt.VoiceInfo;
     } });
-    var ro = /* @__PURE__ */ DP();
+    var ro = /* @__PURE__ */ kP();
     Object.defineProperty(e, "SpeakerAudioDestination", { enumerable: !0, get: function() {
       return ro.SpeakerAudioDestination;
     } });
-    var no = /* @__PURE__ */ NP();
+    var no = /* @__PURE__ */ OP();
     Object.defineProperty(e, "ConversationTranscriptionCanceledEventArgs", { enumerable: !0, get: function() {
       return no.ConversationTranscriptionCanceledEventArgs;
     } });
-    var io = /* @__PURE__ */ xP();
+    var io = /* @__PURE__ */ MP();
     Object.defineProperty(e, "MeetingTranscriptionCanceledEventArgs", { enumerable: !0, get: function() {
       return io.MeetingTranscriptionCanceledEventArgs;
     } });
-    var so = /* @__PURE__ */ zP();
+    var cg = /* @__PURE__ */ DP();
     Object.defineProperty(e, "PronunciationAssessmentGradingSystem", { enumerable: !0, get: function() {
-      return so.PronunciationAssessmentGradingSystem;
+      return cg.PronunciationAssessmentGradingSystem;
     } });
-    var oo = /* @__PURE__ */ LP();
+    var ug = /* @__PURE__ */ NP();
     Object.defineProperty(e, "PronunciationAssessmentGranularity", { enumerable: !0, get: function() {
-      return oo.PronunciationAssessmentGranularity;
+      return ug.PronunciationAssessmentGranularity;
     } });
-    var pg = /* @__PURE__ */ jP();
+    var lg = /* @__PURE__ */ xP();
     Object.defineProperty(e, "PronunciationAssessmentConfig", { enumerable: !0, get: function() {
-      return pg.PronunciationAssessmentConfig;
+      return lg.PronunciationAssessmentConfig;
     } });
-    var dg = /* @__PURE__ */ qP();
+    var pg = /* @__PURE__ */ zP();
     Object.defineProperty(e, "PronunciationAssessmentResult", { enumerable: !0, get: function() {
-      return dg.PronunciationAssessmentResult;
+      return pg.PronunciationAssessmentResult;
     } });
-    var hg = /* @__PURE__ */ wv();
+    var dg = /* @__PURE__ */ Rv();
     Object.defineProperty(e, "LanguageIdMode", { enumerable: !0, get: function() {
-      return hg.LanguageIdMode;
+      return dg.LanguageIdMode;
     } });
-    var fg = /* @__PURE__ */ FP();
+    var hg = /* @__PURE__ */ LP();
     Object.defineProperty(e, "AvatarConfig", { enumerable: !0, get: function() {
-      return fg.AvatarConfig;
+      return hg.AvatarConfig;
     } });
-    var vg = /* @__PURE__ */ BP();
+    var fg = /* @__PURE__ */ jP();
     Object.defineProperty(e, "AvatarEventArgs", { enumerable: !0, get: function() {
-      return vg.AvatarEventArgs;
+      return fg.AvatarEventArgs;
     } });
-    var gg = /* @__PURE__ */ UP();
+    var vg = /* @__PURE__ */ qP();
     Object.defineProperty(e, "AvatarSynthesizer", { enumerable: !0, get: function() {
-      return gg.AvatarSynthesizer;
+      return vg.AvatarSynthesizer;
     } });
-    var hc = /* @__PURE__ */ $P();
+    var pc = /* @__PURE__ */ FP();
     Object.defineProperty(e, "AvatarVideoFormat", { enumerable: !0, get: function() {
-      return hc.AvatarVideoFormat;
+      return pc.AvatarVideoFormat;
     } }), Object.defineProperty(e, "Coordinate", { enumerable: !0, get: function() {
-      return hc.Coordinate;
+      return pc.Coordinate;
     } });
-    var mg = /* @__PURE__ */ VP();
+    var gg = /* @__PURE__ */ BP();
     Object.defineProperty(e, "AvatarWebRTCConnectionResult", { enumerable: !0, get: function() {
-      return mg.AvatarWebRTCConnectionResult;
+      return gg.AvatarWebRTCConnectionResult;
     } });
-    var yg = /* @__PURE__ */ WP();
+    var mg = /* @__PURE__ */ UP();
     Object.defineProperty(e, "Diagnostics", { enumerable: !0, get: function() {
-      return yg.Diagnostics;
+      return mg.Diagnostics;
     } });
-    var Sg = /* @__PURE__ */ rv();
+    var yg = /* @__PURE__ */ Xf();
     Object.defineProperty(e, "LogLevel", { enumerable: !0, get: function() {
-      return Sg.LogLevel;
+      return yg.LogLevel;
     } });
-  }(xo)), xo;
+  }(Do)), Do;
 }
-var td;
-function HP() {
-  if (td) return Dr;
-  td = 1, Object.defineProperty(Dr, "__esModule", { value: !0 }), Dr.ProxyInfo = void 0;
+var Xp;
+function $P() {
+  if (Xp) return xr;
+  Xp = 1, Object.defineProperty(xr, "__esModule", { value: !0 }), xr.ProxyInfo = void 0;
   const e = /* @__PURE__ */ A();
-  let t = class xv {
+  let t = class Mv {
     constructor(s, i, a, o) {
       this.privProxyHostName = s, this.privProxyPort = i, this.privProxyUserName = a, this.privProxyPassword = o;
     }
     static fromParameters(s) {
-      return new xv(s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyHostName), parseInt(s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyPort), 10), s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyUserName), s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyPassword));
+      return new Mv(s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyHostName), parseInt(s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyPort), 10), s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyUserName), s.getProperty(e.PropertyId.SpeechServiceConnection_ProxyPassword));
     }
     static fromRecognizerConfig(s) {
       return this.fromParameters(s.parameters);
@@ -16650,14 +16650,14 @@ function HP() {
       return this.privProxyPassword;
     }
   };
-  return Dr.ProxyInfo = t, Dr;
+  return xr.ProxyInfo = t, xr;
 }
-var ai = {}, na, rd;
-function KP() {
-  if (rd) return na;
-  rd = 1;
+var ui = {}, ta, ed;
+function VP() {
+  if (ed) return ta;
+  ed = 1;
   const e = /* @__PURE__ */ new Set(["json", "buffer", "string"]);
-  return na = (t) => (...r) => {
+  return ta = (t) => (...r) => {
     const s = /* @__PURE__ */ new Set();
     let i, a, o, n = "";
     return r.forEach((c) => {
@@ -16687,13 +16687,13 @@ function KP() {
       else
         throw new Error(`Unknown type: ${typeof c}`);
     }), i || (i = "GET"), s.size === 0 && s.add(200), t(s, i, a, o, n);
-  }, na;
+  }, ta;
 }
-var ia, nd;
-function JP() {
-  if (nd) return ia;
-  nd = 1;
-  const e = KP();
+var ra, td;
+function WP() {
+  if (td) return ra;
+  td = 1;
+  const e = VP();
   class t extends Error {
     constructor(i, ...a) {
       super(...a), Error.captureStackTrace && Error.captureStackTrace(this, t), this.name = "StatusError", this.message = i.statusMessage, this.statusCode = i.status, this.res = i, this.json = i.json.bind(i), this.text = i.text.bind(i), this.arrayBuffer = i.arrayBuffer.bind(i);
@@ -16703,7 +16703,7 @@ function JP() {
         this.headers[c.toLowerCase()] = u;
     }
   }
-  return ia = e((s, i, a, o, n) => async (c, u, l = {}) => {
+  return ra = e((s, i, a, o, n) => async (c, u, l = {}) => {
     c = n + (c || "");
     let p = new URL(c);
     if (o || (o = {}), p.username && (o.Authorization = "Basic " + btoa(p.username + ":" + p.password), p = new URL(p.protocol + "//" + p.host + p.pathname + p.search)), p.protocol !== "https:" && p.protocol !== "http:")
@@ -16718,16 +16718,16 @@ function JP() {
     if (d.statusCode = d.status, !s.has(d.status))
       throw new t(d);
     return a === "json" ? d.json() : a === "buffer" ? d.arrayBuffer() : a === "string" ? d.text() : d;
-  }), ia;
+  }), ra;
 }
-var id;
-function GP() {
-  return id || (id = 1, function(e) {
-    var t = ai && ai.__importDefault || function(o) {
+var rd;
+function HP() {
+  return rd || (rd = 1, function(e) {
+    var t = ui && ui.__importDefault || function(o) {
       return o && o.__esModule ? o : { default: o };
     };
     Object.defineProperty(e, "__esModule", { value: !0 }), e.RestMessageAdapter = e.RestRequestType = void 0;
-    const r = t(JP()), s = /* @__PURE__ */ D();
+    const r = t(WP()), s = /* @__PURE__ */ D();
     var i;
     (function(o) {
       o.Get = "GET", o.Post = "POST", o.Delete = "DELETE", o.File = "file";
@@ -16790,24 +16790,24 @@ function GP() {
       }
     };
     e.RestMessageAdapter = a;
-  }(ai)), ai;
+  }(ui)), ui;
 }
-var ci = {}, sd;
-function zv() {
-  if (sd) return ci;
-  sd = 1, Object.defineProperty(ci, "__esModule", { value: !0 }), ci.RestConfigBase = void 0;
-  let e = class Ms {
+var li = {}, nd;
+function Dv() {
+  if (nd) return li;
+  nd = 1, Object.defineProperty(li, "__esModule", { value: !0 }), li.RestConfigBase = void 0;
+  let e = class Os {
     static get requestOptions() {
-      return Ms.privDefaultRequestOptions;
+      return Os.privDefaultRequestOptions;
     }
     static get configParams() {
-      return Ms.privDefaultParams;
+      return Os.privDefaultParams;
     }
     static get restErrors() {
-      return Ms.privRestErrors;
+      return Os.privRestErrors;
     }
   };
-  return ci.RestConfigBase = e, e.privDefaultRequestOptions = {
+  return li.RestConfigBase = e, e.privDefaultRequestOptions = {
     headers: {
       Accept: "application/json"
     },
@@ -16839,11 +16839,11 @@ function zv() {
     subscriptionKey: "Ocp-Apim-Subscription-Key",
     subscriptionRegion: "Ocp-Apim-Subscription-Region",
     token: "X-CapitoToken"
-  }, ci;
+  }, li;
 }
-var od;
-function ie() {
-  return od || (od = 1, function(e) {
+var id;
+function ne() {
+  return id || (id = 1, function(e) {
     var t = ut && ut.__createBinding || (Object.create ? function(s, i, a, o) {
       o === void 0 && (o = a), Object.defineProperty(s, o, { enumerable: !0, get: function() {
         return i[a];
@@ -16853,14 +16853,14 @@ function ie() {
     }), r = ut && ut.__exportStar || function(s, i) {
       for (var a in s) a !== "default" && !Object.prototype.hasOwnProperty.call(i, a) && t(i, s, a);
     };
-    Object.defineProperty(e, "__esModule", { value: !0 }), r(/* @__PURE__ */ YC(), e), r(/* @__PURE__ */ ZC(), e), r(/* @__PURE__ */ XC(), e), r(/* @__PURE__ */ eR(), e), r(/* @__PURE__ */ tR(), e), r(/* @__PURE__ */ rR(), e), r(/* @__PURE__ */ nv(), e), r(/* @__PURE__ */ nR(), e), r(/* @__PURE__ */ HP(), e), r(/* @__PURE__ */ GP(), e), r(/* @__PURE__ */ zv(), e);
+    Object.defineProperty(e, "__esModule", { value: !0 }), r(/* @__PURE__ */ JC(), e), r(/* @__PURE__ */ GC(), e), r(/* @__PURE__ */ QC(), e), r(/* @__PURE__ */ YC(), e), r(/* @__PURE__ */ ZC(), e), r(/* @__PURE__ */ XC(), e), r(/* @__PURE__ */ ev(), e), r(/* @__PURE__ */ eR(), e), r(/* @__PURE__ */ $P(), e), r(/* @__PURE__ */ HP(), e), r(/* @__PURE__ */ Dv(), e);
   }(ut)), ut;
 }
-var ad;
-function QP() {
-  if (ad) return Ar;
-  ad = 1, Object.defineProperty(Ar, "__esModule", { value: !0 }), Ar.IntentConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ _e(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ he();
+var sd;
+function KP() {
+  if (sd) return _r;
+  sd = 1, Object.defineProperty(_r, "__esModule", { value: !0 }), _r.IntentConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ Te(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ le();
   let a = class extends r.ConnectionFactoryBase {
     create(n, c, u) {
       let l = n.parameters.getProperty(t.PropertyId.SpeechServiceConnection_Endpoint);
@@ -16933,13 +16933,13 @@ function QP() {
       }
     }
   };
-  return Ar.IntentConnectionFactory = a, Ar;
+  return _r.IntentConnectionFactory = a, _r;
 }
-var bt = {}, cd;
-function YP() {
-  if (cd) return bt;
-  cd = 1, Object.defineProperty(bt, "__esModule", { value: !0 }), bt.VoiceProfileConnectionFactory = bt.SpeakerRecognitionConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ _e(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ he();
+var bt = {}, od;
+function JP() {
+  if (od) return bt;
+  od = 1, Object.defineProperty(bt, "__esModule", { value: !0 }), bt.VoiceProfileConnectionFactory = bt.SpeakerRecognitionConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ Te(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ le();
   class a extends r.ConnectionFactoryBase {
     create(u, l, p, d) {
       let h = u.parameters.getProperty(t.PropertyId.SpeechServiceConnection_Endpoint);
@@ -16983,9 +16983,9 @@ function YP() {
   }
   return bt.VoiceProfileConnectionFactory = n, bt;
 }
-var sa = {}, ud;
-function uc() {
-  return ud || (ud = 1, function(e) {
+var na = {}, ad;
+function ac() {
+  return ad || (ad = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.RecognitionEndedEvent = e.RecognitionCompletionStatus = e.RecognitionStartedEvent = e.ConnectingToServiceEvent = e.ListeningStartedEvent = e.RecognitionTriggeredEvent = e.SpeechRecognitionEvent = void 0;
     const t = /* @__PURE__ */ D();
     class r extends t.PlatformEvent {
@@ -17076,13 +17076,13 @@ function uc() {
       }
     }
     e.RecognitionEndedEvent = c;
-  }(sa)), sa;
+  }(na)), na;
 }
-var ui = {}, li = {}, ld;
-function Kt() {
-  if (ld) return li;
-  ld = 1, Object.defineProperty(li, "__esModule", { value: !0 }), li.SpeechConnectionMessage = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ he();
+var pi = {}, di = {}, cd;
+function Wt() {
+  if (cd) return di;
+  cd = 1, Object.defineProperty(di, "__esModule", { value: !0 }), di.SpeechConnectionMessage = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ le();
   class r extends e.ConnectionMessage {
     constructor(i, a, o, n, c, u, l, p) {
       if (!a)
@@ -17119,89 +17119,89 @@ function Kt() {
       return new r(i.messageType, a, o, n, i.body, c, u, i.id);
     }
   }
-  return li.SpeechConnectionMessage = r, li;
+  return di.SpeechConnectionMessage = r, di;
 }
-var oa = {}, pd;
-function ZP() {
-  return pd || (pd = 1, function(e) {
+var ia = {}, ud;
+function GP() {
+  return ud || (ud = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.SegmentationMode = void 0, function(t) {
       t.Normal = "Normal", t.Disabled = "Disabled", t.Custom = "Custom", t.Semantic = "Semantic";
     }(e.SegmentationMode || (e.SegmentationMode = {}));
-  }(oa)), oa;
+  }(ia)), ia;
 }
-var aa = {}, dd;
-function XP() {
-  return dd || (dd = 1, function(e) {
+var sa = {}, ld;
+function QP() {
+  return ld || (ld = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.NextAction = void 0, function(t) {
       t.None = "None", t.Synthesize = "Synthesize";
     }(e.NextAction || (e.NextAction = {}));
-  }(aa)), aa;
+  }(sa)), sa;
 }
-var ca = {}, hd;
-function eb() {
-  return hd || (hd = 1, function(e) {
+var oa = {}, pd;
+function YP() {
+  return pd || (pd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.Mode = void 0, function(t) {
       t.None = "None", t.Always = "Always";
     }(e.Mode || (e.Mode = {}));
-  }(ca)), ca;
+  }(oa)), oa;
 }
-var ua = {}, fd;
-function tb() {
-  return fd || (fd = 1, function(e) {
+var aa = {}, dd;
+function ZP() {
+  return dd || (dd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.LanguageIdDetectionPriority = e.LanguageIdDetectionMode = void 0, function(t) {
       t.DetectAtAudioStart = "DetectAtAudioStart", t.DetectContinuous = "DetectContinuous", t.DetectSegments = "DetectSegments";
     }(e.LanguageIdDetectionMode || (e.LanguageIdDetectionMode = {})), function(t) {
       t.Auto = "Auto", t.PrioritizeLatency = "PrioritizeLatency", t.PrioritizeAccuracy = "PrioritizeAccuracy";
     }(e.LanguageIdDetectionPriority || (e.LanguageIdDetectionPriority = {}));
-  }(ua)), ua;
+  }(aa)), aa;
 }
-var la = {}, vd;
-function rb() {
-  return vd || (vd = 1, function(e) {
+var ca = {}, hd;
+function XP() {
+  return hd || (hd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.NextAction = void 0, function(t) {
       t.Recognize = "Recognize", t.None = "None";
     }(e.NextAction || (e.NextAction = {}));
-  }(la)), la;
+  }(ca)), ca;
 }
-var pa = {}, gd;
-function nb() {
-  return gd || (gd = 1, function(e) {
+var ua = {}, fd;
+function eb() {
+  return fd || (fd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.OnUnknownAction = void 0, function(t) {
       t.RecognizeWithDefaultLanguage = "RecognizeWithDefaultLanguage", t.None = "None";
     }(e.OnUnknownAction || (e.OnUnknownAction = {}));
-  }(pa)), pa;
+  }(ua)), ua;
 }
-var da = {}, md;
-function ib() {
-  return md || (md = 1, function(e) {
+var la = {}, vd;
+function tb() {
+  return vd || (vd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.ResultType = void 0, function(t) {
       t.Auto = "Auto", t.StableFragment = "StableFragment", t.Hypothesis = "Hypothesis", t.None = "None";
     }(e.ResultType || (e.ResultType = {}));
-  }(da)), da;
+  }(la)), la;
 }
-var ha = {}, yd;
-function sb() {
-  return yd || (yd = 1, function(e) {
+var pa = {}, gd;
+function rb() {
+  return gd || (gd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.PhraseResultOutputType = void 0, function(t) {
       t.Always = "Always", t.None = "None";
     }(e.PhraseResultOutputType || (e.PhraseResultOutputType = {}));
-  }(ha)), ha;
+  }(pa)), pa;
 }
-var fa = {}, Sd;
-function ob() {
-  return Sd || (Sd = 1, function(e) {
+var da = {}, md;
+function nb() {
+  return md || (md = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.NextAction = void 0, function(t) {
       t.None = "None", t.Translate = "Translate";
     }(e.NextAction || (e.NextAction = {}));
-  }(fa)), fa;
+  }(da)), da;
 }
-var Cd;
-function ab() {
-  if (Cd) return ui;
-  Cd = 1, Object.defineProperty(ui, "__esModule", { value: !0 }), ui.ServiceRecognizerBase = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ Kt(), a = /* @__PURE__ */ ZP(), o = /* @__PURE__ */ be(), n = /* @__PURE__ */ XP(), c = /* @__PURE__ */ eb(), u = /* @__PURE__ */ tb(), l = /* @__PURE__ */ rb(), p = /* @__PURE__ */ nb(), d = /* @__PURE__ */ ib(), h = /* @__PURE__ */ sb(), f = /* @__PURE__ */ ob();
-  let g = class as {
-    constructor(v, y, S, C, P) {
+var yd;
+function ib() {
+  if (yd) return pi;
+  yd = 1, Object.defineProperty(pi, "__esModule", { value: !0 }), pi.ServiceRecognizerBase = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ Wt(), a = /* @__PURE__ */ GP(), o = /* @__PURE__ */ Se(), n = /* @__PURE__ */ QP(), c = /* @__PURE__ */ YP(), u = /* @__PURE__ */ ZP(), l = /* @__PURE__ */ XP(), p = /* @__PURE__ */ eb(), d = /* @__PURE__ */ tb(), h = /* @__PURE__ */ rb(), f = /* @__PURE__ */ nb();
+  let g = class us {
+    constructor(v, y, S, C, R) {
       if (this.privConnectionConfigurationPromise = void 0, this.privConnectionPromise = void 0, this.privSetTimeout = setTimeout, this.privIsLiveAudio = !1, this.privAverageBytesPerMs = 0, this.privEnableSpeakerId = !1, this.privExpectContentAssessmentResponse = !1, this.recognizeOverride = void 0, this.recognizeSpeaker = void 0, this.disconnectOverride = void 0, this.receiveMessageOverride = void 0, this.sendPrePayloadJSONOverride = void 0, this.postConnectImplOverride = void 0, this.configConnectionOverride = void 0, this.handleSpeechPhraseMessage = void 0, this.handleSpeechHypothesisMessage = void 0, !v)
         throw new t.ArgumentNullError("authentication");
       if (!y)
@@ -17210,7 +17210,7 @@ function ab() {
         throw new t.ArgumentNullError("audioSource");
       if (!C)
         throw new t.ArgumentNullError("recognizerConfig");
-      this.privEnableSpeakerId = C.isSpeakerDiarizationEnabled, this.privMustReportEndOfStream = !1, this.privAuthentication = v, this.privConnectionFactory = y, this.privAudioSource = S, this.privRecognizerConfig = C, this.privIsDisposed = !1, this.privRecognizer = P, this.privRequestSession = new s.RequestSession(this.privAudioSource.id()), this.privConnectionEvents = new t.EventSource(), this.privServiceEvents = new t.EventSource(), this.privDynamicGrammar = new s.DynamicGrammarBuilder(), this.privSpeechContext = new s.SpeechContext(this.privDynamicGrammar), this.privAgentConfig = new s.AgentConfig(), this.privRecognizerConfig.parameters.getProperty(r.PropertyId.WebWorkerLoadType, "on").toLowerCase() === "on" && typeof Blob < "u" && typeof Worker < "u" ? this.privSetTimeout = t.Timeout.setTimeout : (typeof window < "u" && (this.privSetTimeout = window.setTimeout.bind(window)), typeof globalThis < "u" && (this.privSetTimeout = globalThis.setTimeout.bind(globalThis))), this.connectionEvents.attach((I) => {
+      this.privEnableSpeakerId = C.isSpeakerDiarizationEnabled, this.privMustReportEndOfStream = !1, this.privAuthentication = v, this.privConnectionFactory = y, this.privAudioSource = S, this.privRecognizerConfig = C, this.privIsDisposed = !1, this.privRecognizer = R, this.privRequestSession = new s.RequestSession(this.privAudioSource.id()), this.privConnectionEvents = new t.EventSource(), this.privServiceEvents = new t.EventSource(), this.privDynamicGrammar = new s.DynamicGrammarBuilder(), this.privSpeechContext = new s.SpeechContext(this.privDynamicGrammar), this.privAgentConfig = new s.AgentConfig(), this.privRecognizerConfig.parameters.getProperty(r.PropertyId.WebWorkerLoadType, "on").toLowerCase() === "on" && typeof Blob < "u" && typeof Worker < "u" ? this.privSetTimeout = t.Timeout.setTimeout : (typeof window < "u" && (this.privSetTimeout = window.setTimeout.bind(window)), typeof globalThis < "u" && (this.privSetTimeout = globalThis.setTimeout.bind(globalThis))), this.connectionEvents.attach((I) => {
         if (I.name === "ConnectionClosedEvent") {
           const E = I;
           (E.statusCode === 1003 || E.statusCode === 1007 || E.statusCode === 1002 || E.statusCode === 4e3 || this.privRequestSession.numConnectionAttempts > this.privRecognizerConfig.maxRetryCount) && this.cancelRecognitionLocal(r.CancellationReason.Error, E.statusCode === 1007 ? r.CancellationErrorCode.BadRequestParameters : r.CancellationErrorCode.ConnectionFailure, `${E.reason} websocket error code: ${E.statusCode}`);
@@ -17220,10 +17220,10 @@ function ab() {
     setTranslationJson() {
       const v = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.SpeechServiceConnection_TranslationToLanguages, void 0);
       if (v !== void 0) {
-        const y = v.split(","), S = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.SpeechServiceConnection_TranslationVoice, void 0), C = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.SpeechServiceConnection_TranslationCategoryId, void 0), P = S !== void 0 ? n.NextAction.Synthesize : n.NextAction.None;
+        const y = v.split(","), S = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.SpeechServiceConnection_TranslationVoice, void 0), C = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.SpeechServiceConnection_TranslationCategoryId, void 0), R = S !== void 0 ? n.NextAction.Synthesize : n.NextAction.None;
         if (this.privSpeechContext.getContext().translation = {
-          onPassthrough: { action: P },
-          onSuccess: { action: P },
+          onPassthrough: { action: R },
+          onSuccess: { action: R },
           output: {
             includePassThroughResults: !0,
             interimResults: { mode: c.Mode.Always }
@@ -17245,9 +17245,9 @@ function ab() {
       const v = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.Speech_SegmentationSilenceTimeoutMs, void 0), y = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.Speech_SegmentationMaximumTimeMs, void 0), S = this.privRecognizerConfig.parameters.getProperty(r.PropertyId.Speech_SegmentationStrategy, void 0), C = {
         mode: a.SegmentationMode.Normal
       };
-      let P = !1;
+      let R = !1;
       if (S !== void 0) {
-        P = !0;
+        R = !0;
         let w = a.SegmentationMode.Normal;
         switch (S.toLowerCase()) {
           case "default":
@@ -17262,16 +17262,16 @@ function ab() {
         C.mode = w;
       }
       if (v !== void 0) {
-        P = !0;
+        R = !0;
         const w = parseInt(v, 10);
         C.mode = a.SegmentationMode.Custom, C.segmentationSilenceTimeoutMs = w;
       }
       if (y !== void 0) {
-        P = !0;
+        R = !0;
         const w = parseInt(y, 10);
         C.mode = a.SegmentationMode.Custom, C.segmentationForcedTimeoutMs = w;
       }
-      if (P) {
+      if (R) {
         const w = this.privSpeechContext.getContext().phraseDetection || {};
         switch (w.mode = this.recognitionMode, this.recognitionMode) {
           case o.RecognitionMode.Conversation:
@@ -17370,10 +17370,10 @@ function ab() {
       }
       this.setLanguageIdJson(), this.setTranslationJson(), this.privRecognizerConfig.autoDetectSourceLanguages !== void 0 && this.privRecognizerConfig.parameters.getProperty(r.PropertyId.SpeechServiceConnection_TranslationToLanguages, void 0) !== void 0 && this.setupTranslationWithLanguageId(), this.setSpeechSegmentationTimeoutJson(), this.setOutputDetailLevelJson(), this.privSuccessCallback = y, this.privErrorCallback = S, this.privRequestSession.startNewRecognition(), this.privRequestSession.listenForServiceTelemetry(this.privAudioSource.events);
       const C = this.connectImpl();
-      let P;
+      let R;
       try {
         const E = await this.audioSource.attach(this.privRequestSession.audioNodeId), T = await this.audioSource.format, b = await this.audioSource.deviceInfo;
-        this.privIsLiveAudio = b.type && b.type === s.type.Microphones, P = new e.ReplayableAudioNode(E, T.avgBytesPerSec), await this.privRequestSession.onAudioSourceAttachCompleted(P, !1), this.privRecognizerConfig.SpeechServiceConfig.Context.audio = { source: b };
+        this.privIsLiveAudio = b.type && b.type === s.type.Microphones, R = new e.ReplayableAudioNode(E, T.avgBytesPerSec), await this.privRequestSession.onAudioSourceAttachCompleted(R, !1), this.privRecognizerConfig.SpeechServiceConfig.Context.audio = { source: b };
       } catch (E) {
         throw await this.privRequestSession.onStopRecognizing(), E;
       }
@@ -17384,7 +17384,7 @@ function ab() {
         return;
       }
       const w = new r.SessionEventArgs(this.privRequestSession.sessionId);
-      this.privRecognizer.sessionStarted && this.privRecognizer.sessionStarted(this.privRecognizer, w), this.receiveMessage(), this.sendAudio(P).catch(async (E) => {
+      this.privRecognizer.sessionStarted && this.privRecognizer.sessionStarted(this.privRecognizer, w), this.receiveMessage(), this.sendAudio(R).catch(async (E) => {
         await this.cancelRecognitionLocal(r.CancellationReason.Error, r.CancellationErrorCode.RuntimeError, E);
       });
     }
@@ -17439,11 +17439,11 @@ function ab() {
     }
     async sendTelemetryData() {
       const v = this.privRequestSession.getTelemetry();
-      if (as.telemetryDataEnabled !== !0 || this.privIsDisposed || v === null)
+      if (us.telemetryDataEnabled !== !0 || this.privIsDisposed || v === null)
         return;
-      if (as.telemetryData)
+      if (us.telemetryData)
         try {
-          as.telemetryData(v);
+          us.telemetryData(v);
         } catch {
         }
       await (await this.fetchConnection()).send(new i.SpeechConnectionMessage(t.MessageType.Text, "telemetry", this.privRequestSession.requestId, "application/json", v));
@@ -17470,8 +17470,8 @@ function ab() {
               this.privMustReportEndOfStream = !0, this.privRequestSession.onServiceTurnStartResponse();
               break;
             case "speech.startdetected":
-              const C = s.SpeechDetected.fromJSON(S.textBody, this.privRequestSession.currentTurnAudioOffset), P = new r.RecognitionEventArgs(C.Offset, this.privRequestSession.sessionId);
-              this.privRecognizer.speechStartDetected && this.privRecognizer.speechStartDetected(this.privRecognizer, P);
+              const C = s.SpeechDetected.fromJSON(S.textBody, this.privRequestSession.currentTurnAudioOffset), R = new r.RecognitionEventArgs(C.Offset, this.privRequestSession.sessionId);
+              this.privRecognizer.speechStartDetected && this.privRecognizer.speechStartDetected(this.privRecognizer, R);
               break;
             case "speech.enddetected":
               let w;
@@ -17546,13 +17546,13 @@ function ab() {
       }), this.postConnectImplOverride !== void 0 ? this.postConnectImplOverride(this.privConnectionPromise) : this.privConnectionPromise);
     }
     sendSpeechServiceConfig(v, y, S) {
-      if (y.onSpeechContext(), as.telemetryDataEnabled !== !0) {
-        const P = {
+      if (y.onSpeechContext(), us.telemetryDataEnabled !== !0) {
+        const R = {
           context: {
             system: JSON.parse(S).context.system
           }
         };
-        S = JSON.stringify(P);
+        S = JSON.stringify(R);
       }
       if (this.privRecognizerConfig.parameters.getProperty("f0f5debc-f8c9-4892-ac4b-90a7ab359fd2", "false").toLowerCase() === "true") {
         const C = JSON.parse(S);
@@ -17568,13 +17568,13 @@ function ab() {
       const y = await this.audioSource.format;
       this.privAverageBytesPerMs = y.avgBytesPerSec / 1e3;
       let S = Date.now();
-      const C = this.privRecognizerConfig.parameters.getProperty("SPEECH-TransmitLengthBeforThrottleMs", "5000"), P = y.avgBytesPerSec / 1e3 * parseInt(C, 10), w = this.privRequestSession.recogNumber, I = async () => {
+      const C = this.privRecognizerConfig.parameters.getProperty("SPEECH-TransmitLengthBeforThrottleMs", "5000"), R = y.avgBytesPerSec / 1e3 * parseInt(C, 10), w = this.privRequestSession.recogNumber, I = async () => {
         if (!this.privIsDisposed && !this.privRequestSession.isSpeechEnded && this.privRequestSession.isRecognizing && this.privRequestSession.recogNumber === w) {
           const E = await this.fetchConnection(), T = await v.read();
           if (this.privRequestSession.isSpeechEnded)
             return;
           let b, _;
-          if (!T || T.isEnd ? (b = null, _ = 0) : (b = T.buffer, this.privRequestSession.onAudioSent(b.byteLength), P >= this.privRequestSession.bytesSent ? _ = 0 : _ = Math.max(0, S - Date.now())), _ !== 0 && await this.delay(_), b !== null && (S = Date.now() + b.byteLength * 1e3 / (y.avgBytesPerSec * 2)), !this.privIsDisposed && !this.privRequestSession.isSpeechEnded && this.privRequestSession.isRecognizing && this.privRequestSession.recogNumber === w)
+          if (!T || T.isEnd ? (b = null, _ = 0) : (b = T.buffer, this.privRequestSession.onAudioSent(b.byteLength), R >= this.privRequestSession.bytesSent ? _ = 0 : _ = Math.max(0, S - Date.now())), _ !== 0 && await this.delay(_), b !== null && (S = Date.now() + b.byteLength * 1e3 / (y.avgBytesPerSec * 2)), !this.privIsDisposed && !this.privRequestSession.isSpeechEnded && this.privRequestSession.isRecognizing && this.privRequestSession.recogNumber === w)
             if (E.send(new i.SpeechConnectionMessage(t.MessageType.Binary, "audio", this.privRequestSession.requestId, null, b)).catch(() => {
               this.privRequestSession.onServiceTurnEndResponse(this.privRecognizerConfig.isContinuousRecognition).catch(() => {
               });
@@ -17632,12 +17632,12 @@ function ab() {
       return this.configConnectionOverride !== void 0 ? this.configConnectionOverride(v) : (await this.sendSpeechServiceConfig(v, this.privRequestSession, this.privRecognizerConfig.SpeechServiceConfig.serialize()), await this.sendPrePayloadJSON(v, !1), v);
     }
   };
-  return ui.ServiceRecognizerBase = g, g.telemetryDataEnabled = !0, ui;
+  return pi.ServiceRecognizerBase = g, g.telemetryDataEnabled = !0, pi;
 }
-var pi = {}, Rd;
-function cb() {
-  if (Rd) return pi;
-  Rd = 1, Object.defineProperty(pi, "__esModule", { value: !0 }), pi.ConversationServiceRecognizer = void 0;
+var hi = {}, Sd;
+function sb() {
+  if (Sd) return hi;
+  Sd = 1, Object.defineProperty(hi, "__esModule", { value: !0 }), hi.ConversationServiceRecognizer = void 0;
   const e = /* @__PURE__ */ A(), t = /* @__PURE__ */ k();
   let r = class extends t.ServiceRecognizerBase {
     constructor(i, a, o, n, c) {
@@ -17688,13 +17688,13 @@ function cb() {
       this.privRequestSession.onHypothesis(a.Offset), this.handleRecognizingCallback(n, a.Duration, this.privRequestSession.sessionId);
     }
   };
-  return pi.ConversationServiceRecognizer = r, pi;
+  return hi.ConversationServiceRecognizer = r, hi;
 }
-var va = {}, Pd;
-function ub() {
-  return Pd || (Pd = 1, function(e) {
+var ha = {}, Cd;
+function ob() {
+  return Cd || (Cd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.RecognizerConfig = e.SpeechResultFormat = void 0;
-    const t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ be();
+    const t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Se();
     (function(a) {
       a[a.Simple = 0] = "Simple", a[a.Detailed = 1] = "Detailed";
     })(e.SpeechResultFormat || (e.SpeechResultFormat = {}));
@@ -17753,16 +17753,16 @@ function ub() {
       }
     }
     e.RecognizerConfig = i;
-  }(va)), va;
+  }(ha)), ha;
 }
-var ga = {}, bd;
-function lb() {
-  return bd || (bd = 1, Object.defineProperty(ga, "__esModule", { value: !0 })), ga;
+var fa = {}, Rd;
+function ab() {
+  return Rd || (Rd = 1, Object.defineProperty(fa, "__esModule", { value: !0 })), fa;
 }
-var di = {}, wd;
-function pb() {
-  if (wd) return di;
-  wd = 1, Object.defineProperty(di, "__esModule", { value: !0 }), di.WebsocketMessageFormatter = void 0;
+var fi = {}, Pd;
+function cb() {
+  if (Pd) return fi;
+  Pd = 1, Object.defineProperty(fi, "__esModule", { value: !0 }), fi.WebsocketMessageFormatter = void 0;
   const e = /* @__PURE__ */ D(), t = `\r
 `;
   let r = class {
@@ -17845,13 +17845,13 @@ function pb() {
       return a;
     }
   };
-  return di.WebsocketMessageFormatter = r, di;
+  return fi.WebsocketMessageFormatter = r, fi;
 }
-var hi = {}, Ed;
-function db() {
-  if (Ed) return hi;
-  Ed = 1, Object.defineProperty(hi, "__esModule", { value: !0 }), hi.SpeechConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ _e(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ he(), o = /* @__PURE__ */ Ye(), n = /* @__PURE__ */ be();
+var vi = {}, bd;
+function ub() {
+  if (bd) return vi;
+  bd = 1, Object.defineProperty(vi, "__esModule", { value: !0 }), vi.SpeechConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ Te(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ le(), o = /* @__PURE__ */ Ye(), n = /* @__PURE__ */ Se();
   let c = class extends s.ConnectionFactoryBase {
     constructor() {
       super(...arguments), this.interactiveRelativeUri = "/speech/recognition/interactive/cognitiveservices/v1", this.conversationRelativeUri = "/speech/recognition/conversation/cognitiveservices/v1", this.dictationRelativeUri = "/speech/recognition/dictation/cognitiveservices/v1", this.universalUri = "/stt/speech/universal/v";
@@ -17877,17 +17877,17 @@ function db() {
         }
       const C = {};
       p.token !== void 0 && p.token !== "" && (C[p.headerName] = p.token), C[a.HeaderNames.ConnectionId] = d, C.connectionId = d;
-      const P = l.parameters.getProperty("SPEECH-EnableWebsocketCompression", "false") === "true", w = new e.WebsocketConnection(h, v, C, new i.WebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(l), P, d), I = w.uri;
+      const R = l.parameters.getProperty("SPEECH-EnableWebsocketCompression", "false") === "true", w = new e.WebsocketConnection(h, v, C, new i.WebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(l), R, d), I = w.uri;
       return l.parameters.setProperty(r.PropertyId.SpeechServiceConnection_Url, I), w;
     }
   };
-  return hi.SpeechConnectionFactory = c, hi;
+  return vi.SpeechConnectionFactory = c, vi;
 }
-var fi = {}, Id;
-function hb() {
-  if (Id) return fi;
-  Id = 1, Object.defineProperty(fi, "__esModule", { value: !0 }), fi.ConversationTranscriberConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ _e(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ he(), o = /* @__PURE__ */ Ye();
+var gi = {}, wd;
+function lb() {
+  if (wd) return gi;
+  wd = 1, Object.defineProperty(gi, "__esModule", { value: !0 }), gi.ConversationTranscriberConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Te(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ le(), o = /* @__PURE__ */ Ye();
   let n = class extends s.ConnectionFactoryBase {
     constructor() {
       super(...arguments), this.universalUri = "/stt/speech/universal/v2";
@@ -17902,8 +17902,8 @@ function hb() {
       d || (d = `${g}${this.universalUri}`);
       const S = {};
       l.token !== void 0 && l.token !== "" && (S[l.headerName] = l.token), S[a.HeaderNames.ConnectionId] = p;
-      const C = u.parameters.getProperty("SPEECH-EnableWebsocketCompression", "false") === "true", P = new e.WebsocketConnection(d, m, S, new i.WebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(u), C, p), w = P.uri;
-      return u.parameters.setProperty(t.PropertyId.SpeechServiceConnection_Url, w), P;
+      const C = u.parameters.getProperty("SPEECH-EnableWebsocketCompression", "false") === "true", R = new e.WebsocketConnection(d, m, S, new i.WebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(u), C, p), w = R.uri;
+      return u.parameters.setProperty(t.PropertyId.SpeechServiceConnection_Url, w), R;
     }
     setV2UrlParams(u, l, p) {
       (/* @__PURE__ */ new Map([
@@ -17923,13 +17923,13 @@ function hb() {
       });
     }
   };
-  return fi.ConversationTranscriberConnectionFactory = n, fi;
+  return gi.ConversationTranscriberConnectionFactory = n, gi;
 }
-var vi = {}, Ad;
-function fb() {
-  if (Ad) return vi;
-  Ad = 1, Object.defineProperty(vi, "__esModule", { value: !0 }), vi.TranscriberConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ _e(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ he(), a = /* @__PURE__ */ Ye();
+var mi = {}, Ed;
+function pb() {
+  if (Ed) return mi;
+  Ed = 1, Object.defineProperty(mi, "__esModule", { value: !0 }), mi.TranscriberConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ Te(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ le(), a = /* @__PURE__ */ Ye();
   let o = class extends r.ConnectionFactoryBase {
     constructor() {
       super(...arguments), this.multiaudioRelativeUri = "/speech/recognition/multiaudio";
@@ -17950,13 +17950,13 @@ function fb() {
       (h || f) && (c[a.QueryParameterNames.Format] = t.OutputFormat[t.OutputFormat.Detailed].toLowerCase()), this.setCommonUrlParams(u, c, l);
     }
   };
-  return vi.TranscriberConnectionFactory = o, vi;
+  return mi.TranscriberConnectionFactory = o, mi;
 }
-var gi = {}, Td;
-function vb() {
-  if (Td) return gi;
-  Td = 1, Object.defineProperty(gi, "__esModule", { value: !0 }), gi.TranslationConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ Av(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ _e(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ he(), o = /* @__PURE__ */ Ye(), n = /* @__PURE__ */ be();
+var yi = {}, Id;
+function db() {
+  if (Id) return yi;
+  Id = 1, Object.defineProperty(yi, "__esModule", { value: !0 }), yi.TranslationConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ wv(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ Te(), i = /* @__PURE__ */ k(), a = /* @__PURE__ */ le(), o = /* @__PURE__ */ Ye(), n = /* @__PURE__ */ Se();
   let c = class extends s.ConnectionFactoryBase {
     constructor() {
       super(...arguments), this.universalUri = "/stt/speech/universal/v2", this.translationV1Uri = "/speech/translation/cognitiveservices/v1";
@@ -17984,12 +17984,12 @@ function vb() {
       h !== void 0 && (l.voice = h, l.features = "requireVoice");
     }
   };
-  return gi.TranslationConnectionFactory = c, gi;
+  return yi.TranslationConnectionFactory = c, yi;
 }
-var mi = {}, _d;
-function gb() {
-  if (_d) return mi;
-  _d = 1, Object.defineProperty(mi, "__esModule", { value: !0 }), mi.EnumTranslation = void 0;
+var Si = {}, Ad;
+function hb() {
+  if (Ad) return Si;
+  Ad = 1, Object.defineProperty(Si, "__esModule", { value: !0 }), Si.EnumTranslation = void 0;
   const e = /* @__PURE__ */ A(), t = /* @__PURE__ */ k();
   let r = class {
     static implTranslateRecognitionResult(i, a = !1) {
@@ -18071,29 +18071,29 @@ function gb() {
       return a;
     }
   };
-  return mi.EnumTranslation = r, mi;
+  return Si.EnumTranslation = r, Si;
 }
-var ma = {}, kd;
-function mb() {
-  return kd || (kd = 1, function(e) {
+var va = {}, Td;
+function fb() {
+  return Td || (Td = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.RecognitionStatus = e.SynthesisStatus = void 0, function(t) {
       t[t.Success = 0] = "Success", t[t.SynthesisEnd = 1] = "SynthesisEnd", t[t.Error = 2] = "Error";
     }(e.SynthesisStatus || (e.SynthesisStatus = {})), function(t) {
       t[t.Success = 0] = "Success", t[t.NoMatch = 1] = "NoMatch", t[t.InitialSilenceTimeout = 2] = "InitialSilenceTimeout", t[t.BabbleTimeout = 3] = "BabbleTimeout", t[t.Error = 4] = "Error", t[t.EndOfDictation = 5] = "EndOfDictation", t[t.TooManyRequests = 6] = "TooManyRequests", t[t.BadRequest = 7] = "BadRequest", t[t.Forbidden = 8] = "Forbidden";
     }(e.RecognitionStatus || (e.RecognitionStatus = {}));
-  }(ma)), ma;
+  }(va)), va;
 }
-var yi = {}, Od;
-function yb() {
-  if (Od) return yi;
-  Od = 1, Object.defineProperty(yi, "__esModule", { value: !0 }), yi.TranslationSynthesisEnd = void 0;
+var Ci = {}, _d;
+function vb() {
+  if (_d) return Ci;
+  _d = 1, Object.defineProperty(Ci, "__esModule", { value: !0 }), Ci.TranslationSynthesisEnd = void 0;
   const e = /* @__PURE__ */ k();
-  let t = class Lv {
+  let t = class Nv {
     constructor(s) {
       this.privSynthesisEnd = JSON.parse(s), this.privSynthesisEnd.SynthesisStatus && (this.privSynthesisEnd.SynthesisStatus = e.SynthesisStatus[this.privSynthesisEnd.SynthesisStatus]), this.privSynthesisEnd.Status && (this.privSynthesisEnd.SynthesisStatus = e.SynthesisStatus[this.privSynthesisEnd.Status]);
     }
     static fromJSON(s) {
-      return new Lv(s);
+      return new Nv(s);
     }
     get SynthesisStatus() {
       return this.privSynthesisEnd.SynthesisStatus;
@@ -18102,24 +18102,24 @@ function yb() {
       return this.privSynthesisEnd.FailureReason;
     }
   };
-  return yi.TranslationSynthesisEnd = t, yi;
+  return Ci.TranslationSynthesisEnd = t, Ci;
 }
-var Si = {}, Md;
-function Sb() {
-  if (Md) return Si;
-  Md = 1, Object.defineProperty(Si, "__esModule", { value: !0 }), Si.TranslationHypothesis = void 0;
-  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ nc();
-  let r = class Va {
+var Ri = {}, kd;
+function gb() {
+  if (kd) return Ri;
+  kd = 1, Object.defineProperty(Ri, "__esModule", { value: !0 }), Ri.TranslationHypothesis = void 0;
+  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ tc();
+  let r = class Ua {
     constructor(i, a) {
       this.privTranslationHypothesis = i, this.privTranslationHypothesis.Offset += a, this.privTranslationHypothesis.Translation.TranslationStatus = this.mapTranslationStatus(this.privTranslationHypothesis.Translation.TranslationStatus);
     }
     static fromJSON(i, a) {
-      return new Va(JSON.parse(i), a);
+      return new Ua(JSON.parse(i), a);
     }
     static fromTranslationResponse(i, a) {
       e.Contracts.throwIfNullOrUndefined(i, "translationHypothesis");
       const o = i.SpeechHypothesis;
-      return i.SpeechHypothesis = void 0, o.Translation = i, new Va(o, a);
+      return i.SpeechHypothesis = void 0, o.Translation = i, new Ua(o, a);
     }
     get Duration() {
       return this.privTranslationHypothesis.Duration;
@@ -18150,24 +18150,24 @@ function Sb() {
         return i;
     }
   };
-  return Si.TranslationHypothesis = r, Si;
+  return Ri.TranslationHypothesis = r, Ri;
 }
-var Ci = {}, Dd;
-function Cb() {
-  if (Dd) return Ci;
-  Dd = 1, Object.defineProperty(Ci, "__esModule", { value: !0 }), Ci.TranslationPhrase = void 0;
-  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ nc();
-  let s = class Wa {
+var Pi = {}, Od;
+function mb() {
+  if (Od) return Pi;
+  Od = 1, Object.defineProperty(Pi, "__esModule", { value: !0 }), Pi.TranslationPhrase = void 0;
+  const e = /* @__PURE__ */ x(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ tc();
+  let s = class $a {
     constructor(a, o) {
       this.privTranslationPhrase = a, this.privTranslationPhrase.Offset += o, this.privTranslationPhrase.RecognitionStatus = this.mapRecognitionStatus(this.privTranslationPhrase.RecognitionStatus), this.privTranslationPhrase.Translation !== void 0 && (this.privTranslationPhrase.Translation.TranslationStatus = this.mapTranslationStatus(this.privTranslationPhrase.Translation.TranslationStatus));
     }
     static fromJSON(a, o) {
-      return new Wa(JSON.parse(a), o);
+      return new $a(JSON.parse(a), o);
     }
     static fromTranslationResponse(a, o) {
       e.Contracts.throwIfNullOrUndefined(a, "translationResponse");
       const n = a.SpeechPhrase;
-      return a.SpeechPhrase = void 0, n.Translation = a, n.Text = n.DisplayText, new Wa(n, o);
+      return a.SpeechPhrase = void 0, n.Translation = a, n.Text = n.DisplayText, new $a(n, o);
     }
     get RecognitionStatus() {
       return this.privTranslationPhrase.RecognitionStatus;
@@ -18213,12 +18213,12 @@ function Cb() {
         return a;
     }
   };
-  return Ci.TranslationPhrase = s, Ci;
+  return Pi.TranslationPhrase = s, Pi;
 }
-var Ri = {}, Nd;
-function Rb() {
-  if (Nd) return Ri;
-  Nd = 1, Object.defineProperty(Ri, "__esModule", { value: !0 }), Ri.TranslationServiceRecognizer = void 0;
+var bi = {}, Md;
+function yb() {
+  if (Md) return bi;
+  Md = 1, Object.defineProperty(bi, "__esModule", { value: !0 }), bi.TranslationServiceRecognizer = void 0;
   const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k();
   let s = class extends r.ConversationServiceRecognizer {
     constructor(a, o, n, c, u) {
@@ -18401,35 +18401,35 @@ function Rb() {
         }
     }
   };
-  return Ri.TranslationServiceRecognizer = s, Ri;
+  return bi.TranslationServiceRecognizer = s, bi;
 }
-var Pi = {}, xd;
-function Pb() {
-  if (xd) return Pi;
-  xd = 1, Object.defineProperty(Pi, "__esModule", { value: !0 }), Pi.SpeechDetected = void 0;
-  let e = class jv {
+var wi = {}, Dd;
+function Sb() {
+  if (Dd) return wi;
+  Dd = 1, Object.defineProperty(wi, "__esModule", { value: !0 }), wi.SpeechDetected = void 0;
+  let e = class xv {
     constructor(r, s) {
       this.privSpeechStartDetected = JSON.parse(r), this.privSpeechStartDetected.Offset += s;
     }
     static fromJSON(r, s) {
-      return new jv(r, s);
+      return new xv(r, s);
     }
     get Offset() {
       return this.privSpeechStartDetected.Offset;
     }
   };
-  return Pi.SpeechDetected = e, Pi;
+  return wi.SpeechDetected = e, wi;
 }
-var bi = {}, zd;
-function bb() {
-  if (zd) return bi;
-  zd = 1, Object.defineProperty(bi, "__esModule", { value: !0 }), bi.SpeechHypothesis = void 0;
-  let e = class qv {
+var Ei = {}, Nd;
+function Cb() {
+  if (Nd) return Ei;
+  Nd = 1, Object.defineProperty(Ei, "__esModule", { value: !0 }), Ei.SpeechHypothesis = void 0;
+  let e = class zv {
     constructor(r, s) {
       this.privSpeechHypothesis = JSON.parse(r), this.updateOffset(s);
     }
     static fromJSON(r, s) {
-      return new qv(r, s);
+      return new zv(r, s);
     }
     updateOffset(r) {
       this.privSpeechHypothesis.Offset += r;
@@ -18456,18 +18456,18 @@ function bb() {
       return this.privSpeechHypothesis.SpeakerId;
     }
   };
-  return bi.SpeechHypothesis = e, bi;
+  return Ei.SpeechHypothesis = e, Ei;
 }
-var wi = {}, Ld;
-function wb() {
-  if (Ld) return wi;
-  Ld = 1, Object.defineProperty(wi, "__esModule", { value: !0 }), wi.SpeechKeyword = void 0;
-  let e = class Fv {
+var Ii = {}, xd;
+function Rb() {
+  if (xd) return Ii;
+  xd = 1, Object.defineProperty(Ii, "__esModule", { value: !0 }), Ii.SpeechKeyword = void 0;
+  let e = class Lv {
     constructor(r, s) {
       this.privSpeechKeyword = JSON.parse(r), this.privSpeechKeyword.Offset += s;
     }
     static fromJSON(r, s) {
-      return new Fv(r, s);
+      return new Lv(r, s);
     }
     get Status() {
       return this.privSpeechKeyword.Status;
@@ -18485,12 +18485,12 @@ function wb() {
       return JSON.stringify(this.privSpeechKeyword);
     }
   };
-  return wi.SpeechKeyword = e, wi;
+  return Ii.SpeechKeyword = e, Ii;
 }
-var Ei = {}, jd;
-function Eb() {
-  if (jd) return Ei;
-  jd = 1, Object.defineProperty(Ei, "__esModule", { value: !0 }), Ei.SpeechServiceRecognizer = void 0;
+var Ai = {}, zd;
+function Pb() {
+  if (zd) return Ai;
+  zd = 1, Object.defineProperty(Ai, "__esModule", { value: !0 }), Ai.SpeechServiceRecognizer = void 0;
   const e = /* @__PURE__ */ A(), t = /* @__PURE__ */ k();
   let r = class extends t.ServiceRecognizerBase {
     constructor(i, a, o, n, c) {
@@ -18626,23 +18626,23 @@ function Eb() {
       }
     }
   };
-  return Ei.SpeechServiceRecognizer = r, Ei;
+  return Ai.SpeechServiceRecognizer = r, Ai;
 }
-var Ii = {}, ya = {}, qd;
-function Ib() {
-  return qd || (qd = 1, function(e) {
+var Ti = {}, ga = {}, Ld;
+function bb() {
+  return Ld || (Ld = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.IdentityProvider = e.SpeakerDiarizationMode = void 0, function(t) {
       t.None = "None", t.Identity = "Identity", t.Anonymous = "Anonymous";
     }(e.SpeakerDiarizationMode || (e.SpeakerDiarizationMode = {})), function(t) {
       t.CallCenter = "CallCenter";
     }(e.IdentityProvider || (e.IdentityProvider = {}));
-  }(ya)), ya;
+  }(ga)), ga;
 }
-var Fd;
-function Ab() {
-  if (Fd) return Ii;
-  Fd = 1, Object.defineProperty(Ii, "__esModule", { value: !0 }), Ii.ConversationTranscriptionServiceRecognizer = void 0;
-  const e = /* @__PURE__ */ A(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ Ib(), s = /* @__PURE__ */ be();
+var jd;
+function wb() {
+  if (jd) return Ti;
+  jd = 1, Object.defineProperty(Ti, "__esModule", { value: !0 }), Ti.ConversationTranscriptionServiceRecognizer = void 0;
+  const e = /* @__PURE__ */ A(), t = /* @__PURE__ */ k(), r = /* @__PURE__ */ bb(), s = /* @__PURE__ */ Se();
   let i = class extends t.ServiceRecognizerBase {
     constructor(o, n, c, u, l) {
       super(o, n, c, u, l), this.privConversationTranscriber = l, this.setSpeakerDiarizationJson();
@@ -18708,13 +18708,13 @@ function Ab() {
       }
     }
   };
-  return Ii.ConversationTranscriptionServiceRecognizer = i, Ii;
+  return Ti.ConversationTranscriptionServiceRecognizer = i, Ti;
 }
-var Ai = {}, Bd;
-function Tb() {
-  if (Bd) return Ai;
-  Bd = 1, Object.defineProperty(Ai, "__esModule", { value: !0 }), Ai.TranscriptionServiceRecognizer = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Kt();
+var _i = {}, qd;
+function Eb() {
+  if (qd) return _i;
+  qd = 1, Object.defineProperty(_i, "__esModule", { value: !0 }), _i.TranscriptionServiceRecognizer = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Wt();
   let i = class extends r.ConversationServiceRecognizer {
     constructor(o, n, c, u, l) {
       super(o, n, c, u, l), this.privTranscriberRecognizer = l, this.sendPrePayloadJSONOverride = (p) => this.sendTranscriptionStartJSON(p), this.privRecognizerConfig.parameters.getProperty(t.PropertyId.SpeechServiceResponse_RequestWordLevelTimestamps) === "true" && this.privSpeechContext.setWordLevelTimings();
@@ -18825,19 +18825,19 @@ function Tb() {
       return c.meeting.id = o.id, c.meeting.attendees = o.participants, c;
     }
   };
-  return Ai.TranscriptionServiceRecognizer = i, Ai;
+  return _i.TranscriptionServiceRecognizer = i, _i;
 }
-var Ti = {}, Ud;
-function _b() {
-  if (Ud) return Ti;
-  Ud = 1, Object.defineProperty(Ti, "__esModule", { value: !0 }), Ti.DetailedSpeechPhrase = void 0;
+var ki = {}, Fd;
+function Ib() {
+  if (Fd) return ki;
+  Fd = 1, Object.defineProperty(ki, "__esModule", { value: !0 }), ki.DetailedSpeechPhrase = void 0;
   const e = /* @__PURE__ */ k();
-  let t = class Bv {
+  let t = class jv {
     constructor(s, i) {
       this.privDetailedSpeechPhrase = JSON.parse(s), this.privDetailedSpeechPhrase.RecognitionStatus = this.mapRecognitionStatus(this.privDetailedSpeechPhrase.RecognitionStatus), this.updateOffsets(i);
     }
     static fromJSON(s, i) {
-      return new Bv(s, i);
+      return new jv(s, i);
     }
     updateOffsets(s) {
       if (this.privDetailedSpeechPhrase.Offset += s, this.privDetailedSpeechPhrase.NBest)
@@ -18888,19 +18888,19 @@ function _b() {
         return s;
     }
   };
-  return Ti.DetailedSpeechPhrase = t, Ti;
+  return ki.DetailedSpeechPhrase = t, ki;
 }
-var _i = {}, $d;
-function kb() {
-  if ($d) return _i;
-  $d = 1, Object.defineProperty(_i, "__esModule", { value: !0 }), _i.SimpleSpeechPhrase = void 0;
+var Oi = {}, Bd;
+function Ab() {
+  if (Bd) return Oi;
+  Bd = 1, Object.defineProperty(Oi, "__esModule", { value: !0 }), Oi.SimpleSpeechPhrase = void 0;
   const e = /* @__PURE__ */ k();
-  let t = class Uv {
+  let t = class qv {
     constructor(s, i = 0) {
       this.privSimpleSpeechPhrase = JSON.parse(s), this.privSimpleSpeechPhrase.RecognitionStatus = this.mapRecognitionStatus(this.privSimpleSpeechPhrase.RecognitionStatus), this.updateOffset(i);
     }
     static fromJSON(s, i) {
-      return new Uv(s, i);
+      return new qv(s, i);
     }
     updateOffset(s) {
       this.privSimpleSpeechPhrase.Offset += s;
@@ -18940,12 +18940,12 @@ function kb() {
         return s;
     }
   };
-  return _i.SimpleSpeechPhrase = t, _i;
+  return Oi.SimpleSpeechPhrase = t, Oi;
 }
-var ki = {}, Vd;
-function Ob() {
-  if (Vd) return ki;
-  Vd = 1, Object.defineProperty(ki, "__esModule", { value: !0 }), ki.AddedLmIntent = void 0;
+var Mi = {}, Ud;
+function Tb() {
+  if (Ud) return Mi;
+  Ud = 1, Object.defineProperty(Mi, "__esModule", { value: !0 }), Mi.AddedLmIntent = void 0;
   let e = class {
     /**
      * Creates and initializes an instance of this class.
@@ -18957,12 +18957,12 @@ function Ob() {
       this.modelImpl = r, this.intentName = s;
     }
   };
-  return ki.AddedLmIntent = e, ki;
+  return Mi.AddedLmIntent = e, Mi;
 }
-var Oi = {}, Wd;
-function Mb() {
-  if (Wd) return Oi;
-  Wd = 1, Object.defineProperty(Oi, "__esModule", { value: !0 }), Oi.IntentServiceRecognizer = void 0;
+var Di = {}, $d;
+function _b() {
+  if ($d) return Di;
+  $d = 1, Object.defineProperty(Di, "__esModule", { value: !0 }), Di.IntentServiceRecognizer = void 0;
   const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k();
   let s = class extends r.ServiceRecognizerBase {
     constructor(a, o, n, c, u) {
@@ -19078,18 +19078,18 @@ function Mb() {
       }
     }
   };
-  return Oi.IntentServiceRecognizer = s, Oi;
+  return Di.IntentServiceRecognizer = s, Di;
 }
-var Mi = {}, Hd;
-function Db() {
-  if (Hd) return Mi;
-  Hd = 1, Object.defineProperty(Mi, "__esModule", { value: !0 }), Mi.IntentResponse = void 0;
-  let e = class $v {
+var Ni = {}, Vd;
+function kb() {
+  if (Vd) return Ni;
+  Vd = 1, Object.defineProperty(Ni, "__esModule", { value: !0 }), Ni.IntentResponse = void 0;
+  let e = class Fv {
     constructor(r) {
       r === "" ? this.privIntentResponse = {} : this.privIntentResponse = JSON.parse(r);
     }
     static fromJSON(r) {
-      return new $v(r);
+      return new Fv(r);
     }
     get query() {
       return this.privIntentResponse.query;
@@ -19101,17 +19101,17 @@ function Db() {
       return this.privIntentResponse.entities;
     }
   };
-  return Mi.IntentResponse = e, Mi;
+  return Ni.IntentResponse = e, Ni;
 }
-var Sa = {}, Kd;
-function Nb() {
-  return Kd || (Kd = 1, Object.defineProperty(Sa, "__esModule", { value: !0 })), Sa;
+var ma = {}, Wd;
+function Ob() {
+  return Wd || (Wd = 1, Object.defineProperty(ma, "__esModule", { value: !0 })), ma;
 }
-var Di = {}, Ni = {}, Jd;
-function xb() {
-  if (Jd) return Ni;
-  Jd = 1, Object.defineProperty(Ni, "__esModule", { value: !0 }), Ni.ServiceTelemetryListener = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ uc();
+var xi = {}, zi = {}, Hd;
+function Mb() {
+  if (Hd) return zi;
+  Hd = 1, Object.defineProperty(zi, "__esModule", { value: !0 }), zi.ServiceTelemetryListener = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ ac();
   class r {
     constructor(i, a, o) {
       this.privIsDisposed = !1, this.privListeningTriggerMetric = null, this.privMicMetric = null, this.privConnectionEstablishMetric = null, this.privRequestId = i, this.privAudioSourceId = a, this.privAudioNodeId = o, this.privReceivedMessages = {}, this.privPhraseLatencies = [], this.privHypothesisLatencies = [];
@@ -19202,13 +19202,13 @@ function xb() {
       }
     }
   }
-  return Ni.ServiceTelemetryListener = r, Ni;
+  return zi.ServiceTelemetryListener = r, zi;
 }
-var Gd;
-function zb() {
-  if (Gd) return Di;
-  Gd = 1, Object.defineProperty(Di, "__esModule", { value: !0 }), Di.RequestSession = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ uc(), r = /* @__PURE__ */ xb();
+var Kd;
+function Db() {
+  if (Kd) return xi;
+  Kd = 1, Object.defineProperty(xi, "__esModule", { value: !0 }), xi.RequestSession = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ ac(), r = /* @__PURE__ */ Mb();
   let s = class {
     constructor(a) {
       this.privIsDisposed = !1, this.privDetachables = new Array(), this.privIsAudioNodeDetached = !1, this.privIsRecognizing = !1, this.privIsSpeechEnded = !1, this.privTurnStartAudioOffset = 0, this.privLastRecoOffset = 0, this.privHypothesisReceived = !1, this.privBytesSent = 0, this.privRecognitionBytesSent = 0, this.privRecogNumber = 0, this.privInTurn = !1, this.privConnectionAttempts = 0, this.privAudioSourceId = a, this.privRequestId = (0, e.createNoDashGuid)(), this.privAudioNodeId = (0, e.createNoDashGuid)(), this.privTurnDeferral = new e.Deferred(), this.privTurnDeferral.resolve();
@@ -19325,11 +19325,11 @@ function zb() {
       this.privIsAudioNodeDetached || (this.privIsAudioNodeDetached = !0, this.privAudioNode && await this.privAudioNode.detach());
     }
   };
-  return Di.RequestSession = s, Di;
+  return xi.RequestSession = s, xi;
 }
-var xi = {}, Ca = {}, Qd;
-function Lb() {
-  return Qd || (Qd = 1, function(e) {
+var Li = {}, ya = {}, Jd;
+function Nb() {
+  return Jd || (Jd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.TentativePhraseResultsOption = e.OutputFormat = e.PhraseExtension = e.PhraseOption = void 0, function(t) {
       t.WordTimings = "WordTimings", t.SNR = "SNR", t.Pronunciation = "Pronunciation", t.WordPronunciation = "WordPronunciation", t.WordConfidence = "WordConfidence", t.Words = "Words", t.Sentiment = "Sentiment", t.PronunciationAssessment = "PronunciationAssessment", t.ContentAssessment = "ContentAssessment", t.PhraseAMScore = "PhraseAMScore", t.PhraseLMScore = "PhraseLMScore", t.WordAMScore = "WordAMScore", t.WordLMScore = "WordLMScore", t.RuleTree = "RuleTree", t.NBestTimings = "NBestTimings", t.DecoderDiagnostics = "DecoderDiagnostics", t.DisplayWordTimings = "DisplayWordTimings", t.DisplayWords = "DisplayWords";
     }(e.PhraseOption || (e.PhraseOption = {})), function(t) {
@@ -19339,13 +19339,13 @@ function Lb() {
     }(e.OutputFormat || (e.OutputFormat = {})), function(t) {
       t.None = "None", t.Always = "Always";
     }(e.TentativePhraseResultsOption || (e.TentativePhraseResultsOption = {}));
-  }(Ca)), Ca;
+  }(ya)), ya;
 }
-var Yd;
-function jb() {
-  if (Yd) return xi;
-  Yd = 1, Object.defineProperty(xi, "__esModule", { value: !0 }), xi.SpeechContext = void 0;
-  const e = /* @__PURE__ */ be(), t = /* @__PURE__ */ Lb();
+var Gd;
+function xb() {
+  if (Gd) return Li;
+  Gd = 1, Object.defineProperty(Li, "__esModule", { value: !0 }), Li.SpeechContext = void 0;
+  const e = /* @__PURE__ */ Se(), t = /* @__PURE__ */ Nb();
   let r = class {
     constructor(i) {
       this.privContext = {}, this.privDynamicGrammar = i;
@@ -19395,23 +19395,23 @@ function jb() {
       return this.privContext.dgi = i, JSON.stringify(this.privContext);
     }
   };
-  return xi.SpeechContext = r, xi;
+  return Li.SpeechContext = r, Li;
 }
-var zi = {}, Ra = {}, Zd;
-function qb() {
-  return Zd || (Zd = 1, function(e) {
+var ji = {}, Sa = {}, Qd;
+function zb() {
+  return Qd || (Qd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.SubstringMatchType = e.GroupType = void 0, function(t) {
       t.IntentText = "IntentText", t.IntentEntity = "IntentEntity", t.Generic = "Generic", t.People = "People", t.Place = "Place", t.DynamicEntity = "DynamicEntity";
     }(e.GroupType || (e.GroupType = {})), function(t) {
       t.None = "None", t.LeftRooted = "LeftRooted", t.PartialName = "PartialName", t.MiddleOfSentence = "MiddleOfSentence";
     }(e.SubstringMatchType || (e.SubstringMatchType = {}));
-  }(Ra)), Ra;
+  }(Sa)), Sa;
 }
-var Xd;
-function Fb() {
-  if (Xd) return zi;
-  Xd = 1, Object.defineProperty(zi, "__esModule", { value: !0 }), zi.DynamicGrammarBuilder = void 0;
-  const e = /* @__PURE__ */ qb();
+var Yd;
+function Lb() {
+  if (Yd) return ji;
+  Yd = 1, Object.defineProperty(ji, "__esModule", { value: !0 }), ji.DynamicGrammarBuilder = void 0;
+  const e = /* @__PURE__ */ zb();
   let t = class {
     // Adds one more reference phrases to the dynamic grammar to send.
     // All added phrases are generic phrases.
@@ -19448,11 +19448,11 @@ function Fb() {
       return s;
     }
   };
-  return zi.DynamicGrammarBuilder = t, zi;
+  return ji.DynamicGrammarBuilder = t, ji;
 }
-var Li = {}, ji = {}, qi = {}, Pa = {}, eh;
-function Vv() {
-  return eh || (eh = 1, function(e) {
+var qi = {}, Fi = {}, Bi = {}, Ca = {}, Zd;
+function Bv() {
+  return Zd || (Zd = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.MessageDataStreamType = e.ActivityPayloadResponse = void 0;
     class t {
       constructor(s) {
@@ -19477,13 +19477,13 @@ function Vv() {
     e.ActivityPayloadResponse = t, function(r) {
       r[r.None = 0] = "None", r[r.TextToSpeechAudio = 1] = "TextToSpeechAudio";
     }(e.MessageDataStreamType || (e.MessageDataStreamType = {}));
-  }(Pa)), Pa;
+  }(Ca)), Ca;
 }
-var th;
-function Bb() {
-  if (th) return qi;
-  th = 1, Object.defineProperty(qi, "__esModule", { value: !0 }), qi.DialogServiceTurnState = void 0;
-  const e = /* @__PURE__ */ ys(), t = /* @__PURE__ */ Ht(), r = /* @__PURE__ */ Vv();
+var Xd;
+function jb() {
+  if (Xd) return Bi;
+  Xd = 1, Object.defineProperty(Bi, "__esModule", { value: !0 }), Bi.DialogServiceTurnState = void 0;
+  const e = /* @__PURE__ */ Cs(), t = /* @__PURE__ */ Vt(), r = /* @__PURE__ */ Bv();
   let s = class {
     constructor(a, o) {
       this.privRequestId = o, this.privIsCompleted = !1, this.privAudioStream = null, this.privTurnManager = a, this.resetTurnEndTimeout();
@@ -19506,13 +19506,13 @@ function Bb() {
       }, 2e3);
     }
   };
-  return qi.DialogServiceTurnState = s, qi;
+  return Bi.DialogServiceTurnState = s, Bi;
 }
-var rh;
-function Ub() {
-  if (rh) return ji;
-  rh = 1, Object.defineProperty(ji, "__esModule", { value: !0 }), ji.DialogServiceTurnStateManager = void 0;
-  const e = /* @__PURE__ */ De(), t = /* @__PURE__ */ Bb();
+var eh;
+function qb() {
+  if (eh) return Fi;
+  eh = 1, Object.defineProperty(Fi, "__esModule", { value: !0 }), Fi.DialogServiceTurnStateManager = void 0;
+  const e = /* @__PURE__ */ Ne(), t = /* @__PURE__ */ jb();
   let r = class {
     constructor() {
       this.privTurnMap = /* @__PURE__ */ new Map();
@@ -19533,31 +19533,31 @@ function Ub() {
       return a.complete(), this.privTurnMap.delete(i), a;
     }
   };
-  return ji.DialogServiceTurnStateManager = r, ji;
+  return Fi.DialogServiceTurnStateManager = r, Fi;
 }
-var ba = {}, nh;
-function $b() {
-  return nh || (nh = 1, function(e) {
+var Ra = {}, th;
+function Fb() {
+  return th || (th = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.InvocationSource = void 0, function(t) {
       t.None = "None", t.VoiceActivationWithKeyword = "VoiceActivationWithKeyword";
     }(e.InvocationSource || (e.InvocationSource = {}));
-  }(ba)), ba;
+  }(Ra)), Ra;
 }
-var wa = {}, ih;
-function Vb() {
-  return ih || (ih = 1, function(e) {
+var Pa = {}, rh;
+function Bb() {
+  return rh || (rh = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.OnRejectAction = e.KeywordDetectionType = void 0, function(t) {
       t.StartTrigger = "StartTrigger";
     }(e.KeywordDetectionType || (e.KeywordDetectionType = {})), function(t) {
       t.EndOfTurn = "EndOfTurn", t.Continue = "Continue";
     }(e.OnRejectAction || (e.OnRejectAction = {}));
-  }(wa)), wa;
+  }(Pa)), Pa;
 }
-var sh;
-function Wb() {
-  if (sh) return Li;
-  sh = 1, Object.defineProperty(Li, "__esModule", { value: !0 }), Li.DialogServiceAdapter = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ Yf(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ ys(), i = /* @__PURE__ */ A(), a = /* @__PURE__ */ Ub(), o = /* @__PURE__ */ k(), n = /* @__PURE__ */ Vv(), c = /* @__PURE__ */ $b(), u = /* @__PURE__ */ Vb(), l = /* @__PURE__ */ Kt();
+var nh;
+function Ub() {
+  if (nh) return qi;
+  nh = 1, Object.defineProperty(qi, "__esModule", { value: !0 }), qi.DialogServiceAdapter = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ Jf(), r = /* @__PURE__ */ D(), s = /* @__PURE__ */ Cs(), i = /* @__PURE__ */ A(), a = /* @__PURE__ */ qb(), o = /* @__PURE__ */ k(), n = /* @__PURE__ */ Bv(), c = /* @__PURE__ */ Fb(), u = /* @__PURE__ */ Bb(), l = /* @__PURE__ */ Wt();
   let p = class extends o.ServiceRecognizerBase {
     constructor(h, f, g, m, v) {
       super(h, f, g, m, v), this.privEvents = new r.EventSource(), this.privDialogServiceConnector = v, this.receiveMessageOverride = () => this.receiveDialogMessageOverride(), this.privTurnStateManager = new a.DialogServiceTurnStateManager(), this.recognizeOverride = (y, S, C) => this.listenOnce(y, S, C), this.postConnectImplOverride = (y) => this.dialogConnectImpl(y), this.configConnectionOverride = (y) => this.configConnection(y), this.disconnectOverride = () => this.privDisconnect(), this.privDialogAudioSource = g, this.agentConfigSent = !1, this.privLastResult = null, this.connectionEvents.attach((y) => {
@@ -19607,8 +19607,8 @@ function Wb() {
           m = !0;
           break;
         case "speech.keyword":
-          const P = o.SpeechKeyword.fromJSON(h.textBody, this.privRequestSession.currentTurnAudioOffset);
-          g = new i.SpeechRecognitionResult(this.privRequestSession.requestId, P.Status === "Accepted" ? i.ResultReason.RecognizedKeyword : i.ResultReason.NoMatch, P.Text, P.Duration, P.Offset, void 0, void 0, void 0, void 0, P.asJson(), f), P.Status !== "Accepted" && (this.privLastResult = g);
+          const R = o.SpeechKeyword.fromJSON(h.textBody, this.privRequestSession.currentTurnAudioOffset);
+          g = new i.SpeechRecognitionResult(this.privRequestSession.requestId, R.Status === "Accepted" ? i.ResultReason.RecognizedKeyword : i.ResultReason.NoMatch, R.Text, R.Duration, R.Offset, void 0, void 0, void 0, void 0, R.asJson(), f), R.Status !== "Accepted" && (this.privLastResult = g);
           const w = new i.SpeechRecognitionEventArgs(g, g.duration, g.resultId);
           if (this.privDialogServiceConnector.recognized)
             try {
@@ -19675,15 +19675,15 @@ function Wb() {
     }
     async listenOnce(h, f, g) {
       this.privRecognizerConfig.recognitionMode = h, this.privSuccessCallback = f, this.privErrorCallback = g, this.privRequestSession.startNewRecognition(), this.privRequestSession.listenForServiceTelemetry(this.privDialogAudioSource.events), this.privRecognizerConfig.parameters.setProperty(i.PropertyId.Speech_SessionId, this.privRequestSession.sessionId);
-      const m = this.connectImpl(), v = this.sendPreAudioMessages(), y = await this.privDialogAudioSource.attach(this.privRequestSession.audioNodeId), S = await this.privDialogAudioSource.format, C = await this.privDialogAudioSource.deviceInfo, P = new e.ReplayableAudioNode(y, S.avgBytesPerSec);
-      await this.privRequestSession.onAudioSourceAttachCompleted(P, !1), this.privRecognizerConfig.SpeechServiceConfig.Context.audio = { source: C };
+      const m = this.connectImpl(), v = this.sendPreAudioMessages(), y = await this.privDialogAudioSource.attach(this.privRequestSession.audioNodeId), S = await this.privDialogAudioSource.format, C = await this.privDialogAudioSource.deviceInfo, R = new e.ReplayableAudioNode(y, S.avgBytesPerSec);
+      await this.privRequestSession.onAudioSourceAttachCompleted(R, !1), this.privRecognizerConfig.SpeechServiceConfig.Context.audio = { source: C };
       try {
         await m, await v;
       } catch (E) {
         return await this.cancelRecognition(this.privRequestSession.sessionId, this.privRequestSession.requestId, i.CancellationReason.Error, i.CancellationErrorCode.ConnectionFailure, E), Promise.resolve();
       }
       const w = new i.SessionEventArgs(this.privRequestSession.sessionId);
-      this.privRecognizer.sessionStarted && this.privRecognizer.sessionStarted(this.privRecognizer, w), this.sendAudio(P).then(() => {
+      this.privRecognizer.sessionStarted && this.privRecognizer.sessionStarted(this.privRecognizer, w), this.sendAudio(R).then(() => {
       }, async (E) => {
         await this.cancelRecognition(this.privRequestSession.sessionId, this.privRequestSession.requestId, i.CancellationReason.Error, i.CancellationErrorCode.RuntimeError, E);
       });
@@ -19712,7 +19712,7 @@ function Wb() {
               }
               break;
             case "speech.startdetected":
-              const P = o.SpeechDetected.fromJSON(S.textBody, this.privRequestSession.currentTurnAudioOffset), w = new i.RecognitionEventArgs(P.Offset, this.privRequestSession.sessionId);
+              const R = o.SpeechDetected.fromJSON(S.textBody, this.privRequestSession.currentTurnAudioOffset), w = new i.RecognitionEventArgs(R.Offset, this.privRequestSession.sessionId);
               this.privRecognizer.speechStartDetected && this.privRecognizer.speechStartDetected(this.privRecognizer, w);
               break;
             case "speech.enddetected":
@@ -19733,8 +19733,8 @@ function Wb() {
                   if (await this.privRequestSession.onServiceTurnEndResponse(!1), (!this.privRecognizerConfig.isContinuousRecognition || this.privRequestSession.isSpeechEnded || !this.privRequestSession.isRecognizing) && this.privRecognizer.sessionStopped && this.privRecognizer.sessionStopped(this.privRecognizer, O), this.privSuccessCallback && this.privLastResult) {
                     try {
                       this.privSuccessCallback(this.privLastResult), this.privLastResult = null;
-                    } catch (q) {
-                      this.privErrorCallback && this.privErrorCallback(q);
+                    } catch (j) {
+                      this.privErrorCallback && this.privErrorCallback(j);
                     }
                     this.privSuccessCallback = void 0, this.privErrorCallback = void 0;
                   }
@@ -19836,10 +19836,10 @@ function Wb() {
         return;
       const f = this.privRecognizerConfig.parameters.getProperty("SPEECH-KeywordsToDetect-Offsets"), g = this.privRecognizerConfig.parameters.getProperty("SPEECH-KeywordsToDetect-Durations"), m = h.split(";"), v = f === void 0 ? [] : f.split(";"), y = g === void 0 ? [] : g.split(";"), S = [];
       for (let C = 0; C < m.length; C++) {
-        const P = {
+        const R = {
           text: m[C]
         };
-        C < v.length && (P.startOffset = Number(v[C])), C < y.length && (P.duration = Number(y[C])), S.push(P);
+        C < v.length && (R.startOffset = Number(v[C])), C < y.length && (R.duration = Number(y[C])), S.push(R);
       }
       this.speechContext.getContext().invocationSource = c.InvocationSource.VoiceActivationWithKeyword, this.speechContext.getContext().keywordDetection = [{
         clientDetectedKeywords: S,
@@ -19848,12 +19848,12 @@ function Wb() {
       }];
     }
   };
-  return Li.DialogServiceAdapter = p, Li;
+  return qi.DialogServiceAdapter = p, qi;
 }
-var Fi = {}, oh;
-function Hb() {
-  if (oh) return Fi;
-  oh = 1, Object.defineProperty(Fi, "__esModule", { value: !0 }), Fi.AgentConfig = void 0;
+var Ui = {}, ih;
+function $b() {
+  if (ih) return Ui;
+  ih = 1, Object.defineProperty(Ui, "__esModule", { value: !0 }), Ui.AgentConfig = void 0;
   let e = class {
     toJsonString() {
       return JSON.stringify(this.iPrivConfig);
@@ -19869,13 +19869,13 @@ function Hb() {
       this.iPrivConfig = r;
     }
   };
-  return Fi.AgentConfig = e, Fi;
+  return Ui.AgentConfig = e, Ui;
 }
-var Ea = {}, Bi = {}, Ui = {}, ah;
-function lc() {
-  if (ah) return Ui;
-  ah = 1, Object.defineProperty(Ui, "__esModule", { value: !0 }), Ui.ConversationConnectionConfig = void 0;
-  const e = /* @__PURE__ */ zv();
+var ba = {}, $i = {}, Vi = {}, sh;
+function cc() {
+  if (sh) return Vi;
+  sh = 1, Object.defineProperty(Vi, "__esModule", { value: !0 }), Vi.ConversationConnectionConfig = void 0;
+  const e = /* @__PURE__ */ Dv();
   let t = class Qe extends e.RestConfigBase {
     static get host() {
       return Qe.privHost;
@@ -19899,13 +19899,13 @@ function lc() {
       return Qe.privTranscriptionEventKeys;
     }
   };
-  return Ui.ConversationConnectionConfig = t, t.privHost = "dev.microsofttranslator.com", t.privRestPath = "/capito/room", t.privApiVersion = "2.0", t.privDefaultLanguageCode = "en-US", t.privClientAppId = "FC539C22-1767-4F1F-84BC-B4D811114F15", t.privWebSocketPath = "/capito/translate", t.privTranscriptionEventKeys = ["iCalUid", "callId", "organizer", "FLAC", "MTUri", "DifferentiateGuestSpeakers", "audiorecording", "Threadid", "OrganizerMri", "OrganizerTenantId", "UserToken"], Ui;
+  return Vi.ConversationConnectionConfig = t, t.privHost = "dev.microsofttranslator.com", t.privRestPath = "/capito/room", t.privApiVersion = "2.0", t.privDefaultLanguageCode = "en-US", t.privClientAppId = "FC539C22-1767-4F1F-84BC-B4D811114F15", t.privWebSocketPath = "/capito/translate", t.privTranscriptionEventKeys = ["iCalUid", "callId", "organizer", "FLAC", "MTUri", "DifferentiateGuestSpeakers", "audiorecording", "Threadid", "OrganizerMri", "OrganizerTenantId", "UserToken"], Vi;
 }
-var ch;
-function Kb() {
-  if (ch) return Bi;
-  ch = 1, Object.defineProperty(Bi, "__esModule", { value: !0 }), Bi.ConversationManager = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ lc();
+var oh;
+function Vb() {
+  if (oh) return $i;
+  oh = 1, Object.defineProperty($i, "__esModule", { value: !0 }), $i.ConversationManager = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ cc();
   let i = class {
     constructor() {
       this.privRequestParams = s.ConversationConnectionConfig.configParams, this.privErrors = s.ConversationConnectionConfig.restErrors, this.privHost = s.ConversationConnectionConfig.host, this.privApiVersion = s.ConversationConnectionConfig.apiVersion, this.privRestPath = s.ConversationConnectionConfig.restPath, this.privRestAdapter = new e.RestMessageAdapter({});
@@ -19929,21 +19929,21 @@ function Kb() {
         const S = {};
         S.headers = y, this.privRestAdapter.options = S;
         const C = `https://${d}${this.privRestPath}`;
-        this.privRestAdapter.request(e.RestRequestType.Post, C, v, null).then((P) => {
-          const w = e.RestMessageAdapter.extractHeaderValue(this.privRequestParams.requestId, P.headers);
-          if (!P.ok) {
+        this.privRestAdapter.request(e.RestRequestType.Post, C, v, null).then((R) => {
+          const w = e.RestMessageAdapter.extractHeaderValue(this.privRequestParams.requestId, R.headers);
+          if (!R.ok) {
             if (u) {
-              let E = this.privErrors.invalidCreateJoinConversationResponse.replace("{status}", P.status.toString()), T;
+              let E = this.privErrors.invalidCreateJoinConversationResponse.replace("{status}", R.status.toString()), T;
               try {
-                T = JSON.parse(P.data), E += ` [${T.error.code}: ${T.error.message}]`;
+                T = JSON.parse(R.data), E += ` [${T.error.code}: ${T.error.message}]`;
               } catch {
-                E += ` [${P.data}]`;
+                E += ` [${R.data}]`;
               }
               w && (E += ` ${w}`), u(E);
             }
             return;
           }
-          const I = JSON.parse(P.data);
+          const I = JSON.parse(R.data);
           if (I && (I.requestId = w), c) {
             try {
               c(I);
@@ -19994,12 +19994,12 @@ function Kb() {
       });
     }
   };
-  return Bi.ConversationManager = i, Bi;
+  return $i.ConversationManager = i, $i;
 }
-var wt = {}, $i = {}, Vi = {}, Wi = {}, uh;
-function Wv() {
-  if (uh) return Wi;
-  uh = 1, Object.defineProperty(Wi, "__esModule", { value: !0 }), Wi.ConversationConnectionMessage = void 0;
+var wt = {}, Wi = {}, Hi = {}, Ki = {}, ah;
+function Uv() {
+  if (ah) return Ki;
+  ah = 1, Object.defineProperty(Ki, "__esModule", { value: !0 }), Ki.ConversationConnectionMessage = void 0;
   const e = /* @__PURE__ */ D();
   let t = class extends e.ConnectionMessage {
     constructor(s, i, a, o) {
@@ -20011,13 +20011,13 @@ function Wv() {
       return this.privConversationMessageType;
     }
   };
-  return Wi.ConversationConnectionMessage = t, Wi;
+  return Ki.ConversationConnectionMessage = t, Ki;
 }
-var lh;
-function Jb() {
-  if (lh) return Vi;
-  lh = 1, Object.defineProperty(Vi, "__esModule", { value: !0 }), Vi.ConversationWebsocketMessageFormatter = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ Wv();
+var ch;
+function Wb() {
+  if (ch) return Hi;
+  ch = 1, Object.defineProperty(Hi, "__esModule", { value: !0 }), Hi.ConversationWebsocketMessageFormatter = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ Uv();
   let r = class {
     /**
      * Format incoming messages: text (speech partial/final, IM) or binary (tts)
@@ -20050,13 +20050,13 @@ function Jb() {
       return a.promise;
     }
   };
-  return Vi.ConversationWebsocketMessageFormatter = r, Vi;
+  return Hi.ConversationWebsocketMessageFormatter = r, Hi;
 }
-var ph;
-function Gb() {
-  if (ph) return $i;
-  ph = 1, Object.defineProperty($i, "__esModule", { value: !0 }), $i.ConversationConnectionFactory = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ _e(), a = /* @__PURE__ */ lc(), o = /* @__PURE__ */ Jb();
+var uh;
+function Hb() {
+  if (uh) return Wi;
+  uh = 1, Object.defineProperty(Wi, "__esModule", { value: !0 }), Wi.ConversationConnectionFactory = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ Te(), a = /* @__PURE__ */ cc(), o = /* @__PURE__ */ Wb();
   let n = class extends i.ConnectionFactoryBase {
     create(u, l, p) {
       const d = u.parameters.getProperty(s.PropertyId.ConversationTranslator_Host, a.ConversationConnectionConfig.host), h = u.parameters.getProperty(s.PropertyId.ConversationTranslator_CorrelationId, (0, t.createGuid)()), f = `wss://${d}${a.ConversationConnectionConfig.webSocketPath}`, g = u.parameters.getProperty(s.PropertyId.ConversationTranslator_Token, void 0);
@@ -20067,12 +20067,12 @@ function Gb() {
       return Promise.resolve(new e.WebsocketConnection(f, m, {}, new o.ConversationWebsocketMessageFormatter(), e.ProxyInfo.fromRecognizerConfig(u), v, p));
     }
   };
-  return $i.ConversationConnectionFactory = n, $i;
+  return Wi.ConversationConnectionFactory = n, Wi;
 }
-var Hi = {}, Ki = {}, dh;
-function Qb() {
-  if (dh) return Ki;
-  dh = 1, Object.defineProperty(Ki, "__esModule", { value: !0 }), Ki.ConversationRequestSession = void 0;
+var Ji = {}, Gi = {}, lh;
+function Kb() {
+  if (lh) return Gi;
+  lh = 1, Object.defineProperty(Gi, "__esModule", { value: !0 }), Gi.ConversationRequestSession = void 0;
   const e = /* @__PURE__ */ D();
   let t = class {
     constructor(s) {
@@ -20109,12 +20109,12 @@ function Qb() {
     onComplete() {
     }
   };
-  return Ki.ConversationRequestSession = t, Ki;
+  return Gi.ConversationRequestSession = t, Gi;
 }
-var pe = {}, hh;
-function Hv() {
-  if (hh) return pe;
-  hh = 1, Object.defineProperty(pe, "__esModule", { value: !0 }), pe.ConversationReceivedTranslationEventArgs = pe.ParticipantsListEventArgs = pe.ParticipantAttributeEventArgs = pe.ParticipantEventArgs = pe.LockRoomEventArgs = pe.MuteAllEventArgs = void 0;
+var ce = {}, ph;
+function $v() {
+  if (ph) return ce;
+  ph = 1, Object.defineProperty(ce, "__esModule", { value: !0 }), ce.ConversationReceivedTranslationEventArgs = ce.ParticipantsListEventArgs = ce.ParticipantAttributeEventArgs = ce.ParticipantEventArgs = ce.LockRoomEventArgs = ce.MuteAllEventArgs = void 0;
   const e = /* @__PURE__ */ A();
   class t extends e.SessionEventArgs {
     constructor(c, u) {
@@ -20124,7 +20124,7 @@ function Hv() {
       return this.privIsMuted;
     }
   }
-  pe.MuteAllEventArgs = t;
+  ce.MuteAllEventArgs = t;
   class r extends e.SessionEventArgs {
     constructor(c, u) {
       super(u), this.privIsLocked = c;
@@ -20133,7 +20133,7 @@ function Hv() {
       return this.privIsLocked;
     }
   }
-  pe.LockRoomEventArgs = r;
+  ce.LockRoomEventArgs = r;
   class s extends e.SessionEventArgs {
     constructor(c, u) {
       super(u), this.privParticipant = c;
@@ -20142,7 +20142,7 @@ function Hv() {
       return this.privParticipant;
     }
   }
-  pe.ParticipantEventArgs = s;
+  ce.ParticipantEventArgs = s;
   class i extends e.SessionEventArgs {
     constructor(c, u, l, p) {
       super(p), this.privKey = u, this.privValue = l, this.privParticipantId = c;
@@ -20157,7 +20157,7 @@ function Hv() {
       return this.privParticipantId;
     }
   }
-  pe.ParticipantAttributeEventArgs = i;
+  ce.ParticipantAttributeEventArgs = i;
   class a extends e.SessionEventArgs {
     constructor(c, u, l, p, d, h, f, g, m) {
       super(m), this.privRoomId = c, this.privSessionToken = u, this.privTranslateTo = l, this.privProfanityFilter = p, this.privRoomProfanityFilter = d, this.privIsRoomLocked = h, this.privIsRoomLocked = f, this.privParticipants = g;
@@ -20187,7 +20187,7 @@ function Hv() {
       return this.privParticipants;
     }
   }
-  pe.ParticipantsListEventArgs = a;
+  ce.ParticipantsListEventArgs = a;
   class o {
     constructor(c, u, l) {
       this.privPayload = u, this.privCommand = c, this.privSessionId = l;
@@ -20202,12 +20202,12 @@ function Hv() {
       return this.privSessionId;
     }
   }
-  return pe.ConversationReceivedTranslationEventArgs = o, pe;
+  return ce.ConversationReceivedTranslationEventArgs = o, ce;
 }
-var Fe = {}, fh;
-function Kv() {
-  if (fh) return Fe;
-  fh = 1, Object.defineProperty(Fe, "__esModule", { value: !0 }), Fe.ConversationTranslatorCommandTypes = Fe.ConversationTranslatorMessageTypes = Fe.InternalParticipants = void 0;
+var Fe = {}, dh;
+function Vv() {
+  if (dh) return Fe;
+  dh = 1, Object.defineProperty(Fe, "__esModule", { value: !0 }), Fe.ConversationTranslatorCommandTypes = Fe.ConversationTranslatorMessageTypes = Fe.InternalParticipants = void 0;
   class e {
     constructor(r = [], s) {
       this.participants = r, this.meId = s;
@@ -20281,12 +20281,12 @@ function Kv() {
     setUseTTS: "SetUseTTS"
   }, Fe;
 }
-var Ia = {}, Ji = {}, vh;
-function Yb() {
-  if (vh) return Ji;
-  vh = 1, Object.defineProperty(Ji, "__esModule", { value: !0 }), Ji.CommandResponsePayload = void 0;
+var wa = {}, Qi = {}, hh;
+function Jb() {
+  if (hh) return Qi;
+  hh = 1, Object.defineProperty(Qi, "__esModule", { value: !0 }), Qi.CommandResponsePayload = void 0;
   const e = (r) => JSON.parse(r);
-  let t = class Jv {
+  let t = class Wv {
     constructor(s) {
       this.privCommandResponse = e(s);
     }
@@ -20315,15 +20315,15 @@ function Yb() {
       return this.privCommandResponse.token;
     }
     static fromJSON(s) {
-      return new Jv(s);
+      return new Wv(s);
     }
   };
-  return Ji.CommandResponsePayload = t, Ji;
+  return Qi.CommandResponsePayload = t, Qi;
 }
-var Et = {}, gh;
-function Zb() {
-  if (gh) return Et;
-  gh = 1, Object.defineProperty(Et, "__esModule", { value: !0 }), Et.ParticipantPayloadResponse = Et.ParticipantsListPayloadResponse = void 0;
+var Et = {}, fh;
+function Gb() {
+  if (fh) return Et;
+  fh = 1, Object.defineProperty(Et, "__esModule", { value: !0 }), Et.ParticipantPayloadResponse = Et.ParticipantsListPayloadResponse = void 0;
   const e = (i) => JSON.parse(i), t = (i) => JSON.parse(i);
   class r {
     constructor(a) {
@@ -20398,10 +20398,10 @@ function Zb() {
   }
   return Et.ParticipantPayloadResponse = s, Et;
 }
-var It = {}, mh;
-function Xb() {
-  if (mh) return It;
-  mh = 1, Object.defineProperty(It, "__esModule", { value: !0 }), It.TextResponsePayload = It.SpeechResponsePayload = void 0;
+var It = {}, vh;
+function Qb() {
+  if (vh) return It;
+  vh = 1, Object.defineProperty(It, "__esModule", { value: !0 }), It.TextResponsePayload = It.SpeechResponsePayload = void 0;
   const e = (i) => JSON.parse(i), t = (i) => JSON.parse(i);
   class r {
     constructor(a) {
@@ -20479,33 +20479,33 @@ function Xb() {
   }
   return It.TextResponsePayload = s, It;
 }
-var yh;
-function ew() {
-  return yh || (yh = 1, function(e) {
+var gh;
+function Yb() {
+  return gh || (gh = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.TextResponsePayload = e.SpeechResponsePayload = e.ParticipantPayloadResponse = e.ParticipantsListPayloadResponse = e.CommandResponsePayload = void 0;
-    var t = /* @__PURE__ */ Yb();
+    var t = /* @__PURE__ */ Jb();
     Object.defineProperty(e, "CommandResponsePayload", { enumerable: !0, get: function() {
       return t.CommandResponsePayload;
     } });
-    var r = /* @__PURE__ */ Zb();
+    var r = /* @__PURE__ */ Gb();
     Object.defineProperty(e, "ParticipantsListPayloadResponse", { enumerable: !0, get: function() {
       return r.ParticipantsListPayloadResponse;
     } }), Object.defineProperty(e, "ParticipantPayloadResponse", { enumerable: !0, get: function() {
       return r.ParticipantPayloadResponse;
     } });
-    var s = /* @__PURE__ */ Xb();
+    var s = /* @__PURE__ */ Qb();
     Object.defineProperty(e, "SpeechResponsePayload", { enumerable: !0, get: function() {
       return s.SpeechResponsePayload;
     } }), Object.defineProperty(e, "TextResponsePayload", { enumerable: !0, get: function() {
       return s.TextResponsePayload;
     } });
-  }(Ia)), Ia;
+  }(wa)), wa;
 }
-var Sh;
-function tw() {
-  if (Sh) return Hi;
-  Sh = 1, Object.defineProperty(Hi, "__esModule", { value: !0 }), Hi.ConversationServiceAdapter = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Wv(), i = /* @__PURE__ */ Qb(), a = /* @__PURE__ */ Hv(), o = /* @__PURE__ */ Kv(), n = /* @__PURE__ */ ew();
+var mh;
+function Zb() {
+  if (mh) return Ji;
+  mh = 1, Object.defineProperty(Ji, "__esModule", { value: !0 }), Ji.ConversationServiceAdapter = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Uv(), i = /* @__PURE__ */ Kb(), a = /* @__PURE__ */ $v(), o = /* @__PURE__ */ Vv(), n = /* @__PURE__ */ Yb();
   let c = class extends r.ServiceRecognizerBase {
     constructor(l, p, d, h, f) {
       super(l, p, d, h, f), this.privConnectionConfigPromise = void 0, this.privLastPartialUtteranceId = "", this.privConversationServiceConnector = f, this.privConversationAuthentication = l, this.receiveMessageOverride = () => this.receiveConversationMessageOverride(), this.recognizeOverride = () => this.noOp(), this.postConnectImplOverride = (g) => this.conversationConnectImpl(g), this.configConnectionOverride = () => this.configConnection(), this.disconnectOverride = () => this.privDisconnect(), this.privConversationRequestSession = new i.ConversationRequestSession((0, e.createNoDashGuid)()), this.privConversationConnectionFactory = p, this.privConversationIsDisposed = !1;
@@ -20573,14 +20573,14 @@ function tw() {
                  * before starting to send their own data.
                  */
                 case "participantlist":
-                  const w = n.ParticipantsListPayloadResponse.fromJSON(d.textBody), I = w.participants.map((q) => ({
-                    avatar: q.avatar,
-                    displayName: q.nickname,
-                    id: q.participantId,
-                    isHost: q.ishost,
-                    isMuted: q.ismuted,
-                    isUsingTts: q.usetts,
-                    preferredLanguage: q.locale
+                  const w = n.ParticipantsListPayloadResponse.fromJSON(d.textBody), I = w.participants.map((j) => ({
+                    avatar: j.avatar,
+                    displayName: j.nickname,
+                    id: j.participantId,
+                    isHost: j.ishost,
+                    isMuted: j.ismuted,
+                    isUsingTts: j.usetts,
+                    preferredLanguage: j.locale
                   }));
                   this.privConversationServiceConnector.participantsListReceived && this.privConversationServiceConnector.participantsListReceived(this.privConversationServiceConnector, new a.ParticipantsListEventArgs(w.roomid, w.token, w.translateTo, w.profanityFilter, w.roomProfanityFilter, w.roomLocked, w.muteAll, I, h));
                   break;
@@ -20673,11 +20673,11 @@ function tw() {
                   break;
                 case "token":
                   const O = new r.CognitiveTokenAuthentication(() => {
-                    const q = m.token;
-                    return Promise.resolve(q);
+                    const j = m.token;
+                    return Promise.resolve(j);
                   }, () => {
-                    const q = m.token;
-                    return Promise.resolve(q);
+                    const j = m.token;
+                    return Promise.resolve(j);
                   });
                   this.authentication = O, this.privConversationServiceConnector.onToken(O);
                   break;
@@ -20703,8 +20703,8 @@ function tw() {
              * "translated_message" is a text message or instant message (IM).
              */
             case "translated_message":
-              const C = n.TextResponsePayload.fromJSON(d.textBody), P = new t.ConversationTranslationResult(C.participantId, this.getTranslations(C.translations), C.language, void 0, void 0, C.originalText, void 0, void 0, void 0, d.textBody, void 0);
-              this.privConversationServiceConnector.translationReceived && this.privConversationServiceConnector.translationReceived(this.privConversationServiceConnector, new a.ConversationReceivedTranslationEventArgs(o.ConversationTranslatorMessageTypes.instantMessage, P, h));
+              const C = n.TextResponsePayload.fromJSON(d.textBody), R = new t.ConversationTranslationResult(C.participantId, this.getTranslations(C.translations), C.language, void 0, void 0, C.originalText, void 0, void 0, void 0, d.textBody, void 0);
+              this.privConversationServiceConnector.translationReceived && this.privConversationServiceConnector.translationReceived(this.privConversationServiceConnector, new a.ConversationReceivedTranslationEventArgs(o.ConversationTranslatorMessageTypes.instantMessage, R, h));
               break;
             default:
               break;
@@ -20742,13 +20742,13 @@ function tw() {
       return p;
     }
   };
-  return Hi.ConversationServiceAdapter = c, Hi;
+  return Ji.ConversationServiceAdapter = c, Ji;
 }
-var Ch;
-function rw() {
-  if (Ch) return wt;
-  Ch = 1, Object.defineProperty(wt, "__esModule", { value: !0 }), wt.ConversationTranslatorRecognizer = wt.ConversationRecognizerFactory = void 0;
-  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ Gb(), a = /* @__PURE__ */ tw();
+var yh;
+function Xb() {
+  if (yh) return wt;
+  yh = 1, Object.defineProperty(wt, "__esModule", { value: !0 }), wt.ConversationTranslatorRecognizer = wt.ConversationRecognizerFactory = void 0;
+  const e = /* @__PURE__ */ k(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ x(), s = /* @__PURE__ */ A(), i = /* @__PURE__ */ Hb(), a = /* @__PURE__ */ Zb();
   class o {
     static fromConfig(u, l, p) {
       return new n(u, l, p);
@@ -20905,11 +20905,11 @@ function rw() {
   };
   return wt.ConversationTranslatorRecognizer = n, wt;
 }
-var Gi = {}, Rh;
-function nw() {
-  if (Rh) return Gi;
-  Rh = 1, Object.defineProperty(Gi, "__esModule", { value: !0 }), Gi.TranscriberRecognizer = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ be();
+var Yi = {}, Sh;
+function ew() {
+  if (Sh) return Yi;
+  Sh = 1, Object.defineProperty(Yi, "__esModule", { value: !0 }), Yi.TranscriberRecognizer = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ x(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ Se();
   let a = class extends r.Recognizer {
     /**
      * TranscriberRecognizer constructor.
@@ -21011,29 +21011,29 @@ function nw() {
       return new s.TranscriptionServiceRecognizer(n, c, p, l, this);
     }
   };
-  return Gi.TranscriberRecognizer = a, Gi;
+  return Yi.TranscriberRecognizer = a, Yi;
 }
-var Ph;
-function iw() {
-  return Ph || (Ph = 1, function(e) {
+var Ch;
+function tw() {
+  return Ch || (Ch = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.InternalParticipants = e.ConversationTranslatorMessageTypes = e.ConversationTranslatorCommandTypes = e.ParticipantsListEventArgs = e.ParticipantEventArgs = e.ParticipantAttributeEventArgs = e.MuteAllEventArgs = e.LockRoomEventArgs = e.ConversationReceivedTranslationEventArgs = e.TranscriberRecognizer = e.ConversationRecognizerFactory = e.ConversationConnectionConfig = e.ConversationManager = void 0;
-    var t = /* @__PURE__ */ Kb();
+    var t = /* @__PURE__ */ Vb();
     Object.defineProperty(e, "ConversationManager", { enumerable: !0, get: function() {
       return t.ConversationManager;
     } });
-    var r = /* @__PURE__ */ lc();
+    var r = /* @__PURE__ */ cc();
     Object.defineProperty(e, "ConversationConnectionConfig", { enumerable: !0, get: function() {
       return r.ConversationConnectionConfig;
     } });
-    var s = /* @__PURE__ */ rw();
+    var s = /* @__PURE__ */ Xb();
     Object.defineProperty(e, "ConversationRecognizerFactory", { enumerable: !0, get: function() {
       return s.ConversationRecognizerFactory;
     } });
-    var i = /* @__PURE__ */ nw();
+    var i = /* @__PURE__ */ ew();
     Object.defineProperty(e, "TranscriberRecognizer", { enumerable: !0, get: function() {
       return i.TranscriberRecognizer;
     } });
-    var a = /* @__PURE__ */ Hv();
+    var a = /* @__PURE__ */ $v();
     Object.defineProperty(e, "ConversationReceivedTranslationEventArgs", { enumerable: !0, get: function() {
       return a.ConversationReceivedTranslationEventArgs;
     } }), Object.defineProperty(e, "LockRoomEventArgs", { enumerable: !0, get: function() {
@@ -21047,7 +21047,7 @@ function iw() {
     } }), Object.defineProperty(e, "ParticipantsListEventArgs", { enumerable: !0, get: function() {
       return a.ParticipantsListEventArgs;
     } });
-    var o = /* @__PURE__ */ Kv();
+    var o = /* @__PURE__ */ Vv();
     Object.defineProperty(e, "ConversationTranslatorCommandTypes", { enumerable: !0, get: function() {
       return o.ConversationTranslatorCommandTypes;
     } }), Object.defineProperty(e, "ConversationTranslatorMessageTypes", { enumerable: !0, get: function() {
@@ -21055,11 +21055,11 @@ function iw() {
     } }), Object.defineProperty(e, "InternalParticipants", { enumerable: !0, get: function() {
       return o.InternalParticipants;
     } });
-  }(Ea)), Ea;
+  }(ba)), ba;
 }
-var Aa = {}, bh;
-function Gv() {
-  return bh || (bh = 1, function(e) {
+var Ea = {}, Rh;
+function Hv() {
+  return Rh || (Rh = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.SynthesisAudioMetadata = e.MetadataType = void 0, function(r) {
       r.WordBoundary = "WordBoundary", r.Bookmark = "Bookmark", r.Viseme = "Viseme", r.SentenceBoundary = "SentenceBoundary", r.SessionEnd = "SessionEnd", r.AvatarSignal = "TalkingAvatarSignal";
     }(e.MetadataType || (e.MetadataType = {}));
@@ -21075,12 +21075,12 @@ function Gv() {
       }
     }
     e.SynthesisAudioMetadata = t;
-  }(Aa)), Aa;
+  }(Ea)), Ea;
 }
-var Qi = {}, Ae = {}, wh;
-function sw() {
-  if (wh) return Ae;
-  wh = 1, Object.defineProperty(Ae, "__esModule", { value: !0 }), Ae.SynthesisStartedEvent = Ae.ConnectingToSynthesisServiceEvent = Ae.SynthesisTriggeredEvent = Ae.SpeechSynthesisEvent = void 0;
+var Zi = {}, Ie = {}, Ph;
+function rw() {
+  if (Ph) return Ie;
+  Ph = 1, Object.defineProperty(Ie, "__esModule", { value: !0 }), Ie.SynthesisStartedEvent = Ie.ConnectingToSynthesisServiceEvent = Ie.SynthesisTriggeredEvent = Ie.SpeechSynthesisEvent = void 0;
   const e = /* @__PURE__ */ D();
   class t extends e.PlatformEvent {
     constructor(o, n, c = e.EventType.Info) {
@@ -21090,7 +21090,7 @@ function sw() {
       return this.privRequestId;
     }
   }
-  Ae.SpeechSynthesisEvent = t;
+  Ie.SpeechSynthesisEvent = t;
   class r extends t {
     constructor(o, n, c) {
       super("SynthesisTriggeredEvent", o), this.privSessionAudioDestinationId = n, this.privTurnAudioDestinationId = c;
@@ -21102,7 +21102,7 @@ function sw() {
       return this.privTurnAudioDestinationId;
     }
   }
-  Ae.SynthesisTriggeredEvent = r;
+  Ie.SynthesisTriggeredEvent = r;
   class s extends t {
     constructor(o, n) {
       super("ConnectingToSynthesisServiceEvent", o), this.privAuthFetchEventId = n;
@@ -21111,7 +21111,7 @@ function sw() {
       return this.privAuthFetchEventId;
     }
   }
-  Ae.ConnectingToSynthesisServiceEvent = s;
+  Ie.ConnectingToSynthesisServiceEvent = s;
   class i extends t {
     constructor(o, n) {
       super("SynthesisStartedEvent", o), this.privAuthFetchEventId = n;
@@ -21120,14 +21120,14 @@ function sw() {
       return this.privAuthFetchEventId;
     }
   }
-  return Ae.SynthesisStartedEvent = i, Ae;
+  return Ie.SynthesisStartedEvent = i, Ie;
 }
-var Eh;
-function ow() {
-  if (Eh) return Qi;
-  Eh = 1, Object.defineProperty(Qi, "__esModule", { value: !0 }), Qi.SynthesisTurn = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ Ht(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ Gv(), i = /* @__PURE__ */ sw();
-  let a = class Ha {
+var bh;
+function nw() {
+  if (bh) return Zi;
+  bh = 1, Object.defineProperty(Zi, "__esModule", { value: !0 }), Zi.SynthesisTurn = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ Vt(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ Hv(), i = /* @__PURE__ */ rw();
+  let a = class Va {
     constructor() {
       this.privIsDisposed = !1, this.privIsSynthesizing = !1, this.privIsSynthesisEnded = !1, this.privBytesReceived = 0, this.privInTurn = !1, this.privTextOffset = 0, this.privNextSearchTextIndex = 0, this.privSentenceOffset = 0, this.privNextSearchSentenceIndex = 0, this.privRequestId = (0, e.createNoDashGuid)(), this.privTurnDeferral = new e.Deferred(), this.privTurnDeferral.resolve();
     }
@@ -21258,7 +21258,7 @@ function ow() {
       return n.length >= 2 && n[0] === "<" && n[n.length - 1] === ">";
     }
     updateTextOffset(n, c) {
-      c === s.MetadataType.WordBoundary ? (this.privTextOffset = this.privRawText.indexOf(n, this.privNextSearchTextIndex), this.privTextOffset >= 0 && (this.privNextSearchTextIndex = this.privTextOffset + n.length, this.privIsSSML && this.withinXmlTag(this.privTextOffset) && !Ha.isXmlTag(n) && this.updateTextOffset(n, c))) : (this.privSentenceOffset = this.privRawText.indexOf(n, this.privNextSearchSentenceIndex), this.privSentenceOffset >= 0 && (this.privNextSearchSentenceIndex = this.privSentenceOffset + n.length, this.privIsSSML && this.withinXmlTag(this.privSentenceOffset) && !Ha.isXmlTag(n) && this.updateTextOffset(n, c)));
+      c === s.MetadataType.WordBoundary ? (this.privTextOffset = this.privRawText.indexOf(n, this.privNextSearchTextIndex), this.privTextOffset >= 0 && (this.privNextSearchTextIndex = this.privTextOffset + n.length, this.privIsSSML && this.withinXmlTag(this.privTextOffset) && !Va.isXmlTag(n) && this.updateTextOffset(n, c))) : (this.privSentenceOffset = this.privRawText.indexOf(n, this.privNextSearchSentenceIndex), this.privSentenceOffset >= 0 && (this.privNextSearchSentenceIndex = this.privSentenceOffset + n.length, this.privIsSSML && this.withinXmlTag(this.privSentenceOffset) && !Va.isXmlTag(n) && this.updateTextOffset(n, c)));
     }
     onComplete() {
       this.privIsSynthesizing && (this.privIsSynthesizing = !1, this.privIsSynthesisEnded = !0, this.privAudioOutputStream.close(), this.privInTurn = !1, this.privTurnAudioDestination !== void 0 && (this.privTurnAudioDestination.close(), this.privTurnAudioDestination = void 0));
@@ -21282,13 +21282,13 @@ function ow() {
       return this.privRawText.indexOf("<", n + 1) > this.privRawText.indexOf(">", n + 1);
     }
   };
-  return Qi.SynthesisTurn = a, Qi;
+  return Zi.SynthesisTurn = a, Zi;
 }
-var Yi = {}, Ih;
-function aw() {
-  if (Ih) return Yi;
-  Ih = 1, Object.defineProperty(Yi, "__esModule", { value: !0 }), Yi.SynthesisAdapterBase = void 0;
-  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Kt();
+var Xi = {}, wh;
+function iw() {
+  if (wh) return Xi;
+  wh = 1, Object.defineProperty(Xi, "__esModule", { value: !0 }), Xi.SynthesisAdapterBase = void 0;
+  const e = /* @__PURE__ */ D(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ k(), s = /* @__PURE__ */ Wt();
   let i = class {
     constructor(o, n, c, u) {
       if (this.speakOverride = void 0, this.receiveMessageOverride = void 0, this.connectImplOverride = void 0, this.configConnectionOverride = void 0, this.privConnectionConfigurationPromise = void 0, !o)
@@ -21500,12 +21500,12 @@ function aw() {
     onBookmarkReached(o) {
     }
   };
-  return Yi.SynthesisAdapterBase = i, i.telemetryDataEnabled = !0, Yi;
+  return Xi.SynthesisAdapterBase = i, i.telemetryDataEnabled = !0, Xi;
 }
-var Zi = {}, Ah;
-function cw() {
-  if (Ah) return Zi;
-  Ah = 1, Object.defineProperty(Zi, "__esModule", { value: !0 }), Zi.AvatarSynthesisAdapter = void 0;
+var es = {}, Eh;
+function sw() {
+  if (Eh) return es;
+  Eh = 1, Object.defineProperty(es, "__esModule", { value: !0 }), es.AvatarSynthesisAdapter = void 0;
   const e = /* @__PURE__ */ A(), t = /* @__PURE__ */ k();
   let r = class extends t.SynthesisAdapterBase {
     constructor(i, a, o, n, c) {
@@ -21565,12 +21565,12 @@ function cw() {
       }
     }
   };
-  return Zi.AvatarSynthesisAdapter = r, Zi;
+  return es.AvatarSynthesisAdapter = r, es;
 }
-var Xi = {}, Th;
-function uw() {
-  if (Th) return Xi;
-  Th = 1, Object.defineProperty(Xi, "__esModule", { value: !0 }), Xi.SpeechSynthesisAdapter = void 0;
+var ts = {}, Ih;
+function ow() {
+  if (Ih) return ts;
+  Ih = 1, Object.defineProperty(ts, "__esModule", { value: !0 }), ts.SpeechSynthesisAdapter = void 0;
   const e = /* @__PURE__ */ A(), t = /* @__PURE__ */ k();
   let r = class extends t.SynthesisAdapterBase {
     constructor(i, a, o, n, c) {
@@ -21629,13 +21629,13 @@ function uw() {
         }
     }
   };
-  return Xi.SpeechSynthesisAdapter = r, Xi;
+  return ts.SpeechSynthesisAdapter = r, ts;
 }
-var es = {}, _h;
-function lw() {
-  if (_h) return es;
-  _h = 1, Object.defineProperty(es, "__esModule", { value: !0 }), es.SynthesisRestAdapter = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ _e(), s = /* @__PURE__ */ he();
+var rs = {}, Ah;
+function aw() {
+  if (Ah) return rs;
+  Ah = 1, Object.defineProperty(rs, "__esModule", { value: !0 }), rs.SynthesisRestAdapter = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ A(), r = /* @__PURE__ */ Te(), s = /* @__PURE__ */ le();
   let i = class {
     constructor(o, n) {
       let c = o.parameters.getProperty(t.PropertyId.SpeechServiceConnection_Endpoint, void 0);
@@ -21658,11 +21658,11 @@ function lw() {
       return this.privRestAdapter.setHeaders(s.HeaderNames.ConnectionId, o), this.privAuthentication.fetch(o).then((n) => (this.privRestAdapter.setHeaders(n.headerName, n.token), this.privRestAdapter.request(e.RestRequestType.Get, this.privUri)));
     }
   };
-  return es.SynthesisRestAdapter = i, es;
+  return rs.SynthesisRestAdapter = i, rs;
 }
-var Ta = {}, kh;
-function pw() {
-  return kh || (kh = 1, function(e) {
+var Ia = {}, Th;
+function cw() {
+  return Th || (Th = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.SynthesizerConfig = e.SynthesisServiceType = void 0;
     const t = /* @__PURE__ */ k();
     var r;
@@ -21692,12 +21692,12 @@ function pw() {
       }
     }
     e.SynthesizerConfig = s;
-  }(Ta)), Ta;
+  }(Ia)), Ia;
 }
-var ts = {}, Oh;
-function dw() {
-  if (Oh) return ts;
-  Oh = 1, Object.defineProperty(ts, "__esModule", { value: !0 }), ts.SynthesisContext = void 0;
+var ns = {}, _h;
+function uw() {
+  if (_h) return ns;
+  _h = 1, Object.defineProperty(ns, "__esModule", { value: !0 }), ns.SynthesisContext = void 0;
   const e = /* @__PURE__ */ A();
   let t = class {
     constructor() {
@@ -21744,12 +21744,12 @@ function dw() {
       };
     }
   };
-  return ts.SynthesisContext = t, ts;
+  return ns.SynthesisContext = t, ns;
 }
-var rs = {}, Mh;
-function hw() {
-  if (Mh) return rs;
-  Mh = 1, Object.defineProperty(rs, "__esModule", { value: !0 }), rs.SpeakerRecognitionConfig = void 0;
+var is = {}, kh;
+function lw() {
+  if (kh) return is;
+  kh = 1, Object.defineProperty(is, "__esModule", { value: !0 }), is.SpeakerRecognitionConfig = void 0;
   const e = /* @__PURE__ */ k();
   let t = class {
     constructor(s, i) {
@@ -21762,13 +21762,13 @@ function hw() {
       return this.privContext;
     }
   };
-  return rs.SpeakerRecognitionConfig = t, rs;
+  return is.SpeakerRecognitionConfig = t, is;
 }
-var ns = {}, Dh;
-function fw() {
-  if (Dh) return ns;
-  Dh = 1, Object.defineProperty(ns, "__esModule", { value: !0 }), ns.SpeakerServiceRecognizer = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ Kt();
+var ss = {}, Oh;
+function pw() {
+  if (Oh) return ss;
+  Oh = 1, Object.defineProperty(ss, "__esModule", { value: !0 }), ss.SpeakerServiceRecognizer = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ Wt();
   let a = class extends s.ServiceRecognizerBase {
     constructor(n, c, u, l, p) {
       super(n, c, u, l, p), this.privSpeakerRecognizer = p, this.privSpeakerAudioSource = u, this.recognizeSpeaker = (d) => this.recognizeSpeakerOnce(d), this.sendPrePayloadJSONOverride = () => this.noOp();
@@ -21834,13 +21834,13 @@ function fw() {
       };
     }
   };
-  return ns.SpeakerServiceRecognizer = a, ns;
+  return ss.SpeakerServiceRecognizer = a, ss;
 }
-var is = {}, Nh;
-function vw() {
-  if (Nh) return is;
-  Nh = 1, Object.defineProperty(is, "__esModule", { value: !0 }), is.VoiceServiceRecognizer = void 0;
-  const e = /* @__PURE__ */ ie(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ Kt();
+var os = {}, Mh;
+function dw() {
+  if (Mh) return os;
+  Mh = 1, Object.defineProperty(os, "__esModule", { value: !0 }), os.VoiceServiceRecognizer = void 0;
+  const e = /* @__PURE__ */ ne(), t = /* @__PURE__ */ D(), r = /* @__PURE__ */ A(), s = /* @__PURE__ */ k(), i = /* @__PURE__ */ Wt();
   let a = class extends s.ServiceRecognizerBase {
     constructor(n, c, u, l, p) {
       super(n, c, u, l, p), this.privDeferralMap = new t.DeferralMap(), this.privSpeakerAudioSource = u, this.sendPrePayloadJSONOverride = () => this.noOp();
@@ -22060,11 +22060,11 @@ function vw() {
       return n === r.VoiceProfileType.TextIndependentIdentification ? "TextIndependentIdentification" : n === r.VoiceProfileType.TextIndependentVerification ? "TextIndependentVerification" : "TextDependentVerification";
     }
   };
-  return is.VoiceServiceRecognizer = a, is;
+  return os.VoiceServiceRecognizer = a, os;
 }
-var _a = {}, xh;
-function gw() {
-  return xh || (xh = 1, function(e) {
+var Aa = {}, Dh;
+function hw() {
+  return Dh || (Dh = 1, function(e) {
     Object.defineProperty(e, "__esModule", { value: !0 }), e.type = e.connectivity = e.Device = e.OS = e.System = e.Context = e.SpeechServiceConfig = void 0;
     class t {
       constructor(n) {
@@ -22121,11 +22121,11 @@ function gw() {
     }(e.connectivity || (e.connectivity = {})), function(o) {
       o.Phone = "Phone", o.Speaker = "Speaker", o.Car = "Car", o.Headset = "Headset", o.Thermostat = "Thermostat", o.Microphones = "Microphones", o.Deskphone = "Deskphone", o.RemoteControl = "RemoteControl", o.Unknown = "Unknown", o.File = "File", o.Stream = "Stream";
     }(e.type || (e.type = {}));
-  }(_a)), _a;
+  }(Aa)), Aa;
 }
-var zh;
+var Nh;
 function k() {
-  return zh || (zh = 1, function(e) {
+  return Nh || (Nh = 1, function(e) {
     var t = st && st.__createBinding || (Object.create ? function(a, o, n, c) {
       c === void 0 && (c = n), Object.defineProperty(a, c, { enumerable: !0, get: function() {
         return o[n];
@@ -22135,20 +22135,20 @@ function k() {
     }), r = st && st.__exportStar || function(a, o) {
       for (var n in a) n !== "default" && !Object.prototype.hasOwnProperty.call(o, n) && t(o, a, n);
     };
-    Object.defineProperty(e, "__esModule", { value: !0 }), e.AutoDetectSourceLanguagesOpenRangeOptionName = e.ForceDictationPropertyName = e.ServicePropertiesPropertyName = e.CancellationErrorCodePropertyName = e.OutputFormatPropertyName = e.SpeechSynthesisAdapter = e.AvatarSynthesisAdapter = void 0, r(/* @__PURE__ */ WC(), e), r(/* @__PURE__ */ HC(), e), r(/* @__PURE__ */ ic(), e), r(/* @__PURE__ */ KC(), e), r(/* @__PURE__ */ JC(), e), r(/* @__PURE__ */ QP(), e), r(/* @__PURE__ */ YP(), e), r(/* @__PURE__ */ uc(), e), r(/* @__PURE__ */ ab(), e), r(/* @__PURE__ */ cb(), e), r(/* @__PURE__ */ ub(), e), r(/* @__PURE__ */ lb(), e), r(/* @__PURE__ */ pb(), e), r(/* @__PURE__ */ db(), e), r(/* @__PURE__ */ hb(), e), r(/* @__PURE__ */ fb(), e), r(/* @__PURE__ */ vb(), e), r(/* @__PURE__ */ Nv(), e), r(/* @__PURE__ */ gb(), e), r(/* @__PURE__ */ mb(), e), r(/* @__PURE__ */ yb(), e), r(/* @__PURE__ */ Sb(), e), r(/* @__PURE__ */ Cb(), e), r(/* @__PURE__ */ Rb(), e), r(/* @__PURE__ */ Pb(), e), r(/* @__PURE__ */ bb(), e), r(/* @__PURE__ */ wb(), e), r(/* @__PURE__ */ Eb(), e), r(/* @__PURE__ */ Ab(), e), r(/* @__PURE__ */ Tb(), e), r(/* @__PURE__ */ _b(), e), r(/* @__PURE__ */ kb(), e), r(/* @__PURE__ */ Ob(), e), r(/* @__PURE__ */ Mb(), e), r(/* @__PURE__ */ Db(), e), r(/* @__PURE__ */ Nb(), e), r(/* @__PURE__ */ zb(), e), r(/* @__PURE__ */ jb(), e), r(/* @__PURE__ */ Fb(), e), r(/* @__PURE__ */ Wb(), e), r(/* @__PURE__ */ Hb(), e), r(/* @__PURE__ */ iw(), e), r(/* @__PURE__ */ Gv(), e), r(/* @__PURE__ */ ow(), e), r(/* @__PURE__ */ aw(), e);
-    var s = /* @__PURE__ */ cw();
+    Object.defineProperty(e, "__esModule", { value: !0 }), e.AutoDetectSourceLanguagesOpenRangeOptionName = e.ForceDictationPropertyName = e.ServicePropertiesPropertyName = e.CancellationErrorCodePropertyName = e.OutputFormatPropertyName = e.SpeechSynthesisAdapter = e.AvatarSynthesisAdapter = void 0, r(/* @__PURE__ */ UC(), e), r(/* @__PURE__ */ $C(), e), r(/* @__PURE__ */ rc(), e), r(/* @__PURE__ */ VC(), e), r(/* @__PURE__ */ WC(), e), r(/* @__PURE__ */ KP(), e), r(/* @__PURE__ */ JP(), e), r(/* @__PURE__ */ ac(), e), r(/* @__PURE__ */ ib(), e), r(/* @__PURE__ */ sb(), e), r(/* @__PURE__ */ ob(), e), r(/* @__PURE__ */ ab(), e), r(/* @__PURE__ */ cb(), e), r(/* @__PURE__ */ ub(), e), r(/* @__PURE__ */ lb(), e), r(/* @__PURE__ */ pb(), e), r(/* @__PURE__ */ db(), e), r(/* @__PURE__ */ Ov(), e), r(/* @__PURE__ */ hb(), e), r(/* @__PURE__ */ fb(), e), r(/* @__PURE__ */ vb(), e), r(/* @__PURE__ */ gb(), e), r(/* @__PURE__ */ mb(), e), r(/* @__PURE__ */ yb(), e), r(/* @__PURE__ */ Sb(), e), r(/* @__PURE__ */ Cb(), e), r(/* @__PURE__ */ Rb(), e), r(/* @__PURE__ */ Pb(), e), r(/* @__PURE__ */ wb(), e), r(/* @__PURE__ */ Eb(), e), r(/* @__PURE__ */ Ib(), e), r(/* @__PURE__ */ Ab(), e), r(/* @__PURE__ */ Tb(), e), r(/* @__PURE__ */ _b(), e), r(/* @__PURE__ */ kb(), e), r(/* @__PURE__ */ Ob(), e), r(/* @__PURE__ */ Db(), e), r(/* @__PURE__ */ xb(), e), r(/* @__PURE__ */ Lb(), e), r(/* @__PURE__ */ Ub(), e), r(/* @__PURE__ */ $b(), e), r(/* @__PURE__ */ tw(), e), r(/* @__PURE__ */ Hv(), e), r(/* @__PURE__ */ nw(), e), r(/* @__PURE__ */ iw(), e);
+    var s = /* @__PURE__ */ sw();
     Object.defineProperty(e, "AvatarSynthesisAdapter", { enumerable: !0, get: function() {
       return s.AvatarSynthesisAdapter;
     } });
-    var i = /* @__PURE__ */ uw();
+    var i = /* @__PURE__ */ ow();
     Object.defineProperty(e, "SpeechSynthesisAdapter", { enumerable: !0, get: function() {
       return i.SpeechSynthesisAdapter;
-    } }), r(/* @__PURE__ */ lw(), e), r(/* @__PURE__ */ pw(), e), r(/* @__PURE__ */ dw(), e), r(/* @__PURE__ */ hw(), e), r(/* @__PURE__ */ fw(), e), r(/* @__PURE__ */ vw(), e), r(/* @__PURE__ */ gw(), e), e.OutputFormatPropertyName = "OutputFormat", e.CancellationErrorCodePropertyName = "CancellationErrorCode", e.ServicePropertiesPropertyName = "ServiceProperties", e.ForceDictationPropertyName = "ForceDictation", e.AutoDetectSourceLanguagesOpenRangeOptionName = "UND";
+    } }), r(/* @__PURE__ */ aw(), e), r(/* @__PURE__ */ cw(), e), r(/* @__PURE__ */ uw(), e), r(/* @__PURE__ */ lw(), e), r(/* @__PURE__ */ pw(), e), r(/* @__PURE__ */ dw(), e), r(/* @__PURE__ */ hw(), e), e.OutputFormatPropertyName = "OutputFormat", e.CancellationErrorCodePropertyName = "CancellationErrorCode", e.ServicePropertiesPropertyName = "ServiceProperties", e.ForceDictationPropertyName = "ForceDictation", e.AutoDetectSourceLanguagesOpenRangeOptionName = "UND";
   }(st)), st;
 }
-var Lh;
-function mw() {
-  return Lh || (Lh = 1, function(e) {
+var xh;
+function fw() {
+  return xh || (xh = 1, function(e) {
     var t = it && it.__createBinding || (Object.create ? function(i, a, o, n) {
       n === void 0 && (n = o), Object.defineProperty(i, n, { enumerable: !0, get: function() {
         return a[o];
@@ -22163,21 +22163,21 @@ function mw() {
     new s.AgentConfig(), r(/* @__PURE__ */ A(), e);
   }(it)), it;
 }
-var ss = /* @__PURE__ */ mw();
-const yw = vs.Provider, Sw = vs.Root, Cw = vs.Trigger, Qv = ce.forwardRef(({ className: e, sideOffset: t = 4, ...r }, s) => /* @__PURE__ */ R(
-  vs.Content,
+var as = /* @__PURE__ */ fw();
+const vw = ms.Provider, gw = ms.Root, mw = ms.Trigger, Kv = oe.forwardRef(({ className: e, sideOffset: t = 4, ...r }, s) => /* @__PURE__ */ P(
+  ms.Content,
   {
     ref: s,
     sideOffset: t,
-    className: cs(
+    className: ls(
       "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
       e
     ),
     ...r
   }
 ));
-Qv.displayName = vs.Content.displayName;
-const Rw = {
+Kv.displayName = ms.Content.displayName;
+const yw = {
   en: "en-US",
   es: "es-ES",
   pt: "pt-PT",
@@ -22189,7 +22189,7 @@ const Rw = {
   ar: "ar-SA",
   ru: "ru-RU"
 };
-function Yv({
+function Jv({
   avatarName: e,
   disabled: t = !1,
   voiceMode: r,
@@ -22200,26 +22200,26 @@ function Yv({
   speechKey: n
 }) {
   const [c, u] = z(!1), [l, p] = z(!1), [d, h] = z(null), f = localStorage.getItem("lang") || "en", g = c ? `You're now talking to ${e}` : `Click here to talk to ${e}`;
-  H(() => (c ? m() : v(), () => {
+  W(() => (c ? m() : v(), () => {
     v();
   }), [c]);
   const m = async () => {
     try {
-      const S = ss.SpeechConfig.fromSubscription(
+      const S = as.SpeechConfig.fromSubscription(
         n,
         o
       );
-      S.speechRecognitionLanguage = Rw[f || "en"];
-      const C = ss.AudioConfig.fromDefaultMicrophoneInput(), P = new ss.SpeechRecognizer(S, C);
-      P.recognizing = (w, I) => {
+      S.speechRecognitionLanguage = yw[f || "en"];
+      const C = as.AudioConfig.fromDefaultMicrophoneInput(), R = new as.SpeechRecognizer(S, C);
+      R.recognizing = (w, I) => {
         console.log(`RECOGNIZING: Text=${I.result.text}`);
-      }, P.recognized = (w, I) => {
-        I.result.reason === ss.ResultReason.RecognizedSpeech && (console.log(`RECOGNIZED: Text=${I.result.text}`), I.result.text && (s(I.result.text), u(!1), i(!1), a(!1)));
-      }, P.canceled = (w, I) => {
-        console.log(`CANCELED: Reason=${I.reason}`), I.reason === ss.CancellationReason.Error && console.error(`ERROR: Details=${I.errorDetails}`), u(!1), i(!1);
-      }, P.sessionStopped = () => {
+      }, R.recognized = (w, I) => {
+        I.result.reason === as.ResultReason.RecognizedSpeech && (console.log(`RECOGNIZED: Text=${I.result.text}`), I.result.text && (s(I.result.text), u(!1), i(!1), a(!1)));
+      }, R.canceled = (w, I) => {
+        console.log(`CANCELED: Reason=${I.reason}`), I.reason === as.CancellationReason.Error && console.error(`ERROR: Details=${I.errorDetails}`), u(!1), i(!1);
+      }, R.sessionStopped = () => {
         u(!1), i(!1);
-      }, await P.startContinuousRecognitionAsync(), h(P), i(!0), a(!0);
+      }, await R.startContinuousRecognitionAsync(), h(R), i(!0), a(!0);
     } catch (S) {
       console.error("Error starting continuous recognition:", S), u(!1), i(!1);
     }
@@ -22233,22 +22233,22 @@ function Yv({
   }, y = () => {
     t || l || u(!c);
   };
-  return r ? /* @__PURE__ */ R(yw, { children: /* @__PURE__ */ M(Sw, { children: [
-    /* @__PURE__ */ R(Cw, { asChild: !0, children: /* @__PURE__ */ R(
-      Pe,
+  return r ? /* @__PURE__ */ P(vw, { children: /* @__PURE__ */ M(gw, { children: [
+    /* @__PURE__ */ P(mw, { asChild: !0, children: /* @__PURE__ */ P(
+      Oe,
       {
         variant: "outline",
         size: "icon",
         onClick: y,
         disabled: t || l || !1,
         className: "rounded-full bg-primary hover:bg-secondary h-9 w-9",
-        children: l ? /* @__PURE__ */ R(Ma, { className: "w-6 h-6 text-white animate-spin" }) : c ? /* @__PURE__ */ R(Ig, { className: "w-6 h-6 text-white" }) : /* @__PURE__ */ R(Ag, { className: "w-6 h-6 text-white" })
+        children: l ? /* @__PURE__ */ P(ka, { className: "w-6 h-6 text-white animate-spin" }) : c ? /* @__PURE__ */ P(Eg, { className: "w-6 h-6 text-white" }) : /* @__PURE__ */ P(Ig, { className: "w-6 h-6 text-white" })
       }
     ) }),
-    /* @__PURE__ */ R(Qv, { children: /* @__PURE__ */ R("p", { children: g }) })
+    /* @__PURE__ */ P(Kv, { children: /* @__PURE__ */ P("p", { children: g }) })
   ] }) }) : null;
 }
-const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
+const zh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en", c) => {
   for (let u = 0; u < o; u++) {
     const l = new Headers();
     l.append("Accept", "application/json");
@@ -22291,11 +22291,11 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     Message: "API call failed after all retries",
     Data: null
   };
-}, Pw = () => "https://developmentapis.azure-api.net/sandbox/v1/api", pc = (e) => {
-  const t = Pw().replace(/\/$/, "");
+}, Sw = () => "https://developmentapis.azure-api.net/sandbox/v1/api", uc = (e) => {
+  const t = Sw().replace(/\/$/, "");
   let r = e.startsWith("/") ? e : `/${e}`;
   return t.endsWith("/api") && r.startsWith("/api/") && (r = r.replace(/^\/api/, "")), `${t}${r}`;
-}, bw = async (e, t, r, s) => {
+}, Cw = async (e, t, r, s) => {
   const a = {
     method: "POST",
     headers: {
@@ -22313,7 +22313,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
   let o;
   try {
     const n = await fetch(
-      pc("/api/AI/training"),
+      uc("/api/AI/training"),
       a
     );
     if (!n.ok) {
@@ -22330,7 +22330,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     console.error("Saving chat error:", n);
   }
   return o;
-}, ww = ({
+}, Rw = ({
   onStart: e,
   loading: t,
   buttonText: r = "Start Conversation",
@@ -22351,17 +22351,17 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     md: "text-base px-6 py-3",
     lg: "text-lg px-8 py-4"
   };
-  return H(() => {
+  return W(() => {
     (async () => {
       if (f !== "en") {
-        const [P, w] = await Hs(["Loading...", "Avatar not found"], f, "en", h?.azureTranslatorKey || "", h?.azureTranslatorEndpoint || "", h?.azureTranslatorRegion || "");
-        m({ loading: P, avatarNotFound: w });
+        const [R, w] = await Ws(["Loading...", "Avatar not found"], f, "en", h?.azureTranslatorKey || "", h?.azureTranslatorEndpoint || "", h?.azureTranslatorRegion || "");
+        m({ loading: R, avatarNotFound: w });
       } else
         m({ loading: "Loading...", avatarNotFound: "Avatar not found" });
     })();
   }, [f]), /* @__PURE__ */ M("div", { className: `flex flex-col items-center justify-center ${o}`, children: [
-    /* @__PURE__ */ R("div", { className: `w-full ${n} max-h-[300px] mb-6 relative`, children: v ? /* @__PURE__ */ M(af, { children: [
-      /* @__PURE__ */ R(
+    /* @__PURE__ */ P("div", { className: `w-full ${n} max-h-[300px] mb-6 relative`, children: v ? /* @__PURE__ */ M(nf, { children: [
+      /* @__PURE__ */ P(
         "img",
         {
           ref: s,
@@ -22372,17 +22372,17 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
       ),
       /* @__PURE__ */ M("div", { className: "absolute top-3 right-3 flex items-center bg-black/70 px-2 py-1 rounded-full text-white text-xs font-medium shadow-md", children: [
         /* @__PURE__ */ M("div", { className: "relative flex h-3 w-3 mr-1.5", children: [
-          /* @__PURE__ */ R("span", { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" }),
-          /* @__PURE__ */ R("span", { className: "relative inline-flex rounded-full h-3 w-3 bg-green-600" })
+          /* @__PURE__ */ P("span", { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" }),
+          /* @__PURE__ */ P("span", { className: "relative inline-flex rounded-full h-3 w-3 bg-green-600" })
         ] }),
-        /* @__PURE__ */ R("span", { children: "LIVE" })
+        /* @__PURE__ */ P("span", { children: "LIVE" })
       ] }),
       /* @__PURE__ */ M("div", { className: "absolute bottom-3 left-3 right-3 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg", children: [
-        /* @__PURE__ */ R("h3", { className: "text-white font-semibold text-sm", children: v.Name }),
-        /* @__PURE__ */ R("p", { className: "text-white/80 text-xs", children: y })
+        /* @__PURE__ */ P("h3", { className: "text-white font-semibold text-sm", children: v.Name }),
+        /* @__PURE__ */ P("p", { className: "text-white/80 text-xs", children: y })
       ] })
-    ] }) : /* @__PURE__ */ R("div", { className: "w-full h-full bg-light rounded-lg flex items-center justify-center", children: /* @__PURE__ */ R("p", { className: "text-secondary", children: g.avatarNotFound }) }) }),
-    /* @__PURE__ */ R(
+    ] }) : /* @__PURE__ */ P("div", { className: "w-full h-full bg-light rounded-lg flex items-center justify-center", children: /* @__PURE__ */ P("p", { className: "text-secondary", children: g.avatarNotFound }) }) }),
+    /* @__PURE__ */ P(
       "button",
       {
         onClick: e,
@@ -22392,21 +22392,21 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
       }
     ),
     u && u.length > 0 && /* @__PURE__ */ M("div", { className: "mt-6 w-full", children: [
-      /* @__PURE__ */ R("h3", { className: "text-lg font-semibold mb-3", children: "Try asking about:" }),
-      /* @__PURE__ */ R("div", { className: "space-y-2", children: u.map((C, P) => /* @__PURE__ */ R(
+      /* @__PURE__ */ P("h3", { className: "text-lg font-semibold mb-3", children: "Try asking about:" }),
+      /* @__PURE__ */ P("div", { className: "space-y-2", children: u.map((C, R) => /* @__PURE__ */ P(
         "button",
         {
           onClick: () => l?.(C),
           className: "w-full text-left p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors",
           children: C
         },
-        P
+        R
       )) })
     ] })
   ] });
-}, Zv = ({ id: e, style: t = {} }) => {
-  const r = pf(e), s = r?.isOff, [i, a] = z(!1), o = $e(null);
-  return H(() => {
+}, Gv = ({ id: e, style: t = {} }) => {
+  const r = cf(e), s = r?.isOff, [i, a] = z(!1), o = $e(null);
+  return W(() => {
     const n = o.current;
     if (!n) return;
     const c = () => a(!0);
@@ -22420,8 +22420,8 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
                     h-[200px] sm:h-[250px] md:h-[350px] lg:h-[450px] xl:h-[500px]`,
       style: t,
       children: [
-        e && /* @__PURE__ */ R(
-          qg,
+        e && /* @__PURE__ */ P(
+          zg,
           {
             automirror: !0,
             sessionId: e,
@@ -22435,7 +22435,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
             }
           }
         ),
-        !i && !s && /* @__PURE__ */ R("div", { className: "absolute top-0 left-0 w-full h-full flex items-center justify-center bg-slate-100 z-10", children: /* @__PURE__ */ M(
+        !i && !s && /* @__PURE__ */ P("div", { className: "absolute top-0 left-0 w-full h-full flex items-center justify-center bg-slate-100 z-10", children: /* @__PURE__ */ M(
           "svg",
           {
             className: "animate-spin h-8 w-8 text-blue-500",
@@ -22443,7 +22443,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
             fill: "none",
             viewBox: "0 0 24 24",
             children: [
-              /* @__PURE__ */ R(
+              /* @__PURE__ */ P(
                 "circle",
                 {
                   className: "opacity-25",
@@ -22454,7 +22454,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
                   strokeWidth: "4"
                 }
               ),
-              /* @__PURE__ */ R(
+              /* @__PURE__ */ P(
                 "path",
                 {
                   className: "opacity-75",
@@ -22465,7 +22465,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
             ]
           }
         ) }),
-        s && /* @__PURE__ */ R("div", { className: "absolute top-0 left-0 w-full h-full flex items-center justify-center bg-slate-100 z-5", children: /* @__PURE__ */ R(
+        s && /* @__PURE__ */ P("div", { className: "absolute top-0 left-0 w-full h-full flex items-center justify-center bg-slate-100 z-5", children: /* @__PURE__ */ P(
           "svg",
           {
             className: "h-1/2 w-auto",
@@ -22475,14 +22475,14 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
             version: "1.1",
             xmlns: "http://www.w3.org/2000/svg",
             children: /* @__PURE__ */ M("g", { stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [
-              /* @__PURE__ */ R(
+              /* @__PURE__ */ P(
                 "path",
                 {
                   d: "M18.571,4 C19.142,4 19.557,4.23 19.815,4.689 C20.073,5.148 20.073,5.622 19.815,6.111 L16,12 L19.815,17.889 C20.073,18.377 20.073,18.852 19.815,19.311 C19.557,19.77 19.142,20 18.571,20 L5.429,20 C4.857,20 4.443,19.77 4.185,19.311 C3.927,18.852 3.927,18.377 4.185,17.889 L8,12 L4.185,6.111 C3.927,5.622 3.927,5.148 4.185,4.689 C4.443,4.23 4.857,4 5.429,4 L18.571,4 Z",
                   fill: "#555555"
                 }
               ),
-              /* @__PURE__ */ R(
+              /* @__PURE__ */ P(
                 "line",
                 {
                   x1: "4",
@@ -22500,7 +22500,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
       ]
     }
   );
-}, Ew = ({
+}, Pw = ({
   handleJoin: e,
   handleEnd: t,
   platform: r,
@@ -22509,8 +22509,8 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
   videoDimensions: a = { width: "100%", height: "auto" },
   buttonsSize: o = "md"
 }) => {
-  const n = df(), c = Bs();
-  H(() => {
+  const n = uf(), c = Fs();
+  W(() => {
     (async () => {
       if (c) {
         const p = c?.meetingState();
@@ -22531,7 +22531,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     lg: "px-6 py-3 text-base"
   };
   return /* @__PURE__ */ M(
-    lf.div,
+    af.div,
     {
       className: `flex flex-col items-center ${i}`,
       initial: { opacity: 0 },
@@ -22539,11 +22539,11 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
       transition: { duration: 0.3 },
       children: [
         /* @__PURE__ */ M("div", { className: "mb-4 flex flex-col items-center justify-center gap-4 text-center w-full max-w-2xl mx-auto mt-4 px-2", children: [
-          /* @__PURE__ */ R("h2", { className: "text-xl font-bold text-secondary mb-1", children: "Check your camera and microphone" }),
-          /* @__PURE__ */ R("p", { className: "text-sm text-secondary", children: "Make sure your devices are working properly before joining" })
+          /* @__PURE__ */ P("h2", { className: "text-xl font-bold text-secondary mb-1", children: "Check your camera and microphone" }),
+          /* @__PURE__ */ P("p", { className: "text-sm text-secondary", children: "Make sure your devices are working properly before joining" })
         ] }),
-        /* @__PURE__ */ R("div", { className: "w-full max-w-lg mb-6 rounded-lg border border-gray-300 overflow-hidden bg-gray-100", children: /* @__PURE__ */ R("div", { className: "p-8 flex items-center justify-center bg-gradient-to-b from-gray-800 to-primary/60 text-white", children: /* @__PURE__ */ M("div", { className: "text-center", children: [
-          /* @__PURE__ */ R("div", { className: "mx-auto h-24 w-24 rounded-full bg-black/80 flex items-center justify-center mb-4", children: /* @__PURE__ */ M(
+        /* @__PURE__ */ P("div", { className: "w-full max-w-lg mb-6 rounded-lg border border-gray-300 overflow-hidden bg-gray-100", children: /* @__PURE__ */ P("div", { className: "p-8 flex items-center justify-center bg-gradient-to-b from-gray-800 to-primary/60 text-white", children: /* @__PURE__ */ M("div", { className: "text-center", children: [
+          /* @__PURE__ */ P("div", { className: "mx-auto h-24 w-24 rounded-full bg-black/80 flex items-center justify-center mb-4", children: /* @__PURE__ */ M(
             "svg",
             {
               xmlns: "http://www.w3.org/2000/svg",
@@ -22556,12 +22556,12 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
               strokeLinecap: "round",
               strokeLinejoin: "round",
               children: [
-                /* @__PURE__ */ R("path", { d: "M23 7l-7 5 7 5V7z" }),
-                /* @__PURE__ */ R("rect", { x: "1", y: "5", width: "15", height: "14", rx: "2", ry: "2" })
+                /* @__PURE__ */ P("path", { d: "M23 7l-7 5 7 5V7z" }),
+                /* @__PURE__ */ P("rect", { x: "1", y: "5", width: "15", height: "14", rx: "2", ry: "2" })
               ]
             }
           ) }),
-          /* @__PURE__ */ R(
+          /* @__PURE__ */ P(
             "div",
             {
               className: "relative rounded-xl border-4 border-primary overflow-hidden shadow-lg",
@@ -22569,7 +22569,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
                 width: a.width || "100%",
                 height: a.height || "auto"
               },
-              children: /* @__PURE__ */ R(Zv, { id: n })
+              children: /* @__PURE__ */ P(Gv, { id: n })
             }
           )
         ] }) }) }),
@@ -22588,12 +22588,12 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 children: [
-                  /* @__PURE__ */ R("path", { d: "M23 7l-7 5 7 5V7z" }),
-                  /* @__PURE__ */ R("rect", { x: "1", y: "5", width: "15", height: "14", rx: "2", ry: "2" })
+                  /* @__PURE__ */ P("path", { d: "M23 7l-7 5 7 5V7z" }),
+                  /* @__PURE__ */ P("rect", { x: "1", y: "5", width: "15", height: "14", rx: "2", ry: "2" })
                 ]
               }
             ),
-            /* @__PURE__ */ R("span", { className: "text-sm", children: "Camera: Ready" })
+            /* @__PURE__ */ P("span", { className: "text-sm", children: "Camera: Ready" })
           ] }),
           /* @__PURE__ */ M("div", { className: "flex items-center gap-2 px-3 py-2 bg-black/5 rounded-md", children: [
             /* @__PURE__ */ M(
@@ -22609,18 +22609,18 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 children: [
-                  /* @__PURE__ */ R("path", { d: "M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" }),
-                  /* @__PURE__ */ R("path", { d: "M19 10v2a7 7 0 0 1-14 0v-2" }),
-                  /* @__PURE__ */ R("line", { x1: "12", y1: "19", x2: "12", y2: "23" }),
-                  /* @__PURE__ */ R("line", { x1: "8", y1: "23", x2: "16", y2: "23" })
+                  /* @__PURE__ */ P("path", { d: "M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" }),
+                  /* @__PURE__ */ P("path", { d: "M19 10v2a7 7 0 0 1-14 0v-2" }),
+                  /* @__PURE__ */ P("line", { x1: "12", y1: "19", x2: "12", y2: "23" }),
+                  /* @__PURE__ */ P("line", { x1: "8", y1: "23", x2: "16", y2: "23" })
                 ]
               }
             ),
-            /* @__PURE__ */ R("span", { className: "text-sm", children: "Microphone: Ready" })
+            /* @__PURE__ */ P("span", { className: "text-sm", children: "Microphone: Ready" })
           ] })
         ] }),
         /* @__PURE__ */ M("div", { className: "flex gap-4 mt-6", children: [
-          /* @__PURE__ */ R(
+          /* @__PURE__ */ P(
             "button",
             {
               onClick: t,
@@ -22628,7 +22628,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
               children: "Cancel"
             }
           ),
-          /* @__PURE__ */ R(
+          /* @__PURE__ */ P(
             "button",
             {
               onClick: e,
@@ -22640,7 +22640,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
       ]
     }
   );
-}, Iw = ({
+}, bw = ({
   actionLabel: e,
   onAction: t,
   cancelLabel: r,
@@ -22655,24 +22655,24 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
   region: p,
   speechKey: d
 }) => {
-  Bs();
-  const { currentCam: h, currentMic: f, refreshDevices: g } = Fg(), m = df(), v = pf(m), y = Bg(m);
+  Fs();
+  const { currentCam: h, currentMic: f, refreshDevices: g } = Lg(), m = uf(), v = cf(m), y = jg(m);
   v.isOff, y.isOff;
   const [S, C] = z(!1);
-  return H(() => {
+  return W(() => {
     (() => {
       document.querySelectorAll("[data-replit-metadata]").forEach((I) => {
         I.hasAttribute("data-replit-metadata") && I.removeAttribute("data-replit-metadata");
       });
     })();
-  }, []), Ug(
+  }, []), qg(
     "camera-error",
-    Ya(() => {
+    Ga(() => {
       C(!0);
     }, [])
   ), /* @__PURE__ */ M("div", { className: "mt-2 p-2 rounded-lg max-w-md flex gap-4 justify-around items-center mx-auto bg-primary", children: [
-    /* @__PURE__ */ R("div", { className: "flex items-center", children: /* @__PURE__ */ R(
-      Yv,
+    /* @__PURE__ */ P("div", { className: "flex items-center", children: /* @__PURE__ */ P(
+      Jv,
       {
         avatarName: n === "university" ? "Instructor" : n === "pr" ? "PR Strategist" : n === "business_advisor" ? "Medical Advisor" : n === "survey" ? "AI Surveyor" : n === "concierge" ? "Concierge" : "Business Expert",
         disabled: !1,
@@ -22684,17 +22684,17 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
         speechKey: d
       }
     ) }),
-    e && e === "End Conversation" && /* @__PURE__ */ R(
+    e && e === "End Conversation" && /* @__PURE__ */ P(
       "button",
       {
         onClick: t,
         disabled: S || (!h || !f) && n !== "home" && n !== "university" && n !== "concierge" && n !== "pr" && n !== "business_advisor" && n !== "survey",
         className: "flex items-center justify-center p-1 rounded-full border border-white text-white w-10 h-10",
-        children: /* @__PURE__ */ R(Kg, { className: "w-6 h-6" })
+        children: /* @__PURE__ */ P(Vg, { className: "w-6 h-6" })
       }
     )
   ] });
-}, Aw = ({
+}, ww = ({
   conversationId: e,
   platform: t,
   videoMode: r,
@@ -22707,30 +22707,30 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
   interruptReplica: u,
   config: l
 }) => {
-  const p = Bs(), d = $g({ filter: "remote" }), [h, f] = z("full"), [g, m] = z([]), [v, y] = z(!1), S = localStorage.getItem("lang") || "en", C = Vg({
-    onAppMessage: Ya((_) => {
+  const p = Fs(), d = Fg({ filter: "remote" }), [h, f] = z("full"), [g, m] = z([]), [v, y] = z(!1), S = localStorage.getItem("lang") || "en", C = Bg({
+    onAppMessage: Ga((_) => {
       const O = _.data;
-      m((q) => [...q, O]);
+      m((j) => [...j, O]);
     }, [])
   });
-  let P = t === "university" ? "AI Instructor" : t === "pr" ? "PR Strategist" : t === "business_advisor" ? "Medical Advisor" : t === "survey" ? "AI Surveyor" : "Medical Concierge";
-  const [w, I] = z({ waiting: `${P} will be here shortly...`, endConversation: "Ending Conversation..." });
-  H(() => {
+  let R = t === "university" ? "AI Instructor" : t === "pr" ? "PR Strategist" : t === "business_advisor" ? "Medical Advisor" : t === "survey" ? "AI Surveyor" : "Medical Concierge";
+  const [w, I] = z({ waiting: `${R} will be here shortly...`, endConversation: "Ending Conversation..." });
+  W(() => {
     (async () => {
       if (S !== "en") {
-        const [O, q] = await Hs([`${P} will be here shortly...`, "Ending Conversation..."], S, "en", l?.azureTranslatorKey || "", l?.azureTranslatorEndpoint || "", l?.azureTranslatorRegion || "");
-        I({ waiting: O, endConversation: q });
+        const [O, j] = await Ws([`${R} will be here shortly...`, "Ending Conversation..."], S, "en", l?.azureTranslatorKey || "", l?.azureTranslatorEndpoint || "", l?.azureTranslatorRegion || "");
+        I({ waiting: O, endConversation: j });
       } else
-        I({ waiting: `${P} will be here shortly...`, endConversation: "Ending Conversation..." });
+        I({ waiting: `${R} will be here shortly...`, endConversation: "Ending Conversation..." });
     })();
   }, [S]);
   const E = (_) => _ ? _.replace(/\*\*/g, "").replace(/[#_][^\s]+/g, "").replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, "").replace(/[^\w\s.,!?'"-]/g, "").replace(/\s+/g, " ").trim() : "";
-  H(() => {
+  W(() => {
     const _ = () => y(!0);
     return p && p.on("joined-meeting", _), () => {
       p && p.off("joined-meeting", _);
     };
-  }, [p]), H(() => {
+  }, [p]), W(() => {
     try {
       if (p && v && c) {
         n(!1);
@@ -22740,9 +22740,9 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     } catch (_) {
       console.error("Error sending echo interaction:", _);
     }
-  }, [c, v]), H(() => {
+  }, [c, v]), W(() => {
     p && v && u && b();
-  }, [u]), H(() => {
+  }, [u]), W(() => {
     r && f(r);
   }, [r]);
   const T = (_) => {
@@ -22764,8 +22764,8 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     };
     console.log("Sending Echo Interaction:", _), C(_, "*");
   };
-  return /* @__PURE__ */ M(af, { children: [
-    /* @__PURE__ */ R("div", { className: "flex flex-col items-center justify-center gap-4 text-center mx-auto px-2 h-full overflow-hidden", children: /* @__PURE__ */ R("div", { className: "relative w-full h-full rounded-xl border-4 border-neutral overflow-hidden shadow-lg", children: d.length > 0 ? /* @__PURE__ */ R(
+  return /* @__PURE__ */ M(nf, { children: [
+    /* @__PURE__ */ P("div", { className: "flex flex-col items-center justify-center gap-4 text-center mx-auto px-2 h-full overflow-hidden", children: /* @__PURE__ */ P("div", { className: "relative w-full h-full rounded-xl border-4 border-neutral overflow-hidden shadow-lg", children: d.length > 0 ? /* @__PURE__ */ P(
       "div",
       {
         className: "relative w-full h-full",
@@ -22775,7 +22775,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
           overflow: "hidden"
           // To contain absolutely positioned elements
         },
-        children: /* @__PURE__ */ R(
+        children: /* @__PURE__ */ P(
           "div",
           {
             style: {
@@ -22791,8 +22791,8 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
               alignItems: "center"
               // Center content vertically
             },
-            children: /* @__PURE__ */ R(
-              Zv,
+            children: /* @__PURE__ */ P(
+              Gv,
               {
                 id: d[0],
                 style: {
@@ -22807,7 +22807,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
           }
         )
       }
-    ) : /* @__PURE__ */ R(
+    ) : /* @__PURE__ */ P(
       "div",
       {
         className: "relative flex justify-center items-center w-full h-full",
@@ -22817,12 +22817,12 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
           height: "100%",
           position: "relative"
         },
-        children: /* @__PURE__ */ R("div", { className: "absolute inset-0 flex justify-center items-center", children: /* @__PURE__ */ R("h2", { className: "text-white text-xl text-center px-4", children: s ? w.endConversation : w.waiting }) })
+        children: /* @__PURE__ */ P("div", { className: "absolute inset-0 flex justify-center items-center", children: /* @__PURE__ */ P("h2", { className: "text-white text-xl text-center px-4", children: s ? w.endConversation : w.waiting }) })
       }
     ) }) }),
-    /* @__PURE__ */ R(Wg, {})
+    /* @__PURE__ */ P(Ug, {})
   ] });
-}, Tw = ({
+}, Ew = ({
   conversation: e,
   handleEnd: t,
   platform: r,
@@ -22844,14 +22844,14 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
   speechKey: y,
   config: S
 }) => {
-  const C = Bs();
-  H(() => {
+  const C = Fs();
+  W(() => {
     (() => {
       document.querySelectorAll("[data-replit-metadata]").forEach((_) => {
         _.hasAttribute("data-replit-metadata") && _.removeAttribute("data-replit-metadata");
       });
     })();
-  }, []), H(() => {
+  }, []), W(() => {
     if (e && C) {
       const { conversation_url: T } = e;
       C.join({
@@ -22859,22 +22859,22 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
       });
     }
   }, [C, e]);
-  const P = async () => {
+  const R = async () => {
     await C?.leave(), t();
   }, w = {
     sm: "scale-75",
     md: "",
     lg: "scale-125"
   }, I = "bottom-4", E = () => c === "auto" ? "min-h-[360px]" : c;
-  return /* @__PURE__ */ R("div", { className: `flex flex-col w-full h-full relative ${n}`, children: /* @__PURE__ */ M("div", { className: "flex-1 w-full h-full relative overflow-hidden", children: [
-    /* @__PURE__ */ R(
-      Aw,
+  return /* @__PURE__ */ P("div", { className: `flex flex-col w-full h-full relative ${n}`, children: /* @__PURE__ */ M("div", { className: "flex-1 w-full h-full relative overflow-hidden", children: [
+    /* @__PURE__ */ P(
+      ww,
       {
         conversationId: e.conversation_id,
         platform: r,
         videoMode: s,
         endConv: i,
-        onAction: P,
+        onAction: R,
         videoHeight: E(),
         aspectRatio: l,
         setInterruptReplica: p,
@@ -22883,11 +22883,11 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
         config: S
       }
     ),
-    /* @__PURE__ */ R("div", { className: `absolute ${I} left-0 right-0 z-10 flex justify-center ${w[u]}`, children: /* @__PURE__ */ R(
-      Iw,
+    /* @__PURE__ */ P("div", { className: `absolute ${I} left-0 right-0 z-10 flex justify-center ${w[u]}`, children: /* @__PURE__ */ P(
+      bw,
       {
         actionLabel: "End Conversation",
-        onAction: P,
+        onAction: R,
         platform: r,
         chatLabel: "Open Chat",
         onChat: o,
@@ -22900,7 +22900,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
       }
     ) })
   ] }) });
-}, _w = async ({
+}, Iw = async ({
   replicaId: e,
   personaId: t,
   conversationName: r,
@@ -22944,7 +22944,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
   } catch (c) {
     throw console.error("Error creating Tavus conversation:", c), c;
   }
-}, qh = async ({
+}, Lh = async ({
   conversationId: e,
   apiKey: t
 }) => {
@@ -22961,7 +22961,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     );
   } catch {
   }
-}, Xv = async () => {
+}, Qv = async () => {
   const e = new Headers();
   e.append("Accept", "application/json");
   const t = {
@@ -22971,7 +22971,7 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
   };
   let r;
   try {
-    const s = await fetch(pc("/api/Avatar/get/all"), t);
+    const s = await fetch(uc("/api/Avatar/get/all"), t);
     if (!s.ok)
       throw new Error(`HTTP error! status: ${s.status}`);
     r = s.headers.get("content-length") === "0" ? { Success: !0, Data: [] } : await s.json();
@@ -22979,63 +22979,63 @@ const jh = async (e, t = "", r = "", s = "chat", i = "", a = 0, o = 1, n = "en",
     console.error("Error fetching avatars:", s);
   }
   return r;
-}, N = (e) => typeof e == "string", os = () => {
+}, N = (e) => typeof e == "string", cs = () => {
   let e, t;
   const r = new Promise((s, i) => {
     e = s, t = i;
   });
   return r.resolve = e, r.reject = t, r;
-}, Fh = (e) => e == null ? "" : "" + e, kw = (e, t, r) => {
+}, jh = (e) => e == null ? "" : "" + e, Aw = (e, t, r) => {
   e.forEach((s) => {
     t[s] && (r[s] = t[s]);
   });
-}, Ow = /###/g, Bh = (e) => e && e.indexOf("###") > -1 ? e.replace(Ow, ".") : e, Uh = (e) => !e || N(e), us = (e, t, r) => {
+}, Tw = /###/g, qh = (e) => e && e.indexOf("###") > -1 ? e.replace(Tw, ".") : e, Fh = (e) => !e || N(e), ps = (e, t, r) => {
   const s = N(t) ? t.split(".") : t;
   let i = 0;
   for (; i < s.length - 1; ) {
-    if (Uh(e)) return {};
-    const a = Bh(s[i]);
+    if (Fh(e)) return {};
+    const a = qh(s[i]);
     !e[a] && r && (e[a] = new r()), Object.prototype.hasOwnProperty.call(e, a) ? e = e[a] : e = {}, ++i;
   }
-  return Uh(e) ? {} : {
+  return Fh(e) ? {} : {
     obj: e,
-    k: Bh(s[i])
+    k: qh(s[i])
   };
-}, $h = (e, t, r) => {
+}, Bh = (e, t, r) => {
   const {
     obj: s,
     k: i
-  } = us(e, t, Object);
+  } = ps(e, t, Object);
   if (s !== void 0 || t.length === 1) {
     s[i] = r;
     return;
   }
-  let a = t[t.length - 1], o = t.slice(0, t.length - 1), n = us(e, o, Object);
+  let a = t[t.length - 1], o = t.slice(0, t.length - 1), n = ps(e, o, Object);
   for (; n.obj === void 0 && o.length; )
-    a = `${o[o.length - 1]}.${a}`, o = o.slice(0, o.length - 1), n = us(e, o, Object), n?.obj && typeof n.obj[`${n.k}.${a}`] < "u" && (n.obj = void 0);
+    a = `${o[o.length - 1]}.${a}`, o = o.slice(0, o.length - 1), n = ps(e, o, Object), n?.obj && typeof n.obj[`${n.k}.${a}`] < "u" && (n.obj = void 0);
   n.obj[`${n.k}.${a}`] = r;
-}, Mw = (e, t, r, s) => {
+}, _w = (e, t, r, s) => {
   const {
     obj: i,
     k: a
-  } = us(e, t, Object);
+  } = ps(e, t, Object);
   i[a] = i[a] || [], i[a].push(r);
-}, xs = (e, t) => {
+}, Ns = (e, t) => {
   const {
     obj: r,
     k: s
-  } = us(e, t);
+  } = ps(e, t);
   if (r && Object.prototype.hasOwnProperty.call(r, s))
     return r[s];
-}, Dw = (e, t, r) => {
-  const s = xs(e, r);
-  return s !== void 0 ? s : xs(t, r);
-}, eg = (e, t, r) => {
+}, kw = (e, t, r) => {
+  const s = Ns(e, r);
+  return s !== void 0 ? s : Ns(t, r);
+}, Yv = (e, t, r) => {
   for (const s in t)
-    s !== "__proto__" && s !== "constructor" && (s in e ? N(e[s]) || e[s] instanceof String || N(t[s]) || t[s] instanceof String ? r && (e[s] = t[s]) : eg(e[s], t[s], r) : e[s] = t[s]);
+    s !== "__proto__" && s !== "constructor" && (s in e ? N(e[s]) || e[s] instanceof String || N(t[s]) || t[s] instanceof String ? r && (e[s] = t[s]) : Yv(e[s], t[s], r) : e[s] = t[s]);
   return e;
-}, Ft = (e) => e.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-var Nw = {
+}, jt = (e) => e.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+var Ow = {
   "&": "&amp;",
   "<": "&lt;",
   ">": "&gt;",
@@ -23043,8 +23043,8 @@ var Nw = {
   "'": "&#39;",
   "/": "&#x2F;"
 };
-const xw = (e) => N(e) ? e.replace(/[&<>"'\/]/g, (t) => Nw[t]) : e;
-class zw {
+const Mw = (e) => N(e) ? e.replace(/[&<>"'\/]/g, (t) => Ow[t]) : e;
+class Dw {
   constructor(t) {
     this.capacity = t, this.regExpMap = /* @__PURE__ */ new Map(), this.regExpQueue = [];
   }
@@ -23056,18 +23056,18 @@ class zw {
     return this.regExpQueue.length === this.capacity && this.regExpMap.delete(this.regExpQueue.shift()), this.regExpMap.set(t, s), this.regExpQueue.push(t), s;
   }
 }
-const Lw = [" ", ",", "?", "!", ";"], jw = new zw(20), qw = (e, t, r) => {
+const Nw = [" ", ",", "?", "!", ";"], xw = new Dw(20), zw = (e, t, r) => {
   t = t || "", r = r || "";
-  const s = Lw.filter((o) => t.indexOf(o) < 0 && r.indexOf(o) < 0);
+  const s = Nw.filter((o) => t.indexOf(o) < 0 && r.indexOf(o) < 0);
   if (s.length === 0) return !0;
-  const i = jw.getRegExp(`(${s.map((o) => o === "?" ? "\\?" : o).join("|")})`);
+  const i = xw.getRegExp(`(${s.map((o) => o === "?" ? "\\?" : o).join("|")})`);
   let a = !i.test(e);
   if (!a) {
     const o = e.indexOf(r);
     o > 0 && !i.test(e.substring(0, o)) && (a = !0);
   }
   return a;
-}, Ka = function(e, t) {
+}, Wa = function(e, t) {
   let r = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : ".";
   if (!e) return;
   if (e[t])
@@ -23088,7 +23088,7 @@ const Lw = [" ", ",", "?", "!", ";"], jw = new zw(20), qw = (e, t, r) => {
     i = o;
   }
   return i;
-}, zs = (e) => e?.replace("_", "-"), Fw = {
+}, xs = (e) => e?.replace("_", "-"), Lw = {
   type: "logger",
   log(e) {
     this.output("log", e);
@@ -23103,14 +23103,14 @@ const Lw = [" ", ",", "?", "!", ";"], jw = new zw(20), qw = (e, t, r) => {
     console?.[e]?.apply?.(console, t);
   }
 };
-class Ls {
+class zs {
   constructor(t) {
     let r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     this.init(t, r);
   }
   init(t) {
     let r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    this.prefix = r.prefix || "i18next:", this.logger = t || Fw, this.options = r, this.debug = r.debug;
+    this.prefix = r.prefix || "i18next:", this.logger = t || Lw, this.options = r, this.debug = r.debug;
   }
   log() {
     for (var t = arguments.length, r = new Array(t), s = 0; s < t; s++)
@@ -23136,17 +23136,17 @@ class Ls {
     return i && !this.debug ? null : (N(t[0]) && (t[0] = `${s}${this.prefix} ${t[0]}`), this.logger[r](t));
   }
   create(t) {
-    return new Ls(this.logger, {
+    return new zs(this.logger, {
       prefix: `${this.prefix}:${t}:`,
       ...this.options
     });
   }
   clone(t) {
-    return t = t || this.options, t.prefix = t.prefix || this.prefix, new Ls(this.logger, t);
+    return t = t || this.options, t.prefix = t.prefix || this.prefix, new zs(this.logger, t);
   }
 }
-var Oe = new Ls();
-class Gs {
+var Me = new zs();
+class Js {
   constructor() {
     this.observers = {};
   }
@@ -23180,7 +23180,7 @@ class Gs {
     });
   }
 }
-class Vh extends Gs {
+class Uh extends Js {
   constructor(t) {
     let r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
       ns: ["translation"],
@@ -23200,8 +23200,8 @@ class Vh extends Gs {
     const a = i.keySeparator !== void 0 ? i.keySeparator : this.options.keySeparator, o = i.ignoreJSONStructure !== void 0 ? i.ignoreJSONStructure : this.options.ignoreJSONStructure;
     let n;
     t.indexOf(".") > -1 ? n = t.split(".") : (n = [t, r], s && (Array.isArray(s) ? n.push(...s) : N(s) && a ? n.push(...s.split(a)) : n.push(s)));
-    const c = xs(this.data, n);
-    return !c && !r && !s && t.indexOf(".") > -1 && (t = n[0], r = n[1], s = n.slice(2).join(".")), c || !o || !N(s) ? c : Ka(this.data?.[t]?.[r], s, a);
+    const c = Ns(this.data, n);
+    return !c && !r && !s && t.indexOf(".") > -1 && (t = n[0], r = n[1], s = n.slice(2).join(".")), c || !o || !N(s) ? c : Wa(this.data?.[t]?.[r], s, a);
   }
   addResource(t, r, s, i) {
     let a = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : {
@@ -23209,7 +23209,7 @@ class Vh extends Gs {
     };
     const o = a.keySeparator !== void 0 ? a.keySeparator : this.options.keySeparator;
     let n = [t, r];
-    s && (n = n.concat(o ? s.split(o) : s)), t.indexOf(".") > -1 && (n = t.split("."), i = r, r = n[1]), this.addNamespaces(r), $h(this.data, n, i), a.silent || this.emit("added", t, r, s, i);
+    s && (n = n.concat(o ? s.split(o) : s)), t.indexOf(".") > -1 && (n = t.split("."), i = r, r = n[1]), this.addNamespaces(r), Bh(this.data, n, i), a.silent || this.emit("added", t, r, s, i);
   }
   addResources(t, r, s) {
     let i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {
@@ -23227,11 +23227,11 @@ class Vh extends Gs {
       skipCopy: !1
     }, n = [t, r];
     t.indexOf(".") > -1 && (n = t.split("."), i = s, s = r, r = n[1]), this.addNamespaces(r);
-    let c = xs(this.data, n) || {};
-    o.skipCopy || (s = JSON.parse(JSON.stringify(s))), i ? eg(c, s, a) : c = {
+    let c = Ns(this.data, n) || {};
+    o.skipCopy || (s = JSON.parse(JSON.stringify(s))), i ? Yv(c, s, a) : c = {
       ...c,
       ...s
-    }, $h(this.data, n, c), o.silent || this.emit("added", t, r, s);
+    }, Bh(this.data, n, c), o.silent || this.emit("added", t, r, s);
   }
   removeResourceBundle(t, r) {
     this.hasResourceBundle(t, r) && delete this.data[t][r], this.removeNamespaces(r), this.emit("removed", t, r);
@@ -23253,7 +23253,7 @@ class Vh extends Gs {
     return this.data;
   }
 }
-var tg = {
+var Zv = {
   processors: {},
   addPostProcessor(e) {
     this.processors[e.name] = e;
@@ -23264,11 +23264,11 @@ var tg = {
     }), t;
   }
 };
-const Wh = {}, Hh = (e) => !N(e) && typeof e != "boolean" && typeof e != "number";
-class js extends Gs {
+const $h = {}, Vh = (e) => !N(e) && typeof e != "boolean" && typeof e != "number";
+class Ls extends Js {
   constructor(t) {
     let r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    super(), kw(["resourceStore", "languageUtils", "pluralResolver", "interpolator", "backendConnector", "i18nFormat", "utils"], t, this), this.options = r, this.options.keySeparator === void 0 && (this.options.keySeparator = "."), this.logger = Oe.create("translator");
+    super(), Aw(["resourceStore", "languageUtils", "pluralResolver", "interpolator", "backendConnector", "i18nFormat", "utils"], t, this), this.options = r, this.options.keySeparator === void 0 && (this.options.keySeparator = "."), this.logger = Me.create("translator");
   }
   changeLanguage(t) {
     t && (this.language = t);
@@ -23284,7 +23284,7 @@ class js extends Gs {
     s === void 0 && (s = ":");
     const i = r.keySeparator !== void 0 ? r.keySeparator : this.options.keySeparator;
     let a = r.ns || this.options.defaultNS || [];
-    const o = s && t.indexOf(s) > -1, n = !this.options.userDefinedKeySeparator && !r.keySeparator && !this.options.userDefinedNsSeparator && !r.nsSeparator && !qw(t, s, i);
+    const o = s && t.indexOf(s) > -1, n = !this.options.userDefinedKeySeparator && !r.keySeparator && !this.options.userDefinedNsSeparator && !r.nsSeparator && !zw(t, s, i);
     if (o && !n) {
       const c = t.match(this.interpolator.nestingRegexp);
       if (c && c.length > 0)
@@ -23332,12 +23332,12 @@ class js extends Gs {
     }
     const p = this.resolve(t, r);
     let d = p?.res;
-    const h = p?.usedKey || o, f = p?.exactUsedKey || o, g = ["[object Number]", "[object Function]", "[object RegExp]"], m = r.joinArrays !== void 0 ? r.joinArrays : this.options.joinArrays, v = !this.i18nFormat || this.i18nFormat.handleAsObject, y = r.count !== void 0 && !N(r.count), S = js.hasDefaultValue(r), C = y ? this.pluralResolver.getSuffix(u, r.count, r) : "", P = r.ordinal && y ? this.pluralResolver.getSuffix(u, r.count, {
+    const h = p?.usedKey || o, f = p?.exactUsedKey || o, g = ["[object Number]", "[object Function]", "[object RegExp]"], m = r.joinArrays !== void 0 ? r.joinArrays : this.options.joinArrays, v = !this.i18nFormat || this.i18nFormat.handleAsObject, y = r.count !== void 0 && !N(r.count), S = Ls.hasDefaultValue(r), C = y ? this.pluralResolver.getSuffix(u, r.count, r) : "", R = r.ordinal && y ? this.pluralResolver.getSuffix(u, r.count, {
       ordinal: !1
-    }) : "", w = y && !r.ordinal && r.count === 0, I = w && r[`defaultValue${this.options.pluralSeparator}zero`] || r[`defaultValue${C}`] || r[`defaultValue${P}`] || r.defaultValue;
+    }) : "", w = y && !r.ordinal && r.count === 0, I = w && r[`defaultValue${this.options.pluralSeparator}zero`] || r[`defaultValue${C}`] || r[`defaultValue${R}`] || r.defaultValue;
     let E = d;
     v && !d && S && (E = I);
-    const T = Hh(E), b = Object.prototype.toString.apply(E);
+    const T = Vh(E), b = Object.prototype.toString.apply(E);
     if (v && E && T && g.indexOf(b) < 0 && !(N(m) && Array.isArray(E))) {
       if (!r.returnObjects && !this.options.returnObjects) {
         this.options.returnedObjectHandler || this.logger.warn("accessing an object - but returnObjects options is not enabled!");
@@ -23348,20 +23348,20 @@ class js extends Gs {
         return i ? (p.res = _, p.usedParams = this.getUsedParamsDetails(r), p) : _;
       }
       if (a) {
-        const _ = Array.isArray(E), O = _ ? [] : {}, q = _ ? f : h;
+        const _ = Array.isArray(E), O = _ ? [] : {}, j = _ ? f : h;
         for (const $ in E)
           if (Object.prototype.hasOwnProperty.call(E, $)) {
-            const Q = `${q}${a}${$}`;
-            S && !d ? O[$] = this.translate(Q, {
+            const Y = `${j}${a}${$}`;
+            S && !d ? O[$] = this.translate(Y, {
               ...r,
-              defaultValue: Hh(I) ? I[$] : void 0,
+              defaultValue: Vh(I) ? I[$] : void 0,
               joinArrays: !1,
               ns: n
-            }) : O[$] = this.translate(Q, {
+            }) : O[$] = this.translate(Y, {
               ...r,
               joinArrays: !1,
               ns: n
-            }), O[$] === Q && (O[$] = E[$]);
+            }), O[$] === Y && (O[$] = E[$]);
           }
         d = O;
       }
@@ -23370,31 +23370,31 @@ class js extends Gs {
     else {
       let _ = !1, O = !1;
       !this.isValidLookup(d) && S && (_ = !0, d = I), this.isValidLookup(d) || (O = !0, d = o);
-      const $ = (r.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey) && O ? void 0 : d, Q = S && I !== d && this.options.updateMissing;
-      if (O || _ || Q) {
-        if (this.logger.log(Q ? "updateKey" : "missingKey", u, c, o, Q ? I : d), a) {
-          const K = this.resolve(o, {
+      const $ = (r.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey) && O ? void 0 : d, Y = S && I !== d && this.options.updateMissing;
+      if (O || _ || Y) {
+        if (this.logger.log(Y ? "updateKey" : "missingKey", u, c, o, Y ? I : d), a) {
+          const H = this.resolve(o, {
             ...r,
             keySeparator: !1
           });
-          K && K.res && this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
+          H && H.res && this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
         }
-        let G = [];
-        const le = this.languageUtils.getFallbackCodes(this.options.fallbackLng, r.lng || this.language);
-        if (this.options.saveMissingTo === "fallback" && le && le[0])
-          for (let K = 0; K < le.length; K++)
-            G.push(le[K]);
-        else this.options.saveMissingTo === "all" ? G = this.languageUtils.toResolveHierarchy(r.lng || this.language) : G.push(r.lng || this.language);
-        const ae = (K, se, X) => {
-          const ge = S && X !== d ? X : $;
-          this.options.missingKeyHandler ? this.options.missingKeyHandler(K, c, se, ge, Q, r) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(K, c, se, ge, Q, r), this.emit("missingKey", K, c, se, d);
+        let J = [];
+        const re = this.languageUtils.getFallbackCodes(this.options.fallbackLng, r.lng || this.language);
+        if (this.options.saveMissingTo === "fallback" && re && re[0])
+          for (let H = 0; H < re.length; H++)
+            J.push(re[H]);
+        else this.options.saveMissingTo === "all" ? J = this.languageUtils.toResolveHierarchy(r.lng || this.language) : J.push(r.lng || this.language);
+        const ve = (H, se, K) => {
+          const Ce = S && K !== d ? K : $;
+          this.options.missingKeyHandler ? this.options.missingKeyHandler(H, c, se, Ce, Y, r) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(H, c, se, Ce, Y, r), this.emit("missingKey", H, c, se, d);
         };
-        this.options.saveMissing && (this.options.saveMissingPlurals && y ? G.forEach((K) => {
-          const se = this.pluralResolver.getSuffixes(K, r);
-          w && r[`defaultValue${this.options.pluralSeparator}zero`] && se.indexOf(`${this.options.pluralSeparator}zero`) < 0 && se.push(`${this.options.pluralSeparator}zero`), se.forEach((X) => {
-            ae([K], o + X, r[`defaultValue${X}`] || I);
+        this.options.saveMissing && (this.options.saveMissingPlurals && y ? J.forEach((H) => {
+          const se = this.pluralResolver.getSuffixes(H, r);
+          w && r[`defaultValue${this.options.pluralSeparator}zero`] && se.indexOf(`${this.options.pluralSeparator}zero`) < 0 && se.push(`${this.options.pluralSeparator}zero`), se.forEach((K) => {
+            ve([H], o + K, r[`defaultValue${K}`] || I);
           });
-        }) : ae(G, o, I));
+        }) : ve(J, o, I));
       }
       d = this.extendTranslation(d, t, r, p, s), O && d === o && this.options.appendNamespaceToMissingKey && (d = `${c}:${o}`), (O || _) && this.options.parseMissingKeyHandler && (d = this.options.parseMissingKeyHandler(this.options.appendNamespaceToMissingKey ? `${c}:${o}` : o, _ ? d : void 0));
     }
@@ -23438,7 +23438,7 @@ class js extends Gs {
       }, s)), s.interpolation && this.interpolator.reset();
     }
     const n = s.postProcess || this.options.postProcess, c = N(n) ? [n] : n;
-    return t != null && c?.length && s.applyPostProcessor !== !1 && (t = tg.handle(c, t, r, this.options && this.options.postProcessPassResolved ? {
+    return t != null && c?.length && s.applyPostProcessor !== !1 && (t = Zv.handle(c, t, r, this.options && this.options.postProcessPassResolved ? {
       i18nResolved: {
         ...i,
         usedParams: this.getUsedParamsDetails(s)
@@ -23456,7 +23456,7 @@ class js extends Gs {
       this.options.fallbackNS && (p = p.concat(this.options.fallbackNS));
       const d = r.count !== void 0 && !N(r.count), h = d && !r.ordinal && r.count === 0, f = r.context !== void 0 && (N(r.context) || typeof r.context == "number") && r.context !== "", g = r.lngs ? r.lngs : this.languageUtils.toResolveHierarchy(r.lng || this.language, r.fallbackLng);
       p.forEach((m) => {
-        this.isValidLookup(s) || (n = m, !Wh[`${g[0]}-${m}`] && this.utils?.hasLoadedNamespace && !this.utils?.hasLoadedNamespace(n) && (Wh[`${g[0]}-${m}`] = !0, this.logger.warn(`key "${i}" for languages "${g.join(", ")}" won't get resolved as namespace "${n}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!")), g.forEach((v) => {
+        this.isValidLookup(s) || (n = m, !$h[`${g[0]}-${m}`] && this.utils?.hasLoadedNamespace && !this.utils?.hasLoadedNamespace(n) && ($h[`${g[0]}-${m}`] = !0, this.logger.warn(`key "${i}" for languages "${g.join(", ")}" won't get resolved as namespace "${n}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!")), g.forEach((v) => {
           if (this.isValidLookup(s)) return;
           o = v;
           const y = [l];
@@ -23465,10 +23465,10 @@ class js extends Gs {
           else {
             let C;
             d && (C = this.pluralResolver.getSuffix(v, r.count, r));
-            const P = `${this.options.pluralSeparator}zero`, w = `${this.options.pluralSeparator}ordinal${this.options.pluralSeparator}`;
-            if (d && (y.push(l + C), r.ordinal && C.indexOf(w) === 0 && y.push(l + C.replace(w, this.options.pluralSeparator)), h && y.push(l + P)), f) {
+            const R = `${this.options.pluralSeparator}zero`, w = `${this.options.pluralSeparator}ordinal${this.options.pluralSeparator}`;
+            if (d && (y.push(l + C), r.ordinal && C.indexOf(w) === 0 && y.push(l + C.replace(w, this.options.pluralSeparator)), h && y.push(l + R)), f) {
               const I = `${l}${this.options.contextSeparator}${r.context}`;
-              y.push(I), d && (y.push(I + C), r.ordinal && C.indexOf(w) === 0 && y.push(I + C.replace(w, this.options.pluralSeparator)), h && y.push(I + P));
+              y.push(I), d && (y.push(I + C), r.ordinal && C.indexOf(w) === 0 && y.push(I + C.replace(w, this.options.pluralSeparator)), h && y.push(I + R));
             }
           }
           let S;
@@ -23515,17 +23515,17 @@ class js extends Gs {
     return !1;
   }
 }
-class Kh {
+class Wh {
   constructor(t) {
-    this.options = t, this.supportedLngs = this.options.supportedLngs || !1, this.logger = Oe.create("languageUtils");
+    this.options = t, this.supportedLngs = this.options.supportedLngs || !1, this.logger = Me.create("languageUtils");
   }
   getScriptPartFromCode(t) {
-    if (t = zs(t), !t || t.indexOf("-") < 0) return null;
+    if (t = xs(t), !t || t.indexOf("-") < 0) return null;
     const r = t.split("-");
     return r.length === 2 || (r.pop(), r[r.length - 1].toLowerCase() === "x") ? null : this.formatLanguageCode(r.join("-"));
   }
   getLanguagePartFromCode(t) {
-    if (t = zs(t), !t || t.indexOf("-") < 0) return t;
+    if (t = xs(t), !t || t.indexOf("-") < 0) return t;
     const r = t.split("-");
     return this.formatLanguageCode(r[0]);
   }
@@ -23577,23 +23577,23 @@ class Kh {
     }), i;
   }
 }
-const Jh = {
+const Hh = {
   zero: 0,
   one: 1,
   two: 2,
   few: 3,
   many: 4,
   other: 5
-}, Gh = {
+}, Kh = {
   select: (e) => e === 1 ? "one" : "other",
   resolvedOptions: () => ({
     pluralCategories: ["one", "other"]
   })
 };
-class Bw {
+class jw {
   constructor(t) {
     let r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    this.languageUtils = t, this.options = r, this.logger = Oe.create("pluralResolver"), this.pluralRulesCache = {};
+    this.languageUtils = t, this.options = r, this.logger = Me.create("pluralResolver"), this.pluralRulesCache = {};
   }
   addRule(t, r) {
     this.rules[t] = r;
@@ -23603,7 +23603,7 @@ class Bw {
   }
   getRule(t) {
     let r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    const s = zs(t === "dev" ? "en" : t), i = r.ordinal ? "ordinal" : "cardinal", a = JSON.stringify({
+    const s = xs(t === "dev" ? "en" : t), i = r.ordinal ? "ordinal" : "cardinal", a = JSON.stringify({
       cleanedCode: s,
       type: i
     });
@@ -23616,8 +23616,8 @@ class Bw {
       });
     } catch {
       if (!Intl)
-        return this.logger.error("No Intl support, please use an Intl polyfill!"), Gh;
-      if (!t.match(/-|_/)) return Gh;
+        return this.logger.error("No Intl support, please use an Intl polyfill!"), Kh;
+      if (!t.match(/-|_/)) return Kh;
       const c = this.languageUtils.getLanguagePartFromCode(t);
       o = this.getRule(c, r);
     }
@@ -23633,7 +23633,7 @@ class Bw {
   }
   getSuffixes(t) {
     let r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, s = this.getRule(t, r);
-    return s || (s = this.getRule("dev", r)), s ? s.resolvedOptions().pluralCategories.sort((i, a) => Jh[i] - Jh[a]).map((i) => `${this.options.prepend}${r.ordinal ? `ordinal${this.options.prepend}` : ""}${i}`) : [];
+    return s || (s = this.getRule("dev", r)), s ? s.resolvedOptions().pluralCategories.sort((i, a) => Hh[i] - Hh[a]).map((i) => `${this.options.prepend}${r.ordinal ? `ordinal${this.options.prepend}` : ""}${i}`) : [];
   }
   getSuffix(t, r) {
     let s = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
@@ -23641,14 +23641,14 @@ class Bw {
     return i ? `${this.options.prepend}${s.ordinal ? `ordinal${this.options.prepend}` : ""}${i.select(r)}` : (this.logger.warn(`no plural rule found for: ${t}`), this.getSuffix("dev", r, s));
   }
 }
-const Qh = function(e, t, r) {
-  let s = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : ".", i = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : !0, a = Dw(e, t, r);
-  return !a && i && N(r) && (a = Ka(e, r, s), a === void 0 && (a = Ka(t, r, s))), a;
-}, ka = (e) => e.replace(/\$/g, "$$$$");
-class Uw {
+const Jh = function(e, t, r) {
+  let s = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : ".", i = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : !0, a = kw(e, t, r);
+  return !a && i && N(r) && (a = Wa(e, r, s), a === void 0 && (a = Wa(t, r, s))), a;
+}, Ta = (e) => e.replace(/\$/g, "$$$$");
+class qw {
   constructor() {
     let t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-    this.logger = Oe.create("interpolator"), this.options = t, this.format = t?.interpolation?.format || ((r) => r), this.init(t);
+    this.logger = Me.create("interpolator"), this.options = t, this.format = t?.interpolation?.format || ((r) => r), this.init(t);
   }
   init() {
     let t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
@@ -23674,7 +23674,7 @@ class Uw {
       maxReplaces: v,
       alwaysFormat: y
     } = t.interpolation;
-    this.escape = r !== void 0 ? r : xw, this.escapeValue = s !== void 0 ? s : !0, this.useRawValueToEscape = i !== void 0 ? i : !1, this.prefix = a ? Ft(a) : o || "{{", this.suffix = n ? Ft(n) : c || "}}", this.formatSeparator = u || ",", this.unescapePrefix = l ? "" : p || "-", this.unescapeSuffix = this.unescapePrefix ? "" : l || "", this.nestingPrefix = d ? Ft(d) : h || Ft("$t("), this.nestingSuffix = f ? Ft(f) : g || Ft(")"), this.nestingOptionsSeparator = m || ",", this.maxReplaces = v || 1e3, this.alwaysFormat = y !== void 0 ? y : !1, this.resetRegExp();
+    this.escape = r !== void 0 ? r : Mw, this.escapeValue = s !== void 0 ? s : !0, this.useRawValueToEscape = i !== void 0 ? i : !1, this.prefix = a ? jt(a) : o || "{{", this.suffix = n ? jt(n) : c || "}}", this.formatSeparator = u || ",", this.unescapePrefix = l ? "" : p || "-", this.unescapeSuffix = this.unescapePrefix ? "" : l || "", this.nestingPrefix = d ? jt(d) : h || jt("$t("), this.nestingSuffix = f ? jt(f) : g || jt(")"), this.nestingOptionsSeparator = m || ",", this.maxReplaces = v || 1e3, this.alwaysFormat = y !== void 0 ? y : !1, this.resetRegExp();
   }
   reset() {
     this.options && this.init(this.options);
@@ -23687,7 +23687,7 @@ class Uw {
     let a, o, n;
     const c = this.options && this.options.interpolation && this.options.interpolation.defaultVariables || {}, u = (h) => {
       if (h.indexOf(this.formatSeparator) < 0) {
-        const v = Qh(r, c, h, this.options.keySeparator, this.options.ignoreJSONStructure);
+        const v = Jh(r, c, h, this.options.keySeparator, this.options.ignoreJSONStructure);
         return this.alwaysFormat ? this.format(v, void 0, s, {
           ...i,
           ...r,
@@ -23695,7 +23695,7 @@ class Uw {
         }) : v;
       }
       const f = h.split(this.formatSeparator), g = f.shift().trim(), m = f.join(this.formatSeparator).trim();
-      return this.format(Qh(r, c, g, this.options.keySeparator, this.options.ignoreJSONStructure), m, s, {
+      return this.format(Jh(r, c, g, this.options.keySeparator, this.options.ignoreJSONStructure), m, s, {
         ...i,
         ...r,
         interpolationkey: g
@@ -23705,10 +23705,10 @@ class Uw {
     const l = i?.missingInterpolationHandler || this.options.missingInterpolationHandler, p = i?.interpolation?.skipOnVariables !== void 0 ? i.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables;
     return [{
       regex: this.regexpUnescape,
-      safeValue: (h) => ka(h)
+      safeValue: (h) => Ta(h)
     }, {
       regex: this.regexp,
-      safeValue: (h) => this.escapeValue ? ka(this.escape(h)) : ka(h)
+      safeValue: (h) => this.escapeValue ? Ta(this.escape(h)) : Ta(h)
     }].forEach((h) => {
       for (n = 0; a = h.regex.exec(t); ) {
         const f = a[1].trim();
@@ -23723,7 +23723,7 @@ class Uw {
             continue;
           } else
             this.logger.warn(`missed to pass in variable ${f} for interpolating ${t}`), o = "";
-        else !N(o) && !this.useRawValueToEscape && (o = Fh(o));
+        else !N(o) && !this.useRawValueToEscape && (o = jh(o));
         const g = h.safeValue(o);
         if (t = t.replace(a[0], g), p ? (h.regex.lastIndex += o.length, h.regex.lastIndex -= a[0].length) : h.regex.lastIndex = 0, n++, n >= this.maxReplaces)
           break;
@@ -23761,7 +23761,7 @@ class Uw {
         i[1] = l.shift(), c = l, u = !0;
       }
       if (a = r(n.call(this, i[1].trim(), o), o), a && i[0] === t && !N(a)) return a;
-      N(a) || (a = Fh(a)), a || (this.logger.warn(`missed to resolve ${i[1]} for nesting ${t}`), a = ""), u && (a = c.reduce((l, p) => this.format(l, p, s.lng, {
+      N(a) || (a = jh(a)), a || (this.logger.warn(`missed to resolve ${i[1]} for nesting ${t}`), a = ""), u && (a = c.reduce((l, p) => this.format(l, p, s.lng, {
         ...s,
         interpolationkey: i[1].trim()
       }), a.trim())), t = t.replace(i[0], a), this.regexp.lastIndex = 0;
@@ -23769,7 +23769,7 @@ class Uw {
     return t;
   }
 }
-const $w = (e) => {
+const Fw = (e) => {
   let t = e.toLowerCase().trim();
   const r = {};
   if (e.indexOf("(") > -1) {
@@ -23787,7 +23787,7 @@ const $w = (e) => {
     formatName: t,
     formatOptions: r
   };
-}, Bt = (e) => {
+}, qt = (e) => {
   const t = {};
   return (r, s, i) => {
     let a = i;
@@ -23797,39 +23797,39 @@ const $w = (e) => {
     });
     const o = s + JSON.stringify(a);
     let n = t[o];
-    return n || (n = e(zs(s), i), t[o] = n), n(r);
+    return n || (n = e(xs(s), i), t[o] = n), n(r);
   };
 };
-class Vw {
+class Bw {
   constructor() {
     let t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-    this.logger = Oe.create("formatter"), this.options = t, this.formats = {
-      number: Bt((r, s) => {
+    this.logger = Me.create("formatter"), this.options = t, this.formats = {
+      number: qt((r, s) => {
         const i = new Intl.NumberFormat(r, {
           ...s
         });
         return (a) => i.format(a);
       }),
-      currency: Bt((r, s) => {
+      currency: qt((r, s) => {
         const i = new Intl.NumberFormat(r, {
           ...s,
           style: "currency"
         });
         return (a) => i.format(a);
       }),
-      datetime: Bt((r, s) => {
+      datetime: qt((r, s) => {
         const i = new Intl.DateTimeFormat(r, {
           ...s
         });
         return (a) => i.format(a);
       }),
-      relativetime: Bt((r, s) => {
+      relativetime: qt((r, s) => {
         const i = new Intl.RelativeTimeFormat(r, {
           ...s
         });
         return (a) => i.format(a, s.range || "day");
       }),
-      list: Bt((r, s) => {
+      list: qt((r, s) => {
         const i = new Intl.ListFormat(r, {
           ...s
         });
@@ -23847,7 +23847,7 @@ class Vw {
     this.formats[t.toLowerCase().trim()] = r;
   }
   addCached(t, r) {
-    this.formats[t.toLowerCase().trim()] = Bt(r);
+    this.formats[t.toLowerCase().trim()] = qt(r);
   }
   format(t, r, s) {
     let i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
@@ -23860,7 +23860,7 @@ class Vw {
       const {
         formatName: u,
         formatOptions: l
-      } = $w(c);
+      } = Fw(c);
       if (this.formats[u]) {
         let p = n;
         try {
@@ -23880,13 +23880,13 @@ class Vw {
     }, t);
   }
 }
-const Ww = (e, t) => {
+const Uw = (e, t) => {
   e.pending[t] !== void 0 && (delete e.pending[t], e.pendingCount--);
 };
-class Hw extends Gs {
+class $w extends Js {
   constructor(t, r, s) {
     let i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
-    super(), this.backend = t, this.store = r, this.services = s, this.languageUtils = s.languageUtils, this.options = i, this.logger = Oe.create("backendConnector"), this.waitingReads = [], this.maxParallelReads = i.maxParallelReads || 10, this.readingCalls = 0, this.maxRetries = i.maxRetries >= 0 ? i.maxRetries : 5, this.retryTimeout = i.retryTimeout >= 1 ? i.retryTimeout : 350, this.state = {}, this.queue = [], this.backend?.init?.(s, i.backend, i);
+    super(), this.backend = t, this.store = r, this.services = s, this.languageUtils = s.languageUtils, this.options = i, this.logger = Me.create("backendConnector"), this.waitingReads = [], this.maxParallelReads = i.maxParallelReads || 10, this.readingCalls = 0, this.maxRetries = i.maxRetries >= 0 ? i.maxRetries : 5, this.retryTimeout = i.retryTimeout >= 1 ? i.retryTimeout : 350, this.state = {}, this.queue = [], this.backend?.init?.(s, i.backend, i);
   }
   queueLoad(t, r, s, i) {
     const a = {}, o = {}, n = {}, c = {};
@@ -23916,7 +23916,7 @@ class Hw extends Gs {
     }), this.state[t] = r ? -1 : 2, r && s && (this.state[t] = 0);
     const n = {};
     this.queue.forEach((c) => {
-      Mw(c.loaded, [a], o), Ww(c, t), r && c.errors.push(r), c.pendingCount === 0 && !c.done && (Object.keys(c.loaded).forEach((u) => {
+      _w(c.loaded, [a], o), Uw(c, t), r && c.errors.push(r), c.pendingCount === 0 && !c.done && (Object.keys(c.loaded).forEach((u) => {
         n[u] || (n[u] = {});
         const l = c.loaded[u];
         l.length && l.forEach((p) => {
@@ -24018,7 +24018,7 @@ class Hw extends Gs {
     }
   }
 }
-const Yh = () => ({
+const Gh = () => ({
   debug: !1,
   initAsync: !0,
   ns: ["translation"],
@@ -24074,18 +24074,18 @@ const Yh = () => ({
     maxReplaces: 1e3,
     skipOnVariables: !0
   }
-}), Zh = (e) => (N(e.ns) && (e.ns = [e.ns]), N(e.fallbackLng) && (e.fallbackLng = [e.fallbackLng]), N(e.fallbackNS) && (e.fallbackNS = [e.fallbackNS]), e.supportedLngs?.indexOf?.("cimode") < 0 && (e.supportedLngs = e.supportedLngs.concat(["cimode"])), typeof e.initImmediate == "boolean" && (e.initAsync = e.initImmediate), e), Ts = () => {
-}, Kw = (e) => {
+}), Qh = (e) => (N(e.ns) && (e.ns = [e.ns]), N(e.fallbackLng) && (e.fallbackLng = [e.fallbackLng]), N(e.fallbackNS) && (e.fallbackNS = [e.fallbackNS]), e.supportedLngs?.indexOf?.("cimode") < 0 && (e.supportedLngs = e.supportedLngs.concat(["cimode"])), typeof e.initImmediate == "boolean" && (e.initAsync = e.initImmediate), e), As = () => {
+}, Vw = (e) => {
   Object.getOwnPropertyNames(Object.getPrototypeOf(e)).forEach((r) => {
     typeof e[r] == "function" && (e[r] = e[r].bind(e));
   });
 };
-class ds extends Gs {
+class fs extends Js {
   constructor() {
     let t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, r = arguments.length > 1 ? arguments[1] : void 0;
-    if (super(), this.options = Zh(t), this.services = {}, this.logger = Oe, this.modules = {
+    if (super(), this.options = Qh(t), this.services = {}, this.logger = Me, this.modules = {
       external: []
-    }, Kw(this), r && !this.isInitialized && !t.isClone) {
+    }, Vw(this), r && !this.isInitialized && !t.isClone) {
       if (!this.options.initAsync)
         return this.init(t, r), this;
       setTimeout(() => {
@@ -24097,33 +24097,33 @@ class ds extends Gs {
     var t = this;
     let r = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, s = arguments.length > 1 ? arguments[1] : void 0;
     this.isInitializing = !0, typeof r == "function" && (s = r, r = {}), r.defaultNS == null && r.ns && (N(r.ns) ? r.defaultNS = r.ns : r.ns.indexOf("translation") < 0 && (r.defaultNS = r.ns[0]));
-    const i = Yh();
+    const i = Gh();
     this.options = {
       ...i,
       ...this.options,
-      ...Zh(r)
+      ...Qh(r)
     }, this.options.interpolation = {
       ...i.interpolation,
       ...this.options.interpolation
     }, r.keySeparator !== void 0 && (this.options.userDefinedKeySeparator = r.keySeparator), r.nsSeparator !== void 0 && (this.options.userDefinedNsSeparator = r.nsSeparator);
     const a = (l) => l ? typeof l == "function" ? new l() : l : null;
     if (!this.options.isClone) {
-      this.modules.logger ? Oe.init(a(this.modules.logger), this.options) : Oe.init(null, this.options);
+      this.modules.logger ? Me.init(a(this.modules.logger), this.options) : Me.init(null, this.options);
       let l;
-      this.modules.formatter ? l = this.modules.formatter : l = Vw;
-      const p = new Kh(this.options);
-      this.store = new Vh(this.options.resources, this.options);
+      this.modules.formatter ? l = this.modules.formatter : l = Bw;
+      const p = new Wh(this.options);
+      this.store = new Uh(this.options.resources, this.options);
       const d = this.services;
-      d.logger = Oe, d.resourceStore = this.store, d.languageUtils = p, d.pluralResolver = new Bw(p, {
+      d.logger = Me, d.resourceStore = this.store, d.languageUtils = p, d.pluralResolver = new jw(p, {
         prepend: this.options.pluralSeparator,
         simplifyPluralSuffix: this.options.simplifyPluralSuffix
-      }), l && (!this.options.interpolation.format || this.options.interpolation.format === i.interpolation.format) && (d.formatter = a(l), d.formatter.init(d, this.options), this.options.interpolation.format = d.formatter.format.bind(d.formatter)), d.interpolator = new Uw(this.options), d.utils = {
+      }), l && (!this.options.interpolation.format || this.options.interpolation.format === i.interpolation.format) && (d.formatter = a(l), d.formatter.init(d, this.options), this.options.interpolation.format = d.formatter.format.bind(d.formatter)), d.interpolator = new qw(this.options), d.utils = {
         hasLoadedNamespace: this.hasLoadedNamespace.bind(this)
-      }, d.backendConnector = new Hw(a(this.modules.backend), d.resourceStore, d, this.options), d.backendConnector.on("*", function(h) {
+      }, d.backendConnector = new $w(a(this.modules.backend), d.resourceStore, d, this.options), d.backendConnector.on("*", function(h) {
         for (var f = arguments.length, g = new Array(f > 1 ? f - 1 : 0), m = 1; m < f; m++)
           g[m - 1] = arguments[m];
         t.emit(h, ...g);
-      }), this.modules.languageDetector && (d.languageDetector = a(this.modules.languageDetector), d.languageDetector.init && d.languageDetector.init(d, this.options.detection, this.options)), this.modules.i18nFormat && (d.i18nFormat = a(this.modules.i18nFormat), d.i18nFormat.init && d.i18nFormat.init(this)), this.translator = new js(this.services, this.options), this.translator.on("*", function(h) {
+      }), this.modules.languageDetector && (d.languageDetector = a(this.modules.languageDetector), d.languageDetector.init && d.languageDetector.init(d, this.options.detection, this.options)), this.modules.i18nFormat && (d.i18nFormat = a(this.modules.i18nFormat), d.i18nFormat.init && d.i18nFormat.init(this)), this.translator = new Ls(this.services, this.options), this.translator.on("*", function(h) {
         for (var f = arguments.length, g = new Array(f > 1 ? f - 1 : 0), m = 1; m < f; m++)
           g[m - 1] = arguments[m];
         t.emit(h, ...g);
@@ -24131,7 +24131,7 @@ class ds extends Gs {
         h.init && h.init(this);
       });
     }
-    if (this.format = this.options.interpolation.format, s || (s = Ts), this.options.fallbackLng && !this.services.languageDetector && !this.options.lng) {
+    if (this.format = this.options.interpolation.format, s || (s = As), this.options.fallbackLng && !this.services.languageDetector && !this.options.lng) {
       const l = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
       l.length > 0 && l[0] !== "dev" && (this.options.lng = l[0]);
     }
@@ -24144,7 +24144,7 @@ class ds extends Gs {
         return t.store[l](...arguments), t;
       };
     });
-    const c = os(), u = () => {
+    const c = cs(), u = () => {
       const l = (p, d) => {
         this.isInitializing = !1, this.isInitialized && !this.initializedStoreOnce && this.logger.warn("init: i18next is already initialized. You should call init just once!"), this.isInitialized = !0, this.options.isClone || this.logger.log("initialized", this.options), this.emit("initialized", this.options), c.resolve(d), s(p, d);
       };
@@ -24154,7 +24154,7 @@ class ds extends Gs {
     return this.options.resources || !this.options.initAsync ? u() : setTimeout(u, 0), c;
   }
   loadResources(t) {
-    let s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : Ts;
+    let s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : As;
     const i = N(t) ? t : this.language;
     if (typeof t == "function" && (s = t), !this.options.resources || this.options.partialBundledLanguages) {
       if (i?.toLowerCase() === "cimode" && (!this.options.preload || this.options.preload.length === 0)) return s();
@@ -24171,15 +24171,15 @@ class ds extends Gs {
       s(null);
   }
   reloadResources(t, r, s) {
-    const i = os();
-    return typeof t == "function" && (s = t, t = void 0), typeof r == "function" && (s = r, r = void 0), t || (t = this.languages), r || (r = this.options.ns), s || (s = Ts), this.services.backendConnector.reload(t, r, (a) => {
+    const i = cs();
+    return typeof t == "function" && (s = t, t = void 0), typeof r == "function" && (s = r, r = void 0), t || (t = this.languages), r || (r = this.options.ns), s || (s = As), this.services.backendConnector.reload(t, r, (a) => {
       i.resolve(), s(a);
     }), i;
   }
   use(t) {
     if (!t) throw new Error("You are passing an undefined module! Please check the object you are passing to i18next.use()");
     if (!t.type) throw new Error("You are passing a wrong module! Please check the object you are passing to i18next.use()");
-    return t.type === "backend" && (this.modules.backend = t), (t.type === "logger" || t.log && t.warn && t.error) && (this.modules.logger = t), t.type === "languageDetector" && (this.modules.languageDetector = t), t.type === "i18nFormat" && (this.modules.i18nFormat = t), t.type === "postProcessor" && tg.addPostProcessor(t), t.type === "formatter" && (this.modules.formatter = t), t.type === "3rdParty" && this.modules.external.push(t), this;
+    return t.type === "backend" && (this.modules.backend = t), (t.type === "logger" || t.log && t.warn && t.error) && (this.modules.logger = t), t.type === "languageDetector" && (this.modules.languageDetector = t), t.type === "i18nFormat" && (this.modules.i18nFormat = t), t.type === "postProcessor" && Zv.addPostProcessor(t), t.type === "formatter" && (this.modules.formatter = t), t.type === "3rdParty" && this.modules.external.push(t), this;
   }
   setResolvedLanguage(t) {
     if (!(!t || !this.languages) && !(["cimode", "dev"].indexOf(t) > -1))
@@ -24194,7 +24194,7 @@ class ds extends Gs {
   changeLanguage(t, r) {
     var s = this;
     this.isLanguageChangingTo = t;
-    const i = os();
+    const i = cs();
     this.emit("languageChanging", t);
     const a = (c) => {
       this.language = c, this.languages = this.services.languageUtils.toResolveHierarchy(c), this.resolvedLanguage = void 0, this.setResolvedLanguage(c);
@@ -24264,7 +24264,7 @@ class ds extends Gs {
     return !!(this.hasResourceBundle(s, t) || !this.services.backendConnector.backend || this.options.resources && !this.options.partialBundledLanguages || o(s, t) && (!i || o(a, t)));
   }
   loadNamespaces(t, r) {
-    const s = os();
+    const s = cs();
     return this.options.ns ? (N(t) && (t = [t]), t.forEach((i) => {
       this.options.ns.indexOf(i) < 0 && this.options.ns.push(i);
     }), this.loadResources((i) => {
@@ -24272,7 +24272,7 @@ class ds extends Gs {
     }), s) : (r && r(), Promise.resolve());
   }
   loadLanguages(t, r) {
-    const s = os();
+    const s = cs();
     N(t) && (t = [t]);
     const i = this.options.preload || [], a = t.filter((o) => i.indexOf(o) < 0 && this.services.languageUtils.isSupportedCode(o));
     return a.length ? (this.options.preload = i.concat(a), this.loadResources((o) => {
@@ -24281,22 +24281,22 @@ class ds extends Gs {
   }
   dir(t) {
     if (t || (t = this.resolvedLanguage || (this.languages?.length > 0 ? this.languages[0] : this.language)), !t) return "rtl";
-    const r = ["ar", "shu", "sqr", "ssh", "xaa", "yhd", "yud", "aao", "abh", "abv", "acm", "acq", "acw", "acx", "acy", "adf", "ads", "aeb", "aec", "afb", "ajp", "apc", "apd", "arb", "arq", "ars", "ary", "arz", "auz", "avl", "ayh", "ayl", "ayn", "ayp", "bbz", "pga", "he", "iw", "ps", "pbt", "pbu", "pst", "prp", "prd", "ug", "ur", "ydd", "yds", "yih", "ji", "yi", "hbo", "men", "xmn", "fa", "jpr", "peo", "pes", "prs", "dv", "sam", "ckb"], s = this.services?.languageUtils || new Kh(Yh());
+    const r = ["ar", "shu", "sqr", "ssh", "xaa", "yhd", "yud", "aao", "abh", "abv", "acm", "acq", "acw", "acx", "acy", "adf", "ads", "aeb", "aec", "afb", "ajp", "apc", "apd", "arb", "arq", "ars", "ary", "arz", "auz", "avl", "ayh", "ayl", "ayn", "ayp", "bbz", "pga", "he", "iw", "ps", "pbt", "pbu", "pst", "prp", "prd", "ug", "ur", "ydd", "yds", "yih", "ji", "yi", "hbo", "men", "xmn", "fa", "jpr", "peo", "pes", "prs", "dv", "sam", "ckb"], s = this.services?.languageUtils || new Wh(Gh());
     return r.indexOf(s.getLanguagePartFromCode(t)) > -1 || t.toLowerCase().indexOf("-arab") > 1 ? "rtl" : "ltr";
   }
   static createInstance() {
     let t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, r = arguments.length > 1 ? arguments[1] : void 0;
-    return new ds(t, r);
+    return new fs(t, r);
   }
   cloneInstance() {
-    let t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : Ts;
+    let t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : As;
     const s = t.forkResourceStore;
     s && delete t.forkResourceStore;
     const i = {
       ...this.options,
       ...t,
       isClone: !0
-    }, a = new ds(i);
+    }, a = new fs(i);
     if ((t.debug !== void 0 || t.prefix !== void 0) && (a.logger = a.logger.clone(t)), ["store", "services", "language"].forEach((n) => {
       a[n] = this[n];
     }), a.services = {
@@ -24309,9 +24309,9 @@ class ds extends Gs {
       }, Object.keys(c[u]).reduce((l, p) => (l[p] = {
         ...c[u][p]
       }, l), {})), {});
-      a.store = new Vh(n, i), a.services.resourceStore = a.store;
+      a.store = new Uh(n, i), a.services.resourceStore = a.store;
     }
-    return a.translator = new js(a.services, i), a.translator.on("*", function(n) {
+    return a.translator = new Ls(a.services, i), a.translator.on("*", function(n) {
       for (var c = arguments.length, u = new Array(c > 1 ? c - 1 : 0), l = 1; l < c; l++)
         u[l - 1] = arguments[l];
       a.emit(n, ...u);
@@ -24329,23 +24329,23 @@ class ds extends Gs {
     };
   }
 }
-const ue = ds.createInstance();
-ue.createInstance = ds.createInstance;
-ue.createInstance;
-ue.dir;
-ue.init;
-ue.loadResources;
-ue.reloadResources;
-ue.use;
-ue.changeLanguage;
-ue.getFixedT;
-ue.t;
-ue.exists;
-ue.setDefaultNamespace;
-ue.hasLoadedNamespace;
-ue.loadNamespaces;
-ue.loadLanguages;
-var Qs = class {
+const ae = fs.createInstance();
+ae.createInstance = fs.createInstance;
+ae.createInstance;
+ae.dir;
+ae.init;
+ae.loadResources;
+ae.reloadResources;
+ae.use;
+ae.changeLanguage;
+ae.getFixedT;
+ae.t;
+ae.exists;
+ae.setDefaultNamespace;
+ae.hasLoadedNamespace;
+ae.loadNamespaces;
+ae.loadLanguages;
+var Gs = class {
   constructor() {
     this.listeners = /* @__PURE__ */ new Set(), this.subscribe = this.subscribe.bind(this);
   }
@@ -24361,25 +24361,25 @@ var Qs = class {
   }
   onUnsubscribe() {
   }
-}, Ys = typeof window > "u" || "Deno" in globalThis;
-function Te() {
+}, Qs = typeof window > "u" || "Deno" in globalThis;
+function Ae() {
+}
+function Ww(e, t) {
+  return typeof e == "function" ? e(t) : e;
+}
+function Hw(e) {
+  return typeof e == "number" && e >= 0 && e !== 1 / 0;
+}
+function Kw(e, t) {
+  return Math.max(e + (t || 0) - Date.now(), 0);
+}
+function Ha(e, t) {
+  return typeof e == "function" ? e(t) : e;
 }
 function Jw(e, t) {
   return typeof e == "function" ? e(t) : e;
 }
-function Gw(e) {
-  return typeof e == "number" && e >= 0 && e !== 1 / 0;
-}
-function Qw(e, t) {
-  return Math.max(e + (t || 0) - Date.now(), 0);
-}
-function Ja(e, t) {
-  return typeof e == "function" ? e(t) : e;
-}
-function Yw(e, t) {
-  return typeof e == "function" ? e(t) : e;
-}
-function Xh(e, t) {
+function Yh(e, t) {
   const {
     type: r = "all",
     exact: s,
@@ -24390,9 +24390,9 @@ function Xh(e, t) {
   } = e;
   if (o) {
     if (s) {
-      if (t.queryHash !== dc(o, t.options))
+      if (t.queryHash !== lc(o, t.options))
         return !1;
-    } else if (!fs(t.queryKey, o))
+    } else if (!gs(t.queryKey, o))
       return !1;
   }
   if (r !== "all") {
@@ -24402,103 +24402,103 @@ function Xh(e, t) {
   }
   return !(typeof n == "boolean" && t.isStale() !== n || i && i !== t.state.fetchStatus || a && !a(t));
 }
-function ef(e, t) {
+function Zh(e, t) {
   const { exact: r, status: s, predicate: i, mutationKey: a } = e;
   if (a) {
     if (!t.options.mutationKey)
       return !1;
     if (r) {
-      if (hs(t.options.mutationKey) !== hs(a))
+      if (vs(t.options.mutationKey) !== vs(a))
         return !1;
-    } else if (!fs(t.options.mutationKey, a))
+    } else if (!gs(t.options.mutationKey, a))
       return !1;
   }
   return !(s && t.state.status !== s || i && !i(t));
 }
-function dc(e, t) {
-  return (t?.queryKeyHashFn || hs)(e);
+function lc(e, t) {
+  return (t?.queryKeyHashFn || vs)(e);
 }
-function hs(e) {
+function vs(e) {
   return JSON.stringify(
     e,
-    (t, r) => Qa(r) ? Object.keys(r).sort().reduce((s, i) => (s[i] = r[i], s), {}) : r
+    (t, r) => Ja(r) ? Object.keys(r).sort().reduce((s, i) => (s[i] = r[i], s), {}) : r
   );
 }
-function fs(e, t) {
-  return e === t ? !0 : typeof e != typeof t ? !1 : e && t && typeof e == "object" && typeof t == "object" ? Object.keys(t).every((r) => fs(e[r], t[r])) : !1;
+function gs(e, t) {
+  return e === t ? !0 : typeof e != typeof t ? !1 : e && t && typeof e == "object" && typeof t == "object" ? Object.keys(t).every((r) => gs(e[r], t[r])) : !1;
 }
-function Ga(e, t) {
+function Ka(e, t) {
   if (e === t)
     return e;
-  const r = tf(e) && tf(t);
-  if (r || Qa(e) && Qa(t)) {
+  const r = Xh(e) && Xh(t);
+  if (r || Ja(e) && Ja(t)) {
     const s = r ? e : Object.keys(e), i = s.length, a = r ? t : Object.keys(t), o = a.length, n = r ? [] : {}, c = new Set(s);
     let u = 0;
     for (let l = 0; l < o; l++) {
       const p = r ? l : a[l];
-      (!r && c.has(p) || r) && e[p] === void 0 && t[p] === void 0 ? (n[p] = void 0, u++) : (n[p] = Ga(e[p], t[p]), n[p] === e[p] && e[p] !== void 0 && u++);
+      (!r && c.has(p) || r) && e[p] === void 0 && t[p] === void 0 ? (n[p] = void 0, u++) : (n[p] = Ka(e[p], t[p]), n[p] === e[p] && e[p] !== void 0 && u++);
     }
     return i === o && u === i ? e : n;
   }
   return t;
 }
-function tf(e) {
+function Xh(e) {
   return Array.isArray(e) && e.length === Object.keys(e).length;
 }
-function Qa(e) {
-  if (!rf(e))
+function Ja(e) {
+  if (!ef(e))
     return !1;
   const t = e.constructor;
   if (t === void 0)
     return !0;
   const r = t.prototype;
-  return !(!rf(r) || !r.hasOwnProperty("isPrototypeOf") || Object.getPrototypeOf(e) !== Object.prototype);
+  return !(!ef(r) || !r.hasOwnProperty("isPrototypeOf") || Object.getPrototypeOf(e) !== Object.prototype);
 }
-function rf(e) {
+function ef(e) {
   return Object.prototype.toString.call(e) === "[object Object]";
 }
-function Zw(e) {
+function Gw(e) {
   return new Promise((t) => {
     setTimeout(t, e);
   });
 }
-function Xw(e, t, r) {
+function Qw(e, t, r) {
   if (typeof r.structuralSharing == "function")
     return r.structuralSharing(e, t);
   if (r.structuralSharing !== !1) {
     if (process.env.NODE_ENV !== "production")
       try {
-        return Ga(e, t);
+        return Ka(e, t);
       } catch (s) {
         throw console.error(
           `Structural sharing requires data to be JSON serializable. To fix this, turn off structuralSharing or return JSON-serializable data from your queryFn. [${r.queryHash}]: ${s}`
         ), s;
       }
-    return Ga(e, t);
+    return Ka(e, t);
   }
   return t;
 }
-function eE(e, t, r = 0) {
+function Yw(e, t, r = 0) {
   const s = [...e, t];
   return r && s.length > r ? s.slice(1) : s;
 }
-function tE(e, t, r = 0) {
+function Zw(e, t, r = 0) {
   const s = [t, ...e];
   return r && s.length > r ? s.slice(0, -1) : s;
 }
-var qs = Symbol();
-function rg(e, t) {
-  return process.env.NODE_ENV !== "production" && e.queryFn === qs && console.error(
+var js = Symbol();
+function Xv(e, t) {
+  return process.env.NODE_ENV !== "production" && e.queryFn === js && console.error(
     `Attempted to invoke queryFn when set to skipToken. This is likely a configuration error. Query hash: '${e.queryHash}'`
-  ), !e.queryFn && t?.initialPromise ? () => t.initialPromise : !e.queryFn || e.queryFn === qs ? () => Promise.reject(new Error(`Missing queryFn: '${e.queryHash}'`)) : e.queryFn;
+  ), !e.queryFn && t?.initialPromise ? () => t.initialPromise : !e.queryFn || e.queryFn === js ? () => Promise.reject(new Error(`Missing queryFn: '${e.queryHash}'`)) : e.queryFn;
 }
-var rE = class extends Qs {
+var Xw = class extends Gs {
   #e;
   #t;
   #r;
   constructor() {
     super(), this.#r = (e) => {
-      if (!Ys && window.addEventListener) {
+      if (!Qs && window.addEventListener) {
         const t = () => e();
         return window.addEventListener("visibilitychange", t, !1), () => {
           window.removeEventListener("visibilitychange", t);
@@ -24529,13 +24529,13 @@ var rE = class extends Qs {
   isFocused() {
     return typeof this.#e == "boolean" ? this.#e : globalThis.document?.visibilityState !== "hidden";
   }
-}, ng = new rE(), nE = class extends Qs {
+}, eg = new Xw(), eE = class extends Gs {
   #e = !0;
   #t;
   #r;
   constructor() {
     super(), this.#r = (e) => {
-      if (!Ys && window.addEventListener) {
+      if (!Qs && window.addEventListener) {
         const t = () => e(!0), r = () => e(!1);
         return window.addEventListener("online", t, !1), window.addEventListener("offline", r, !1), () => {
           window.removeEventListener("online", t), window.removeEventListener("offline", r);
@@ -24560,8 +24560,8 @@ var rE = class extends Qs {
   isOnline() {
     return this.#e;
   }
-}, Fs = new nE();
-function iE() {
+}, qs = new eE();
+function tE() {
   let e, t;
   const r = new Promise((i, a) => {
     e = i, t = a;
@@ -24583,29 +24583,29 @@ function iE() {
     }), t(i);
   }, r;
 }
-function sE(e) {
+function rE(e) {
   return Math.min(1e3 * 2 ** e, 3e4);
 }
-function ig(e) {
-  return (e ?? "online") === "online" ? Fs.isOnline() : !0;
+function tg(e) {
+  return (e ?? "online") === "online" ? qs.isOnline() : !0;
 }
-var sg = class extends Error {
+var rg = class extends Error {
   constructor(e) {
     super("CancelledError"), this.revert = e?.revert, this.silent = e?.silent;
   }
 };
-function Oa(e) {
-  return e instanceof sg;
+function _a(e) {
+  return e instanceof rg;
 }
-function og(e) {
+function ng(e) {
   let t = !1, r = 0, s = !1, i;
-  const a = iE(), o = (g) => {
-    s || (d(new sg(g)), e.abort?.());
+  const a = tE(), o = (g) => {
+    s || (d(new rg(g)), e.abort?.());
   }, n = () => {
     t = !0;
   }, c = () => {
     t = !1;
-  }, u = () => ng.isFocused() && (e.networkMode === "always" || Fs.isOnline()) && e.canRun(), l = () => ig(e.networkMode) && e.canRun(), p = (g) => {
+  }, u = () => eg.isFocused() && (e.networkMode === "always" || qs.isOnline()) && e.canRun(), l = () => tg(e.networkMode) && e.canRun(), p = (g) => {
     s || (s = !0, e.onSuccess?.(g), i?.(), a.resolve(g));
   }, d = (g) => {
     s || (s = !0, e.onError?.(g), i?.(), a.reject(g));
@@ -24628,12 +24628,12 @@ function og(e) {
     Promise.resolve(g).then(p).catch((v) => {
       if (s)
         return;
-      const y = e.retry ?? (Ys ? 0 : 3), S = e.retryDelay ?? sE, C = typeof S == "function" ? S(r, v) : S, P = y === !0 || typeof y == "number" && r < y || typeof y == "function" && y(r, v);
-      if (t || !P) {
+      const y = e.retry ?? (Qs ? 0 : 3), S = e.retryDelay ?? rE, C = typeof S == "function" ? S(r, v) : S, R = y === !0 || typeof y == "number" && r < y || typeof y == "function" && y(r, v);
+      if (t || !R) {
         d(v);
         return;
       }
-      r++, e.onFail?.(r, v), Zw(C).then(() => u() ? void 0 : h()).then(() => {
+      r++, e.onFail?.(r, v), Gw(C).then(() => u() ? void 0 : h()).then(() => {
         t ? d(v) : f();
       });
     });
@@ -24648,13 +24648,13 @@ function og(e) {
     start: () => (l() ? f() : h().then(f), a)
   };
 }
-var oE = (e) => setTimeout(e, 0);
-function aE() {
+var nE = (e) => setTimeout(e, 0);
+function iE() {
   let e = [], t = 0, r = (n) => {
     n();
   }, s = (n) => {
     n();
-  }, i = oE;
+  }, i = nE;
   const a = (n) => {
     t ? e.push(n) : i(() => {
       r(n);
@@ -24708,26 +24708,26 @@ function aE() {
     }
   };
 }
-var de = aE(), ag = class {
+var ue = iE(), ig = class {
   #e;
   destroy() {
     this.clearGcTimeout();
   }
   scheduleGc() {
-    this.clearGcTimeout(), Gw(this.gcTime) && (this.#e = setTimeout(() => {
+    this.clearGcTimeout(), Hw(this.gcTime) && (this.#e = setTimeout(() => {
       this.optionalRemove();
     }, this.gcTime));
   }
   updateGcTime(e) {
     this.gcTime = Math.max(
       this.gcTime || 0,
-      e ?? (Ys ? 1 / 0 : 5 * 60 * 1e3)
+      e ?? (Qs ? 1 / 0 : 5 * 60 * 1e3)
     );
   }
   clearGcTimeout() {
     this.#e && (clearTimeout(this.#e), this.#e = void 0);
   }
-}, cE = class extends ag {
+}, sE = class extends ig {
   #e;
   #t;
   #r;
@@ -24736,7 +24736,7 @@ var de = aE(), ag = class {
   #o;
   #a;
   constructor(e) {
-    super(), this.#a = !1, this.#o = e.defaultOptions, this.setOptions(e.options), this.observers = [], this.#i = e.client, this.#r = this.#i.getQueryCache(), this.queryKey = e.queryKey, this.queryHash = e.queryHash, this.#e = lE(this.options), this.state = e.state ?? this.#e, this.scheduleGc();
+    super(), this.#a = !1, this.#o = e.defaultOptions, this.setOptions(e.options), this.observers = [], this.#i = e.client, this.#r = this.#i.getQueryCache(), this.queryKey = e.queryKey, this.queryHash = e.queryHash, this.#e = aE(this.options), this.state = e.state ?? this.#e, this.scheduleGc();
   }
   get meta() {
     return this.options.meta;
@@ -24751,7 +24751,7 @@ var de = aE(), ag = class {
     !this.observers.length && this.state.fetchStatus === "idle" && this.#r.remove(this);
   }
   setData(e, t) {
-    const r = Xw(this.state.data, e, this.options);
+    const r = Qw(this.state.data, e, this.options);
     return this.#s({
       data: r,
       type: "success",
@@ -24764,7 +24764,7 @@ var de = aE(), ag = class {
   }
   cancel(e) {
     const t = this.#n?.promise;
-    return this.#n?.cancel(e), t ? t.then(Te).catch(Te) : Promise.resolve();
+    return this.#n?.cancel(e), t ? t.then(Ae).catch(Ae) : Promise.resolve();
   }
   destroy() {
     super.destroy(), this.cancel({ silent: !0 });
@@ -24774,15 +24774,15 @@ var de = aE(), ag = class {
   }
   isActive() {
     return this.observers.some(
-      (e) => Yw(e.options.enabled, this) !== !1
+      (e) => Jw(e.options.enabled, this) !== !1
     );
   }
   isDisabled() {
-    return this.getObserversCount() > 0 ? !this.isActive() : this.options.queryFn === qs || this.state.dataUpdateCount + this.state.errorUpdateCount === 0;
+    return this.getObserversCount() > 0 ? !this.isActive() : this.options.queryFn === js || this.state.dataUpdateCount + this.state.errorUpdateCount === 0;
   }
   isStatic() {
     return this.getObserversCount() > 0 ? this.observers.some(
-      (e) => Ja(e.options.staleTime, this) === "static"
+      (e) => Ha(e.options.staleTime, this) === "static"
     ) : !1;
   }
   isStale() {
@@ -24791,7 +24791,7 @@ var de = aE(), ag = class {
     ) : this.state.data === void 0 || this.state.isInvalidated;
   }
   isStaleByTime(e = 0) {
-    return this.state.data === void 0 ? !0 : e === "static" ? !1 : this.state.isInvalidated ? !0 : !Qw(this.state.dataUpdatedAt, e);
+    return this.state.data === void 0 ? !0 : e === "static" ? !1 : this.state.isInvalidated ? !0 : !Kw(this.state.dataUpdatedAt, e);
   }
   onFocus() {
     this.observers.find((t) => t.shouldFetchOnWindowFocus())?.refetch({ cancelRefetch: !1 }), this.#n?.continue();
@@ -24831,7 +24831,7 @@ var de = aE(), ag = class {
         get: () => (this.#a = !0, r.signal)
       });
     }, i = () => {
-      const c = rg(this.options, t), l = (() => {
+      const c = Xv(this.options, t), l = (() => {
         const p = {
           client: this.#i,
           queryKey: this.queryKey,
@@ -24857,10 +24857,10 @@ var de = aE(), ag = class {
     })();
     this.options.behavior?.onFetch(o, this), this.#t = this.state, (this.state.fetchStatus === "idle" || this.state.fetchMeta !== o.fetchOptions?.meta) && this.#s({ type: "fetch", meta: o.fetchOptions?.meta });
     const n = (c) => {
-      Oa(c) && c.silent || this.#s({
+      _a(c) && c.silent || this.#s({
         type: "error",
         error: c
-      }), Oa(c) || (this.#r.config.onError?.(
+      }), _a(c) || (this.#r.config.onError?.(
         c,
         this
       ), this.#r.config.onSettled?.(
@@ -24869,7 +24869,7 @@ var de = aE(), ag = class {
         this
       )), this.scheduleGc();
     };
-    return this.#n = og({
+    return this.#n = ng({
       initialPromise: t?.initialPromise,
       fn: o.fetchFn,
       abort: r.abort.bind(r),
@@ -24930,7 +24930,7 @@ var de = aE(), ag = class {
         case "fetch":
           return {
             ...r,
-            ...uE(r.data, this.options),
+            ...oE(r.data, this.options),
             fetchMeta: e.meta ?? null
           };
         case "success":
@@ -24950,7 +24950,7 @@ var de = aE(), ag = class {
           };
         case "error":
           const s = e.error;
-          return Oa(s) && s.revert && this.#t ? { ...this.#t, fetchStatus: "idle" } : {
+          return _a(s) && s.revert && this.#t ? { ...this.#t, fetchStatus: "idle" } : {
             ...r,
             error: s,
             errorUpdateCount: r.errorUpdateCount + 1,
@@ -24972,25 +24972,25 @@ var de = aE(), ag = class {
           };
       }
     };
-    this.state = t(this.state), de.batch(() => {
+    this.state = t(this.state), ue.batch(() => {
       this.observers.forEach((r) => {
         r.onQueryUpdate();
       }), this.#r.notify({ query: this, type: "updated", action: e });
     });
   }
 };
-function uE(e, t) {
+function oE(e, t) {
   return {
     fetchFailureCount: 0,
     fetchFailureReason: null,
-    fetchStatus: ig(t.networkMode) ? "fetching" : "paused",
+    fetchStatus: tg(t.networkMode) ? "fetching" : "paused",
     ...e === void 0 && {
       error: null,
       status: "pending"
     }
   };
 }
-function lE(e) {
+function aE(e) {
   const t = typeof e.initialData == "function" ? e.initialData() : e.initialData, r = t !== void 0, s = r ? typeof e.initialDataUpdatedAt == "function" ? e.initialDataUpdatedAt() : e.initialDataUpdatedAt : 0;
   return {
     data: t,
@@ -25007,15 +25007,15 @@ function lE(e) {
     fetchStatus: "idle"
   };
 }
-var pE = class extends Qs {
+var cE = class extends Gs {
   constructor(e = {}) {
     super(), this.config = e, this.#e = /* @__PURE__ */ new Map();
   }
   #e;
   build(e, t, r) {
-    const s = t.queryKey, i = t.queryHash ?? dc(s, t);
+    const s = t.queryKey, i = t.queryHash ?? lc(s, t);
     let a = this.get(i);
-    return a || (a = new cE({
+    return a || (a = new sE({
       client: e,
       queryKey: s,
       queryHash: i,
@@ -25035,7 +25035,7 @@ var pE = class extends Qs {
     t && (e.destroy(), t === e && this.#e.delete(e.queryHash), this.notify({ type: "removed", query: e }));
   }
   clear() {
-    de.batch(() => {
+    ue.batch(() => {
       this.getAll().forEach((e) => {
         this.remove(e);
       });
@@ -25050,40 +25050,40 @@ var pE = class extends Qs {
   find(e) {
     const t = { exact: !0, ...e };
     return this.getAll().find(
-      (r) => Xh(t, r)
+      (r) => Yh(t, r)
     );
   }
   findAll(e = {}) {
     const t = this.getAll();
-    return Object.keys(e).length > 0 ? t.filter((r) => Xh(e, r)) : t;
+    return Object.keys(e).length > 0 ? t.filter((r) => Yh(e, r)) : t;
   }
   notify(e) {
-    de.batch(() => {
+    ue.batch(() => {
       this.listeners.forEach((t) => {
         t(e);
       });
     });
   }
   onFocus() {
-    de.batch(() => {
+    ue.batch(() => {
       this.getAll().forEach((e) => {
         e.onFocus();
       });
     });
   }
   onOnline() {
-    de.batch(() => {
+    ue.batch(() => {
       this.getAll().forEach((e) => {
         e.onOnline();
       });
     });
   }
-}, dE = class extends ag {
+}, uE = class extends ig {
   #e;
   #t;
   #r;
   constructor(e) {
-    super(), this.mutationId = e.mutationId, this.#t = e.mutationCache, this.#e = [], this.state = e.state || hE(), this.setOptions(e.options), this.scheduleGc();
+    super(), this.mutationId = e.mutationId, this.#t = e.mutationCache, this.#e = [], this.state = e.state || lE(), this.setOptions(e.options), this.scheduleGc();
   }
   setOptions(e) {
     this.options = e, this.updateGcTime(this.options.gcTime);
@@ -25116,7 +25116,7 @@ var pE = class extends Qs {
     const t = () => {
       this.#i({ type: "continue" });
     };
-    this.#r = og({
+    this.#r = ng({
       fn: () => this.options.mutationFn ? this.options.mutationFn(e) : Promise.reject(new Error("No mutationFn found")),
       onFail: (i, a) => {
         this.#i({ type: "failed", failureCount: i, error: a });
@@ -25244,7 +25244,7 @@ var pE = class extends Qs {
           };
       }
     };
-    this.state = t(this.state), de.batch(() => {
+    this.state = t(this.state), ue.batch(() => {
       this.#e.forEach((r) => {
         r.onMutationUpdate(e);
       }), this.#t.notify({
@@ -25255,7 +25255,7 @@ var pE = class extends Qs {
     });
   }
 };
-function hE() {
+function lE() {
   return {
     context: void 0,
     data: void 0,
@@ -25268,7 +25268,7 @@ function hE() {
     submittedAt: 0
   };
 }
-var fE = class extends Qs {
+var pE = class extends Gs {
   constructor(e = {}) {
     super(), this.config = e, this.#e = /* @__PURE__ */ new Set(), this.#t = /* @__PURE__ */ new Map(), this.#r = 0;
   }
@@ -25276,7 +25276,7 @@ var fE = class extends Qs {
   #t;
   #r;
   build(e, t, r) {
-    const s = new dE({
+    const s = new uE({
       mutationCache: this,
       mutationId: ++this.#r,
       options: e.defaultMutationOptions(t),
@@ -25286,7 +25286,7 @@ var fE = class extends Qs {
   }
   add(e) {
     this.#e.add(e);
-    const t = _s(e);
+    const t = Ts(e);
     if (typeof t == "string") {
       const r = this.#t.get(t);
       r ? r.push(e) : this.#t.set(t, [e]);
@@ -25295,7 +25295,7 @@ var fE = class extends Qs {
   }
   remove(e) {
     if (this.#e.delete(e)) {
-      const t = _s(e);
+      const t = Ts(e);
       if (typeof t == "string") {
         const r = this.#t.get(t);
         if (r)
@@ -25308,7 +25308,7 @@ var fE = class extends Qs {
     this.notify({ type: "removed", mutation: e });
   }
   canRun(e) {
-    const t = _s(e);
+    const t = Ts(e);
     if (typeof t == "string") {
       const s = this.#t.get(t)?.find(
         (i) => i.state.status === "pending"
@@ -25318,11 +25318,11 @@ var fE = class extends Qs {
       return !0;
   }
   runNext(e) {
-    const t = _s(e);
+    const t = Ts(e);
     return typeof t == "string" ? this.#t.get(t)?.find((s) => s !== e && s.state.isPaused)?.continue() ?? Promise.resolve() : Promise.resolve();
   }
   clear() {
-    de.batch(() => {
+    ue.batch(() => {
       this.#e.forEach((e) => {
         this.notify({ type: "removed", mutation: e });
       }), this.#e.clear(), this.#t.clear();
@@ -25334,14 +25334,14 @@ var fE = class extends Qs {
   find(e) {
     const t = { exact: !0, ...e };
     return this.getAll().find(
-      (r) => ef(t, r)
+      (r) => Zh(t, r)
     );
   }
   findAll(e = {}) {
-    return this.getAll().filter((t) => ef(e, t));
+    return this.getAll().filter((t) => Zh(e, t));
   }
   notify(e) {
-    de.batch(() => {
+    ue.batch(() => {
       this.listeners.forEach((t) => {
         t(e);
       });
@@ -25349,17 +25349,17 @@ var fE = class extends Qs {
   }
   resumePausedMutations() {
     const e = this.getAll().filter((t) => t.state.isPaused);
-    return de.batch(
+    return ue.batch(
       () => Promise.all(
-        e.map((t) => t.continue().catch(Te))
+        e.map((t) => t.continue().catch(Ae))
       )
     );
   }
 };
-function _s(e) {
+function Ts(e) {
   return e.options.scope?.id;
 }
-function nf(e) {
+function tf(e) {
   return {
     onFetch: (t, r) => {
       const s = t.options, i = t.fetchOptions?.meta?.fetchMore?.direction, a = t.state.data?.pages || [], o = t.state.data?.pageParams || [];
@@ -25373,7 +25373,7 @@ function nf(e) {
               l = !0;
             }), t.signal)
           });
-        }, d = rg(t.options, t.fetchOptions), h = async (f, g, m) => {
+        }, d = Xv(t.options, t.fetchOptions), h = async (f, g, m) => {
           if (l)
             return Promise.reject();
           if (g == null && f.pages.length)
@@ -25387,14 +25387,14 @@ function nf(e) {
               meta: t.options.meta
             };
             return p(w), w;
-          })(), S = await d(y), { maxPages: C } = t.options, P = m ? tE : eE;
+          })(), S = await d(y), { maxPages: C } = t.options, R = m ? Zw : Yw;
           return {
-            pages: P(f.pages, S, C),
-            pageParams: P(f.pageParams, g, C)
+            pages: R(f.pages, S, C),
+            pageParams: R(f.pageParams, g, C)
           };
         };
         if (i && a.length) {
-          const f = i === "backward", g = f ? vE : sf, m = {
+          const f = i === "backward", g = f ? dE : rf, m = {
             pages: a,
             pageParams: o
           }, v = g(s, m);
@@ -25402,7 +25402,7 @@ function nf(e) {
         } else {
           const f = e ?? a.length;
           do {
-            const g = c === 0 ? o[0] ?? s.initialPageParam : sf(s, n);
+            const g = c === 0 ? o[0] ?? s.initialPageParam : rf(s, n);
             if (c > 0 && g == null)
               break;
             n = await h(n, g), c++;
@@ -25423,7 +25423,7 @@ function nf(e) {
     }
   };
 }
-function sf(e, { pages: t, pageParams: r }) {
+function rf(e, { pages: t, pageParams: r }) {
   const s = t.length - 1;
   return t.length > 0 ? e.getNextPageParam(
     t[s],
@@ -25432,10 +25432,10 @@ function sf(e, { pages: t, pageParams: r }) {
     r
   ) : void 0;
 }
-function vE(e, { pages: t, pageParams: r }) {
+function dE(e, { pages: t, pageParams: r }) {
   return t.length > 0 ? e.getPreviousPageParam?.(t[0], t, r[0], r) : void 0;
 }
-var gE = class {
+var hE = class {
   #e;
   #t;
   #r;
@@ -25445,12 +25445,12 @@ var gE = class {
   #a;
   #s;
   constructor(e = {}) {
-    this.#e = e.queryCache || new pE(), this.#t = e.mutationCache || new fE(), this.#r = e.defaultOptions || {}, this.#i = /* @__PURE__ */ new Map(), this.#n = /* @__PURE__ */ new Map(), this.#o = 0;
+    this.#e = e.queryCache || new cE(), this.#t = e.mutationCache || new pE(), this.#r = e.defaultOptions || {}, this.#i = /* @__PURE__ */ new Map(), this.#n = /* @__PURE__ */ new Map(), this.#o = 0;
   }
   mount() {
-    this.#o++, this.#o === 1 && (this.#a = ng.subscribe(async (e) => {
+    this.#o++, this.#o === 1 && (this.#a = eg.subscribe(async (e) => {
       e && (await this.resumePausedMutations(), this.#e.onFocus());
-    }), this.#s = Fs.subscribe(async (e) => {
+    }), this.#s = qs.subscribe(async (e) => {
       e && (await this.resumePausedMutations(), this.#e.onOnline());
     }));
   }
@@ -25476,7 +25476,7 @@ var gE = class {
   }
   ensureQueryData(e) {
     const t = this.defaultQueryOptions(e), r = this.#e.build(this, t), s = r.state.data;
-    return s === void 0 ? this.fetchQuery(e) : (e.revalidateIfStale && r.isStaleByTime(Ja(t.staleTime, r)) && this.prefetchQuery(t), Promise.resolve(s));
+    return s === void 0 ? this.fetchQuery(e) : (e.revalidateIfStale && r.isStaleByTime(Ha(t.staleTime, r)) && this.prefetchQuery(t), Promise.resolve(s));
   }
   getQueriesData(e) {
     return this.#e.findAll(e).map(({ queryKey: t, state: r }) => {
@@ -25487,12 +25487,12 @@ var gE = class {
   setQueryData(e, t, r) {
     const s = this.defaultQueryOptions({ queryKey: e }), a = this.#e.get(
       s.queryHash
-    )?.state.data, o = Jw(t, a);
+    )?.state.data, o = Ww(t, a);
     if (o !== void 0)
       return this.#e.build(this, s).setData(o, { ...r, manual: !0 });
   }
   setQueriesData(e, t, r) {
-    return de.batch(
+    return ue.batch(
       () => this.#e.findAll(e).map(({ queryKey: s }) => [
         s,
         this.setQueryData(s, t, r)
@@ -25507,7 +25507,7 @@ var gE = class {
   }
   removeQueries(e) {
     const t = this.#e;
-    de.batch(() => {
+    ue.batch(() => {
       t.findAll(e).forEach((r) => {
         t.remove(r);
       });
@@ -25515,7 +25515,7 @@ var gE = class {
   }
   resetQueries(e, t) {
     const r = this.#e;
-    return de.batch(() => (r.findAll(e).forEach((s) => {
+    return ue.batch(() => (r.findAll(e).forEach((s) => {
       s.reset();
     }), this.refetchQueries(
       {
@@ -25526,13 +25526,13 @@ var gE = class {
     )));
   }
   cancelQueries(e, t = {}) {
-    const r = { revert: !0, ...t }, s = de.batch(
+    const r = { revert: !0, ...t }, s = ue.batch(
       () => this.#e.findAll(e).map((i) => i.cancel(r))
     );
-    return Promise.all(s).then(Te).catch(Te);
+    return Promise.all(s).then(Ae).catch(Ae);
   }
   invalidateQueries(e, t = {}) {
-    return de.batch(() => (this.#e.findAll(e).forEach((r) => {
+    return ue.batch(() => (this.#e.findAll(e).forEach((r) => {
       r.invalidate();
     }), e?.refetchType === "none" ? Promise.resolve() : this.refetchQueries(
       {
@@ -25546,36 +25546,36 @@ var gE = class {
     const r = {
       ...t,
       cancelRefetch: t.cancelRefetch ?? !0
-    }, s = de.batch(
+    }, s = ue.batch(
       () => this.#e.findAll(e).filter((i) => !i.isDisabled() && !i.isStatic()).map((i) => {
         let a = i.fetch(void 0, r);
-        return r.throwOnError || (a = a.catch(Te)), i.state.fetchStatus === "paused" ? Promise.resolve() : a;
+        return r.throwOnError || (a = a.catch(Ae)), i.state.fetchStatus === "paused" ? Promise.resolve() : a;
       })
     );
-    return Promise.all(s).then(Te);
+    return Promise.all(s).then(Ae);
   }
   fetchQuery(e) {
     const t = this.defaultQueryOptions(e);
     t.retry === void 0 && (t.retry = !1);
     const r = this.#e.build(this, t);
     return r.isStaleByTime(
-      Ja(t.staleTime, r)
+      Ha(t.staleTime, r)
     ) ? r.fetch(t) : Promise.resolve(r.state.data);
   }
   prefetchQuery(e) {
-    return this.fetchQuery(e).then(Te).catch(Te);
+    return this.fetchQuery(e).then(Ae).catch(Ae);
   }
   fetchInfiniteQuery(e) {
-    return e.behavior = nf(e.pages), this.fetchQuery(e);
+    return e.behavior = tf(e.pages), this.fetchQuery(e);
   }
   prefetchInfiniteQuery(e) {
-    return this.fetchInfiniteQuery(e).then(Te).catch(Te);
+    return this.fetchInfiniteQuery(e).then(Ae).catch(Ae);
   }
   ensureInfiniteQueryData(e) {
-    return e.behavior = nf(e.pages), this.ensureQueryData(e);
+    return e.behavior = tf(e.pages), this.ensureQueryData(e);
   }
   resumePausedMutations() {
-    return Fs.isOnline() ? this.#t.resumePausedMutations() : Promise.resolve();
+    return qs.isOnline() ? this.#t.resumePausedMutations() : Promise.resolve();
   }
   getQueryCache() {
     return this.#e;
@@ -25590,7 +25590,7 @@ var gE = class {
     this.#r = e;
   }
   setQueryDefaults(e, t) {
-    this.#i.set(hs(e), {
+    this.#i.set(vs(e), {
       queryKey: e,
       defaultOptions: t
     });
@@ -25598,11 +25598,11 @@ var gE = class {
   getQueryDefaults(e) {
     const t = [...this.#i.values()], r = {};
     return t.forEach((s) => {
-      fs(e, s.queryKey) && Object.assign(r, s.defaultOptions);
+      gs(e, s.queryKey) && Object.assign(r, s.defaultOptions);
     }), r;
   }
   setMutationDefaults(e, t) {
-    this.#n.set(hs(e), {
+    this.#n.set(vs(e), {
       mutationKey: e,
       defaultOptions: t
     });
@@ -25610,7 +25610,7 @@ var gE = class {
   getMutationDefaults(e) {
     const t = [...this.#n.values()], r = {};
     return t.forEach((s) => {
-      fs(e, s.mutationKey) && Object.assign(r, s.defaultOptions);
+      gs(e, s.mutationKey) && Object.assign(r, s.defaultOptions);
     }), r;
   }
   defaultQueryOptions(e) {
@@ -25622,10 +25622,10 @@ var gE = class {
       ...e,
       _defaulted: !0
     };
-    return t.queryHash || (t.queryHash = dc(
+    return t.queryHash || (t.queryHash = lc(
       t.queryKey,
       t
-    )), t.refetchOnReconnect === void 0 && (t.refetchOnReconnect = t.networkMode !== "always"), t.throwOnError === void 0 && (t.throwOnError = !!t.suspense), !t.networkMode && t.persister && (t.networkMode = "offlineFirst"), t.queryFn === qs && (t.enabled = !1), t;
+    )), t.refetchOnReconnect === void 0 && (t.refetchOnReconnect = t.networkMode !== "always"), t.throwOnError === void 0 && (t.throwOnError = !!t.suspense), !t.networkMode && t.persister && (t.networkMode = "offlineFirst"), t.queryFn === js && (t.enabled = !1), t;
   }
   defaultMutationOptions(e) {
     return e?._defaulted ? e : {
@@ -25639,25 +25639,25 @@ var gE = class {
     this.#e.clear(), this.#t.clear();
   }
 };
-async function mE(e) {
+async function fE(e) {
   if (!e.ok) {
     const t = await e.text() || e.statusText;
     throw new Error(`${e.status}: ${t}`);
   }
 }
-function yE() {
+function vE() {
   return "https://developmentapis.azure-api.net/sandbox/v1/";
 }
-const SE = ({ on401: e }) => async ({ queryKey: t }) => {
-  const r = t[0], s = r.startsWith("http") ? r : `${yE()}${r}`, i = await fetch(s, {
+const gE = ({ on401: e }) => async ({ queryKey: t }) => {
+  const r = t[0], s = r.startsWith("http") ? r : `${vE()}${r}`, i = await fetch(s, {
     credentials: "include"
   });
-  return await mE(i), await i.json();
+  return await fE(i), await i.json();
 };
-new gE({
+new hE({
   defaultOptions: {
     queries: {
-      queryFn: SE({ on401: "throw" }),
+      queryFn: gE({ on401: "throw" }),
       refetchInterval: !1,
       refetchOnWindowFocus: !1,
       staleTime: 1 / 0,
@@ -25668,70 +25668,70 @@ new gE({
     }
   }
 });
-const CE = "Welcome to Your Personal AI Medical Concierge", RE = "Your intelligent health assistant will ask you key questions to understand your needs and build a personalized profile to support your well-being and care journey.", PE = { title: "How It Works", steps: ["Your AI concierge asks you questions to find out how {{brand}} can help you succeed", "The concierge will personalize recommendations based on your needs", "Access tailored resources, courses, and marketplace options"] }, bE = { resetChat: "Reset Chat", retry: "Retry", continue: "Continue", upload: "Upload", uploading: "Uploading..." }, wE = { yourAIConcierge: "Your AI Concierge", chooseAvatar: "Choose Your Avatar", startConversation: "Start Conversation" }, EE = { chooseAvatarTitle: "Choose Your Avatar", chooseAvatarMessage: "Please select an avatar from the left panel to start your conversation with your AI Concierge.", mode: "Chat Mode", modes: { care: "Care", clear: "Clear", clinical: "Clinical" } }, IE = {
-  title: CE,
-  description: RE,
-  howItWorks: PE,
-  buttons: bE,
-  avatar: wE,
-  chat: EE
-}, AE = "Bienvenido a tu Asistente de IA Personal de Salud", TE = "Tu asistente digital inteligente te hará preguntas clave para entender tus necesidades y crear un perfil personalizado para apoyarte en tu viaje de bienestar y cuidado.", _E = { title: "Cómo Funciona", steps: ["Tu asistente de IA te hará preguntas para averiguar cómo {{brand}} puede ayudarte a tener éxito", "El asistente personalizará recomendaciones basadas en tus necesidades", "Accede a recursos, cursos y opciones de mercado personalizados"] }, kE = { resetChat: "Restablecer Chat", retry: "Reintentar", continue: "Continuar", upload: "Cargar", uploading: "Cargando..." }, OE = { yourAIConcierge: "Tu Asistente de IA", chooseAvatar: "Elige tu Avatar", startConversation: "Iniciar Conversación" }, ME = { chooseAvatarTitle: "Elige tu Avatar", chooseAvatarMessage: "Por favor, selecciona un avatar de la izquierda para iniciar tu conversación con tu Asistente de IA.", mode: "Modo de Chat", modes: { care: "Cuidado", clear: "Claro", clinical: "Clínico" } }, DE = {
-  title: AE,
-  description: TE,
-  howItWorks: _E,
-  buttons: kE,
-  avatar: OE,
-  chat: ME
-}, NE = "Bienvenue chez votre Assistant IA de Santé", xE = "Votre assistant numérique intelligent vous posera des questions clés pour comprendre vos besoins et créer un profil personnalisé pour vous aider dans votre parcours de bien-être et de soins.", zE = { title: "Comment ça Marche", steps: ["Votre assistant IA vous pose des questions pour savoir comment {{brand}} peut vous aider", "L'assistant personnalise des recommandations selon vos besoins", "Accédez à des ressources, cours et options adaptées"] }, LE = { resetChat: "Réinitialiser le Chat", retry: "Réessayer", continue: "Continuer", upload: "Télécharger", uploading: "Téléchargement..." }, jE = { yourAIConcierge: "Votre Assistant IA", chooseAvatar: "Choisissez votre Avatar", startConversation: "Démarrer la Conversation" }, qE = { chooseAvatarTitle: "Choisissez votre Avatar", chooseAvatarMessage: "Veuillez sélectionner un avatar de la gauche pour démarrer votre conversation avec votre Assistant IA.", mode: "Mode de Chat", modes: { care: "Soins", clear: "Clair", clinical: "Clinique" } }, FE = {
-  title: NE,
-  description: xE,
-  howItWorks: zE,
-  buttons: LE,
-  avatar: jE,
-  chat: qE
-}, BE = "Willkommen bei Ihrem persönlichen KI-Medizin-Assistenten", UE = "Ihr intelligenter digitaler Assistent stellt Fragen, um Ihre Bedürfnisse zu verstehen und ein persönliches Profil zu erstellen, um Ihre Gesundheit und Pflege zu unterstützen.", $E = { title: "So funktioniert es", steps: ["Ihr KI-Assistent stellt Fragen, um herauszufinden, wie {{brand}} Sie unterstützen kann", "Der Assistent personalisiert Empfehlungen basierend auf Ihren Bedürfnissen", "Zugriff auf maßgeschneiderte Ressourcen, Kurse und Marktplatzoptionen"] }, VE = { resetChat: "Chat zurücksetzen", retry: "Wiederholen", continue: "Fortfahren", upload: "Datei hochladen", uploading: "Hochladen..." }, WE = { yourAIConcierge: "Ihr KI-Assistent", chooseAvatar: "Wählen Sie Ihren Avatar", startConversation: "Konversation starten" }, HE = { chooseAvatarTitle: "Wählen Sie Ihren Avatar", chooseAvatarMessage: "Bitte wählen Sie einen Avatar aus der linken Leiste, um mit Ihrem KI-Assistenten zu beginnen.", mode: "Chat-Modus", modes: { care: "Betreuung", clear: "Klar", clinical: "Klinisch" } }, KE = {
-  title: BE,
-  description: UE,
-  howItWorks: $E,
-  buttons: VE,
-  avatar: WE,
-  chat: HE
-}, JE = ["Analyzing your request", "Gathering insights", "Processing information", "Preparing response", "Almost there", "Finalizing thoughts", "Crafting the perfect response", "Connecting the dots", "Synthesizing information", "Optimizing recommendations"], GE = {
-  loadingMessages: JE
-}, QE = ["Analizando tu solicitud", "Recopilando información", "Procesando información", "Preparando respuesta", "Casi listo", "Finalizando pensamientos", "Elaborando la respuesta perfecta", "Conectando los puntos", "Sintetizando información", "Optimizando recomendaciones"], YE = {
-  loadingMessages: QE
-}, ZE = ["Analyse de votre demande", "Collecte d'informations", "Traitement des informations", "Préparation de la réponse", "Presque terminé", "Finalisation des réflexions", "Élaboration de la réponse parfaite", "Connexion des points", "Synthèse des informations", "Optimisation des recommandations"], XE = {
-  loadingMessages: ZE
-}, eI = ["Analysiere Ihre Anfrage", "Sammle Erkenntnisse", "Verarbeite Informationen", "Bereite Antwort vor", "Fast fertig", "Finalisiere Gedanken", "Erstelle die perfekte Antwort", "Verbinde die Punkte", "Synthetisiere Informationen", "Optimiere Empfehlungen"], tI = {
-  loadingMessages: eI
-}, rI = {
+const mE = "Welcome to Your Personal AI Medical Concierge", yE = "Your intelligent health assistant will ask you key questions to understand your needs and build a personalized profile to support your well-being and care journey.", SE = { title: "How It Works", steps: ["Your AI concierge asks you questions to find out how {{brand}} can help you succeed", "The concierge will personalize recommendations based on your needs", "Access tailored resources, courses, and marketplace options"] }, CE = { resetChat: "Reset Chat", retry: "Retry", continue: "Continue", upload: "Upload", uploading: "Uploading..." }, RE = { yourAIConcierge: "Your AI Concierge", chooseAvatar: "Choose Your Avatar", startConversation: "Start Conversation" }, PE = { chooseAvatarTitle: "Choose Your Avatar", chooseAvatarMessage: "Please select an avatar from the left panel to start your conversation with your AI Concierge.", mode: "Chat Mode", modes: { care: "Care", clear: "Clear", clinical: "Clinical" } }, bE = {
+  title: mE,
+  description: yE,
+  howItWorks: SE,
+  buttons: CE,
+  avatar: RE,
+  chat: PE
+}, wE = "Bienvenido a tu Asistente de IA Personal de Salud", EE = "Tu asistente digital inteligente te hará preguntas clave para entender tus necesidades y crear un perfil personalizado para apoyarte en tu viaje de bienestar y cuidado.", IE = { title: "Cómo Funciona", steps: ["Tu asistente de IA te hará preguntas para averiguar cómo {{brand}} puede ayudarte a tener éxito", "El asistente personalizará recomendaciones basadas en tus necesidades", "Accede a recursos, cursos y opciones de mercado personalizados"] }, AE = { resetChat: "Restablecer Chat", retry: "Reintentar", continue: "Continuar", upload: "Cargar", uploading: "Cargando..." }, TE = { yourAIConcierge: "Tu Asistente de IA", chooseAvatar: "Elige tu Avatar", startConversation: "Iniciar Conversación" }, _E = { chooseAvatarTitle: "Elige tu Avatar", chooseAvatarMessage: "Por favor, selecciona un avatar de la izquierda para iniciar tu conversación con tu Asistente de IA.", mode: "Modo de Chat", modes: { care: "Cuidado", clear: "Claro", clinical: "Clínico" } }, kE = {
+  title: wE,
+  description: EE,
+  howItWorks: IE,
+  buttons: AE,
+  avatar: TE,
+  chat: _E
+}, OE = "Bienvenue chez votre Assistant IA de Santé", ME = "Votre assistant numérique intelligent vous posera des questions clés pour comprendre vos besoins et créer un profil personnalisé pour vous aider dans votre parcours de bien-être et de soins.", DE = { title: "Comment ça Marche", steps: ["Votre assistant IA vous pose des questions pour savoir comment {{brand}} peut vous aider", "L'assistant personnalise des recommandations selon vos besoins", "Accédez à des ressources, cours et options adaptées"] }, NE = { resetChat: "Réinitialiser le Chat", retry: "Réessayer", continue: "Continuer", upload: "Télécharger", uploading: "Téléchargement..." }, xE = { yourAIConcierge: "Votre Assistant IA", chooseAvatar: "Choisissez votre Avatar", startConversation: "Démarrer la Conversation" }, zE = { chooseAvatarTitle: "Choisissez votre Avatar", chooseAvatarMessage: "Veuillez sélectionner un avatar de la gauche pour démarrer votre conversation avec votre Assistant IA.", mode: "Mode de Chat", modes: { care: "Soins", clear: "Clair", clinical: "Clinique" } }, LE = {
+  title: OE,
+  description: ME,
+  howItWorks: DE,
+  buttons: NE,
+  avatar: xE,
+  chat: zE
+}, jE = "Willkommen bei Ihrem persönlichen KI-Medizin-Assistenten", qE = "Ihr intelligenter digitaler Assistent stellt Fragen, um Ihre Bedürfnisse zu verstehen und ein persönliches Profil zu erstellen, um Ihre Gesundheit und Pflege zu unterstützen.", FE = { title: "So funktioniert es", steps: ["Ihr KI-Assistent stellt Fragen, um herauszufinden, wie {{brand}} Sie unterstützen kann", "Der Assistent personalisiert Empfehlungen basierend auf Ihren Bedürfnissen", "Zugriff auf maßgeschneiderte Ressourcen, Kurse und Marktplatzoptionen"] }, BE = { resetChat: "Chat zurücksetzen", retry: "Wiederholen", continue: "Fortfahren", upload: "Datei hochladen", uploading: "Hochladen..." }, UE = { yourAIConcierge: "Ihr KI-Assistent", chooseAvatar: "Wählen Sie Ihren Avatar", startConversation: "Konversation starten" }, $E = { chooseAvatarTitle: "Wählen Sie Ihren Avatar", chooseAvatarMessage: "Bitte wählen Sie einen Avatar aus der linken Leiste, um mit Ihrem KI-Assistenten zu beginnen.", mode: "Chat-Modus", modes: { care: "Betreuung", clear: "Klar", clinical: "Klinisch" } }, VE = {
+  title: jE,
+  description: qE,
+  howItWorks: FE,
+  buttons: BE,
+  avatar: UE,
+  chat: $E
+}, WE = ["Analyzing your request", "Gathering insights", "Processing information", "Preparing response", "Almost there", "Finalizing thoughts", "Crafting the perfect response", "Connecting the dots", "Synthesizing information", "Optimizing recommendations"], HE = {
+  loadingMessages: WE
+}, KE = ["Analizando tu solicitud", "Recopilando información", "Procesando información", "Preparando respuesta", "Casi listo", "Finalizando pensamientos", "Elaborando la respuesta perfecta", "Conectando los puntos", "Sintetizando información", "Optimizando recomendaciones"], JE = {
+  loadingMessages: KE
+}, GE = ["Analyse de votre demande", "Collecte d'informations", "Traitement des informations", "Préparation de la réponse", "Presque terminé", "Finalisation des réflexions", "Élaboration de la réponse parfaite", "Connexion des points", "Synthèse des informations", "Optimisation des recommandations"], QE = {
+  loadingMessages: GE
+}, YE = ["Analysiere Ihre Anfrage", "Sammle Erkenntnisse", "Verarbeite Informationen", "Bereite Antwort vor", "Fast fertig", "Finalisiere Gedanken", "Erstelle die perfekte Antwort", "Verbinde die Punkte", "Synthetisiere Informationen", "Optimiere Empfehlungen"], ZE = {
+  loadingMessages: YE
+}, XE = {
   en: {
-    concierge: IE,
+    concierge: bE,
     common: {
-      loadingMessages: GE
+      loadingMessages: HE
     }
   },
   es: {
-    concierge: DE,
+    concierge: kE,
     common: {
-      loadingMessages: YE
+      loadingMessages: JE
     }
   },
   fr: {
-    concierge: FE,
+    concierge: LE,
     common: {
-      loadingMessages: XE
+      loadingMessages: QE
     }
   },
   de: {
-    concierge: KE,
+    concierge: VE,
     common: {
-      loadingMessages: tI
+      loadingMessages: ZE
     }
   }
 };
-ue.use(Jg).init({
-  resources: rI,
+ae.use(Wg).init({
+  resources: XE,
   lng: "en",
   // Default language
   fallbackLng: "en",
@@ -25740,12 +25740,12 @@ ue.use(Jg).init({
     // React already handles escaping
   }
 });
-const nI = [
+const eI = [
   { code: "en", name: "English" },
   { code: "es", name: "Spanish" },
   { code: "fr", name: "French" },
   { code: "de", name: "German" }
-], cg = {
+], sg = {
   region: "",
   apiBaseUrl: "",
   speechKey: "",
@@ -25753,10 +25753,10 @@ const nI = [
   azureTranslatorEndpoint: "",
   azureTranslatorRegion: "",
   tavusApiKey: ""
-}, ug = cf(cg), iI = () => uf(ug), sI = ({ value: e, children: t }) => {
-  const r = { ...cg, ...e };
-  return /* @__PURE__ */ R(ug.Provider, { value: r, children: t });
-}, oI = Cg(
+}, og = sf(sg), tI = () => of(og), rI = ({ value: e, children: t }) => {
+  const r = { ...sg, ...e };
+  return /* @__PURE__ */ P(og.Provider, { value: r, children: t });
+}, nI = Sg(
   ({
     replicaId: e = "r82081c7f26d",
     personaId: t = "pc9cb547c05e",
@@ -25779,7 +25779,7 @@ const nI = [
     setConversationId: y,
     setConversationUrl: S,
     setInterruptReplica: C,
-    currentScript: P,
+    currentScript: R,
     setCurrentScript: w,
     interruptReplica: I,
     setIsSpeaking: E,
@@ -25787,135 +25787,135 @@ const nI = [
     region: b,
     speechKey: _,
     config: O
-  }, q) => {
-    const [$, Q] = z("welcome"), [G, le] = z(null), [ae, K] = z(!1), [se, X] = z(!1), ge = $e(null), [ke, Cs] = z([]), [Dt, Ze] = z("16:9"), { tavusApiKey: Ne } = iI(), xe = localStorage.getItem("lang") || "en", Nt = nI.find((B) => B.code === xe)?.name || "English", xt = $e(localStorage.getItem("lang") || "en");
-    H(() => {
+  }, j) => {
+    const [$, Y] = z("welcome"), [J, re] = z(null), [ve, H] = z(!1), [se, K] = z(!1), Ce = $e(null), [Ze, Dt] = z([]), [Ht, xe] = z("16:9"), { tavusApiKey: Xe } = tI(), _e = localStorage.getItem("lang") || "en", Kt = eI.find((F) => F.code === _e)?.name || "English", ge = $e(localStorage.getItem("lang") || "en");
+    W(() => {
       (async () => {
-        if (ke.length === 0)
+        if (Ze.length === 0)
           try {
-            const ee = await Xv();
-            ee?.Success && ee.Data && Cs(ee.Data);
-          } catch (ee) {
-            console.error("Error fetching avatars:", ee);
+            const B = await Qv();
+            B?.Success && B.Data && Dt(B.Data);
+          } catch (B) {
+            console.error("Error fetching avatars:", B);
           }
       })();
-    }, [ke.length]);
-    const me = ke.find((B) => B.ExternalId === e);
-    H(() => {
-      xe !== "en" && xe !== xt.current && (xt.current = xe, Xe());
-    }, [xe]), H(() => {
+    }, [Ze.length]);
+    const Nt = Ze.find((F) => F.ExternalId === e);
+    W(() => {
+      _e !== "en" && _e !== ge.current && (ge.current = _e, et());
+    }, [_e]), W(() => {
       (async () => {
-        if (me?.ImageUrl) {
-          const ee = new Image();
-          ee.onload = () => {
-            const te = ee.width / ee.height;
-            Math.abs(te - 1.7777777777777777) < Math.abs(te - 0.5625) ? Ze("16:9") : Ze("9:16");
-          }, ee.onerror = () => {
-            Ze("16:9");
-          }, ee.src = me.ImageUrl;
+        if (Nt?.ImageUrl) {
+          const B = new Image();
+          B.onload = () => {
+            const tt = B.width / B.height;
+            Math.abs(tt - 1.7777777777777777) < Math.abs(tt - 0.5625) ? xe("16:9") : xe("9:16");
+          }, B.onerror = () => {
+            xe("16:9");
+          }, B.src = Nt.ImageUrl;
         }
       })();
-    }, [me?.ImageUrl]), H(() => () => {
-      G && qh({
-        conversationId: G.conversation_id,
-        apiKey: Ne
+    }, [Nt?.ImageUrl]), W(() => () => {
+      J && Lh({
+        conversationId: J.conversation_id,
+        apiKey: Xe
       });
-    }, [G]), H(() => {
-      a === "concierge" && zt();
+    }, [J]), W(() => {
+      a === "concierge" && xt();
     }, [a]);
-    const zt = async () => {
+    const xt = async () => {
       try {
-        X(!1), K(!0), m(!0), v(!0), ge.current && ge.current.pause();
-        const B = await _w({
+        K(!1), H(!0), m(!0), v(!0), Ce.current && Ce.current.pause();
+        const F = await Iw({
           replicaId: e || "r82081c7f26d",
           personaId: t || "pc9cb547c05e",
           conversationName: r || "Demo Conversation",
           conversationalContext: s ?? "",
           customGreeting: i ?? "",
-          language: Nt,
-          apiKey: Ne
+          language: Kt,
+          apiKey: Xe
         });
-        if (B?.conversation_id && B.conversation_url)
-          le(B), y(B.conversation_id), S(B.conversation_url), Q("hairCheck");
+        if (F?.conversation_id && F.conversation_url)
+          re(F), y(F.conversation_id), S(F.conversation_url), Y("hairCheck");
         else
           throw new Error("Failed to start conversation");
-      } catch (B) {
-        console.error("Conversation error:", B);
+      } catch (F) {
+        console.error("Conversation error:", F);
       } finally {
-        K(!1);
+        H(!1);
       }
-    }, Xe = async () => {
-      X(!0), v(!1);
+    }, et = async () => {
+      K(!0), v(!1);
       try {
-        if (!G) return;
-        await qh({ conversationId: G.conversation_id, apiKey: Ne });
-      } catch (B) {
-        console.error(B);
+        if (!J) return;
+        await Lh({ conversationId: J.conversation_id, apiKey: Xe });
+      } catch (F) {
+        console.error(F);
       } finally {
-        le(null), Q("welcome");
+        re(null), Y("welcome");
       }
-    }, Rs = () => {
-      Q("call");
+    }, Jt = () => {
+      Y("call");
     };
-    Rg(q, () => ({
-      handleEnd: Xe,
-      handleStart: zt
+    Cg(j, () => ({
+      handleEnd: et,
+      handleStart: xt
     }));
-    const Jt = (B) => typeof B == "string" ? B : B ? `${B}px` : "100%", Ps = (B) => typeof B == "string" ? B : B ? `${B}px` : "100%", Lt = Jt(d), ne = Ps(h), et = (B) => {
-      if (!B) return;
-      const ee = typeof B == "string" ? B : `${B}px`;
-      return ee.includes("sm") || parseInt(ee) < 350 ? "sm" : ee.includes("lg") || parseInt(ee) > 600 ? "lg" : "md";
-    }, fe = typeof f == "string" ? f : f ? `${f}px` : void 0, tt = fe && !fe.includes("px") && !fe.includes("%") ? `max-w-${fe} mx-auto` : "";
-    return /* @__PURE__ */ R("main", { className: `${g} relative w-full h-full`, style: { width: Lt, height: ne }, children: /* @__PURE__ */ R(Hg, { children: /* @__PURE__ */ M("div", { className: `h-full w-full ${tt}`, style: fe && fe.includes("px") ? { maxWidth: fe } : {}, children: [
-      $ === "welcome" && /* @__PURE__ */ R(
-        ww,
+    const Ps = (F) => typeof F == "string" ? F : F ? `${F}px` : "100%", Gt = (F) => typeof F == "string" ? F : F ? `${F}px` : "100%", Re = Ps(d), Pe = Gt(h), ke = (F) => {
+      if (!F) return;
+      const B = typeof F == "string" ? F : `${F}px`;
+      return B.includes("sm") || parseInt(B) < 350 ? "sm" : B.includes("lg") || parseInt(B) > 600 ? "lg" : "md";
+    }, me = typeof f == "string" ? f : f ? `${f}px` : void 0, zt = me && !me.includes("px") && !me.includes("%") ? `max-w-${me} mx-auto` : "";
+    return /* @__PURE__ */ P("main", { className: `${g} relative w-full h-full`, style: { width: Re, height: Pe }, children: /* @__PURE__ */ P($g, { children: /* @__PURE__ */ M("div", { className: `h-full w-full ${zt}`, style: me && me.includes("px") ? { maxWidth: me } : {}, children: [
+      $ === "welcome" && /* @__PURE__ */ P(
+        Rw,
         {
-          onStart: zt,
-          loading: ae,
+          onStart: xt,
+          loading: ve,
           buttonText: o,
           platform: a || "home",
           replicaId: e || "r82081c7f26d",
           containerClassName: g,
-          imageHeight: ne === "100%" ? "auto" : ne,
-          buttonSize: et(d) || "md",
+          imageHeight: Pe === "100%" ? "auto" : Pe,
+          buttonSize: ke(d) || "md",
           learningPrompts: l,
           onPromptClick: p,
           userCredits: 100,
-          avatars: ke,
+          avatars: Ze,
           config: O
         }
       ),
-      $ === "hairCheck" && /* @__PURE__ */ R(
-        Ew,
+      $ === "hairCheck" && /* @__PURE__ */ P(
+        Pw,
         {
-          handleEnd: Xe,
-          handleJoin: Rs,
-          setScreen: Q,
+          handleEnd: et,
+          handleJoin: Jt,
+          setScreen: Y,
           platform: a || "home",
           containerClassName: g,
           videoDimensions: {
-            width: Lt,
-            height: ne === "100%" ? "auto" : ne
+            width: Re,
+            height: Pe === "100%" ? "auto" : Pe
           },
-          buttonsSize: et(d) || "md"
+          buttonsSize: ke(d) || "md"
         }
       ),
-      $ === "call" && G && /* @__PURE__ */ R("div", { className: "w-full h-full", children: /* @__PURE__ */ R(
-        Tw,
+      $ === "call" && J && /* @__PURE__ */ P("div", { className: "w-full h-full", children: /* @__PURE__ */ P(
+        Ew,
         {
-          conversation: G,
-          handleEnd: Xe,
+          conversation: J,
+          handleEnd: et,
           platform: a || "home",
           videoMode: n ?? "full",
           endConv: se,
           chatVisible: c ?? !1,
           toggleChat: u,
           containerClassName: g,
-          videoHeight: ne === "100%" ? "auto" : ne,
-          controlsSize: et(d) || "md",
-          aspectRatio: Dt,
+          videoHeight: Pe === "100%" ? "auto" : Pe,
+          controlsSize: ke(d) || "md",
+          aspectRatio: Ht,
           setInterruptReplica: C,
-          currentScript: P,
+          currentScript: R,
           setCurrentScript: w,
           interruptReplica: I,
           setIsSpeaking: E,
@@ -25927,7 +25927,7 @@ const nI = [
       ) })
     ] }) }) });
   }
-), aI = async (e, t, r, s, i = !1, a = !1) => {
+), iI = async (e, t, r, s, i = !1, a = !1) => {
   const n = {
     method: "POST",
     headers: {
@@ -25944,7 +25944,7 @@ const nI = [
   };
   let c;
   try {
-    const u = pc("/api/User/education/chathistory/post"), l = await fetch(u, n);
+    const u = uc("/api/User/education/chathistory/post"), l = await fetch(u, n);
     if (!l.ok) {
       let p = {};
       const d = l.headers.get("content-type");
@@ -25960,24 +25960,15 @@ const nI = [
       Data: null
     };
   }
-}, cI = [
-  { id: 1, text: "Explain my report", icon: Dg },
-  { id: 5, text: "Analyze my medical reports.", icon: Ng },
-  { id: 6, text: "Answer my questions like a personal coach", icon: xg }
-], uI = [
-  "r397c808f1cf",
-  "rbc834dee6f2",
-  "r89e4f7ec536"
-], of = {
-  en: "r397c808f1cf",
-  es: "rbc834dee6f2",
-  fr: "rbc834dee6f2",
-  de: "r89e4f7ec536"
-};
-function lI({
+}, sI = [
+  { id: 1, text: "Explain my report", icon: kg },
+  { id: 5, text: "Analyze my medical reports.", icon: Og },
+  { id: 6, text: "Answer my questions like a personal coach", icon: Mg }
+], oI = "r397c808f1cf";
+function aI({
   brandName: e = "Growth Hub",
   personaName: t = "Personal AI Concierge",
-  suggestedPrompts: r = cI,
+  suggestedPrompts: r = sI,
   language: s = "en",
   navigateTo: i = "",
   file: a,
@@ -25992,7 +25983,7 @@ function lI({
     azureTranslatorRegion: ""
   }
 }) {
-  const [, u] = jg(), [l, p] = z([]), d = l.find((j) => j.ExternalId === "r397c808f1cf"), [h, f] = z(d || null), [g, m] = z("chat"), [v, y] = z(!1), [S, C] = z(!1), [P, w] = z(!1), [I, E] = z([]), [T, b] = z(!1), [_, O] = z({}), [q, $] = z(""), [Q, G] = z(!1), [le, ae] = z(!1), [K, se] = z(""), X = $e(null), [ge, ke] = z(""), [Cs, Dt] = z(!1), [Ze, Ne] = z(!1), [xe, Nt] = z(!1), [xt, me] = z(""), [zt, Xe] = z(""), [Rs, Jt] = z(""), [Ps, Lt] = z(""), [ne, et] = z(!1), fe = $e(null), tt = $e(null), [B, ee] = z([]), [te, bs] = z({
+  const [, u] = xg(), [l, p] = z([]), [d, h] = z(null), [f, g] = z("chat"), [m, v] = z(!1), [y, S] = z(!1), [C, R] = z(!1), [w, I] = z([]), [E, T] = z(!1), [b, _] = z({}), [O, j] = z(""), [$, Y] = z(!1), [J, re] = z(!1), [ve, H] = z(""), se = $e(null), [K, Ce] = z(""), [Ze, Dt] = z(!1), [Ht, xe] = z(!1), [Xe, _e] = z(!1), [Kt, ge] = z(""), [Nt, xt] = z(""), [et, Jt] = z(""), [Ps, Gt] = z(""), [Re, Pe] = z(!1), ke = $e(null), me = $e(null), [zt, F] = z([]), [B, tt] = z({
     avatar: {
       chooseAvatar: `Choose Your ${t}`,
       startConversation: "Start Conversation",
@@ -26015,51 +26006,44 @@ function lI({
       ]
     }
   });
-  H(() => {
+  W(() => {
     window.scrollTo(0, 0);
-  }, []), H(() => {
+  }, []), W(() => {
     (async () => {
       try {
-        const W = await Xv();
-        if (W?.Success && W.Data) {
-          const U = W.Data.filter(
-            (V) => uI.includes(V.ExternalId)
-          );
-          p(U), U.length > 0 && f(U[0]);
+        const Z = await Qv();
+        if (Z?.Success && Z.Data) {
+          const V = Z.Data.find((G) => G.ExternalId === oI);
+          V && (p([V]), h(V));
         }
-      } catch (W) {
-        console.error("Error fetching avatars:", W);
+      } catch (Z) {
+        console.error("Error fetching avatar:", Z);
       }
     })();
-  }, []), H(() => {
-    if (!ne && l.length > 0) {
-      const j = of[s] || of.en, W = l.find((U) => U.ExternalId === j);
-      f(W || l[0]);
-    }
-  }, [l, ne, s]), H(() => {
-    m(ne ? "voice" : "chat");
-  }, [ne]), H(() => {
+  }, []), W(() => {
+    g(Re ? "voice" : "chat");
+  }, [Re]), W(() => {
     if (console.log("Language in component:", s), !(!!c?.azureTranslatorKey && !!c?.azureTranslatorEndpoint && !!c?.azureTranslatorRegion)) {
       console.warn("Azure translation config is not yet ready.");
       return;
     }
     (async () => {
-      if (s !== "en" && fe.current !== s) {
+      if (s !== "en" && ke.current !== s) {
         const [
-          U,
           V,
+          G,
           We,
-          re,
-          we,
-          Re,
-          Gt,
-          Qt,
+          te,
+          be,
+          ye,
+          Yt,
+          eo,
+          to,
+          Zt,
           ro,
           no,
-          io,
-          so,
-          oo
-        ] = await Hs(
+          io
+        ] = await Ws(
           [
             `Choose Your ${t}`,
             "Start Conversation",
@@ -26081,27 +26065,27 @@ function lI({
           c.azureTranslatorEndpoint,
           c.azureTranslatorRegion
         );
-        y(!1), $(""), E([]), bs({
+        v(!1), j(""), I([]), tt({
           avatar: {
-            chooseAvatar: U,
-            startConversation: V,
+            chooseAvatar: V,
+            startConversation: G,
             yourAIHealthNavigator: We,
-            description: re
+            description: te
           },
           buttons: {
-            resetChat: we,
-            retry: Re,
-            continue: Gt,
-            uploading: Qt,
-            upload: ro
+            resetChat: be,
+            retry: ye,
+            continue: Yt,
+            uploading: eo,
+            upload: to
           },
           howItWorks: {
-            title: no,
-            steps: [io, so, oo]
+            title: Zt,
+            steps: [ro, no, io]
           }
-        }), fe.current = s;
+        }), ke.current = s;
       }
-      s === "en" && fe.current !== "en" && (y(!1), $(""), E([]), bs({
+      s === "en" && ke.current !== "en" && (v(!1), j(""), I([]), tt({
         avatar: {
           chooseAvatar: `Choose Your ${t}`,
           startConversation: "Start Conversation",
@@ -26123,7 +26107,7 @@ function lI({
             "Access tailored resources, courses, and marketplace options."
           ]
         }
-      }), fe.current = "en");
+      }), ke.current = "en");
     })();
   }, [
     s,
@@ -26132,178 +26116,164 @@ function lI({
     c?.azureTranslatorRegion,
     t,
     e
-  ]), H(() => {
-    a && (ee([a]), rt(`Uploaded file: ${a.name}`, [a]));
+  ]), W(() => {
+    a && (F([a]), rt(`Uploaded file: ${a.name}`, [a]));
   }, [a]);
-  const Zs = Ya(
-    async (j) => {
-      C(!0);
-      const U = await jh(
+  const Ys = Ga(
+    async (U) => {
+      S(!0);
+      const V = await zh(
         "I am user",
         "",
         "",
         "interview",
-        q,
+        O,
         0,
         1,
         s
       );
-      return U.Success && U.Data?.Message ? U.Data.Message.includes("ERROR") ? (C(!1), me(`Hello there! I'm ${j?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me your name?`), {
+      return V.Success && V.Data?.Message ? V.Data.Message.includes("ERROR") ? (S(!1), ge(`Hello there! I'm ${U?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me your name?`), {
         id: "welcome-message",
         sender: "ai",
-        text: `Hello there! I'm ${j?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
+        text: `Hello there! I'm ${U?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
         timestamp: /* @__PURE__ */ new Date()
-      }) : (C(!1), $(U.Data.SessionId || ""), me(U.Data.Message), {
+      }) : (S(!1), j(V.Data.SessionId || ""), ge(V.Data.Message), {
         id: "welcome-message",
         sender: "ai",
-        text: U.Data.Message,
+        text: V.Data.Message,
         timestamp: /* @__PURE__ */ new Date()
-      }) : (C(!1), {
+      }) : (S(!1), {
         id: "welcome-message",
         sender: "ai",
-        text: `Hello there! I'm ${j?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
+        text: `Hello there! I'm ${U?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
         timestamp: /* @__PURE__ */ new Date()
       });
     },
     [e]
   );
-  H(() => {
-    ne && Zs(h || l[0]).then((j) => {
-      E([j]);
+  W(() => {
+    Re && Ys(d || l[0]).then((U) => {
+      I([U]);
     });
-  }, [ne]), H(() => {
-    Nt(!0);
-  }, []), H(() => {
-    ge && ge.trim() !== "" && (rt(ge), ke(""));
-  }, [ge]), H(() => {
-    y(!!ne);
-  }, [ne]);
-  const ws = async (j) => {
-    if (!h) return;
-    const W = l.findIndex(
-      (V) => V.ExternalId === h.ExternalId
-    );
-    let U;
-    if (j === "next") {
-      const V = (W + 1) % l.length;
-      U = l[V];
-    } else {
-      const V = (W - 1 + l.length) % l.length;
-      U = l[V];
-    }
-    f(U);
-  }, rt = async (j, W = []) => {
-    le && ae(!1);
-    const U = {
+  }, [Re]), W(() => {
+    _e(!0);
+  }, []), W(() => {
+    K && K.trim() !== "" && (rt(K), Ce(""));
+  }, [K]), W(() => {
+    v(!!Re);
+  }, [Re]);
+  const rt = async (U, Z = []) => {
+    J && re(!1);
+    const V = {
       id: Date.now().toString(),
       sender: "user",
-      text: j,
+      text: U,
       timestamp: /* @__PURE__ */ new Date()
     };
-    se(j), E((re) => [...re, U]), C(!0);
-    let V = `${j}`;
-    const We = [...B, ...W];
-    W.length > 0 && (V += "Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.");
+    H(U), I((te) => [...te, V]), S(!0);
+    let G = `${U}`;
+    const We = [...zt, ...Z];
+    Z.length > 0 && (G += "Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.");
     try {
-      const re = await jh(
-        V,
+      const te = await zh(
+        G,
         "",
         // Send user ID instead of email
         "",
         // Business ID
         "interview",
         // Intent
-        q,
+        O,
         0,
         1,
         s,
         We.length > 0 ? We[0] : void 0
         // Only send last file
       );
-      if (re.Success && re.Data?.Message) {
-        if (re?.Data?.Message?.includes("ERROR") || re?.Data?.Type === "error") {
-          C(!1);
-          const Re = {
+      if (te.Success && te.Data?.Message) {
+        if (te?.Data?.Message?.includes("ERROR") || te?.Data?.Type === "error") {
+          S(!1);
+          const ye = {
             id: (Date.now() + 1).toString(),
             sender: "ai",
             text: "Sorry, I couldn't process your request at the moment. Please try again.",
             timestamp: /* @__PURE__ */ new Date()
           };
-          E((Gt) => [...Gt, Re]), me(Re.text), ae(!0);
+          I((Yt) => [...Yt, ye]), ge(ye.text), re(!0);
           return;
         }
-        const we = {
+        const be = {
           id: (Date.now() + 1).toString(),
           sender: "ai",
-          text: re.Data.Message,
+          text: te.Data.Message,
           timestamp: /* @__PURE__ */ new Date()
         };
-        E((Re) => [...Re, we]), q || $(re?.Data?.SessionId || ""), me(re.Data.Message), (re.Data.Message.toLowerCase().includes("click continue") || re.Data.Message.toLowerCase().includes("sign up") || re.Data.Message.toLowerCase().includes("thank you for choosing") || re.Data.Message.toLowerCase().includes("ready to connect")) && (G(!0), n && n(re)), await aI(
+        I((ye) => [...ye, be]), O || j(te?.Data?.SessionId || ""), ge(te.Data.Message), (te.Data.Message.toLowerCase().includes("click continue") || te.Data.Message.toLowerCase().includes("sign up") || te.Data.Message.toLowerCase().includes("thank you for choosing") || te.Data.Message.toLowerCase().includes("ready to connect")) && (Y(!0), n && n(te)), await iI(
           "",
           "AIHealthNavigator",
-          j,
-          re.Data.Message || "",
-          g === "voice",
+          U,
+          te.Data.Message || "",
+          f === "voice",
           //isUserUsingAvatar
-          j === ge
+          U === K
           // isUserSpeaking
-        ), se("");
+        ), H("");
       } else {
-        const we = {
+        const be = {
           id: (Date.now() + 1).toString(),
           sender: "ai",
           text: "Sorry, I couldn't process your request. Please try again.",
           timestamp: /* @__PURE__ */ new Date()
         };
-        E((Re) => [...Re, we]), me(we.text), ae(!0);
+        I((ye) => [...ye, be]), ge(be.text), re(!0);
       }
-    } catch (re) {
-      console.error("Error fetching response from LLM: ", re);
-      const we = {
+    } catch (te) {
+      console.error("Error fetching response from LLM: ", te);
+      const be = {
         id: (Date.now() + 1).toString(),
         sender: "ai",
         text: "Sorry, I couldn't connect to the AI service. Please try again later.",
         timestamp: /* @__PURE__ */ new Date()
       };
-      E((Re) => [...Re, we]), me(we.text), ae(!0);
+      I((ye) => [...ye, be]), ge(be.text), re(!0);
     } finally {
-      C(!1);
+      S(!1);
     }
-  }, Xs = () => {
+  }, Zs = () => {
     console.log("Toggle chat visibility");
-  }, eo = () => {
+  }, Xs = () => {
     i ? window.location.href = i : window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/rgister";
-  }, jt = () => {
-    E([]);
-  }, oe = (j, W) => {
-    const U = W === "like";
-    O((V) => ({
-      ...V,
-      [j.id]: W
-    })), bw(
-      j.text,
+  }, bs = () => {
+    I([]);
+  }, ws = (U, Z) => {
+    const V = Z === "like";
+    _((G) => ({
+      ...G,
+      [U.id]: Z
+    })), Cw(
+      U.text,
       "",
       "",
-      U
-    ).then((V) => {
-    }).catch((V) => {
-      console.error("Error sending feedback:", V);
+      V
+    ).then((G) => {
+    }).catch((G) => {
+      console.error("Error sending feedback:", G);
     });
-  }, to = async (j) => {
-    w(!0);
-    const W = Array.from(j.target.files || []);
-    if (W.length > 0) {
-      const U = W[0];
-      ee([U]), o && o(U), w(!1), await rt(`Uploaded file: ${U.name}`, [U]);
+  }, Qt = async (U) => {
+    R(!0);
+    const Z = Array.from(U.target.files || []);
+    if (Z.length > 0) {
+      const V = Z[0];
+      F([V]), o && o(V), R(!1), await rt(`Uploaded file: ${V.name}`, [V]);
     }
-    j.target && (j.target.value = "");
-  }, Es = () => {
-    tt.current?.click();
+    U.target && (U.target.value = "");
+  }, ie = () => {
+    me.current?.click();
   };
   return /* @__PURE__ */ M("div", { className: "w-full h-full", children: [
-    /* @__PURE__ */ R("div", { className: "container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8", children: /* @__PURE__ */ M("div", { className: "relative", children: [
-      /* @__PURE__ */ R("div", { className: "relative z-10", children: /* @__PURE__ */ M(
-        lf.div,
+    /* @__PURE__ */ P("div", { className: "container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8", children: /* @__PURE__ */ M("div", { className: "relative", children: [
+      /* @__PURE__ */ P("div", { className: "relative z-10", children: /* @__PURE__ */ M(
+        af.div,
         {
           initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
@@ -26313,82 +26283,82 @@ function lI({
             /* @__PURE__ */ M("div", { className: "p-4 sm:p-6 bg-neutral border-b border-primary/20", children: [
               /* @__PURE__ */ M("div", { className: "flex flex-row items-center justify-between gap-4", children: [
                 /* @__PURE__ */ M("div", { className: "flex items-center flex-shrink min-w-0", children: [
-                  /* @__PURE__ */ R("div", { className: "h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0", children: /* @__PURE__ */ R(
+                  /* @__PURE__ */ P("div", { className: "h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0", children: /* @__PURE__ */ P(
                     "img",
                     {
-                      src: h?.ImageUrl,
-                      alt: h?.Name,
+                      src: d?.ImageUrl,
+                      alt: d?.Name,
                       className: "h-full w-full object-cover"
                     }
                   ) }),
                   /* @__PURE__ */ M("div", { className: "min-w-0", children: [
-                    /* @__PURE__ */ R("h1", { className: "text-lg sm:text-2xl font-bold text-primary leading-tight truncate", children: te.avatar.yourAIHealthNavigator }),
-                    /* @__PURE__ */ R("p", { className: "text-xs sm:text-sm text-secondary truncate", children: te.avatar.description })
+                    /* @__PURE__ */ P("h1", { className: "text-lg sm:text-2xl font-bold text-primary leading-tight truncate", children: B.avatar.yourAIHealthNavigator }),
+                    /* @__PURE__ */ P("p", { className: "text-xs sm:text-sm text-secondary truncate", children: B.avatar.description })
                   ] })
                 ] }),
                 /* @__PURE__ */ M("div", { className: "hidden md:flex gap-2 flex-wrap ml-4", children: [
                   /* @__PURE__ */ M(
-                    Pe,
+                    Oe,
                     {
                       variant: "outline",
                       size: "sm",
                       className: "text-xs text-primary border-primary/30 hover:bg-neutral",
-                      onClick: Es,
-                      disabled: P,
+                      onClick: ie,
+                      disabled: C,
                       children: [
-                        /* @__PURE__ */ R(vc, { className: "h-3 w-3 mr-1" }),
-                        P ? te.buttons.uploading : te.buttons.upload
+                        /* @__PURE__ */ P(hc, { className: "h-3 w-3 mr-1" }),
+                        C ? B.buttons.uploading : B.buttons.upload
                       ]
                     }
                   ),
-                  /* @__PURE__ */ R(
-                    Pe,
+                  /* @__PURE__ */ P(
+                    Oe,
                     {
                       variant: "outline",
                       size: "sm",
                       className: "text-xs text-primary border-primary/30 hover:bg-neutral",
-                      onClick: jt,
-                      children: te.buttons.resetChat
+                      onClick: bs,
+                      children: B.buttons.resetChat
                     }
                   )
                 ] }),
-                /* @__PURE__ */ R("div", { className: "flex md:hidden items-center ml-2", children: /* @__PURE__ */ R(
+                /* @__PURE__ */ P("div", { className: "flex md:hidden items-center ml-2", children: /* @__PURE__ */ P(
                   "button",
                   {
                     className: "p-2 rounded-md border border-primary/20 bg-white text-primary focus:outline-none",
-                    onClick: () => b(!T),
+                    onClick: () => T(!E),
                     "aria-label": "Open menu",
-                    children: T ? /* @__PURE__ */ R(Tg, { className: "h-6 w-6" }) : /* @__PURE__ */ R(_g, { className: "h-6 w-6" })
+                    children: E ? /* @__PURE__ */ P(Ag, { className: "h-6 w-6" }) : /* @__PURE__ */ P(Tg, { className: "h-6 w-6" })
                   }
                 ) })
               ] }),
-              T && /* @__PURE__ */ M("div", { className: "md:hidden mt-2 flex flex-col gap-2 animate-fadeIn", children: [
+              E && /* @__PURE__ */ M("div", { className: "md:hidden mt-2 flex flex-col gap-2 animate-fadeIn", children: [
                 /* @__PURE__ */ M(
-                  Pe,
+                  Oe,
                   {
                     variant: "outline",
                     size: "sm",
                     className: "text-xs text-primary border-primary/30 hover:bg-neutral",
                     onClick: () => {
-                      Es(), b(!1);
+                      ie(), T(!1);
                     },
-                    disabled: P,
+                    disabled: C,
                     children: [
-                      /* @__PURE__ */ R(vc, { className: "h-3 w-3 mr-1" }),
-                      P ? te.buttons.uploading : te.buttons.upload
+                      /* @__PURE__ */ P(hc, { className: "h-3 w-3 mr-1" }),
+                      C ? B.buttons.uploading : B.buttons.upload
                     ]
                   }
                 ),
-                /* @__PURE__ */ R(
-                  Pe,
+                /* @__PURE__ */ P(
+                  Oe,
                   {
                     variant: "outline",
                     size: "sm",
                     className: "text-xs text-primary border-primary/30 hover:bg-neutral",
                     onClick: () => {
-                      jt(), b(!1);
+                      bs(), T(!1);
                     },
-                    children: te.buttons.resetChat
+                    children: B.buttons.resetChat
                   }
                 )
               ] })
@@ -26396,150 +26366,126 @@ function lI({
             /* @__PURE__ */ M("div", { className: `grid grid-cols-1 md:grid-cols-2 \r
                 h-[70vh] md:h-[600px]\r
                 max-h-[100vh]`, children: [
-              /* @__PURE__ */ R("div", { className: `\r
+              /* @__PURE__ */ P("div", { className: `\r
                   flex flex-col\r
                   basis=[35%] md:basis-auto\r
                   min-h-0\r
                   overflow-y-auto\r
                   p-4 md:p-6\r
                   border-b md:border-b-0 md:border-r border-primary/20\r
-                `, children: /* @__PURE__ */ R("div", { className: "h-full w-full", children: v ? /* @__PURE__ */ R("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: h && /* @__PURE__ */ R(
-                oI,
+                `, children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: m ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: d && /* @__PURE__ */ P(
+                nI,
                 {
-                  ref: X,
-                  replicaId: h?.ExternalId || "",
+                  ref: se,
+                  replicaId: d?.ExternalId || "",
                   personaId: "pb5d44035dbd",
-                  conversationName: `Conversation with ${h?.Name || "your" + t} ${(/* @__PURE__ */ new Date()).toISOString()}`,
+                  conversationName: `Conversation with ${d?.Name || "your" + t} ${(/* @__PURE__ */ new Date()).toISOString()}`,
                   conversationalContext: "Initial business consultation",
-                  customGreeting: I.length > 0 && I[I.length - 1].sender === "ai" ? I[I.length - 1].text : `Hello there! I'm ${h?.Name}, your ${t}. I'm here to help you on the ${e}. Ready to get started?`,
+                  customGreeting: w.length > 0 && w[w.length - 1].sender === "ai" ? w[w.length - 1].text : `Hello there! I'm ${d?.Name}, your ${t}. I'm here to help you on the ${e}. Ready to get started?`,
                   platform: "concierge",
-                  buttonText: te.avatar.startConversation,
+                  buttonText: B.avatar.startConversation,
                   videoMode: "minimal",
                   chatVisible: !1,
-                  toggleChat: Xs,
+                  toggleChat: Zs,
                   width: "100%",
                   height: "100%",
                   className: "w-full h-full",
-                  setVoiceMode: Nt,
-                  setConversationStarted: et,
+                  setVoiceMode: _e,
+                  setConversationStarted: Pe,
                   setConversationId: Jt,
-                  setConversationUrl: Lt,
-                  setInterruptReplica: Ne,
-                  currentScript: xt,
-                  setCurrentScript: me,
-                  interruptReplica: Ze,
+                  setConversationUrl: Gt,
+                  setInterruptReplica: xe,
+                  currentScript: Kt,
+                  setCurrentScript: ge,
+                  interruptReplica: Ht,
                   setIsSpeaking: Dt,
-                  setSpokenText: ke,
+                  setSpokenText: Ce,
                   region: c?.region || "",
                   speechKey: c?.speechKey || "",
                   config: c
                 }
               ) }) : /* @__PURE__ */ M("div", { className: "h-full w-full flex flex-col items-center justify-center", children: [
-                /* @__PURE__ */ R("h3", { className: "text-lg font-semibold text-center mb-4 text-primary", children: te.avatar.chooseAvatar }),
-                /* @__PURE__ */ R("div", { className: "mb-6 flex items-center justify-center gap-2 text-sm text-secondary", children: /* @__PURE__ */ M("div", { className: "relative group", children: [
+                /* @__PURE__ */ P("div", { className: "mb-6 flex items-center justify-center gap-2 text-sm text-secondary", children: /* @__PURE__ */ M("div", { className: "relative group", children: [
                   /* @__PURE__ */ M("div", { className: "flex items-center gap-2 cursor-help", children: [
-                    /* @__PURE__ */ R(kg, { className: "h-4 w-4 text-primary hover:text-secondary transition-colors" }),
-                    /* @__PURE__ */ R("span", { children: te.howItWorks.title })
+                    /* @__PURE__ */ P(_g, { className: "h-4 w-4 text-primary hover:text-secondary transition-colors" }),
+                    /* @__PURE__ */ P("span", { children: B.howItWorks.title })
                   ] }),
                   /* @__PURE__ */ M("div", { className: "absolute left-1 -translate-x-1 bottom-full mb-2 w-64 p-3 bg-white rounded-lg shadow-lg border border-primary/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10", children: [
-                    /* @__PURE__ */ R("h4", { className: "font-medium text-primary mb-2", children: te.howItWorks.title }),
-                    te.howItWorks.steps.map((j, W) => /* @__PURE__ */ M("li", { className: "flex items-start gap-2", children: [
+                    /* @__PURE__ */ P("h4", { className: "font-medium text-primary mb-2", children: B.howItWorks.title }),
+                    B.howItWorks.steps.map((U, Z) => /* @__PURE__ */ M("li", { className: "flex items-start gap-2", children: [
                       /* @__PURE__ */ M("span", { className: "font-bold flex-shrink-0", children: [
-                        W + 1,
+                        Z + 1,
                         "."
                       ] }),
-                      /* @__PURE__ */ R("span", { className: "break-words", children: j })
-                    ] }, W))
+                      /* @__PURE__ */ P("span", { className: "break-words", children: U })
+                    ] }, Z))
                   ] })
                 ] }) }),
-                /* @__PURE__ */ R("div", { className: "w-48 h-48 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-neutral to-white border border-primary/20", children: /* @__PURE__ */ R(
+                /* @__PURE__ */ P("div", { className: "w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-neutral to-white border border-primary/20", children: /* @__PURE__ */ P(
                   "img",
                   {
-                    src: h?.ImageUrl,
-                    alt: h?.Name,
+                    src: d?.ImageUrl,
+                    alt: d?.Name,
                     className: "w-full h-full object-cover"
                   }
                 ) }),
-                /* @__PURE__ */ M("div", { className: "flex items-center justify-center gap-4 mb-6", children: [
-                  /* @__PURE__ */ R(
-                    Pe,
-                    {
-                      variant: "outline",
-                      size: "icon",
-                      onClick: () => ws("prev"),
-                      className: "rounded-full",
-                      children: /* @__PURE__ */ R(Og, { className: "h-4 w-4" })
-                    }
-                  ),
-                  /* @__PURE__ */ R("span", { className: "text-primary font-medium", children: h?.Name }),
-                  /* @__PURE__ */ R(
-                    Pe,
-                    {
-                      variant: "outline",
-                      size: "icon",
-                      onClick: () => ws("next"),
-                      className: "rounded-full",
-                      children: /* @__PURE__ */ R(Mg, { className: "h-4 w-4" })
-                    }
-                  )
-                ] }),
-                /* @__PURE__ */ R(
-                  Pe,
+                /* @__PURE__ */ P(
+                  Oe,
                   {
-                    onClick: () => y(!0),
+                    onClick: () => v(!0),
                     className: "w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition",
-                    children: te.avatar.startConversation
+                    children: B.avatar.startConversation
                   }
                 )
               ] }) }) }),
-              /* @__PURE__ */ R("div", { className: `\r
+              /* @__PURE__ */ P("div", { className: `\r
                  flex flex-col\r
                   basis=[65%] md:basis-auto\r
                   min-h-0\r
                   overflow-y-auto\r
                   p-4 md:p-6\r
-                `, children: /* @__PURE__ */ R("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ R(
-                uC,
+                `, children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ P(
+                oC,
                 {
                   language: s,
                   config: c,
-                  setInterruptReplica: Ne,
-                  messages: I,
+                  setInterruptReplica: xe,
+                  messages: w,
                   onSendMessage: rt,
                   className: "h-full",
-                  isLoading: S,
-                  rightElement: /* @__PURE__ */ R(
-                    Yv,
+                  isLoading: y,
+                  rightElement: /* @__PURE__ */ P(
+                    Jv,
                     {
-                      avatarName: h?.Name || "AI Health Navigator",
-                      disabled: S,
-                      voiceMode: xe,
-                      setSpokenText: ke,
+                      avatarName: d?.Name || "AI Health Navigator",
+                      disabled: y,
+                      voiceMode: Xe,
+                      setSpokenText: Ce,
                       setIsSpeaking: Dt,
-                      setInterruptReplica: Ne,
+                      setInterruptReplica: xe,
                       region: c?.region || "",
                       speechKey: c?.speechKey || ""
                     }
                   ),
                   suggestedPrompts: r,
-                  renderMessage: (j, W) => {
-                    if (j.sender === "ai" && j.id !== "welcome-message") {
-                      const U = W === I.length - 1;
+                  renderMessage: (U, Z) => {
+                    if (U.sender === "ai" && U.id !== "welcome-message") {
+                      const V = Z === w.length - 1;
                       return /* @__PURE__ */ M("div", { className: "relative", children: [
-                        /* @__PURE__ */ R(
-                          Da,
+                        /* @__PURE__ */ P(
+                          Oa,
                           {
-                            remarkPlugins: [La],
+                            remarkPlugins: [xa],
                             components: {
-                              p: ({ children: V }) => /* @__PURE__ */ R("p", { className: "text-sm mb-2", children: V }),
-                              ol: ({ children: V }) => /* @__PURE__ */ R("ol", { style: { listStyleType: "circle" }, className: "ml-6 mb-2", children: V }),
-                              ul: ({ children: V }) => /* @__PURE__ */ R("ul", { className: "list-disc ml-6 mb-2", children: V }),
-                              li: ({ children: V }) => /* @__PURE__ */ R("li", { className: "mb-1", children: V }),
-                              strong: ({ children: V }) => /* @__PURE__ */ R("strong", { className: "font-semibold", children: V }),
-                              a: ({ href: V, children: We }) => /* @__PURE__ */ R(
+                              p: ({ children: G }) => /* @__PURE__ */ P("p", { className: "text-sm mb-2", children: G }),
+                              ol: ({ children: G }) => /* @__PURE__ */ P("ol", { style: { listStyleType: "circle" }, className: "ml-6 mb-2", children: G }),
+                              ul: ({ children: G }) => /* @__PURE__ */ P("ul", { className: "list-disc ml-6 mb-2", children: G }),
+                              li: ({ children: G }) => /* @__PURE__ */ P("li", { className: "mb-1", children: G }),
+                              strong: ({ children: G }) => /* @__PURE__ */ P("strong", { className: "font-semibold", children: G }),
+                              a: ({ href: G, children: We }) => /* @__PURE__ */ P(
                                 "a",
                                 {
-                                  href: V,
+                                  href: G,
                                   target: "_blank",
                                   rel: "noopener noreferrer",
                                   className: "text-blue-600 underline",
@@ -26547,55 +26493,55 @@ function lI({
                                 }
                               )
                             },
-                            children: j.text
+                            children: U.text
                           }
                         ),
                         /* @__PURE__ */ M("div", { className: "flex justify-end gap-2 mt-2", children: [
-                          /* @__PURE__ */ R(
+                          /* @__PURE__ */ P(
                             "button",
                             {
-                              className: `p-1 rounded-full transition-colors ${_[j.id] === "like" ? "bg-green-100 text-green-600" : "hover:bg-gray-200 text-gray-600"}`,
-                              onClick: () => oe(j, "like"),
-                              children: /* @__PURE__ */ R(zg, { className: "h-4 w-4" })
+                              className: `p-1 rounded-full transition-colors ${b[U.id] === "like" ? "bg-green-100 text-green-600" : "hover:bg-gray-200 text-gray-600"}`,
+                              onClick: () => ws(U, "like"),
+                              children: /* @__PURE__ */ P(Dg, { className: "h-4 w-4" })
                             }
                           ),
-                          /* @__PURE__ */ R(
+                          /* @__PURE__ */ P(
                             "button",
                             {
-                              className: `p-1 rounded-full transition-colors ${_[j.id] === "dislike" ? "bg-red-100 text-red-600" : "hover:bg-gray-200 text-gray-600"}`,
-                              onClick: () => oe(j, "dislike"),
-                              children: /* @__PURE__ */ R(Lg, { className: "h-4 w-4" })
+                              className: `p-1 rounded-full transition-colors ${b[U.id] === "dislike" ? "bg-red-100 text-red-600" : "hover:bg-gray-200 text-gray-600"}`,
+                              onClick: () => ws(U, "dislike"),
+                              children: /* @__PURE__ */ P(Ng, { className: "h-4 w-4" })
                             }
                           )
                         ] }),
-                        le && U && /* @__PURE__ */ R("div", { className: "mt-4 flex", children: /* @__PURE__ */ R(
+                        J && V && /* @__PURE__ */ P("div", { className: "mt-4 flex", children: /* @__PURE__ */ P(
                           "button",
                           {
                             className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
                             onClick: () => {
-                              rt(K), ae(!1);
+                              rt(ve), re(!1);
                             },
-                            children: te.buttons.retry
+                            children: B.buttons.retry
                           }
                         ) }),
-                        U && Q && /* @__PURE__ */ R("div", { className: "mt-4 flex justify-center", children: /* @__PURE__ */ R(
+                        V && $ && /* @__PURE__ */ P("div", { className: "mt-4 flex justify-center", children: /* @__PURE__ */ P(
                           "button",
                           {
                             className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
-                            onClick: eo,
-                            children: te.buttons.continue
+                            onClick: Xs,
+                            children: B.buttons.continue
                           }
                         ) })
                       ] });
                     }
-                    return /* @__PURE__ */ R(
-                      Da,
+                    return /* @__PURE__ */ P(
+                      Oa,
                       {
-                        remarkPlugins: [La],
+                        remarkPlugins: [xa],
                         components: {
-                          p: ({ children: U }) => /* @__PURE__ */ R("p", { className: "text-sm whitespace-pre-line", children: U })
+                          p: ({ children: V }) => /* @__PURE__ */ P("p", { className: "text-sm whitespace-pre-line", children: V })
                         },
-                        children: j.text
+                        children: U.text
                       }
                     );
                   }
@@ -26605,35 +26551,35 @@ function lI({
           ]
         }
       ) }),
-      /* @__PURE__ */ R("div", { className: "absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" }),
-      /* @__PURE__ */ R("div", { className: "absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" })
+      /* @__PURE__ */ P("div", { className: "absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" }),
+      /* @__PURE__ */ P("div", { className: "absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" })
     ] }) }),
-    /* @__PURE__ */ R(
+    /* @__PURE__ */ P(
       "input",
       {
         type: "file",
-        ref: tt,
-        onChange: to,
+        ref: me,
+        onChange: Qt,
         accept: ".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt",
         style: { display: "none" }
       }
     )
   ] });
 }
-function zT(e) {
-  return /* @__PURE__ */ R(sI, { value: e.config || {}, children: /* @__PURE__ */ R(lI, { ...e }) });
+function DT(e) {
+  return /* @__PURE__ */ P(rI, { value: e.config || {}, children: /* @__PURE__ */ P(aI, { ...e }) });
 }
-const lg = cf(void 0), LT = ({ children: e, value: t }) => /* @__PURE__ */ R(lg.Provider, { value: t, children: e }), jT = () => {
-  const e = uf(lg);
+const ag = sf(void 0), NT = ({ children: e, value: t }) => /* @__PURE__ */ P(ag.Provider, { value: t, children: e }), xT = () => {
+  const e = of(ag);
   if (!e)
     throw new Error("useConciergeContext must be used within a ConciergeProvider");
   return e;
 };
 export {
-  zT as ConciergeModule,
-  lI as ConciergeModuleRaw,
-  LT as ConciergeProvider,
-  oI as ConversationComponent,
-  Yv as SpeechComponent,
-  jT as useConciergeContext
+  DT as ConciergeModule,
+  aI as ConciergeModuleRaw,
+  NT as ConciergeProvider,
+  nI as ConversationComponent,
+  Jv as SpeechComponent,
+  xT as useConciergeContext
 };
