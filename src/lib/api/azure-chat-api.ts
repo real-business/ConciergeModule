@@ -32,8 +32,8 @@ export const chatCompletionAPI = async (
     const myHeaders = new Headers();
     myHeaders.append("Accept", "application/json");
     const prompt =  input + "Language: " + language;
-    //const defaultUserId = "52533633434137384342";
-    const defaultUserId = "";
+    const defaultUserId = "52533633434137384342";
+    //const defaultUserId = "";
     const formData = new FormData();
       formData.append("Input", prompt );
       formData.append("UserId", userId ? userId : defaultUserId);
