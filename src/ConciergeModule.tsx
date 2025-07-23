@@ -140,7 +140,7 @@ export default function ConciergeModule({
     buttons: {
       resetChat: `Reset Chat`,
       retry: `Retry`,
-      continue: `Continue`,
+      continue: `Sign Up Free`,
       uploading: `Uploading...`,
       upload: `Upload report`
     },
@@ -191,7 +191,6 @@ export default function ConciergeModule({
   }, [conversationStarted]);
 
   useEffect(() => {
-    console.log("Language in component:", language);
     const canTranslate =
       !!config?.azureTranslatorKey &&
       !!config?.azureTranslatorEndpoint &&
@@ -227,7 +226,7 @@ export default function ConciergeModule({
             `I'm here to help you with ${brandName}.`,
             `Reset Chat`,
             `Retry`,
-            `Continue`,
+            `Sign Up Free`,
             `Uploading...`,
             `Upload Report`,
             `How It Works`,
@@ -283,7 +282,7 @@ export default function ConciergeModule({
           buttons: {
             resetChat: `Reset Chat`,
             retry: `Retry`,
-            continue: `Continue`,
+            continue: `Sign Up Free`,
             uploading: `Uploading...`,
             upload: `Upload Report`
           },
@@ -418,7 +417,7 @@ export default function ConciergeModule({
 
      // Combine state files with additional files passed as parameter
     const filesToSend = [...uploadedFiles, ...additionalFiles];
-    if (additionalFiles.length > 0) {
+    if (filesToSend.length > 0) {
       prompt += 'Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.'
     }
     
@@ -522,7 +521,7 @@ export default function ConciergeModule({
     if (navigateTo) {
       window.location.href = navigateTo;
     } else {
-      window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/rgister";
+      window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/register";
     }
   }
 
@@ -739,6 +738,7 @@ export default function ConciergeModule({
                       </div>
                     ) : (
                       <div className="h-full w-full flex flex-col items-center justify-center">
+                        <h3 className="text-lg font-semibold text-center mb-4 text-primary">{personaName}</h3>
                         {/* How it works */}
                         <div className="mb-6 flex items-center justify-center gap-2 text-sm text-secondary">
                           <div className="relative group">
