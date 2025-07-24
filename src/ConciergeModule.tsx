@@ -375,13 +375,13 @@ export default function ConciergeModule({
   );
 
   // Initialize messages with welcome message when component mounts
-  useEffect(() => {
-    if (conversationStarted) {
-      getWelcomeMessage(selectedAvatar || dbAvatars[0]).then((welcomeMessage) => {
-        setChatMessages([welcomeMessage]);
-      });
-    }
-  }, [conversationStarted]);
+  // useEffect(() => {
+  //   if (conversationStarted) {
+  //     getWelcomeMessage(selectedAvatar || dbAvatars[0]).then((welcomeMessage) => {
+  //       setChatMessages([welcomeMessage]);
+  //     });
+  //   }
+  // }, [conversationStarted]);
 
   // Sync interaction mode with voice mode in Redux
   useEffect(() => {
@@ -730,12 +730,11 @@ export default function ConciergeModule({
                             replicaId={selectedAvatar?.ExternalId || ""}
                             personaId="pb5d44035dbd"
                             conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
-                            conversationalContext="Initial business consultation"
+                            conversationalContext="Initial medical consultation"
                             customGreeting={
                               chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === 'ai'
                                 ? chatMessages[chatMessages.length - 1].text
-                                : `Hello there! I'm ${selectedAvatar?.Name}, your ${personaName}. I'm here to help you on the ${brandName}. Ready to get started?`
-                            }
+                                : `Hi there! I'm your personal AI health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk.`}
                             platform="concierge"
                             buttonText={translatedTexts.avatar.startConversation}
                             videoMode="minimal"
