@@ -96,6 +96,7 @@ export default function ConciergeModule({
   // Add feedback state
   const [feedback, setFeedback] = useState<Record<string, "like" | "dislike">>({});
   const [sessionId, setSessionId] = useState("");
+  const [showContinueButton, setShowContinueButton] = useState(false);
   const [interviewCompleted, setInterviewCompleted] = useState(false);
   const [showRetryButton, setShowRetryButton] = useState(false);
   const [userInput, setUserInput] = useState("");
@@ -124,6 +125,7 @@ export default function ConciergeModule({
         resetChat: string;
         retry: string;
         continue: string;
+        signUp: string;
         uploading: string;
         upload: string;
       },
@@ -140,7 +142,8 @@ export default function ConciergeModule({
     buttons: {
       resetChat: `Reset Chat`,
       retry: `Retry`,
-      continue: `Sign Up Free`,
+      continue: `Continue`,
+      signUp:  `Sign Up Free`,
       uploading: `Uploading...`,
       upload: `Upload report`
     },
@@ -212,6 +215,7 @@ export default function ConciergeModule({
           resetChat,
           retry,
           btnContinue,
+          signUp,
           uploading,
           upload,
           title,
@@ -226,6 +230,7 @@ export default function ConciergeModule({
             `I'm here to help you with ${brandName}.`,
             `Reset Chat`,
             `Retry`,
+            `Continue`,
             `Sign Up Free`,
             `Uploading...`,
             `Upload Report`,
@@ -255,6 +260,7 @@ export default function ConciergeModule({
             resetChat,
             retry,
             continue: btnContinue,
+            signUp,
             uploading,
             upload
 
@@ -282,7 +288,8 @@ export default function ConciergeModule({
           buttons: {
             resetChat: `Reset Chat`,
             retry: `Retry`,
-            continue: `Sign Up Free`,
+            continue: `Continue`,
+            signUp:`Sign Up Free`,
             uploading: `Uploading...`,
             upload: `Upload Report`
           },
@@ -403,11 +410,10 @@ export default function ConciergeModule({
     if(showRetryButton) {
       setShowRetryButton(false);
     }
-    // Add user message to chat
     const userMessage: ChatMessage = {
       id: Date.now().toString(),
       sender: "user",
-      text: userInput,
+      text: userInput === "yes, continue" ? "Yes" : userInput,
       timestamp: new Date(),
     };
     setUserInput(userInput);
@@ -420,12 +426,16 @@ export default function ConciergeModule({
     if (filesToSend.length > 0) {
       prompt += 'Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.'
     }
+
+    if(userInput === "yes, continue"){
+      prompt += `Start the interview. User clicked continue.`
+    }
     
     try {
       // Fetch AI response
       const response = await chatCompletionAPI(
         prompt,
-        "", // Send user ID instead of email
+        "52533633434137384342", // Send user ID instead of email - for testing hardcoding the userID
         "", // Business ID
         "interview", // Intent
         sessionId,
@@ -462,11 +472,20 @@ export default function ConciergeModule({
         }
         setCurrentScript(response.Data.Message);
 
+        //Check for continue button
+        if(
+          response.Data.Message.toLowerCase().includes("click continue")||
+          response.Data.Message.toLowerCase().includes("continue")
+        ) {
+          setShowContinueButton(true);
+        }
+
         // Check if the response matches the profile completion message
-        if (response.Data.Message.toLowerCase().includes("click continue") ||
+        if (
           response.Data.Message.toLowerCase().includes("sign up") ||
           response.Data.Message.toLowerCase().includes("thank you for choosing") ||
-          response.Data.Message.toLowerCase().includes("ready to connect")) {
+          response.Data.Message.toLowerCase().includes("ready to connect")
+        ) {
           setInterviewCompleted(true);
            // Notify parent of API response
           if (onApiResponse) {
@@ -516,6 +535,11 @@ export default function ConciergeModule({
   const toggleChatVisibility = () => {
     console.log("Toggle chat visibility");
   };
+
+  const handleContinue = () => {
+    setShowContinueButton(false);
+    handleSendMessage("yes, continue", []);
+  }
 
   const handleStartAdvisor = () => {
     if (navigateTo) {
@@ -868,14 +892,25 @@ export default function ConciergeModule({
                                   </button>
                                 </div>
                               )}
-                              {/* Add Continue button if this is the last message and interview is completed */}
+                              {/* Add Continue button if this is the last message and showContinue is true */}
+                              {isLastMessage && showContinueButton && (
+                                <div className="mt-4 flex justify-center">
+                                  <button
+                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
+                                    onClick={handleContinue}
+                                  >
+                                    {translatedTexts.buttons.continue}
+                                  </button>
+                                </div>
+                              )}
+                              {/* Add SignUp button if this is the last message and interview is completed */}
                               {isLastMessage && interviewCompleted && (
                                 <div className="mt-4 flex justify-center">
                                   <button
                                     className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
                                     onClick={handleStartAdvisor}
                                   >
-                                    {translatedTexts.buttons.continue}
+                                    {translatedTexts.buttons.signUp}
                                   </button>
                                 </div>
                               )}
