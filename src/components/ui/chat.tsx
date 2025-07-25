@@ -24,6 +24,7 @@ interface SuggestedPrompt {
 
 export interface ChatProps {
   messages: ChatMessage[];
+  welcomeMessage: string;
   onSendMessage: (message: string) => void;
   className?: string;
   isLoading?: boolean;
@@ -43,6 +44,7 @@ export interface ChatProps {
 
 export function Chat({
   messages,
+  welcomeMessage,
   onSendMessage,
   className = "",
   isLoading = false,
@@ -61,9 +63,8 @@ export function Chat({
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const enoughCredits = true;
   const translatedLangRef = useRef<string | null>(null);
-  const [labels, setLabels] = useState<{ insufficientCredits: string, insufficientCreditsDescription: string, placeholder: string, suggestedPrompts: string, thinking: string, retry: string, welcomeMessage: string }>
-  ({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk." });
-
+  const [labels, setLabels] = useState<{ insufficientCredits: string, insufficientCreditsDescription: string, placeholder: string, suggestedPrompts: string, thinking: string, retry: string}>
+  ({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry"});
   useEffect(() => {
     if (messagesEndRef.current) {
       const scrollArea = messagesEndRef.current.closest('[data-radix-scroll-area-viewport]') || 
@@ -77,13 +78,13 @@ export function Chat({
   useEffect(() => {
     const translate = async () => { // ✅ this will run on language change
       if (language !== "en" && translatedLangRef.current !== language) {
-        const [insufficientCredits, insufficientCreditsDescription, placeholder, suggestedPrompts, thinking, retry, welcomeMessage] = await batchTranslateText(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk."], language, "en", config?.azureTranslatorKey || "", config?.azureTranslatorEndpoint || "", config?.azureTranslatorRegion || ""); 
-        setLabels({ insufficientCredits: insufficientCredits, insufficientCreditsDescription: insufficientCreditsDescription, placeholder: placeholder, suggestedPrompts: suggestedPrompts, thinking: thinking, retry: retry, welcomeMessage: welcomeMessage });
+        const [insufficientCredits, insufficientCreditsDescription, placeholder, suggestedPrompts, thinking, retry] = await batchTranslateText(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk."], language, "en", config?.azureTranslatorKey || "", config?.azureTranslatorEndpoint || "", config?.azureTranslatorRegion || ""); 
+        setLabels({ insufficientCredits: insufficientCredits, insufficientCreditsDescription: insufficientCreditsDescription, placeholder: placeholder, suggestedPrompts: suggestedPrompts, thinking: thinking, retry: retry });
         translatedLangRef.current = language; // ✅ remember this translation
       }
 
       if (language === "en" && translatedLangRef.current !== "en") {
-        setLabels({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry", welcomeMessage: "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk." });
+        setLabels({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry" });
         translatedLangRef.current = "en";
       }
     };
@@ -124,7 +125,7 @@ export function Chat({
               </div>
               <div className="ml-2 px-3 py-2 rounded-lg bg-secondary/10">
                 <div className="text-sm text-secondary">
-                  {labels.welcomeMessage}
+                  {welcomeMessage}
                 </div>
               </div>
             </div>

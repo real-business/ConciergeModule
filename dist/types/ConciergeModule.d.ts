@@ -8,6 +8,7 @@ export interface ConciergeModuleProps {
     brandName: string;
     personaName: string;
     suggestedPrompts?: SuggestedPrompt[];
+    welcomeMessage?: string;
     language?: string;
     navigateTo?: string;
     file?: File;
@@ -23,4 +24,4 @@ export interface ConciergeModuleProps {
         tavusApiKey?: string;
     };
 }
-export default function ConciergeModule({ brandName, personaName, suggestedPrompts, language, navigateTo, file, onFileChange, onApiResponse, config, }: ConciergeModuleProps): import("react/jsx-runtime").JSX.Element;
+export default function ConciergeModule({ brandName, personaName, suggestedPrompts, welcomeMessage, language, navigateTo, file, onFileChange, onApiResponse, config, }: ConciergeModuleProps): import("react/jsx-runtime").JSX.Element;

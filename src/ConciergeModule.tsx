@@ -41,6 +41,7 @@ export interface ConciergeModuleProps {
     brandName: string;
     personaName: string;
     suggestedPrompts?: SuggestedPrompt[];
+    welcomeMessage?: string;
     language?: string;
     navigateTo?: string;
     file?: File;
@@ -69,6 +70,7 @@ export default function ConciergeModule({
     brandName = "Growth Hub",
     personaName = "Personal AI Concierge",
     suggestedPrompts = defaultPrompts,
+    welcomeMessage = "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk.",
     language = "en",
     navigateTo = "",
     file,
@@ -644,7 +646,8 @@ export default function ConciergeModule({
 
                   {/* Desktop: Buttons (right) */}
                   <div className="hidden md:flex gap-2 flex-wrap ml-4">
-                    <Button
+                    {brandName !== 'CareNexa' && (
+                      <Button
                       variant="outline"
                       size="sm"
                       className="text-xs text-primary border-primary/30 hover:bg-neutral"
@@ -654,6 +657,8 @@ export default function ConciergeModule({
                       <Upload className="h-3 w-3 mr-1" />
                       {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
                     </Button>
+                    )}
+                    
                     <Button
                       variant="outline"
                       size="sm"
@@ -814,6 +819,7 @@ export default function ConciergeModule({
                       config={config}
                       setInterruptReplica={setInterruptReplica}
                       messages={chatMessages}
+                      welcomeMessage = {welcomeMessage}
                       onSendMessage={handleSendMessage}
                       className="h-full"
                       isLoading={isLoading}

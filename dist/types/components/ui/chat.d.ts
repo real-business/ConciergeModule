@@ -13,6 +13,7 @@ interface SuggestedPrompt {
 }
 export interface ChatProps {
     messages: ChatMessage[];
+    welcomeMessage: string;
     onSendMessage: (message: string) => void;
     className?: string;
     isLoading?: boolean;
@@ -29,5 +30,5 @@ export interface ChatProps {
         azureTranslatorRegion: string;
     };
 }
-export declare function Chat({ messages, onSendMessage, className, isLoading, rightElement, suggestedPrompts, renderMessage, showRetryButton, handleRetry, setInterruptReplica, language, config }: ChatProps): import("react/jsx-runtime").JSX.Element;
+export declare function Chat({ messages, welcomeMessage, onSendMessage, className, isLoading, rightElement, suggestedPrompts, renderMessage, showRetryButton, handleRetry, setInterruptReplica, language, config }: ChatProps): import("react/jsx-runtime").JSX.Element;
 export {};
