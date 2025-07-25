@@ -19,6 +19,7 @@ interface WelcomeScreenProps {
   onPromptClick?: (prompt: string) => void;
   userCredits?: number;
   avatars: AvatarProfile[];
+  personaName: string;
   config: {
     azureTranslatorKey: string;
     azureTranslatorEndpoint: string;
@@ -40,6 +41,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   onPromptClick,
   userCredits,
   avatars,
+  personaName,
   config
 }) => {
   const selectedLanguage = localStorage.getItem("lang") || "en";
@@ -49,13 +51,6 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
 
   // Find the selected avatar
   const selectedAvatar = avatars.find(avatar => avatar.ExternalId === replicaId);
-  const personaName = platform === "concierge" ? "AI Medical Concierge" : 
-  platform === "home" ? "AI Concierge" : 
-  platform === "pr" ? "PR Strategist" : 
-  platform === "business_advisor" ? "Medical Advisor" : 
-  platform === "university" ? "AI Instructor" : 
-  platform === "survey" ? "AI Surveyor" : 
-  "AI Assistant";
 
   // Button size classes
   const buttonSizeClasses = {

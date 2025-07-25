@@ -30,6 +30,7 @@ type ConversationComponentProps = {
   // Previous required props - now optional with defaults for demo mode
   replicaId?: string;
   personaId?: string;
+  personaName?: string;
   conversationName?: string;
   conversationalContext?: string;
   customGreeting?: string;
@@ -82,6 +83,7 @@ const ConversationComponent = forwardRef<
     {
       replicaId = "r82081c7f26d",
       personaId = "pc9cb547c05e",
+      personaName = "Concierge",
       conversationName = "Demo Conversation",
       conversationalContext,
       customGreeting,
@@ -306,6 +308,7 @@ const ConversationComponent = forwardRef<
                 userCredits={100}
                 avatars={avatars}
                 config={config}
+                personaName={personaName}
               />
             )}
             {screen === "hairCheck" && (
@@ -345,6 +348,7 @@ const ConversationComponent = forwardRef<
                   region={region}
                   speechKey={speechKey}
                   config={config}
+                  personaName={personaName}
                 />
               </div>
             )}

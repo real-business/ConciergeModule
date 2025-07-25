@@ -9,6 +9,7 @@ interface CallProps {
     setInterruptReplica: (interruptReplica: boolean) => void;
     currentScript: string;
     interruptReplica: boolean;
+    personaName: string;
     config: {
         azureTranslatorKey: string;
         azureTranslatorEndpoint: string;

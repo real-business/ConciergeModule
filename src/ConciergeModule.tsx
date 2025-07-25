@@ -734,12 +734,13 @@ export default function ConciergeModule({
                             ref={convoRef}
                             replicaId={selectedAvatar?.ExternalId || ""}
                             personaId="pb5d44035dbd"
+                            personaName = {personaName}
                             conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
                             conversationalContext="Initial medical consultation"
                             customGreeting={
                               chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === 'ai'
                                 ? chatMessages[chatMessages.length - 1].text
-                                : `Hi there! I'm your personal AI health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk.`}
+                                : welcomeMessage}
                             platform="concierge"
                             buttonText={translatedTexts.avatar.startConversation}
                             videoMode="minimal"

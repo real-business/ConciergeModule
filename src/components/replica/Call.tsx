@@ -20,6 +20,7 @@ interface CallProps {
   setInterruptReplica: (interruptReplica: boolean) => void;
   currentScript: string;
   interruptReplica: boolean;
+  personaName: string;
   config: {
     azureTranslatorKey: string;
     azureTranslatorEndpoint: string;
@@ -45,6 +46,7 @@ export const Call: React.FC<CallProps> = ({
   setInterruptReplica,
   currentScript,  
   interruptReplica,
+  personaName,
   config
 }) => {
   // Use our custom Daily context
@@ -61,8 +63,6 @@ export const Call: React.FC<CallProps> = ({
       setMessages((prevMessages) => [...prevMessages, appMessage]);
     }, []),
   });
-
-  let personaName = platform === "university" ? "AI Instructor" : platform === "pr" ? "PR Strategist" : platform === "business_advisor" ? "Medical Advisor" : platform === "survey" ? "AI Surveyor" : "Medical Concierge";
   const [labels, setLabels] = useState<{ waiting: string, endConversation: string }>
   ({ waiting: `${personaName} will be here shortly...`, endConversation: "Ending Conversation..." });
 

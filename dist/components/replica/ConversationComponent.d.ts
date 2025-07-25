@@ -3,6 +3,7 @@ type ConversationComponentProps = {
     userName?: string;
     replicaId?: string;
     personaId?: string;
+    personaName?: string;
     conversationName?: string;
     conversationalContext?: string;
     customGreeting?: string;

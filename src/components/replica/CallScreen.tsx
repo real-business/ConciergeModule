@@ -29,6 +29,7 @@ interface CallScreenProps {
   setSpokenText: (spokenText: string) => void;
   region: string;
   speechKey: string;
+  personaName: string;
   config: {
     azureTranslatorKey: string;
     azureTranslatorEndpoint: string;
@@ -56,6 +57,7 @@ const CallScreen: React.FC<CallScreenProps> = ({
   setSpokenText,
   region,
   speechKey,
+  personaName,
   config
 }) => {
   const daily = useDaily();
@@ -119,6 +121,7 @@ const CallScreen: React.FC<CallScreenProps> = ({
           currentScript={currentScript}
           interruptReplica={interruptReplica}
           config={config}
+          personaName={personaName}
         />
         
         

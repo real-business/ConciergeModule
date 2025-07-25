@@ -22,6 +22,7 @@ interface CallScreenProps {
     setSpokenText: (spokenText: string) => void;
     region: string;
     speechKey: string;
+    personaName: string;
     config: {
         azureTranslatorKey: string;
         azureTranslatorEndpoint: string;

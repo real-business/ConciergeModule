@@ -14,6 +14,7 @@ interface WelcomeScreenProps {
     onPromptClick?: (prompt: string) => void;
     userCredits?: number;
     avatars: AvatarProfile[];
+    personaName: string;
     config: {
         azureTranslatorKey: string;
         azureTranslatorEndpoint: string;
