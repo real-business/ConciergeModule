@@ -497,10 +497,6 @@ export default function ConciergeModule({
           response.Data.Message.toLowerCase().includes("ready to connect")
         ) {
           setInterviewCompleted(true);
-           // Notify parent of API response
-          if (onApiResponse) {
-            onApiResponse(response);
-          }
         }
 
         // Check for buy now
@@ -510,6 +506,11 @@ export default function ConciergeModule({
         ) {
           setShowBuyNowButton(true);
         }
+
+        // Notify parent of the api response
+        if (onApiResponse) {
+            onApiResponse(response);
+          }
 
         await postChatHistory(
           "",
