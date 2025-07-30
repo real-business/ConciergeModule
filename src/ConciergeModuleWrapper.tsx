@@ -5,8 +5,12 @@ import { ConfigProvider } from './contexts/ConfigContext';
 
 export default function ConciergeModuleWrapper(props: ConciergeModuleProps) {
   return (
-    <ConfigProvider value={props.config || {}}>
-      <ConciergeModule {...props} />
-    </ConfigProvider>
+    // <ConfigProvider value={props.config || {}}>
+    //   <ConciergeModule {...props} />
+    // </ConfigProvider>
+    <>
+     <h1>Hello</h1>
+     <p>props.config</p>
+    </>
   );
 }
