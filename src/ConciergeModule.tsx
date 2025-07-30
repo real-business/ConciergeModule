@@ -29,6 +29,7 @@ import { batchTranslateText } from "./lib/batchTranslateText";
 import ConversationComponent, { ConversationComponentHandle } from "./components/replica/ConversationComponent";
 import { postChatHistory } from "./lib/api/post-chat-history";
 import { getAllAvatarsAPI, AvatarProfile } from "./lib/api/get-all-avatars-api";
+import SSRSafeWrapper from "./components/SSRSafeWrapper";
 
 export interface SuggestedPrompt {
   id: number;
@@ -162,7 +163,9 @@ export default function ConciergeModule({
 
   // on initial load, scroll to the top of the page
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   // Fetch only the single avatar from database
@@ -558,14 +561,18 @@ export default function ConciergeModule({
 
   const handleBuyNow = () => {
     setShowBuyNowButton(false);
-    window.location.href = "/account";
+    if (typeof window !== "undefined") {
+      window.location.href = "/account";
+    }
   }
 
   const handleStartAdvisor = () => {
-    if (navigateTo) {
-      window.location.href = navigateTo;
-    } else {
-      window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/register";
+    if (typeof window !== "undefined") {
+      if (navigateTo) {
+        window.location.href = navigateTo;
+      } else {
+        window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/register";
+      }
     }
   }
 
@@ -748,39 +755,41 @@ export default function ConciergeModule({
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
                         {selectedAvatar && (
-                          <ConversationComponent
-                            ref={convoRef}
-                            replicaId={selectedAvatar?.ExternalId || ""}
-                            personaId="pb5d44035dbd"
-                            personaName = {personaName}
-                            conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
-                            conversationalContext="Initial medical consultation"
-                            customGreeting={
-                              chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === 'ai'
-                                ? chatMessages[chatMessages.length - 1].text
-                                : welcomeMessage}
-                            platform="concierge"
-                            buttonText={translatedTexts.avatar.startConversation}
-                            videoMode="minimal"
-                            chatVisible={false}
-                            toggleChat={toggleChatVisibility}
-                            width="100%"
-                            height="100%"
-                            className="w-full h-full"
-                            setVoiceMode={setVoiceMode}
-                            setConversationStarted={setConversationStarted}
-                            setConversationId={setConversationId}
-                            setConversationUrl={setConversationUrl}
-                            setInterruptReplica={setInterruptReplica}
-                            currentScript={currentScript}
-                            setCurrentScript={setCurrentScript}
-                            interruptReplica={interruptReplica}
-                            setIsSpeaking={setIsSpeaking}
-                            setSpokenText={setSpokenText} 
-                            region={config?.region || ""}
-                            speechKey={config?.speechKey || ""}
-                            config={config}
-                          />
+                          <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
+                            <ConversationComponent
+                              ref={convoRef}
+                              replicaId={selectedAvatar?.ExternalId || ""}
+                              personaId="pb5d44035dbd"
+                              personaName = {personaName}
+                              conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
+                              conversationalContext="Initial medical consultation"
+                              customGreeting={
+                                chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === 'ai'
+                                  ? chatMessages[chatMessages.length - 1].text
+                                  : welcomeMessage}
+                              platform="concierge"
+                              buttonText={translatedTexts.avatar.startConversation}
+                              videoMode="minimal"
+                              chatVisible={false}
+                              toggleChat={toggleChatVisibility}
+                              width="100%"
+                              height="100%"
+                              className="w-full h-full"
+                              setVoiceMode={setVoiceMode}
+                              setConversationStarted={setConversationStarted}
+                              setConversationId={setConversationId}
+                              setConversationUrl={setConversationUrl}
+                              setInterruptReplica={setInterruptReplica}
+                              currentScript={currentScript}
+                              setCurrentScript={setCurrentScript}
+                              interruptReplica={interruptReplica}
+                              setIsSpeaking={setIsSpeaking}
+                              setSpokenText={setSpokenText} 
+                              region={config?.region || ""}
+                              speechKey={config?.speechKey || ""}
+                              config={config}
+                            />
+                          </SSRSafeWrapper>
                         )}
                       </div>
                     ) : (
@@ -843,16 +852,18 @@ export default function ConciergeModule({
                       className="h-full"
                       isLoading={isLoading}
                       rightElement={
-                        <SpeechComponent
-                          avatarName={selectedAvatar?.Name || "AI Health Navigator"}
-                          disabled={isLoading}
-                          voiceMode={voiceMode}
-                          setSpokenText={setSpokenText}
-                          setIsSpeaking={setIsSpeaking}
-                          setInterruptReplica={setInterruptReplica}
-                          region={config?.region || ""}
-                          speechKey={config?.speechKey || ""}
-                        />
+                        <SSRSafeWrapper fallback={<div className="w-10 h-10 bg-gray-200 rounded animate-pulse"></div>}>
+                          <SpeechComponent
+                            avatarName={selectedAvatar?.Name || "AI Health Navigator"}
+                            disabled={isLoading}
+                            voiceMode={voiceMode}
+                            setSpokenText={setSpokenText}
+                            setIsSpeaking={setIsSpeaking}
+                            setInterruptReplica={setInterruptReplica}
+                            region={config?.region || ""}
+                            speechKey={config?.speechKey || ""}
+                          />
+                        </SSRSafeWrapper>
                       }
                       suggestedPrompts={suggestedPrompts}
                       renderMessage={(message, index) => {

@@ -12,3 +12,7 @@ export { default as SpeechComponent } from './components/voice/SpeechComponent';
 
 // Export contexts for advanced usage
 export { ConciergeProvider, useConciergeContext } from './contexts/ConciergeContext';
+
+// Export SSR utilities
+export { default as SSRSafeWrapper } from './components/SSRSafeWrapper';
+export { default as useLocalStorage } from './hooks/useLocalStorage';
