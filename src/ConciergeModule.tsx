@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { Chat, ChatMessage } from "./components/ui/chat"
 import { Button } from "./components/ui/button";
-import { useLocation } from "wouter";
 import {
   ChevronLeft,
   ChevronRight,
@@ -85,7 +84,6 @@ export default function ConciergeModule({
       azureTranslatorRegion: "",
     },
 }: ConciergeModuleProps) {
-  const [, navigate] = useLocation();
   const [dbAvatars, setDbAvatars] = useState<AvatarProfile[]>([]);
   // Always use the single avatar
   const [selectedAvatar, setSelectedAvatar] = useState<AvatarProfile | null>(null);
@@ -100,6 +98,7 @@ export default function ConciergeModule({
   const [sessionId, setSessionId] = useState("");
   const [showContinueButton, setShowContinueButton] = useState(false);
   const [interviewCompleted, setInterviewCompleted] = useState(false);
+  const [showBuyNowButton, setShowBuyNowButton] = useState(false);
   const [showRetryButton, setShowRetryButton] = useState(false);
   const [userInput, setUserInput] = useState("");
   const convoRef = useRef<ConversationComponentHandle>(null);
@@ -130,6 +129,7 @@ export default function ConciergeModule({
         signUp: string;
         uploading: string;
         upload: string;
+        buyNow: string;
       },
       howItWorks: {
         title: string;
@@ -147,7 +147,8 @@ export default function ConciergeModule({
       continue: `Continue`,
       signUp:  `Sign Up Free`,
       uploading: `Uploading...`,
-      upload: `Upload report`
+      upload: `Upload report`,
+      buyNow: `Buy now`
     },
     howItWorks: {
       title: `How It Works`,
@@ -220,6 +221,7 @@ export default function ConciergeModule({
           signUp,
           uploading,
           upload,
+          buyNow,
           title,
           step1,
           step2,
@@ -236,6 +238,7 @@ export default function ConciergeModule({
             `Sign Up Free`,
             `Uploading...`,
             `Upload Report`,
+            `Buy Now`,
             `How It Works`,
             `Your AI ${personaName} asks you questions to find out how ${brandName} can help you.`,
             `The ${personaName} will personalize recommendations based on your needs`,
@@ -264,7 +267,8 @@ export default function ConciergeModule({
             continue: btnContinue,
             signUp,
             uploading,
-            upload
+            upload,
+            buyNow
 
           },
           howItWorks: {
@@ -293,7 +297,8 @@ export default function ConciergeModule({
             continue: `Continue`,
             signUp:`Sign Up Free`,
             uploading: `Uploading...`,
-            upload: `Upload Report`
+            upload: `Upload Report`,
+            buyNow: 'Buy Now'
           },
           howItWorks: {
             title: `How It Works`,
@@ -495,6 +500,14 @@ export default function ConciergeModule({
           }
         }
 
+        // Check for buy now
+       if(
+          response.Data.Message.toLowerCase().includes("buy now")||
+          response.Data.Message.toLowerCase().includes("ready to get your test kit")
+        ) {
+          setShowBuyNowButton(true);
+        }
+
         await postChatHistory(
           "",
           "AIHealthNavigator",
@@ -541,6 +554,11 @@ export default function ConciergeModule({
   const handleContinue = () => {
     setShowContinueButton(false);
     handleSendMessage("yes, continue", []);
+  }
+
+  const handleBuyNow = () => {
+    setShowBuyNowButton(false);
+    window.location.href = "/account";
   }
 
   const handleStartAdvisor = () => {
@@ -917,6 +935,17 @@ export default function ConciergeModule({
                                     onClick={handleStartAdvisor}
                                   >
                                     {translatedTexts.buttons.signUp}
+                                  </button>
+                                </div>
+                              )}
+                               {/* Add Buy Now button if this is the last message and buy now */}
+                              {isLastMessage && showBuyNowButton && (
+                                <div className="mt-4 flex justify-center">
+                                  <button
+                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
+                                    onClick={handleBuyNow}
+                                  >
+                                    {translatedTexts.buttons.buyNow}
                                   </button>
                                 </div>
                               )}
