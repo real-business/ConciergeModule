@@ -49,6 +49,7 @@
     "drizzle-zod": "^0.7.0",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
+    "form-data": "^4.0.4",
     "i18next": "^24.2.3",
     "i18next-browser-languagedetector": "^8.2.0",
     "input-otp": "^1.2.4",
