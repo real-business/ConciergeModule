@@ -124,10 +124,20 @@ const ConversationComponent = forwardRef<
     const { tavusApiKey } = useConfig();
     
     // Use language from localStorage or default to "en"
-    const selectedLanguage = localStorage.getItem("lang") || "en";
+    const [selectedLanguage, setSelectedLanguage] = useState("en");
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        setSelectedLanguage(localStorage.getItem("lang") || "en");
+      }
+    }, []);
     
     const languageName = supportedLanguages.find(lang => lang.code === selectedLanguage)?.name || "English";
-    const previousLanguageRef = useRef(localStorage.getItem("lang") || "en");
+    const previousLanguageRef = useRef("en");
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        previousLanguageRef.current = localStorage.getItem("lang") || "en";
+      }
+    }, []);
     // Fetch avatars if none are found
     useEffect(() => {
       const fetchAvatars = async () => {

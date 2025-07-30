@@ -48,8 +48,13 @@ export default function SpeechComponent({
   const [isMicOn, setIsMicOn] = useState(false);
   const [isInitializing, setIsInitializing] = useState(false);
   const [recognizer, setRecognizer] = useState<SpeechSDK.SpeechRecognizer | null>(null);
-  const selectedLanguage = localStorage.getItem("lang") || "en";
-  
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSelectedLanguage(localStorage.getItem("lang") || "en");
+    }
+  }, []);
+
   const enoughCredits = true;
 
   const tooltipText = !enoughCredits ? "Please upgrade your credits to continue" : isMicOn

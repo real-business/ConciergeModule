@@ -44,7 +44,12 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   personaName,
   config
 }) => {
-  const selectedLanguage = localStorage.getItem("lang") || "en";
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSelectedLanguage(localStorage.getItem("lang") || "en");
+    }
+  }, []);
 
   const [labels, setLabels] = useState<{ loading: string, avatarNotFound: string }>
   ({loading: "Loading...", avatarNotFound: "Avatar not found" });

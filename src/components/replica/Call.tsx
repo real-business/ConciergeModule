@@ -55,7 +55,12 @@ export const Call: React.FC<CallProps> = ({
   const [mode, setMode] = useState("full");
   const [messages, setMessages] = useState<AppMessage[]>([]);
   const [hasJoined, setHasJoined] = useState(false);
-  const selectedLanguage = localStorage.getItem("lang") || "en";
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSelectedLanguage(localStorage.getItem("lang") || "en");
+    }
+  }, []);
 
   const sendAppMessage = useAppMessage({
     onAppMessage: useCallback((ev: any) => {
