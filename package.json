@@ -1,14 +1,14 @@
 {
   "name": "react-ai-concierge",
   "version": "1.0.0",
-  "main": "dist/concierge-module.cjs.js",
+  "main": "dist/concierge-module.umd.js",
   "module": "dist/concierge-module.es.js",
   "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
       "import": "./dist/concierge-module.es.js",
-      "require": "./dist/concierge-module.cjs.js",
+      "require": "./dist/concierge-module.umd.js",
       "default": "./dist/concierge-module.es.js"
     }
   },
