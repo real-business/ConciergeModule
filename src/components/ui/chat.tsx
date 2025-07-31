@@ -65,15 +65,31 @@ export function Chat({
   const translatedLangRef = useRef<string | null>(null);
   const [labels, setLabels] = useState<{ insufficientCredits: string, insufficientCreditsDescription: string, placeholder: string, suggestedPrompts: string, thinking: string, retry: string}>
   ({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry"});
+
   useEffect(() => {
-    if (messagesEndRef.current) {
-      const scrollArea = messagesEndRef.current.closest('[data-radix-scroll-area-viewport]') || 
-                        chatContainerRef.current;
-      if (scrollArea) {
-        scrollArea.scrollTop = scrollArea.scrollHeight;
+    setTimeout(() => {
+      if (messagesEndRef.current) {
+        const scrollArea = messagesEndRef.current.closest('[data-radix-scroll-area-viewport]') || 
+                          chatContainerRef.current;
+        if (scrollArea) {
+          scrollArea.scrollTop = scrollArea.scrollHeight;
+        }
       }
-    }
+    }, 0);
   }, [messages, isLoading]);
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (messagesEndRef.current) {
+        const scrollArea = messagesEndRef.current.closest('[data-radix-scroll-area-viewport]') || 
+                          chatContainerRef.current;
+        if (scrollArea) {
+          scrollArea.scrollTop = scrollArea.scrollHeight;
+        }
+      }
+    }, 0);
+  }, []);
 
   useEffect(() => {
     const translate = async () => { // ✅ this will run on language change

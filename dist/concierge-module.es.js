@@ -1,6 +1,6 @@
 import { jsx as P, jsxs as k, Fragment as zs } from "react/jsx-runtime";
 import * as ae from "react";
-import { useState as D, useRef as Ve, useEffect as $, useCallback as nc, createContext as hf, useContext as ff, forwardRef as Cg, useImperativeHandle as Rg } from "react";
+import { useState as D, useRef as Ve, useEffect as B, useCallback as nc, createContext as hf, useContext as ff, forwardRef as Cg, useImperativeHandle as Rg } from "react";
 import { motion as vf } from "framer-motion";
 import { Bot as Cc, RotateCcw as Pg, Loader2 as ja, ChevronDown as bg, ChevronUp as wg, Send as Eg, Mic as Ig, MicOff as Ag, Upload as Rc, X as Tg, Menu as _g, HelpCircle as kg, GraduationCap as Og, Sparkles as Mg, MessageSquare as Dg, ThumbsUp as Ng, ThumbsDown as xg } from "lucide-react";
 import qa from "react-markdown";
@@ -343,7 +343,7 @@ const J = (e) => {
   // I could also use lookbehind assertion in `lengthUnitRegex` but that isn't supported widely enough.
   mm.test(e) && !ym.test(e)
 ), wf = () => !1, _m = (e) => Sm.test(e), km = (e) => Cm.test(e), Om = () => {
-  const e = J("colors"), t = J("spacing"), r = J("blur"), o = J("brightness"), i = J("borderColor"), a = J("borderRadius"), s = J("borderSpacing"), n = J("borderWidth"), c = J("contrast"), u = J("grayscale"), l = J("hueRotate"), p = J("invert"), d = J("gap"), h = J("gradientColorStops"), f = J("gradientColorStopPositions"), g = J("inset"), m = J("margin"), v = J("opacity"), y = J("padding"), S = J("saturate"), C = J("scale"), b = J("sepia"), w = J("skew"), I = J("space"), E = J("translate"), N = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], M = () => ["auto", j, t], T = () => [j, t], L = () => ["", Le, Ye], B = () => ["auto", Wt, j], Q = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], ee = () => ["solid", "dashed", "dotted", "double", "none"], re = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], he = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], W = () => ["", "0", j], ie = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], K = () => [Wt, j];
+  const e = J("colors"), t = J("spacing"), r = J("blur"), o = J("brightness"), i = J("borderColor"), a = J("borderRadius"), s = J("borderSpacing"), n = J("borderWidth"), c = J("contrast"), u = J("grayscale"), l = J("hueRotate"), p = J("invert"), d = J("gap"), h = J("gradientColorStops"), f = J("gradientColorStopPositions"), g = J("inset"), m = J("margin"), v = J("opacity"), y = J("padding"), S = J("saturate"), C = J("scale"), b = J("sepia"), w = J("skew"), I = J("space"), E = J("translate"), N = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], M = () => ["auto", j, t], T = () => [j, t], L = () => ["", Le, Ye], U = () => ["auto", Wt, j], Q = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], ee = () => ["solid", "dashed", "dotted", "double", "none"], re = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], he = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], W = () => ["", "0", j], ie = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], K = () => [Wt, j];
   return {
     cacheSize: 500,
     separator: ":",
@@ -661,14 +661,14 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/grid-column
        */
       "col-start": [{
-        "col-start": B()
+        "col-start": U()
       }],
       /**
        * Grid Column End
        * @see https://tailwindcss.com/docs/grid-column
        */
       "col-end": [{
-        "col-end": B()
+        "col-end": U()
       }],
       /**
        * Grid Template Rows
@@ -691,14 +691,14 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/grid-row
        */
       "row-start": [{
-        "row-start": B()
+        "row-start": U()
       }],
       /**
        * Grid Row End
        * @see https://tailwindcss.com/docs/grid-row
        */
       "row-end": [{
-        "row-end": B()
+        "row-end": U()
       }],
       /**
        * Grid Auto Flow
@@ -4424,9 +4424,9 @@ function ZS(e, t, r) {
   function n(R) {
     let M = o.events.length - 1;
     for (; M > -1; ) {
-      const B = o.events[M][1].type;
-      if (B === "lineEnding" || // Note: markdown-rs uses `whitespace` instead of `linePrefix`
-      B === "linePrefix") M--;
+      const U = o.events[M][1].type;
+      if (U === "lineEnding" || // Note: markdown-rs uses `whitespace` instead of `linePrefix`
+      U === "linePrefix") M--;
       else break;
     }
     const T = M > -1 ? o.events[M][1].type : null, L = T === "tableHead" || T === "tableRow" ? w : c;
@@ -4638,16 +4638,25 @@ function oC({
   config: d
 }) {
   const [h, f] = D(""), g = Ve(null), [m, v] = D(!0), y = Ve(null), S = Ve(null), [C, b] = D({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry" });
-  $(() => {
-    if (g.current) {
-      const R = g.current.closest("[data-radix-scroll-area-viewport]") || y.current;
-      R && (R.scrollTop = R.scrollHeight);
-    }
-  }, [e, i]), $(() => {
+  B(() => {
+    setTimeout(() => {
+      if (g.current) {
+        const R = g.current.closest("[data-radix-scroll-area-viewport]") || y.current;
+        R && (R.scrollTop = R.scrollHeight);
+      }
+    }, 0);
+  }, [e, i]), B(() => {
+    setTimeout(() => {
+      if (g.current) {
+        const R = g.current.closest("[data-radix-scroll-area-viewport]") || y.current;
+        R && (R.scrollTop = R.scrollHeight);
+      }
+    }, 0);
+  }, []), B(() => {
     (async () => {
       if (p !== "en" && S.current !== p) {
-        const [M, T, L, B, Q, ee] = await Qs(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk."], p, "en", d?.azureTranslatorKey || "", d?.azureTranslatorEndpoint || "", d?.azureTranslatorRegion || "");
-        b({ insufficientCredits: M, insufficientCreditsDescription: T, placeholder: L, suggestedPrompts: B, thinking: Q, retry: ee }), S.current = p;
+        const [M, T, L, U, Q, ee] = await Qs(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk."], p, "en", d?.azureTranslatorKey || "", d?.azureTranslatorEndpoint || "", d?.azureTranslatorRegion || "");
+        b({ insufficientCredits: M, insufficientCreditsDescription: T, placeholder: L, suggestedPrompts: U, thinking: Q, retry: ee }), S.current = p;
       }
       p === "en" && S.current !== "en" && (b({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry" }), S.current = "en");
     })();
@@ -4671,7 +4680,7 @@ function oC({
             /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(Cc, { size: 14 }) }),
             /* @__PURE__ */ P("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10", children: /* @__PURE__ */ P("div", { className: "text-sm text-secondary", children: t }) })
           ] }) : e?.map((R, M) => {
-            const L = M === e.length - 1 && R.sender === "ai", B = c && L && u && R.sender === "ai";
+            const L = M === e.length - 1 && R.sender === "ai", U = c && L && u && R.sender === "ai";
             return /* @__PURE__ */ P(
               "div",
               {
@@ -4689,7 +4698,7 @@ function oC({
                     ),
                     children: [
                       n ? n(R, M) : R.sender === "user" ? /* @__PURE__ */ P("div", { className: "text-sm", children: R.text }) : /* @__PURE__ */ P("div", { className: "text-sm", children: /* @__PURE__ */ P(qa, { remarkPlugins: [$a], children: R.text }) }),
-                      B && /* @__PURE__ */ P("div", { className: "mt-2 flex justify-end", children: /* @__PURE__ */ k(
+                      U && /* @__PURE__ */ P("div", { className: "mt-2 flex justify-end", children: /* @__PURE__ */ k(
                         ke,
                         {
                           variant: "ghost",
@@ -16316,9 +16325,9 @@ function A() {
     Object.defineProperty(e, "SpeechRecognizer", { enumerable: !0, get: function() {
       return L.SpeechRecognizer;
     } });
-    var B = /* @__PURE__ */ bR();
+    var U = /* @__PURE__ */ bR();
     Object.defineProperty(e, "IntentRecognizer", { enumerable: !0, get: function() {
-      return B.IntentRecognizer;
+      return U.IntentRecognizer;
     } });
     var Q = /* @__PURE__ */ wR();
     Object.defineProperty(e, "VoiceProfileType", { enumerable: !0, get: function() {
@@ -16526,9 +16535,9 @@ function A() {
     Object.defineProperty(e, "SpeechSynthesisResult", { enumerable: !0, get: function() {
       return Ts.SpeechSynthesisResult;
     } });
-    var U = /* @__PURE__ */ bP();
+    var $ = /* @__PURE__ */ bP();
     Object.defineProperty(e, "SpeechSynthesisEventArgs", { enumerable: !0, get: function() {
-      return U.SpeechSynthesisEventArgs;
+      return $.SpeechSynthesisEventArgs;
     } });
     var X = /* @__PURE__ */ wP();
     Object.defineProperty(e, "SpeechSynthesisWordBoundaryEventArgs", { enumerable: !0, get: function() {
@@ -22200,11 +22209,11 @@ function rg({
   speechKey: n
 }) {
   const [c, u] = D(!1), [l, p] = D(!1), [d, h] = D(null), [f, g] = D("en");
-  $(() => {
+  B(() => {
     typeof window < "u" && g(localStorage.getItem("lang") || "en");
   }, []);
   const m = c ? `You're now talking to ${e}` : `Click here to talk to ${e}`;
-  $(() => (c ? v() : y(), () => {
+  B(() => (c ? v() : y(), () => {
     y();
   }), [c]);
   const v = async () => {
@@ -22352,7 +22361,7 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
   config: f
 }) => {
   const [g, m] = D("en");
-  $(() => {
+  B(() => {
     typeof window < "u" && m(localStorage.getItem("lang") || "en");
   }, []);
   const [v, y] = D({ loading: "Loading...", avatarNotFound: "Avatar not found" }), S = d.find((b) => b.ExternalId === a), C = {
@@ -22360,7 +22369,7 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
     md: "text-base px-6 py-3",
     lg: "text-lg px-8 py-4"
   };
-  return $(() => {
+  return B(() => {
     (async () => {
       if (g !== "en") {
         const [w, I] = await Qs(["Loading...", "Avatar not found"], g, "en", f?.azureTranslatorKey || "", f?.azureTranslatorEndpoint || "", f?.azureTranslatorRegion || "");
@@ -22415,7 +22424,7 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
   ] });
 }, ng = ({ id: e, style: t = {} }) => {
   const r = gf(e), o = r?.isOff, [i, a] = D(!1), s = Ve(null);
-  return $(() => {
+  return B(() => {
     const n = s.current;
     if (!n) return;
     const c = () => a(!0);
@@ -22519,7 +22528,7 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
   buttonsSize: s = "md"
 }) => {
   const n = mf(), c = Ws();
-  $(() => {
+  B(() => {
     (async () => {
       if (c) {
         const p = c?.meetingState();
@@ -22668,7 +22677,7 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
   const { currentCam: h, currentMic: f, refreshDevices: g } = Lg(), m = mf(), v = gf(m), y = jg(m);
   v.isOff, y.isOff;
   const [S, C] = D(!1);
-  return $(() => {
+  return B(() => {
     (() => {
       document.querySelectorAll("[data-replit-metadata]").forEach((I) => {
         I.hasAttribute("data-replit-metadata") && I.removeAttribute("data-replit-metadata");
@@ -22718,31 +22727,31 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
   config: p
 }) => {
   const d = Ws(), h = Fg({ filter: "remote" }), [f, g] = D("full"), [m, v] = D([]), [y, S] = D(!1), [C, b] = D("en");
-  $(() => {
+  B(() => {
     typeof window < "u" && b(localStorage.getItem("lang") || "en");
   }, []);
   const w = Bg({
     onAppMessage: nc((T) => {
       const L = T.data;
-      v((B) => [...B, L]);
+      v((U) => [...U, L]);
     }, [])
   }), [I, E] = D({ waiting: `${l} will be here shortly...`, endConversation: "Ending Conversation..." });
-  $(() => {
+  B(() => {
     (async () => {
       if (C !== "en") {
-        const [L, B] = await Qs([`${l} will be here shortly...`, "Ending Conversation..."], C, "en", p?.azureTranslatorKey || "", p?.azureTranslatorEndpoint || "", p?.azureTranslatorRegion || "");
-        E({ waiting: L, endConversation: B });
+        const [L, U] = await Qs([`${l} will be here shortly...`, "Ending Conversation..."], C, "en", p?.azureTranslatorKey || "", p?.azureTranslatorEndpoint || "", p?.azureTranslatorRegion || "");
+        E({ waiting: L, endConversation: U });
       } else
         E({ waiting: `${l} will be here shortly...`, endConversation: "Ending Conversation..." });
     })();
   }, [C]);
   const N = (T) => T ? T.replace(/\*\*/g, "").replace(/[#_][^\s]+/g, "").replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, "").replace(/[^\w\s.,!?'"-]/g, "").replace(/\s+/g, " ").trim() : "";
-  $(() => {
+  B(() => {
     const T = () => S(!0);
     return d && d.on("joined-meeting", T), () => {
       d && d.off("joined-meeting", T);
     };
-  }, [d]), $(() => {
+  }, [d]), B(() => {
     try {
       if (d && y && c) {
         n(!1);
@@ -22752,9 +22761,9 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
     } catch (T) {
       console.error("Error sending echo interaction:", T);
     }
-  }, [c, y]), $(() => {
+  }, [c, y]), B(() => {
     d && y && u && M();
-  }, [u]), $(() => {
+  }, [u]), B(() => {
     r && g(r);
   }, [r]);
   const R = (T) => {
@@ -22858,13 +22867,13 @@ const Vh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
   config: C
 }) => {
   const b = Ws();
-  $(() => {
+  B(() => {
     (() => {
       document.querySelectorAll("[data-replit-metadata]").forEach((T) => {
         T.hasAttribute("data-replit-metadata") && T.removeAttribute("data-replit-metadata");
       });
     })();
-  }, []), $(() => {
+  }, []), B(() => {
     if (e && b) {
       const { conversation_url: R } = e;
       b.join({
@@ -23363,19 +23372,19 @@ class Us extends Xs {
       }
       if (a) {
         const M = Array.isArray(E), T = M ? [] : {}, L = M ? f : h;
-        for (const B in E)
-          if (Object.prototype.hasOwnProperty.call(E, B)) {
-            const Q = `${L}${a}${B}`;
-            S && !d ? T[B] = this.translate(Q, {
+        for (const U in E)
+          if (Object.prototype.hasOwnProperty.call(E, U)) {
+            const Q = `${L}${a}${U}`;
+            S && !d ? T[U] = this.translate(Q, {
               ...r,
-              defaultValue: Zh(I) ? I[B] : void 0,
+              defaultValue: Zh(I) ? I[U] : void 0,
               joinArrays: !1,
               ns: n
-            }) : T[B] = this.translate(Q, {
+            }) : T[U] = this.translate(Q, {
               ...r,
               joinArrays: !1,
               ns: n
-            }), T[B] === Q && (T[B] = E[B]);
+            }), T[U] === Q && (T[U] = E[U]);
           }
         d = T;
       }
@@ -23384,7 +23393,7 @@ class Us extends Xs {
     else {
       let M = !1, T = !1;
       !this.isValidLookup(d) && S && (M = !0, d = I), this.isValidLookup(d) || (T = !0, d = s);
-      const B = (r.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey) && T ? void 0 : d, Q = S && I !== d && this.options.updateMissing;
+      const U = (r.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey) && T ? void 0 : d, Q = S && I !== d && this.options.updateMissing;
       if (T || M || Q) {
         if (this.logger.log(Q ? "updateKey" : "missingKey", u, c, s, Q ? I : d), a) {
           const W = this.resolve(s, {
@@ -23400,7 +23409,7 @@ class Us extends Xs {
             ee.push(re[W]);
         else this.options.saveMissingTo === "all" ? ee = this.languageUtils.toResolveHierarchy(r.lng || this.language) : ee.push(r.lng || this.language);
         const he = (W, ie, K) => {
-          const Ne = S && K !== d ? K : B;
+          const Ne = S && K !== d ? K : U;
           this.options.missingKeyHandler ? this.options.missingKeyHandler(W, c, ie, Ne, Q, r) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(W, c, ie, Ne, Q, r), this.emit("missingKey", W, c, ie, d);
         };
         this.options.saveMissing && (this.options.saveMissingPlurals && y ? ee.forEach((W) => {
@@ -25802,15 +25811,15 @@ const eI = [
     region: M,
     speechKey: T,
     config: L
-  }, B) => {
+  }, U) => {
     const [Q, ee] = D("welcome"), [re, he] = D(null), [W, ie] = D(!1), [K, Ne] = D(!1), nt = Ve(null), [He, xe] = D([]), [it, qt] = D("16:9"), { tavusApiKey: Ke } = tI(), [_e, st] = D("en");
-    $(() => {
+    B(() => {
       typeof window < "u" && st(localStorage.getItem("lang") || "en");
     }, []);
     const Gt = eI.find((F) => F.code === _e)?.name || "English", Je = Ve("en");
-    $(() => {
+    B(() => {
       typeof window < "u" && (Je.current = localStorage.getItem("lang") || "en");
-    }, []), $(() => {
+    }, []), B(() => {
       (async () => {
         if (He.length === 0)
           try {
@@ -25822,9 +25831,9 @@ const eI = [
       })();
     }, [He.length]);
     const ot = He.find((F) => F.ExternalId === e);
-    $(() => {
+    B(() => {
       _e && _e !== "en" && _e !== Je.current && (Je.current = _e, at());
-    }, [_e]), $(() => {
+    }, [_e]), B(() => {
       (async () => {
         if (ot?.ImageUrl) {
           const te = new Image();
@@ -25836,12 +25845,12 @@ const eI = [
           }, te.src = ot.ImageUrl;
         }
       })();
-    }, [ot?.ImageUrl]), $(() => () => {
+    }, [ot?.ImageUrl]), B(() => () => {
       re && Wh({
         conversationId: re.conversation_id,
         apiKey: Ke
       });
-    }, [re]), $(() => {
+    }, [re]), B(() => {
       s === "concierge" && fe();
     }, [s]);
     const fe = async () => {
@@ -25878,7 +25887,7 @@ const eI = [
     }, bs = () => {
       ee("call");
     };
-    Rg(B, () => ({
+    Rg(U, () => ({
       handleEnd: at,
       handleStart: fe
     }));
@@ -25988,7 +25997,7 @@ const eI = [
   fallback: t = /* @__PURE__ */ P("div", { children: "Loading..." })
 }) => {
   const [r, o] = D(!1);
-  return $(() => {
+  return B(() => {
     o(!0);
   }, []), r ? /* @__PURE__ */ P(zs, { children: e }) : /* @__PURE__ */ P(zs, { children: t });
 }, sI = [
@@ -26015,7 +26024,7 @@ function aI({
     azureTranslatorRegion: ""
   }
 }) {
-  const [l, p] = D([]), [d, h] = D(null), [f, g] = D("chat"), [m, v] = D(!1), [y, S] = D(!1), [C, b] = D(!1), [w, I] = D([]), [E, N] = D(!1), [R, M] = D({}), [T, L] = D(""), [B, Q] = D(!1), [ee, re] = D(!1), [he, W] = D(!1), [ie, K] = D(!1), [Ne, nt] = D(""), He = Ve(null), [xe, it] = D(""), [qt, Ke] = D(!1), [_e, st] = D(!1), [Gt, Je] = D(!1), [ot, fe] = D(""), [at, bs] = D(""), [ws, Qt] = D(""), [Yt, Pe] = D(""), [be, Se] = D(!1), Ge = Ve(null), F = Ve(null), [te, ct] = D([]), [ne, Es] = D({
+  const [l, p] = D([]), [d, h] = D(null), [f, g] = D("chat"), [m, v] = D(!1), [y, S] = D(!1), [C, b] = D(!1), [w, I] = D([]), [E, N] = D(!1), [R, M] = D({}), [T, L] = D(""), [U, Q] = D(!1), [ee, re] = D(!1), [he, W] = D(!1), [ie, K] = D(!1), [Ne, nt] = D(""), He = Ve(null), [xe, it] = D(""), [qt, Ke] = D(!1), [_e, st] = D(!1), [Gt, Je] = D(!1), [ot, fe] = D(""), [at, bs] = D(""), [ws, Qt] = D(""), [Yt, Pe] = D(""), [be, Se] = D(!1), Ge = Ve(null), F = Ve(null), [te, ct] = D([]), [ne, Es] = D({
     avatar: {
       chooseAvatar: `Choose Your ${t}`,
       startConversation: "Start Conversation",
@@ -26040,9 +26049,9 @@ function aI({
       ]
     }
   });
-  $(() => {
+  B(() => {
     typeof window < "u" && window.scrollTo(0, 0);
-  }, []), $(() => {
+  }, []), B(() => {
     (async () => {
       try {
         const X = await ig();
@@ -26054,9 +26063,9 @@ function aI({
         console.error("Error fetching avatar:", X);
       }
     })();
-  }, []), $(() => {
+  }, []), B(() => {
     g(be ? "voice" : "chat");
-  }, [be]), $(() => {
+  }, [be]), B(() => {
     if (!(!!u?.azureTranslatorKey && !!u?.azureTranslatorEndpoint && !!u?.azureTranslatorRegion)) {
       console.warn("Azure translation config is not yet ready.");
       return;
@@ -26158,10 +26167,10 @@ function aI({
     u?.azureTranslatorRegion,
     t,
     e
-  ]), $(() => {
+  ]), B(() => {
     s && (ct([s]), Qe(`Uploaded file: ${s.name}`, [s]));
   }, [s]), nc(
-    async (U) => {
+    async ($) => {
       S(!0);
       const V = await Vh(
         "I am user",
@@ -26173,10 +26182,10 @@ function aI({
         1,
         i
       );
-      return V.Success && V.Data?.Message ? V.Data.Message.includes("ERROR") ? (S(!1), fe(`Hello there! I'm ${U?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me your name?`), {
+      return V.Success && V.Data?.Message ? V.Data.Message.includes("ERROR") ? (S(!1), fe(`Hello there! I'm ${$?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me your name?`), {
         id: "welcome-message",
         sender: "ai",
-        text: `Hello there! I'm ${U?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
+        text: `Hello there! I'm ${$?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
         timestamp: /* @__PURE__ */ new Date()
       }) : (S(!1), L(V.Data.SessionId || ""), fe(V.Data.Message), {
         id: "welcome-message",
@@ -26186,30 +26195,30 @@ function aI({
       }) : (S(!1), {
         id: "welcome-message",
         sender: "ai",
-        text: `Hello there! I'm ${U?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
+        text: `Hello there! I'm ${$?.Name}, your ${t}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
         timestamp: /* @__PURE__ */ new Date()
       });
     },
     [e]
-  ), $(() => {
+  ), B(() => {
     Je(!0);
-  }, []), $(() => {
+  }, []), B(() => {
     xe && xe.trim() !== "" && (Qe(xe), it(""));
-  }, [xe]), $(() => {
+  }, [xe]), B(() => {
     v(!!be);
   }, [be]);
-  const Qe = async (U, X = []) => {
+  const Qe = async ($, X = []) => {
     ie && K(!1);
     const V = {
       id: Date.now().toString(),
       sender: "user",
-      text: U === "yes, continue" ? "Yes" : U,
+      text: $ === "yes, continue" ? "Yes" : $,
       timestamp: /* @__PURE__ */ new Date()
     };
-    nt(U), I((G) => [...G, V]), S(!0);
-    let H = `${U}`;
+    nt($), I((G) => [...G, V]), S(!0);
+    let H = `${$}`;
     const ze = [...te, ...X];
-    ze.length > 0 && (H += "Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed."), U === "yes, continue" && (H += "Start the interview. User clicked continue.");
+    ze.length > 0 && (H += "Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed."), $ === "yes, continue" && (H += "Start the interview. User clicked continue.");
     try {
       const G = await Vh(
         H,
@@ -26247,11 +26256,11 @@ function aI({
         I((Ce) => [...Ce, ve]), T || L(G?.Data?.SessionId || ""), fe(G.Data.Message), (G.Data.Message.toLowerCase().includes("click continue") || G.Data.Message.toLowerCase().includes("continue")) && Q(!0), (G.Data.Message.toLowerCase().includes("sign up") || G.Data.Message.toLowerCase().includes("thank you for choosing") || G.Data.Message.toLowerCase().includes("ready to connect")) && re(!0), (G.Data.Message.toLowerCase().includes("buy now") || G.Data.Message.toLowerCase().includes("ready to get your test kit")) && W(!0), c && c(G), await iI(
           "",
           "AIHealthNavigator",
-          U,
+          $,
           G.Data.Message || "",
           f === "voice",
           //isUserUsingAvatar
-          U === xe
+          $ === xe
           // isUserSpeaking
         ), nt("");
       } else {
@@ -26285,13 +26294,13 @@ function aI({
     typeof window < "u" && (a ? window.location.href = a : window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/register");
   }, Is = () => {
     I([]);
-  }, As = (U, X) => {
+  }, As = ($, X) => {
     const V = X === "like";
     M((H) => ({
       ...H,
-      [U.id]: X
+      [$.id]: X
     })), Cw(
-      U.text,
+      $.text,
       "",
       "",
       V
@@ -26299,14 +26308,14 @@ function aI({
     }).catch((H) => {
       console.error("Error sending feedback:", H);
     });
-  }, io = async (U) => {
+  }, io = async ($) => {
     b(!0);
-    const X = Array.from(U.target.files || []);
+    const X = Array.from($.target.files || []);
     if (X.length > 0) {
       const V = X[0];
       ct([V]), n && n(V), b(!1), await Qe(`Uploaded file: ${V.name}`, [V]);
     }
-    U.target && (U.target.value = "");
+    $.target && ($.target.value = "");
   }, Ts = () => {
     F.current?.click();
   };
@@ -26454,12 +26463,12 @@ function aI({
                   ] }),
                   /* @__PURE__ */ k("div", { className: "absolute left-1 -translate-x-1 bottom-full mb-2 w-64 p-3 bg-white rounded-lg shadow-lg border border-primary/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10", children: [
                     /* @__PURE__ */ P("h4", { className: "font-medium text-primary mb-2", children: ne.howItWorks.title }),
-                    ne.howItWorks.steps.map((U, X) => /* @__PURE__ */ k("li", { className: "flex items-start gap-2", children: [
+                    ne.howItWorks.steps.map(($, X) => /* @__PURE__ */ k("li", { className: "flex items-start gap-2", children: [
                       /* @__PURE__ */ k("span", { className: "font-bold flex-shrink-0", children: [
                         X + 1,
                         "."
                       ] }),
-                      /* @__PURE__ */ P("span", { className: "break-words", children: U })
+                      /* @__PURE__ */ P("span", { className: "break-words", children: $ })
                     ] }, X))
                   ] })
                 ] }) }),
@@ -26511,8 +26520,8 @@ function aI({
                     }
                   ) }),
                   suggestedPrompts: r,
-                  renderMessage: (U, X) => {
-                    if (U.sender === "ai" && U.id !== "welcome-message") {
+                  renderMessage: ($, X) => {
+                    if ($.sender === "ai" && $.id !== "welcome-message") {
                       const V = X === w.length - 1;
                       return /* @__PURE__ */ k("div", { className: "relative", children: [
                         /* @__PURE__ */ P(
@@ -26536,23 +26545,23 @@ function aI({
                                 }
                               )
                             },
-                            children: U.text
+                            children: $.text
                           }
                         ),
                         /* @__PURE__ */ k("div", { className: "flex justify-end gap-2 mt-2", children: [
                           /* @__PURE__ */ P(
                             "button",
                             {
-                              className: `p-1 rounded-full transition-colors ${R[U.id] === "like" ? "bg-green-100 text-green-600" : "hover:bg-gray-200 text-gray-600"}`,
-                              onClick: () => As(U, "like"),
+                              className: `p-1 rounded-full transition-colors ${R[$.id] === "like" ? "bg-green-100 text-green-600" : "hover:bg-gray-200 text-gray-600"}`,
+                              onClick: () => As($, "like"),
                               children: /* @__PURE__ */ P(Ng, { className: "h-4 w-4" })
                             }
                           ),
                           /* @__PURE__ */ P(
                             "button",
                             {
-                              className: `p-1 rounded-full transition-colors ${R[U.id] === "dislike" ? "bg-red-100 text-red-600" : "hover:bg-gray-200 text-gray-600"}`,
-                              onClick: () => As(U, "dislike"),
+                              className: `p-1 rounded-full transition-colors ${R[$.id] === "dislike" ? "bg-red-100 text-red-600" : "hover:bg-gray-200 text-gray-600"}`,
+                              onClick: () => As($, "dislike"),
                               children: /* @__PURE__ */ P(xg, { className: "h-4 w-4" })
                             }
                           )
@@ -26567,7 +26576,7 @@ function aI({
                             children: ne.buttons.retry
                           }
                         ) }),
-                        V && B && /* @__PURE__ */ P("div", { className: "mt-4 flex justify-center", children: /* @__PURE__ */ P(
+                        V && U && /* @__PURE__ */ P("div", { className: "mt-4 flex justify-center", children: /* @__PURE__ */ P(
                           "button",
                           {
                             className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
@@ -26600,7 +26609,7 @@ function aI({
                         components: {
                           p: ({ children: V }) => /* @__PURE__ */ P("p", { className: "text-sm whitespace-pre-line", children: V })
                         },
-                        children: U.text
+                        children: $.text
                       }
                     );
                   }
