@@ -52,6 +52,7 @@
     "node-fetch": "^2.7.0",
     "openai": "^4.104.0",
     "remark-gfm": "^4.0.1",
+    "remove-markdown": "^0.6.2",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^11.1.0",

@@ -7,7 +7,7 @@ import {
 } from "@daily-co/daily-react";
 import { useDaily, useAppMessage } from "@daily-co/daily-react";
 import { batchTranslateText } from "../../lib/batchTranslateText";
-
+import removeMarkdown from "remove-markdown";
 
 interface CallProps {
   conversationId: string;
@@ -86,9 +86,7 @@ export const Call: React.FC<CallProps> = ({
   const cleanScript = (text: string): string => {
     if (!text) return "";
   
-    return text
-      .replace(/\*\*/g, "") // Remove markdown bold (double asterisks)
-      .replace(/[#_][^\s]+/g, "") // Remove hashtags or underscores
+    return removeMarkdown(text)
       .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, "") // Remove emojis
       .replace(/[^\w\s.,!?'"-]/g, "") // Remove weird characters
       .replace(/\s+/g, " ") // Collapse whitespace

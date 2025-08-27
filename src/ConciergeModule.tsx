@@ -58,7 +58,7 @@ const defaultPrompts: SuggestedPrompt[] = [
   { id: 6, text: "Answer my questions like a personal coach", icon: MessageSquare },
 ];
 
-const AVATAR_ID = "rfb493e1ea5a";
+const AVATAR_ID = "r89e4f7ec536";
 
 export default function ConciergeModule({
     brandName = "Growth Hub",
@@ -826,7 +826,7 @@ export default function ConciergeModule({
                         <strong className="text-[#3f62ec]">
                           AI Concierge:
                         </strong>{" "}
-                        "Great news! I've analyzed your ${file?.name || "health report"} and found some important insights for you."
+                        "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
                       </p>
                     </div>
                   </div>
