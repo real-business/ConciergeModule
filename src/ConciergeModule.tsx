@@ -766,15 +766,22 @@ export default function ConciergeModule({
               ) : (
                  <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
                    <div className="flex items-start space-x-4">
+                     <div className="mb-6">
+                        <img
+                          src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name}
+                          className="w-full max-w-md h-auto rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg"
+                          data-testid="img-ai-health-concierge"
+                        />
+                        <Button
+                          onClick={() => setConciergeConversationStarted(true)}
+                          className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                        >
+                          {translatedTexts.avatar.startConversation}
+                        </Button>
+                      </div>
                       <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                         <img src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name} className="w-full h-full object-cover" />
                       </div>
-                      <Button
-                        onClick={() => setConciergeConversationStarted(true)}
-                        className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
-                      >
-                        {translatedTexts.avatar.startConversation}
-                      </Button>
                       <div className="flex-1 text-left">
                         <p className="text-gray-800 leading-relaxed">
                           <strong className="text-[#3f62ec]">
