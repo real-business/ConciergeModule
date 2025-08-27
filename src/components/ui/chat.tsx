@@ -129,10 +129,8 @@ export function Chat({
   };
 
   return (
-    <div
-      className={`flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden ${className}`}
-    >
-      <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-3 bg-white/80">
+    <div className={`flex flex-col h-full min-h-0 bg-white rounded-lg border border-primary/20 overflow-hidden ${className}`}>
+      <div ref={chatContainerRef} className="flex-1 min-h-0 overflow-y-auto p-3 bg-white/80">
         <div className="space-y-3">
           {messages?.length === 0 ? (
             <div className="flex items-start">

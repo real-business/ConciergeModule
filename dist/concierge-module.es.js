@@ -343,7 +343,7 @@ const J = (e) => {
   // I could also use lookbehind assertion in `lengthUnitRegex` but that isn't supported widely enough.
   mm.test(e) && !ym.test(e)
 ), wf = () => !1, _m = (e) => Sm.test(e), km = (e) => Cm.test(e), Om = () => {
-  const e = J("colors"), t = J("spacing"), r = J("blur"), o = J("brightness"), i = J("borderColor"), a = J("borderRadius"), s = J("borderSpacing"), n = J("borderWidth"), c = J("contrast"), u = J("grayscale"), l = J("hueRotate"), p = J("invert"), d = J("gap"), h = J("gradientColorStops"), f = J("gradientColorStopPositions"), g = J("inset"), m = J("margin"), v = J("opacity"), y = J("padding"), S = J("saturate"), C = J("scale"), b = J("sepia"), w = J("skew"), I = J("space"), E = J("translate"), N = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], M = () => ["auto", j, t], T = () => [j, t], L = () => ["", Le, Ye], U = () => ["auto", Wt, j], Q = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], ee = () => ["solid", "dashed", "dotted", "double", "none"], re = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], he = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], W = () => ["", "0", j], ne = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], K = () => [Wt, j];
+  const e = J("colors"), t = J("spacing"), r = J("blur"), o = J("brightness"), i = J("borderColor"), a = J("borderRadius"), s = J("borderSpacing"), n = J("borderWidth"), c = J("contrast"), u = J("grayscale"), l = J("hueRotate"), p = J("invert"), d = J("gap"), h = J("gradientColorStops"), f = J("gradientColorStopPositions"), g = J("inset"), m = J("margin"), v = J("opacity"), y = J("padding"), S = J("saturate"), C = J("scale"), b = J("sepia"), w = J("skew"), I = J("space"), E = J("translate"), N = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], M = () => ["auto", j, t], T = () => [j, t], L = () => ["", Le, Ye], U = () => ["auto", Wt, j], Q = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], ee = () => ["solid", "dashed", "dotted", "double", "none"], re = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], he = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], H = () => ["", "0", j], ne = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], K = () => [Wt, j];
   return {
     cacheSize: 500,
     separator: ":",
@@ -357,9 +357,9 @@ const J = (e) => {
       borderSpacing: T(),
       borderWidth: L(),
       contrast: K(),
-      grayscale: W(),
+      grayscale: H(),
       hueRotate: K(),
-      invert: W(),
+      invert: H(),
       gap: T(),
       gradientColorStops: [e],
       gradientColorStopPositions: [Rm, Ye],
@@ -369,7 +369,7 @@ const J = (e) => {
       padding: T(),
       saturate: K(),
       scale: K(),
-      sepia: W(),
+      sepia: H(),
       skew: K(),
       space: T(),
       translate: T()
@@ -624,14 +624,14 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/flex-grow
        */
       grow: [{
-        grow: W()
+        grow: H()
       }],
       /**
        * Flex Shrink
        * @see https://tailwindcss.com/docs/flex-shrink
        */
       shrink: [{
-        shrink: W()
+        shrink: H()
       }],
       /**
        * Order
@@ -4670,123 +4670,117 @@ function oC({
   }, N = () => {
     v(!m);
   };
-  return /* @__PURE__ */ k(
-    "div",
-    {
-      className: `flex flex-col h-full bg-white rounded-lg border border-primary/20 overflow-hidden ${o}`,
-      children: [
-        /* @__PURE__ */ P("div", { ref: y, className: "flex-1 overflow-y-auto p-3 bg-white/80", children: /* @__PURE__ */ k("div", { className: "space-y-3", children: [
-          e?.length === 0 ? /* @__PURE__ */ k("div", { className: "flex items-start", children: [
-            /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(Cc, { size: 14 }) }),
-            /* @__PURE__ */ P("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10", children: /* @__PURE__ */ P("div", { className: "text-sm text-secondary", children: t }) })
-          ] }) : e?.map((R, M) => {
-            const L = M === e.length - 1 && R.sender === "ai", U = c && L && u && R.sender === "ai";
-            return /* @__PURE__ */ P(
+  return /* @__PURE__ */ k("div", { className: `flex flex-col h-full min-h-0 bg-white rounded-lg border border-primary/20 overflow-hidden ${o}`, children: [
+    /* @__PURE__ */ P("div", { ref: y, className: "flex-1 min-h-0 overflow-y-auto p-3 bg-white/80", children: /* @__PURE__ */ k("div", { className: "space-y-3", children: [
+      e?.length === 0 ? /* @__PURE__ */ k("div", { className: "flex items-start", children: [
+        /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(Cc, { size: 14 }) }),
+        /* @__PURE__ */ P("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10", children: /* @__PURE__ */ P("div", { className: "text-sm text-secondary", children: t }) })
+      ] }) : e?.map((R, M) => {
+        const L = M === e.length - 1 && R.sender === "ai", U = c && L && u && R.sender === "ai";
+        return /* @__PURE__ */ P(
+          "div",
+          {
+            className: ps(
+              "flex",
+              R.sender === "user" ? "justify-end" : "justify-start",
+              "mb-4"
+            ),
+            children: /* @__PURE__ */ k(
               "div",
               {
                 className: ps(
-                  "flex",
-                  R.sender === "user" ? "justify-end" : "justify-start",
-                  "mb-4"
+                  "max-w-[80%] rounded-lg p-3",
+                  R.sender === "user" ? "bg-primary text-white" : "bg-light text-secondary"
                 ),
-                children: /* @__PURE__ */ k(
-                  "div",
-                  {
-                    className: ps(
-                      "max-w-[80%] rounded-lg p-3",
-                      R.sender === "user" ? "bg-primary text-white" : "bg-light text-secondary"
-                    ),
-                    children: [
-                      n ? n(R, M) : R.sender === "user" ? /* @__PURE__ */ P("div", { className: "text-sm", children: R.text }) : /* @__PURE__ */ P("div", { className: "text-sm", children: /* @__PURE__ */ P(qa, { remarkPlugins: [$a], children: R.text }) }),
-                      U && /* @__PURE__ */ P("div", { className: "mt-2 flex justify-end", children: /* @__PURE__ */ k(
-                        ke,
-                        {
-                          variant: "ghost",
-                          size: "sm",
-                          onClick: u,
-                          className: "h-6 px-2 text-xs hover:bg-secondary/20",
-                          children: [
-                            /* @__PURE__ */ P(Pg, { className: "h-3 w-3 mr-1" }),
-                            C.retry
-                          ]
-                        }
-                      ) })
-                    ]
-                  }
-                )
-              },
-              R.id
-            );
-          }),
-          i && /* @__PURE__ */ k("div", { className: "flex items-start", children: [
-            /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(Cc, { size: 14 }) }),
-            /* @__PURE__ */ k("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10 flex items-center", children: [
-              /* @__PURE__ */ P(ja, { className: "h-4 w-4 animate-spin mr-2 text-primary" }),
-              /* @__PURE__ */ P("span", { className: "text-sm text-secondary", children: C.thinking })
-            ] })
-          ] }),
-          /* @__PURE__ */ P("div", { ref: g })
-        ] }) }),
-        /* @__PURE__ */ k("div", { className: "p-3 border-t border-light bg-white flex-shrink-0", children: [
-          s && s?.length > 0 && /* @__PURE__ */ k("div", { className: "bg-white border-b border-light flex-shrink-0", children: [
-            /* @__PURE__ */ k(
-              "button",
-              {
-                onClick: N,
-                className: "w-full p-2 flex items-center justify-center hover:bg-secondary/10 transition-colors",
                 children: [
-                  /* @__PURE__ */ P("span", { className: "text-sm font-medium text-secondary", children: C.suggestedPrompts }),
-                  m ? /* @__PURE__ */ P(bg, { className: "h-4 w-4 text-secondary" }) : /* @__PURE__ */ P(wg, { className: "h-4 w-4 text-secondary" })
+                  n ? n(R, M) : R.sender === "user" ? /* @__PURE__ */ P("div", { className: "text-sm", children: R.text }) : /* @__PURE__ */ P("div", { className: "text-sm", children: /* @__PURE__ */ P(qa, { remarkPlugins: [$a], children: R.text }) }),
+                  U && /* @__PURE__ */ P("div", { className: "mt-2 flex justify-end", children: /* @__PURE__ */ k(
+                    ke,
+                    {
+                      variant: "ghost",
+                      size: "sm",
+                      onClick: u,
+                      className: "h-6 px-2 text-xs hover:bg-secondary/20",
+                      children: [
+                        /* @__PURE__ */ P(Pg, { className: "h-3 w-3 mr-1" }),
+                        C.retry
+                      ]
+                    }
+                  ) })
                 ]
               }
-            ),
-            !m && /* @__PURE__ */ P("div", { className: "p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2", children: s.map(({ id: R, text: M, icon: T }) => /* @__PURE__ */ k(
-              ke,
-              {
-                variant: "outline",
-                className: ps(
-                  "w-full justify-start text-left text-sm h-auto min-h-[40px] py-2 px-3",
-                  "whitespace-normal break-words"
-                ),
-                onClick: () => E(M),
-                children: [
-                  /* @__PURE__ */ P(T, { className: "h-4 w-4 mr-2 text-primary flex-shrink-0" }),
-                  /* @__PURE__ */ P("span", { className: "text-left", children: M })
-                ]
-              },
-              R
-            )) })
-          ] }),
-          /* @__PURE__ */ k("div", { className: "flex items-end", children: [
-            /* @__PURE__ */ P(
-              "textarea",
-              {
-                value: h,
-                onChange: (R) => {
-                  f(R.target.value), l(!0), R.target.style.height = "auto", R.target.style.height = Math.min(R.target.scrollHeight, 120) + "px";
-                },
-                onKeyDown: I,
-                placeholder: C.placeholder,
-                className: "flex-1 rounded-l-lg rounded-r-none focus-visible:ring-0 focus-visible:ring-offset-0 border-r-0 resize-none min-h-[40px] max-h-[120px] p-3 text-sm border border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-                disabled: i || !1,
-                rows: 1
-              }
-            ),
-            /* @__PURE__ */ P(
-              ke,
-              {
-                onClick: w,
-                className: "rounded-l-none bg-primary hover:bg-secondary h-[40px]",
-                disabled: h.trim() === "" || i,
-                children: i ? /* @__PURE__ */ P(ja, { className: "h-5 w-5 animate-spin" }) : /* @__PURE__ */ P(Eg, { size: 18 })
-              }
-            ),
-            a && /* @__PURE__ */ P("div", { className: "ml-2", children: a })
-          ] })
+            )
+          },
+          R.id
+        );
+      }),
+      i && /* @__PURE__ */ k("div", { className: "flex items-start", children: [
+        /* @__PURE__ */ P("div", { className: "w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ P(Cc, { size: 14 }) }),
+        /* @__PURE__ */ k("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10 flex items-center", children: [
+          /* @__PURE__ */ P(ja, { className: "h-4 w-4 animate-spin mr-2 text-primary" }),
+          /* @__PURE__ */ P("span", { className: "text-sm text-secondary", children: C.thinking })
         ] })
-      ]
-    }
-  );
+      ] }),
+      /* @__PURE__ */ P("div", { ref: g })
+    ] }) }),
+    /* @__PURE__ */ k("div", { className: "p-3 border-t border-light bg-white flex-shrink-0", children: [
+      s && s?.length > 0 && /* @__PURE__ */ k("div", { className: "bg-white border-b border-light flex-shrink-0", children: [
+        /* @__PURE__ */ k(
+          "button",
+          {
+            onClick: N,
+            className: "w-full p-2 flex items-center justify-center hover:bg-secondary/10 transition-colors",
+            children: [
+              /* @__PURE__ */ P("span", { className: "text-sm font-medium text-secondary", children: C.suggestedPrompts }),
+              m ? /* @__PURE__ */ P(bg, { className: "h-4 w-4 text-secondary" }) : /* @__PURE__ */ P(wg, { className: "h-4 w-4 text-secondary" })
+            ]
+          }
+        ),
+        !m && /* @__PURE__ */ P("div", { className: "p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2", children: s.map(({ id: R, text: M, icon: T }) => /* @__PURE__ */ k(
+          ke,
+          {
+            variant: "outline",
+            className: ps(
+              "w-full justify-start text-left text-sm h-auto min-h-[40px] py-2 px-3",
+              "whitespace-normal break-words"
+            ),
+            onClick: () => E(M),
+            children: [
+              /* @__PURE__ */ P(T, { className: "h-4 w-4 mr-2 text-primary flex-shrink-0" }),
+              /* @__PURE__ */ P("span", { className: "text-left", children: M })
+            ]
+          },
+          R
+        )) })
+      ] }),
+      /* @__PURE__ */ k("div", { className: "flex items-end", children: [
+        /* @__PURE__ */ P(
+          "textarea",
+          {
+            value: h,
+            onChange: (R) => {
+              f(R.target.value), l(!0), R.target.style.height = "auto", R.target.style.height = Math.min(R.target.scrollHeight, 120) + "px";
+            },
+            onKeyDown: I,
+            placeholder: C.placeholder,
+            className: "flex-1 rounded-l-lg rounded-r-none focus-visible:ring-0 focus-visible:ring-offset-0 border-r-0 resize-none min-h-[40px] max-h-[120px] p-3 text-sm border border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            disabled: i || !1,
+            rows: 1
+          }
+        ),
+        /* @__PURE__ */ P(
+          ke,
+          {
+            onClick: w,
+            className: "rounded-l-none bg-primary hover:bg-secondary h-[40px]",
+            disabled: h.trim() === "" || i,
+            children: i ? /* @__PURE__ */ P(ja, { className: "h-5 w-5 animate-spin" }) : /* @__PURE__ */ P(Eg, { size: 18 })
+          }
+        ),
+        a && /* @__PURE__ */ P("div", { className: "ml-2", children: a })
+      ] })
+    ] })
+  ] });
 }
 function aC(e) {
   if (Object.prototype.hasOwnProperty.call(e, "__esModule")) return e;
@@ -16345,9 +16339,9 @@ function A() {
     Object.defineProperty(e, "NoMatchReason", { enumerable: !0, get: function() {
       return he.NoMatchReason;
     } });
-    var W = /* @__PURE__ */ TR();
+    var H = /* @__PURE__ */ TR();
     Object.defineProperty(e, "NoMatchDetails", { enumerable: !0, get: function() {
-      return W.NoMatchDetails;
+      return H.NoMatchDetails;
     } });
     var ne = /* @__PURE__ */ _R();
     Object.defineProperty(e, "TranslationRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
@@ -16547,9 +16541,9 @@ function A() {
     Object.defineProperty(e, "SpeechSynthesisBookmarkEventArgs", { enumerable: !0, get: function() {
       return V.SpeechSynthesisBookmarkEventArgs;
     } });
-    var H = /* @__PURE__ */ IP();
+    var W = /* @__PURE__ */ IP();
     Object.defineProperty(e, "SpeechSynthesisVisemeEventArgs", { enumerable: !0, get: function() {
-      return H.SpeechSynthesisVisemeEventArgs;
+      return W.SpeechSynthesisVisemeEventArgs;
     } });
     var ze = /* @__PURE__ */ AP();
     Object.defineProperty(e, "SpeechSynthesisBoundaryType", { enumerable: !0, get: function() {
@@ -23396,26 +23390,26 @@ class Us extends Xs {
       const U = (r.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey) && T ? void 0 : d, Q = S && I !== d && this.options.updateMissing;
       if (T || M || Q) {
         if (this.logger.log(Q ? "updateKey" : "missingKey", u, c, s, Q ? I : d), a) {
-          const W = this.resolve(s, {
+          const H = this.resolve(s, {
             ...r,
             keySeparator: !1
           });
-          W && W.res && this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
+          H && H.res && this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
         }
         let ee = [];
         const re = this.languageUtils.getFallbackCodes(this.options.fallbackLng, r.lng || this.language);
         if (this.options.saveMissingTo === "fallback" && re && re[0])
-          for (let W = 0; W < re.length; W++)
-            ee.push(re[W]);
+          for (let H = 0; H < re.length; H++)
+            ee.push(re[H]);
         else this.options.saveMissingTo === "all" ? ee = this.languageUtils.toResolveHierarchy(r.lng || this.language) : ee.push(r.lng || this.language);
-        const he = (W, ne, K) => {
+        const he = (H, ne, K) => {
           const Ne = S && K !== d ? K : U;
-          this.options.missingKeyHandler ? this.options.missingKeyHandler(W, c, ne, Ne, Q, r) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(W, c, ne, Ne, Q, r), this.emit("missingKey", W, c, ne, d);
+          this.options.missingKeyHandler ? this.options.missingKeyHandler(H, c, ne, Ne, Q, r) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(H, c, ne, Ne, Q, r), this.emit("missingKey", H, c, ne, d);
         };
-        this.options.saveMissing && (this.options.saveMissingPlurals && y ? ee.forEach((W) => {
-          const ne = this.pluralResolver.getSuffixes(W, r);
+        this.options.saveMissing && (this.options.saveMissingPlurals && y ? ee.forEach((H) => {
+          const ne = this.pluralResolver.getSuffixes(H, r);
           w && r[`defaultValue${this.options.pluralSeparator}zero`] && ne.indexOf(`${this.options.pluralSeparator}zero`) < 0 && ne.push(`${this.options.pluralSeparator}zero`), ne.forEach((K) => {
-            he([W], s + K, r[`defaultValue${K}`] || I);
+            he([H], s + K, r[`defaultValue${K}`] || I);
           });
         }) : he(ee, s, I));
       }
@@ -25812,7 +25806,7 @@ const eI = [
     speechKey: T,
     config: L
   }, U) => {
-    const [Q, ee] = D("welcome"), [re, he] = D(null), [W, ne] = D(!1), [K, Ne] = D(!1), nt = Ve(null), [He, xe] = D([]), [it, qt] = D("16:9"), { tavusApiKey: Ke } = tI(), [_e, st] = D("en");
+    const [Q, ee] = D("welcome"), [re, he] = D(null), [H, ne] = D(!1), [K, Ne] = D(!1), nt = Ve(null), [He, xe] = D([]), [it, qt] = D("16:9"), { tavusApiKey: Ke } = tI(), [_e, st] = D("en");
     B(() => {
       typeof window < "u" && st(localStorage.getItem("lang") || "en");
     }, []);
@@ -25901,7 +25895,7 @@ const eI = [
         Rw,
         {
           onStart: fe,
-          loading: W,
+          loading: H,
           buttonText: n,
           platform: s || "home",
           replicaId: e || "r82081c7f26d",
@@ -26024,7 +26018,7 @@ function aI({
     azureTranslatorRegion: ""
   }
 }) {
-  const [l, p] = D([]), [d, h] = D(null), [f, g] = D("chat"), [m, v] = D(!1), [y, S] = D(!1), [C, b] = D(!1), [w, I] = D([]), [E, N] = D(!1), [R, M] = D({}), [T, L] = D(""), [U, Q] = D(!1), [ee, re] = D(!1), [he, W] = D(!1), [ne, K] = D(!1), [Ne, nt] = D(""), He = Ve(null), [xe, it] = D(""), [qt, Ke] = D(!1), [_e, st] = D(!1), [Gt, Je] = D(!1), [ot, fe] = D(""), [at, bs] = D(""), [ws, Qt] = D(""), [Yt, Pe] = D(""), [be, Se] = D(!1), Ge = Ve(null), F = Ve(null), [te, ct] = D([]), [ie, Es] = D({
+  const [l, p] = D([]), [d, h] = D(null), [f, g] = D("chat"), [m, v] = D(!1), [y, S] = D(!1), [C, b] = D(!1), [w, I] = D([]), [E, N] = D(!1), [R, M] = D({}), [T, L] = D(""), [U, Q] = D(!1), [ee, re] = D(!1), [he, H] = D(!1), [ne, K] = D(!1), [Ne, nt] = D(""), He = Ve(null), [xe, it] = D(""), [qt, Ke] = D(!1), [_e, st] = D(!1), [Gt, Je] = D(!1), [ot, fe] = D(""), [at, bs] = D(""), [ws, Qt] = D(""), [Yt, Pe] = D(""), [be, Se] = D(!1), Ge = Ve(null), F = Ve(null), [te, ct] = D([]), [ie, Es] = D({
     avatar: {
       chooseAvatar: `Choose Your ${t}`,
       startConversation: "Start Conversation",
@@ -26056,7 +26050,7 @@ function aI({
       try {
         const X = await ig();
         if (X?.Success && X.Data) {
-          const V = X.Data.find((H) => H.ExternalId === oI);
+          const V = X.Data.find((W) => W.ExternalId === oI);
           V && (p([V]), h(V));
         }
       } catch (X) {
@@ -26074,7 +26068,7 @@ function aI({
       if (i !== "en" && Ge.current !== i) {
         const [
           V,
-          H,
+          W,
           ze,
           G,
           ve,
@@ -26115,7 +26109,7 @@ function aI({
         v(!1), L(""), I([]), Es({
           avatar: {
             chooseAvatar: V,
-            startConversation: H,
+            startConversation: W,
             yourAIHealthNavigator: ze,
             description: G
           },
@@ -26216,12 +26210,12 @@ function aI({
       timestamp: /* @__PURE__ */ new Date()
     };
     nt($), I((G) => [...G, V]), S(!0);
-    let H = `${$}`;
+    let W = `${$}`;
     const ze = [...te, ...X];
-    ze.length > 0 && (H += "Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed."), $ === "yes, continue" && (H += "Start the interview. User clicked continue.");
+    ze.length > 0 && (W += "Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed."), $ === "yes, continue" && (W += "Start the interview. User clicked continue.");
     try {
       const G = await Vh(
-        H,
+        W,
         "52533633434137384342",
         // Send user ID instead of email - for testing hardcoding the userID
         "",
@@ -26253,7 +26247,7 @@ function aI({
           text: G.Data.Message,
           timestamp: /* @__PURE__ */ new Date()
         };
-        I((Ce) => [...Ce, ve]), T || L(G?.Data?.SessionId || ""), fe(G.Data.Message), (G.Data.Message.toLowerCase().includes("click continue") || G.Data.Message.toLowerCase().includes("continue")) && Q(!0), (G.Data.Message.toLowerCase().includes("sign up") || G.Data.Message.toLowerCase().includes("thank you for choosing") || G.Data.Message.toLowerCase().includes("ready to connect")) && re(!0), (G.Data.Message.toLowerCase().includes("buy now") || G.Data.Message.toLowerCase().includes("ready to get your test kit")) && W(!0), c && c(G), await iI(
+        I((Ce) => [...Ce, ve]), T || L(G?.Data?.SessionId || ""), fe(G.Data.Message), (G.Data.Message.toLowerCase().includes("click continue") || G.Data.Message.toLowerCase().includes("continue")) && Q(!0), (G.Data.Message.toLowerCase().includes("sign up") || G.Data.Message.toLowerCase().includes("thank you for choosing") || G.Data.Message.toLowerCase().includes("ready to connect")) && re(!0), (G.Data.Message.toLowerCase().includes("buy now") || G.Data.Message.toLowerCase().includes("ready to get your test kit")) && H(!0), c && c(G), await iI(
           "",
           "AIHealthNavigator",
           $,
@@ -26289,24 +26283,24 @@ function aI({
   }, Zt = () => {
     Q(!1), Qe("yes, continue", []);
   }, oe = () => {
-    W(!1), typeof window < "u" && (window.location.href = "/account");
+    H(!1), typeof window < "u" && (window.location.href = "/account");
   }, no = () => {
     typeof window < "u" && (a ? window.location.href = a : window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/register");
   }, Is = () => {
     I([]);
   }, As = ($, X) => {
     const V = X === "like";
-    M((H) => ({
-      ...H,
+    M((W) => ({
+      ...W,
       [$.id]: X
     })), Cw(
       $.text,
       "",
       "",
       V
-    ).then((H) => {
-    }).catch((H) => {
-      console.error("Error sending feedback:", H);
+    ).then((W) => {
+    }).catch((W) => {
+      console.error("Error sending feedback:", W);
     });
   }, io = async ($) => {
     b(!0);
@@ -26319,7 +26313,7 @@ function aI({
   }, Ts = () => {
     F.current?.click();
   };
-  return /* @__PURE__ */ k("div", { className: "w-full h-full", children: [
+  return /* @__PURE__ */ k("div", { className: "w-full", children: [
     /* @__PURE__ */ P("div", { className: "container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8", children: /* @__PURE__ */ k("div", { className: "relative", children: [
       /* @__PURE__ */ P("div", { className: "relative z-10", children: /* @__PURE__ */ k(
         vf.div,
@@ -26327,9 +26321,10 @@ function aI({
           initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
           transition: { duration: 0.5 },
-          className: "rounded-lg shadow-2xl border border-primary/20 overflow-hidden",
+          className: `flex flex-col rounded-lg shadow-2xl border border-primary/20 overflow-hidden\r
+              h-[min(80vh,700px)] md:h-[700px]`,
           children: [
-            /* @__PURE__ */ k("div", { className: "p-4 sm:p-6 bg-neutral border-b border-primary/20", children: [
+            /* @__PURE__ */ k("div", { className: "p-4 sm:p-6 bg-neutral border-b border-primary/20 shrink-0", children: [
               /* @__PURE__ */ k("div", { className: "flex flex-row items-center justify-between gap-4", children: [
                 /* @__PURE__ */ k("div", { className: "flex items-center flex-shrink min-w-0", children: [
                   /* @__PURE__ */ P("div", { className: "h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0", children: /* @__PURE__ */ P(
@@ -26409,17 +26404,15 @@ function aI({
                 )
               ] })
             ] }),
-            /* @__PURE__ */ k("div", { className: `grid grid-cols-1 md:grid-cols-2 \r
-                h-[70vh] md:h-[600px]\r
-                max-h-[100vh]`, children: [
+            /* @__PURE__ */ k("div", { className: "flex-1 min-h-0 overflow-hidden grid grid-cols-1 md:grid-cols-2", children: [
+              "+ ",
               /* @__PURE__ */ P("div", { className: `\r
-                  flex flex-col\r
-                  basis=[35%] md:basis-auto\r
-                  min-h-0\r
-                  overflow-y-auto\r
-                  p-4 md:p-6\r
-                  border-b md:border-b-0 md:border-r border-primary/20\r
-                `, children: /* @__PURE__ */ P("div", { className: "h-full w-full", children: m ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: d && /* @__PURE__ */ P(df, { fallback: /* @__PURE__ */ P("div", { className: "w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center", children: "Loading conversation..." }), children: /* @__PURE__ */ P(
+                    flex flex-col\r
+                    basis-[35%] md:basis-auto\r
+                    min-h-0 overflow-hidden               \r
+                    p-4 md:p-6\r
+                    border-b md:border-b-0 md:border-r border-primary/20\r
+                  `, children: /* @__PURE__ */ P("div", { className: "h-full w-full min-h-0", children: m ? /* @__PURE__ */ P("div", { className: "h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20", children: d && /* @__PURE__ */ P(df, { fallback: /* @__PURE__ */ P("div", { className: "w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center", children: "Loading conversation..." }), children: /* @__PURE__ */ P(
                 nI,
                 {
                   ref: He,
@@ -26486,13 +26479,13 @@ function aI({
                   }
                 )
               ] }) }) }),
+              "+ ",
               /* @__PURE__ */ P("div", { className: `\r
-                 flex flex-col\r
-                  basis=[65%] md:basis-auto\r
-                  min-h-0\r
-                  overflow-y-auto\r
-                  p-4 md:p-6\r
-                `, children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ P(
+                    flex flex-col\r
+                    basis-[65%] md:basis-auto\r
+                    min-h-0 overflow-hidden               /* no parent growth */\r
+                    p-4 md:p-6\r
+                  `, children: /* @__PURE__ */ P("div", { className: "flex-1 min-h-0 overflow-y-auto", children: /* @__PURE__ */ P(
                 oC,
                 {
                   language: i,
@@ -26526,15 +26519,17 @@ function aI({
                           {
                             remarkPlugins: [$a],
                             components: {
-                              p: ({ children: H }) => /* @__PURE__ */ P("p", { className: "text-sm mb-2", children: H }),
-                              ol: ({ children: H }) => /* @__PURE__ */ P("ol", { style: { listStyleType: "circle" }, className: "ml-6 mb-2", children: H }),
-                              ul: ({ children: H }) => /* @__PURE__ */ P("ul", { className: "list-disc ml-6 mb-2", children: H }),
-                              li: ({ children: H }) => /* @__PURE__ */ P("li", { className: "mb-1", children: H }),
-                              strong: ({ children: H }) => /* @__PURE__ */ P("strong", { className: "font-semibold", children: H }),
-                              a: ({ href: H, children: ze }) => /* @__PURE__ */ P(
+                              p: ({ children: W }) => /* @__PURE__ */ P("p", { className: "text-sm mb-2", children: W }),
+                              ol: ({ children: W }) => /* @__PURE__ */ P("ol", { style: { listStyleType: "circle" }, className: "ml-6 mb-2", children: W }),
+                              ul: ({ children: W }) => /* @__PURE__ */ P("ul", { className: "list-disc ml-6 mb-2", children: W }),
+                              li: ({ children: W }) => /* @__PURE__ */ P("li", { className: "mb-1", children: W }),
+                              img: (W) => /* @__PURE__ */ P("img", { ...W, className: "max-w-full max-h-64 object-contain rounded" }),
+                              code: ({ children: W }) => /* @__PURE__ */ P("code", { className: "break-words whitespace-pre-wrap", children: W }),
+                              strong: ({ children: W }) => /* @__PURE__ */ P("strong", { className: "font-semibold", children: W }),
+                              a: ({ href: W, children: ze }) => /* @__PURE__ */ P(
                                 "a",
                                 {
-                                  href: H,
+                                  href: W,
                                   target: "_blank",
                                   rel: "noopener noreferrer",
                                   className: "text-blue-600 underline",

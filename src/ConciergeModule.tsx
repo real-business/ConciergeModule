@@ -637,7 +637,7 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full">
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative">
           <div className="relative z-10">
@@ -645,10 +645,11 @@ export default function ConciergeModule({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
+              className="flex flex-col rounded-lg shadow-2xl border border-primary/20 overflow-hidden
+              h-[min(80vh,700px)] md:h-[700px]"  // pick one height strategy you like
             >
               {/* Header */}
-              <div className="p-4 sm:p-6 bg-neutral border-b border-primary/20">
+              <div className="p-4 sm:p-6 bg-neutral border-b border-primary/20 shrink-0">
                 {/* Flex row on all screens, wrap on mobile */}
                 <div className="flex flex-row items-center justify-between gap-4">
                   {/* Avatar + Text */}
@@ -740,19 +741,16 @@ export default function ConciergeModule({
 
 
               {/* Main Content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 
-                h-[70vh] md:h-[600px]
-                max-h-[100vh]">
+              <div className="flex-1 min-h-0 overflow-hidden grid grid-cols-1 md:grid-cols-2">
                 {/* Avatar Section - Fixed */}
-                <div className="
-                  flex flex-col
-                  basis=[35%] md:basis-auto
-                  min-h-0
-                  overflow-y-auto
-                  p-4 md:p-6
-                  border-b md:border-b-0 md:border-r border-primary/20
-                ">
-                  <div className="h-full w-full">
+                + <div className="
+                    flex flex-col
+                    basis-[35%] md:basis-auto
+                    min-h-0 overflow-hidden               
+                    p-4 md:p-6
+                    border-b md:border-b-0 md:border-r border-primary/20
+                  ">
+                  <div className="h-full w-full min-h-0">
                     {conciergeConversationStarted ? (
                       <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
                         {selectedAvatar && (
@@ -835,13 +833,12 @@ export default function ConciergeModule({
                 </div>
 
                 {/* Chat Section - Scrollable */}
-                <div className="
-                 flex flex-col
-                  basis=[65%] md:basis-auto
-                  min-h-0
-                  overflow-y-auto
-                  p-4 md:p-6
-                ">
+                + <div className="
+                    flex flex-col
+                    basis-[65%] md:basis-auto
+                    min-h-0 overflow-hidden               /* no parent growth */
+                    p-4 md:p-6
+                  ">
                   <div className="flex-1 min-h-0 overflow-y-auto">
                     <Chat
                       language={language}
@@ -879,6 +876,12 @@ export default function ConciergeModule({
                                   ol: ({ children }) => <ol style={{ listStyleType: 'circle' }} className="ml-6 mb-2">{children}</ol>,
                                   ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
                                   li: ({ children }) => <li className="mb-1">{children}</li>,
+                                  img: (props) => (
+                                    <img {...props} className="max-w-full max-h-64 object-contain rounded" />
+                                  ),
+                                  code: ({ children }) => (
+                                    <code className="break-words whitespace-pre-wrap">{children}</code>
+                                  ),
                                   strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
                                   a: ({ href, children }) => (
                                     <a
