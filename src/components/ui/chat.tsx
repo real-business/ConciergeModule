@@ -134,11 +134,11 @@ export function Chat({
         <div className="space-y-3">
           {messages?.length === 0 ? (
             <div className="flex items-start">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#3f62ec] flex items-center justify-center text-white flex-shrink-0">
                 <Bot size={14} />
               </div>
               <div className="ml-2 px-3 py-2 rounded-lg bg-secondary/10">
-                <div className="text-sm text-secondary">
+                <div className="text-sm text-[#3f62ec]">
                   {welcomeMessage}
                 </div>
               </div>
@@ -162,8 +162,8 @@ export function Chat({
                     className={cn(
                       "max-w-[80%] rounded-lg p-3",
                       message.sender === "user"
-                        ? "bg-primary text-white"
-                        : "bg-light text-secondary"
+                        ? "bg-[#3f62ec] text-white"
+                        : "bg-light text-[#3f62ec]"
                     )}
                   >
                     {renderMessage ? (
@@ -197,11 +197,11 @@ export function Chat({
 
           {isLoading && (
             <div className="flex items-start">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#3f62ec] flex items-center justify-center text-white flex-shrink-0">
                 <Bot size={14} />
               </div>
               <div className="ml-2 px-3 py-2 rounded-lg bg-secondary/10 flex items-center">
-                <Loader2 className="h-4 w-4 animate-spin mr-2 text-primary" />
+                <Loader2 className="h-4 w-4 animate-spin mr-2 text-[#3f62ec]" />
                 <span className="text-sm text-secondary">{labels.thinking}</span>
               </div>
             </div>
@@ -260,7 +260,7 @@ export function Chat({
             }}
             onKeyDown={handleKeyDown}
             placeholder={labels.placeholder}
-            className="flex-1 rounded-l-lg rounded-r-none focus-visible:ring-0 focus-visible:ring-offset-0 border-r-0 resize-none min-h-[40px] max-h-[120px] p-3 text-sm border border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex-1 rounded-l-lg rounded-r-none focus-visible:ring-0 focus-visible:ring-offset-0 text-[#3f62ec] border-r-0 resize-none min-h-[40px] max-h-[120px] p-3 text-sm border border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             disabled={isLoading || !enoughCredits}
             rows={1}
           />

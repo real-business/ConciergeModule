@@ -788,12 +788,12 @@ export default function ConciergeModule({
                         <img
                           src={selectedAvatar?.ImageUrl} 
                           alt={selectedAvatar?.Name}
-                          className="w-full max-w-md h-auto rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg"
+                          className="w-full max-w-md h-auto rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg p-4"
                           data-testid="img-ai-health-concierge"
                         />
                         <Button
                           onClick={() => setConciergeConversationStarted(true)}
-                          className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                          className="w-full bg-[#3f62ec] hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
                         >
                           {translatedTexts.avatar.startConversation}
                         </Button>
