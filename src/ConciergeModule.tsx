@@ -664,9 +664,9 @@ export default function ConciergeModule({
                       <h1 className="text-lg sm:text-2xl font-bold text-primary leading-tight truncate">
                         {translatedTexts.avatar.yourAIHealthNavigator}
                       </h1>
-                      <p className="text-xs sm:text-sm text-secondary truncate">
+                      {/* <p className="text-xs sm:text-sm text-secondary truncate">
                         {translatedTexts.avatar.description}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 

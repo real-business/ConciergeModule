@@ -52,7 +52,7 @@ export const postChatHistory = async (
 
   let result: ChatHistoryResponse;
   try {
-    const apiUrl = getApiUrl("/api/User/education/chathistory/post");
+    const apiUrl = getApiUrl("/api/User/chathistory/post");
     //console.log('Attempting to post chat history to:', apiUrl);
     //console.log('With payload:', payload);
 

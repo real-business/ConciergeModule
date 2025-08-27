@@ -343,7 +343,7 @@ const J = (e) => {
   // I could also use lookbehind assertion in `lengthUnitRegex` but that isn't supported widely enough.
   mm.test(e) && !ym.test(e)
 ), wf = () => !1, _m = (e) => Sm.test(e), km = (e) => Cm.test(e), Om = () => {
-  const e = J("colors"), t = J("spacing"), r = J("blur"), o = J("brightness"), i = J("borderColor"), a = J("borderRadius"), s = J("borderSpacing"), n = J("borderWidth"), c = J("contrast"), u = J("grayscale"), l = J("hueRotate"), p = J("invert"), d = J("gap"), h = J("gradientColorStops"), f = J("gradientColorStopPositions"), g = J("inset"), m = J("margin"), v = J("opacity"), y = J("padding"), S = J("saturate"), C = J("scale"), b = J("sepia"), w = J("skew"), I = J("space"), E = J("translate"), N = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], M = () => ["auto", j, t], T = () => [j, t], L = () => ["", Le, Ye], U = () => ["auto", Wt, j], Q = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], ee = () => ["solid", "dashed", "dotted", "double", "none"], re = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], he = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], W = () => ["", "0", j], ie = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], K = () => [Wt, j];
+  const e = J("colors"), t = J("spacing"), r = J("blur"), o = J("brightness"), i = J("borderColor"), a = J("borderRadius"), s = J("borderSpacing"), n = J("borderWidth"), c = J("contrast"), u = J("grayscale"), l = J("hueRotate"), p = J("invert"), d = J("gap"), h = J("gradientColorStops"), f = J("gradientColorStopPositions"), g = J("inset"), m = J("margin"), v = J("opacity"), y = J("padding"), S = J("saturate"), C = J("scale"), b = J("sepia"), w = J("skew"), I = J("space"), E = J("translate"), N = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], M = () => ["auto", j, t], T = () => [j, t], L = () => ["", Le, Ye], U = () => ["auto", Wt, j], Q = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], ee = () => ["solid", "dashed", "dotted", "double", "none"], re = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], he = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], W = () => ["", "0", j], ne = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], K = () => [Wt, j];
   return {
     cacheSize: 500,
     separator: ":",
@@ -400,14 +400,14 @@ const J = (e) => {
        * @see https://tailwindcss.com/docs/break-after
        */
       "break-after": [{
-        "break-after": ie()
+        "break-after": ne()
       }],
       /**
        * Break Before
        * @see https://tailwindcss.com/docs/break-before
        */
       "break-before": [{
-        "break-before": ie()
+        "break-before": ne()
       }],
       /**
        * Break Inside
@@ -16349,9 +16349,9 @@ function A() {
     Object.defineProperty(e, "NoMatchDetails", { enumerable: !0, get: function() {
       return W.NoMatchDetails;
     } });
-    var ie = /* @__PURE__ */ _R();
+    var ne = /* @__PURE__ */ _R();
     Object.defineProperty(e, "TranslationRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
-      return ie.TranslationRecognitionCanceledEventArgs;
+      return ne.TranslationRecognitionCanceledEventArgs;
     } });
     var K = /* @__PURE__ */ kR();
     Object.defineProperty(e, "IntentRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
@@ -16461,9 +16461,9 @@ function A() {
     Object.defineProperty(e, "SpeakerIdentificationModel", { enumerable: !0, get: function() {
       return ct.SpeakerIdentificationModel;
     } });
-    var ne = /* @__PURE__ */ eP();
+    var ie = /* @__PURE__ */ eP();
     Object.defineProperty(e, "SpeakerVerificationModel", { enumerable: !0, get: function() {
-      return ne.SpeakerVerificationModel;
+      return ie.SpeakerVerificationModel;
     } });
     var Es = /* @__PURE__ */ tP();
     Object.defineProperty(e, "AutoDetectSourceLanguageConfig", { enumerable: !0, get: function() {
@@ -23408,13 +23408,13 @@ class Us extends Xs {
           for (let W = 0; W < re.length; W++)
             ee.push(re[W]);
         else this.options.saveMissingTo === "all" ? ee = this.languageUtils.toResolveHierarchy(r.lng || this.language) : ee.push(r.lng || this.language);
-        const he = (W, ie, K) => {
+        const he = (W, ne, K) => {
           const Ne = S && K !== d ? K : U;
-          this.options.missingKeyHandler ? this.options.missingKeyHandler(W, c, ie, Ne, Q, r) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(W, c, ie, Ne, Q, r), this.emit("missingKey", W, c, ie, d);
+          this.options.missingKeyHandler ? this.options.missingKeyHandler(W, c, ne, Ne, Q, r) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(W, c, ne, Ne, Q, r), this.emit("missingKey", W, c, ne, d);
         };
         this.options.saveMissing && (this.options.saveMissingPlurals && y ? ee.forEach((W) => {
-          const ie = this.pluralResolver.getSuffixes(W, r);
-          w && r[`defaultValue${this.options.pluralSeparator}zero`] && ie.indexOf(`${this.options.pluralSeparator}zero`) < 0 && ie.push(`${this.options.pluralSeparator}zero`), ie.forEach((K) => {
+          const ne = this.pluralResolver.getSuffixes(W, r);
+          w && r[`defaultValue${this.options.pluralSeparator}zero`] && ne.indexOf(`${this.options.pluralSeparator}zero`) < 0 && ne.push(`${this.options.pluralSeparator}zero`), ne.forEach((K) => {
             he([W], s + K, r[`defaultValue${K}`] || I);
           });
         }) : he(ee, s, I));
@@ -25812,7 +25812,7 @@ const eI = [
     speechKey: T,
     config: L
   }, U) => {
-    const [Q, ee] = D("welcome"), [re, he] = D(null), [W, ie] = D(!1), [K, Ne] = D(!1), nt = Ve(null), [He, xe] = D([]), [it, qt] = D("16:9"), { tavusApiKey: Ke } = tI(), [_e, st] = D("en");
+    const [Q, ee] = D("welcome"), [re, he] = D(null), [W, ne] = D(!1), [K, Ne] = D(!1), nt = Ve(null), [He, xe] = D([]), [it, qt] = D("16:9"), { tavusApiKey: Ke } = tI(), [_e, st] = D("en");
     B(() => {
       typeof window < "u" && st(localStorage.getItem("lang") || "en");
     }, []);
@@ -25855,7 +25855,7 @@ const eI = [
     }, [s]);
     const fe = async () => {
       try {
-        Ne(!1), ie(!0), v(!0), y(!0), nt.current && nt.current.pause();
+        Ne(!1), ne(!0), v(!0), y(!0), nt.current && nt.current.pause();
         const F = await Iw({
           replicaId: e || "r82081c7f26d",
           personaId: t || "pc9cb547c05e",
@@ -25872,7 +25872,7 @@ const eI = [
       } catch (F) {
         console.error("Conversation error:", F);
       } finally {
-        ie(!1);
+        ne(!1);
       }
     }, at = async () => {
       Ne(!0), y(!1);
@@ -25976,7 +25976,7 @@ const eI = [
   };
   let c;
   try {
-    const u = mc("/api/User/education/chathistory/post"), l = await fetch(u, n);
+    const u = mc("/api/User/chathistory/post"), l = await fetch(u, n);
     if (!l.ok) {
       let p = {};
       const d = l.headers.get("content-type");
@@ -26024,7 +26024,7 @@ function aI({
     azureTranslatorRegion: ""
   }
 }) {
-  const [l, p] = D([]), [d, h] = D(null), [f, g] = D("chat"), [m, v] = D(!1), [y, S] = D(!1), [C, b] = D(!1), [w, I] = D([]), [E, N] = D(!1), [R, M] = D({}), [T, L] = D(""), [U, Q] = D(!1), [ee, re] = D(!1), [he, W] = D(!1), [ie, K] = D(!1), [Ne, nt] = D(""), He = Ve(null), [xe, it] = D(""), [qt, Ke] = D(!1), [_e, st] = D(!1), [Gt, Je] = D(!1), [ot, fe] = D(""), [at, bs] = D(""), [ws, Qt] = D(""), [Yt, Pe] = D(""), [be, Se] = D(!1), Ge = Ve(null), F = Ve(null), [te, ct] = D([]), [ne, Es] = D({
+  const [l, p] = D([]), [d, h] = D(null), [f, g] = D("chat"), [m, v] = D(!1), [y, S] = D(!1), [C, b] = D(!1), [w, I] = D([]), [E, N] = D(!1), [R, M] = D({}), [T, L] = D(""), [U, Q] = D(!1), [ee, re] = D(!1), [he, W] = D(!1), [ne, K] = D(!1), [Ne, nt] = D(""), He = Ve(null), [xe, it] = D(""), [qt, Ke] = D(!1), [_e, st] = D(!1), [Gt, Je] = D(!1), [ot, fe] = D(""), [at, bs] = D(""), [ws, Qt] = D(""), [Yt, Pe] = D(""), [be, Se] = D(!1), Ge = Ve(null), F = Ve(null), [te, ct] = D([]), [ie, Es] = D({
     avatar: {
       chooseAvatar: `Choose Your ${t}`,
       startConversation: "Start Conversation",
@@ -26208,7 +26208,7 @@ function aI({
     v(!!be);
   }, [be]);
   const Qe = async ($, X = []) => {
-    ie && K(!1);
+    ne && K(!1);
     const V = {
       id: Date.now().toString(),
       sender: "user",
@@ -26340,10 +26340,7 @@ function aI({
                       className: "h-full w-full object-cover"
                     }
                   ) }),
-                  /* @__PURE__ */ k("div", { className: "min-w-0", children: [
-                    /* @__PURE__ */ P("h1", { className: "text-lg sm:text-2xl font-bold text-primary leading-tight truncate", children: ne.avatar.yourAIHealthNavigator }),
-                    /* @__PURE__ */ P("p", { className: "text-xs sm:text-sm text-secondary truncate", children: ne.avatar.description })
-                  ] })
+                  /* @__PURE__ */ P("div", { className: "min-w-0", children: /* @__PURE__ */ P("h1", { className: "text-lg sm:text-2xl font-bold text-primary leading-tight truncate", children: ie.avatar.yourAIHealthNavigator }) })
                 ] }),
                 /* @__PURE__ */ k("div", { className: "hidden md:flex gap-2 flex-wrap ml-4", children: [
                   e !== "CareNexa" && /* @__PURE__ */ k(
@@ -26356,7 +26353,7 @@ function aI({
                       disabled: C,
                       children: [
                         /* @__PURE__ */ P(Rc, { className: "h-3 w-3 mr-1" }),
-                        C ? ne.buttons.uploading : ne.buttons.upload
+                        C ? ie.buttons.uploading : ie.buttons.upload
                       ]
                     }
                   ),
@@ -26367,7 +26364,7 @@ function aI({
                       size: "sm",
                       className: "text-xs text-primary border-primary/30 hover:bg-neutral",
                       onClick: Is,
-                      children: ne.buttons.resetChat
+                      children: ie.buttons.resetChat
                     }
                   )
                 ] }),
@@ -26394,7 +26391,7 @@ function aI({
                     disabled: C,
                     children: [
                       /* @__PURE__ */ P(Rc, { className: "h-3 w-3 mr-1" }),
-                      C ? ne.buttons.uploading : ne.buttons.upload
+                      C ? ie.buttons.uploading : ie.buttons.upload
                     ]
                   }
                 ),
@@ -26407,7 +26404,7 @@ function aI({
                     onClick: () => {
                       Is(), N(!1);
                     },
-                    children: ne.buttons.resetChat
+                    children: ie.buttons.resetChat
                   }
                 )
               ] })
@@ -26433,7 +26430,7 @@ function aI({
                   conversationalContext: "Initial medical consultation",
                   customGreeting: w.length > 0 && w[w.length - 1].sender === "ai" ? w[w.length - 1].text : o,
                   platform: "concierge",
-                  buttonText: ne.avatar.startConversation,
+                  buttonText: ie.avatar.startConversation,
                   videoMode: "minimal",
                   chatVisible: !1,
                   toggleChat: ro,
@@ -26459,11 +26456,11 @@ function aI({
                 /* @__PURE__ */ P("div", { className: "mb-6 flex items-center justify-center gap-2 text-sm text-secondary", children: /* @__PURE__ */ k("div", { className: "relative group", children: [
                   /* @__PURE__ */ k("div", { className: "flex items-center gap-2 cursor-help", children: [
                     /* @__PURE__ */ P(kg, { className: "h-4 w-4 text-primary hover:text-secondary transition-colors" }),
-                    /* @__PURE__ */ P("span", { children: ne.howItWorks.title })
+                    /* @__PURE__ */ P("span", { children: ie.howItWorks.title })
                   ] }),
                   /* @__PURE__ */ k("div", { className: "absolute left-1 -translate-x-1 bottom-full mb-2 w-64 p-3 bg-white rounded-lg shadow-lg border border-primary/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10", children: [
-                    /* @__PURE__ */ P("h4", { className: "font-medium text-primary mb-2", children: ne.howItWorks.title }),
-                    ne.howItWorks.steps.map(($, X) => /* @__PURE__ */ k("li", { className: "flex items-start gap-2", children: [
+                    /* @__PURE__ */ P("h4", { className: "font-medium text-primary mb-2", children: ie.howItWorks.title }),
+                    ie.howItWorks.steps.map(($, X) => /* @__PURE__ */ k("li", { className: "flex items-start gap-2", children: [
                       /* @__PURE__ */ k("span", { className: "font-bold flex-shrink-0", children: [
                         X + 1,
                         "."
@@ -26485,7 +26482,7 @@ function aI({
                   {
                     onClick: () => v(!0),
                     className: "w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition",
-                    children: ne.avatar.startConversation
+                    children: ie.avatar.startConversation
                   }
                 )
               ] }) }) }),
@@ -26566,14 +26563,14 @@ function aI({
                             }
                           )
                         ] }),
-                        ie && V && /* @__PURE__ */ P("div", { className: "mt-4 flex", children: /* @__PURE__ */ P(
+                        ne && V && /* @__PURE__ */ P("div", { className: "mt-4 flex", children: /* @__PURE__ */ P(
                           "button",
                           {
                             className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
                             onClick: () => {
                               Qe(Ne), K(!1);
                             },
-                            children: ne.buttons.retry
+                            children: ie.buttons.retry
                           }
                         ) }),
                         V && U && /* @__PURE__ */ P("div", { className: "mt-4 flex justify-center", children: /* @__PURE__ */ P(
@@ -26581,7 +26578,7 @@ function aI({
                           {
                             className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
                             onClick: Zt,
-                            children: ne.buttons.continue
+                            children: ie.buttons.continue
                           }
                         ) }),
                         V && ee && /* @__PURE__ */ P("div", { className: "mt-4 flex justify-center", children: /* @__PURE__ */ P(
@@ -26589,7 +26586,7 @@ function aI({
                           {
                             className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
                             onClick: no,
-                            children: ne.buttons.signUp
+                            children: ie.buttons.signUp
                           }
                         ) }),
                         V && he && /* @__PURE__ */ P("div", { className: "mt-4 flex justify-center", children: /* @__PURE__ */ P(
@@ -26597,7 +26594,7 @@ function aI({
                           {
                             className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
                             onClick: oe,
-                            children: ne.buttons.buyNow
+                            children: ie.buttons.buyNow
                           }
                         ) })
                       ] });
