@@ -723,7 +723,7 @@ export default function ConciergeModule({
           <section className="min-h-0 overflow-hidden p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
             <div className="h-full w-full min-h-0">
               {conciergeConversationStarted ? (
-                <div className="h-full w-full rounded-xl overflow-hidden bg-white border border-primary/20">
+                <div className="h-full w-full rounded-xl overflow-hidden bg-white">
                   {selectedAvatar && (
                     <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
                       <ConversationComponent
@@ -764,40 +764,25 @@ export default function ConciergeModule({
                   )}
                 </div>
               ) : (
-                <div className="h-full w-full flex flex-col items-center justify-center">
-                  <h3 className="text-lg font-semibold text-center mb-4 text-primary">{personaName}</h3>
-                  <div className="mb-6 flex items-center justify-center gap-2 text-sm text-secondary">
-                    {/* <div className="relative group">
-                      <div className="flex items-center gap-2 cursor-help">
-                        <HelpCircle className="h-4 w-4 text-primary hover:text-secondary transition-colors" />
-                        <span>{translatedTexts.howItWorks.title}</span>
+                 <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
+                   <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                        <img src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name} className="w-full h-full object-cover" />
                       </div>
-                      <div className="absolute left-1 -translate-x-1 bottom-full mb-2 w-64 p-3 bg-white rounded-lg shadow-lg border border-primary/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                        <h4 className="font-medium text-primary mb-2">{translatedTexts.howItWorks.title}</h4>
-                        <ol className="space-y-1 ml-4 list-decimal">
-                          {translatedTexts.howItWorks.steps.map((step: string, index: number) => (
-                            <li key={index} className="break-words">{step}</li>
-                          ))}
-                        </ol>
+                      <Button
+                        onClick={() => setConciergeConversationStarted(true)}
+                        className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                      >
+                        {translatedTexts.avatar.startConversation}
+                      </Button>
+                      <div className="flex-1 text-left">
+                        <p className="text-gray-800 leading-relaxed">
+                          <strong className="text-[#3f62ec]">
+                            AI Concierge:
+                          </strong>{" "}
+                          "Great news! I've analyzed your ${file?.name || "health report"} and found some important insights for you
+                        </p>
                       </div>
-                    </div> */}
-                  </div>
-                  <div className="w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-white border border-primary/20 shadow-xl">
-                    <img src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name} className="w-full h-full object-cover" />
-                  </div>
-                  <Button
-                    onClick={() => setConciergeConversationStarted(true)}
-                    className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
-                  >
-                    {translatedTexts.avatar.startConversation}
-                  </Button>
-                  <div className="flex-1 text-left">
-                      <p className="text-gray-800 leading-relaxed">
-                        <strong className="text-[#3f62ec]">
-                          AI Concierge:
-                        </strong>{" "}
-                        "Great news! I've analyzed your ${file?.name || "health report"} and found some important insights for you
-                      </p>
                     </div>
                 </div>
               )}

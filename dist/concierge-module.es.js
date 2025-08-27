@@ -26311,7 +26311,7 @@ function oI({
   return /* @__PURE__ */ j("div", { className: Se("h-full min-h-0", t), children: [
     /* @__PURE__ */ j(Vf, { className: "h-full min-h-0 flex flex-col overflow-hidden border border-primary/20 shadow-2xl relative", children: [
       /* @__PURE__ */ b(Wf, { className: "flex-1 min-h-0 p-0 overflow-hidden", children: /* @__PURE__ */ j("div", { className: "h-full min-h-0 grid grid-cols-1 md:grid-cols-2 overflow-hidden", children: [
-        /* @__PURE__ */ b("section", { className: "min-h-0 overflow-hidden p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20", children: /* @__PURE__ */ b("div", { className: "h-full w-full min-h-0", children: v ? /* @__PURE__ */ b("div", { className: "h-full w-full rounded-xl overflow-hidden bg-white border border-primary/20", children: h && /* @__PURE__ */ b(sf, { fallback: /* @__PURE__ */ b("div", { className: "w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center", children: "Loading conversation..." }), children: /* @__PURE__ */ b(
+        /* @__PURE__ */ b("section", { className: "min-h-0 overflow-hidden p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20", children: /* @__PURE__ */ b("div", { className: "h-full w-full min-h-0", children: v ? /* @__PURE__ */ b("div", { className: "h-full w-full rounded-xl overflow-hidden bg-white", children: h && /* @__PURE__ */ b(sf, { fallback: /* @__PURE__ */ b("div", { className: "w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center", children: "Loading conversation..." }), children: /* @__PURE__ */ b(
           rI,
           {
             ref: Jt,
@@ -26343,10 +26343,8 @@ function oI({
             speechKey: l?.speechKey || "",
             config: l
           }
-        ) }) }) : /* @__PURE__ */ j("div", { className: "h-full w-full flex flex-col items-center justify-center", children: [
-          /* @__PURE__ */ b("h3", { className: "text-lg font-semibold text-center mb-4 text-primary", children: r }),
-          /* @__PURE__ */ b("div", { className: "mb-6 flex items-center justify-center gap-2 text-sm text-secondary" }),
-          /* @__PURE__ */ b("div", { className: "w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-white border border-primary/20 shadow-xl", children: /* @__PURE__ */ b("img", { src: h?.ImageUrl, alt: h?.Name, className: "w-full h-full object-cover" }) }),
+        ) }) }) : /* @__PURE__ */ b("div", { className: "bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6", children: /* @__PURE__ */ j("div", { className: "flex items-start space-x-4", children: [
+          /* @__PURE__ */ b("div", { className: "w-12 h-12 rounded-full overflow-hidden flex-shrink-0", children: /* @__PURE__ */ b("img", { src: h?.ImageUrl, alt: h?.Name, className: "w-full h-full object-cover" }) }),
           /* @__PURE__ */ b(
             $t,
             {
@@ -26362,7 +26360,7 @@ function oI({
             n?.name || "health report",
             " and found some important insights for you"
           ] }) })
-        ] }) }) }),
+        ] }) }) }) }),
         /* @__PURE__ */ b("section", { className: "min-h-0 overflow-hidden p-4 md:p-6", children: /* @__PURE__ */ b("div", { className: "h-full min-h-0 flex flex-col overflow-hidden", children: /* @__PURE__ */ b(
           rC,
           {
