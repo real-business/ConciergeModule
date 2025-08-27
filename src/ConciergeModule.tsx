@@ -2,17 +2,11 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { Chat, ChatMessage } from "./components/ui/chat"
 import { Button } from "./components/ui/button";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import {
-  ChevronLeft,
-  ChevronRight,
   LucideIcon,
-  ThumbsUp,
-  ThumbsDown,
   HelpCircle,
   GraduationCap,
-  Users2,
-  Lightbulb,
-  Info,
   MessageSquare,
   Sparkles,
   Upload,
@@ -640,366 +634,257 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className={cn("w-full h-full min-h-0 flex flex-col", className)}>
-      <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="relative">
-          <div className="relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col h-full min-h-0 rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
-            >
-              {/* Header */}
-              <div className="p-4 sm:p-6 bg-neutral border-b border-primary/20 shrink-0">
-                {/* Flex row on all screens, wrap on mobile */}
-                <div className="flex flex-row items-center justify-between gap-4">
-                  {/* Avatar + Text */}
-                  <div className="flex items-center flex-shrink min-w-0">
-                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0">
-                      <img
-                        src={selectedAvatar?.ImageUrl}
-                        alt={selectedAvatar?.Name}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                    <div className="min-w-0">
-                      <h1 className="text-lg sm:text-2xl font-bold text-primary leading-tight truncate">
-                        {translatedTexts.avatar.yourAIHealthNavigator}
-                      </h1>
-                      {/* <p className="text-xs sm:text-sm text-secondary truncate">
-                        {translatedTexts.avatar.description}
-                      </p> */}
-                    </div>
-                  </div>
-
-                  {/* Desktop: Buttons (right) */}
-                  <div className="hidden md:flex gap-2 flex-wrap ml-4">
-                    {brandName !== 'CareNexa' && (
-                      <Button
-                      variant="outline"
-                      size="sm"
-                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
-                      onClick={handleUploadClick}
-                      disabled={isUploading}
-                    >
-                      <Upload className="h-3 w-3 mr-1" />
-                      {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
-                    </Button>
-                    )}
-                    
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
-                      onClick={resetChat}
-                    >
-                      {translatedTexts.buttons.resetChat}
-                    </Button>
-                  </div>
-
-                  {/* Mobile: Hamburger (right) */}
-                  <div className="flex md:hidden items-center ml-2">
-                    <button
-                      className="p-2 rounded-md border border-primary/20 bg-white text-primary focus:outline-none"
-                      onClick={() => setMenuOpen(!menuOpen)}
-                      aria-label="Open menu"
-                    >
-                      {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                    </button>
-                  </div>
-                </div>
-
-                {/* Mobile Dropdown Menu - below header row */}
-                {menuOpen && (
-                  <div className="md:hidden mt-2 flex flex-col gap-2 animate-fadeIn">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
-                      onClick={() => {
-                        handleUploadClick();
-                        setMenuOpen(false);
-                      }}
-                      disabled={isUploading}
-                    >
-                      <Upload className="h-3 w-3 mr-1" />
-                      {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="text-xs text-primary border-primary/30 hover:bg-neutral"
-                      onClick={() => {
-                        resetChat();
-                        setMenuOpen(false);
-                      }}
-                    >
-                      {translatedTexts.buttons.resetChat}
-                    </Button>
-                  </div>
-                )}
-              </div>
-
-
-              {/* Main Content */}
-              <div className="flex-1 min-h-0 overflow-hidden grid grid-cols-1 md:grid-cols-2">
-                {/* Avatar Section - Fixed */}
-                + <div className="
-                    flex flex-col
-                    basis-[35%] md:basis-auto
-                    min-h-0 overflow-hidden               
-                    p-4 md:p-6
-                    border-b md:border-b-0 md:border-r border-primary/20
-                  ">
-                  <div className="h-full w-full min-h-0">
-                    {conciergeConversationStarted ? (
-                      <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
-                        {selectedAvatar && (
-                          <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
-                            <ConversationComponent
-                              ref={convoRef}
-                              replicaId={selectedAvatar?.ExternalId || ""}
-                              personaId="pb5d44035dbd"
-                              personaName = {personaName}
-                              conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
-                              conversationalContext="Initial medical consultation"
-                              customGreeting={
-                                chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === 'ai'
-                                  ? chatMessages[chatMessages.length - 1].text
-                                  : welcomeMessage}
-                              platform="concierge"
-                              buttonText={translatedTexts.avatar.startConversation}
-                              videoMode="minimal"
-                              chatVisible={false}
-                              toggleChat={toggleChatVisibility}
-                              width="100%"
-                              height="100%"
-                              className="w-full h-full"
-                              setVoiceMode={setVoiceMode}
-                              setConversationStarted={setConversationStarted}
-                              setConversationId={setConversationId}
-                              setConversationUrl={setConversationUrl}
-                              setInterruptReplica={setInterruptReplica}
-                              currentScript={currentScript}
-                              setCurrentScript={setCurrentScript}
-                              interruptReplica={interruptReplica}
-                              setIsSpeaking={setIsSpeaking}
-                              setSpokenText={setSpokenText} 
-                              region={config?.region || ""}
-                              speechKey={config?.speechKey || ""}
-                              config={config}
-                            />
-                          </SSRSafeWrapper>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="h-full w-full flex flex-col items-center justify-center">
-                        <h3 className="text-lg font-semibold text-center mb-4 text-primary">{personaName}</h3>
-                        {/* How it works */}
-                        <div className="mb-6 flex items-center justify-center gap-2 text-sm text-secondary">
-                          <div className="relative group">
-                            <div className="flex items-center gap-2 cursor-help">
-                              <HelpCircle className="h-4 w-4 text-primary hover:text-secondary transition-colors" />
-                              <span>{translatedTexts.howItWorks.title}</span>
-                            </div>
-                            <div className="absolute left-1 -translate-x-1 bottom-full mb-2 w-64 p-3 bg-white rounded-lg shadow-lg border border-primary/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                              <h4 className="font-medium text-primary mb-2">{translatedTexts.howItWorks.title}</h4>
-                              {translatedTexts.howItWorks.steps.map((step: string, index: number) => (
-                                <li key={index} className="flex items-start gap-2">
-                                  <span className="font-bold flex-shrink-0">{index + 1}.</span>
-                                  <span className="break-words">{step}</span>
-                                </li>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                        {/* Avatar */}
-                        <div className="w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-neutral to-white border border-primary/20">
-                          <img
-                            src={selectedAvatar?.ImageUrl}
-                            alt={selectedAvatar?.Name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        {/* Remove avatar navigation and selection UI */}
-                        <Button
-                          onClick={() => setConciergeConversationStarted(true)}
-                          className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
-                        >
-                          {translatedTexts.avatar.startConversation}
-                        </Button>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Chat Section - Scrollable */}
-                + <div className="
-                    flex flex-col
-                    basis-[65%] md:basis-auto
-                    min-h-0 overflow-hidden          
-                    p-4 md:p-6
-                  ">
-                  <div className="flex-1 min-h-0 overflow-y-auto">
-                    <Chat
-                      language={language}
-                      config={config}
-                      setInterruptReplica={setInterruptReplica}
-                      messages={chatMessages}
-                      welcomeMessage = {welcomeMessage}
-                      onSendMessage={handleSendMessage}
-                      className="h-full min-h-0"
-                      isLoading={isLoading}
-                      rightElement={
-                        <SSRSafeWrapper fallback={<div className="w-10 h-10 bg-gray-200 rounded animate-pulse"></div>}>
-                          <SpeechComponent
-                            avatarName={selectedAvatar?.Name || "AI Health Navigator"}
-                            disabled={isLoading}
-                            voiceMode={voiceMode}
-                            setSpokenText={setSpokenText}
-                            setIsSpeaking={setIsSpeaking}
-                            setInterruptReplica={setInterruptReplica}
-                            region={config?.region || ""}
-                            speechKey={config?.speechKey || ""}
-                          />
-                        </SSRSafeWrapper>
-                      }
-                      suggestedPrompts={suggestedPrompts}
-                      renderMessage={(message, index) => {
-                        if (message.sender === "ai" && message.id !== "welcome-message") {
-                          const isLastMessage = index === chatMessages.length - 1;
-                          return (
-                            <div className="relative">
-                              <ReactMarkdown
-                                remarkPlugins={[remarkGfm]}
-                                components={{
-                                  p: ({ children }) => <p className="text-sm mb-2">{children}</p>,
-                                  ol: ({ children }) => <ol style={{ listStyleType: 'circle' }} className="ml-6 mb-2">{children}</ol>,
-                                  ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
-                                  li: ({ children }) => <li className="mb-1">{children}</li>,
-                                  img: (props) => (
-                                    <img {...props} className="max-w-full max-h-64 object-contain rounded" />
-                                  ),
-                                  code: ({ children }) => (
-                                    <code className="break-words whitespace-pre-wrap">{children}</code>
-                                  ),
-                                  strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
-                                  a: ({ href, children }) => (
-                                    <a
-                                      href={href}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-blue-600 underline"
-                                    >
-                                      {children}
-                                    </a>
-                                  ),
-                                }}
-                              >
-                                {message.text}
-                              </ReactMarkdown>
-                              <div className="flex justify-end gap-2 mt-2">
-                                <button
-                                  className={`p-1 rounded-full transition-colors ${feedback[message.id] === "like"
-                                    ? "bg-green-100 text-green-600"
-                                    : "hover:bg-gray-200 text-gray-600"
-                                    }`}
-                                  onClick={() => handleFeedback(message, "like")}
-                                >
-                                  <ThumbsUp className="h-4 w-4" />
-                                </button>
-                                <button
-                                  className={`p-1 rounded-full transition-colors ${feedback[message.id] === "dislike"
-                                    ? "bg-red-100 text-red-600"
-                                    : "hover:bg-gray-200 text-gray-600"
-                                    }`}
-                                  onClick={() => handleFeedback(message, "dislike")}
-                                >
-                                  <ThumbsDown className="h-4 w-4" />
-                                </button>
-                              </div>
-                               {/* Add Retry button only on the last AI message */}
-                               {showRetryButton && isLastMessage && (
-                                <div className="mt-4 flex">
-                                  <button
-                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
-                                    onClick={() => {
-                                      handleSendMessage(userInput);
-                                      setShowRetryButton(false);
-                                    }}
-                                  >
-                                    {translatedTexts.buttons.retry}
-                                  </button>
-                                </div>
-                              )}
-                              {/* Add Continue button if this is the last message and showContinue is true */}
-                              {isLastMessage && showContinueButton && (
-                                <div className="mt-4 flex justify-center">
-                                  <button
-                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
-                                    onClick={handleContinue}
-                                  >
-                                    {translatedTexts.buttons.continue}
-                                  </button>
-                                </div>
-                              )}
-                              {/* Add SignUp button if this is the last message and interview is completed */}
-                              {isLastMessage && interviewCompleted && (
-                                <div className="mt-4 flex justify-center">
-                                  <button
-                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
-                                    onClick={handleStartAdvisor}
-                                  >
-                                    {translatedTexts.buttons.signUp}
-                                  </button>
-                                </div>
-                              )}
-                               {/* Add Buy Now button if this is the last message and buy now */}
-                              {isLastMessage && showBuyNowButton && (
-                                <div className="mt-4 flex justify-center">
-                                  <button
-                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
-                                    onClick={handleBuyNow}
-                                  >
-                                    {translatedTexts.buttons.buyNow}
-                                  </button>
-                                </div>
-                              )}
-                            </div>
-                          );
-                        }
-                        return (
-                          <ReactMarkdown
-                            remarkPlugins={[remarkGfm]}
-                            components={{
-                              p: ({ children }) => <p className="text-sm whitespace-pre-line">{children}</p>,
-                            }}
-                          >
-                            {message.text}
-                          </ReactMarkdown>
-                        );
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+  <div className={cn("h-full min-h-0", className)}>
+    <Card className="h-full min-h-0 flex flex-col overflow-hidden border border-primary/20 shadow-2xl relative">
+      {/* Header (fixed height) */}
+      <CardHeader className="shrink-0 p-4 sm:p-6 bg-neutral border-b border-primary/20">
+        {/* Header row unchanged */}
+        <div className="flex flex-row items-center justify-between gap-4">
+          {/* Avatar + Text */}
+          <div className="flex items-center flex-shrink min-w-0">
+            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0">
+              <img
+                src={selectedAvatar?.ImageUrl}
+                alt={selectedAvatar?.Name}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="min-w-0">
+              <h1 className="text-lg sm:text-2xl font-bold text-primary leading-tight truncate">
+                {translatedTexts.avatar.yourAIHealthNavigator}
+              </h1>
+            </div>
           </div>
-          
-          {/* Decorative elements */}
-          <div className="absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+
+          {/* Desktop: Buttons */}
+          <div className="hidden md:flex gap-2 flex-wrap ml-4">
+            {brandName !== "CareNexa" && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-xs text-primary border-primary/30 hover:bg-neutral"
+                onClick={handleUploadClick}
+                disabled={isUploading}
+              >
+                <Upload className="h-3 w-3 mr-1" />
+                {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
+              </Button>
+            )}
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-xs text-primary border-primary/30 hover:bg-neutral"
+              onClick={resetChat}
+            >
+              {translatedTexts.buttons.resetChat}
+            </Button>
+          </div>
+
+          {/* Mobile: Menu */}
+          <div className="flex md:hidden items-center ml-2">
+            <button
+              className="p-2 rounded-md border border-primary/20 bg-white text-primary focus:outline-none"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Open menu"
+            >
+              {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
-      </div>
-      {/* Hidden file input */}
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handleFileUpload}
-        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt"
-        style={{ display: 'none' }}
-      />
-    </div>
-  );
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="md:hidden mt-2 flex flex-col gap-2 animate-fadeIn">
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-xs text-primary border-primary/30 hover:bg-neutral"
+              onClick={() => {
+                handleUploadClick();
+                setMenuOpen(false);
+              }}
+              disabled={isUploading}
+            >
+              <Upload className="h-3 w-3 mr-1" />
+              {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-xs text-primary border-primary/30 hover:bg-neutral"
+              onClick={() => {
+                resetChat();
+                setMenuOpen(false);
+              }}
+            >
+              {translatedTexts.buttons.resetChat}
+            </Button>
+          </div>
+        )}
+      </CardHeader>
+
+      {/* Main (fills remaining height) */}
+      <CardContent className="flex-1 min-h-0 p-0 overflow-hidden">
+        {/* 2 columns; both constrained by min-h-0 */}
+        <div className="h-full min-h-0 grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+          {/* LEFT pane */}
+          <section className="min-h-0 overflow-hidden p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
+            <div className="h-full w-full min-h-0">
+              {conciergeConversationStarted ? (
+                <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
+                  {selectedAvatar && (
+                    <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
+                      <ConversationComponent
+                        ref={convoRef}
+                        replicaId={selectedAvatar?.ExternalId || ""}
+                        personaId="pb5d44035dbd"
+                        personaName={personaName}
+                        conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
+                        conversationalContext="Initial medical consultation"
+                        customGreeting={
+                          chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === "ai"
+                            ? chatMessages[chatMessages.length - 1].text
+                            : welcomeMessage
+                        }
+                        platform="concierge"
+                        buttonText={translatedTexts.avatar.startConversation}
+                        videoMode="minimal"
+                        chatVisible={false}
+                        toggleChat={toggleChatVisibility}
+                        width="100%"
+                        height="100%"
+                        className="w-full h-full"
+                        setVoiceMode={setVoiceMode}
+                        setConversationStarted={setConversationStarted}
+                        setConversationId={setConversationId}
+                        setConversationUrl={setConversationUrl}
+                        setInterruptReplica={setInterruptReplica}
+                        currentScript={currentScript}
+                        setCurrentScript={setCurrentScript}
+                        interruptReplica={interruptReplica}
+                        setIsSpeaking={setIsSpeaking}
+                        setSpokenText={setSpokenText}
+                        region={config?.region || ""}
+                        speechKey={config?.speechKey || ""}
+                        config={config}
+                      />
+                    </SSRSafeWrapper>
+                  )}
+                </div>
+              ) : (
+                <div className="h-full w-full flex flex-col items-center justify-center">
+                  <h3 className="text-lg font-semibold text-center mb-4 text-primary">{personaName}</h3>
+                  <div className="mb-6 flex items-center justify-center gap-2 text-sm text-secondary">
+                    <div className="relative group">
+                      <div className="flex items-center gap-2 cursor-help">
+                        <HelpCircle className="h-4 w-4 text-primary hover:text-secondary transition-colors" />
+                        <span>{translatedTexts.howItWorks.title}</span>
+                      </div>
+                      <div className="absolute left-1 -translate-x-1 bottom-full mb-2 w-64 p-3 bg-white rounded-lg shadow-lg border border-primary/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                        <h4 className="font-medium text-primary mb-2">{translatedTexts.howItWorks.title}</h4>
+                        <ol className="space-y-1 ml-4 list-decimal">
+                          {translatedTexts.howItWorks.steps.map((step: string, index: number) => (
+                            <li key={index} className="break-words">{step}</li>
+                          ))}
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-neutral to-white border border-primary/20">
+                    <img src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name} className="w-full h-full object-cover" />
+                  </div>
+                  <Button
+                    onClick={() => setConciergeConversationStarted(true)}
+                    className="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                  >
+                    {translatedTexts.avatar.startConversation}
+                  </Button>
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* RIGHT pane (Chat) */}
+          <section className="min-h-0 overflow-hidden p-4 md:p-6">
+            <div className="h-full min-h-0 flex flex-col overflow-hidden">
+              <Chat
+                language={language}
+                config={config}
+                setInterruptReplica={setInterruptReplica}
+                messages={chatMessages}
+                welcomeMessage={welcomeMessage}
+                onSendMessage={handleSendMessage}
+                className="h-full min-h-0"
+                isLoading={isLoading}
+                rightElement={
+                  <SSRSafeWrapper fallback={<div className="w-10 h-10 bg-gray-200 rounded animate-pulse"></div>}>
+                    <SpeechComponent
+                      avatarName={selectedAvatar?.Name || "AI Health Navigator"}
+                      disabled={isLoading}
+                      voiceMode={voiceMode}
+                      setSpokenText={setSpokenText}
+                      setIsSpeaking={setIsSpeaking}
+                      setInterruptReplica={setInterruptReplica}
+                      region={config?.region || ""}
+                      speechKey={config?.speechKey || ""}
+                    />
+                  </SSRSafeWrapper>
+                }
+                suggestedPrompts={suggestedPrompts}
+                renderMessage={(message, index) => {
+                  if (message.sender === "ai" && message.id !== "welcome-message") {
+                    const isLastMessage = index === chatMessages.length - 1;
+                    return (
+                      <div className="relative">
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            p: ({ children }) => <p className="text-sm mb-2 break-words">{children}</p>,
+                            ol: ({ children }) => <ol className="list-decimal ml-6 mb-2">{children}</ol>,
+                            ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
+                            li: ({ children }) => <li className="mb-1">{children}</li>,
+                            img: (props) => <img {...props} className="max-w-full max-h-64 object-contain rounded" />,
+                            code: ({ children }) => <code className="break-words whitespace-pre-wrap">{children}</code>,
+                            a: ({ href, children }) => (
+                              <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                                {children}
+                              </a>
+                            ),
+                          }}
+                        >
+                          {message.text}
+                        </ReactMarkdown>
+
+                        {/* feedback + action buttons ... keep your existing logic */}
+                        {/* ... */}
+                      </div>
+                    );
+                  }
+                  return (
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {message.text}
+                    </ReactMarkdown>
+                  );
+                }}
+              />
+            </div>
+          </section>
+        </div>
+      </CardContent>
+
+      {/* Decorative blobs (stay inside Card so they don’t affect layout) */}
+      <div className="pointer-events-none absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+    </Card>
+
+    {/* Hidden file input */}
+    <input
+      type="file"
+      ref={fileInputRef}
+      onChange={handleFileUpload}
+      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt"
+      className="hidden"
+    />
+  </div>
+);
 }

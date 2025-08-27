@@ -48,6 +48,14 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'jsxRuntime',
+          'lucide-react': "lucideReact",
+          'react-markdown': 'ReactMarkdown',
+          '@radix-ui/react-tooltip': 'TooltipPrimitive',
+          'framer-motion': 'framerMotion',
+          '@daily-co/daily-react': 'dailyReact',
+          '@mui/icons-material/CallEnd': 'CallEndIcon',
+          'react-i18next': 'reactI18next'
         },
       },
     },
