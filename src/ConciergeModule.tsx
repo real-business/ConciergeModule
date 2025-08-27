@@ -58,7 +58,7 @@ const defaultPrompts: SuggestedPrompt[] = [
   { id: 6, text: "Answer my questions like a personal coach", icon: MessageSquare },
 ];
 
-const AVATAR_ID = "r5518e7bbbc0";
+const AVATAR_ID = "rfb493e1ea5a";
 
 export default function ConciergeModule({
     brandName = "Growth Hub",
@@ -726,7 +726,7 @@ export default function ConciergeModule({
                     <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
                       <div className="text-center mb-6">
                     <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
-                      <CheckCircle className="w-10 h-10 text-white" />
+                      <CheckCircle className="w-8 h-8 text-white" />
                     </div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">
                       🎉 Your Report Analysis is Ready!
@@ -749,7 +749,7 @@ export default function ConciergeModule({
                         videoMode="minimal"
                         chatVisible={false}
                         toggleChat={toggleChatVisibility}
-                        width="90%"
+                        width="100%"
                         height="55%"
                         className="w-full h-full"
                         setVoiceMode={setVoiceMode}
@@ -798,7 +798,7 @@ export default function ConciergeModule({
                       🎉 Your Report Analysis is Ready!
                     </h2>
                   </div>
-                  <div className="mb-4">
+                  <div className="mb-4 items-center">
                     <img
                       src={selectedAvatar?.ImageUrl} 
                       alt={selectedAvatar?.Name}
@@ -807,7 +807,7 @@ export default function ConciergeModule({
                     />
                     <Button
                       onClick={() => setConciergeConversationStarted(true)}
-                      className="w-full bg-[#3f62ec] hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                      className="w-auto bg-[#3f62ec] hover:bg-secondary text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
                     >
                       {translatedTexts.avatar.startConversation}
                     </Button>
