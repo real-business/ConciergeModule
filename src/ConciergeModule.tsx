@@ -637,10 +637,8 @@ export default function ConciergeModule({
   <div className={cn("h-full min-h-0", className)}>
     <Card className="h-full min-h-0 flex flex-col overflow-hidden border border-primary/20 shadow-2xl relative">
       {/* Header (fixed height) */}
-      <CardHeader className="shrink-0 p-4 sm:p-6 bg-neutral border-b border-primary/20">
-        {/* Header row unchanged */}
+      {/* <CardHeader className="shrink-0 p-4 sm:p-6 bg-neutral border-b border-primary/20">
         <div className="flex flex-row items-center justify-between gap-4">
-          {/* Avatar + Text */}
           <div className="flex items-center flex-shrink min-w-0">
             <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0">
               <img
@@ -655,8 +653,6 @@ export default function ConciergeModule({
               </h1>
             </div>
           </div>
-
-          {/* Desktop: Buttons */}
           <div className="hidden md:flex gap-2 flex-wrap ml-4">
             {brandName !== "CareNexa" && (
               <Button
@@ -679,8 +675,6 @@ export default function ConciergeModule({
               {translatedTexts.buttons.resetChat}
             </Button>
           </div>
-
-          {/* Mobile: Menu */}
           <div className="flex md:hidden items-center ml-2">
             <button
               className="p-2 rounded-md border border-primary/20 bg-white text-primary focus:outline-none"
@@ -691,8 +685,6 @@ export default function ConciergeModule({
             </button>
           </div>
         </div>
-
-        {/* Mobile dropdown */}
         {menuOpen && (
           <div className="md:hidden mt-2 flex flex-col gap-2 animate-fadeIn">
             <Button
@@ -721,7 +713,7 @@ export default function ConciergeModule({
             </Button>
           </div>
         )}
-      </CardHeader>
+      </CardHeader> */}
 
       {/* Main (fills remaining height) */}
       <CardContent className="flex-1 min-h-0 p-0 overflow-hidden">
@@ -731,7 +723,7 @@ export default function ConciergeModule({
           <section className="min-h-0 overflow-hidden p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
             <div className="h-full w-full min-h-0">
               {conciergeConversationStarted ? (
-                <div className="h-full w-full rounded-xl overflow-hidden bg-gradient-to-br from-neutral to-white border border-primary/20">
+                <div className="h-full w-full rounded-xl overflow-hidden bg-white border border-primary/20">
                   {selectedAvatar && (
                     <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
                       <ConversationComponent
@@ -775,7 +767,7 @@ export default function ConciergeModule({
                 <div className="h-full w-full flex flex-col items-center justify-center">
                   <h3 className="text-lg font-semibold text-center mb-4 text-primary">{personaName}</h3>
                   <div className="mb-6 flex items-center justify-center gap-2 text-sm text-secondary">
-                    <div className="relative group">
+                    {/* <div className="relative group">
                       <div className="flex items-center gap-2 cursor-help">
                         <HelpCircle className="h-4 w-4 text-primary hover:text-secondary transition-colors" />
                         <span>{translatedTexts.howItWorks.title}</span>
@@ -788,9 +780,9 @@ export default function ConciergeModule({
                           ))}
                         </ol>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <div className="w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-neutral to-white border border-primary/20">
+                  <div className="w-64 h-64 md:w-48 md:h-48 rounded-xl overflow-hidden mb-4 bg-white border border-primary/20 shadow-xl">
                     <img src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name} className="w-full h-full object-cover" />
                   </div>
                   <Button
@@ -799,6 +791,14 @@ export default function ConciergeModule({
                   >
                     {translatedTexts.avatar.startConversation}
                   </Button>
+                  <div className="flex-1 text-left">
+                      <p className="text-gray-800 leading-relaxed">
+                        <strong className="text-[#3f62ec]">
+                          AI Concierge:
+                        </strong>{" "}
+                        "Great news! I've analyzed your ${file?.name || "health report"} and found some important insights for you
+                      </p>
+                    </div>
                 </div>
               )}
             </div>
