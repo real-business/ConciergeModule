@@ -744,7 +744,7 @@ export default function ConciergeModule({
                         chatVisible={false}
                         toggleChat={toggleChatVisibility}
                         width="100%"
-                        height="100%"
+                        height="70%"
                         className="w-full h-full"
                         setVoiceMode={setVoiceMode}
                         setConversationStarted={setConversationStarted}
@@ -760,6 +760,25 @@ export default function ConciergeModule({
                         speechKey={config?.speechKey || ""}
                         config={config}
                       />
+                      <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
+                        <div className="flex items-start space-x-4">
+                          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                            <img
+                              src={selectedAvatar?.ImageUrl}
+                              alt={selectedAvatar?.Name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 text-left">
+                            <p className="text-gray-800 leading-relaxed">
+                              <strong className="text-[#3f62ec]">
+                                AI Concierge:
+                              </strong>{" "}
+                              "Great news! I've analyzed your ${file?.name || "health report"} and found some important insights for you."
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </SSRSafeWrapper>
                   )}
                 </div>
@@ -793,9 +812,7 @@ export default function ConciergeModule({
                               <strong className="text-[#3f62ec]">
                                 AI Concierge:
                               </strong>{" "}
-                              "I'll help you understand exactly what your lab results
-                              mean for your health. Think of me as your personal
-                              health translator!"
+                              "Great news! I've analyzed your ${file?.name || "health report"} and found some important insights for you."
                             </p>
                           </div>
                         </div>
