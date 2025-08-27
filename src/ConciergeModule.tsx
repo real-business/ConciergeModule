@@ -764,11 +764,11 @@ export default function ConciergeModule({
                   )}
                 </div>
               ) : (
-                 <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
-                   <div className="flex items-start space-x-4">
+                 <div className="text-center md:text-left">
                      <div className="mb-6">
                         <img
-                          src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name}
+                          src={selectedAvatar?.ImageUrl} 
+                          alt={selectedAvatar?.Name}
                           className="w-full max-w-md h-auto rounded-2xl mb-6 mx-auto lg:mx-0 shadow-lg"
                           data-testid="img-ai-health-concierge"
                         />
@@ -779,18 +779,27 @@ export default function ConciergeModule({
                           {translatedTexts.avatar.startConversation}
                         </Button>
                       </div>
-                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                        <img src={selectedAvatar?.ImageUrl} alt={selectedAvatar?.Name} className="w-full h-full object-cover" />
+                       <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
+                        <div className="flex items-start space-x-4">
+                          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                            <img
+                              src={selectedAvatar?.ImageUrl}
+                              alt={selectedAvatar?.Name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 text-left">
+                            <p className="text-gray-800 leading-relaxed">
+                              <strong className="text-[#3f62ec]">
+                                AI Concierge:
+                              </strong>{" "}
+                              "I'll help you understand exactly what your lab results
+                              mean for your health. Think of me as your personal
+                              health translator!"
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex-1 text-left">
-                        <p className="text-gray-800 leading-relaxed">
-                          <strong className="text-[#3f62ec]">
-                            AI Concierge:
-                          </strong>{" "}
-                          "Great news! I've analyzed your ${file?.name || "health report"} and found some important insights for you
-                        </p>
-                      </div>
-                    </div>
                 </div>
               )}
             </div>
