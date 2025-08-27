@@ -210,7 +210,7 @@ export function Chat({
         </div>
       </div>
 
-      <div className="p-3 border-t border-light bg-white flex-shrink-0">
+      <div className="p-3 border-t border-light bg-white shrink-0">
         {/* Collapsible Suggested Prompts */}
         {suggestedPrompts && suggestedPrompts?.length > 0 && (
           <div className="bg-white border-b border-light flex-shrink-0">

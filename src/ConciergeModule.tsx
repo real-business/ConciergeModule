@@ -30,6 +30,7 @@ import ConversationComponent, { ConversationComponentHandle } from "./components
 import { postChatHistory } from "./lib/api/post-chat-history";
 import { getAllAvatarsAPI, AvatarProfile } from "./lib/api/get-all-avatars-api";
 import SSRSafeWrapper from "./components/SSRSafeWrapper";
+import { cn } from "./lib/utils";
 
 export interface SuggestedPrompt {
   id: number;
@@ -39,6 +40,7 @@ export interface SuggestedPrompt {
 
 export interface ConciergeModuleProps {
     brandName: string;
+    className: string;
     personaName: string;
     suggestedPrompts?: SuggestedPrompt[];
     welcomeMessage?: string;
@@ -68,6 +70,7 @@ const AVATAR_ID = "r397c808f1cf";
 
 export default function ConciergeModule({
     brandName = "Growth Hub",
+    className= "",
     personaName = "Personal AI Concierge",
     suggestedPrompts = defaultPrompts,
     welcomeMessage = "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk.",
@@ -637,7 +640,7 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className="w-full">
+    <div className={cn("w-full h-full min-h-0 flex flex-col", className)}>
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="relative">
           <div className="relative z-10">
@@ -645,8 +648,7 @@ export default function ConciergeModule({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col rounded-lg shadow-2xl border border-primary/20 overflow-hidden
-              h-[min(80vh,700px)] md:h-[700px]"  // pick one height strategy you like
+              className="flex flex-col h-full min-h-0 rounded-lg shadow-2xl border border-primary/20 overflow-hidden"
             >
               {/* Header */}
               <div className="p-4 sm:p-6 bg-neutral border-b border-primary/20 shrink-0">
@@ -836,7 +838,7 @@ export default function ConciergeModule({
                 + <div className="
                     flex flex-col
                     basis-[65%] md:basis-auto
-                    min-h-0 overflow-hidden               /* no parent growth */
+                    min-h-0 overflow-hidden          
                     p-4 md:p-6
                   ">
                   <div className="flex-1 min-h-0 overflow-y-auto">
@@ -847,7 +849,7 @@ export default function ConciergeModule({
                       messages={chatMessages}
                       welcomeMessage = {welcomeMessage}
                       onSendMessage={handleSendMessage}
-                      className="h-full"
+                      className="h-full min-h-0"
                       isLoading={isLoading}
                       rightElement={
                         <SSRSafeWrapper fallback={<div className="w-10 h-10 bg-gray-200 rounded animate-pulse"></div>}>
