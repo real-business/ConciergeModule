@@ -65,14 +65,6 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
     lg: "text-lg px-8 py-4",
   };
 
-  const controlsSizeClass = {
-    sm: "scale-75",
-    md: "",
-    lg: "scale-125"
-  };
-
-  const bottomClass = 'bottom-4';
-
   useEffect(() => {
     const translate = async () => {
       if (selectedLanguage !== "en") {
@@ -111,21 +103,6 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
                 {personaName}
               </p>
             </div>
-            <div className={`absolute ${bottomClass} left-0 right-0 z-10 flex justify-center ${controlsSizeClass["md"]}`}>
-            <CameraSettings
-              actionLabel="Start Conversation"
-              onAction={onStart}
-              platform={platform}
-              chatLabel="Open Chat"
-              onChat={onStart}
-              chatVisible={true}
-              setInterruptReplica={() => {}}
-              setIsSpeaking={() => {}}
-              setSpokenText={() => {}}
-              region={"us"}
-              speechKey={""}
-            />
-          </div>
           </>
         ) : (
           <div className="w-full h-full bg-light rounded-lg flex items-center justify-center">

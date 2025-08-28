@@ -726,9 +726,9 @@ export default function ConciergeModule({
                     <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
                     <div className="hidden md:block text-center mb-6">
                       <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
-                        <CheckCircle className="w-6 h-6 text-white" />
+                        <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </div>
-                      <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                      <h2 className="text-lg font-bold text-gray-900 mb-2">
                         🎉 Your Report Analysis is Ready!
                       </h2>
                     </div>
@@ -791,10 +791,10 @@ export default function ConciergeModule({
               ) : (
                  <div className="flex flex-col items-center text-center">
                   <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
-                      <CheckCircle className="w-8 h-8 text-white" />
+                    <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
+                      <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                    <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                       🎉 Your Report Analysis is Ready!
                     </h2>
                   </div>
