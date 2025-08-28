@@ -724,7 +724,7 @@ export default function ConciergeModule({
                 <div className="h-full w-full rounded-xl overflow-hidden bg-white">
                   {selectedAvatar && (
                     <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
-                    <div className="hidden md:block text-center mb-6">
+                    <div className="text-center mb-6">
                       <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
                         <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </div>
@@ -790,7 +790,7 @@ export default function ConciergeModule({
                 </div>
               ) : (
                  <div className="flex flex-col items-center text-center">
-                  <div className="text-center mb-6">
+                  <div className="hidden md:block text-center mb-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
                       <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </div>
@@ -821,7 +821,7 @@ export default function ConciergeModule({
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="flex-1 text-center sm:text-left">
+                    <div className="hidden md:block flex-1 text-center sm:text-left">
                       <p className="text-gray-800 leading-relaxed">
                         <strong className="text-[#3f62ec]">
                           AI Concierge:
