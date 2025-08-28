@@ -632,188 +632,189 @@ export default function ConciergeModule({
   };
 
   return (
-    <div className={cn("h-full min-h-0", className)}>
-    <Card className="h-full min-h-0 flex flex-col overflow-hidden border border-primary/20 shadow-2xl relative">
-      <CardContent className="flex-1 min-h-0 p-4 md:p-6 overflow-hidden">
-        {/* 1 col mobile, 2 cols md+ */}
-        <div className="h-full min-h-0 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 overflow-hidden">
-          {/* LEFT pane */}
-          <section className="min-h-0 overflow-hidden p-0 md:p-2 border-b md:border-b-0 md:border-r border-primary/20">
-            <div className="h-full w-full min-h-0">
-              {conciergeConversationStarted ? (
-                <div className="h-full w-full rounded-xl overflow-hidden bg-white">
-                  {selectedAvatar && (
-                    <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
-                      {/* Success header */}
-                      <div className="text-center mb-4 md:mb-6">
-                        <div className="inline-flex items-center justify-center w-14 h-14 md:w-20 md:h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-3 md:mb-4">
-                          <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                        </div>
-                        <h2 className="text-lg md:text-xl font-bold text-gray-900">
-                          🎉 Your Report Analysis is Ready!
-                        </h2>
+  <div className={cn("h-full min-h-0", className)}>
+  <Card className="h-full min-h-0 flex flex-col overflow-hidden border border-primary/20 shadow-2xl relative">
+    <CardContent className="flex-1 min-h-0 p-4 md:p-6 overflow-hidden">
+      {/* 1 col mobile, 2 cols md+ */}
+      <div className="h-full min-h-0 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 overflow-hidden">
+        {/* LEFT pane */}
+        <section className="min-h-0 overflow-hidden p-0 md:p-2 border-b md:border-b-0 md:border-r border-primary/20">
+          <div className="h-full w-full min-h-0">
+            {conciergeConversationStarted ? (
+              <div className="h-full w-full rounded-xl overflow-hidden bg-white">
+                {selectedAvatar && (
+                  <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
+                    {/* Success header */}
+                    <div className="text-center mb-4 md:mb-6">
+                      <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-3 md:mb-4">
+                        <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </div>
-  
-                      {/* Conversation viewport: fixed-ish height on mobile, flexible on md+ */}
-                      <ConversationComponent
-                        ref={convoRef}
-                        replicaId={selectedAvatar?.ExternalId || ""}
-                        personaId="pb5d44035dbd"
-                        personaName={personaName}
-                        conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
-                        conversationalContext="Initial medical consultation"
-                        customGreeting={
-                          chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === "ai"
-                            ? chatMessages[chatMessages.length - 1].text
-                            : welcomeMessage
-                        }
-                        platform="concierge"
-                        buttonText={translatedTexts.avatar.startConversation}
-                        videoMode="minimal"
-                        chatVisible={false}
-                        toggleChat={toggleChatVisibility}
-                        width="100%"
-                        // Height: give mobile a sensible viewport, expand on md+
-                        className="w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[480px]"
-                        setVoiceMode={setVoiceMode}
-                        setConversationStarted={setConversationStarted}
-                        setConversationId={setConversationId}
-                        setConversationUrl={setConversationUrl}
-                        setInterruptReplica={setInterruptReplica}
-                        currentScript={currentScript}
-                        setCurrentScript={setCurrentScript}
-                        interruptReplica={interruptReplica}
-                        setIsSpeaking={setIsSpeaking}
-                        setSpokenText={setSpokenText}
-                        region={config?.region || ""}
-                        speechKey={config?.speechKey || ""}
-                        config={config}
-                      />
-  
-                      {/* Concierge blurb */}
-                      <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-4 md:p-6 mt-4 mb-2">
-                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                            <img
-                              src={selectedAvatar?.ImageUrl}
-                              alt={selectedAvatar?.Name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="flex-1 text-center sm:text-left">
-                            <p className="text-gray-800 leading-relaxed text-sm md:text-base">
-                              <strong className="text-[#3f62ec]">{personaName}:</strong>{" "}
-                              "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </SSRSafeWrapper>
-                  )}
-                </div>
-              ) : (
-                <div className="flex flex-col items-center text-center">
-                  <div className="text-center mb-4 md:mb-6">
-                    <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-3">
-                      <CheckCircle className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                      <h2 className="text-md md:text-lg font-bold text-gray-900">
+                        🎉 Your Report Analysis is Ready!
+                      </h2>
                     </div>
-                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">
-                      🎉 Your Report Analysis is Ready!
-                    </h2>
-                  </div>
-  
-                  <div className="mb-4 md:mb-6 flex flex-col items-center gap-3">
-                    <img
-                      src={selectedAvatar?.ImageUrl}
-                      alt={selectedAvatar?.Name}
-                      className="w-full max-w-xs sm:max-w-sm h-auto rounded-2xl mx-auto shadow-lg"
-                      data-testid="img-ai-health-concierge"
-                    />
-                    <Button
-                      onClick={() => setConciergeConversationStarted(true)}
-                      className="w-full sm:w-auto bg-[#3f62ec] hover:bg-[#2c50c4] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
-                    >
-                      {translatedTexts.avatar.startConversation}
-                    </Button>
-                  </div>
-                </div>
-              )}
-            </div>
-          </section>
-  
-          {/* RIGHT pane (Chat) */}
-          <section className="min-h-0 overflow-hidden p-0 md:p-2">
-            <div className="h-full min-h-0 flex flex-col overflow-hidden">
-              <Chat
-                language={language}
-                config={config}
-                setInterruptReplica={setInterruptReplica}
-                messages={chatMessages}
-                welcomeMessage={welcomeMessage}
-                onSendMessage={handleSendMessage}
-                className="h-full min-h-[50vh] sm:min-h-[55vh] md:min-h-0"
-                isLoading={isLoading}
-                rightElement={
-                  <SSRSafeWrapper fallback={<div className="w-10 h-10 bg-gray-200 rounded animate-pulse"></div>}>
-                    <SpeechComponent
-                      avatarName={selectedAvatar?.Name || "AI Health Navigator"}
-                      disabled={isLoading}
-                      voiceMode={voiceMode}
-                      setSpokenText={setSpokenText}
-                      setIsSpeaking={setIsSpeaking}
+
+                    {/* Conversation viewport: fixed-ish height on mobile, flexible on md+ */}
+                    <ConversationComponent
+                      ref={convoRef}
+                      replicaId={selectedAvatar?.ExternalId || ""}
+                      personaId="pb5d44035dbd"
+                      personaName={personaName}
+                      conversationName={`Conversation with ${selectedAvatar?.Name || "your" + personaName} ${new Date().toISOString()}`}
+                      conversationalContext="Initial medical consultation"
+                      customGreeting={
+                        chatMessages.length > 0 && chatMessages[chatMessages.length - 1].sender === "ai"
+                          ? chatMessages[chatMessages.length - 1].text
+                          : welcomeMessage
+                      }
+                      platform="concierge"
+                      buttonText={translatedTexts.avatar.startConversation}
+                      videoMode="minimal"
+                      chatVisible={false}
+                      toggleChat={toggleChatVisibility}
+                      width="100%"
+                      // Height: give mobile a sensible viewport, expand on md+
+                      className="w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[480px]"
+                      setVoiceMode={setVoiceMode}
+                      setConversationStarted={setConversationStarted}
+                      setConversationId={setConversationId}
+                      setConversationUrl={setConversationUrl}
                       setInterruptReplica={setInterruptReplica}
+                      currentScript={currentScript}
+                      setCurrentScript={setCurrentScript}
+                      interruptReplica={interruptReplica}
+                      setIsSpeaking={setIsSpeaking}
+                      setSpokenText={setSpokenText}
                       region={config?.region || ""}
                       speechKey={config?.speechKey || ""}
+                      config={config}
                     />
-                  </SSRSafeWrapper>
-                }
-                suggestedPrompts={suggestedPrompts}
-                renderMessage={(message, index) => {
-                  if (message.sender === "ai" && message.id !== "welcome-message") {
-                    return (
-                      <div className="relative">
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          components={{
-                            p: ({ children }) => <p className="text-sm md:text-[15px] mb-2 break-words">{children}</p>,
-                            ol: ({ children }) => <ol className="list-decimal ml-6 mb-2">{children}</ol>,
-                            ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
-                            li: ({ children }) => <li className="mb-1">{children}</li>,
-                            img: (props) => <img {...props} className="max-w-full max-h-64 object-contain rounded" />,
-                            code: ({ children }) => <code className="break-words whitespace-pre-wrap">{children}</code>,
-                            a: ({ href, children }) => (
-                              <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-                                {children}
-                              </a>
-                            ),
-                          }}
-                        >
-                          {message.text}
-                        </ReactMarkdown>
+
+                    {/* Concierge blurb */}
+                    <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-4 md:p-6 mt-4 mb-2">
+                      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                        <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                          <img
+                            src={selectedAvatar?.ImageUrl}
+                            alt={selectedAvatar?.Name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="flex-1 text-center sm:text-left">
+                          <p className="text-gray-800 leading-relaxed text-sm md:text-base">
+                            <strong className="text-[#3f62ec]">{personaName}:</strong>{" "}
+                            "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
+                          </p>
+                        </div>
                       </div>
-                    );
-                  }
-                  return <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text}</ReactMarkdown>;
-                }}
-              />
-            </div>
-          </section>
-        </div>
-      </CardContent>
-  
-      {/* Decorative blobs — hide on mobile to avoid overlap */}
-      <div className="hidden sm:block pointer-events-none absolute -top-4 -right-4 w-40 sm:w-72 h-40 sm:h-72 bg-primary/20 rounded-full blur-3xl" />
-      <div className="hidden sm:block pointer-events-none absolute -bottom-8 -left-8 w-48 sm:w-96 h-48 sm:h-96 bg-secondary/10 rounded-full blur-3xl" />
-    </Card>
-  
-    {/* Hidden file input */}
-    <input
-      type="file"
-      ref={fileInputRef}
-      onChange={handleFileUpload}
-      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt"
-      className="hidden"
-    />
-  </div>  
+                    </div>
+                  </SSRSafeWrapper>
+                )}
+              </div>
+            ) : (
+              <div className="flex flex-col items-center text-center">
+                <div className="text-center mb-4 md:mb-6">
+                  <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-3">
+                    <CheckCircle className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+                    🎉 Your Report Analysis is Ready!
+                  </h2>
+                </div>
+
+                <div className="mb-4 md:mb-6 flex flex-col items-center gap-3">
+                  <img
+                    src={selectedAvatar?.ImageUrl}
+                    alt={selectedAvatar?.Name}
+                    className="w-full max-w-xs sm:max-w-sm h-auto rounded-2xl mx-auto shadow-lg"
+                    data-testid="img-ai-health-concierge"
+                  />
+                  <Button
+                    onClick={() => setConciergeConversationStarted(true)}
+                    className="w-full sm:w-auto bg-[#3f62ec] hover:bg-[#2c50c4] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                  >
+                    {translatedTexts.avatar.startConversation}
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* RIGHT pane (Chat) */}
+        <section className="min-h-0 overflow-hidden p-0 md:p-2">
+          <div className="h-full min-h-0 flex flex-col overflow-hidden">
+            <Chat
+              language={language}
+              config={config}
+              setInterruptReplica={setInterruptReplica}
+              messages={chatMessages}
+              welcomeMessage={welcomeMessage}
+              onSendMessage={handleSendMessage}
+              className="h-full min-h-[50vh] sm:min-h-[55vh] md:min-h-0"
+              isLoading={isLoading}
+              rightElement={
+                <SSRSafeWrapper fallback={<div className="w-10 h-10 bg-gray-200 rounded animate-pulse"></div>}>
+                  <SpeechComponent
+                    avatarName={selectedAvatar?.Name || "AI Health Navigator"}
+                    disabled={isLoading}
+                    voiceMode={voiceMode}
+                    setSpokenText={setSpokenText}
+                    setIsSpeaking={setIsSpeaking}
+                    setInterruptReplica={setInterruptReplica}
+                    region={config?.region || ""}
+                    speechKey={config?.speechKey || ""}
+                  />
+                </SSRSafeWrapper>
+              }
+              suggestedPrompts={suggestedPrompts}
+              renderMessage={(message, index) => {
+                if (message.sender === "ai" && message.id !== "welcome-message") {
+                  return (
+                    <div className="relative">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          p: ({ children }) => <p className="text-sm md:text-[15px] mb-2 break-words">{children}</p>,
+                          ol: ({ children }) => <ol className="list-decimal ml-6 mb-2">{children}</ol>,
+                          ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
+                          li: ({ children }) => <li className="mb-1">{children}</li>,
+                          img: (props) => <img {...props} className="max-w-full max-h-64 object-contain rounded" />,
+                          code: ({ children }) => <code className="break-words whitespace-pre-wrap">{children}</code>,
+                          a: ({ href, children }) => (
+                            <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {message.text}
+                      </ReactMarkdown>
+                    </div>
+                  );
+                }
+                return <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text}</ReactMarkdown>;
+              }}
+            />
+          </div>
+        </section>
+      </div>
+    </CardContent>
+
+    {/* Decorative blobs — hide on mobile to avoid overlap */}
+    <div className="hidden sm:block pointer-events-none absolute -top-4 -right-4 w-40 sm:w-72 h-40 sm:h-72 bg-primary/20 rounded-full blur-3xl" />
+    <div className="hidden sm:block pointer-events-none absolute -bottom-8 -left-8 w-48 sm:w-96 h-48 sm:h-96 bg-secondary/10 rounded-full blur-3xl" />
+  </Card>
+
+  {/* Hidden file input */}
+  <input
+    type="file"
+    ref={fileInputRef}
+    onChange={handleFileUpload}
+    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt"
+    className="hidden"
+  />
+</div>
+
 );
 }
