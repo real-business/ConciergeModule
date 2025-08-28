@@ -26325,7 +26325,7 @@ function yI({
               chatVisible: !1,
               toggleChat: ne,
               width: "100%",
-              height: Xs ? "70%" : "55%",
+              height: Xs ? "250px" : "55%",
               className: "w-full h-full",
               setVoiceMode: He,
               setConversationStarted: Gt,

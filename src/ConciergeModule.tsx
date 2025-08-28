@@ -752,7 +752,7 @@ export default function ConciergeModule({
                         chatVisible={false}
                         toggleChat={toggleChatVisibility}
                         width="100%"
-                        height={mobile ? "70%" : "55%"}
+                        height={mobile ? "250px" : "55%"}
                         className="w-full h-full"
                         setVoiceMode={setVoiceMode}
                         setConversationStarted={setConversationStarted}
