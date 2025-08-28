@@ -26103,13 +26103,13 @@ function RI({
   }, []), U(() => {
     m(ae ? "voice" : "chat");
   }, [ae]), U(() => {
+    s.includes("demo") && ie("52533144413937384342");
+  }, [s]), U(() => {
     if (!(!!l?.azureTranslatorKey && !!l?.azureTranslatorEndpoint && !!l?.azureTranslatorRegion)) {
       console.warn("Azure translation config is not yet ready.");
       return;
     }
-    U(() => {
-      s.includes("demo") && ie("52533144413937384342");
-    }, [s]), (async () => {
+    (async () => {
       if (a !== "en" && F.current !== a) {
         const [
           H,

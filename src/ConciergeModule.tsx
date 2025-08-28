@@ -201,6 +201,12 @@ export default function ConciergeModule({
   }, [conversationStarted]);
 
   useEffect(() => {
+    if(navigateTo.includes("demo")){
+      setUserId("52533144413937384342");
+    }
+  }, [navigateTo]);
+
+  useEffect(() => {
     const canTranslate =
       !!config?.azureTranslatorKey &&
       !!config?.azureTranslatorEndpoint &&
@@ -210,12 +216,6 @@ export default function ConciergeModule({
       console.warn("Azure translation config is not yet ready.");
       return;
     }
-
-    useEffect(() => {
-      if(navigateTo.includes("demo")){
-        setUserId("52533144413937384342");
-      }
-    }, [navigateTo]);
 
     const translate = async () => {
       // Always run on language change
