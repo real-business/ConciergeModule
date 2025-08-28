@@ -1,6 +1,6 @@
 {
   "name": "react-ai-concierge",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "main": "dist/concierge-module.umd.js",
   "module": "dist/concierge-module.es.js",
   "types": "dist/types/index.d.ts",
