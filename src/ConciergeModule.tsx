@@ -632,106 +632,29 @@ export default function ConciergeModule({
   };
 
   return (
-  <div className={cn("h-full min-h-0", className)}>
+    <div className={cn("h-full min-h-0", className)}>
     <Card className="h-full min-h-0 flex flex-col overflow-hidden border border-primary/20 shadow-2xl relative">
-      {/* Header (fixed height) */}
-      {/* <CardHeader className="shrink-0 p-4 sm:p-6 bg-neutral border-b border-primary/20">
-        <div className="flex flex-row items-center justify-between gap-4">
-          <div className="flex items-center flex-shrink min-w-0">
-            <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0">
-              <img
-                src={selectedAvatar?.ImageUrl}
-                alt={selectedAvatar?.Name}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="min-w-0">
-              <h1 className="text-lg sm:text-2xl font-bold text-primary leading-tight truncate">
-                {translatedTexts.avatar.yourAIHealthNavigator}
-              </h1>
-            </div>
-          </div>
-          <div className="hidden md:flex gap-2 flex-wrap ml-4">
-            {brandName !== "CareNexa" && (
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-xs text-primary border-primary/30 hover:bg-neutral"
-                onClick={handleUploadClick}
-                disabled={isUploading}
-              >
-                <Upload className="h-3 w-3 mr-1" />
-                {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
-              </Button>
-            )}
-            <Button
-              variant="outline"
-              size="sm"
-              className="text-xs text-primary border-primary/30 hover:bg-neutral"
-              onClick={resetChat}
-            >
-              {translatedTexts.buttons.resetChat}
-            </Button>
-          </div>
-          <div className="flex md:hidden items-center ml-2">
-            <button
-              className="p-2 rounded-md border border-primary/20 bg-white text-primary focus:outline-none"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Open menu"
-            >
-              {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-        {menuOpen && (
-          <div className="md:hidden mt-2 flex flex-col gap-2 animate-fadeIn">
-            <Button
-              variant="outline"
-              size="sm"
-              className="text-xs text-primary border-primary/30 hover:bg-neutral"
-              onClick={() => {
-                handleUploadClick();
-                setMenuOpen(false);
-              }}
-              disabled={isUploading}
-            >
-              <Upload className="h-3 w-3 mr-1" />
-              {isUploading ? translatedTexts.buttons.uploading : translatedTexts.buttons.upload}
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="text-xs text-primary border-primary/30 hover:bg-neutral"
-              onClick={() => {
-                resetChat();
-                setMenuOpen(false);
-              }}
-            >
-              {translatedTexts.buttons.resetChat}
-            </Button>
-          </div>
-        )}
-      </CardHeader> */}
-
-      {/* Main (fills remaining height) */}
-      <CardContent className="flex-1 min-h-0 p-0 overflow-hidden">
-        {/* 2 columns; both constrained by min-h-0 */}
-        <div className="h-full min-h-0 grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+      <CardContent className="flex-1 min-h-0 p-4 md:p-6 overflow-hidden">
+        {/* 1 col mobile, 2 cols md+ */}
+        <div className="h-full min-h-0 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 overflow-hidden">
           {/* LEFT pane */}
-          <section className="min-h-0 overflow-hidden p-4 md:p-6 border-b md:border-b-0 md:border-r border-primary/20">
+          <section className="min-h-0 overflow-hidden p-0 md:p-2 border-b md:border-b-0 md:border-r border-primary/20">
             <div className="h-full w-full min-h-0">
               {conciergeConversationStarted ? (
                 <div className="h-full w-full rounded-xl overflow-hidden bg-white">
                   {selectedAvatar && (
                     <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
-                      <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
-                      <CheckCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-2">
-                      🎉 Your Report Analysis is Ready!
-                    </h2>
-                  </div>
+                      {/* Success header */}
+                      <div className="text-center mb-4 md:mb-6">
+                        <div className="inline-flex items-center justify-center w-14 h-14 md:w-20 md:h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-3 md:mb-4">
+                          <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                        </div>
+                        <h2 className="text-lg md:text-xl font-bold text-gray-900">
+                          🎉 Your Report Analysis is Ready!
+                        </h2>
+                      </div>
+  
+                      {/* Conversation viewport: fixed-ish height on mobile, flexible on md+ */}
                       <ConversationComponent
                         ref={convoRef}
                         replicaId={selectedAvatar?.ExternalId || ""}
@@ -750,8 +673,8 @@ export default function ConciergeModule({
                         chatVisible={false}
                         toggleChat={toggleChatVisibility}
                         width="100%"
-                        height="55%"
-                        className="w-full h-full"
+                        // Height: give mobile a sensible viewport, expand on md+
+                        className="w-full h-[300px] sm:h-[360px] md:h-[420px] lg:h-[480px]"
                         setVoiceMode={setVoiceMode}
                         setConversationStarted={setConversationStarted}
                         setConversationId={setConversationId}
@@ -766,8 +689,10 @@ export default function ConciergeModule({
                         speechKey={config?.speechKey || ""}
                         config={config}
                       />
-                      <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
-                        <div className="flex items-start space-x-4">
+  
+                      {/* Concierge blurb */}
+                      <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-4 md:p-6 mt-4 mb-2">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                           <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                             <img
                               src={selectedAvatar?.ImageUrl}
@@ -775,11 +700,9 @@ export default function ConciergeModule({
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <div className="flex-1 text-left">
-                            <p className="text-gray-800 leading-relaxed">
-                              <strong className="text-[#3f62ec]">
-                                {personaName}:
-                              </strong>{" "}
+                          <div className="flex-1 text-center sm:text-left">
+                            <p className="text-gray-800 leading-relaxed text-sm md:text-base">
+                              <strong className="text-[#3f62ec]">{personaName}:</strong>{" "}
                               "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
                             </p>
                           </div>
@@ -789,55 +712,37 @@ export default function ConciergeModule({
                   )}
                 </div>
               ) : (
-                 <div className="flex flex-col items-center text-center">
-                  <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
-                      <CheckCircle className="w-8 h-8 text-white" />
+                <div className="flex flex-col items-center text-center">
+                  <div className="text-center mb-4 md:mb-6">
+                    <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-3">
+                      <CheckCircle className="w-7 h-7 md:w-8 md:h-8 text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">
                       🎉 Your Report Analysis is Ready!
                     </h2>
                   </div>
-                  <div className="mb-4 flex flex-col items-center gap-2">
+  
+                  <div className="mb-4 md:mb-6 flex flex-col items-center gap-3">
                     <img
-                      src={selectedAvatar?.ImageUrl} 
+                      src={selectedAvatar?.ImageUrl}
                       alt={selectedAvatar?.Name}
-                      className="w-full max-w-sm h-auto rounded-2xl mx-auto lg:mx-0 shadow-lg"
+                      className="w-full max-w-xs sm:max-w-sm h-auto rounded-2xl mx-auto shadow-lg"
                       data-testid="img-ai-health-concierge"
                     />
                     <Button
                       onClick={() => setConciergeConversationStarted(true)}
-                      className="w-auto bg-[#3f62ec] hover:bg-white hober:text-[#3f62ec] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                      className="w-full sm:w-auto bg-[#3f62ec] hover:bg-[#2c50c4] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
                     >
                       {translatedTexts.avatar.startConversation}
                     </Button>
                   </div>
-                  <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6 w-full max-w-xl">
-                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                      <img
-                        src={selectedAvatar?.ImageUrl}
-                        alt={selectedAvatar?.Name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1 text-center sm:text-left">
-                      <p className="text-gray-800 leading-relaxed">
-                        <strong className="text-[#3f62ec]">
-                          AI Concierge:
-                        </strong>{" "}
-                        "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
-                      </p>
-                    </div>
-                  </div>
-                </div>
                 </div>
               )}
             </div>
           </section>
-
+  
           {/* RIGHT pane (Chat) */}
-          <section className="min-h-0 overflow-hidden p-4 md:p-6">
+          <section className="min-h-0 overflow-hidden p-0 md:p-2">
             <div className="h-full min-h-0 flex flex-col overflow-hidden">
               <Chat
                 language={language}
@@ -846,7 +751,7 @@ export default function ConciergeModule({
                 messages={chatMessages}
                 welcomeMessage={welcomeMessage}
                 onSendMessage={handleSendMessage}
-                className="h-full min-h-0"
+                className="h-full min-h-[50vh] sm:min-h-[55vh] md:min-h-0"
                 isLoading={isLoading}
                 rightElement={
                   <SSRSafeWrapper fallback={<div className="w-10 h-10 bg-gray-200 rounded animate-pulse"></div>}>
@@ -865,13 +770,12 @@ export default function ConciergeModule({
                 suggestedPrompts={suggestedPrompts}
                 renderMessage={(message, index) => {
                   if (message.sender === "ai" && message.id !== "welcome-message") {
-                    const isLastMessage = index === chatMessages.length - 1;
                     return (
                       <div className="relative">
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           components={{
-                            p: ({ children }) => <p className="text-sm mb-2 break-words">{children}</p>,
+                            p: ({ children }) => <p className="text-sm md:text-[15px] mb-2 break-words">{children}</p>,
                             ol: ({ children }) => <ol className="list-decimal ml-6 mb-2">{children}</ol>,
                             ul: ({ children }) => <ul className="list-disc ml-6 mb-2">{children}</ul>,
                             li: ({ children }) => <li className="mb-1">{children}</li>,
@@ -886,29 +790,22 @@ export default function ConciergeModule({
                         >
                           {message.text}
                         </ReactMarkdown>
-
-                        {/* feedback + action buttons ... keep your existing logic */}
-                        {/* ... */}
                       </div>
                     );
                   }
-                  return (
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {message.text}
-                    </ReactMarkdown>
-                  );
+                  return <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text}</ReactMarkdown>;
                 }}
               />
             </div>
           </section>
         </div>
       </CardContent>
-
-      {/* Decorative blobs (stay inside Card so they don’t affect layout) */}
-      <div className="pointer-events-none absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-8 -left-8 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+  
+      {/* Decorative blobs — hide on mobile to avoid overlap */}
+      <div className="hidden sm:block pointer-events-none absolute -top-4 -right-4 w-40 sm:w-72 h-40 sm:h-72 bg-primary/20 rounded-full blur-3xl" />
+      <div className="hidden sm:block pointer-events-none absolute -bottom-8 -left-8 w-48 sm:w-96 h-48 sm:h-96 bg-secondary/10 rounded-full blur-3xl" />
     </Card>
-
+  
     {/* Hidden file input */}
     <input
       type="file"
@@ -917,6 +814,6 @@ export default function ConciergeModule({
       accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt"
       className="hidden"
     />
-  </div>
+  </div>  
 );
 }
