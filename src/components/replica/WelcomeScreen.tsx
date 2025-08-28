@@ -98,7 +98,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
             </div>
             {/* Avatar info overlay */}
             <div className="absolute bottom-3 left-3 right-3 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
-              <h3 className="text-white font-semibold text-sm">{selectedAvatar.Name}</h3>
+              {/* <h3 className="text-white font-semibold text-sm">{selectedAvatar.Name}</h3> */}
               <p className="text-white/80 text-xs">
                 {personaName}
               </p>

@@ -22445,10 +22445,7 @@ const Wh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
         ] }),
         /* @__PURE__ */ P("span", { children: "LIVE" })
       ] }),
-      /* @__PURE__ */ k("div", { className: "absolute bottom-3 left-3 right-3 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg", children: [
-        /* @__PURE__ */ P("h3", { className: "text-white font-semibold text-sm", children: S.Name }),
-        /* @__PURE__ */ P("p", { className: "text-white/80 text-xs", children: d })
-      ] })
+      /* @__PURE__ */ P("div", { className: "absolute bottom-3 left-3 right-3 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg", children: /* @__PURE__ */ P("p", { className: "text-white/80 text-xs", children: d }) })
     ] }) : /* @__PURE__ */ P("div", { className: "w-full h-full bg-light rounded-lg flex items-center justify-center", children: /* @__PURE__ */ P("p", { className: "text-secondary", children: v.avatarNotFound }) }) }),
     /* @__PURE__ */ P(
       "button",
@@ -26452,7 +26449,10 @@ function RI({
               }
             ) }),
             /* @__PURE__ */ P("div", { className: "flex-1 text-center sm:text-left", children: /* @__PURE__ */ k("p", { className: "text-gray-800 leading-relaxed", children: [
-              /* @__PURE__ */ P("strong", { className: "text-[#3f62ec]", children: "AI Concierge:" }),
+              /* @__PURE__ */ k("strong", { className: "text-[#3f62ec]", children: [
+                r,
+                ":"
+              ] }),
               " ",
               `"Great news! I've analyzed your `,
               n?.name || "health report",

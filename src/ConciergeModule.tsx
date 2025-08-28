@@ -834,7 +834,7 @@ export default function ConciergeModule({
                     <div className="flex-1 text-center sm:text-left">
                       <p className="text-gray-800 leading-relaxed">
                         <strong className="text-[#3f62ec]">
-                          AI Concierge:
+                          {personaName}:
                         </strong>{" "}
                         "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
                       </p>
