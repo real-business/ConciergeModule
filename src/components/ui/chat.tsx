@@ -163,7 +163,7 @@ export function Chat({
                       "max-w-[80%] rounded-lg p-3",
                       message.sender === "user"
                         ? "bg-[#3f62ec] text-white"
-                        : "bg-white text-[#3f62ec]"
+                        : "bg-gradient-to-r from-blue-50 to-teal-50 text-[#3f62ec]"
                     )}
                   >
                     {renderMessage ? (

@@ -9,7 +9,9 @@ import {
   GraduationCap,
   MessageSquare,
   Sparkles,
-  CheckCircle
+  CheckCircle,
+  ThumbsDown,
+  ThumbsUp
 } from "lucide-react";
 import SpeechComponent from "./components/voice/SpeechComponent";
 import { chatCompletionAPI } from "./lib/api/azure-chat-api";
@@ -113,6 +115,7 @@ export default function ConciergeModule({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const mobile = useMediaQuery("(max-width: 768px)");
+  const [reportReady, setReportReady] = useState(false);
   const [translatedTexts, setTranslatedTexts] = useState<{
     avatar: {
       chooseAvatar: string;
@@ -431,7 +434,7 @@ export default function ConciergeModule({
      // Combine state files with additional files passed as parameter
     const filesToSend = [...uploadedFiles, ...additionalFiles];
     if (filesToSend.length > 0) {
-      prompt += 'Summarize this file in 3–4 very simple sentences, as if you are explaining to a 3rd grader. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.'
+      prompt += 'Talk to me in plain, friendly language for adults with no medical background — clear, supportive, and free of medical jargon. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.'
     }
 
     if(userInput === "yes, continue"){
@@ -442,7 +445,7 @@ export default function ConciergeModule({
       // Fetch AI response
       const response = await chatCompletionAPI(
         prompt,
-        "52533633434137384342", // Send user ID instead of email - for testing hardcoding the userID
+        "unicornhealth", // Send user ID instead of email - for testing hardcoding the userID
         "", // Business ID
         "interview", // Intent
         sessionId,
@@ -453,7 +456,7 @@ export default function ConciergeModule({
       );
 
       if (response.Success && response.Data?.Message) {
-        if(response?.Data?.Message?.includes("ERROR") || response?.Data?.Type === "error") {
+        if(response?.Data?.Message?.toLowerCase().includes("error") || response?.Data?.Type === "error") {
           setIsLoading(false);
           // Handle error
           const errorMessage: ChatMessage = {
@@ -478,6 +481,7 @@ export default function ConciergeModule({
           setSessionId(response?.Data?.SessionId || "");
         }
         setCurrentScript(response.Data.Message);
+        setReportReady(true);
 
         //Check for continue button
         if(
@@ -511,7 +515,7 @@ export default function ConciergeModule({
 
         await postChatHistory(
           "",
-          "AIHealthNavigator",
+          "AIReportReader",
           userInput,
           response.Data.Message || "",
           interactionMode === "voice", //isUserUsingAvatar
@@ -731,7 +735,7 @@ export default function ConciergeModule({
                         <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </div>
                       <h2 className="text-lg font-bold text-gray-900 mb-2">
-                        🎉 Your Report Analysis is Ready!
+                        {reportReady ? `🎉 Your Report Analysis is Ready!` : `Report analysis in progress`  }
                       </h2>
                     </div>
                       <ConversationComponent
@@ -782,7 +786,11 @@ export default function ConciergeModule({
                               <strong className="text-[#3f62ec]">
                                 {personaName}:
                               </strong>{" "}
-                              "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
+                              {reportReady ? (
+                                <>Great news! I’ve analyzed your {file?.name ?? "health report"} and found some important insights for you.</>
+                              ) : (
+                                <>Analyzing {file?.name ?? "your report"}… this usually takes a few seconds.</>
+                              )}
                             </p>
                           </div>
                         </div>
@@ -797,7 +805,7 @@ export default function ConciergeModule({
                       <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </div>
                     <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                      🎉 Your Report Analysis is Ready!
+                      {reportReady ? `🎉 Your Report Analysis is Ready!` : `Report analysis in progress`  }
                     </h2>
                   </div>
                   <div className="mb-4 flex flex-col items-center gap-2">
@@ -888,12 +896,65 @@ export default function ConciergeModule({
                         >
                           {message.text}
                         </ReactMarkdown>
-
-                        {/* feedback + action buttons ... keep your existing logic */}
-                        {/* ... */}
-                      </div>
-                    );
-                  }
+<div className="flex justify-end gap-2 mt-2">
+                                <button
+                                  className={`p-1 rounded-full transition-colors ${feedback[message.id] === "like"
+                                    ? "bg-green-100 text-green-600"
+                                    : "hover:bg-gray-200 text-gray-600"
+                                    }`}
+                                  onClick={() => handleFeedback(message, "like")}
+                                >
+                                  <ThumbsUp className="h-4 w-4" />
+                                </button>
+                                <button
+                                  className={`p-1 rounded-full transition-colors ${feedback[message.id] === "dislike"
+                                    ? "bg-red-100 text-red-600"
+                                    : "hover:bg-gray-200 text-gray-600"
+                                    }`}
+                                  onClick={() => handleFeedback(message, "dislike")}
+                                >
+                                  <ThumbsDown className="h-4 w-4" />
+                                </button>
+                              </div>
+                               {/* Add Retry button only on the last AI message */}
+                               {showRetryButton && isLastMessage && (
+                                <div className="mt-4 flex">
+                                  <button
+                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
+                                    onClick={() => {
+                                      handleSendMessage(userInput);
+                                      setShowRetryButton(false);
+                                    }}
+                                  >
+                                    {translatedTexts.buttons.retry}
+                                  </button>
+                                </div>
+                              )}
+                              {/* Add Continue button if this is the last message and showContinue is true */}
+                              {isLastMessage && showContinueButton && (
+                                <div className="mt-4 flex justify-center">
+                                  <button
+                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
+                                    onClick={handleStartAdvisor}
+                                  >
+                                    {translatedTexts.buttons.continue}
+                                  </button>
+                                </div>
+                              )}
+                              {/* Add SignUp button if this is the last message and interview is completed
+                              {isLastMessage && interviewCompleted && (
+                                <div className="mt-4 flex justify-center">
+                                  <button
+                                    className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
+                                    onClick={handleStartAdvisor}
+                                  >
+                                    {translatedTexts.buttons.signUp}
+                                  </button>
+                                </div>
+                              )} */}
+                            </div>
+                          );
+                        }
                   return (
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {message.text}
