@@ -116,6 +116,7 @@ export default function ConciergeModule({
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const mobile = useMediaQuery("(max-width: 768px)");
   const [reportReady, setReportReady] = useState(false);
+  const [userId, setUserId] = useState("52533633434137384342")
   const [translatedTexts, setTranslatedTexts] = useState<{
     avatar: {
       chooseAvatar: string;
@@ -209,6 +210,12 @@ export default function ConciergeModule({
       console.warn("Azure translation config is not yet ready.");
       return;
     }
+
+    useEffect(() => {
+      if(navigateTo.includes("demo")){
+        setUserId("52533144413937384342");
+      }
+    }, [navigateTo]);
 
     const translate = async () => {
       // Always run on language change
@@ -445,7 +452,7 @@ export default function ConciergeModule({
       // Fetch AI response
       const response = await chatCompletionAPI(
         prompt,
-        "unicornhealth", // Send user ID instead of email - for testing hardcoding the userID
+        userId, // Send user ID instead of email - for testing hardcoding the userID
         "", // Business ID
         "interview", // Intent
         sessionId,
@@ -556,18 +563,6 @@ export default function ConciergeModule({
     console.log("Toggle chat visibility");
   };
 
-  const handleContinue = () => {
-    setShowContinueButton(false);
-    handleSendMessage("yes, continue", []);
-  }
-
-  const handleBuyNow = () => {
-    setShowBuyNowButton(false);
-    if (typeof window !== "undefined") {
-      window.location.href = "/account";
-    }
-  }
-
   const handleStartAdvisor = () => {
     if (typeof window !== "undefined") {
       if (navigateTo) {
@@ -578,9 +573,6 @@ export default function ConciergeModule({
     }
   }
 
-  const resetChat = () => {
-    setChatMessages([])
-  };
   // Add feedback handler
   const handleFeedback = (message: ChatMessage, type: "like" | "dislike") => {
     const feedbackValue = type === "like";
@@ -878,7 +870,7 @@ export default function ConciergeModule({
                     const isLastMessage = index === chatMessages.length - 1;
                     return (
                       <div className="relative">
-                        <ReactMarkdown
+                        {/* <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           components={{
                             p: ({ children }) => <p className="text-sm mb-2 break-words">{children}</p>,
@@ -895,8 +887,11 @@ export default function ConciergeModule({
                           }}
                         >
                           {message.text}
+                        </ReactMarkdown> */}
+                        <ReactMarkdown>
+                          {message.text}
                         </ReactMarkdown>
-<div className="flex justify-end gap-2 mt-2">
+                              <div className="flex justify-end gap-2 mt-2">
                                 <button
                                   className={`p-1 rounded-full transition-colors ${feedback[message.id] === "like"
                                     ? "bg-green-100 text-green-600"
@@ -931,13 +926,13 @@ export default function ConciergeModule({
                                 </div>
                               )}
                               {/* Add Continue button if this is the last message and showContinue is true */}
-                              {isLastMessage && showContinueButton && (
+                              {isLastMessage && reportReady && (
                                 <div className="mt-4 flex justify-center">
                                   <button
                                     className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition"
                                     onClick={handleStartAdvisor}
                                   >
-                                    {translatedTexts.buttons.continue}
+                                    Join Unicorn Health
                                   </button>
                                 </div>
                               )}
