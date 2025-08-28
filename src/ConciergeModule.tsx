@@ -828,7 +828,11 @@ export default function ConciergeModule({
                         <strong className="text-[#3f62ec]">
                           {personaName}:
                         </strong>{" "}
-                        "Great news! I've analyzed your {file?.name || "health report"} and found some important insights for you."
+                        {reportReady ? (
+                          <>Great news! I’ve analyzed your {file?.name ?? "health report"} and found some important insights for you.</>
+                        ) : (
+                          <>Analyzing {file?.name ?? "your report"}… this usually takes a few seconds.</>
+                        )}
                       </p>
                     </div>
                   </div>

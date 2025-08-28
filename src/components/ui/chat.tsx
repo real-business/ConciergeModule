@@ -200,9 +200,9 @@ export function Chat({
               <div className="w-8 h-8 rounded-full bg-[#3f62ec] flex items-center justify-center text-white flex-shrink-0">
                 <Bot size={14} />
               </div>
-              <div className="ml-2 px-3 py-2 rounded-lg bg-secondary/10 flex items-center">
+              <div className="ml-2 px-3 py-2 rounded-lg bg-bg-gradient-to-r from-blue-50 flex items-center">
                 <Loader2 className="h-4 w-4 animate-spin mr-2 text-[#3f62ec]" />
-                <span className="text-sm text-secondary">{labels.thinking}</span>
+                <span className="text-sm text-[#3f62ec]">{labels.thinking}</span>
               </div>
             </div>
           )}
