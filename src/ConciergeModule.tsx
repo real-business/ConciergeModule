@@ -766,7 +766,7 @@ export default function ConciergeModule({
                         speechKey={config?.speechKey || ""}
                         config={config}
                       />
-                      <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
+                      <div className="hidden md:block bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6">
                         <div className="flex items-start space-x-4">
                           <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                             <img
@@ -807,12 +807,12 @@ export default function ConciergeModule({
                     />
                     <Button
                       onClick={() => setConciergeConversationStarted(true)}
-                      className="w-auto bg-[#3f62ec] hover:bg-white hober:text-[#3f62ec] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
+                      className="w-auto bg-[#3f62ec] hover:bg-white hover:text-[#3f62ec] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition"
                     >
                       {translatedTexts.avatar.startConversation}
                     </Button>
                   </div>
-                  <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6 w-full max-w-xl">
+                  <div className="hidden md:block bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6 w-full max-w-xl">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                     <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                       <img
@@ -821,7 +821,7 @@ export default function ConciergeModule({
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="hidden md:block flex-1 text-center sm:text-left">
+                    <div className="flex-1 text-center sm:text-left">
                       <p className="text-gray-800 leading-relaxed">
                         <strong className="text-[#3f62ec]">
                           AI Concierge:

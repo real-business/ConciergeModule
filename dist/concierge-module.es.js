@@ -26341,7 +26341,7 @@ function mI({
               config: l
             }
           ),
-          /* @__PURE__ */ P("div", { className: "bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6", children: /* @__PURE__ */ N("div", { className: "flex items-start space-x-4", children: [
+          /* @__PURE__ */ P("div", { className: "hidden md:block bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6", children: /* @__PURE__ */ N("div", { className: "flex items-start space-x-4", children: [
             /* @__PURE__ */ P("div", { className: "w-12 h-12 rounded-full overflow-hidden flex-shrink-0", children: /* @__PURE__ */ P(
               "img",
               {
@@ -26380,12 +26380,12 @@ function mI({
               $t,
               {
                 onClick: () => y(!0),
-                className: "w-auto bg-[#3f62ec] hover:bg-white hober:text-[#3f62ec] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition",
+                className: "w-auto bg-[#3f62ec] hover:bg-white hover:text-[#3f62ec] text-white py-3 px-6 rounded-lg font-semibold shadow-md transition",
                 children: Is.avatar.startConversation
               }
             )
           ] }),
-          /* @__PURE__ */ P("div", { className: "bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6 w-full max-w-xl", children: /* @__PURE__ */ N("div", { className: "flex flex-col sm:flex-row items-center sm:items-start gap-4", children: [
+          /* @__PURE__ */ P("div", { className: "hidden md:block bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-6 mb-6 w-full max-w-xl", children: /* @__PURE__ */ N("div", { className: "flex flex-col sm:flex-row items-center sm:items-start gap-4", children: [
             /* @__PURE__ */ P("div", { className: "w-12 h-12 rounded-full overflow-hidden flex-shrink-0", children: /* @__PURE__ */ P(
               "img",
               {
@@ -26394,7 +26394,7 @@ function mI({
                 className: "w-full h-full object-cover"
               }
             ) }),
-            /* @__PURE__ */ P("div", { className: "hidden md:block flex-1 text-center sm:text-left", children: /* @__PURE__ */ N("p", { className: "text-gray-800 leading-relaxed", children: [
+            /* @__PURE__ */ P("div", { className: "flex-1 text-center sm:text-left", children: /* @__PURE__ */ N("p", { className: "text-gray-800 leading-relaxed", children: [
               /* @__PURE__ */ P("strong", { className: "text-[#3f62ec]", children: "AI Concierge:" }),
               " ",
               `"Great news! I've analyzed your `,
