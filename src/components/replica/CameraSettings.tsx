@@ -13,7 +13,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import VideocamOffIcon from "@mui/icons-material/VideocamOff";
 import ChatIcon from "@mui/icons-material/Chat";
 import SpeechComponent from "../voice/SpeechComponent";
-import CallEndIcon from "@mui/icons-material/CallEnd";
+import { PhoneOff } from "lucide-react";
 
 interface CameraSettingsProps {
   actionLabel?: string;
@@ -128,7 +128,7 @@ const CameraSettings: React.FC<CameraSettingsProps> = ({
           }
           className="flex items-center justify-center p-1 rounded-full border border-white text-white w-10 h-10"
         >
-          <CallEndIcon className="w-6 h-6" />
+          <PhoneOff className="w-6 h-6" />
         </button>
       )}
     </div>
@@ -179,7 +179,7 @@ const CameraSettings: React.FC<CameraSettingsProps> = ({
     //         >
     //           {/* <VideocamIcon className="text-sm mr-1 text-red-600" />
     //           {actionLabel} */}
-    //           <CallEndIcon className="w-4 h-4" />
+    //           <PhoneOff className="w-4 h-4" />
     //         </button>
     //       )}
     //       {/* {chatLabel && platform === "winfed" && (

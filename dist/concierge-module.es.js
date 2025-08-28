@@ -1,12 +1,11 @@
 import { jsx as P, jsxs as N, Fragment as Ns } from "react/jsx-runtime";
 import * as Z from "react";
 import { useState as O, useRef as Ve, useEffect as $, useCallback as ec, createContext as pf, useContext as df, forwardRef as Eg, useImperativeHandle as Ig } from "react";
-import { Bot as gc, RotateCcw as Ag, Loader2 as Na, ChevronDown as Tg, ChevronUp as _g, Send as kg, Mic as Og, MicOff as Mg, CheckCircle as mc, GraduationCap as Dg, Sparkles as Ng, MessageSquare as xg } from "lucide-react";
+import { Bot as gc, RotateCcw as Ag, Loader2 as Na, ChevronDown as Tg, ChevronUp as _g, Send as kg, Mic as Og, MicOff as Mg, PhoneOff as Dg, CheckCircle as mc, GraduationCap as Ng, Sparkles as xg, MessageSquare as zg } from "lucide-react";
 import xa from "react-markdown";
 import * as gs from "@radix-ui/react-tooltip";
-import { motion as zg } from "framer-motion";
-import { useVideoTrack as hf, DailyVideo as Lg, useLocalSessionId as ff, useDaily as Us, useDevices as jg, useAudioTrack as qg, useDailyEvent as Fg, useParticipantIds as Bg, useAppMessage as Ug, DailyAudio as $g, DailyProvider as Vg } from "@daily-co/daily-react";
-import Wg from "@mui/icons-material/CallEnd";
+import { motion as Lg } from "framer-motion";
+import { useVideoTrack as hf, DailyVideo as jg, useLocalSessionId as ff, useDaily as Us, useDevices as qg, useAudioTrack as Fg, useDailyEvent as Bg, useParticipantIds as Ug, useAppMessage as $g, DailyAudio as Vg, DailyProvider as Wg } from "@daily-co/daily-react";
 import { initReactI18next as Hg } from "react-i18next";
 import { useMediaQuery as Kg } from "@mui/material";
 function yc(e, t) {
@@ -22455,7 +22454,7 @@ const Fh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
       style: t,
       children: [
         e && /* @__PURE__ */ P(
-          Lg,
+          jg,
           {
             automirror: !0,
             sessionId: e,
@@ -22565,7 +22564,7 @@ const Fh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
     lg: "px-6 py-3 text-base"
   };
   return /* @__PURE__ */ N(
-    zg.div,
+    Lg.div,
     {
       className: `flex flex-col items-center ${i}`,
       initial: { opacity: 0 },
@@ -22690,7 +22689,7 @@ const Fh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
   speechKey: h
 }) => {
   Us();
-  const { currentCam: d, currentMic: f, refreshDevices: g } = jg(), m = ff(), v = hf(m), y = qg(m);
+  const { currentCam: d, currentMic: f, refreshDevices: g } = qg(), m = ff(), v = hf(m), y = Fg(m);
   v.isOff, y.isOff;
   const [S, C] = O(!1);
   return $(() => {
@@ -22699,7 +22698,7 @@ const Fh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
         A.hasAttribute("data-replit-metadata") && A.removeAttribute("data-replit-metadata");
       });
     })();
-  }, []), Fg(
+  }, []), Bg(
     "camera-error",
     ec(() => {
       C(!0);
@@ -22724,7 +22723,7 @@ const Fh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
         onClick: t,
         disabled: S || (!d || !f) && n !== "home" && n !== "university" && n !== "concierge" && n !== "pr" && n !== "business_advisor" && n !== "survey",
         className: "flex items-center justify-center p-1 rounded-full border border-white text-white w-10 h-10",
-        children: /* @__PURE__ */ P(Wg, { className: "w-6 h-6" })
+        children: /* @__PURE__ */ P(Dg, { className: "w-6 h-6" })
       }
     )
   ] });
@@ -22769,11 +22768,11 @@ const Mb = /* @__PURE__ */ hC(Ob), Db = ({
   personaName: l,
   config: p
 }) => {
-  const h = Us(), d = Bg({ filter: "remote" }), [f, g] = O("full"), [m, v] = O([]), [y, S] = O(!1), [C, w] = O("en");
+  const h = Us(), d = Ug({ filter: "remote" }), [f, g] = O("full"), [m, v] = O([]), [y, S] = O(!1), [C, w] = O("en");
   $(() => {
     typeof window < "u" && w(localStorage.getItem("lang") || "en");
   }, []);
-  const b = Ug({
+  const b = $g({
     onAppMessage: ec((T) => {
       const D = T.data;
       v((q) => [...q, D]);
@@ -22884,7 +22883,7 @@ const Mb = /* @__PURE__ */ hC(Ob), Db = ({
         children: /* @__PURE__ */ P("div", { className: "absolute inset-0 flex justify-center items-center", children: /* @__PURE__ */ P("h2", { className: "text-white text-xl text-center px-4", children: o ? A.endConversation : A.waiting }) })
       }
     ) }) }),
-    /* @__PURE__ */ P($g, {})
+    /* @__PURE__ */ P(Vg, {})
   ] });
 }, Nb = ({
   conversation: e,
@@ -25901,7 +25900,7 @@ const pI = [
       const X = typeof F == "string" ? F : `${F}px`;
       return X.includes("sm") || parseInt(X) < 350 ? "sm" : X.includes("lg") || parseInt(X) > 600 ? "lg" : "md";
     }, ae = typeof g == "string" ? g : g ? `${g}px` : void 0, Gt = ae && !ae.includes("px") && !ae.includes("%") ? `max-w-${ae} mx-auto` : "";
-    return /* @__PURE__ */ P("main", { className: `${m} relative w-full h-full`, style: { width: zt, height: Oe }, children: /* @__PURE__ */ P(Vg, { children: /* @__PURE__ */ N("div", { className: `h-full w-full ${Gt}`, style: ae && ae.includes("px") ? { maxWidth: ae } : {}, children: [
+    return /* @__PURE__ */ P("main", { className: `${m} relative w-full h-full`, style: { width: zt, height: Oe }, children: /* @__PURE__ */ P(Wg, { children: /* @__PURE__ */ N("div", { className: `h-full w-full ${Gt}`, style: ae && ae.includes("px") ? { maxWidth: ae } : {}, children: [
       pe === "welcome" && /* @__PURE__ */ P(
         Ab,
         {
@@ -26006,9 +26005,9 @@ const pI = [
     o(!0);
   }, []), r ? /* @__PURE__ */ P(Ns, { children: e }) : /* @__PURE__ */ P(Ns, { children: t });
 }, gI = [
-  { id: 1, text: "Explain my report", icon: Dg },
-  { id: 5, text: "Analyze my medical reports.", icon: Ng },
-  { id: 6, text: "Answer my questions like a personal coach", icon: xg }
+  { id: 1, text: "Explain my report", icon: Ng },
+  { id: 5, text: "Analyze my medical reports.", icon: xg },
+  { id: 6, text: "Answer my questions like a personal coach", icon: zg }
 ], mI = "r89e4f7ec536";
 function yI({
   brandName: e = "Growth Hub",
@@ -26463,16 +26462,16 @@ function yI({
     )
   ] });
 }
-function VT(e) {
+function $T(e) {
   return /* @__PURE__ */ P(hI, { value: e.config || {}, children: /* @__PURE__ */ P(yI, { ...e }) });
 }
-const gg = pf(void 0), WT = ({ children: e, value: t }) => /* @__PURE__ */ P(gg.Provider, { value: t, children: e }), HT = () => {
+const gg = pf(void 0), VT = ({ children: e, value: t }) => /* @__PURE__ */ P(gg.Provider, { value: t, children: e }), WT = () => {
   const e = df(gg);
   if (!e)
     throw new Error("useConciergeContext must be used within a ConciergeProvider");
   return e;
 };
-function KT(e, t) {
+function HT(e, t) {
   const [r, o] = O(() => {
     if (typeof window > "u")
       return t;
@@ -26493,12 +26492,12 @@ function KT(e, t) {
   }];
 }
 export {
-  VT as ConciergeModule,
+  $T as ConciergeModule,
   yI as ConciergeModuleRaw,
-  WT as ConciergeProvider,
+  VT as ConciergeProvider,
   fI as ConversationComponent,
   lf as SSRSafeWrapper,
   tg as SpeechComponent,
-  HT as useConciergeContext,
-  KT as useLocalStorage
+  WT as useConciergeContext,
+  HT as useLocalStorage
 };
