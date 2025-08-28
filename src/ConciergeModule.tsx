@@ -23,6 +23,7 @@ import { postChatHistory } from "./lib/api/post-chat-history";
 import { getAllAvatarsAPI, AvatarProfile } from "./lib/api/get-all-avatars-api";
 import SSRSafeWrapper from "./components/SSRSafeWrapper";
 import { cn } from "./lib/utils";
+import { useMediaQuery } from "@mui/material";
 
 export interface SuggestedPrompt {
   id: number;
@@ -111,6 +112,7 @@ export default function ConciergeModule({
   const translatedLangRef = useRef<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const mobile = useMediaQuery("(max-width: 768px)");
   const [translatedTexts, setTranslatedTexts] = useState<{
     avatar: {
       chooseAvatar: string;
@@ -724,7 +726,7 @@ export default function ConciergeModule({
                 <div className="h-full w-full rounded-xl overflow-hidden bg-white">
                   {selectedAvatar && (
                     <SSRSafeWrapper fallback={<div className="w-full h-full bg-gray-200 rounded animate-pulse flex items-center justify-center">Loading conversation...</div>}>
-                    <div className="text-center mb-6">
+                    <div className="hidden md:block text-center mb-6">
                       <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mb-4">
                         <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </div>
@@ -750,7 +752,7 @@ export default function ConciergeModule({
                         chatVisible={false}
                         toggleChat={toggleChatVisibility}
                         width="100%"
-                        height="55%"
+                        height={mobile ? "70%" : "55%"}
                         className="w-full h-full"
                         setVoiceMode={setVoiceMode}
                         setConversationStarted={setConversationStarted}
