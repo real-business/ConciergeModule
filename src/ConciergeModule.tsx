@@ -441,7 +441,7 @@ export default function ConciergeModule({
      // Combine state files with additional files passed as parameter
     const filesToSend = [...uploadedFiles, ...additionalFiles];
     if (filesToSend.length > 0) {
-      prompt += 'Talk to me in plain, friendly language for adults with no medical background — clear, supportive, and free of medical jargon. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed.'
+      prompt += `Talk to me like I'm a 75 year old, who is afraid of medical terminology in a kind and gentle voice`
     }
 
     if(userInput === "yes, continue"){

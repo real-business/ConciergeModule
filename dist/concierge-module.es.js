@@ -26257,7 +26257,7 @@ function RI({
     Ce($), E((J) => [...J, H]), C(!0);
     let he = `${$}`;
     const Le = [...qt, ...ee];
-    Le.length > 0 && (he += "Talk to me in plain, friendly language for adults with no medical background — clear, supportive, and free of medical jargon. Only include the most important points. Also, list anything in the file that should be double-checked or reviewed."), $ === "yes, continue" && (he += "Start the interview. User clicked continue.");
+    Le.length > 0 && (he += "Talk to me like I'm a 75 year old, who is afraid of medical terminology in a kind and gentle voice"), $ === "yes, continue" && (he += "Start the interview. User clicked continue.");
     try {
       const J = await Wh(
         he,
