@@ -351,7 +351,7 @@ export default function ConciergeModule({
             const firstMessage =  await chatCompletionAPI(prompt, 
             "",
             "",
-            "interview",
+            "advisor",
             sessionId,
             0,
             1,
@@ -439,13 +439,13 @@ export default function ConciergeModule({
 
      // Combine state files with additional files passed as parameter
     const filesToSend = [...uploadedFiles, ...additionalFiles];
-    if (filesToSend.length > 0) {
-      prompt += `Talk to me like I'm a 75 year old, who is afraid of medical terminology in a kind and gentle voice`
+    if ((filesToSend.length > 0) || !sessionId) {
+      prompt += `Talk to me like I'm a 75 year old, who is afraid of medical terminology in a kind and gentle voice. Don't use the prompt text in the reply.`
     }
 
-    if(userInput === "yes, continue"){
-      prompt += `Start the interview. User clicked continue.`
-    }
+    // if(userInput === "yes, continue"){
+    //   prompt += `Start the interview. User clicked continue.`
+    // }
 
     try {
       // Fetch AI response
@@ -453,7 +453,7 @@ export default function ConciergeModule({
         prompt,
         userId, // Send user ID instead of email - for testing hardcoding the userID
         "", // Business ID
-        "interview", // Intent
+        "advisor", // Intent
         sessionId,
         0,
         1,

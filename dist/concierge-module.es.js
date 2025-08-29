@@ -343,7 +343,7 @@ const K = (e) => {
   // I could also use lookbehind assertion in `lengthUnitRegex` but that isn't supported widely enough.
   Rm.test(e) && !Pm.test(e)
 ), If = () => !1, Dm = (e) => wm.test(e), xm = (e) => bm.test(e), Nm = () => {
-  const e = K("colors"), t = K("spacing"), r = K("blur"), o = K("brightness"), i = K("borderColor"), a = K("borderRadius"), s = K("borderSpacing"), n = K("borderWidth"), c = K("contrast"), u = K("grayscale"), l = K("hueRotate"), p = K("invert"), h = K("gap"), d = K("gradientColorStops"), f = K("gradientColorStopPositions"), g = K("inset"), m = K("margin"), v = K("opacity"), y = K("padding"), S = K("saturate"), C = K("scale"), P = K("sepia"), b = K("skew"), A = K("space"), E = K("translate"), D = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], j = () => ["auto", L, t], T = () => [L, t], x = () => ["", je, Ge], q = () => ["auto", Vt, L], pe = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], W = () => ["solid", "dashed", "dotted", "double", "none"], G = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], ne = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], oe = () => ["", "0", L], ye = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], V = () => [Vt, L];
+  const e = K("colors"), t = K("spacing"), r = K("blur"), o = K("brightness"), i = K("borderColor"), a = K("borderRadius"), s = K("borderSpacing"), n = K("borderWidth"), c = K("contrast"), u = K("grayscale"), l = K("hueRotate"), p = K("invert"), h = K("gap"), d = K("gradientColorStops"), f = K("gradientColorStopPositions"), g = K("inset"), m = K("margin"), v = K("opacity"), y = K("padding"), S = K("saturate"), C = K("scale"), P = K("sepia"), b = K("skew"), A = K("space"), E = K("translate"), x = () => ["auto", "contain", "none"], R = () => ["auto", "hidden", "clip", "visible", "scroll"], j = () => ["auto", L, t], T = () => [L, t], D = () => ["", je, Ge], q = () => ["auto", Vt, L], pe = () => ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"], W = () => ["solid", "dashed", "dotted", "double", "none"], G = () => ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"], ne = () => ["start", "end", "center", "between", "around", "evenly", "stretch"], oe = () => ["", "0", L], ye = () => ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"], $ = () => [Vt, L];
   return {
     cacheSize: 500,
     separator: ":",
@@ -351,26 +351,26 @@ const K = (e) => {
       colors: [rr],
       spacing: [je, Ge],
       blur: ["none", "", Qe, L],
-      brightness: V(),
+      brightness: $(),
       borderColor: [e],
       borderRadius: ["none", "", "full", Qe, L],
       borderSpacing: T(),
-      borderWidth: x(),
-      contrast: V(),
+      borderWidth: D(),
+      contrast: $(),
       grayscale: oe(),
-      hueRotate: V(),
+      hueRotate: $(),
       invert: oe(),
       gap: T(),
       gradientColorStops: [e],
       gradientColorStopPositions: [Em, Ge],
       inset: j(),
       margin: j(),
-      opacity: V(),
+      opacity: $(),
       padding: T(),
-      saturate: V(),
-      scale: V(),
+      saturate: $(),
+      scale: $(),
       sepia: oe(),
-      skew: V(),
+      skew: $(),
       space: T(),
       translate: T()
     },
@@ -494,21 +494,21 @@ const K = (e) => {
        * @see https://tailwindcss.com/docs/overscroll-behavior
        */
       overscroll: [{
-        overscroll: D()
+        overscroll: x()
       }],
       /**
        * Overscroll Behavior X
        * @see https://tailwindcss.com/docs/overscroll-behavior
        */
       "overscroll-x": [{
-        "overscroll-x": D()
+        "overscroll-x": x()
       }],
       /**
        * Overscroll Behavior Y
        * @see https://tailwindcss.com/docs/overscroll-behavior
        */
       "overscroll-y": [{
-        "overscroll-y": D()
+        "overscroll-y": x()
       }],
       /**
        * Position
@@ -1675,7 +1675,7 @@ const K = (e) => {
        * @see https://tailwindcss.com/docs/ring-width
        */
       "ring-w": [{
-        ring: x()
+        ring: D()
       }],
       /**
        * Ring Width Inset
@@ -1945,7 +1945,7 @@ const K = (e) => {
        * @see https://tailwindcss.com/docs/transition-duration
        */
       duration: [{
-        duration: V()
+        duration: $()
       }],
       /**
        * Transition Timing Function
@@ -1959,7 +1959,7 @@ const K = (e) => {
        * @see https://tailwindcss.com/docs/transition-delay
        */
       delay: [{
-        delay: V()
+        delay: $()
       }],
       /**
        * Animation
@@ -2430,7 +2430,7 @@ function jm(e) {
 function $t(e) {
   return e !== null && e < -2;
 }
-function fe(e) {
+function he(e) {
   return e !== null && (e < 0 || e === 32);
 }
 function $e(e) {
@@ -3117,7 +3117,7 @@ function fs(e) {
   return "&#x" + e.toString(16).toUpperCase() + ";";
 }
 function js(e) {
-  if (e === null || fe(e) || xt(e))
+  if (e === null || he(e) || xt(e))
     return 1;
   if (Hs(e))
     return 2;
@@ -3945,7 +3945,7 @@ function DS(e, t, r) {
     return p === 47 ? (e.consume(p), a ? u : (a = !0, c)) : r(p);
   }
   function u(p) {
-    return p === null || jm(p) || fe(p) || xt(p) || Hs(p) ? r(p) : e.attempt(Hf, e.attempt(Kf, l), r)(p);
+    return p === null || jm(p) || he(p) || xt(p) || Hs(p) ? r(p) : e.attempt(Hf, e.attempt(Kf, l), r)(p);
   }
   function l(p) {
     return e.exit("literalAutolinkHttp"), e.exit("literalAutolink"), t(p);
@@ -3965,7 +3965,7 @@ function NS(e, t, r) {
   let o, i, a;
   return s;
   function s(u) {
-    return u === 46 || u === 95 ? e.check(Jf, c, n)(u) : u === null || fe(u) || xt(u) || u !== 45 && Hs(u) ? c(u) : (a = !0, e.consume(u), s);
+    return u === 46 || u === 95 ? e.check(Jf, c, n)(u) : u === null || he(u) || xt(u) || u !== 45 && Hs(u) ? c(u) : (a = !0, e.consume(u), s);
   }
   function n(u) {
     return u === 95 ? o = !0 : (i = o, o = void 0), e.consume(u), s;
@@ -3978,7 +3978,7 @@ function zS(e, t) {
   let r = 0, o = 0;
   return i;
   function i(s) {
-    return s === 40 ? (r++, e.consume(s), i) : s === 41 && o < r ? a(s) : s === 33 || s === 34 || s === 38 || s === 39 || s === 41 || s === 42 || s === 44 || s === 46 || s === 58 || s === 59 || s === 60 || s === 63 || s === 93 || s === 95 || s === 126 ? e.check(Jf, t, a)(s) : s === null || fe(s) || xt(s) ? t(s) : (e.consume(s), i);
+    return s === 40 ? (r++, e.consume(s), i) : s === 41 && o < r ? a(s) : s === 33 || s === 34 || s === 38 || s === 39 || s === 41 || s === 42 || s === 44 || s === 46 || s === 58 || s === 59 || s === 60 || s === 63 || s === 93 || s === 95 || s === 126 ? e.check(Jf, t, a)(s) : s === null || he(s) || xt(s) ? t(s) : (e.consume(s), i);
   }
   function a(s) {
     return s === 41 && o++, e.consume(s), i;
@@ -3990,11 +3990,11 @@ function LS(e, t, r) {
     return n === 33 || n === 34 || n === 39 || n === 41 || n === 42 || n === 44 || n === 46 || n === 58 || n === 59 || n === 63 || n === 95 || n === 126 ? (e.consume(n), o) : n === 38 ? (e.consume(n), a) : n === 93 ? (e.consume(n), i) : (
       // `<` is an end.
       n === 60 || // So is whitespace.
-      n === null || fe(n) || xt(n) ? t(n) : r(n)
+      n === null || he(n) || xt(n) ? t(n) : r(n)
     );
   }
   function i(n) {
-    return n === null || n === 40 || n === 91 || fe(n) || xt(n) ? t(n) : o(n);
+    return n === null || n === 40 || n === 91 || he(n) || xt(n) ? t(n) : o(n);
   }
   function a(n) {
     return hs(n) ? s(n) : r(n);
@@ -4013,7 +4013,7 @@ function jS(e, t, r) {
   }
 }
 function Yf(e) {
-  return e === null || e === 40 || e === 42 || e === 95 || e === 91 || e === 93 || e === 126 || fe(e);
+  return e === null || e === 40 || e === 42 || e === 95 || e === 91 || e === 93 || e === 126 || he(e);
 }
 function Zf(e) {
   return !hs(e);
@@ -4193,7 +4193,7 @@ function HS(e, t, r) {
       a > 999 || // Closing brace with nothing.
       p === 93 && !s || // Space or tab is not supported by GFM for some reason.
       // `\n` and `[` not being supported makes sense.
-      p === null || p === 91 || fe(p)
+      p === null || p === 91 || he(p)
     )
       return r(p);
     if (p === 93) {
@@ -4201,7 +4201,7 @@ function HS(e, t, r) {
       const h = e.exit("gfmFootnoteCallString");
       return i.includes(Cs(o.sliceSerialize(h))) ? (e.enter("gfmFootnoteCallLabelMarker"), e.consume(p), e.exit("gfmFootnoteCallLabelMarker"), e.exit("gfmFootnoteCall"), t) : r(p);
     }
-    return fe(p) || (s = !0), a++, e.consume(p), p === 92 ? l : u;
+    return he(p) || (s = !0), a++, e.consume(p), p === 92 ? l : u;
   }
   function l(p) {
     return p === 91 || p === 92 || p === 93 ? (e.consume(p), a++, u) : u(p);
@@ -4223,7 +4223,7 @@ function KS(e, t, r) {
       s > 999 || // Closing brace with nothing.
       f === 93 && !n || // Space or tab is not supported by GFM for some reason.
       // `\n` and `[` not being supported makes sense.
-      f === null || f === 91 || fe(f)
+      f === null || f === 91 || he(f)
     )
       return r(f);
     if (f === 93) {
@@ -4231,7 +4231,7 @@ function KS(e, t, r) {
       const g = e.exit("gfmFootnoteDefinitionLabelString");
       return a = Cs(o.sliceSerialize(g)), e.enter("gfmFootnoteDefinitionLabelMarker"), e.consume(f), e.exit("gfmFootnoteDefinitionLabelMarker"), e.exit("gfmFootnoteDefinitionLabel"), h;
     }
-    return fe(f) || (n = !0), s++, e.consume(f), f === 92 ? p : l;
+    return he(f) || (n = !0), s++, e.consume(f), f === 92 ? p : l;
   }
   function p(f) {
     return f === 91 || f === 92 || f === 93 ? (e.consume(f), s++, l) : l(f);
@@ -4429,8 +4429,8 @@ function rC(e, t, r) {
       q === "linePrefix") j--;
       else break;
     }
-    const T = j > -1 ? o.events[j][1].type : null, x = T === "tableHead" || T === "tableRow" ? b : c;
-    return x === b && o.parser.lazy[o.now().line] ? r(R) : x(R);
+    const T = j > -1 ? o.events[j][1].type : null, D = T === "tableHead" || T === "tableRow" ? b : c;
+    return D === b && o.parser.lazy[o.now().line] ? r(R) : D(R);
   }
   function c(R) {
     return e.enter("tableHead"), e.enter("tableRow"), u(R);
@@ -4442,7 +4442,7 @@ function rC(e, t, r) {
     return R === null ? r(R) : $t(R) ? a > 1 ? (a = 0, o.interrupt = !0, e.exit("tableRow"), e.enter("lineEnding"), e.consume(R), e.exit("lineEnding"), d) : r(R) : $e(R) ? Ve(e, l, "whitespace")(R) : (a += 1, s && (s = !1, i += 1), R === 124 ? (e.enter("tableCellDivider"), e.consume(R), e.exit("tableCellDivider"), s = !0, l) : (e.enter("data"), p(R)));
   }
   function p(R) {
-    return R === null || R === 124 || fe(R) ? (e.exit("data"), l(R)) : (e.consume(R), R === 92 ? h : p);
+    return R === null || R === 124 || he(R) ? (e.exit("data"), l(R)) : (e.consume(R), R === 92 ? h : p);
   }
   function h(R) {
     return R === 92 || R === 124 ? (e.consume(R), p) : p(R);
@@ -4481,9 +4481,9 @@ function rC(e, t, r) {
     return R === 124 ? (e.enter("tableCellDivider"), e.consume(R), e.exit("tableCellDivider"), A) : R === null || $t(R) ? (e.exit("tableRow"), t(R)) : $e(R) ? Ve(e, A, "whitespace")(R) : (e.enter("data"), E(R));
   }
   function E(R) {
-    return R === null || R === 124 || fe(R) ? (e.exit("data"), A(R)) : (e.consume(R), R === 92 ? D : E);
+    return R === null || R === 124 || he(R) ? (e.exit("data"), A(R)) : (e.consume(R), R === 92 ? x : E);
   }
-  function D(R) {
+  function x(R) {
     return R === 92 || R === 124 ? (e.consume(R), E) : E(R);
   }
 }
@@ -4567,7 +4567,7 @@ function oC(e, t, r) {
     );
   }
   function a(c) {
-    return fe(c) ? (e.enter("taskListCheckValueUnchecked"), e.consume(c), e.exit("taskListCheckValueUnchecked"), s) : c === 88 || c === 120 ? (e.enter("taskListCheckValueChecked"), e.consume(c), e.exit("taskListCheckValueChecked"), s) : r(c);
+    return he(c) ? (e.enter("taskListCheckValueUnchecked"), e.consume(c), e.exit("taskListCheckValueUnchecked"), s) : c === 88 || c === 120 ? (e.enter("taskListCheckValueChecked"), e.consume(c), e.exit("taskListCheckValueChecked"), s) : r(c);
   }
   function s(c) {
     return c === 93 ? (e.enter("taskListCheckMarker"), e.consume(c), e.exit("taskListCheckMarker"), e.exit("taskListCheck"), n) : r(c);
@@ -4655,8 +4655,8 @@ function lC({
   }, []), U(() => {
     (async () => {
       if (p !== "en" && S.current !== p) {
-        const [j, T, x, q, pe, W] = await Qs(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk."], p, "en", h?.azureTranslatorKey || "", h?.azureTranslatorEndpoint || "", h?.azureTranslatorRegion || "");
-        P({ insufficientCredits: j, insufficientCreditsDescription: T, placeholder: x, suggestedPrompts: q, thinking: pe, retry: W }), S.current = p;
+        const [j, T, D, q, pe, W] = await Qs(["Insufficient Credits", "Please purchase more credits to continue.", "Type your message...", "Suggested Prompts", "Thinking...", "Retry", "Hi there! I'm your personal health navigator. I can help you understand your lab results, explain medical terminology, and provide personalized health insights. Go ahead and upload any lab test or medical report. If you don’t have one, lets just talk."], p, "en", h?.azureTranslatorKey || "", h?.azureTranslatorEndpoint || "", h?.azureTranslatorRegion || "");
+        P({ insufficientCredits: j, insufficientCreditsDescription: T, placeholder: D, suggestedPrompts: q, thinking: pe, retry: W }), S.current = p;
       }
       p === "en" && S.current !== "en" && (P({ insufficientCredits: "Insufficient Credits", insufficientCreditsDescription: "Please purchase more credits to continue.", placeholder: "Type your message...", suggestedPrompts: "Suggested Prompts", thinking: "Thinking...", retry: "Retry" }), S.current = "en");
     })();
@@ -4667,7 +4667,7 @@ function lC({
     R.key === "Enter" && !R.shiftKey && (R.preventDefault(), b());
   }, E = (R) => {
     f(R);
-  }, D = () => {
+  }, x = () => {
     v(!m);
   };
   return /* @__PURE__ */ k("div", { className: `flex flex-col h-full min-h-0 bg-white rounded-lg border border-primary/20 overflow-hidden ${o}`, children: [
@@ -4676,7 +4676,7 @@ function lC({
         /* @__PURE__ */ w("div", { className: "w-8 h-8 rounded-full bg-[#3f62ec] flex items-center justify-center text-white flex-shrink-0", children: /* @__PURE__ */ w(Rc, { size: 14 }) }),
         /* @__PURE__ */ w("div", { className: "ml-2 px-3 py-2 rounded-lg bg-secondary/10", children: /* @__PURE__ */ w("div", { className: "text-sm text-[#3f62ec]", children: t }) })
       ] }) : e?.map((R, j) => {
-        const x = j === e.length - 1 && R.sender === "ai", q = c && x && u && R.sender === "ai";
+        const D = j === e.length - 1 && R.sender === "ai", q = c && D && u && R.sender === "ai";
         return /* @__PURE__ */ w(
           "div",
           {
@@ -4728,7 +4728,7 @@ function lC({
         /* @__PURE__ */ k(
           "button",
           {
-            onClick: D,
+            onClick: x,
             className: "w-full p-2 flex items-center justify-center hover:bg-secondary/10 transition-colors",
             children: [
               /* @__PURE__ */ w("span", { className: "text-sm font-medium text-secondary", children: C.suggestedPrompts }),
@@ -16353,11 +16353,11 @@ function I() {
     } }), Object.defineProperty(e, "SpeechConfigImpl", { enumerable: !0, get: function() {
       return E.SpeechConfigImpl;
     } });
-    var D = /* @__PURE__ */ _R();
+    var x = /* @__PURE__ */ _R();
     Object.defineProperty(e, "SpeechTranslationConfig", { enumerable: !0, get: function() {
-      return D.SpeechTranslationConfig;
+      return x.SpeechTranslationConfig;
     } }), Object.defineProperty(e, "SpeechTranslationConfigImpl", { enumerable: !0, get: function() {
-      return D.SpeechTranslationConfigImpl;
+      return x.SpeechTranslationConfigImpl;
     } });
     var R = /* @__PURE__ */ Pv();
     Object.defineProperty(e, "PropertyCollection", { enumerable: !0, get: function() {
@@ -16371,9 +16371,9 @@ function I() {
     Object.defineProperty(e, "Recognizer", { enumerable: !0, get: function() {
       return T.Recognizer;
     } });
-    var x = /* @__PURE__ */ OR();
+    var D = /* @__PURE__ */ OR();
     Object.defineProperty(e, "SpeechRecognizer", { enumerable: !0, get: function() {
-      return x.SpeechRecognizer;
+      return D.SpeechRecognizer;
     } });
     var q = /* @__PURE__ */ MR();
     Object.defineProperty(e, "IntentRecognizer", { enumerable: !0, get: function() {
@@ -16403,9 +16403,9 @@ function I() {
     Object.defineProperty(e, "TranslationRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
       return ye.TranslationRecognitionCanceledEventArgs;
     } });
-    var V = /* @__PURE__ */ qR();
+    var $ = /* @__PURE__ */ qR();
     Object.defineProperty(e, "IntentRecognitionCanceledEventArgs", { enumerable: !0, get: function() {
-      return V.IntentRecognitionCanceledEventArgs;
+      return $.IntentRecognitionCanceledEventArgs;
     } });
     var te = /* @__PURE__ */ _v();
     Object.defineProperty(e, "CancellationDetailsBase", { enumerable: !0, get: function() {
@@ -16593,9 +16593,9 @@ function I() {
     Object.defineProperty(e, "SpeechSynthesisWordBoundaryEventArgs", { enumerable: !0, get: function() {
       return oo.SpeechSynthesisWordBoundaryEventArgs;
     } });
-    var $ = /* @__PURE__ */ xP();
+    var V = /* @__PURE__ */ xP();
     Object.defineProperty(e, "SpeechSynthesisBookmarkEventArgs", { enumerable: !0, get: function() {
-      return $.SpeechSynthesisBookmarkEventArgs;
+      return V.SpeechSynthesisBookmarkEventArgs;
     } });
     var ee = /* @__PURE__ */ NP();
     Object.defineProperty(e, "SpeechSynthesisVisemeEventArgs", { enumerable: !0, get: function() {
@@ -16605,9 +16605,9 @@ function I() {
     Object.defineProperty(e, "SpeechSynthesisBoundaryType", { enumerable: !0, get: function() {
       return H.SpeechSynthesisBoundaryType;
     } });
-    var he = /* @__PURE__ */ LP();
+    var fe = /* @__PURE__ */ LP();
     Object.defineProperty(e, "SynthesisVoicesResult", { enumerable: !0, get: function() {
-      return he.SynthesisVoicesResult;
+      return fe.SynthesisVoicesResult;
     } });
     var Le = /* @__PURE__ */ jP();
     Object.defineProperty(e, "SynthesisVoiceGender", { enumerable: !0, get: function() {
@@ -17431,8 +17431,8 @@ function hw() {
       const C = this.connectImpl();
       let P;
       try {
-        const E = await this.audioSource.attach(this.privRequestSession.audioNodeId), D = await this.audioSource.format, R = await this.audioSource.deviceInfo;
-        this.privIsLiveAudio = R.type && R.type === o.type.Microphones, P = new e.ReplayableAudioNode(E, D.avgBytesPerSec), await this.privRequestSession.onAudioSourceAttachCompleted(P, !1), this.privRecognizerConfig.SpeechServiceConfig.Context.audio = { source: R };
+        const E = await this.audioSource.attach(this.privRequestSession.audioNodeId), x = await this.audioSource.format, R = await this.audioSource.deviceInfo;
+        this.privIsLiveAudio = R.type && R.type === o.type.Microphones, P = new e.ReplayableAudioNode(E, x.avgBytesPerSec), await this.privRequestSession.onAudioSourceAttachCompleted(P, !1), this.privRecognizerConfig.SpeechServiceConfig.Context.audio = { source: R };
       } catch (E) {
         throw await this.privRequestSession.onStopRecognizing(), E;
       }
@@ -17540,9 +17540,9 @@ function hw() {
               break;
             case "turn.end":
               await this.sendTelemetryData(), this.privRequestSession.isSpeechEnded && this.privMustReportEndOfStream && (this.privMustReportEndOfStream = !1, await this.cancelRecognitionLocal(r.CancellationReason.EndOfStream, r.CancellationErrorCode.NoError, void 0));
-              const D = new r.SessionEventArgs(this.privRequestSession.sessionId);
+              const x = new r.SessionEventArgs(this.privRequestSession.sessionId);
               if (await this.privRequestSession.onServiceTurnEndResponse(this.privRecognizerConfig.isContinuousRecognition), !this.privRecognizerConfig.isContinuousRecognition || this.privRequestSession.isSpeechEnded || !this.privRequestSession.isRecognizing) {
-                this.privRecognizer.sessionStopped && this.privRecognizer.sessionStopped(this.privRecognizer, D);
+                this.privRecognizer.sessionStopped && this.privRecognizer.sessionStopped(this.privRecognizer, x);
                 return;
               } else
                 v = await this.fetchConnection(), await this.sendPrePayloadJSON(v);
@@ -17629,15 +17629,15 @@ function hw() {
       let S = Date.now();
       const C = this.privRecognizerConfig.parameters.getProperty("SPEECH-TransmitLengthBeforThrottleMs", "5000"), P = y.avgBytesPerSec / 1e3 * parseInt(C, 10), b = this.privRequestSession.recogNumber, A = async () => {
         if (!this.privIsDisposed && !this.privRequestSession.isSpeechEnded && this.privRequestSession.isRecognizing && this.privRequestSession.recogNumber === b) {
-          const E = await this.fetchConnection(), D = await v.read();
+          const E = await this.fetchConnection(), x = await v.read();
           if (this.privRequestSession.isSpeechEnded)
             return;
           let R, j;
-          if (!D || D.isEnd ? (R = null, j = 0) : (R = D.buffer, this.privRequestSession.onAudioSent(R.byteLength), P >= this.privRequestSession.bytesSent ? j = 0 : j = Math.max(0, S - Date.now())), j !== 0 && await this.delay(j), R !== null && (S = Date.now() + R.byteLength * 1e3 / (y.avgBytesPerSec * 2)), !this.privIsDisposed && !this.privRequestSession.isSpeechEnded && this.privRequestSession.isRecognizing && this.privRequestSession.recogNumber === b)
+          if (!x || x.isEnd ? (R = null, j = 0) : (R = x.buffer, this.privRequestSession.onAudioSent(R.byteLength), P >= this.privRequestSession.bytesSent ? j = 0 : j = Math.max(0, S - Date.now())), j !== 0 && await this.delay(j), R !== null && (S = Date.now() + R.byteLength * 1e3 / (y.avgBytesPerSec * 2)), !this.privIsDisposed && !this.privRequestSession.isSpeechEnded && this.privRequestSession.isRecognizing && this.privRequestSession.recogNumber === b)
             if (E.send(new i.SpeechConnectionMessage(t.MessageType.Binary, "audio", this.privRequestSession.requestId, null, R)).catch(() => {
               this.privRequestSession.onServiceTurnEndResponse(this.privRecognizerConfig.isContinuousRecognition).catch(() => {
               });
-            }), D?.isEnd)
+            }), x?.isEnd)
               this.privIsLiveAudio || this.privRequestSession.onSpeechEnded();
             else
               return A();
@@ -17656,8 +17656,8 @@ function hw() {
         const b = await (v ? this.privAuthentication.fetchOnExpiry(this.privAuthFetchEventId) : this.privAuthentication.fetch(this.privAuthFetchEventId));
         await this.privRequestSession.onAuthCompleted(!1);
         const A = await this.privConnectionFactory.create(this.privRecognizerConfig, b, this.privConnectionId);
-        this.privRequestSession.listenForServiceTelemetry(A.events), A.events.attach((D) => {
-          this.connectionEvents.onEvent(D);
+        this.privRequestSession.listenForServiceTelemetry(A.events), A.events.attach((x) => {
+          this.connectionEvents.onEvent(x);
         });
         const E = await A.open();
         if (E.statusCode === 200)
@@ -17919,8 +17919,8 @@ function yw() {
       let d = l.parameters.getProperty(r.PropertyId.SpeechServiceConnection_Endpoint, void 0);
       const f = l.parameters.getProperty(r.PropertyId.SpeechServiceConnection_Region, void 0), g = o.ConnectionFactoryBase.getHostSuffix(f), m = l.parameters.getProperty(r.PropertyId.SpeechServiceConnection_Host, "wss://" + f + ".stt.speech" + g), v = {}, y = l.parameters.getProperty(r.PropertyId.SpeechServiceConnection_EndpointId, void 0), S = l.parameters.getProperty(r.PropertyId.SpeechServiceConnection_RecoLanguage, void 0);
       if (y ? (!d || d.search(s.QueryParameterNames.CustomSpeechDeploymentId) === -1) && (v[s.QueryParameterNames.CustomSpeechDeploymentId] = y) : S && (!d || d.search(s.QueryParameterNames.Language) === -1) && (v[s.QueryParameterNames.Language] = S), (!d || d.search(s.QueryParameterNames.Format) === -1) && (v[s.QueryParameterNames.Format] = l.parameters.getProperty(t.OutputFormatPropertyName, r.OutputFormat[r.OutputFormat.Simple]).toLowerCase()), l.autoDetectSourceLanguages !== void 0 && (v[s.QueryParameterNames.EnableLanguageId] = "true"), this.setCommonUrlParams(l, v, d), d) {
-        const E = new URL(d), D = E.pathname;
-        (D === "" || D === "/") && (E.pathname = this.universalUri + l.recognitionEndpointVersion, d = await o.ConnectionFactoryBase.getRedirectUrlFromEndpoint(E.toString()));
+        const E = new URL(d), x = E.pathname;
+        (x === "" || x === "/") && (E.pathname = this.universalUri + l.recognitionEndpointVersion, d = await o.ConnectionFactoryBase.getRedirectUrlFromEndpoint(E.toString()));
       }
       if (!d)
         switch (l.recognitionMode) {
@@ -19779,8 +19779,8 @@ function Yw() {
               S.textBody.length > 0 ? A = S.textBody : A = "{ Offset: 0 }";
               const E = s.SpeechDetected.fromJSON(A, this.privRequestSession.currentTurnAudioOffset);
               this.privRequestSession.onServiceRecognized(E.Offset);
-              const D = new i.RecognitionEventArgs(E.Offset, this.privRequestSession.sessionId);
-              this.privRecognizer.speechEndDetected && this.privRecognizer.speechEndDetected(this.privRecognizer, D);
+              const x = new i.RecognitionEventArgs(E.Offset, this.privRequestSession.sessionId);
+              this.privRecognizer.speechEndDetected && this.privRecognizer.speechEndDetected(this.privRecognizer, x);
               break;
             case "turn.end":
               {
@@ -19792,8 +19792,8 @@ function Yw() {
                   if (await this.privRequestSession.onServiceTurnEndResponse(!1), (!this.privRecognizerConfig.isContinuousRecognition || this.privRequestSession.isSpeechEnded || !this.privRequestSession.isRecognizing) && this.privRecognizer.sessionStopped && this.privRecognizer.sessionStopped(this.privRecognizer, T), this.privSuccessCallback && this.privLastResult) {
                     try {
                       this.privSuccessCallback(this.privLastResult), this.privLastResult = null;
-                    } catch (x) {
-                      this.privErrorCallback && this.privErrorCallback(x);
+                    } catch (D) {
+                      this.privErrorCallback && this.privErrorCallback(D);
                     }
                     this.privSuccessCallback = void 0, this.privErrorCallback = void 0;
                   }
@@ -19992,9 +19992,9 @@ function Xw() {
           const b = e.RestMessageAdapter.extractHeaderValue(this.privRequestParams.requestId, P.headers);
           if (!P.ok) {
             if (u) {
-              let E = this.privErrors.invalidCreateJoinConversationResponse.replace("{status}", P.status.toString()), D;
+              let E = this.privErrors.invalidCreateJoinConversationResponse.replace("{status}", P.status.toString()), x;
               try {
-                D = JSON.parse(P.data), E += ` [${D.error.code}: ${D.error.message}]`;
+                x = JSON.parse(P.data), E += ` [${x.error.code}: ${x.error.message}]`;
               } catch {
                 E += ` [${P.data}]`;
               }
@@ -20632,14 +20632,14 @@ function ab() {
                  * before starting to send their own data.
                  */
                 case "participantlist":
-                  const b = n.ParticipantsListPayloadResponse.fromJSON(h.textBody), A = b.participants.map((x) => ({
-                    avatar: x.avatar,
-                    displayName: x.nickname,
-                    id: x.participantId,
-                    isHost: x.ishost,
-                    isMuted: x.ismuted,
-                    isUsingTts: x.usetts,
-                    preferredLanguage: x.locale
+                  const b = n.ParticipantsListPayloadResponse.fromJSON(h.textBody), A = b.participants.map((D) => ({
+                    avatar: D.avatar,
+                    displayName: D.nickname,
+                    id: D.participantId,
+                    isHost: D.ishost,
+                    isMuted: D.ismuted,
+                    isUsingTts: D.usetts,
+                    preferredLanguage: D.locale
                   }));
                   this.privConversationServiceConnector.participantsListReceived && this.privConversationServiceConnector.participantsListReceived(this.privConversationServiceConnector, new a.ParticipantsListEventArgs(b.roomid, b.token, b.translateTo, b.profanityFilter, b.roomProfanityFilter, b.roomLocked, b.muteAll, A, d));
                   break;
@@ -20701,7 +20701,7 @@ function ab() {
                  * 'JoinSession' is sent when a user joins the Conversation.
                  */
                 case "joinsession":
-                  const E = n.ParticipantPayloadResponse.fromJSON(h.textBody), D = {
+                  const E = n.ParticipantPayloadResponse.fromJSON(h.textBody), x = {
                     avatar: E.avatar,
                     displayName: E.nickname,
                     id: E.participantId,
@@ -20710,7 +20710,7 @@ function ab() {
                     isUsingTts: E.usetts,
                     preferredLanguage: E.locale
                   };
-                  this.privConversationServiceConnector.participantJoinCommandReceived && this.privConversationServiceConnector.participantJoinCommandReceived(this.privConversationServiceConnector, new a.ParticipantEventArgs(D, d));
+                  this.privConversationServiceConnector.participantJoinCommandReceived && this.privConversationServiceConnector.participantJoinCommandReceived(this.privConversationServiceConnector, new a.ParticipantEventArgs(x, d));
                   break;
                 /**
                  * 'LeaveSession' is sent when a user leaves the Conversation'.
@@ -20732,11 +20732,11 @@ function ab() {
                   break;
                 case "token":
                   const T = new r.CognitiveTokenAuthentication(() => {
-                    const x = m.token;
-                    return Promise.resolve(x);
+                    const D = m.token;
+                    return Promise.resolve(D);
                   }, () => {
-                    const x = m.token;
-                    return Promise.resolve(x);
+                    const D = m.token;
+                    return Promise.resolve(D);
                   });
                   this.authentication = T, this.privConversationServiceConnector.onToken(T);
                   break;
@@ -22806,20 +22806,20 @@ const Nb = /* @__PURE__ */ vC(xb), zb = ({
   }, []);
   const b = Wg({
     onAppMessage: sc((T) => {
-      const x = T.data;
-      v((q) => [...q, x]);
+      const D = T.data;
+      v((q) => [...q, D]);
     }, [])
   }), [A, E] = O({ waiting: `${l} will be here shortly...`, endConversation: "Ending Conversation..." });
   U(() => {
     (async () => {
       if (C !== "en") {
-        const [x, q] = await Qs([`${l} will be here shortly...`, "Ending Conversation..."], C, "en", p?.azureTranslatorKey || "", p?.azureTranslatorEndpoint || "", p?.azureTranslatorRegion || "");
-        E({ waiting: x, endConversation: q });
+        const [D, q] = await Qs([`${l} will be here shortly...`, "Ending Conversation..."], C, "en", p?.azureTranslatorKey || "", p?.azureTranslatorEndpoint || "", p?.azureTranslatorRegion || "");
+        E({ waiting: D, endConversation: q });
       } else
         E({ waiting: `${l} will be here shortly...`, endConversation: "Ending Conversation..." });
     })();
   }, [C]);
-  const D = (T) => T ? Nb(T).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, "").replace(/[^\w\s.,!?'"-]/g, "").replace(/\s+/g, " ").trim() : "";
+  const x = (T) => T ? Nb(T).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, "").replace(/[^\w\s.,!?'"-]/g, "").replace(/\s+/g, " ").trim() : "";
   U(() => {
     const T = () => S(!0);
     return h && h.on("joined-meeting", T), () => {
@@ -22829,7 +22829,7 @@ const Nb = /* @__PURE__ */ vC(xb), zb = ({
     try {
       if (h && y && c) {
         n(!1);
-        const T = D(c);
+        const T = x(c);
         R(T);
       }
     } catch (T) {
@@ -22841,7 +22841,7 @@ const Nb = /* @__PURE__ */ vC(xb), zb = ({
     r && g(r);
   }, [r]);
   const R = (T) => {
-    const x = {
+    const D = {
       message_type: "conversation",
       event_type: "conversation.echo",
       conversation_id: e,
@@ -22850,7 +22850,7 @@ const Nb = /* @__PURE__ */ vC(xb), zb = ({
         text: `${T}`
       }
     };
-    console.log("Sending Echo Interaction:", x), b(x, "*");
+    console.log("Sending Echo Interaction:", D), b(D, "*");
   }, j = () => {
     const T = {
       message_type: "conversation",
@@ -22961,7 +22961,7 @@ const Nb = /* @__PURE__ */ vC(xb), zb = ({
     sm: "scale-75",
     md: "",
     lg: "scale-125"
-  }, E = "bottom-4", D = () => c === "auto" ? "min-h-[360px]" : c;
+  }, E = "bottom-4", x = () => c === "auto" ? "min-h-[360px]" : c;
   return /* @__PURE__ */ w("div", { className: `flex flex-col w-full h-full relative ${n}`, children: /* @__PURE__ */ k("div", { className: "flex-1 w-full h-full relative overflow-hidden", children: [
     /* @__PURE__ */ w(
       zb,
@@ -22971,7 +22971,7 @@ const Nb = /* @__PURE__ */ vC(xb), zb = ({
         videoMode: o,
         endConv: i,
         onAction: b,
-        videoHeight: D(),
+        videoHeight: x(),
         aspectRatio: l,
         setInterruptReplica: p,
         currentScript: h,
@@ -23429,27 +23429,27 @@ class Us extends Xs {
     let f = d?.res;
     const g = d?.usedKey || n, m = d?.exactUsedKey || n, v = ["[object Number]", "[object Function]", "[object RegExp]"], y = i.joinArrays !== void 0 ? i.joinArrays : this.options.joinArrays, S = !this.i18nFormat || this.i18nFormat.handleAsObject, C = i.count !== void 0 && !N(i.count), P = Us.hasDefaultValue(i), b = C ? this.pluralResolver.getSuffix(p, i.count, i) : "", A = i.ordinal && C ? this.pluralResolver.getSuffix(p, i.count, {
       ordinal: !1
-    }) : "", E = C && !i.ordinal && i.count === 0, D = E && i[`defaultValue${this.options.pluralSeparator}zero`] || i[`defaultValue${b}`] || i[`defaultValue${A}`] || i.defaultValue;
+    }) : "", E = C && !i.ordinal && i.count === 0, x = E && i[`defaultValue${this.options.pluralSeparator}zero`] || i[`defaultValue${b}`] || i[`defaultValue${A}`] || i.defaultValue;
     let R = f;
-    S && !f && P && (R = D);
+    S && !f && P && (R = x);
     const j = ef(R), T = Object.prototype.toString.apply(R);
     if (S && R && j && v.indexOf(T) < 0 && !(N(y) && Array.isArray(R))) {
       if (!i.returnObjects && !this.options.returnObjects) {
         this.options.returnedObjectHandler || this.logger.warn("accessing an object - but returnObjects options is not enabled!");
-        const x = this.options.returnedObjectHandler ? this.options.returnedObjectHandler(g, R, {
+        const D = this.options.returnedObjectHandler ? this.options.returnedObjectHandler(g, R, {
           ...i,
           ns: c
         }) : `key '${n} (${this.language})' returned an object instead of string.`;
-        return a ? (d.res = x, d.usedParams = this.getUsedParamsDetails(i), d) : x;
+        return a ? (d.res = D, d.usedParams = this.getUsedParamsDetails(i), d) : D;
       }
       if (s) {
-        const x = Array.isArray(R), q = x ? [] : {}, pe = x ? m : g;
+        const D = Array.isArray(R), q = D ? [] : {}, pe = D ? m : g;
         for (const W in R)
           if (Object.prototype.hasOwnProperty.call(R, W)) {
             const G = `${pe}${s}${W}`;
             P && !f ? q[W] = this.translate(G, {
               ...i,
-              defaultValue: ef(D) ? D[W] : void 0,
+              defaultValue: ef(x) ? x[W] : void 0,
               joinArrays: !1,
               ns: c
             }) : q[W] = this.translate(G, {
@@ -23463,35 +23463,35 @@ class Us extends Xs {
     } else if (S && N(y) && Array.isArray(f))
       f = f.join(y), f && (f = this.extendTranslation(f, t, i, o));
     else {
-      let x = !1, q = !1;
-      !this.isValidLookup(f) && P && (x = !0, f = D), this.isValidLookup(f) || (q = !0, f = n);
-      const W = (i.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey) && q ? void 0 : f, G = P && D !== f && this.options.updateMissing;
-      if (q || x || G) {
-        if (this.logger.log(G ? "updateKey" : "missingKey", p, u, n, G ? D : f), s) {
-          const V = this.resolve(n, {
+      let D = !1, q = !1;
+      !this.isValidLookup(f) && P && (D = !0, f = x), this.isValidLookup(f) || (q = !0, f = n);
+      const W = (i.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey) && q ? void 0 : f, G = P && x !== f && this.options.updateMissing;
+      if (q || D || G) {
+        if (this.logger.log(G ? "updateKey" : "missingKey", p, u, n, G ? x : f), s) {
+          const $ = this.resolve(n, {
             ...i,
             keySeparator: !1
           });
-          V && V.res && this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
+          $ && $.res && this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
         }
         let ne = [];
         const oe = this.languageUtils.getFallbackCodes(this.options.fallbackLng, i.lng || this.language);
         if (this.options.saveMissingTo === "fallback" && oe && oe[0])
-          for (let V = 0; V < oe.length; V++)
-            ne.push(oe[V]);
+          for (let $ = 0; $ < oe.length; $++)
+            ne.push(oe[$]);
         else this.options.saveMissingTo === "all" ? ne = this.languageUtils.toResolveHierarchy(i.lng || this.language) : ne.push(i.lng || this.language);
-        const ye = (V, te, Se) => {
+        const ye = ($, te, Se) => {
           const Ce = P && Se !== f ? Se : W;
-          this.options.missingKeyHandler ? this.options.missingKeyHandler(V, u, te, Ce, G, i) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing(V, u, te, Ce, G, i), this.emit("missingKey", V, u, te, f);
+          this.options.missingKeyHandler ? this.options.missingKeyHandler($, u, te, Ce, G, i) : this.backendConnector?.saveMissing && this.backendConnector.saveMissing($, u, te, Ce, G, i), this.emit("missingKey", $, u, te, f);
         };
-        this.options.saveMissing && (this.options.saveMissingPlurals && C ? ne.forEach((V) => {
-          const te = this.pluralResolver.getSuffixes(V, i);
+        this.options.saveMissing && (this.options.saveMissingPlurals && C ? ne.forEach(($) => {
+          const te = this.pluralResolver.getSuffixes($, i);
           E && i[`defaultValue${this.options.pluralSeparator}zero`] && te.indexOf(`${this.options.pluralSeparator}zero`) < 0 && te.push(`${this.options.pluralSeparator}zero`), te.forEach((Se) => {
-            ye([V], n + Se, i[`defaultValue${Se}`] || D);
+            ye([$], n + Se, i[`defaultValue${Se}`] || x);
           });
-        }) : ye(ne, n, D));
+        }) : ye(ne, n, x));
       }
-      f = this.extendTranslation(f, t, i, d, o), q && f === n && this.options.appendNamespaceToMissingKey && (f = `${u}${l}${n}`), (q || x) && this.options.parseMissingKeyHandler && (f = this.options.parseMissingKeyHandler(this.options.appendNamespaceToMissingKey ? `${u}${l}${n}` : n, x ? f : void 0, i));
+      f = this.extendTranslation(f, t, i, d, o), q && f === n && this.options.appendNamespaceToMissingKey && (f = `${u}${l}${n}`), (q || D) && this.options.parseMissingKeyHandler && (f = this.options.parseMissingKeyHandler(this.options.appendNamespaceToMissingKey ? `${u}${l}${n}` : n, D ? f : void 0, i));
     }
     return a ? (d.res = f, d.usedParams = this.getUsedParamsDetails(i), d) : f;
   }
@@ -25842,13 +25842,13 @@ const fI = [
     currentScript: b,
     setCurrentScript: A,
     interruptReplica: E,
-    setIsSpeaking: D,
+    setIsSpeaking: x,
     setSpokenText: R,
     region: j,
     speechKey: T,
-    config: x
+    config: D
   }, q) => {
-    const [pe, W] = O("welcome"), [G, ne] = O(null), [oe, ye] = O(!1), [V, te] = O(!1), Se = We(null), [Ce, Gt] = O([]), [Ne, ze] = O("16:9"), { tavusApiKey: Lt } = vI(), [be, Qt] = O("en");
+    const [pe, W] = O("welcome"), [G, ne] = O(null), [oe, ye] = O(!1), [$, te] = O(!1), Se = We(null), [Ce, Gt] = O([]), [Ne, ze] = O("16:9"), { tavusApiKey: Lt } = vI(), [be, Qt] = O("en");
     U(() => {
       typeof window < "u" && Qt(localStorage.getItem("lang") || "en");
     }, []);
@@ -25948,7 +25948,7 @@ const fI = [
           onPromptClick: h,
           userCredits: 100,
           avatars: Ce,
-          config: x,
+          config: D,
           personaName: r
         }
       ),
@@ -25974,7 +25974,7 @@ const fI = [
           handleEnd: de,
           platform: s || "home",
           videoMode: c ?? "full",
-          endConv: V,
+          endConv: $,
           chatVisible: u ?? !1,
           toggleChat: l,
           containerClassName: m,
@@ -25985,11 +25985,11 @@ const fI = [
           currentScript: b,
           setCurrentScript: A,
           interruptReplica: E,
-          setIsSpeaking: D,
+          setIsSpeaking: x,
           setSpokenText: R,
           region: j,
           speechKey: T,
-          config: x,
+          config: D,
           personaName: r
         }
       ) })
@@ -26061,7 +26061,7 @@ function RI({
     azureTranslatorRegion: ""
   }
 }) {
-  const [p, h] = O([]), [d, f] = O(null), [g, m] = O("chat"), [v, y] = O(!1), [S, C] = O(!1), [P, b] = O(!1), [A, E] = O([]), [D, R] = O(!1), [j, T] = O({}), [x, q] = O(""), [pe, W] = O(!1), [G, ne] = O(!1), [oe, ye] = O(!1), [V, te] = O(!1), [Se, Ce] = O(""), Gt = We(null), [Ne, ze] = O(""), [Lt, be] = O(!1), [Qt, rt] = O(!1), [nt, Ke] = O(!1), [it, de] = O(""), [bs, Es] = O(""), [Is, jt] = O(""), [Oe, Je] = O(""), [ae, Yt] = O(!1), F = We(null), X = We(null), [qt, As] = O([]), ro = Gg("(max-width: 768px)"), [st, no] = O(!1), [Zt, ie] = O("52533144413937384342"), [Xt, Ts] = O({
+  const [p, h] = O([]), [d, f] = O(null), [g, m] = O("chat"), [v, y] = O(!1), [S, C] = O(!1), [P, b] = O(!1), [A, E] = O([]), [x, R] = O(!1), [j, T] = O({}), [D, q] = O(""), [pe, W] = O(!1), [G, ne] = O(!1), [oe, ye] = O(!1), [$, te] = O(!1), [Se, Ce] = O(""), Gt = We(null), [Ne, ze] = O(""), [Lt, be] = O(!1), [Qt, rt] = O(!1), [nt, Ke] = O(!1), [it, de] = O(""), [bs, Es] = O(""), [Is, jt] = O(""), [Oe, Je] = O(""), [ae, Yt] = O(!1), F = We(null), X = We(null), [qt, As] = O([]), ro = Gg("(max-width: 768px)"), [st, no] = O(!1), [Zt, ie] = O("52533144413937384342"), [Xt, Ts] = O({
     avatar: {
       chooseAvatar: `Choose Your ${r}`,
       startConversation: "Start Conversation",
@@ -26093,7 +26093,7 @@ function RI({
       try {
         const ee = await ug();
         if (ee?.Success && ee.Data) {
-          const H = ee.Data.find((he) => he.ExternalId === CI);
+          const H = ee.Data.find((fe) => fe.ExternalId === CI);
           H && (h([H]), f(H));
         }
       } catch (ee) {
@@ -26113,7 +26113,7 @@ function RI({
       if (a !== "en" && F.current !== a) {
         const [
           H,
-          he,
+          fe,
           Le,
           J,
           Ee,
@@ -26154,7 +26154,7 @@ function RI({
         y(!1), q(""), E([]), Ts({
           avatar: {
             chooseAvatar: H,
-            startConversation: he,
+            startConversation: fe,
             yourAIHealthNavigator: Le,
             description: J
           },
@@ -26209,22 +26209,22 @@ function RI({
   ]), U(() => {
     n && (As([n]), ot(`Uploaded file: ${n.name}`, [n]));
   }, [n]), sc(
-    async ($) => {
+    async (V) => {
       C(!0);
       const H = await Wh(
         "I am user",
         "",
         "",
-        "interview",
-        x,
+        "advisor",
+        D,
         0,
         1,
         a
       );
-      return H.Success && H.Data?.Message ? H.Data.Message.includes("ERROR") ? (C(!1), de(`Hello there! I'm ${$?.Name}, your ${r}. I'm here to help you with ${e}. Can you tell me your name?`), {
+      return H.Success && H.Data?.Message ? H.Data.Message.includes("ERROR") ? (C(!1), de(`Hello there! I'm ${V?.Name}, your ${r}. I'm here to help you with ${e}. Can you tell me your name?`), {
         id: "welcome-message",
         sender: "ai",
-        text: `Hello there! I'm ${$?.Name}, your ${r}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
+        text: `Hello there! I'm ${V?.Name}, your ${r}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
         timestamp: /* @__PURE__ */ new Date()
       }) : (C(!1), q(H.Data.SessionId || ""), de(H.Data.Message), {
         id: "welcome-message",
@@ -26234,7 +26234,7 @@ function RI({
       }) : (C(!1), {
         id: "welcome-message",
         sender: "ai",
-        text: `Hello there! I'm ${$?.Name}, your ${r}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
+        text: `Hello there! I'm ${V?.Name}, your ${r}. I'm here to help you with ${e}. Can you tell me a little about yourself?`,
         timestamp: /* @__PURE__ */ new Date()
       });
     },
@@ -26246,28 +26246,28 @@ function RI({
   }, [Ne]), U(() => {
     y(!!ae);
   }, [ae]);
-  const ot = async ($, ee = []) => {
-    V && te(!1);
+  const ot = async (V, ee = []) => {
+    $ && te(!1);
     const H = {
       id: Date.now().toString(),
       sender: "user",
-      text: $ === "yes, continue" ? "Yes" : $,
+      text: V === "yes, continue" ? "Yes" : V,
       timestamp: /* @__PURE__ */ new Date()
     };
-    Ce($), E((J) => [...J, H]), C(!0);
-    let he = `${$}`;
+    Ce(V), E((J) => [...J, H]), C(!0);
+    let fe = `${V}`;
     const Le = [...qt, ...ee];
-    Le.length > 0 && (he += "Talk to me like I'm a 75 year old, who is afraid of medical terminology in a kind and gentle voice"), $ === "yes, continue" && (he += "Start the interview. User clicked continue.");
+    (Le.length > 0 || !D) && (fe += "Talk to me like I'm a 75 year old, who is afraid of medical terminology in a kind and gentle voice. Don't use the prompt text in the reply.");
     try {
       const J = await Wh(
-        he,
+        fe,
         Zt,
         // Send user ID instead of email - for testing hardcoding the userID
         "",
         // Business ID
-        "interview",
+        "advisor",
         // Intent
-        x,
+        D,
         0,
         1,
         a,
@@ -26292,14 +26292,14 @@ function RI({
           text: J.Data.Message,
           timestamp: /* @__PURE__ */ new Date()
         };
-        E((Re) => [...Re, Ee]), x || q(J?.Data?.SessionId || ""), de(J.Data.Message), no(!0), (J.Data.Message.toLowerCase().includes("click continue") || J.Data.Message.toLowerCase().includes("continue")) && W(!0), (J.Data.Message.toLowerCase().includes("sign up") || J.Data.Message.toLowerCase().includes("thank you for choosing") || J.Data.Message.toLowerCase().includes("ready to connect")) && ne(!0), (J.Data.Message.toLowerCase().includes("buy now") || J.Data.Message.toLowerCase().includes("ready to get your test kit")) && ye(!0), u && u(J), await yI(
+        E((Re) => [...Re, Ee]), D || q(J?.Data?.SessionId || ""), de(J.Data.Message), no(!0), (J.Data.Message.toLowerCase().includes("click continue") || J.Data.Message.toLowerCase().includes("continue")) && W(!0), (J.Data.Message.toLowerCase().includes("sign up") || J.Data.Message.toLowerCase().includes("thank you for choosing") || J.Data.Message.toLowerCase().includes("ready to connect")) && ne(!0), (J.Data.Message.toLowerCase().includes("buy now") || J.Data.Message.toLowerCase().includes("ready to get your test kit")) && ye(!0), u && u(J), await yI(
           "",
           "AIReportReader",
-          $,
+          V,
           J.Data.Message || "",
           g === "voice",
           //isUserUsingAvatar
-          $ === Ne
+          V === Ne
           // isUserSpeaking
         ), Ce("");
       } else {
@@ -26327,28 +26327,28 @@ function RI({
     console.log("Toggle chat visibility");
   }, so = () => {
     typeof window < "u" && (s ? window.location.href = s : window.location.href = "https://growth-hub-git-feature-whitelabeljun25v1-real-business.vercel.app/auth/register");
-  }, _s = ($, ee) => {
+  }, _s = (V, ee) => {
     const H = ee === "like";
-    T((he) => ({
-      ...he,
-      [$.id]: ee
+    T((fe) => ({
+      ...fe,
+      [V.id]: ee
     })), _b(
-      $.text,
+      V.text,
       "",
       "",
       H
-    ).then((he) => {
-    }).catch((he) => {
-      console.error("Error sending feedback:", he);
+    ).then((fe) => {
+    }).catch((fe) => {
+      console.error("Error sending feedback:", fe);
     });
-  }, oo = async ($) => {
+  }, oo = async (V) => {
     b(!0);
-    const ee = Array.from($.target.files || []);
+    const ee = Array.from(V.target.files || []);
     if (ee.length > 0) {
       const H = ee[0];
       As([H]), c && c(H), b(!1), await ot(`Uploaded file: ${H.name}`, [H]);
     }
-    $.target && ($.target.value = "");
+    V.target && (V.target.value = "");
   };
   return /* @__PURE__ */ k("div", { className: Pe("h-full min-h-0", t), children: [
     /* @__PURE__ */ k(tv, { className: "h-full min-h-0 flex flex-col overflow-hidden border border-primary/20 shadow-2xl relative", children: [
@@ -26493,30 +26493,30 @@ function RI({
               }
             ) }),
             suggestedPrompts: o,
-            renderMessage: ($, ee) => {
-              if ($.sender === "ai" && $.id !== "welcome-message") {
+            renderMessage: (V, ee) => {
+              if (V.sender === "ai" && V.id !== "welcome-message") {
                 const H = ee === A.length - 1;
                 return /* @__PURE__ */ k("div", { className: "relative", children: [
-                  /* @__PURE__ */ w(Ba, { children: $.text }),
+                  /* @__PURE__ */ w(Ba, { children: V.text }),
                   /* @__PURE__ */ k("div", { className: "flex justify-end gap-2 mt-2", children: [
                     /* @__PURE__ */ w(
                       "button",
                       {
-                        className: `p-1 rounded-full transition-colors ${j[$.id] === "like" ? "bg-green-100 text-green-600" : "hover:bg-gray-200 text-gray-600"}`,
-                        onClick: () => _s($, "like"),
+                        className: `p-1 rounded-full transition-colors ${j[V.id] === "like" ? "bg-green-100 text-green-600" : "hover:bg-gray-200 text-gray-600"}`,
+                        onClick: () => _s(V, "like"),
                         children: /* @__PURE__ */ w(Lg, { className: "h-4 w-4" })
                       }
                     ),
                     /* @__PURE__ */ w(
                       "button",
                       {
-                        className: `p-1 rounded-full transition-colors ${j[$.id] === "dislike" ? "bg-red-100 text-red-600" : "hover:bg-gray-200 text-gray-600"}`,
-                        onClick: () => _s($, "dislike"),
+                        className: `p-1 rounded-full transition-colors ${j[V.id] === "dislike" ? "bg-red-100 text-red-600" : "hover:bg-gray-200 text-gray-600"}`,
+                        onClick: () => _s(V, "dislike"),
                         children: /* @__PURE__ */ w(jg, { className: "h-4 w-4" })
                       }
                     )
                   ] }),
-                  V && H && /* @__PURE__ */ w("div", { className: "mt-4 flex", children: /* @__PURE__ */ w(
+                  $ && H && /* @__PURE__ */ w("div", { className: "mt-4 flex", children: /* @__PURE__ */ w(
                     "button",
                     {
                       className: "bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-semibold shadow-md transition",
@@ -26536,7 +26536,7 @@ function RI({
                   ) })
                 ] });
               }
-              return /* @__PURE__ */ w(Ba, { remarkPlugins: [ev], children: $.text });
+              return /* @__PURE__ */ w(Ba, { remarkPlugins: [ev], children: V.text });
             }
           }
         ) }) })
