@@ -116,7 +116,7 @@ export default function ConciergeModule({
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const mobile = useMediaQuery("(max-width: 768px)");
   const [reportReady, setReportReady] = useState(false);
-  const [userId, setUserId] = useState("52533633434137384342")
+  const [userId, setUserId] = useState("52533144413937384342")
   const [translatedTexts, setTranslatedTexts] = useState<{
     avatar: {
       chooseAvatar: string;
@@ -204,7 +204,7 @@ export default function ConciergeModule({
     if(navigateTo.includes("demo")){
       setUserId("52533144413937384342");
     }
-  }, [navigateTo]);
+  }, []);
 
   useEffect(() => {
     const canTranslate =
