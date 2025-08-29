@@ -348,7 +348,7 @@ export default function ConciergeModule({
     async (avatar: AvatarProfile): Promise<ChatMessage> => {
       setIsLoading(true);
       let prompt = `I am user`;
-              const firstMessage =  await chatCompletionAPI(prompt, 
+            const firstMessage =  await chatCompletionAPI(prompt, 
             "",
             "",
             "interview",
@@ -356,7 +356,6 @@ export default function ConciergeModule({
             0,
             1,
             language
-
           )
         if (firstMessage.Success && firstMessage.Data?.Message) {
           if(firstMessage.Data.Message.includes("ERROR")) {

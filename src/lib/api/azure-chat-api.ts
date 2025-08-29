@@ -26,7 +26,7 @@ export const chatCompletionAPI = async (
   delay: number = 0,
   retries: number = 1,
   language: string = "en",
-  file?: File
+  file?: File,
 ): Promise<APIResponse> => {
   for (let i = 0; i < retries; i++) {
     const myHeaders = new Headers();
@@ -69,7 +69,7 @@ export const chatCompletionAPI = async (
 
     try {
       // Use environment variable for API base URL if available, else use the default
-      const apiBaseUrl = "https://developmentapis.azure-api.net/sandbox/v1/api";
+      const apiBaseUrl = "https://developmentapis.azure-api.net/demo/v1/api";
       const response = await fetch(
         `${apiBaseUrl}/AI/assistant`,
         requestOptions,

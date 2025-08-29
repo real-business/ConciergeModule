@@ -22326,7 +22326,7 @@ const Wh = async (e, t = "", r = "", o = "chat", i = "", a = 0, s = 1, n = "en",
     };
     try {
       const y = await fetch(
-        "https://developmentapis.azure-api.net/sandbox/v1/api/AI/assistant",
+        "https://developmentapis.azure-api.net/demo/v1/api/AI/assistant",
         m
       );
       if (clearTimeout(g), !y.ok) {
