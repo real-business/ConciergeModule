@@ -116,7 +116,7 @@ export default function ConciergeModule({
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const mobile = useMediaQuery("(max-width: 768px)");
   const [reportReady, setReportReady] = useState(false);
-  const [userId, setUserId] = useState("52533144413937384342")
+  const [userId, setUserId] = useState("cnx_db5c9343-3fa")
   const [translatedTexts, setTranslatedTexts] = useState<{
     avatar: {
       chooseAvatar: string;

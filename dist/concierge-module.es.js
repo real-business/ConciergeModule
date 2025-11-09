@@ -26061,7 +26061,7 @@ function RI({
     azureTranslatorRegion: ""
   }
 }) {
-  const [p, h] = O([]), [d, f] = O(null), [g, m] = O("chat"), [v, y] = O(!1), [S, C] = O(!1), [P, b] = O(!1), [A, E] = O([]), [x, R] = O(!1), [j, T] = O({}), [D, q] = O(""), [pe, W] = O(!1), [G, ne] = O(!1), [oe, ye] = O(!1), [$, te] = O(!1), [Se, Ce] = O(""), Gt = We(null), [Ne, ze] = O(""), [Lt, be] = O(!1), [Qt, rt] = O(!1), [nt, Ke] = O(!1), [it, de] = O(""), [bs, Es] = O(""), [Is, jt] = O(""), [Oe, Je] = O(""), [ae, Yt] = O(!1), F = We(null), X = We(null), [qt, As] = O([]), ro = Gg("(max-width: 768px)"), [st, no] = O(!1), [Zt, ie] = O("52533144413937384342"), [Xt, Ts] = O({
+  const [p, h] = O([]), [d, f] = O(null), [g, m] = O("chat"), [v, y] = O(!1), [S, C] = O(!1), [P, b] = O(!1), [A, E] = O([]), [x, R] = O(!1), [j, T] = O({}), [D, q] = O(""), [pe, W] = O(!1), [G, ne] = O(!1), [oe, ye] = O(!1), [$, te] = O(!1), [Se, Ce] = O(""), Gt = We(null), [Ne, ze] = O(""), [Lt, be] = O(!1), [Qt, rt] = O(!1), [nt, Ke] = O(!1), [it, de] = O(""), [bs, Es] = O(""), [Is, jt] = O(""), [Oe, Je] = O(""), [ae, Yt] = O(!1), F = We(null), X = We(null), [qt, As] = O([]), ro = Gg("(max-width: 768px)"), [st, no] = O(!1), [Zt, ie] = O("cnx_db5c9343-3fa"), [Xt, Ts] = O({
     avatar: {
       chooseAvatar: `Choose Your ${r}`,
       startConversation: "Start Conversation",
