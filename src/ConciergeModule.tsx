@@ -351,7 +351,7 @@ export default function ConciergeModule({
             const firstMessage =  await chatCompletionAPI(prompt, 
             "",
             "",
-            "advisor",
+            "analyzer",
             sessionId,
             0,
             1,
@@ -453,7 +453,7 @@ export default function ConciergeModule({
         prompt,
         userId, // Send user ID instead of email - for testing hardcoding the userID
         "", // Business ID
-        "advisor", // Intent
+        "analyzer", // Intent
         sessionId,
         0,
         1,

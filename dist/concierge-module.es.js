@@ -26215,7 +26215,7 @@ function RI({
         "I am user",
         "",
         "",
-        "advisor",
+        "analyzer",
         D,
         0,
         1,
@@ -26265,7 +26265,7 @@ function RI({
         // Send user ID instead of email - for testing hardcoding the userID
         "",
         // Business ID
-        "advisor",
+        "analyzer",
         // Intent
         D,
         0,
